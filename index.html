@@ -13,6 +13,63 @@
             height: 100%;
         }
 
+<script>
+const photoCarousel = document.getElementById("photoCarousel");
+const carousel = document.getElementById("carousel");
+const audio = document.getElementById("bgm");
+
+// 动态分布照片在环形上
+function arrangeCarousel() {
+    const images = carousel.querySelectorAll("img");
+    const total = images.length;
+    const radius = 300; // 环形半径
+    images.forEach((img, index) => {
+        const angle = (360 / total) * index;
+        img.style.transform = `rotateY(${angle}deg) translateZ(${radius}px)`;
+    });
+}
+arrangeCarousel();
+
+// 区分单击和双击
+let clickTimer = null;
+
+carousel.querySelectorAll("img").forEach(img => {
+    img.addEventListener("click", () => {
+        if (clickTimer == null) {
+            clickTimer = setTimeout(() => {
+                // 单击照片：进入全屏
+                photoCarousel.classList.add("fullscreen");
+                clickTimer = null;
+            }, 250);
+        }
+    });
+
+    img.addEventListener("dblclick", () => {
+        clearTimeout(clickTimer); // 阻止单击事件
+        clickTimer = null;
+        // 双击照片：退出全屏
+        photoCarousel.classList.remove("fullscreen");
+    });
+});
+
+// 点击空白处控制音乐
+document.addEventListener("click", (e) => {
+    if (!e.target.closest("#carousel")) { // 排除点击照片
+        audio.muted = false;
+        if (audio.paused) audio.play();
+    }
+});
+
+// 双击空白处暂停/播放音乐
+document.addEventListener("dblclick", (e) => {
+    if (!e.target.closest("#carousel")) { // 排除照片区域
+        if (audio.paused) audio.play();
+        else audio.pause();
+    }
+});
+</script>
+
+		
         body {
             font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
             background: #79a8ae;
