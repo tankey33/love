@@ -694,7 +694,7 @@
   });
 </script>
 
-<!-- iPod Classic 风格相册 -->
+<!-- iPod Classic 风格相册（放在主页面底部） -->
 <div class="ipod-gallery">
   <img data-src="./photos/1.png">
   <img data-src="./photos/2.png">
@@ -704,17 +704,17 @@
 
 <style>
 .ipod-gallery {
-  position: fixed;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 33vw; /* 占页面宽度的三分之一 */
-  height: auto;
-  aspect-ratio: 1/1; /* 保持方形比例 */
+  margin: 40px auto; /* 与上方内容留空 */
+  width: 33vw;       /* 占页面宽度的三分之一 */
+  aspect-ratio: 1/1; /* 保持正方形比例 */
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 0 20px rgba(0,0,0,0.5);
   background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* 改为普通布局，不悬浮 */
 }
 
 .ipod-gallery img {
@@ -734,11 +734,11 @@
 </style>
 
 <script>
-  // 自动修正大小写后加载图片
+  // 自动加载图片
   const images = document.querySelectorAll(".ipod-gallery img");
   images.forEach(img => {
     const src = img.getAttribute("data-src");
-    if (src) img.src = src.toLowerCase(); // 强制转小写
+    if (src) img.src = src.toLowerCase(); // 转小写，保证大小写不影响
   });
 
   // 自动轮播
@@ -749,8 +749,9 @@
     images[current].classList.remove("active");
     current = (current + 1) % images.length;
     images[current].classList.add("active");
-  }, 3000); // 每 3 秒切换一张
+  }, 3000);
 </script>
+
 
 
 </body>
