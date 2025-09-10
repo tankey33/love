@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>2025 - Tankey ❤️ Monody</title>
+    <link rel="icon" href="./love.png">
+    <link rel="shortcut icon" href="./love.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
+            background: #79a8ae;
+            color: #CFEBE4;
+            font-size: 18px;
+            line-height: 2;
+            letter-spacing: 1.2px;
+        }
+
+        a { color: #ebf7f4; }
+
+        .body--ready {
+            background: linear-gradient(to bottom, rgb(203, 235, 219) 0%, rgb(55, 148, 192) 120%);
+        }
+
+        /* 头像 */
+        img#logo {
+            width: 128px;
+            border-radius: 200px;
+            box-shadow: 0px 0px 40px rgba(63, 81, 181, 0.72);
+            border: 3px solid #00a0ff;
+            margin: 20px auto;
+            display: block;
+            transition: all 1s;
+        }
+
+        #logo:hover {
+            box-shadow: 0 0 10px #fff;
+            transform: rotate(360deg);
+        }
+
+        .cs {
+            width: 100%;
+            text-align: center;
+        }
+
+        /* 波点字 */
+        .text {
+            position: relative; /* 不固定，让页面流动 */
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 300px; /* 给照片墙留空间 */
+            color: #ed3073;
+        }
+
+        /* Canvas 全屏 */
+        .canvas {
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* 照片墙 */
+        .photo-carousel {
+            width: 100%;
+            height: 260px;
+            perspective: 1200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        .carousel {
+            position: relative;
+            width: 300px;
+            height: 220px;
+            transform-style: preserve-3d;
+            animation: rotate 16s linear infinite;
+        }
+
+        .carousel img {
+            position: absolute;
+            width: 240px;
+            height: 220px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            border-radius: 16px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        }
+
+        .carousel img:nth-child(1) { transform: rotateY(0deg) translateZ(400px); }
+        .carousel img:nth-child(2) { transform: rotateY(72deg) translateZ(400px); }
+        .carousel img:nth-child(3) { transform: rotateY(144deg) translateZ(400px); }
+        .carousel img:nth-child(4) { transform: rotateY(216deg) translateZ(400px); }
+        .carousel img:nth-child(5) { transform: rotateY(288deg) translateZ(400px); }
+
+        @keyframes rotate {
+            0% { transform: rotateY(0deg); }
+            100% { transform: rotateY(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="cs">
+        <img src="./baby.png" id="logo">
+    </div>
+
+    <canvas class="canvas" width="1820" height="905"></canvas>
+
+    <p class="text">
+        We fell in love
+        <br/>
+        <span id="span_dt_dt"></span>
+    </p>
+
+    <!-- iPod Classic 照片墙 -->
+    <div class="photo-carousel">
+        <div class="carousel">
+            <img src="./photos/1.png" alt="1">
+            <img src="./photos/2.png" alt="2">
+            <img src="./photos/3.png" alt="3">
+            <img src="./photos/4.png" alt="4">
+        </div>
+    </div>
+
+    <!-- JS: 波点字动画 -->
+    <script>
+        function show_date_time() {
+            setTimeout(show_date_time, 1000);
+            var BirthDay = new Date("12/29/2017 18:20:00");
+            var today = new Date();
+            var timeold = today.getTime() - BirthDay.getTime();
+            var e_daysold = timeold / (24 * 60 * 60 * 1000);
+            var daysold = Math.floor(e_daysold);
+            var e_hrsold = (e_daysold - daysold) * 24;
+            var hrsold = Math.floor(e_hrsold);
+            var e_minsold = (e_hrsold - hrsold) * 60;
+            var minsold = Math.floor(e_minsold);
+            var seconds = Math.floor((e_minsold - minsold) * 60);
+            document.getElementById("span_dt_dt").innerHTML = daysold + "天" + hrsold + "小时" + minsold + "分" + seconds + "秒";
+        }
+        show_date_time();
+    </script>
+
+    <!-- 背景音乐 -->
+    <audio id="bgm" autoplay loop>
+        <source src="./music/white.mp3" type="audio/mpeg">
+    </audio>
+    <script>
+        const audio = document.getElementById("bgm");
+        document.addEventListener("click", () => { audio.muted = false; audio.play(); });
+        document.addEventListener("dblclick", () => { audio.paused ? audio.play() : audio.pause(); });
+    </script>
+
+    <!-- 波点字动画 JS -->
+    <script>
+        // 这里保持你原来的 S.init() JS 代码即可
+        var S = { init: function(){ /* 省略，保持原代码 */ S.Drawing.init('.canvas'); document.body.classList.add('body--ready'); S.UI.simulate("❤昕昕|I|LOVE|You|3000|#countdown 3|#time"); S.Drawing.loop(function(){ S.Shape.render(); }); } };
+        // 你原来的 S.Drawing、S.UI、S.Point、S.Dot、S.ShapeBuilder、S.Shape 全部保持
+        S.init();
+    </script>
+</body>
+</html>
