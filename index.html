@@ -672,106 +672,67 @@
     S.init();
 </script>
 
-<!-- 照片墙 HTML -->
-<div id="photoCarousel" class="photo-carousel">
-    <div class="carousel">
-        <img src="./photos/1.png" alt="1">
-        <img src="./photos/2.png" alt="2">
-        <img src="./photos/3.png" alt="3">
-        <img src="./photos/4.png" alt="4">
-        <img src="./photos/5.png" alt="5">
-        <!-- 可以继续添加更多照片 -->
-    </div>
-</div>
-
-<style>
-/* 网页背景 */
-body {
-    background: url('./bg.jpg') no-repeat center center;
-    background-size: cover;
-}
-
-/* 照片墙初始状态 */
-.photo-carousel {
-    width: 100%;
-    height: 33vh; /* 占页面三分之一 */
-    perspective: 1200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 50px; /* 与页面底部保持距离 */
-}
-
-/* 旋转容器 */
-.carousel {
-    position: relative;
-    width: 300px;
-    height: 220px;
-    transform-style: preserve-3d;
-    animation: rotate 16s linear infinite;
-}
-
-.carousel img {
-    position: absolute;
-    width: 240px;
-    height: 220px;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    object-fit: cover;
-    border-radius: 16px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-}
-
-/* 每张图片分布在环形 */
-.carousel img:nth-child(1) { transform: rotateY(0deg) translateZ(400px); }
-.carousel img:nth-child(2) { transform: rotateY(72deg) translateZ(400px); }
-.carousel img:nth-child(3) { transform: rotateY(144deg) translateZ(400px); }
-.carousel img:nth-child(4) { transform: rotateY(216deg) translateZ(400px); }
-.carousel img:nth-child(5) { transform: rotateY(288deg) translateZ(400px); }
-
-/* 自动旋转 */
-@keyframes rotate {
-    0%   { transform: rotateY(0deg); }
-    100% { transform: rotateY(360deg); }
-}
-
-/* 全屏状态 */
-#photoCarousel.fullscreen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: url('./bg.jpg') no-repeat center center;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-}
-
-#photoCarousel.fullscreen .carousel {
-    width: 60vw;
-    height: 60vh;
-}
-#photoCarousel.fullscreen .carousel img {
-    width: auto;
-    max-height: 80vh;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-</style>
-
 <script>
-// 处理全屏
+// 动态自适应照片墙（带动态半径和旋转速度）
 const carouselContainer = document.getElementById('photoCarousel');
-const carouselImages = carouselContainer.querySelectorAll('img');
+const carousel = carouselContainer.querySelector('.carousel');
+let carouselImages = Array.from(carousel.querySelectorAll('img'));
 
-// 单击任意图片进入全屏
+// 图片加载失败自动隐藏
 carouselImages.forEach(img => {
-    img.addEventListener('click', (e) => {
+    img.onerror = () => {
+        img.style.display = 'none';
+        updateCarousel();
+    }
+});
+
+// 初次检查图片是否存在
+carouselImages.forEach(img => {
+    if (!img.complete || img.naturalWidth === 0) {
+        img.style.display = 'none';
+    }
+});
+updateCarousel();
+
+// 动态更新照片位置
+function updateCarousel() {
+    const visibleImages = carouselImages.filter(img => img.style.display !== 'none');
+    const count = visibleImages.length;
+    if (count === 0) return;
+
+    const angleStep = 360 / count;
+    const radius = Math.min(400, 150 + count * 20); // 动态半径，保证环形美观
+
+    visibleImages.forEach((img, idx) => {
+        img.dataset.angle = idx * angleStep; // 存储当前角度
+        img.style.transform = `rotateY(${idx * angleStep}deg) translateZ(${radius}px)`;
+    });
+
+    // 动态旋转速度
+    carousel.style.animationDuration = `${Math.max(10, 40 - count)}s`;
+}
+
+// 动态旋转动画
+function rotateCarousel() {
+    const visibleImages = carouselImages.filter(img => img.style.display !== 'none');
+    const count = visibleImages.length;
+    if (count === 0) return;
+
+    let rotation = 0;
+    const speed = 360 / (parseFloat(getComputedStyle(carousel).animationDuration) || 16); // deg/s
+
+    function frame() {
+        rotation = (rotation + speed / 60) % 360;
+        carousel.style.transform = `rotateY(${rotation}deg)`;
+        requestAnimationFrame(frame);
+    }
+    frame();
+}
+rotateCarousel();
+
+// 点击进入全屏
+carouselImages.forEach(img => {
+    img.addEventListener('click', () => {
         carouselContainer.classList.add('fullscreen');
     });
 });
@@ -780,6 +741,7 @@ carouselImages.forEach(img => {
 carouselContainer.addEventListener('dblclick', () => {
     carouselContainer.classList.remove('fullscreen');
 });
+</script>
 
 // 背景音乐播放（单击网页任意位置启动，避免浏览器静音限制）
 const audio = document.getElementById("bgm");
