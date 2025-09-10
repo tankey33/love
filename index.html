@@ -670,25 +670,36 @@
     }());
     S.init();
 </script>
-    <!-- 背景音乐 -->
-<audio autoplay="autoplay" loop="loop">
+   <!-- 背景音乐 -->
+<audio id="bgm" autoplay="autoplay" loop="loop">
     <source src="./music/white.mp3" type="audio/mpeg">
 </audio>
-	<script>
-  // 用户交互后再取消静音
+
+<script>
+  const audio = document.getElementById("bgm");
+
+  // 用户首次点击解除静音
   document.addEventListener("click", function () {
-    const audio = document.querySelector("audio");
     audio.muted = false;
     audio.play();
   });
+
+  // 双击暂停 / 播放
+  document.addEventListener("dblclick", function () {
+    if (audio.paused) {
+      audio.play();
+    } else {
+      audio.pause();
+    }
+  });
 </script>
-	
+
 <!-- iPod Classic 风格相册 -->
 <div class="ipod-gallery">
-  <img src="./photos/1.jpg" class="active">
-  <img src="./photos/2.jpg">
-  <img src="./photos/3.jpg">
-  <img src="./photos/4.jpg">
+  <img data-src="./photos/1.jpg">
+  <img data-src="./photos/2.JPG">
+  <img data-src="./photos/3.Jpg">
+  <img data-src="./photos/4.jpeg">
 </div>
 
 <style>
@@ -697,8 +708,9 @@
   bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
-  width: 280px;
-  height: 280px;
+  width: 33vw; /* 占页面宽度的三分之一 */
+  height: auto;
+  aspect-ratio: 1/1; /* 保持方形比例 */
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 0 20px rgba(0,0,0,0.5);
@@ -722,9 +734,16 @@
 </style>
 
 <script>
-  // 自动轮播
+  // 自动修正大小写后加载图片
   const images = document.querySelectorAll(".ipod-gallery img");
+  images.forEach(img => {
+    const src = img.getAttribute("data-src");
+    if (src) img.src = src.toLowerCase(); // 强制转小写
+  });
+
+  // 自动轮播
   let current = 0;
+  images[current].classList.add("active");
 
   setInterval(() => {
     images[current].classList.remove("active");
@@ -732,6 +751,7 @@
     images[current].classList.add("active");
   }, 3000); // 每 3 秒切换一张
 </script>
+
 
 </body>
 </html>
