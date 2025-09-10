@@ -673,74 +673,114 @@
 </script>
 
 <script>
-// 动态自适应照片墙（带动态半径和旋转速度）
+<!-- 照片墙 HTML -->
+<div id="photoCarousel" class="photo-carousel">
+    <div class="carousel"></div>
+</div>
+
+<style>
+.photo-carousel {
+    width: 100%;
+    height: 33vh;
+    perspective: 1200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+.carousel {
+    position: relative;
+    width: 300px;
+    height: 220px;
+    transform-style: preserve-3d;
+}
+.carousel img {
+    position: absolute;
+    width: 240px;
+    height: 220px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    transition: transform 0.3s;
+}
+#photoCarousel.fullscreen {
+    position: fixed;
+    top:0; left:0;
+    width:100vw; height:100vh;
+    background: url('./bg.jpg') no-repeat center center;
+    background-size: cover;
+    display:flex; justify-content:center; align-items:center;
+    z-index:9999;
+}
+#photoCarousel.fullscreen .carousel {
+    width:60vw; height:60vh;
+}
+#photoCarousel.fullscreen .carousel img {
+    width:auto;
+    max-height:80vh;
+    left:50%; top:50%;
+    transform: translate(-50%,-50%);
+}
+</style>
+
+<script>
 const carouselContainer = document.getElementById('photoCarousel');
 const carousel = carouselContainer.querySelector('.carousel');
-let carouselImages = Array.from(carousel.querySelectorAll('img'));
 
-// 图片加载失败自动隐藏
-carouselImages.forEach(img => {
-    img.onerror = () => {
-        img.style.display = 'none';
-        updateCarousel();
-    }
-});
+const totalPhotos = 20; // 你照片数量
+let carouselImages = [];
 
-// 初次检查图片是否存在
-carouselImages.forEach(img => {
-    if (!img.complete || img.naturalWidth === 0) {
-        img.style.display = 'none';
-    }
-});
-updateCarousel();
+// 自动生成 <img> 标签
+for(let i=1;i<=totalPhotos;i++){
+    const img = document.createElement('img');
+    img.src = `./photos/${i}.png`;
+    img.alt = i;
+    img.onerror = () => img.style.display='none';
+    carousel.appendChild(img);
+    carouselImages.push(img);
+}
 
-// 动态更新照片位置
+// 动态计算位置
 function updateCarousel() {
     const visibleImages = carouselImages.filter(img => img.style.display !== 'none');
     const count = visibleImages.length;
-    if (count === 0) return;
+    if(count === 0) return;
 
     const angleStep = 360 / count;
-    const radius = Math.min(400, 150 + count * 20); // 动态半径，保证环形美观
+    const radius = Math.min(400, 150 + count*20);
 
-    visibleImages.forEach((img, idx) => {
-        img.dataset.angle = idx * angleStep; // 存储当前角度
-        img.style.transform = `rotateY(${idx * angleStep}deg) translateZ(${radius}px)`;
+    visibleImages.forEach((img, idx)=>{
+        img.dataset.angle = idx*angleStep;
+        img.style.transform = `rotateY(${idx*angleStep}deg) translateZ(${radius}px)`;
     });
-
-    // 动态旋转速度
-    carousel.style.animationDuration = `${Math.max(10, 40 - count)}s`;
 }
+updateCarousel();
 
-// 动态旋转动画
-function rotateCarousel() {
-    const visibleImages = carouselImages.filter(img => img.style.display !== 'none');
-    const count = visibleImages.length;
-    if (count === 0) return;
-
-    let rotation = 0;
-    const speed = 360 / (parseFloat(getComputedStyle(carousel).animationDuration) || 16); // deg/s
-
-    function frame() {
-        rotation = (rotation + speed / 60) % 360;
+// 动态旋转
+let rotation = 0;
+let isPaused = false;
+const speed = 0.2; // 每帧旋转角度
+function animate() {
+    if(!isPaused) {
+        rotation = (rotation + speed) % 360;
         carousel.style.transform = `rotateY(${rotation}deg)`;
-        requestAnimationFrame(frame);
     }
-    frame();
+    requestAnimationFrame(animate);
 }
-rotateCarousel();
+animate();
+
+// 鼠标悬停暂停旋转
+carouselContainer.addEventListener('mouseenter',()=>{ isPaused=true; });
+carouselContainer.addEventListener('mouseleave',()=>{ isPaused=false; });
 
 // 点击进入全屏
-carouselImages.forEach(img => {
-    img.addEventListener('click', () => {
-        carouselContainer.classList.add('fullscreen');
-    });
+carouselImages.forEach(img=>{
+    img.addEventListener('click',()=>{ carouselContainer.classList.add('fullscreen'); });
 });
-
-// 双击退出全屏
-carouselContainer.addEventListener('dblclick', () => {
-    carouselContainer.classList.remove('fullscreen');
-});
+carouselContainer.addEventListener('dblclick',()=>{ carouselContainer.classList.remove('fullscreen'); });
 </script>
 
 // 背景音乐播放（单击网页任意位置启动，避免浏览器静音限制）
