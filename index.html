@@ -682,5 +682,55 @@
     audio.play();
   });
 </script>
+	<!-- iPod Classic 风格相册 -->
+<div class="ipod-gallery">
+  <img src="./photos/1.jpg" class="active">
+  <img src="./photos/2.jpg">
+  <img src="./photos/3.jpg">
+  <img src="./photos/4.jpg">
+</div>
+
+<style>
+.ipod-gallery {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 280px;
+  height: 280px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  background: #000;
+}
+
+.ipod-gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.ipod-gallery img.active {
+  opacity: 1;
+}
+</style>
+
+<script>
+  // 自动轮播
+  const images = document.querySelectorAll(".ipod-gallery img");
+  let current = 0;
+
+  setInterval(() => {
+    images[current].classList.remove("active");
+    current = (current + 1) % images.length;
+    images[current].classList.add("active");
+  }, 3000); // 每 3 秒切换一张
+</script>
+
 </body>
 </html>
