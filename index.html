@@ -672,13 +672,9 @@
 </script>
 
 <!-- iPod Classic 风格相册（放在主页面底部） -->
-<!-- 照片墙 3D Carousel -->
-<div class="photo-carousel">
-    <div class="carousel">
-        <img src="./photos/1.png" alt="1">
-        <img src="./photos/2.png" alt="2">
-        <img src="./photos/3.png" alt="3">
-        <img src="./photos/4.png" alt="4">
+<div class="photo-carousel" id="photo-carousel">
+    <div class="carousel" id="carousel">
+        <!-- 图片由 JS 动态添加 -->
     </div>
 </div>
 
@@ -690,8 +686,11 @@
     perspective: 1200px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end; /* 保证在底部 */
     margin-top: 50px;
+    background: url('./bg.jpg') no-repeat center center; /* 保留背景 */
+    background-size: cover;
+    padding-bottom: 20px; /* 底部距离，保证照片完整显示 */
 }
 
 /* 旋转容器 */
@@ -715,19 +714,40 @@
     box-shadow: 0 8px 16px rgba(0,0,0,0.3);
 }
 
-/* 每张图片分布在环形 */
-.carousel img:nth-child(1) { transform: rotateY(0deg) translateZ(400px); }
-.carousel img:nth-child(2) { transform: rotateY(72deg) translateZ(400px); }
-.carousel img:nth-child(3) { transform: rotateY(144deg) translateZ(400px); }
-.carousel img:nth-child(4) { transform: rotateY(216deg) translateZ(400px); }
-.carousel img:nth-child(5) { transform: rotateY(288deg) translateZ(400px); }
-
 /* 自动旋转 */
 @keyframes rotate {
     0%   { transform: rotateY(0deg); }
     100% { transform: rotateY(360deg); }
 }
 </style>
+
+<script>
+// 图片数组，可自由添加或删除
+const photos = [
+    './photos/1.png',
+    './photos/2.png',
+    './photos/3.png',
+    './photos/4.png',
+    './photos/5.png'
+];
+
+const carousel = document.getElementById('carousel');
+const numPhotos = photos.length;
+
+if (numPhotos > 0) {
+    photos.forEach((src, index) => {
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = index + 1;
+        // 根据图片数量自动计算角度
+        const angle = (360 / numPhotos) * index;
+        img.style.transform = `rotateY(${angle}deg) translateZ(400px)`;
+        carousel.appendChild(img);
+    });
+} else {
+    document.getElementById('photo-carousel').style.display = 'none';
+}
+</script>
 	
    <!-- 背景音乐 -->
 <audio id="bgm" autoplay="autoplay" loop="loop">
