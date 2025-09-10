@@ -53,23 +53,24 @@ a { color: #ebf7f4; }
 }
 
 /* 照片墙 */
+/* 照片墙横向流动 */
 .photo-carousel {
     position: fixed;
-    bottom: 20px; /* 在页面下方 */
+    bottom: 180px; /* 距离页面底部 */
     left: 0;
     width: 100%;
+    height: 160px;
     overflow: hidden;
-    height: 160px; /* 照片高度 */
     z-index: 999;
-    background: rgba(0,0,0,0.2); /* 可选背景 */
     display: flex;
     align-items: center;
+    background: rgba(0,0,0,0.0); /* 可选 */
 }
 
 .carousel {
     display: flex;
     gap: 20px;
-    animation: scroll 20s linear infinite;
+    animation: scroll-left 20s linear infinite;
 }
 
 .carousel img {
@@ -83,9 +84,9 @@ a { color: #ebf7f4; }
     transform: scale(1.1);
 }
 
-@keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+@keyframes scroll-left {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
 }
 </style>
 </head>
@@ -673,30 +674,24 @@ show_date_time();
 window.onload = function() {
     const photos = ['./photos/1.png','./photos/2.png','./photos/3.png','./photos/4.png'];
     const carousel = document.getElementById('carousel');
+
     if (photos.length === 0) {
         document.getElementById('photo-carousel').style.display = 'none';
         return;
     }
-    const fragment = document.createDocumentFragment();
-    const angleStep = 360 / photos.length;
-    photos.forEach((src, i) => {
-        const img = document.createElement('img');
-        img.src = src;
-        img.alt = i+1;
-        img.style.transform = `rotateY(${angleStep*i}deg) translateZ(400px)`;
-        fragment.appendChild(img);
-    });
-    carousel.appendChild(fragment);
 
-    // Canvas自适应
-    const canvas = document.querySelector('.canvas');
-    const ctx = canvas.getContext('2d');
-    function resizeCanvas() {
-        canvas.width = window.innerWidth - 100;
-        canvas.height = window.innerHeight - 30;
+    const fragment = document.createDocumentFragment();
+
+    // 生成两遍照片，实现无缝循环
+    for(let k=0; k<2; k++){
+        photos.forEach(src => {
+            const img = document.createElement('img');
+            img.src = src;
+            fragment.appendChild(img);
+        });
     }
-    window.addEventListener('resize', resizeCanvas);
-    resizeCanvas();
+
+    carousel.appendChild(fragment);
 }
 
 // 背景音乐控制
