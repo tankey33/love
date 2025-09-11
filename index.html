@@ -1,137 +1,137 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html>
 <head>
-<meta charset="UTF-8">
-<title>2025 - Tankey ❤️ Monody</title>
-<link rel="icon" href="./love.png">
-<link rel="shortcut icon" href="./love.png">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>2025 - Tankey ❤️ Monody</title>
+    <link rel="icon" href="./love.png">
+    <link rel="shortcut icon" href="./love.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <!--<meta itemprop="image" content="./images/fenxiang.png" />-->
+    <style>
+        html {
+            height: 100%;
+        }
 
-<style>
-html, body {
-    height: 100%;
-    margin: 0;
-    font-family: "Helvetica Neue", "Microsoft Yahei", sans-serif;
-    color: #CFEBE4;
-    font-size: 18px;
-    line-height: 2;
-    letter-spacing: 1.2px;
-    background: linear-gradient(to bottom, rgb(203, 235, 219) 0%, rgb(55, 148, 192) 120%);
-}
+        body {
+            font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
+            background: #79a8ae;
+            color: #CFEBE4;
+            font-size: 18px;
+            line-height: 2;
+            letter-spacing: 1.2px;
+            margin: 0;
+        }
 
-a { color: #ebf7f4; }
+        a {
+            color: #ebf7f4;
+        }
 
-/* logo头像 */
-#logo {
-    width: 128px;
-    border-radius: 200px;
-    box-shadow: 0 0 40px rgba(63, 81, 181, 0.72);
-    border: 3px solid #00a0ff;
-    display: block;
-    margin: 20px auto;
-    transition: all 1s;
-}
-#logo:hover {
-    box-shadow: 0 0 19px #fff;
-    transform: rotate(360deg);
-}
+        .body--ready {
+            background: -webkit-linear-gradient(top, rgb(203, 235, 219) 0%, rgb(55, 148, 192) 120%);
+            background: -moz-linear-gradient(top, rgb(203, 235, 219) 0%, rgb(55, 148, 192) 120%);
+            background: -o-linear-gradient(top, rgb(203, 235, 219) 0%, rgb(55, 148, 192) 120%);
+            background: -ms-linear-gradient(top, rgb(203, 235, 219) 0%, rgb(55, 148, 192) 120%);
+            background: linear-gradient(top, rgb(203, 235, 219) 0%, rgb(55, 148, 192) 120%);
+        }
 
-/* canvas */
-.canvas {
-    display: block;
-    margin: 0 auto;
-}
+        .text {
+            position: fixed;
+            bottom: 100px;
+            text-align: center;
+            width: 100%;
+        }
 
-/* 文字 */
-.text {
-    position: fixed;
-    bottom: 80px;
-    text-align: center;
-    width: 100%;
-    font-weight: bold;
-    color: #ed3073;
-}
+        .canvas {
+            margin: 0 auto;
+            display: block;
+        }
 
-/* 照片墙 */
-/* 照片墙横向流动 */
-.photo-carousel {
-    position: fixed;
-    bottom: 180px; /* 距离页面底部 */
-    left: 0;
-    width: 100%;
-    height: 160px;
-    overflow: hidden;
-    z-index: 999;
-    display: flex;
-    align-items: center;
-    background: rgba(0,0,0,0.0); /* 可选 */
-}
+        img#logo {
+            width: 128px;
+            background-size: cover;
+            border-radius: 200px;
+            box-shadow: 0px 0px 40px rgba(63, 81, 181, 0.72);
+            border: 3px solid #00a0ff;
+            opacity: 1;
+            margin: 0 auto;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            transition: all 1.0s;
+        }
 
-.carousel {
-    display: flex;
-    gap: 20px;
-    animation: scroll-left 20s linear infinite;
-}
+        #logo:hover {
+            box-shadow: 0 0 10px #fff;
+            -webkit-box-shadow: 0 0 19px #fff;
+            transform: rotate(360deg);
+            -ms-transform: rotate(360deg); /* IE 9 */
+            -moz-transform: rotate(360deg); /* Firefox */
+            -webkit-transform: rotate(360deg); /* Safari 和 Chrome */
+            -o-transform: rotate(360deg); /* Opera */
+            filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+        }
 
-.carousel img {
-    height: 140px;
-    border-radius: 16px;
-    flex-shrink: 0;
-    transition: transform 0.3s;
-}
+        .cs {
+            width: 100%;
+            height: 100%;
+            margin: 0 auto;
+            position: absolute;
+            text-align: center;
+        }
 
-.carousel img:hover {
-    transform: scale(1.1);
-}
+        .text {
+            position: fixed;
+            bottom: 80px;
+            text-align: center;
+            width: 100%;
+            font-weight: bold;
+        }
 
-@keyframes scroll-left {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(100%); }
-}
-</style>
+        .text-right {
+            position: fixed;
+            bottom: 50px;
+            text-align: right;
+            width: 100%;
+            font-weight: bold;
+        }
+    </style>
+
+<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="Tankey" type="application/atom+xml">
 </head>
 
 <body>
-<!-- 头像 -->
+<!--更改为你女朋友的头像-->
 <div class="cs">
     <img src="./baby.png" id="logo">
 </div>
-
-<!-- Canvas -->
-<canvas class="canvas"></canvas>
-
-<!-- 文字 -->
-<p class="text">
+<canvas class="canvas" width="1820" height="905"></canvas>
+<p class="text" style="color: #ed3073;">
     We fell in love
     <br/>
     <span id="span_dt_dt"></span>
 </p>
+<script language="javascript">
+    function show_date_time() {
+        window.setTimeout("show_date_time()", 1000);
+        BirthDay = new Date("12/29/2017 18:20:00");//这个日期是可以修改的
+        today = new Date();
+        timeold = (today.getTime() - BirthDay.getTime());
+        sectimeold = timeold / 1000
+        secondsold = Math.floor(sectimeold);
+        msPerDay = 24 * 60 * 60 * 1000
+        e_daysold = timeold / msPerDay
+        daysold = Math.floor(e_daysold);
+        e_hrsold = (e_daysold - daysold) * 24;
+        hrsold = Math.floor(e_hrsold);
+        e_minsold = (e_hrsold - hrsold) * 60;
+        minsold = Math.floor((e_hrsold - hrsold) * 60);
+        seconds = Math.floor((e_minsold - minsold) * 60);
+        span_dt_dt.innerHTML = daysold + "天" + hrsold + "小时" + minsold + "分" + seconds + "秒";
+    }
 
-<!-- iPod风格照片墙 -->
-<div class="photo-carousel" id="photo-carousel">
-    <div class="carousel" id="carousel"></div>
-</div>
-
-<!-- 背景音乐 -->
-<audio id="bgm" autoplay loop muted>
-    <source src="./music/white.mp3" type="audio/mpeg">
-</audio>
-
+    show_date_time();
+</script>
 <script>
-// 计时器
-function show_date_time() {
-    const BirthDay = new Date("12/29/2017 18:20:00");
-    const now = new Date();
-    const diff = now.getTime() - BirthDay.getTime();
-    const days = Math.floor(diff / (1000*60*60*24));
-    const hrs = Math.floor((diff / (1000*60*60)) % 24);
-    const mins = Math.floor((diff / (1000*60)) % 60);
-    const secs = Math.floor((diff / 1000) % 60);
-    document.getElementById("span_dt_dt").innerHTML = `${days}天${hrs}小时${mins}分${secs}秒`;
-    setTimeout(show_date_time, 1000);
-}
-show_date_time();
-	
     var S = {
         init: function () {
             S.Drawing.init('.canvas');
@@ -576,7 +576,7 @@ show_date_time();
             var a = S.Drawing.getArea();
 
             cx = a.w / 2 - width / 2;
-            cy = a.h / 2 - height / 2-180;
+            cy = a.h / 2 - height / 2;
         }
 
         return {
@@ -669,74 +669,39 @@ show_date_time();
         };
     }());
     S.init();
-	
-// 照片墙动态生成
-window.onload = function() {
-    const photos = ['./photos/1.png','./photos/2.png','./photos/3.png','./photos/4.png'];
-    const carousel = document.getElementById('carousel');
-
-    if (photos.length === 0) {
-        document.getElementById('photo-carousel').style.display = 'none';
-        return;
-    }
-
-    const fragment = document.createDocumentFragment();
-
-    // 生成两遍照片，实现无缝循环
-    for(let k=0; k<2; k++){
-        photos.forEach(src => {
-            const img = document.createElement('img');
-            img.src = src;
-            fragment.appendChild(img);
-        });
-    }
-
-    carousel.appendChild(fragment);
-}
-
-// 背景音乐控制
-const audio = document.getElementById("bgm");
-document.addEventListener("click", ()=>{ audio.muted = false; audio.play(); });
-document.addEventListener("dblclick", ()=>{ audio.paused ? audio.play() : audio.pause(); });
 </script>
-	<style>
-/* 添加隐藏动画 */
-.photo-carousel.hidden {
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.5s ease;
-}
-</style>
+<!-- 背景音乐 -->
+<audio id="bgm" autoplay loop>
+    <source src="./music/white.mp3" type="audio/mpeg">
+</audio>
 
 <script>
-// 检测照片墙与文字重叠
-function checkOverlap() {
-    const photoCarousel = document.getElementById('photo-carousel');
-    const text = document.querySelector('.text');
+    const bgm = document.getElementById('bgm');
+    let clickTimer = null; // 用于区分单击和双击
 
-    if (!photoCarousel || !text) return;
-
-    const photoRect = photoCarousel.getBoundingClientRect();
-    const textRect = text.getBoundingClientRect();
-
-    // 判断是否有垂直重叠
-    const overlap = !(photoRect.bottom < textRect.top || photoRect.top > textRect.bottom);
-
-    if (overlap) {
-        photoCarousel.classList.add('hidden');
-    } else {
-        photoCarousel.classList.remove('hidden');
-    }
-}
-
-// 初始检测 + 滚动时检测 + 窗口尺寸变化时检测
-window.addEventListener('load', checkOverlap);
-window.addEventListener('resize', checkOverlap);
-window.addEventListener('scroll', checkOverlap);
-
-// 也可用 setInterval 定时检查，保证动画流动时不会卡住
-setInterval(checkOverlap, 200);
+    document.body.addEventListener('click', function () {
+        if (clickTimer) { // 检测到第二次点击 -> 双击
+            clearTimeout(clickTimer);
+            clickTimer = null;
+            // 双击控制播放
+            if (bgm.paused) {
+                bgm.play();
+            }
+        } else {
+            // 第一次点击，先启动定时器，如果300ms内没第二次点击 -> 当作单击
+            clickTimer = setTimeout(() => {
+                clickTimer = null;
+                // 单击控制暂停
+                if (!bgm.paused) {
+                    bgm.pause();
+                }
+            }, 300); // 300ms 内双击会被识别，否则执行单击逻辑
+        }
+    });
 </script>
+
+</audio>
+
 
 </body>
 </html>
