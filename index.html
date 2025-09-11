@@ -699,5 +699,44 @@ const audio = document.getElementById("bgm");
 document.addEventListener("click", ()=>{ audio.muted = false; audio.play(); });
 document.addEventListener("dblclick", ()=>{ audio.paused ? audio.play() : audio.pause(); });
 </script>
+	<style>
+/* 添加隐藏动画 */
+.photo-carousel.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+</style>
+
+<script>
+// 检测照片墙与文字重叠
+function checkOverlap() {
+    const photoCarousel = document.getElementById('photo-carousel');
+    const text = document.querySelector('.text');
+
+    if (!photoCarousel || !text) return;
+
+    const photoRect = photoCarousel.getBoundingClientRect();
+    const textRect = text.getBoundingClientRect();
+
+    // 判断是否有垂直重叠
+    const overlap = !(photoRect.bottom < textRect.top || photoRect.top > textRect.bottom);
+
+    if (overlap) {
+        photoCarousel.classList.add('hidden');
+    } else {
+        photoCarousel.classList.remove('hidden');
+    }
+}
+
+// 初始检测 + 滚动时检测 + 窗口尺寸变化时检测
+window.addEventListener('load', checkOverlap);
+window.addEventListener('resize', checkOverlap);
+window.addEventListener('scroll', checkOverlap);
+
+// 也可用 setInterval 定时检查，保证动画流动时不会卡住
+setInterval(checkOverlap, 200);
+</script>
+
 </body>
 </html>
