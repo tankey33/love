@@ -101,9 +101,44 @@
 
 <body>
 <!--更改为你女朋友的头像-->
+<!-- 头像区域 -->
 <div class="cs">
-    <img src="./baby.png" id="logo">
+    <img src="./baby.png" id="logo" title="进入回忆">
 </div>
+
+<script>
+    // 鼠标悬停时显示提示文字
+    const logo = document.getElementById('logo');
+
+    // 如果想用浮动提示而不是title，可以这样动态显示
+    logo.addEventListener('mouseenter', function() {
+        const hint = document.createElement('div');
+        hint.id = 'hint';
+        hint.innerText = '进入回忆';
+        hint.style.position = 'absolute';
+        hint.style.top = (logo.getBoundingClientRect().bottom + 10) + 'px';
+        hint.style.left = '50%';
+        hint.style.transform = 'translateX(-50%)';
+        hint.style.background = 'rgba(0,0,0,0.7)';
+        hint.style.color = '#fff';
+        hint.style.padding = '5px 12px';
+        hint.style.borderRadius = '8px';
+        hint.style.fontSize = '14px';
+        hint.style.zIndex = '999';
+        document.body.appendChild(hint);
+    });
+
+    logo.addEventListener('mouseleave', function() {
+        const hint = document.getElementById('hint');
+        if (hint) hint.remove();
+    });
+
+    // 点击头像跳转到 photo.html
+    logo.addEventListener('click', function() {
+        window.location.href = 'photo.html';
+    });
+</script>
+
 <canvas class="canvas" width="1820" height="905"></canvas>
 <p class="text" style="color: #ed3073;">
     We fell in love
@@ -674,6 +709,7 @@
 <audio id="bgm" autoplay loop>
     <source src="./music/white.mp3" type="audio/mpeg">
 </audio>
+
 <script>
     const bgm = document.getElementById('bgm');
     let clickTimer = null; // 用于区分单击和双击
@@ -698,5 +734,9 @@
         }
     });
 </script>
+
+</audio>
+
+
 </body>
 </html>
