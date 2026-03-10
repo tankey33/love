@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Photo Detail</title>
+  <link rel="icon" href="/love/love.png">
+  <link rel="shortcut icon" href="/love/love.png">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <style>
+    :root {
+      --panel-bg: rgba(28, 30, 34, 0.68);
+      --panel-border: rgba(255,255,255,0.10);
+      --text-main: rgba(255,255,255,0.96);
+      --text-soft: rgba(255,255,255,0.62);
+      --shadow-soft: 0 16px 48px rgba(0, 0, 0, 0.18);
+      --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.16);
+    }
+    body.detail-mode {
+      background: radial-gradient(circle at top, rgba(255,255,255,0.14) 0%, rgba(255,255,255,0.03) 22%, transparent 45%), linear-gradient(180deg, #3a3d42 0%, #25282d 22%, #1a1d21 100%);
+    }
+    #main.detail-shell {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 360px;
+      gap: 1rem;
+      min-height: calc(100vh - 5.5rem);
+      padding: 5.5rem 1.25rem 1.25rem;
+      box-sizing: border-box;
+    }
+    .detail-stage, .detail-info {
+      background: var(--panel-bg);
+      border: 1px solid var(--panel-border);
+      backdrop-filter: blur(20px) saturate(140%);
+      -webkit-backdrop-filter: blur(20px) saturate(140%);
+      border-radius: 1.35rem;
+      box-shadow: var(--shadow-soft);
+    }
+    .detail-stage {
+      position: relative; display:flex; align-items:center; justify-content:center; overflow:hidden;
+    }
+    .detail-stage img { width:100%; height:100%; object-fit:contain; padding:1.1rem; box-sizing:border-box; }
+    .detail-topbar { position:absolute; top:1rem; left:1rem; right:1rem; display:flex; justify-content:space-between; align-items:center; gap:1rem; }
+    .glass-btn, .detail-counter {
+      border:1px solid rgba(255,255,255,0.10); background:rgba(34,36,40,0.46); color:#fff; border-radius:999px; backdrop-filter:blur(16px);
+    }
+    .glass-btn { padding:0.55rem 0.9rem; text-decoration:none; font-size:0.82rem; letter-spacing:0.06em; }
+    .detail-counter { padding:0.4rem 0.78rem; font-size:0.78rem; letter-spacing:0.12em; }
+    .detail-nav { position:absolute; top:50%; transform:translateY(-50%); width:2.9rem; height:2.9rem; border:1px solid rgba(255,255,255,0.10); border-radius:999px; background:rgba(34,36,40,0.55); color:white; font-size:1.1rem; cursor:pointer; display:flex; align-items:center; justify-content:center; text-decoration:none; }
+    .detail-nav.prev { left:1rem; }
+    .detail-nav.next { right:1rem; }
+    .detail-info { padding:1.25rem; overflow:auto; }
+    .detail-kicker { font-size:0.72rem; letter-spacing:0.18em; text-transform:uppercase; color:rgba(255,255,255,0.42); margin-bottom:0.9rem; }
+    .detail-info h1 { font-size:1.08rem; letter-spacing:0.04em; text-transform:none; margin-bottom:0.4rem; }
+    .detail-info p { color:var(--text-soft); line-height:1.7; margin-bottom:1rem; }
+    .meta-group + .meta-group { margin-top:1.15rem; }
+    .meta-label { font-size:0.72rem; letter-spacing:0.16em; text-transform:uppercase; color:rgba(255,255,255,0.5); margin-bottom:0.55rem; }
+    .meta-grid { display:grid; gap:0.55rem; }
+    .meta-item { display:flex; justify-content:space-between; gap:1rem; padding:0.78rem 0.92rem; background:linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03)); border:1px solid rgba(255,255,255,0.06); border-radius:1rem; box-shadow: inset 0 1px 0 rgba(255,255,255,0.04), var(--shadow-card); }
+    .meta-item span:first-child { color: rgba(255,255,255,0.58); }
+    .meta-item span:last-child { color: var(--text-main); text-align:right; }
+    @media screen and (max-width: 900px) { #main.detail-shell { grid-template-columns:1fr; } }
+    @media screen and (max-width: 736px) {
+      #header { padding: 1rem 1.2rem; height:auto; line-height:1.4; }
+      #header h1 { font-size:0.95rem; letter-spacing:0.08em; max-width:calc(100% - 3rem); }
+      #header nav { right:1rem; }
+      #main.detail-shell { padding:4.8rem 0.75rem 0.75rem; }
+      .detail-info { padding:1rem; }
+      .detail-nav { width:2.4rem; height:2.4rem; }
+    }
+  </style>
+</head>
+<body class="is-preload detail-mode">
+  <div id="wrapper">
+    <header id="header">
+      <h1><a href="photo.html"><strong>Multiverse</strong> by Tankey</a></h1>
+      <nav><ul><li><a href="photo.html" class="icon solid fa-th">Gallery</a></li></ul></nav>
+    </header>
+    <div id="main" class="detail-shell">
+      <section class="detail-stage">
+        <div class="detail-topbar">
+          <a class="glass-btn" href="photo.html">← Back</a>
+          <div class="detail-counter" id="detail-counter">1 / 12</div>
+        </div>
+        <a class="detail-nav prev" id="prev-link" href="#" aria-label="Previous">‹</a>
+        <img id="detail-image" src="images/fulls/01.jpg" alt="Photo detail" />
+        <a class="detail-nav next" id="next-link" href="#" aria-label="Next">›</a>
+      </section>
+      <aside class="detail-info">
+        <div class="detail-kicker">Memories</div>
+        <h1 id="detail-title">Photo</h1>
+        <p id="detail-description">Single photo detail page.</p>
+        <div class="meta-group">
+          <div class="meta-label">Basic</div>
+          <div class="meta-grid">
+            <div class="meta-item"><span>File</span><span id="meta-file">-</span></div>
+            <div class="meta-item"><span>Resolution</span><span id="meta-resolution">-</span></div>
+            <div class="meta-item"><span>Size</span><span id="meta-size">-</span></div>
+          </div>
+        </div>
+        <div class="meta-group">
+          <div class="meta-label">Capture</div>
+          <div class="meta-grid">
+            <div class="meta-item"><span>Device</span><span id="meta-device">Unavailable</span></div>
+            <div class="meta-item"><span>Lens / EXIF</span><span id="meta-exif">Not embedded</span></div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+  <script>
+    const photos = [
+      { id:'01', file:'01.jpg', full:'images/fulls/01.jpg', width:6000, height:4000, size:2337002, title:'Magna feugiat lorem', description:'Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.' },
+      { id:'02', file:'02.jpg', full:'images/fulls/02.jpg', width:4096, height:3072, size:1108767, title:'Nisl adipiscing', description:'Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.' },
+      { id:'03', file:'03.jpg', full:'images/fulls/03.jpg', width:4096, height:3072, size:1152455, title:'Tempus aliquam veroeros', description:'Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.' },
+      { id:'04', file:'04.jpg', full:'images/fulls/04.jpg', width:4096, height:3072, size:1034990, title:'Aliquam ipsum sed dolore', description:'Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.' },
+      { id:'05', file:'05.jpg', full:'images/fulls/05.jpg', width:3830, height:2873, size:1109075, title:'Cursis aliquam nisl', description:'Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.' },
+      { id:'06', file:'06.jpg', full:'images/fulls/06.jpg', width:3072, height:4096, size:1514277, title:'Sed consequat phasellus', description:'Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.' },
+      { id:'07', file:'07.jpg', full:'images/fulls/07.jpg', width:1024, height:583, size:40195, title:'Mauris id tellus arcu', description:'Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.' },
+      { id:'08', file:'08.jpg', full:'images/fulls/08.jpg', width:1024, height:583, size:37885, title:'Nunc vehicula id nulla', description:'Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.' },
+      { id:'09', file:'09.jpg', full:'images/fulls/09.jpg', width:1024, height:683, size:46962, title:'Neque et faucibus viverra', description:'Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.' },
+      { id:'10', file:'10.jpg', full:'images/fulls/10.jpg', width:1024, height:583, size:41147, title:'Mattis ante fermentum', description:'Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.' },
+      { id:'11', file:'11.jpg', full:'images/fulls/11.jpg', width:1024, height:583, size:42607, title:'Sed ac elementum arcu', description:'Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.' },
+      { id:'12', file:'12.jpg', full:'images/fulls/12.jpg', width:1024, height:583, size:39947, title:'Vehicula id nulla dignissim', description:'Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.' }
+    ];
+    const q = new URLSearchParams(location.search).get('photo') || '01';
+    const index = Math.max(0, photos.findIndex(p => p.id === q));
+    const p = photos[index];
+    const prettySize = (bytes) => { const units=['B','KB','MB','GB']; let n=bytes,i=0; while(n>=1024&&i<units.length-1){n/=1024;i++;} return `${n.toFixed(i===0?0:1)} ${units[i]}`; };
+    document.title = `${p.title} · Tankey ❤️ Monody`;
+    document.getElementById('detail-image').src = p.full;
+    document.getElementById('detail-image').alt = p.title;
+    document.getElementById('detail-title').textContent = p.title;
+    document.getElementById('detail-description').textContent = p.description;
+    document.getElementById('detail-counter').textContent = `${index + 1} / ${photos.length}`;
+    document.getElementById('meta-file').textContent = p.file;
+    document.getElementById('meta-resolution').textContent = `${p.width} × ${p.height}`;
+    document.getElementById('meta-size').textContent = prettySize(p.size);
+    document.getElementById('meta-device').textContent = p.width >= 3000 ? 'High resolution image' : 'Web image';
+    document.getElementById('meta-exif').textContent = 'No embedded EXIF in current source files';
+    const prev = photos[(index - 1 + photos.length) % photos.length];
+    const next = photos[(index + 1) % photos.length];
+    document.getElementById('prev-link').href = `photo-detail.html?photo=${prev.id}`;
+    document.getElementById('next-link').href = `photo-detail.html?photo=${next.id}`;
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') location.href = `photo-detail.html?photo=${prev.id}`;
+      if (e.key === 'ArrowRight') location.href = `photo-detail.html?photo=${next.id}`;
+    });
+  </script>
+</body>
+</html>

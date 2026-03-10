@@ -8,240 +8,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<style>
-			:root {
-				--panel-bg: rgba(28, 30, 34, 0.68);
-				--panel-border: rgba(255,255,255,0.10);
-				--text-main: rgba(255,255,255,0.96);
-				--text-soft: rgba(255,255,255,0.62);
-				--chip-bg: rgba(255,255,255,0.08);
-				--shadow-soft: 0 16px 48px rgba(0, 0, 0, 0.18);
-				--shadow-card: 0 10px 30px rgba(0, 0, 0, 0.16);
-			}
-
-			body.viewer-mode {
-				background:
-					radial-gradient(circle at top, rgba(255,255,255,0.14) 0%, rgba(255,255,255,0.03) 22%, transparent 45%),
-					linear-gradient(180deg, #3a3d42 0%, #25282d 22%, #1a1d21 100%);
-			}
-
-			#main.gallery-shell {
-				display: grid;
-				grid-template-columns: minmax(0, 1fr) 360px;
-				grid-template-rows: minmax(0, 1fr) auto;
-				gap: 1rem;
-				height: calc(100vh - 5.5rem);
-				padding: 5.5rem 1.25rem 1.25rem;
-				box-sizing: border-box;
-			}
-
-			.viewer-stage,
-			.viewer-info,
-			.viewer-strip {
-				background: var(--panel-bg);
-				border: 1px solid var(--panel-border);
-				backdrop-filter: blur(20px) saturate(140%);
-				-webkit-backdrop-filter: blur(20px) saturate(140%);
-				border-radius: 1.35rem;
-				box-shadow: var(--shadow-soft);
-			}
-
-			.viewer-stage {
-				position: relative;
-				overflow: hidden;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				min-height: 0;
-			}
-
-			.viewer-stage img {
-				width: 100%;
-				height: 100%;
-				object-fit: contain;
-				user-select: none;
-				padding: 1.1rem;
-				box-sizing: border-box;
-				opacity: 1;
-				transition: opacity 0.24s ease, transform 0.32s ease;
-			}
-
-			.viewer-stage img.is-loading {
-				opacity: 0.28;
-				transform: scale(0.992);
-			}
-
-			.viewer-nav {
-				position: absolute;
-				top: 50%;
-				transform: translateY(-50%);
-				width: 2.9rem;
-				height: 2.9rem;
-				border: 1px solid rgba(255,255,255,0.10);
-				border-radius: 999px;
-				background: rgba(34, 36, 40, 0.55);
-				color: white;
-				font-size: 1.1rem;
-				cursor: pointer;
-				z-index: 2;
-				backdrop-filter: blur(16px);
-				transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
-			}
-
-			.viewer-nav:hover {
-				background: rgba(48, 50, 56, 0.74);
-				border-color: rgba(255,255,255,0.16);
-				transform: translateY(-50%) scale(1.03);
-			}
-			.viewer-nav.prev { left: 1rem; }
-			.viewer-nav.next { right: 1rem; }
-
-			.viewer-counter {
-				position: absolute;
-				top: 1rem;
-				right: 1rem;
-				padding: 0.4rem 0.78rem;
-				border-radius: 999px;
-				background: rgba(34, 36, 40, 0.46);
-				border: 1px solid rgba(255,255,255,0.10);
-				color: rgba(255,255,255,0.92);
-				font-size: 0.78rem;
-				letter-spacing: 0.12em;
-				backdrop-filter: blur(16px);
-			}
-
-			.viewer-info {
-				padding: 1.25rem;
-				overflow: auto;
-			}
-
-			.viewer-info h2 {
-				font-size: 1.02rem;
-				letter-spacing: 0.08em;
-				text-transform: none;
-				margin-bottom: 0.35rem;
-			}
-
-			.viewer-kicker {
-				font-size: 0.72rem;
-				letter-spacing: 0.18em;
-				text-transform: uppercase;
-				color: rgba(255,255,255,0.42);
-				margin-bottom: 0.9rem;
-			}
-
-			.viewer-info p {
-				color: var(--text-soft);
-				line-height: 1.7;
-				margin-bottom: 1rem;
-			}
-
-			.meta-group + .meta-group { margin-top: 1.15rem; }
-			.meta-label {
-				font-size: 0.72rem;
-				letter-spacing: 0.16em;
-				text-transform: uppercase;
-				color: rgba(255,255,255,0.5);
-				margin-bottom: 0.55rem;
-			}
-			.meta-grid {
-				display: grid;
-				grid-template-columns: 1fr;
-				gap: 0.55rem;
-			}
-			.meta-item {
-				display: flex;
-				justify-content: space-between;
-				gap: 1rem;
-				padding: 0.78rem 0.92rem;
-				background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
-				border: 1px solid rgba(255,255,255,0.06);
-				border-radius: 1rem;
-				box-shadow: inset 0 1px 0 rgba(255,255,255,0.04), var(--shadow-card);
-			}
-			.meta-item span:first-child { color: rgba(255,255,255,0.58); }
-			.meta-item span:last-child { color: var(--text-main); text-align: right; }
-
-			.viewer-strip {
-				grid-column: 1 / span 2;
-				display: flex;
-				gap: 0.75rem;
-				overflow-x: auto;
-				padding: 0.95rem;
-				scrollbar-width: none;
-			}
-
-			.viewer-strip::-webkit-scrollbar { display: none; }
-
-			.thumb-btn {
-				flex: 0 0 auto;
-				width: 96px;
-				height: 72px;
-				padding: 0;
-				border-radius: 1rem;
-				border: 1px solid rgba(255,255,255,0.05);
-				overflow: hidden;
-				background: rgba(255,255,255,0.04);
-				cursor: pointer;
-				opacity: 0.7;
-				transform: scale(0.98);
-				transition: opacity 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
-			}
-			.thumb-btn.active {
-				border-color: rgba(255,255,255,0.22);
-				opacity: 1;
-				transform: scale(1);
-			}
-			.thumb-btn img { width: 100%; height: 100%; object-fit: cover; display:block; }
-
-			@media screen and (max-width: 1100px) {
-				#main.gallery-shell {
-					grid-template-columns: 1fr 320px;
-				}
-			}
-
-			@media screen and (max-width: 900px) {
-				#main.gallery-shell {
-					grid-template-columns: 1fr;
-					grid-template-rows: minmax(18rem, 48vh) auto auto;
-					height: auto;
-				}
-				.viewer-strip { grid-column: 1; }
-				.viewer-info {
-					order: 2;
-				}
-			}
-
-			@media screen and (max-width: 736px) {
-				#header {
-					padding: 1rem 1.2rem;
-					height: auto;
-					line-height: 1.4;
-				}
-				#header h1 {
-					font-size: 0.95rem;
-					letter-spacing: 0.08em;
-					max-width: calc(100% - 3rem);
-				}
-				#header nav { right: 1rem; }
-				#main.gallery-shell {
-					padding: 4.8rem 0.75rem 0.75rem;
-					gap: 0.75rem;
-				}
-				.viewer-info {
-					padding: 1rem;
-					border-radius: 1.15rem;
-				}
-				.thumb-btn { width: 82px; height: 62px; }
-				.viewer-nav { width: 2.4rem; height: 2.4rem; }
-				.meta-item {
-					padding: 0.72rem 0.82rem;
-				}
-			}
-		</style>
 	<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="Tankey" type="application/atom+xml">
 </head>
-	<body class="is-preload viewer-mode">
+	<body class="is-preload">
+
 		<div id="wrapper">
 			<header id="header">
 				<h1><a href="index.html"><strong>Multiverse</strong> by Tankey</a></h1>
@@ -252,38 +22,67 @@
 				</nav>
 			</header>
 
-			<div id="main" class="gallery-shell">
-				<section class="viewer-stage">
-					<button class="viewer-nav prev" type="button" aria-label="Previous">‹</button>
-					<img id="viewer-image" src="images/fulls/01.jpg" alt="Photo preview" />
-					<button class="viewer-nav next" type="button" aria-label="Next">›</button>
-					<div class="viewer-counter" id="viewer-counter">1 / 12</div>
-				</section>
-
-				<aside class="viewer-info">
-					<div class="viewer-kicker">Memories</div>
-					<h2 id="photo-title">Photo</h2>
-					<p id="photo-description">Open a photo and browse with the side panel.</p>
-
-					<div class="meta-group">
-						<div class="meta-label">Basic</div>
-						<div class="meta-grid">
-							<div class="meta-item"><span>File</span><span id="meta-file">-</span></div>
-							<div class="meta-item"><span>Resolution</span><span id="meta-resolution">-</span></div>
-							<div class="meta-item"><span>Size</span><span id="meta-size">-</span></div>
-						</div>
-					</div>
-
-					<div class="meta-group">
-						<div class="meta-label">Capture</div>
-						<div class="meta-grid">
-							<div class="meta-item"><span>Device</span><span id="meta-device">Unavailable</span></div>
-							<div class="meta-item"><span>Lens / EXIF</span><span id="meta-exif">Not embedded</span></div>
-						</div>
-					</div>
-				</aside>
-
-				<div class="viewer-strip" id="viewer-strip"></div>
+			<div id="main">
+				<article class="thumb">
+					<a href="photo-detail.html?photo=01" class="image"><img src="images/thumbs/01.jpg" alt="Magna feugiat lorem" /></a>
+					<h2>Magna feugiat lorem</h2>
+					<p>Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.</p>
+				</article>
+				<article class="thumb">
+					<a href="photo-detail.html?photo=02" class="image"><img src="images/thumbs/02.jpg" alt="Nisl adipiscing" /></a>
+					<h2>Nisl adipiscing</h2>
+					<p>Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.</p>
+				</article>
+				<article class="thumb">
+					<a href="photo-detail.html?photo=03" class="image"><img src="images/thumbs/03.jpg" alt="Tempus aliquam veroeros" /></a>
+					<h2>Tempus aliquam veroeros</h2>
+					<p>Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.</p>
+				</article>
+				<article class="thumb">
+					<a href="photo-detail.html?photo=04" class="image"><img src="images/thumbs/04.jpg" alt="Aliquam ipsum sed dolore" /></a>
+					<h2>Aliquam ipsum sed dolore</h2>
+					<p>Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.</p>
+				</article>
+				<article class="thumb">
+					<a href="photo-detail.html?photo=05" class="image"><img src="images/thumbs/05.jpg" alt="Cursis aliquam nisl" /></a>
+					<h2>Cursis aliquam nisl</h2>
+					<p>Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.</p>
+				</article>
+				<article class="thumb">
+					<a href="photo-detail.html?photo=06" class="image"><img src="images/thumbs/06.jpg" alt="Sed consequat phasellus" /></a>
+					<h2>Sed consequat phasellus</h2>
+					<p>Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.</p>
+				</article>
+				<article class="thumb">
+					<a href="photo-detail.html?photo=07" class="image"><img src="images/thumbs/07.jpg" alt="Mauris id tellus arcu" /></a>
+					<h2>Mauris id tellus arcu</h2>
+					<p>Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.</p>
+				</article>
+				<article class="thumb">
+					<a href="photo-detail.html?photo=08" class="image"><img src="images/thumbs/08.jpg" alt="Nunc vehicula id nulla" /></a>
+					<h2>Nunc vehicula id nulla</h2>
+					<p>Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.</p>
+				</article>
+				<article class="thumb">
+					<a href="photo-detail.html?photo=09" class="image"><img src="images/thumbs/09.jpg" alt="Neque et faucibus viverra" /></a>
+					<h2>Neque et faucibus viverra</h2>
+					<p>Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.</p>
+				</article>
+				<article class="thumb">
+					<a href="photo-detail.html?photo=10" class="image"><img src="images/thumbs/10.jpg" alt="Mattis ante fermentum" /></a>
+					<h2>Mattis ante fermentum</h2>
+					<p>Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.</p>
+				</article>
+				<article class="thumb">
+					<a href="photo-detail.html?photo=11" class="image"><img src="images/thumbs/11.jpg" alt="Sed ac elementum arcu" /></a>
+					<h2>Sed ac elementum arcu</h2>
+					<p>Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.</p>
+				</article>
+				<article class="thumb">
+					<a href="photo-detail.html?photo=12" class="image"><img src="images/thumbs/12.jpg" alt="Vehicula id nulla dignissim" /></a>
+					<h2>Vehicula id nulla dignissim</h2>
+					<p>Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.</p>
+				</article>
 			</div>
 
 			<footer id="footer" class="panel">
@@ -297,9 +96,7 @@
 								<li><a href="https://github.com/tankey33" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
 							</ul>
 						</section>
-						<p class="copyright">
-							&copy; Unttled. Design: <a class="link" href="https://itestv.com" target="_blank" rel="noopener">Tankey<i class="fas fa-external-link-alt"></i></a>.
-						</p>
+						<p class="copyright">&copy; Unttled. Design: <a class="link" href="https://itestv.com" target="_blank" rel="noopener">Tankey<i class="fas fa-external-link-alt"></i></a>.</p>
 					</div>
 					<div>
 						<section>
@@ -327,106 +124,5 @@
 		<script src="assets/js/breakpoints.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
-		<script>
-			const photos = [
-				{ file:'01.jpg', full:'images/fulls/01.jpg', thumb:'images/thumbs/01.jpg', width:6000, height:4000, size:2337002, title:'Magna feugiat lorem', description:'Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.' },
-				{ file:'02.jpg', full:'images/fulls/02.jpg', thumb:'images/thumbs/02.jpg', width:4096, height:3072, size:1108767, title:'Nisl adipiscing', description:'Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.' },
-				{ file:'03.jpg', full:'images/fulls/03.jpg', thumb:'images/thumbs/03.jpg', width:4096, height:3072, size:1152455, title:'Tempus aliquam veroeros', description:'Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.' },
-				{ file:'04.jpg', full:'images/fulls/04.jpg', thumb:'images/thumbs/04.jpg', width:4096, height:3072, size:1034990, title:'Aliquam ipsum sed dolore', description:'Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.' },
-				{ file:'05.jpg', full:'images/fulls/05.jpg', thumb:'images/thumbs/05.jpg', width:3830, height:2873, size:1109075, title:'Cursis aliquam nisl', description:'Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.' },
-				{ file:'06.jpg', full:'images/fulls/06.jpg', thumb:'images/thumbs/06.jpg', width:3072, height:4096, size:1514277, title:'Sed consequat phasellus', description:'Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.' },
-				{ file:'07.jpg', full:'images/fulls/07.jpg', thumb:'images/thumbs/07.jpg', width:1024, height:583, size:40195, title:'Mauris id tellus arcu', description:'Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.' },
-				{ file:'08.jpg', full:'images/fulls/08.jpg', thumb:'images/thumbs/08.jpg', width:1024, height:583, size:37885, title:'Nunc vehicula id nulla', description:'Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.' },
-				{ file:'09.jpg', full:'images/fulls/09.jpg', thumb:'images/thumbs/09.jpg', width:1024, height:683, size:46962, title:'Neque et faucibus viverra', description:'Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.' },
-				{ file:'10.jpg', full:'images/fulls/10.jpg', thumb:'images/thumbs/10.jpg', width:1024, height:583, size:41147, title:'Mattis ante fermentum', description:'Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.' },
-				{ file:'11.jpg', full:'images/fulls/11.jpg', thumb:'images/thumbs/11.jpg', width:1024, height:583, size:42607, title:'Sed ac elementum arcu', description:'Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.' },
-				{ file:'12.jpg', full:'images/fulls/12.jpg', thumb:'images/thumbs/12.jpg', width:1024, height:583, size:39947, title:'Vehicula id nulla dignissim', description:'Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.' }
-			];
-
-			const el = {
-				image: document.getElementById('viewer-image'),
-				counter: document.getElementById('viewer-counter'),
-				title: document.getElementById('photo-title'),
-				desc: document.getElementById('photo-description'),
-				file: document.getElementById('meta-file'),
-				resolution: document.getElementById('meta-resolution'),
-				size: document.getElementById('meta-size'),
-				device: document.getElementById('meta-device'),
-				exif: document.getElementById('meta-exif'),
-				strip: document.getElementById('viewer-strip')
-			};
-
-			const prettySize = (bytes) => {
-				const units = ['B','KB','MB','GB'];
-				let n = bytes, i = 0;
-				while (n >= 1024 && i < units.length - 1) { n /= 1024; i++; }
-				return `${n.toFixed(i === 0 ? 0 : 1)} ${units[i]}`;
-			};
-
-			let current = 0;
-
-			function renderThumbs() {
-				el.strip.innerHTML = '';
-				photos.forEach((photo, index) => {
-					const btn = document.createElement('button');
-					btn.className = 'thumb-btn' + (index === current ? ' active' : '');
-					btn.type = 'button';
-					btn.innerHTML = `<img src="${photo.thumb}" alt="${photo.title}">`;
-					btn.addEventListener('click', () => setPhoto(index));
-					el.strip.appendChild(btn);
-				});
-			}
-
-			function preloadNearby(index) {
-				[-1, 1].forEach((offset) => {
-					const p = photos[(index + offset + photos.length) % photos.length];
-					const img = new Image();
-					img.src = p.full;
-				});
-			}
-
-			function setPhoto(index) {
-				current = (index + photos.length) % photos.length;
-				const p = photos[current];
-				el.image.classList.add('is-loading');
-				const nextImage = new Image();
-				nextImage.onload = function() {
-					el.image.src = p.full;
-					el.image.alt = p.title;
-					requestAnimationFrame(() => el.image.classList.remove('is-loading'));
-				};
-				nextImage.src = p.full;
-				el.counter.textContent = `${current + 1} / ${photos.length}`;
-				el.title.textContent = p.title;
-				el.desc.textContent = p.description || '—';
-				el.file.textContent = p.file;
-				el.resolution.textContent = `${p.width} × ${p.height}`;
-				el.size.textContent = prettySize(p.size);
-				el.device.textContent = p.width >= 3000 ? 'High resolution image' : 'Web image';
-				el.exif.textContent = 'No embedded EXIF in current source files';
-				renderThumbs();
-				const active = el.strip.querySelector('.thumb-btn.active');
-				if (active) active.scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'smooth' });
-				preloadNearby(current);
-			}
-
-			document.querySelector('.viewer-nav.prev').addEventListener('click', () => setPhoto(current - 1));
-			document.querySelector('.viewer-nav.next').addEventListener('click', () => setPhoto(current + 1));
-			document.addEventListener('keydown', (e) => {
-				if (e.key === 'ArrowLeft') setPhoto(current - 1);
-				if (e.key === 'ArrowRight') setPhoto(current + 1);
-			});
-
-			let startX = null;
-			el.image.addEventListener('touchstart', (e) => { startX = e.changedTouches[0].clientX; }, { passive: true });
-			el.image.addEventListener('touchend', (e) => {
-				if (startX == null) return;
-				const delta = e.changedTouches[0].clientX - startX;
-				if (Math.abs(delta) > 40) setPhoto(current + (delta < 0 ? 1 : -1));
-				startX = null;
-			}, { passive: true });
-
-			setPhoto(0);
-		</script>
 	</body>
 </html>
