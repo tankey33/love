@@ -237,6 +237,7 @@
 			});
 
 		// Poptrox.
+			if (!$body.hasClass('use-glightbox'))
 			$main.poptrox({
 				baseZIndex: 20000,
 				caption: function($a) {
@@ -270,12 +271,14 @@
 			});
 
 			// Hack: Set margins to 0 when 'xsmall' activates.
-				breakpoints.on('<=xsmall', function() {
-					$main[0]._poptrox.windowMargin = 0;
-				});
+				if (!$body.hasClass('use-glightbox')) {
+					breakpoints.on('<=xsmall', function() {
+						$main[0]._poptrox.windowMargin = 0;
+					});
 
-				breakpoints.on('>xsmall', function() {
-					$main[0]._poptrox.windowMargin = 50;
-				});
+					breakpoints.on('>xsmall', function() {
+						$main[0]._poptrox.windowMargin = 50;
+					});
+				}
 
 })(jQuery);
