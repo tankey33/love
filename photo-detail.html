@@ -7,67 +7,315 @@
   <link rel="icon" href="/love/love.png" />
   <link rel="shortcut icon" href="/love/love.png" />
   <style>
-    :root { --bg:#f5f5f7; --panel:rgba(255,255,255,.78); --text:#111; --soft:#6e6e73; --line:rgba(17,17,17,.08); --shadow:0 18px 54px rgba(0,0,0,.08); }
-    *{box-sizing:border-box} body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","PingFang SC","Helvetica Neue",sans-serif;color:var(--text);background:radial-gradient(circle at top,rgba(255,255,255,.98) 0%,rgba(255,255,255,.5) 24%,rgba(245,245,247,1) 58%),linear-gradient(180deg,#fafafd 0%,#f5f5f7 100%);-webkit-font-smoothing:antialiased}
-    a{color:inherit;text-decoration:none} img{display:block;max-width:100%}
-    .topbar{position:sticky;top:0;z-index:50;backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);background:rgba(245,245,247,.78);border-bottom:1px solid rgba(17,17,17,.04)}
-    .topbar-inner{max-width:1380px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{font-size:14px;letter-spacing:.08em;white-space:nowrap}.nav{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end}.nav a{font-size:13px;color:var(--soft);padding:10px 14px;border-radius:999px}.nav a:hover,.nav a.active{background:rgba(17,17,17,.05);color:var(--text)}
-    .shell{max-width:1380px;margin:0 auto;padding:22px 24px 48px;display:grid;grid-template-columns:minmax(0,1.25fr) 380px;gap:18px}
-    .stage,.info{background:var(--panel);border:1px solid var(--line);border-radius:28px;box-shadow:var(--shadow);backdrop-filter:blur(22px) saturate(160%);-webkit-backdrop-filter:blur(22px) saturate(160%)}
-    .stage{position:relative;min-height:78vh;display:flex;align-items:center;justify-content:center;overflow:hidden}.stage img{width:100%;height:100%;object-fit:contain;padding:30px}
-    .top-actions{position:absolute;top:16px;left:16px;right:16px;display:flex;justify-content:space-between;gap:12px;z-index:2}.chip,.counter,.nav-btn{background:rgba(255,255,255,.66);border:1px solid var(--line);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
-    .chip,.counter{padding:11px 14px;border-radius:999px;font-size:12px;color:#222}.nav-btn{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:999px;display:flex;align-items:center;justify-content:center;font-size:22px;color:#222;z-index:2}.nav-prev{left:16px}.nav-next{right:16px}
-    .info{padding:22px;display:flex;flex-direction:column;gap:18px}.kicker{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--soft)}.title{margin:4px 0 0;font-size:clamp(30px,4vw,48px);line-height:1.02;letter-spacing:-.05em}.desc{margin:12px 0 0;font-size:15px;line-height:1.85;color:var(--soft)}
-    .meta-grid{display:grid;gap:12px}.meta{padding:16px 18px;border-radius:18px;background:rgba(255,255,255,.56);border:1px solid var(--line)}.meta-label{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);margin-bottom:8px}.meta-value{font-size:15px;line-height:1.7;color:var(--text)}
-    @media (max-width:960px){.shell{grid-template-columns:1fr}.stage{min-height:56vh}} @media (max-width:520px){.topbar-inner,.shell{padding-left:16px;padding-right:16px}.shell{gap:12px}.stage,.info{border-radius:22px}.stage img{padding:18px}.nav-btn{width:40px;height:40px;font-size:20px}.title{font-size:32px}}
+    :root {
+      --bg: #f5f5f7;
+      --panel: rgba(255,255,255,.82);
+      --panel-soft: rgba(255,255,255,.62);
+      --text: #111;
+      --soft: #6e6e73;
+      --line: rgba(17,17,17,.08);
+      --shadow: 0 18px 54px rgba(0,0,0,.08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "PingFang SC", "Helvetica Neue", sans-serif;
+      color: var(--text);
+      background: radial-gradient(circle at top, rgba(255,255,255,.98) 0%, rgba(255,255,255,.5) 24%, rgba(245,245,247,1) 58%), linear-gradient(180deg, #fafafd 0%, #f5f5f7 100%);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    .topbar {
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      background: rgba(245,245,247,.78);
+      border-bottom: 1px solid rgba(17,17,17,.04);
+    }
+    .topbar-inner {
+      max-width: 1380px; margin: 0 auto; padding: 14px 24px;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    }
+    .brand { font-size: 14px; letter-spacing: .08em; white-space: nowrap; }
+    .nav { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+    .nav a { font-size: 13px; color: var(--soft); padding: 10px 14px; border-radius: 999px; }
+    .nav a:hover, .nav a.active { background: rgba(17,17,17,.05); color: var(--text); }
+
+    .shell {
+      max-width: 1380px;
+      margin: 0 auto;
+      padding: 22px 24px 48px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) 420px;
+      gap: 18px;
+    }
+    .stage, .info {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(22px) saturate(160%);
+      -webkit-backdrop-filter: blur(22px) saturate(160%);
+    }
+    .stage {
+      position: relative;
+      min-height: 78vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .stage img { width: 100%; height: 100%; object-fit: contain; padding: 30px; }
+    .top-actions {
+      position: absolute; top: 16px; left: 16px; right: 16px;
+      display: flex; justify-content: space-between; gap: 12px; z-index: 2;
+    }
+    .chip, .counter, .nav-btn {
+      background: rgba(255,255,255,.66);
+      border: 1px solid var(--line);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    .chip, .counter { padding: 11px 14px; border-radius: 999px; font-size: 12px; color: #222; }
+    .nav-btn {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      width: 46px; height: 46px; border-radius: 999px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; color: #222; z-index: 2;
+    }
+    .nav-prev { left: 16px; }
+    .nav-next { right: 16px; }
+
+    .info {
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      overflow: auto;
+      max-height: calc(100vh - 44px);
+    }
+    .kicker { font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--soft); }
+    .title { margin: 4px 0 0; font-size: clamp(30px,4vw,48px); line-height: 1.02; letter-spacing: -.05em; }
+    .desc { margin: 12px 0 0; font-size: 15px; line-height: 1.85; color: var(--soft); }
+    .group {
+      padding: 16px 18px;
+      border-radius: 20px;
+      background: var(--panel-soft);
+      border: 1px solid var(--line);
+    }
+    .group-title {
+      margin: 0 0 12px;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: -.02em;
+    }
+    .meta-list { display: grid; gap: 10px; }
+    .meta-row {
+      display: grid;
+      grid-template-columns: 112px minmax(0,1fr);
+      gap: 10px;
+      align-items: start;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .meta-label { color: var(--soft); }
+    .meta-value { color: var(--text); word-break: break-word; }
+    .map-box, .histogram-box {
+      border-radius: 18px;
+      background: rgba(17,17,17,.04);
+      border: 1px solid var(--line);
+      min-height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--soft);
+      font-size: 14px;
+      overflow: hidden;
+    }
+    .map-box iframe { width: 100%; height: 220px; border: 0; }
+    .hidden { display: none !important; }
+    @media (max-width: 960px) {
+      .shell { grid-template-columns: 1fr; }
+      .stage { min-height: 56vh; }
+      .info { max-height: none; }
+    }
+    @media (max-width: 520px) {
+      .topbar-inner, .shell { padding-left: 16px; padding-right: 16px; }
+      .shell { gap: 12px; }
+      .stage, .info { border-radius: 22px; }
+      .stage img { padding: 18px; }
+      .nav-btn { width: 40px; height: 40px; font-size: 20px; }
+      .title { font-size: 32px; }
+      .meta-row { grid-template-columns: 88px minmax(0,1fr); font-size: 13px; }
+    }
   </style>
 </head>
 <body>
-  <header class="topbar"><div class="topbar-inner"><a class="brand" href="index.html">Tankey ❤️ Monody</a><nav class="nav"><a href="index.html">首页</a><a href="photo.html" class="active">照片</a><a href="notes.html">碎碎念</a></nav></div></header>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html">Tankey ❤️ Monody</a>
+      <nav class="nav">
+        <a href="index.html">首页</a>
+        <a href="photo.html" class="active">照片</a>
+        <a href="notes.html">碎碎念</a>
+      </nav>
+    </div>
+  </header>
+
   <main class="shell">
     <section class="stage">
-      <div class="top-actions"><a class="chip" href="photo.html">返回照片墙</a><div class="counter" id="counter">1 / 12</div></div>
+      <div class="top-actions">
+        <a class="chip" href="photo.html">返回照片墙</a>
+        <div class="counter" id="counter">1 / 12</div>
+      </div>
       <a class="nav-btn nav-prev" id="prev-link" href="#" aria-label="上一张">‹</a>
       <img id="detail-image" src="images/fulls/01.jpg" alt="Photo" />
       <a class="nav-btn nav-next" id="next-link" href="#" aria-label="下一张">›</a>
     </section>
+
     <aside class="info">
-      <div><div class="kicker">Photo detail</div><h1 class="title" id="title">Photo</h1><p class="desc" id="desc"></p></div>
-      <div class="meta-grid" id="meta-grid"></div>
+      <div>
+        <div class="kicker">Photo detail</div>
+        <h1 class="title" id="title">Photo</h1>
+        <p class="desc" id="desc"></p>
+      </div>
+
+      <section id="map-group" class="group hidden">
+        <h2 class="group-title">地图</h2>
+        <div class="map-box" id="map-box"></div>
+      </section>
+
+      <section id="basic-group" class="group hidden">
+        <h2 class="group-title">基本信息</h2>
+        <div class="meta-list" id="basic-list"></div>
+      </section>
+
+      <section id="shoot-group" class="group hidden">
+        <h2 class="group-title">拍摄参数</h2>
+        <div class="meta-list" id="shoot-list"></div>
+      </section>
+
+      <section id="hist-group" class="group hidden">
+        <h2 class="group-title">直方图</h2>
+        <div class="histogram-box">当前图片未生成直方图</div>
+      </section>
+
+      <section id="device-group" class="group hidden">
+        <h2 class="group-title">设备信息</h2>
+        <div class="meta-list" id="device-list"></div>
+      </section>
+
+      <section id="mode-group" class="group hidden">
+        <h2 class="group-title">拍摄模式</h2>
+        <div class="meta-list" id="mode-list"></div>
+      </section>
+
+      <section id="tech-group" class="group hidden">
+        <h2 class="group-title">技术参数</h2>
+        <div class="meta-list" id="tech-list"></div>
+      </section>
     </aside>
   </main>
+
   <script src="assets/js/photo-data.js"></script>
   <script>
-    const photos = window.PHOTO_DATA || [];
+    const photos = (window.PHOTO_DATA || []).map(p => ({
+      ...p,
+      exif: p.exif || {}
+    }));
+
     const q = new URLSearchParams(location.search).get('photo') || '01';
     const index = Math.max(0, photos.findIndex(p => p.id === q));
     const photo = photos[index];
-    const prettySize = bytes => { const u=['B','KB','MB','GB']; let n=bytes,i=0; while(n>=1024&&i<u.length-1){n/=1024;i++;} return `${n.toFixed(i?1:0)} ${u[i]}`; };
-    const ratio = (photo.width / photo.height).toFixed(2) + ':1';
+
+    const prettySize = bytes => {
+      const u = ['B','KB','MB','GB']; let n = bytes, i = 0;
+      while (n >= 1024 && i < u.length - 1) { n /= 1024; i++; }
+      return `${n.toFixed(i ? 1 : 0)} ${u[i]}`;
+    };
     const orientation = photo.width > photo.height ? '横向' : (photo.width < photo.height ? '纵向' : '方形');
-    const meta = [
-      ['文件名', photo.file],
-      ['分辨率', `${photo.width} × ${photo.height}`],
-      ['文件大小', prettySize(photo.size)],
-      ['构图方向', orientation],
-      ['图片比例', ratio],
-      ['色彩模式', 'RGB'],
-      ['地理位置', null],
-      ['相机型号', null],
-      ['焦距 / 光圈 / 快门 / ISO', null]
-    ].filter(([,v]) => v);
+    const mp = `${(photo.width * photo.height / 1000000).toFixed(2)} MP`;
+    const ratio = `${(photo.width / photo.height).toFixed(2)}:1`;
+
+    function row(label, value) {
+      return `<div class="meta-row"><div class="meta-label">${label}</div><div class="meta-value">${value}</div></div>`;
+    }
+
+    function renderGroup(groupId, listId, entries) {
+      const valid = entries.filter(([, value]) => value !== null && value !== undefined && value !== '');
+      if (!valid.length) return;
+      document.getElementById(groupId).classList.remove('hidden');
+      document.getElementById(listId).innerHTML = valid.map(([k, v]) => row(k, v)).join('');
+    }
+
     document.title = `${photo.title} · Tankey ❤️ Monody`;
     document.getElementById('detail-image').src = photo.full;
     document.getElementById('detail-image').alt = photo.title;
     document.getElementById('title').textContent = photo.title;
     document.getElementById('desc').textContent = photo.description || '';
-    document.getElementById('counter').textContent = `${index+1} / ${photos.length}`;
-    document.getElementById('meta-grid').innerHTML = meta.map(([k,v]) => `<div class="meta"><div class="meta-label">${k}</div><div class="meta-value">${v}</div></div>`).join('');
+    document.getElementById('counter').textContent = `${index + 1} / ${photos.length}`;
+
+    const exif = photo.exif || {};
+    const hasLocation = exif.latitude && exif.longitude;
+
+    renderGroup('basic-group', 'basic-list', [
+      ['文件名', photo.file],
+      ['文件大小', prettySize(photo.size)],
+      ['分辨率', `${photo.width} × ${photo.height}`],
+      ['像素', mp],
+      ['拍摄时间', exif.dateTime || exif.date || null],
+      ['色彩空间', exif.colorSpace || 'sRGB'],
+      ['软件', exif.software || null],
+      ['时区', exif.timezone || null],
+      ['国家', exif.country || null],
+      ['城市', exif.city || null],
+      ['坐标', hasLocation ? `${exif.latitude}, ${exif.longitude}` : null]
+    ]);
+
+    renderGroup('shoot-group', 'shoot-list', [
+      ['焦距', exif.focalLength || null],
+      ['光圈', exif.aperture || null],
+      ['曝光时间', exif.shutter || exif.exposureTime || null],
+      ['ISO', exif.iso || null]
+    ]);
+
+    renderGroup('device-group', 'device-list', [
+      ['相机', exif.camera || exif.model || null],
+      ['镜头', exif.lens || null],
+      ['焦距', exif.focalLength || null],
+      ['35mm 等效', exif.focalLength35mm || null]
+    ]);
+
+    renderGroup('mode-group', 'mode-list', [
+      ['白平衡', exif.whiteBalance || null],
+      ['曝光程序', exif.exposureProgram || null],
+      ['曝光模式', exif.exposureMode || null],
+      ['测光模式', exif.meteringMode || null],
+      ['闪光灯', exif.flash || null],
+      ['场景捕捉类型', exif.sceneCaptureType || null]
+    ]);
+
+    renderGroup('tech-group', 'tech-list', [
+      ['亮度', exif.brightnessValue || null],
+      ['感光方式', exif.sensingMethod || null],
+      ['构图方向', orientation],
+      ['图片比例', ratio]
+    ]);
+
+    if (hasLocation) {
+      document.getElementById('map-group').classList.remove('hidden');
+      document.getElementById('map-box').innerHTML = `<iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.openstreetmap.org/export/embed.html?marker=${encodeURIComponent(exif.latitude)},${encodeURIComponent(exif.longitude)}&layer=mapnik"></iframe>`;
+    }
+
     const prev = photos[(index - 1 + photos.length) % photos.length];
     const next = photos[(index + 1) % photos.length];
     document.getElementById('prev-link').href = `photo-detail.html?photo=${prev.id}`;
     document.getElementById('next-link').href = `photo-detail.html?photo=${next.id}`;
-    document.addEventListener('keydown', e => { if (e.key==='ArrowLeft') location.href=`photo-detail.html?photo=${prev.id}`; if (e.key==='ArrowRight') location.href=`photo-detail.html?photo=${next.id}`; });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'ArrowLeft') location.href = `photo-detail.html?photo=${prev.id}`;
+      if (e.key === 'ArrowRight') location.href = `photo-detail.html?photo=${next.id}`;
+    });
   </script>
 </body>
 </html>
