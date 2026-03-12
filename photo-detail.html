@@ -234,9 +234,7 @@
       while (n >= 1024 && i < u.length - 1) { n /= 1024; i++; }
       return `${n.toFixed(i ? 1 : 0)} ${u[i]}`;
     };
-    const orientation = photo.width > photo.height ? '横向' : (photo.width < photo.height ? '纵向' : '方形');
     const mp = `${(photo.width * photo.height / 1000000).toFixed(2)} MP`;
-    const ratio = `${(photo.width / photo.height).toFixed(2)}:1`;
 
     function row(label, value) {
       return `<div class="meta-row"><div class="meta-label">${label}</div><div class="meta-value">${value}</div></div>`;
@@ -265,7 +263,7 @@
       ['分辨率', `${photo.width} × ${photo.height}`],
       ['像素', mp],
       ['拍摄时间', exif.dateTime || exif.date || null],
-      ['色彩空间', exif.colorSpace || 'sRGB'],
+      ['色彩空间', exif.colorSpace || null],
       ['软件', exif.software || null],
       ['时区', exif.timezone || null],
       ['国家', exif.country || null],
@@ -279,6 +277,11 @@
       ['曝光时间', exif.shutter || exif.exposureTime || null],
       ['ISO', exif.iso || null]
     ]);
+
+    if (exif.histogram) {
+      document.getElementById('hist-group').classList.remove('hidden');
+      document.querySelector('#hist-group .histogram-box').innerHTML = exif.histogram;
+    }
 
     renderGroup('device-group', 'device-list', [
       ['相机', exif.camera || exif.model || null],
@@ -298,9 +301,7 @@
 
     renderGroup('tech-group', 'tech-list', [
       ['亮度', exif.brightnessValue || null],
-      ['感光方式', exif.sensingMethod || null],
-      ['构图方向', orientation],
-      ['图片比例', ratio]
+      ['感光方式', exif.sensingMethod || null]
     ]);
 
     if (hasLocation) {
