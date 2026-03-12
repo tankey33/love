@@ -16,7 +16,6 @@
       --radius: 22px;
       --content: 1380px;
     }
-
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
@@ -29,198 +28,73 @@
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
     }
-
     a { color: inherit; text-decoration: none; }
     img { display: block; max-width: 100%; }
-
     .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 50;
+      position: sticky; top: 0; z-index: 50;
       backdrop-filter: saturate(180%) blur(20px);
       -webkit-backdrop-filter: saturate(180%) blur(20px);
       background: rgba(245,245,247,0.78);
       border-bottom: 1px solid rgba(17,17,17,0.04);
     }
-
     .topbar-inner {
-      max-width: var(--content);
-      margin: 0 auto;
-      padding: 14px 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
+      max-width: var(--content); margin: 0 auto; padding: 14px 24px;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
     }
-
-    .brand {
-      font-size: 14px;
-      letter-spacing: 0.08em;
-      white-space: nowrap;
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-
+    .brand { font-size: 14px; letter-spacing: 0.08em; white-space: nowrap; }
+    .nav { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
     .nav a {
-      font-size: 13px;
-      color: var(--text-soft);
-      padding: 10px 14px;
-      border-radius: 999px;
+      font-size: 13px; color: var(--text-soft); padding: 10px 14px; border-radius: 999px;
       transition: background 0.25s ease, color 0.25s ease;
     }
-
-    .nav a:hover {
-      background: rgba(17,17,17,0.05);
-      color: var(--text);
-    }
-
-    .hero {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 56px 24px 26px;
-      text-align: center;
-    }
-
+    .nav a:hover, .nav a.active { background: rgba(17,17,17,0.05); color: var(--text); }
+    .hero { max-width: 1120px; margin: 0 auto; padding: 56px 24px 26px; text-align: center; }
     .hero-title {
-      margin: 0;
-      font-size: clamp(36px, 7vw, 84px);
-      line-height: 1.04;
-      letter-spacing: -0.05em;
-      font-weight: 600;
-      text-wrap: balance;
+      margin: 0; font-size: clamp(36px, 7vw, 84px); line-height: 1.04;
+      letter-spacing: -0.05em; font-weight: 600; text-wrap: balance;
     }
-
     .hero-desc {
-      margin: 18px auto 0;
-      max-width: 820px;
-      font-size: clamp(16px, 2vw, 22px);
-      line-height: 1.65;
-      color: var(--text-soft);
-      text-wrap: balance;
+      margin: 18px auto 0; max-width: 820px; font-size: clamp(16px, 2vw, 22px);
+      line-height: 1.65; color: var(--text-soft); text-wrap: balance;
     }
-
-    .gallery-wrap {
-      max-width: var(--content);
-      margin: 0 auto;
-      padding: 12px 24px 72px;
-    }
-
-    .masonry {
-      column-count: 4;
-      column-gap: 16px;
-    }
-
+    .gallery-wrap { max-width: var(--content); margin: 0 auto; padding: 12px 24px 72px; }
+    .masonry { column-count: 4; column-gap: 16px; }
     .photo-card {
-      position: relative;
-      display: block;
-      width: 100%;
-      margin: 0 0 16px;
-      break-inside: avoid;
-      border-radius: var(--radius);
-      overflow: hidden;
-      background: white;
-      box-shadow: var(--shadow);
-      transform: translateY(0);
-      transition: transform 0.35s ease, box-shadow 0.35s ease;
+      position: relative; display: block; width: 100%; margin: 0 0 16px; break-inside: avoid;
+      border-radius: var(--radius); overflow: hidden; background: white; box-shadow: var(--shadow);
+      transform: translateY(0); transition: transform 0.35s ease, box-shadow 0.35s ease;
     }
-
-    .photo-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 16px 42px rgba(0,0,0,0.1);
-    }
-
-    .photo-card img {
-      width: 100%;
-      height: auto;
-      display: block;
-      object-fit: cover;
-      transition: transform 0.55s ease;
-    }
-
+    .photo-card:hover { transform: translateY(-3px); box-shadow: 0 16px 42px rgba(0,0,0,0.1); }
+    .photo-card img { width: 100%; height: auto; display: block; object-fit: cover; transition: transform 0.55s ease; }
     .photo-card:hover img { transform: scale(1.018); }
-
     .photo-card::after {
-      content: "";
-      position: absolute;
-      inset: 0;
+      content: ""; position: absolute; inset: 0;
       background: linear-gradient(180deg, rgba(0,0,0,0.00) 0%, rgba(0,0,0,0.04) 45%, rgba(0,0,0,0.16) 100%);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      pointer-events: none;
+      opacity: 0; transition: opacity 0.3s ease; pointer-events: none;
     }
-
     .photo-card:hover::after { opacity: 1; }
-
     .footer-note {
-      max-width: 880px;
-      margin: 0 auto;
-      padding: 0 24px 44px;
-      text-align: center;
-      font-size: 14px;
-      line-height: 1.8;
-      color: var(--text-soft);
+      max-width: 880px; margin: 0 auto; padding: 0 24px 44px;
+      text-align: center; font-size: 14px; line-height: 1.8; color: var(--text-soft);
     }
-
-    @media (max-width: 1200px) {
-      .masonry { column-count: 3; }
-    }
-
+    @media (max-width: 1200px) { .masonry { column-count: 3; } }
     @media (max-width: 820px) {
-      .hero {
-        padding: 42px 18px 20px;
-      }
-      .gallery-wrap {
-        padding: 8px 18px 56px;
-      }
-      .masonry {
-        column-count: 2;
-        column-gap: 12px;
-      }
-      .photo-card {
-        margin-bottom: 12px;
-        border-radius: 18px;
-      }
+      .hero { padding: 42px 18px 20px; }
+      .gallery-wrap { padding: 8px 18px 56px; }
+      .masonry { column-count: 2; column-gap: 12px; }
+      .photo-card { margin-bottom: 12px; border-radius: 18px; }
     }
-
     @media (max-width: 520px) {
-      .topbar-inner {
-        padding: 12px 16px;
-      }
+      .topbar-inner { padding: 12px 16px; }
       .brand { font-size: 13px; }
-      .nav a {
-        font-size: 12px;
-        padding: 8px 10px;
-      }
-      .hero {
-        padding: 34px 16px 16px;
-      }
-      .hero-title {
-        font-size: clamp(30px, 12vw, 52px);
-      }
-      .hero-desc {
-        font-size: 14px;
-        max-width: 20em;
-      }
-      .gallery-wrap {
-        padding: 6px 12px 44px;
-      }
-      .masonry {
-        column-count: 2;
-        column-gap: 10px;
-      }
-      .photo-card {
-        margin-bottom: 10px;
-        border-radius: 16px;
-      }
-      .footer-note {
-        padding: 0 16px 36px;
-      }
+      .nav a { font-size: 12px; padding: 8px 10px; }
+      .hero { padding: 34px 16px 16px; }
+      .hero-title { font-size: clamp(30px, 12vw, 52px); }
+      .hero-desc { font-size: 14px; max-width: 20em; }
+      .gallery-wrap { padding: 6px 12px 44px; }
+      .masonry { column-count: 2; column-gap: 10px; }
+      .photo-card { margin-bottom: 10px; border-radius: 16px; }
+      .footer-note { padding: 0 16px 36px; }
     }
   </style>
 </head>
@@ -230,7 +104,8 @@
       <a class="brand" href="index.html">Tankey ❤️ Monody</a>
       <nav class="nav">
         <a href="index.html">首页</a>
-        <a href="#gallery">照片墙</a>
+        <a href="photo.html" class="active">照片</a>
+        <a href="notes.html">碎碎念</a>
       </nav>
     </div>
   </header>
@@ -261,7 +136,6 @@
       { id:'11', thumb:'images/thumbs/11.jpg', alt:'Photo 11' },
       { id:'12', thumb:'images/thumbs/12.jpg', alt:'Photo 12' }
     ];
-
     const grid = document.getElementById('gallery-grid');
     grid.innerHTML = photos.map((photo) => `
       <a class="photo-card" href="${photo.thumb}" target="_blank" rel="noopener">

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Tankey ❤️ Monody</title>
+  <link rel="icon" href="/love/love.png" />
+  <link rel="shortcut icon" href="/love/love.png" />
+  <style>
+    :root {
+      --bg: #f4f0e8;
+      --paper: #f8f3ea;
+      --ink: #171717;
+      --muted: #67625a;
+      --accent: #d4452f;
+      --grid: rgba(23,23,23,0.08);
+      --content: 1320px;
+      --radius: 24px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Helvetica Neue", Arial, "PingFang SC", sans-serif;
+      background:
+        linear-gradient(180deg, #f8f2e8 0%, #efe7da 100%);
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    .topbar {
+      position: sticky; top: 0; z-index: 20;
+      background: rgba(248,243,234,0.86);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--grid);
+    }
+    .topbar-inner {
+      max-width: var(--content); margin: 0 auto; padding: 14px 24px;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    }
+    .brand { font-size: 14px; letter-spacing: 0.08em; }
+    .nav { display: flex; gap: 8px; flex-wrap: wrap; }
+    .nav a {
+      font-size: 13px; color: var(--muted); padding: 10px 14px; border-radius: 999px;
+    }
+    .nav a.active, .nav a:hover { background: rgba(23,23,23,0.05); color: var(--ink); }
+    .hero {
+      max-width: var(--content); margin: 0 auto; padding: 46px 24px 26px;
+      display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 24px; align-items: end;
+    }
+    .hero-title {
+      margin: 0; font-size: clamp(42px, 8vw, 96px); line-height: 0.95;
+      letter-spacing: -0.06em; font-weight: 700; text-transform: uppercase;
+    }
+    .hero-desc {
+      margin: 16px 0 0; max-width: 34em; font-size: 16px; line-height: 1.8; color: var(--muted);
+    }
+    .hero-side {
+      display: grid; gap: 12px; justify-items: end;
+    }
+    .hero-tag {
+      display: inline-block; padding: 10px 14px; border: 2px solid var(--ink);
+      font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; background: var(--paper);
+    }
+    .layout {
+      max-width: var(--content); margin: 0 auto; padding: 0 24px 52px;
+      display: grid; grid-template-columns: 320px minmax(0,1fr); gap: 22px;
+    }
+    .sidebar, .feed {
+      background: rgba(255,255,255,0.42); border: 1px solid var(--grid); border-radius: var(--radius);
+    }
+    .sidebar { padding: 18px; position: sticky; top: 74px; height: fit-content; }
+    .sidebar h2, .feed h2 {
+      margin: 0 0 12px; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase;
+    }
+    .sidebar p { margin: 0; font-size: 14px; line-height: 1.8; color: var(--muted); }
+    .feed { padding: 10px; }
+    .post-list { display: grid; gap: 10px; }
+    .post-card {
+      display: block; padding: 18px; background: var(--paper); border: 1px solid var(--grid);
+      border-radius: 18px; transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .post-card:hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgba(0,0,0,0.06); }
+    .post-date { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+    .post-title { margin: 10px 0 0; font-size: 28px; line-height: 1.08; letter-spacing: -0.03em; }
+    .post-summary { margin: 12px 0 0; font-size: 15px; line-height: 1.9; color: var(--muted); }
+    .empty { padding: 20px; font-size: 15px; line-height: 1.8; color: var(--muted); }
+    @media (max-width: 920px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-side { justify-items: start; }
+      .layout { grid-template-columns: 1fr; }
+      .sidebar { position: static; }
+    }
+    @media (max-width: 560px) {
+      .topbar-inner, .hero, .layout { padding-left: 16px; padding-right: 16px; }
+      .hero-title { font-size: clamp(34px, 15vw, 64px); }
+      .post-title { font-size: 22px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html">Tankey ❤️ Monody</a>
+      <nav class="nav">
+        <a href="index.html">首页</a>
+        <a href="photo.html">照片</a>
+        <a href="notes.html" class="active">碎碎念</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div>
+      <h1 class="hero-title">Notes<br>Blog</h1>
+      <p class="hero-desc">把 markdown 丢进指定文件夹，页面会自动识别并形成一份可读的碎碎念列表。风格走极简、理性、包豪斯一点。</p>
+    </div>
+    <div class="hero-side">
+      <div class="hero-tag">Bauhaus mood</div>
+      <div class="hero-tag">Markdown driven</div>
+    </div>
+  </section>
+
+  <main class="layout">
+    <aside class="sidebar">
+      <h2>使用方式</h2>
+      <p>把新的 <strong>.md</strong> 文件放进 <strong>blog/posts/</strong>。推送仓库后，生成脚本会自动更新列表，碎碎念页面会自动识别并排版。</p>
+    </aside>
+    <section class="feed">
+      <div class="post-list" id="post-list"></div>
+    </section>
+  </main>
+
+  <script>
+    async function loadPosts() {
+      const list = document.getElementById('post-list');
+      try {
+        const res = await fetch('blog/posts.json?_=' + Date.now());
+        const posts = await res.json();
+        if (!posts.length) {
+          list.innerHTML = '<div class="empty">这里还没有文章。你可以先往 <strong>blog/posts/</strong> 放一篇 markdown。</div>';
+          return;
+        }
+        list.innerHTML = posts.map(post => `
+          <a class="post-card" href="note.html?slug=${encodeURIComponent(post.slug)}">
+            <div class="post-date">${post.date || 'Undated'}</div>
+            <h2 class="post-title">${post.title}</h2>
+            <p class="post-summary">${post.summary || ''}</p>
+          </a>
+        `).join('');
+      } catch (e) {
+        list.innerHTML = '<div class="empty">暂时还没生成 posts.json。把 markdown 放进 <strong>blog/posts/</strong> 后重新推一次仓库就行。</div>';
+      }
+    }
+    loadPosts();
+  </script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Tankey ❤️ Monody</title>
+  <link rel="icon" href="/love/love.png" />
+  <link rel="shortcut icon" href="/love/love.png" />
+  <style>
+    :root {
+      --bg: #f4f0e8;
+      --paper: #fbf7ef;
+      --ink: #171717;
+      --muted: #67625a;
+      --grid: rgba(23,23,23,0.08);
+      --content: 980px;
+      --radius: 28px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Helvetica Neue", Arial, "PingFang SC", sans-serif;
+      background: linear-gradient(180deg, #f8f2e8 0%, #efe7da 100%);
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    .topbar {
+      position: sticky; top: 0; z-index: 20; background: rgba(248,243,234,0.86);
+      backdrop-filter: blur(18px); border-bottom: 1px solid var(--grid);
+    }
+    .topbar-inner {
+      max-width: 1320px; margin: 0 auto; padding: 14px 24px;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    }
+    .brand { font-size: 14px; letter-spacing: 0.08em; }
+    .nav { display: flex; gap: 8px; flex-wrap: wrap; }
+    .nav a { font-size: 13px; color: var(--muted); padding: 10px 14px; border-radius: 999px; }
+    .nav a.active, .nav a:hover { background: rgba(23,23,23,0.05); color: var(--ink); }
+    .wrap { max-width: var(--content); margin: 0 auto; padding: 42px 24px 56px; }
+    .paper {
+      background: var(--paper); border: 1px solid var(--grid); border-radius: var(--radius); padding: 28px;
+    }
+    .meta { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+    h1 { margin: 14px 0 0; font-size: clamp(34px, 6vw, 62px); line-height: 1.02; letter-spacing: -0.05em; }
+    .content { margin-top: 28px; font-size: 17px; line-height: 2; }
+    .content h1, .content h2, .content h3 { letter-spacing: -0.03em; line-height: 1.15; }
+    .content h2 { margin-top: 2em; font-size: 28px; }
+    .content p { margin: 1em 0; }
+    .content blockquote { margin: 1.6em 0; padding-left: 1em; border-left: 4px solid #171717; color: var(--muted); }
+    .content code { background: rgba(23,23,23,0.06); padding: 0.15em 0.4em; border-radius: 8px; }
+    .content pre { background: rgba(23,23,23,0.06); padding: 16px; overflow: auto; border-radius: 16px; }
+    .content img { max-width: 100%; border-radius: 18px; }
+    @media (max-width: 560px) {
+      .topbar-inner, .wrap { padding-left: 16px; padding-right: 16px; }
+      .paper { padding: 20px; }
+      .content { font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html">Tankey ❤️ Monody</a>
+      <nav class="nav">
+        <a href="index.html">首页</a>
+        <a href="photo.html">照片</a>
+        <a href="notes.html" class="active">碎碎念</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <article class="paper">
+      <div class="meta" id="post-date">Loading</div>
+      <h1 id="post-title">Loading...</h1>
+      <div class="content" id="post-content"></div>
+    </article>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    async function loadPost() {
+      const params = new URLSearchParams(location.search);
+      const slug = params.get('slug');
+      if (!slug) return;
+      const posts = await fetch('blog/posts.json?_=' + Date.now()).then(r => r.json());
+      const post = posts.find(p => p.slug === slug);
+      if (!post) {
+        document.getElementById('post-title').textContent = '文章不存在';
+        document.getElementById('post-date').textContent = '';
+        return;
+      }
+      document.title = `${post.title} · Tankey ❤️ Monody`;
+      document.getElementById('post-title').textContent = post.title;
+      document.getElementById('post-date').textContent = post.date || '';
+      const md = await fetch(post.path + '?_=' + Date.now()).then(r => r.text());
+      document.getElementById('post-content').innerHTML = marked.parse(md.replace(/^---[\s\S]*?---\n/, ''));
+    }
+    loadPost();
+  </script>
+</body>
+</html>
