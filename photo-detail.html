@@ -106,7 +106,7 @@ document.getElementById("histogram").innerHTML='';document.getElementById("histo
 async function loadExif(){
 let raw=null;try{raw=await exifr.parse(img.src,{gps:true});}catch(e){}
 const exif=raw?mapExif(raw):{};
-renderGroup("basic-group","basic-list",[["文件名",photo.file],["文件大小",prettySize(photo.size)],["分辨率",`${photo.width} × ${photo.height}`],["像素",mp],["拍摄时间",exif.dateTime],["色彩空间",exif.colorSpace],["软件",exif.software],["作者",exif.artist],["版权",exif.copyright],["坐标",exif.latitude&&exif.longitude?`${exif.latitude}, ${exiflongitude}`:null]]);
+renderGroup("basic-group","basic-list",[["文件名",photo.file],["文件大小",prettySize(photo.size)],["分辨率",`${photo.width} × ${photo.height}`],["像素",mp],["拍摄时间",exif.dateTime],["色彩空间",exif.colorSpace],["软件",exif.software],["作者",exif.artist],["版权",exif.copyright],["坐标",exif.latitude&&exif.longitude?`${exif.latitude}, ${exif.longitude}`:null]]);
 renderGroup("shoot-group","shoot-list",[["焦距",exif.focalLength],["光圈",exif.aperture],["曝光时间",exif.shutter],["ISO",exif.iso],["曝光补偿",exif.exposureBias],["亮度",exif.brightnessValue],["对焦距离",exif.subjectDistance],["数码变焦",exif.digitalZoom]]);
 renderGroup("device-group","device-list",[["制造商",exif.make],["相机",exif.camera],["镜头",exif.lens],["焦距",exif.focalLength],["35mm 等效",exif.focalLength35mm]]);
 renderGroup("mode-group","mode-list",[["白平衡",exif.whiteBalance],["曝光程序",exif.exposureProgram],["曝光模式",exif.exposureMode],["测光模式",exif.meteringMode],["闪光灯",exif.flash],["场景类型",exif.sceneCaptureType],["对比度",exif.contrast],["饱和度",exif.saturation],["锐度",exif.sharpness]]);
