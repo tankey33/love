@@ -219,12 +219,9 @@
   </main>
 
   <script src="assets/js/photo-data.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/exifr/dist/lite.umd.js"></script>
   <script>
-    const photos = (window.PHOTO_DATA || []).map(p => ({
-      ...p,
-      exif: p.exif || {}
-    }));
-
+    const photos = (window.PHOTO_DATA || []).map(p => ({ ...p, exif: p.exif || {} }));
     const q = new URLSearchParams(location.search).get('photo') || '01';
     const index = Math.max(0, photos.findIndex(p => p.id === q));
     const photo = photos[index];
@@ -240,11 +237,139 @@
       return `<div class="meta-row"><div class="meta-label">${label}</div><div class="meta-value">${value}</div></div>`;
     }
 
+    function resetGroups() {
+      document.querySelectorAll('.group').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('.meta-list').forEach(el => el.innerHTML = '');
+      document.getElementById('map-box').innerHTML = '';
+      document.querySelector('#hist-group .histogram-box').innerHTML = '当前图片未生成直方图';
+    }
+
     function renderGroup(groupId, listId, entries) {
       const valid = entries.filter(([, value]) => value !== null && value !== undefined && value !== '');
       if (!valid.length) return;
       document.getElementById(groupId).classList.remove('hidden');
       document.getElementById(listId).innerHTML = valid.map(([k, v]) => row(k, v)).join('');
+    }
+
+    function mapExif(raw = {}) {
+      const gps = raw.latitude && raw.longitude ? { latitude: raw.latitude, longitude: raw.longitude } : {};
+      const shutter = raw.ExposureTime ? `${raw.ExposureTime}s` : null;
+      const aperture = raw.FNumber ? `f/${raw.FNumber}` : null;
+      const focal = raw.FocalLength ? `${raw.FocalLength} mm` : null;
+      const focal35 = raw.FocalLengthIn35mmFormat ? `${raw.FocalLengthIn35mmFormat} mm` : null;
+      return {
+        ...gps,
+        dateTime: raw.DateTimeOriginal || raw.CreateDate || null,
+        colorSpace: raw.ColorSpace || null,
+        software: raw.Software || null,
+        camera: raw.Model || null,
+        model: raw.Model || null,
+        lens: raw.LensModel || raw.Lens || null,
+        focalLength: focal,
+        focalLength35mm: focal35,
+        aperture,
+        shutter,
+        exposureTime: shutter,
+        iso: raw.ISO || null,
+        whiteBalance: raw.WhiteBalance || null,
+        exposureProgram: raw.ExposureProgram || null,
+        exposureMode: raw.ExposureMode || null,
+        meteringMode: raw.MeteringMode || null,
+        flash: raw.Flash || null,
+        sceneCaptureType: raw.SceneCaptureType || null,
+        brightnessValue: raw.BrightnessValue || null,
+        sensingMethod: raw.SensingMethod || null
+      };
+    }
+
+    function renderHistogram(imageUrl) {
+      const img = new Image();
+      img.crossOrigin = 'anonymous';
+      img.onload = () => {
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d', { willReadFrequently: true });
+        const w = 256, h = 120;
+        canvas.width = w; canvas.height = h;
+        const sample = document.createElement('canvas');
+        const sctx = sample.getContext('2d', { willReadFrequently: true });
+        const sw = 256, sh = Math.max(1, Math.round(img.height * (256 / img.width)));
+        sample.width = sw; sample.height = sh;
+        sctx.drawImage(img, 0, 0, sw, sh);
+        const data = sctx.getImageData(0, 0, sw, sh).data;
+        const bins = new Array(256).fill(0);
+        for (let i = 0; i < data.length; i += 4) {
+          const lum = Math.round(0.2126 * data[i] + 0.7152 * data[i+1] + 0.0722 * data[i+2]);
+          bins[lum]++;
+        }
+        const max = Math.max(...bins, 1);
+        ctx.clearRect(0, 0, w, h);
+        ctx.fillStyle = '#ffffff';
+        ctx.fillRect(0, 0, w, h);
+        ctx.strokeStyle = 'rgba(17,17,17,0.12)';
+        ctx.strokeRect(0.5, 0.5, w-1, h-1);
+        ctx.beginPath();
+        ctx.moveTo(0, h);
+        bins.forEach((v, i) => {
+          const y = h - (v / max) * (h - 8);
+          ctx.lineTo(i, y);
+        });
+        ctx.lineTo(w, h);
+        ctx.closePath();
+        ctx.fillStyle = 'rgba(17,17,17,0.78)';
+        ctx.fill();
+        document.getElementById('hist-group').classList.remove('hidden');
+        const box = document.querySelector('#hist-group .histogram-box');
+        box.innerHTML = '';
+        box.appendChild(canvas);
+      };
+      img.src = imageUrl;
+    }
+
+    function renderPhoto(exif) {
+      resetGroups();
+      const hasLocation = exif.latitude && exif.longitude;
+      renderGroup('basic-group', 'basic-list', [
+        ['文件名', photo.file],
+        ['文件大小', prettySize(photo.size)],
+        ['分辨率', `${photo.width} × ${photo.height}`],
+        ['像素', mp],
+        ['拍摄时间', exif.dateTime || null],
+        ['色彩空间', exif.colorSpace || null],
+        ['软件', exif.software || null],
+        ['时区', exif.timezone || null],
+        ['国家', exif.country || null],
+        ['城市', exif.city || null],
+        ['坐标', hasLocation ? `${exif.latitude}, ${exif.longitude}` : null]
+      ]);
+      renderGroup('shoot-group', 'shoot-list', [
+        ['焦距', exif.focalLength || null],
+        ['光圈', exif.aperture || null],
+        ['曝光时间', exif.shutter || exif.exposureTime || null],
+        ['ISO', exif.iso || null]
+      ]);
+      renderGroup('device-group', 'device-list', [
+        ['相机', exif.camera || exif.model || null],
+        ['镜头', exif.lens || null],
+        ['焦距', exif.focalLength || null],
+        ['35mm 等效', exif.focalLength35mm || null]
+      ]);
+      renderGroup('mode-group', 'mode-list', [
+        ['白平衡', exif.whiteBalance || null],
+        ['曝光程序', exif.exposureProgram || null],
+        ['曝光模式', exif.exposureMode || null],
+        ['测光模式', exif.meteringMode || null],
+        ['闪光灯', exif.flash || null],
+        ['场景捕捉类型', exif.sceneCaptureType || null]
+      ]);
+      renderGroup('tech-group', 'tech-list', [
+        ['亮度', exif.brightnessValue || null],
+        ['感光方式', exif.sensingMethod || null]
+      ]);
+      if (hasLocation) {
+        document.getElementById('map-group').classList.remove('hidden');
+        document.getElementById('map-box').innerHTML = `<iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.openstreetmap.org/export/embed.html?marker=${encodeURIComponent(exif.latitude)},${encodeURIComponent(exif.longitude)}&layer=mapnik"></iframe>`;
+      }
+      renderHistogram(photo.full);
     }
 
     document.title = `${photo.title} · Tankey ❤️ Monody`;
@@ -254,61 +379,6 @@
     document.getElementById('desc').textContent = photo.description || '';
     document.getElementById('counter').textContent = `${index + 1} / ${photos.length}`;
 
-    const exif = photo.exif || {};
-    const hasLocation = exif.latitude && exif.longitude;
-
-    renderGroup('basic-group', 'basic-list', [
-      ['文件名', photo.file],
-      ['文件大小', prettySize(photo.size)],
-      ['分辨率', `${photo.width} × ${photo.height}`],
-      ['像素', mp],
-      ['拍摄时间', exif.dateTime || exif.date || null],
-      ['色彩空间', exif.colorSpace || null],
-      ['软件', exif.software || null],
-      ['时区', exif.timezone || null],
-      ['国家', exif.country || null],
-      ['城市', exif.city || null],
-      ['坐标', hasLocation ? `${exif.latitude}, ${exif.longitude}` : null]
-    ]);
-
-    renderGroup('shoot-group', 'shoot-list', [
-      ['焦距', exif.focalLength || null],
-      ['光圈', exif.aperture || null],
-      ['曝光时间', exif.shutter || exif.exposureTime || null],
-      ['ISO', exif.iso || null]
-    ]);
-
-    if (exif.histogram) {
-      document.getElementById('hist-group').classList.remove('hidden');
-      document.querySelector('#hist-group .histogram-box').innerHTML = exif.histogram;
-    }
-
-    renderGroup('device-group', 'device-list', [
-      ['相机', exif.camera || exif.model || null],
-      ['镜头', exif.lens || null],
-      ['焦距', exif.focalLength || null],
-      ['35mm 等效', exif.focalLength35mm || null]
-    ]);
-
-    renderGroup('mode-group', 'mode-list', [
-      ['白平衡', exif.whiteBalance || null],
-      ['曝光程序', exif.exposureProgram || null],
-      ['曝光模式', exif.exposureMode || null],
-      ['测光模式', exif.meteringMode || null],
-      ['闪光灯', exif.flash || null],
-      ['场景捕捉类型', exif.sceneCaptureType || null]
-    ]);
-
-    renderGroup('tech-group', 'tech-list', [
-      ['亮度', exif.brightnessValue || null],
-      ['感光方式', exif.sensingMethod || null]
-    ]);
-
-    if (hasLocation) {
-      document.getElementById('map-group').classList.remove('hidden');
-      document.getElementById('map-box').innerHTML = `<iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.openstreetmap.org/export/embed.html?marker=${encodeURIComponent(exif.latitude)},${encodeURIComponent(exif.longitude)}&layer=mapnik"></iframe>`;
-    }
-
     const prev = photos[(index - 1 + photos.length) % photos.length];
     const next = photos[(index + 1) % photos.length];
     document.getElementById('prev-link').href = `photo-detail.html?photo=${prev.id}`;
@@ -317,6 +387,17 @@
       if (e.key === 'ArrowLeft') location.href = `photo-detail.html?photo=${prev.id}`;
       if (e.key === 'ArrowRight') location.href = `photo-detail.html?photo=${next.id}`;
     });
+
+    (async () => {
+      let exif = photo.exif || {};
+      try {
+        if (window.exifr) {
+          const raw = await window.exifr.parse(photo.full, { gps: true, translateKeys: false, tiff: true, exif: true });
+          if (raw) exif = { ...exif, ...mapExif(raw) };
+        }
+      } catch (e) {}
+      renderPhoto(exif);
+    })();
   </script>
 </body>
 </html>
