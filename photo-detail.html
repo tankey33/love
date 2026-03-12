@@ -3,283 +3,71 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Tankey ❤️ Monody · Photo</title>
+  <title>Tankey ❤️ Monody</title>
   <link rel="icon" href="/love/love.png" />
   <link rel="shortcut icon" href="/love/love.png" />
   <style>
-    :root {
-      --bg: #000000;
-      --panel: rgba(28,28,30,0.72);
-      --panel-line: rgba(255,255,255,0.08);
-      --text: rgba(255,255,255,0.96);
-      --soft: rgba(255,255,255,0.62);
-      --shadow: 0 24px 80px rgba(0,0,0,0.35);
-    }
-
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "PingFang SC", "Helvetica Neue", sans-serif;
-      background:
-        radial-gradient(circle at top, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 22%, transparent 48%),
-        linear-gradient(180deg, #111214 0%, #050505 100%);
-      color: var(--text);
-      min-height: 100vh;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a { color: inherit; text-decoration: none; }
-    img { display: block; max-width: 100%; }
-
-    .shell {
-      min-height: 100vh;
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 360px;
-      gap: 18px;
-      padding: 20px;
-    }
-
-    .stage,
-    .info {
-      border-radius: 28px;
-      background: var(--panel);
-      border: 1px solid var(--panel-line);
-      backdrop-filter: blur(22px) saturate(160%);
-      -webkit-backdrop-filter: blur(22px) saturate(160%);
-      box-shadow: var(--shadow);
-    }
-
-    .stage {
-      position: relative;
-      min-height: calc(100vh - 40px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-
-    .stage img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      padding: 28px;
-    }
-
-    .topbar {
-      position: absolute;
-      top: 18px;
-      left: 18px;
-      right: 18px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      z-index: 3;
-    }
-
-    .btn,
-    .counter,
-    .nav-btn {
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      background: rgba(20,20,22,0.5);
-      border: 1px solid rgba(255,255,255,0.08);
-      color: white;
-    }
-
-    .btn,
-    .counter {
-      border-radius: 999px;
-      padding: 12px 16px;
-      font-size: 12px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .nav-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 48px;
-      height: 48px;
-      border-radius: 999px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 22px;
-      z-index: 3;
-    }
-
-    .nav-prev { left: 18px; }
-    .nav-next { right: 18px; }
-
-    .info {
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    .kicker {
-      font-size: 12px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--soft);
-      margin-bottom: 12px;
-    }
-
-    .title {
-      margin: 0;
-      font-size: clamp(28px, 3vw, 40px);
-      line-height: 1.08;
-      letter-spacing: -0.03em;
-      font-weight: 600;
-    }
-
-    .desc {
-      margin: 14px 0 0;
-      font-size: 15px;
-      line-height: 1.85;
-      color: var(--soft);
-    }
-
-    .meta {
-      display: grid;
-      gap: 12px;
-    }
-
-    .meta-card {
-      border-radius: 20px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.06);
-      padding: 16px 18px;
-    }
-
-    .meta-label {
-      font-size: 11px;
-      color: var(--soft);
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
-
-    .meta-value {
-      font-size: 15px;
-      color: var(--text);
-      line-height: 1.7;
-    }
-
-    .bottom-note {
-      font-size: 13px;
-      color: var(--soft);
-      line-height: 1.8;
-      border-top: 1px solid rgba(255,255,255,0.06);
-      padding-top: 18px;
-    }
-
-    @media (max-width: 900px) {
-      .shell {
-        grid-template-columns: 1fr;
-        padding: 14px;
-        gap: 14px;
-      }
-      .stage { min-height: 60vh; }
-      .info { padding: 20px; }
-    }
-
-    @media (max-width: 680px) {
-      .shell { padding: 10px; gap: 10px; }
-      .stage,
-      .info { border-radius: 22px; }
-      .stage img { padding: 18px; }
-      .topbar { top: 12px; left: 12px; right: 12px; }
-      .btn, .counter { padding: 10px 12px; font-size: 11px; }
-      .nav-btn { width: 42px; height: 42px; font-size: 20px; }
-      .nav-prev { left: 12px; }
-      .nav-next { right: 12px; }
-      .title { font-size: 28px; }
-      .desc { font-size: 14px; }
-    }
+    :root { --bg:#f5f5f7; --panel:rgba(255,255,255,.78); --text:#111; --soft:#6e6e73; --line:rgba(17,17,17,.08); --shadow:0 18px 54px rgba(0,0,0,.08); }
+    *{box-sizing:border-box} body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","PingFang SC","Helvetica Neue",sans-serif;color:var(--text);background:radial-gradient(circle at top,rgba(255,255,255,.98) 0%,rgba(255,255,255,.5) 24%,rgba(245,245,247,1) 58%),linear-gradient(180deg,#fafafd 0%,#f5f5f7 100%);-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none} img{display:block;max-width:100%}
+    .topbar{position:sticky;top:0;z-index:50;backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);background:rgba(245,245,247,.78);border-bottom:1px solid rgba(17,17,17,.04)}
+    .topbar-inner{max-width:1380px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{font-size:14px;letter-spacing:.08em;white-space:nowrap}.nav{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end}.nav a{font-size:13px;color:var(--soft);padding:10px 14px;border-radius:999px}.nav a:hover,.nav a.active{background:rgba(17,17,17,.05);color:var(--text)}
+    .shell{max-width:1380px;margin:0 auto;padding:22px 24px 48px;display:grid;grid-template-columns:minmax(0,1.25fr) 380px;gap:18px}
+    .stage,.info{background:var(--panel);border:1px solid var(--line);border-radius:28px;box-shadow:var(--shadow);backdrop-filter:blur(22px) saturate(160%);-webkit-backdrop-filter:blur(22px) saturate(160%)}
+    .stage{position:relative;min-height:78vh;display:flex;align-items:center;justify-content:center;overflow:hidden}.stage img{width:100%;height:100%;object-fit:contain;padding:30px}
+    .top-actions{position:absolute;top:16px;left:16px;right:16px;display:flex;justify-content:space-between;gap:12px;z-index:2}.chip,.counter,.nav-btn{background:rgba(255,255,255,.66);border:1px solid var(--line);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+    .chip,.counter{padding:11px 14px;border-radius:999px;font-size:12px;color:#222}.nav-btn{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:999px;display:flex;align-items:center;justify-content:center;font-size:22px;color:#222;z-index:2}.nav-prev{left:16px}.nav-next{right:16px}
+    .info{padding:22px;display:flex;flex-direction:column;gap:18px}.kicker{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--soft)}.title{margin:4px 0 0;font-size:clamp(30px,4vw,48px);line-height:1.02;letter-spacing:-.05em}.desc{margin:12px 0 0;font-size:15px;line-height:1.85;color:var(--soft)}
+    .meta-grid{display:grid;gap:12px}.meta{padding:16px 18px;border-radius:18px;background:rgba(255,255,255,.56);border:1px solid var(--line)}.meta-label{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);margin-bottom:8px}.meta-value{font-size:15px;line-height:1.7;color:var(--text)}
+    @media (max-width:960px){.shell{grid-template-columns:1fr}.stage{min-height:56vh}} @media (max-width:520px){.topbar-inner,.shell{padding-left:16px;padding-right:16px}.shell{gap:12px}.stage,.info{border-radius:22px}.stage img{padding:18px}.nav-btn{width:40px;height:40px;font-size:20px}.title{font-size:32px}}
   </style>
 </head>
 <body>
+  <header class="topbar"><div class="topbar-inner"><a class="brand" href="index.html">Tankey ❤️ Monody</a><nav class="nav"><a href="index.html">首页</a><a href="photo.html" class="active">照片</a><a href="notes.html">碎碎念</a></nav></div></header>
   <main class="shell">
     <section class="stage">
-      <div class="topbar">
-        <a class="btn" href="photo.html">返回照片墙</a>
-        <div class="counter" id="detail-counter">1 / 12</div>
-      </div>
+      <div class="top-actions"><a class="chip" href="photo.html">返回照片墙</a><div class="counter" id="counter">1 / 12</div></div>
       <a class="nav-btn nav-prev" id="prev-link" href="#" aria-label="上一张">‹</a>
-      <img id="detail-image" src="images/fulls/01.jpg" alt="Photo detail" />
+      <img id="detail-image" src="images/fulls/01.jpg" alt="Photo" />
       <a class="nav-btn nav-next" id="next-link" href="#" aria-label="下一张">›</a>
     </section>
-
     <aside class="info">
-      <div>
-        <div class="kicker">Memory</div>
-        <h1 class="title" id="detail-title">Photo</h1>
-        <p class="desc" id="detail-description">Single photo detail page.</p>
-      </div>
-
-      <div class="meta">
-        <div class="meta-card">
-          <div class="meta-label">文件</div>
-          <div class="meta-value" id="meta-file">-</div>
-        </div>
-        <div class="meta-card">
-          <div class="meta-label">分辨率</div>
-          <div class="meta-value" id="meta-resolution">-</div>
-        </div>
-        <div class="meta-card">
-          <div class="meta-label">备注</div>
-          <div class="meta-value" id="meta-note">-</div>
-        </div>
-      </div>
-
-      <div class="bottom-note">好的照片不一定复杂。它只是会在很多天以后，还把你一下子带回那个瞬间。</div>
+      <div><div class="kicker">Photo detail</div><h1 class="title" id="title">Photo</h1><p class="desc" id="desc"></p></div>
+      <div class="meta-grid" id="meta-grid"></div>
     </aside>
   </main>
-
+  <script src="assets/js/photo-data.js"></script>
   <script>
-    const photos = [
-      { id:'01', file:'01.jpg', full:'images/fulls/01.jpg', width:6000, height:4000, title:'刚刚好的一眼', description:'有些开始很安静，但后来会变得很长很长。', note:'第一眼就值得记很久。' },
-      { id:'02', file:'02.jpg', full:'images/fulls/02.jpg', width:4096, height:3072, title:'把喜欢存下来', description:'不是为了发给谁看，只是想认真留下。', note:'喜欢这件事，慢慢也会有痕迹。' },
-      { id:'03', file:'03.jpg', full:'images/fulls/03.jpg', width:4096, height:3072, title:'天气和心情都很好', description:'那天的风、光和你，刚好都很温柔。', note:'光线也像在偏心。' },
-      { id:'04', file:'04.jpg', full:'images/fulls/04.jpg', width:4096, height:3072, title:'想起就会笑', description:'后来再翻到这张，还是会一下回到当时。', note:'好照片会自动带回情绪。' },
-      { id:'05', file:'05.jpg', full:'images/fulls/05.jpg', width:3830, height:2873, title:'普通的一天也值得纪念', description:'不是每个瞬间都盛大，但有些平常也很珍贵。', note:'平静的日子反而最耐看。' },
-      { id:'06', file:'06.jpg', full:'images/fulls/06.jpg', width:3072, height:4096, title:'把时间放慢一点', description:'想把那一刻多停留一会儿，所以拍了下来。', note:'有些照片，本来就是为了慢一点。' },
-      { id:'07', file:'07.jpg', full:'images/fulls/07.jpg', width:1024, height:583, title:'光落下来的样子', description:'照片会替人记住那些肉眼来不及保存的细节。', note:'光影一闪而过，照片会替你记住。' },
-      { id:'08', file:'08.jpg', full:'images/fulls/08.jpg', width:1024, height:583, title:'你在镜头里', description:'其实不是镜头好看，是你刚好在里面。', note:'镜头只是刚好路过。' },
-      { id:'09', file:'09.jpg', full:'images/fulls/09.jpg', width:1024, height:683, title:'某个被偏爱的瞬间', description:'好看的不是构图，是那时真的很想记住你。', note:'认真想留住的瞬间，都会发光。' },
-      { id:'10', file:'10.jpg', full:'images/fulls/10.jpg', width:1024, height:583, title:'像小小的电影画面', description:'每一张都像从生活里剪下来的一帧。', note:'故事没有对白，也能成立。' },
-      { id:'11', file:'11.jpg', full:'images/fulls/11.jpg', width:1024, height:583, title:'翻到这里又想你了', description:'照片墙翻到后面，想念反而会更具体。', note:'有些想念，是翻图时突然长出来的。' },
-      { id:'12', file:'12.jpg', full:'images/fulls/12.jpg', width:1024, height:583, title:'故事先留在这里', description:'等以后再看，也许会发现那时已经很幸福了。', note:'先留着，未来再慢慢回看。' }
-    ];
-
+    const photos = window.PHOTO_DATA || [];
     const q = new URLSearchParams(location.search).get('photo') || '01';
     const index = Math.max(0, photos.findIndex(p => p.id === q));
     const photo = photos[index];
-
+    const prettySize = bytes => { const u=['B','KB','MB','GB']; let n=bytes,i=0; while(n>=1024&&i<u.length-1){n/=1024;i++;} return `${n.toFixed(i?1:0)} ${u[i]}`; };
+    const ratio = (photo.width / photo.height).toFixed(2) + ':1';
+    const orientation = photo.width > photo.height ? '横向' : (photo.width < photo.height ? '纵向' : '方形');
+    const meta = [
+      ['文件名', photo.file],
+      ['分辨率', `${photo.width} × ${photo.height}`],
+      ['文件大小', prettySize(photo.size)],
+      ['构图方向', orientation],
+      ['图片比例', ratio],
+      ['色彩模式', 'RGB'],
+      ['地理位置', null],
+      ['相机型号', null],
+      ['焦距 / 光圈 / 快门 / ISO', null]
+    ].filter(([,v]) => v);
     document.title = `${photo.title} · Tankey ❤️ Monody`;
     document.getElementById('detail-image').src = photo.full;
     document.getElementById('detail-image').alt = photo.title;
-    document.getElementById('detail-title').textContent = photo.title;
-    document.getElementById('detail-description').textContent = photo.description;
-    document.getElementById('detail-counter').textContent = `${index + 1} / ${photos.length}`;
-    document.getElementById('meta-file').textContent = photo.file;
-    document.getElementById('meta-resolution').textContent = `${photo.width} × ${photo.height}`;
-    document.getElementById('meta-note').textContent = photo.note;
-
+    document.getElementById('title').textContent = photo.title;
+    document.getElementById('desc').textContent = photo.description || '';
+    document.getElementById('counter').textContent = `${index+1} / ${photos.length}`;
+    document.getElementById('meta-grid').innerHTML = meta.map(([k,v]) => `<div class="meta"><div class="meta-label">${k}</div><div class="meta-value">${v}</div></div>`).join('');
     const prev = photos[(index - 1 + photos.length) % photos.length];
     const next = photos[(index + 1) % photos.length];
     document.getElementById('prev-link').href = `photo-detail.html?photo=${prev.id}`;
     document.getElementById('next-link').href = `photo-detail.html?photo=${next.id}`;
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowLeft') location.href = `photo-detail.html?photo=${prev.id}`;
-      if (e.key === 'ArrowRight') location.href = `photo-detail.html?photo=${next.id}`;
-    });
+    document.addEventListener('keydown', e => { if (e.key==='ArrowLeft') location.href=`photo-detail.html?photo=${prev.id}`; if (e.key==='ArrowRight') location.href=`photo-detail.html?photo=${next.id}`; });
   </script>
 </body>
 </html>
