@@ -260,7 +260,7 @@
 
     <canvas class="canvas"></canvas>
 
-    <audio id="bgm" autoplay loop>
+    <audio id="bgm" loop>
         <source src="./music/white.mp3" type="audio/mpeg">
     </audio>
 
@@ -610,12 +610,34 @@
     <script>
         const bgm = document.getElementById('bgm');
         const musicToggle = document.getElementById('musicToggle');
-        function updateMusicButton() { musicToggle.style.opacity = bgm.paused ? '0.68' : '1'; }
+        let hasStartedByPageTap = false;
+
+        function updateMusicButton() {
+            musicToggle.style.opacity = bgm.paused ? '0.68' : '1';
+        }
+
+        async function startMusicOnce() {
+            if (hasStartedByPageTap) return;
+            hasStartedByPageTap = true;
+            try {
+                await bgm.play();
+            } catch (e) {
+                hasStartedByPageTap = false;
+            }
+            updateMusicButton();
+        }
+
+        document.body.addEventListener('click', function () {
+            startMusicOnce();
+        }, { once: true });
+
         musicToggle.addEventListener('click', function (event) {
             event.stopPropagation();
+            hasStartedByPageTap = true;
             if (bgm.paused) bgm.play(); else bgm.pause();
             updateMusicButton();
         });
+
         bgm.addEventListener('play', updateMusicButton);
         bgm.addEventListener('pause', updateMusicButton);
         updateMusicButton();
