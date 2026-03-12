@@ -492,7 +492,11 @@
     });
 
     function stripFrontMatter(md) {
-      return md.replace(/^---[\s\S]*?---\s*/, "");
+      const match = md.match(/^---\n[\s\S]*?\n---/);
+      if (match) {
+        return md.slice(match[0].length).trim();
+      }
+      return md;
     }
 
     function extractSummary(md) {
