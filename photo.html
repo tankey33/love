@@ -1,128 +1,323 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>Tankey ❤️ Monody の Photograph</title>
-		<link rel="icon" href="/love/love.png">
-    	<link rel="shortcut icon" href="/love/love.png">
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="Tankey" type="application/atom+xml">
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Tankey ❤️ Monody · Photos</title>
+  <link rel="icon" href="/love/love.png" />
+  <link rel="shortcut icon" href="/love/love.png" />
+  <style>
+    :root {
+      --bg: #f5f5f7;
+      --panel: rgba(255,255,255,0.72);
+      --panel-solid: rgba(255,255,255,0.88);
+      --text: #111111;
+      --text-soft: #6e6e73;
+      --line: rgba(17,17,17,0.08);
+      --shadow: 0 12px 40px rgba(0,0,0,0.08);
+      --radius-xl: 32px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --content: 1320px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "PingFang SC", "Helvetica Neue", sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.4) 26%, rgba(245,245,247,1) 60%),
+        linear-gradient(180deg, #fbfbfd 0%, var(--bg) 100%);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      background: rgba(245,245,247,0.76);
+      border-bottom: 1px solid rgba(17,17,17,0.04);
+    }
+
+    .topbar-inner {
+      max-width: var(--content);
+      margin: 0 auto;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      color: var(--text);
+      white-space: nowrap;
+    }
+
+    .nav {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav a {
+      font-size: 13px;
+      color: var(--text-soft);
+      padding: 10px 14px;
+      border-radius: 999px;
+      transition: background 0.25s ease, color 0.25s ease;
+    }
+
+    .nav a:hover { background: rgba(17,17,17,0.05); color: var(--text); }
+
+    .hero {
+      max-width: var(--content);
+      margin: 0 auto;
+      padding: 72px 24px 28px;
+    }
+
+    .hero-kicker {
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-soft);
+      margin-bottom: 18px;
+      text-align: center;
+    }
+
+    .hero-title {
+      margin: 0 auto;
+      max-width: 980px;
+      font-size: clamp(38px, 7vw, 84px);
+      line-height: 1.04;
+      font-weight: 600;
+      letter-spacing: -0.04em;
+      text-align: center;
+    }
+
+    .hero-desc {
+      margin: 18px auto 0;
+      max-width: 760px;
+      font-size: clamp(17px, 2.2vw, 23px);
+      line-height: 1.6;
+      color: var(--text-soft);
+      text-align: center;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-meta {
+      margin-top: 28px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .pill {
+      padding: 11px 16px;
+      border-radius: 999px;
+      background: var(--panel-solid);
+      border: 1px solid rgba(17,17,17,0.06);
+      box-shadow: var(--shadow);
+      font-size: 13px;
+      color: #3a3a3c;
+    }
+
+    .gallery-wrap {
+      max-width: var(--content);
+      margin: 0 auto;
+      padding: 18px 24px 80px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .photo-card {
+      position: relative;
+      grid-column: span 4;
+      aspect-ratio: 4 / 5;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      background: #ffffff;
+      box-shadow: var(--shadow);
+      isolation: isolate;
+      transform: translateY(0);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .photo-card.large { grid-column: span 6; aspect-ratio: 16 / 11; }
+    .photo-card.tall { aspect-ratio: 4 / 6; }
+
+    .photo-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 48px rgba(0,0,0,0.12);
+    }
+
+    .photo-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .photo-card:hover img { transform: scale(1.02); }
+
+    .photo-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.08) 45%, rgba(0,0,0,0.22) 100%);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .photo-copy {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 2;
+      padding: 22px;
+      color: white;
+    }
+
+    .photo-index {
+      display: inline-flex;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.18);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .photo-title {
+      margin: 0;
+      font-size: clamp(18px, 2vw, 28px);
+      line-height: 1.14;
+      letter-spacing: -0.02em;
+      font-weight: 600;
+    }
+
+    .photo-sub {
+      margin: 8px 0 0;
+      font-size: 14px;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.82);
+      max-width: 24em;
+    }
+
+    .footer-note {
+      max-width: 980px;
+      margin: 8px auto 0;
+      padding: 0 24px 54px;
+      text-align: center;
+      font-size: 14px;
+      line-height: 1.8;
+      color: var(--text-soft);
+    }
+
+    @media (max-width: 1024px) {
+      .gallery-grid { gap: 16px; }
+      .photo-card, .photo-card.large { grid-column: span 6; }
+    }
+
+    @media (max-width: 680px) {
+      .topbar-inner { padding: 12px 16px; }
+      .brand { font-size: 13px; }
+      .nav { gap: 6px; }
+      .nav a { padding: 8px 10px; font-size: 12px; }
+      .hero { padding: 48px 16px 18px; }
+      .hero-desc { font-size: 17px; }
+      .hero-meta { gap: 8px; }
+      .pill { font-size: 12px; padding: 10px 13px; }
+      .gallery-wrap { padding: 14px 16px 52px; }
+      .gallery-grid { grid-template-columns: 1fr; gap: 14px; }
+      .photo-card, .photo-card.large, .photo-card.tall {
+        grid-column: auto;
+        aspect-ratio: 4 / 5;
+        border-radius: 24px;
+      }
+      .photo-copy { padding: 18px; }
+      .photo-title { font-size: 22px; }
+      .photo-sub { font-size: 13px; }
+      .footer-note { padding: 0 16px 40px; }
+    }
+  </style>
 </head>
-	<body class="is-preload">
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html">Tankey ❤️ Monody</a>
+      <nav class="nav">
+        <a href="index.html">首页</a>
+        <a href="#gallery">照片</a>
+      </nav>
+    </div>
+  </header>
 
-		<div id="wrapper">
-			<header id="header">
-				<h1><a href="index.html"><strong>Multiverse</strong> by Tankey</a></h1>
-				<nav>
-					<ul>
-						<li><a href="#footer" class="icon solid fa-info-circle">About</a></li>
-					</ul>
-				</nav>
-			</header>
+  <section class="hero">
+    <div class="hero-kicker">Photos</div>
+    <h1 class="hero-title">把值得回头看的瞬间，安静地留在这里。</h1>
+    <p class="hero-desc">没有复杂说明，也不需要太多装饰。只是把那些想记住的画面，认真排好，慢慢翻看。</p>
+    <div class="hero-meta">
+      <div class="pill">12 张照片</div>
+      <div class="pill">手机端已适配</div>
+      <div class="pill">点击进入单张详情</div>
+    </div>
+  </section>
 
-			<div id="main">
-				<article class="thumb">
-					<a href="photo-detail.html?photo=01" class="image"><img src="images/thumbs/01.jpg" alt="Magna feugiat lorem" /></a>
-					<h2>Magna feugiat lorem</h2>
-					<p>Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.</p>
-				</article>
-				<article class="thumb">
-					<a href="photo-detail.html?photo=02" class="image"><img src="images/thumbs/02.jpg" alt="Nisl adipiscing" /></a>
-					<h2>Nisl adipiscing</h2>
-					<p>Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.</p>
-				</article>
-				<article class="thumb">
-					<a href="photo-detail.html?photo=03" class="image"><img src="images/thumbs/03.jpg" alt="Tempus aliquam veroeros" /></a>
-					<h2>Tempus aliquam veroeros</h2>
-					<p>Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.</p>
-				</article>
-				<article class="thumb">
-					<a href="photo-detail.html?photo=04" class="image"><img src="images/thumbs/04.jpg" alt="Aliquam ipsum sed dolore" /></a>
-					<h2>Aliquam ipsum sed dolore</h2>
-					<p>Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.</p>
-				</article>
-				<article class="thumb">
-					<a href="photo-detail.html?photo=05" class="image"><img src="images/thumbs/05.jpg" alt="Cursis aliquam nisl" /></a>
-					<h2>Cursis aliquam nisl</h2>
-					<p>Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.</p>
-				</article>
-				<article class="thumb">
-					<a href="photo-detail.html?photo=06" class="image"><img src="images/thumbs/06.jpg" alt="Sed consequat phasellus" /></a>
-					<h2>Sed consequat phasellus</h2>
-					<p>Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.</p>
-				</article>
-				<article class="thumb">
-					<a href="photo-detail.html?photo=07" class="image"><img src="images/thumbs/07.jpg" alt="Mauris id tellus arcu" /></a>
-					<h2>Mauris id tellus arcu</h2>
-					<p>Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.</p>
-				</article>
-				<article class="thumb">
-					<a href="photo-detail.html?photo=08" class="image"><img src="images/thumbs/08.jpg" alt="Nunc vehicula id nulla" /></a>
-					<h2>Nunc vehicula id nulla</h2>
-					<p>Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.</p>
-				</article>
-				<article class="thumb">
-					<a href="photo-detail.html?photo=09" class="image"><img src="images/thumbs/09.jpg" alt="Neque et faucibus viverra" /></a>
-					<h2>Neque et faucibus viverra</h2>
-					<p>Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.</p>
-				</article>
-				<article class="thumb">
-					<a href="photo-detail.html?photo=10" class="image"><img src="images/thumbs/10.jpg" alt="Mattis ante fermentum" /></a>
-					<h2>Mattis ante fermentum</h2>
-					<p>Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.</p>
-				</article>
-				<article class="thumb">
-					<a href="photo-detail.html?photo=11" class="image"><img src="images/thumbs/11.jpg" alt="Sed ac elementum arcu" /></a>
-					<h2>Sed ac elementum arcu</h2>
-					<p>Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.</p>
-				</article>
-				<article class="thumb">
-					<a href="photo-detail.html?photo=12" class="image"><img src="images/thumbs/12.jpg" alt="Vehicula id nulla dignissim" /></a>
-					<h2>Vehicula id nulla dignissim</h2>
-					<p>Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.</p>
-				</article>
-			</div>
+  <main class="gallery-wrap" id="gallery">
+    <section class="gallery-grid" id="gallery-grid"></section>
+  </main>
 
-			<footer id="footer" class="panel">
-				<div class="inner split">
-					<div>
-						<section>
-							<h2>Follow me on ...</h2>
-							<ul class="icons">
-								<li><a href="https://weibo.com/u/2534659182" class="icon brands fa-weibo"><span class="label">weibo</span></a></li>
-								<li><a href="https://www.instagram.com/tiansi.yang" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-								<li><a href="https://github.com/tankey33" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-							</ul>
-						</section>
-						<p class="copyright">&copy; Unttled. Design: <a class="link" href="https://itestv.com" target="_blank" rel="noopener">Tankey<i class="fas fa-external-link-alt"></i></a>.</p>
-					</div>
-					<div>
-						<section>
-							<h2>Get in touch</h2>
-							<form method="post" action="https://formspree.io/f/xvgblyqz">
-								<div class="fields">
-									<div class="field half"><input type="text" name="name" id="name" placeholder="Name" /></div>
-									<div class="field half"><input type="text" name="email" id="email" placeholder="Email" /></div>
-									<div class="field"><textarea name="message" id="message" rows="4" placeholder="Message"></textarea></div>
-								</div>
-								<ul class="actions">
-									<li><input type="submit" value="Send" class="primary" /></li>
-									<li><input type="reset" value="Reset" /></li>
-								</ul>
-							</form>
-						</section>
-					</div>
-				</div>
-			</footer>
-		</div>
+  <div class="footer-note">有些照片不是拍得多专业，只是那一刻刚好不想忘。</div>
 
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.poptrox.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
-	</body>
+  <script>
+    const photos = [
+      { id:'01', title:'刚刚好的一眼', subtitle:'有些开始很安静，但后来会变得很长很长。', thumb:'images/thumbs/01.jpg', className:'large' },
+      { id:'02', title:'把喜欢存下来', subtitle:'不是为了发给谁看，只是想认真留下。', thumb:'images/thumbs/02.jpg' },
+      { id:'03', title:'天气和心情都很好', subtitle:'那天的风、光和你，刚好都很温柔。', thumb:'images/thumbs/03.jpg', className:'tall' },
+      { id:'04', title:'想起就会笑', subtitle:'后来再翻到这张，还是会一下回到当时。', thumb:'images/thumbs/04.jpg' },
+      { id:'05', title:'普通的一天也值得纪念', subtitle:'不是每个瞬间都盛大，但有些平常也很珍贵。', thumb:'images/thumbs/05.jpg' },
+      { id:'06', title:'把时间放慢一点', subtitle:'想把那一刻多停留一会儿，所以拍了下来。', thumb:'images/thumbs/06.jpg', className:'large' },
+      { id:'07', title:'光落下来的样子', subtitle:'照片会替人记住那些肉眼来不及保存的细节。', thumb:'images/thumbs/07.jpg' },
+      { id:'08', title:'你在镜头里', subtitle:'其实不是镜头好看，是你刚好在里面。', thumb:'images/thumbs/08.jpg' },
+      { id:'09', title:'某个被偏爱的瞬间', subtitle:'好看的不是构图，是那时真的很想记住你。', thumb:'images/thumbs/09.jpg', className:'tall' },
+      { id:'10', title:'像小小的电影画面', subtitle:'每一张都像从生活里剪下来的一帧。', thumb:'images/thumbs/10.jpg' },
+      { id:'11', title:'翻到这里又想你了', subtitle:'照片墙翻到后面，想念反而会更具体。', thumb:'images/thumbs/11.jpg' },
+      { id:'12', title:'故事先留在这里', subtitle:'等以后再看，也许会发现那时已经很幸福了。', thumb:'images/thumbs/12.jpg', className:'large' }
+    ];
+
+    const grid = document.getElementById('gallery-grid');
+    grid.innerHTML = photos.map((photo, index) => `
+      <a class="photo-card ${photo.className || ''}" href="photo-detail.html?photo=${photo.id}">
+        <img src="${photo.thumb}" alt="${photo.title}" loading="lazy" />
+        <div class="photo-copy">
+          <div class="photo-index">Memory ${String(index + 1).padStart(2, '0')}</div>
+          <h2 class="photo-title">${photo.title}</h2>
+          <p class="photo-sub">${photo.subtitle}</p>
+        </div>
+      </a>
+    `).join('');
+  </script>
+</body>
 </html>
