@@ -1,309 +1,130 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Tankey ❤️ Monody</title>
-  <link rel="icon" href="/love/love.png" />
-  <link rel="shortcut icon" href="/love/love.png" />
-  <style>
-:root{
---bg:#f5f5f7;
---panel:rgba(255,255,255,.85);
---text:#111;
---soft:#6e6e73;
---line:rgba(0,0,0,.08);
---shadow:0 18px 54px rgba(0,0,0,.08);
---radius:24px;
-}
-
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<title>Tankey ❤️ Monody</title>
+<link rel="icon" href="love.png"/>
+<style>
+:root{--bg:#f5f5f7;--panel:rgba(255,255,255,.85);--text:#111;--soft:#6e6e73;--line:rgba(0,0,0,.08);--shadow:0 18px 54px rgba(0,0,0,.08);--radius:24px}
 *{box-sizing:border-box}
-body{
-margin:0;
-font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","PingFang SC","Helvetica Neue",sans-serif;
-background:var(--bg);
-color:var(--text);
-}
-
-.topbar{
-position:sticky;
-top:0;
-background:rgba(255,255,255,.7);
-backdrop-filter:blur(16px);
-border-bottom:1px solid var(--line);
-}
-
-.topbar-inner{
-max-width:1200px;
-margin:auto;
-padding:14px 24px;
-display:flex;
-justify-content:space-between;
-}
-
-.shell{
-max-width:1200px;
-margin:auto;
-padding:24px;
-display:grid;
-grid-template-columns:1fr 420px;
-gap:20px;
-}
-
-.stage{
-background:var(--panel);
-border-radius:var(--radius);
-border:1px solid var(--line);
-box-shadow:var(--shadow);
-display:flex;
-align-items:center;
-justify-content:center;
-min-height:60vh;
-overflow:hidden;
-}
-
-.stage img{
-max-width:100%;
-max-height:100%;
-padding:30px;
-object-fit:contain;
-}
-
-.info{
-background:var(--panel);
-border-radius:var(--radius);
-border:1px solid var(--line);
-box-shadow:var(--shadow);
-padding:20px;
-display:flex;
-flex-direction:column;
-gap:16px;
-}
-
-.group{
-border-radius:16px;
-border:1px solid var(--line);
-padding:14px 16px;
-}
-
-.group-title{
-font-size:16px;
-font-weight:600;
-margin-bottom:10px;
-}
-
-.meta-row{
-display:grid;
-grid-template-columns:120px 1fr;
-font-size:14px;
-padding:4px 0;
-}
-
-.meta-label{
-color:var(--soft);
-}
-
-.histogram-box{
-height:140px;
-background:#fafafa;
-border-radius:12px;
-border:1px solid var(--line);
-display:flex;
-align-items:center;
-justify-content:center;
-}
-
-.map-box iframe{
-width:100%;
-height:200px;
-border:0;
-border-radius:12px;
-}
-
-.hidden{
-display:none;
-}
-
-@media(max-width:900px){
-.shell{
-grid-template-columns:1fr;
-}
-}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","PingFang SC","Helvetica Neue",sans-serif;background:var(--bg);color:var(--text)}
+.topbar{position:sticky;top:0;background:rgba(255,255,255,.7);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);z-index:50}
+.topbar-inner{max-width:1200px;margin:auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center}
+.brand{font-size:14px;letter-spacing:.08em}
+.nav a{font-size:13px;color:var(--soft);padding:10px 14px;border-radius:999px;text-decoration:none;margin-left:6px}
+.nav a:hover,.nav a.active{background:rgba(17,17,17,.05);color:var(--text)}
+.shell{max-width:1200px;margin:auto;padding:24px;display:grid;grid-template-columns:minmax(0,1.1fr) 420px;gap:20px}
+.stage{background:var(--panel);border-radius:var(--radius);border:1px solid var(--line);box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center;min-height:60vh;overflow:hidden;position:relative}
+.stage img{max-width:100%;max-height:100%;padding:30px;object-fit:contain}
+.nav-btn{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:999px;background:rgba(255,255,255,.7);border:1px solid var(--line);backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:center;font-size:24px;color:#222;z-index:2;text-decoration:none}
+.nav-prev{left:16px}.nav-next{right:16px}
+.counter{position:absolute;top:16px;right:16px;background:rgba(255,255,255,.7);border:1px solid var(--line);backdrop-filter:blur(12px);padding:10px 14px;border-radius:999px;font-size:12px;z-index:2}
+.info{background:var(--panel);border-radius:var(--radius);border:1px solid var(--line);box-shadow:var(--shadow);padding:20px;display:flex;flex-direction:column;gap:16px;max-height:calc(100vh - 44px);overflow:auto}
+.group{border-radius:16px;border:1px solid var(--line);padding:14px 16px;background:rgba(255,255,255,.6)}
+.group-title{font-size:15px;font-weight:600;margin-bottom:10px;color:var(--soft);letter-spacing:.08em;text-transform:uppercase}
+.meta-row{display:grid;grid-template-columns:100px 1fr;font-size:13px;padding:5px 0;line-height:1.5}
+.meta-label{color:var(--soft)}
+.histogram-box{height:140px;background:#fafafa;border-radius:12px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.map-box iframe{width:100%;height:200px;border:0;border-radius:12px}
+.hidden{display:none}
+@media(max-width:900px){.shell{grid-template-columns:1fr}.info{max-height:none}}
+@media(max-width:520px){.topbar-inner,.shell{padding-left:16px;padding-right:16px}.nav-btn{width:40px;height:40px;font-size:20px}.meta-row{grid-template-columns:84px 1fr;font-size:12px}}
 </style>
 </head>
-
 <body>
-
-<header class="topbar">
-<div class="topbar-inner">
-<div>Tankey ❤️ Monody</div>
-<div>Photo Detail</div>
-</div>
-</header>
-
+<header class="topbar"><div class="topbar-inner"><a class="brand" href="index.html">Tankey ❤️ Monody</a><nav class="nav"><a href="index.html">首页</a><a href="photo.html" class="active">照片</a><a href="notes.html">碎碎念</a></nav></div></header>
 <main class="shell">
-
 <section class="stage">
-<img id="photo" src="sample.jpg" alt="photo">
+<a class="nav-btn nav-prev" id="prev-link" href="#">‹</a>
+<img id="photo" src="" alt="photo">
+<a class="nav-btn nav-next" id="next-link" href="#">›</a>
+<div class="counter" id="counter">1 / 12</div>
 </section>
-
 <aside class="info">
-
-<section id="basic-group" class="group hidden">
-<div class="group-title">基本信息</div>
-<div id="basic-list"></div>
-</section>
-
-<section id="shoot-group" class="group hidden">
-<div class="group-title">拍摄参数</div>
-<div id="shoot-list"></div>
-</section>
-
-<section id="device-group" class="group hidden">
-<div class="group-title">设备信息</div>
-<div id="device-list"></div>
-</section>
-
-<section id="mode-group" class="group hidden">
-<div class="group-title">拍摄模式</div>
-<div id="mode-list"></div>
-</section>
-
-<section id="tech-group" class="group hidden">
-<div class="group-title">技术参数</div>
-<div id="tech-list"></div>
-</section>
-
-<section id="hist-group" class="group hidden">
-<div class="group-title">直方图</div>
-<div class="histogram-box" id="histogram"></div>
-</section>
-
-<section id="map-group" class="group hidden">
-<div class="group-title">地图</div>
-<div class="map-box" id="map"></div>
-</section>
-
+<section id="basic-group" class="group hidden"><div class="group-title">基本信息</div><div id="basic-list"></div></section>
+<section id="shoot-group" class="group hidden"><div class="group-title">拍摄参数</div><div id="shoot-list"></div></section>
+<section id="device-group" class="group hidden"><div class="group-title">设备信息</div><div id="device-list"></div></section>
+<section id="mode-group" class="group hidden"><div class="group-title">拍摄模式</div><div id="mode-list"></div></section>
+<section id="tech-group" class="group hidden"><div class="group-title">技术参数</div><div id="tech-list"></div></section>
+<section id="hist-group" class="group hidden"><div class="group-title">直方图</div><div class="histogram-box" id="histogram"></div></section>
+<section id="map-group" class="group hidden"><div class="group-title">地图</div><div class="map-box" id="map"></div></section>
 </aside>
-
 </main>
-
+<script src="assets/js/photo-data.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/exifr/dist/lite.umd.js"></script>
-
 <script>
+const photos=(window.PHOTO_DATA||[]).map(p=>({...p,exif:p.exif||{}}));
+const q=new URLSearchParams(location.search).get('photo')||'01';
+const index=Math.max(0,photos.findIndex(p=>p.id===q));
+const photo=photos[index];
+const img=document.getElementById("photo");
 
-const img = document.getElementById("photo")
+const prettySize=b=>{const u=['B','KB','MB','GB'];let n=b,i=0;while(n>=1024&&i<u.length-1){n/=1024;i++;}return`${n.toFixed(i?1:0)} ${u[i]}`};
+const mp=`${(photo.width*photo.height/1000000).toFixed(2)} MP`;
 
-function row(label,value){
-return `<div class="meta-row">
-<div class="meta-label">${label}</div>
-<div>${value}</div>
-</div>`
-}
+function row(l,v){return`<div class="meta-row"><div class="meta-label">${l}</div><div>${v||'-'}</div></div>`}
+function renderGroup(id,list,data){const valid=data.filter(x=>x[1]!=null&&x[1]!=='');if(!valid.length)return;document.getElementById(id).classList.remove("hidden");document.getElementById(list).innerHTML=valid.map(x=>row(x[0],x[1])).join("")}
 
-function renderGroup(id,list,data){
-const valid=data.filter(x=>x[1])
-if(!valid.length) return
-document.getElementById(id).classList.remove("hidden")
-document.getElementById(list).innerHTML=valid.map(x=>row(x[0],x[1])).join("")
+function mapExif(raw={}){
+const gps=raw.latitude&&raw.longitude?{latitude:raw.latitude,longitude:raw.longitude}:{};
+const shutter=raw.ExposureTime?`${raw.ExposureTime}s`:null;
+const aperture=raw.FNumber?`f/${Number(raw.FNumber).toFixed(1)}`:null;
+const focal=raw.FocalLength?`${Number(raw.FocalLength).toFixed(1)} mm`:null;
+const focal35=raw.FocalLengthIn35mmFormat?`${raw.FocalLengthIn35mmFormat} mm`:null;
+const ev=raw.ExposureBiasValue?`${raw.ExposureBiasValue>0?'+':''}${Number(raw.ExposureBiasValue).toFixed(2)} EV`:null;
+const flashMap={0x0000:'未闪光',0x0001:'闪光',0x0005:'闪光返回',0x0007:'强制闪光',0x0008:'不闪光',0x0009:'无闪光功能',0x0010:'自动',0x0018:'自动红眼'};
+const flashVal=raw.Flash!==undefined?(flashMap[raw.Flash]||`模式${raw.Flash}`):null;
+const wbMap={0:'自动',1:'自动',2:'手动',5:'日光',6:'阴天',7:'钨丝灯',8:'荧光灯',9:'闪光灯',10:'阴影'};
+const wbVal=raw.WhiteBalance!==undefined?(wbMap[raw.WhiteBalance]||`模式${raw.WhiteBalance}`):null;
+const progMap={0:'未定义',1:'手动',2:'正常',3:'光圈优先',4:'快门优先',5:'创意',6:'运动',7:'人像',8:'风景'};
+const progVal=raw.ExposureProgram!==undefined?(progMap[raw.ExposureProgram]||`模式${raw.ExposureProgram}`):null;
+const meterMap={0:'未知',1:'平均',2:'中央重点',3:'点测光',4:'多点',5:'局部'};
+const meterVal=raw.MeteringMode!==undefined?(meterMap[raw.MeteringMode]||`模式${raw.MeteringMode}`):null;
+const sceneMap={0:'未知',1:'标准',2:'风景',3:'人像',4:'夜景',5:'运动',6:'微距'};
+const sceneVal=raw.SceneCaptureType!==undefined?(sceneMap[raw.SceneCaptureType]||`类型${raw.SceneCaptureType}`):null;
+return{...gps,dateTime:raw.DateTimeOriginal||raw.CreateDate||null,colorSpace:raw.ColorSpace||null,software:raw.Software||null,camera:raw.Model||null,model:raw.Model||null,make:raw.Make||null,lens:raw.LensModel||raw.Lens||raw.LensSpec||null,focalLength:focal,focalLength35mm:focal35,aperture,shutter,exposureTime:shutter,iso:raw.ISO||null,whiteBalance:wbVal,exposureProgram:progVal,exposureMode:raw.ExposureMode!==undefined?(raw.ExposureMode===0?'自动':raw.ExposureMode===1?'手动':`模式${raw.ExposureMode}`):null,meteringMode:meterVal,flash:flashVal,sceneCaptureType:sceneVal,brightnessValue:raw.BrightnessValue?`${Number(raw.BrightnessValue).toFixed(2)} EV`:null,exposureBias:ev,sensingMethod:raw.SensingMethod!==undefined?`类型${raw.SensingMethod}`:null,digitalZoom:raw.DigitalZoomRatio?`${raw.DigitalZoomRatio}x`:null,contrast:raw.Contrast!==undefined?(raw.Contrast===0?'正常':raw.Contrast>0?'增强':'减弱'):null,saturation:raw.Saturation!==undefined?(raw.Saturation===0?'正常':raw.Saturation>0?'增强':'减弱'):null,sharpness:raw.Sharpness!==undefined?(raw.Sharpness===0?'正常':raw.Sharpness>0?'增强':'减弱'):null,subjectDistance:raw.SubjectDistance?`${Number(raw.SubjectDistance).toFixed(2)} m`:null,artist:raw.Artist||null,copyright:raw.Copyright||null,userComment:raw.UserComment||null};
 }
 
 function renderHistogram(image){
-
-const canvas=document.createElement("canvas")
-canvas.width=256
-canvas.height=120
-
-const ctx=canvas.getContext("2d")
-
-const temp=document.createElement("canvas")
-const tctx=temp.getContext("2d")
-
-temp.width=256
-temp.height=Math.round(image.height*(256/image.width))
-
-tctx.drawImage(image,0,0,temp.width,temp.height)
-
-const data=tctx.getImageData(0,0,temp.width,temp.height).data
-
-const bins=new Array(256).fill(0)
-
-for(let i=0;i<data.length;i+=4){
-const lum=Math.round(0.2126*data[i]+0.7152*data[i+1]+0.0722*data[i+2])
-bins[lum]++
-}
-
-const max=Math.max(...bins)
-
-ctx.beginPath()
-ctx.moveTo(0,120)
-
-bins.forEach((v,i)=>{
-const y=120-(v/max)*110
-ctx.lineTo(i,y)
-})
-
-ctx.lineTo(256,120)
-ctx.fillStyle="#333"
-ctx.fill()
-
-document.getElementById("histogram").appendChild(canvas)
-document.getElementById("hist-group").classList.remove("hidden")
-
+const canvas=document.createElement("canvas");canvas.width=256;canvas.height=140;
+const ctx=canvas.getContext("2d");
+const temp=document.createElement("canvas");const tctx=temp.getContext("2d");
+temp.width=256;temp.height=Math.round(image.height*(256/image.width));
+tctx.drawImage(image,0,0,temp.width,temp.height);
+const data=tctx.getImageData(0,0,temp.width,temp.height).data;
+const rBins=new Array(256).fill(0),gBins=new Array(256).fill(0),bBins=new Array(256).fill(0);
+for(let i=0;i<data.length;i+=4){rBins[data[i]]++;gBins[data[i+1]]++;bBins[data[i+2]]++;}
+const rMax=Math.max(...rBins,1),gMax=Math.max(...gBins,1),bMax=Math.max(...bBins,1);
+ctx.clearRect(0,0,256,140);ctx.fillStyle='#ffffff';ctx.fillRect(0,0,256,140);
+ctx.strokeStyle='rgba(0,0,0,0.08)';ctx.strokeRect(0.5,0.5,255,139);
+const drawCh=(bins,max,color)=>{ctx.beginPath();ctx.moveTo(0,140);bins.forEach((v,i)=>{const y=140-(v/max)*128;ctx.lineTo(i,y);});ctx.lineTo(256,140);ctx.closePath();ctx.fillStyle=color;ctx.fill();};
+drawCh(bBins,bMax,'rgba(60,120,255,0.5)');drawCh(gBins,gMax,'rgba(60,200,80,0.5)');drawCh(rBins,rMax,'rgba(255,80,80,0.5)');
+document.getElementById("histogram").innerHTML='';document.getElementById("histogram").appendChild(canvas);document.getElementById("hist-group").classList.remove("hidden");
 }
 
 async function loadExif(){
-
-let raw=null
-
-try{
-raw=await exifr.parse(img.src,{gps:true})
-}catch(e){}
-
-if(!raw) return
-
-renderGroup("basic-group","basic-list",[
-["拍摄时间",raw.DateTimeOriginal],
-["分辨率",img.naturalWidth+" × "+img.naturalHeight],
-["像素",(img.naturalWidth*img.naturalHeight/1000000).toFixed(2)+" MP"]
-])
-
-renderGroup("shoot-group","shoot-list",[
-["焦距",raw.FocalLength?raw.FocalLength+" mm":null],
-["光圈",raw.FNumber?"f/"+raw.FNumber:null],
-["曝光时间",raw.ExposureTime?raw.ExposureTime+" s":null],
-["ISO",raw.ISO]
-])
-
-renderGroup("device-group","device-list",[
-["相机",raw.Model],
-["镜头",raw.LensModel]
-])
-
-renderGroup("mode-group","mode-list",[
-["白平衡",raw.WhiteBalance],
-["测光模式",raw.MeteringMode]
-])
-
-renderGroup("tech-group","tech-list",[
-["亮度",raw.BrightnessValue]
-])
-
-if(raw.latitude && raw.longitude){
-
-document.getElementById("map-group").classList.remove("hidden")
-
-document.getElementById("map").innerHTML=
-`<iframe src="https://www.openstreetmap.org/export/embed.html?marker=${raw.latitude},${raw.longitude}"></iframe>`
+let raw=null;try{raw=await exifr.parse(img.src,{gps:true});}catch(e){}
+const exif=raw?mapExif(raw):{};
+renderGroup("basic-group","basic-list",[["文件名",photo.file],["文件大小",prettySize(photo.size)],["分辨率",`${photo.width} × ${photo.height}`],["像素",mp],["拍摄时间",exif.dateTime],["色彩空间",exif.colorSpace],["软件",exif.software],["作者",exif.artist],["版权",exif.copyright],["坐标",exif.latitude&&exif.longitude?`${exif.latitude}, ${exiflongitude}`:null]]);
+renderGroup("shoot-group","shoot-list",[["焦距",exif.focalLength],["光圈",exif.aperture],["曝光时间",exif.shutter],["ISO",exif.iso],["曝光补偿",exif.exposureBias],["亮度",exif.brightnessValue],["对焦距离",exif.subjectDistance],["数码变焦",exif.digitalZoom]]);
+renderGroup("device-group","device-list",[["制造商",exif.make],["相机",exif.camera],["镜头",exif.lens],["焦距",exif.focalLength],["35mm 等效",exif.focalLength35mm]]);
+renderGroup("mode-group","mode-list",[["白平衡",exif.whiteBalance],["曝光程序",exif.exposureProgram],["曝光模式",exif.exposureMode],["测光模式",exif.meteringMode],["闪光灯",exif.flash],["场景类型",exif.sceneCaptureType],["对比度",exif.contrast],["饱和度",exif.saturation],["锐度",exif.sharpness]]);
+renderGroup("tech-group","tech-list",[["亮度",exif.brightnessValue],["感光方式",exif.sensingMethod],["用户注释",exif.userComment]]);
+if(exif.latitude&&exif.longitude){document.getElementById("map-group").classList.remove("hidden");document.getElementById("map").innerHTML=`<iframe src="https://www.openstreetmap.org/export/embed.html?marker=${exif.latitude},${exif.longitude}"></iframe>`;}
+renderHistogram(img);
 }
 
-renderHistogram(img)
-
-}
-
-img.onload=()=>loadExif()
-
+img.onload=()=>{
+document.getElementById("photo").src=photo.full;
+document.getElementById("counter").textContent=`${index+1} / ${photos.length}`;
+const prev=photos[(index-1+photos.length)%photos.length],next=photos[(index+1)%photos.length];
+document.getElementById("prev-link").href=`photo-detail.html?photo=${prev.id}`;
+document.getElementById("next-link").href=`photo-detail.html?photo=${next.id}`;
+document.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')location.href=`photo-detail.html?photo=${prev.id}`;if(e.key==='ArrowRight')location.href=`photo-detail.html?photo=${next.id}`;});
+loadExif();
+};
+img.src=photo.full;
 </script>
-
 </body>
 </html>
