@@ -48,6 +48,9 @@
             z-index: 10;
             pointer-events: none;
             padding: max(20px, env(safe-area-inset-top)) 20px max(24px, env(safe-area-inset-bottom)) 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .topbar {
@@ -74,10 +77,7 @@
         }
 
         .centerpiece {
-            position: absolute;
-            top: 124px;
-            left: 50%;
-            transform: translateX(-50%);
+            margin-top: 18px;
             width: min(92vw, 760px);
             display: flex;
             flex-direction: column;
@@ -87,14 +87,12 @@
         }
 
         .bottom-center {
-            position: absolute;
-            left: 50%;
-            bottom: max(26px, env(safe-area-inset-bottom));
-            transform: translateX(-50%);
+            margin-top: auto;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 18px;
+            gap: 14px;
+            padding-bottom: max(8px, env(safe-area-inset-bottom));
         }
 
         .avatar-wrap {
@@ -103,13 +101,8 @@
             flex-direction: column;
             align-items: center;
             gap: 14px;
-        }
-
-        .avatar-floating {
-            position: absolute;
-            left: 50%;
-            top: 53%;
-            transform: translate(-50%, -50%);
+            margin-top: 18px;
+            margin-bottom: 180px;
             z-index: 12;
         }
 
@@ -149,32 +142,35 @@
 
         .title-block {
             pointer-events: none;
+            margin-top: auto;
         }
 
         .hero-title {
             margin: 0;
-            font-size: clamp(34px, 7vw, 78px);
-            line-height: 1.04;
+            font-size: clamp(40px, 7.2vw, 84px);
+            line-height: 1.02;
             letter-spacing: -0.05em;
-            font-weight: 600;
+            font-weight: 700;
+            font-family: "Snell Roundhand", "Apple Chancery", "Baskerville Italic", "Times New Roman", serif;
+            font-style: italic;
             text-wrap: balance;
         }
 
         .hero-desc {
-            margin: 12px auto 0;
-            max-width: 28em;
-            font-size: clamp(16px, 2.2vw, 22px);
-            line-height: 1.65;
+            margin: 10px auto 0;
+            max-width: 34em;
+            font-size: clamp(14px, 1.8vw, 18px);
+            line-height: 1.4;
             letter-spacing: -0.01em;
             color: var(--text-soft);
-            text-wrap: balance;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .bottom-bar {
-            position: absolute;
-            left: 20px;
-            right: 20px;
-            bottom: max(20px, env(safe-area-inset-bottom));
+            width: 100%;
+            margin-top: auto;
             display: grid;
             grid-template-columns: 1fr auto 1fr;
             align-items: end;
@@ -232,13 +228,13 @@
             }
 
             .centerpiece {
-                top: 104px;
                 width: min(94vw, 560px);
                 gap: 14px;
             }
 
-            .avatar-floating {
-                top: 57%;
+            .avatar-wrap {
+                margin-top: 16px;
+                margin-bottom: 150px;
             }
 
             .enter-memory,
@@ -247,16 +243,14 @@
                 letter-spacing: 0.10em;
             }
 
+            .hero-desc {
+                max-width: 22em;
+            }
+
             .bottom-bar {
-                left: 16px;
-                right: 16px;
                 grid-template-columns: 1fr;
                 justify-items: center;
                 gap: 16px;
-            }
-
-            .bottom-center {
-                bottom: max(20px, env(safe-area-inset-bottom));
             }
 
             .blank-slot { display: none; }
@@ -270,16 +264,16 @@
             <div class="top-pill">Tankey ❤️ Monody · Since 2017</div>
         </div>
 
+        <div class="avatar-wrap">
+            <img src="./baby.png" id="logo" title="进入照片墙" alt="Monody avatar">
+            <div class="enter-memory">点击头像，进入照片墙</div>
+        </div>
+
         <div class="centerpiece">
             <div class="title-block">
                 <h1 class="hero-title">We fell in love.</h1>
                 <p class="hero-desc">把喜欢过的时间、看过的风景，和那些舍不得忘的瞬间，留在一个可以慢慢重看的地方。</p>
             </div>
-        </div>
-
-        <div class="avatar-wrap avatar-floating">
-            <img src="./baby.png" id="logo" title="进入照片墙" alt="Monody avatar">
-            <div class="enter-memory">点击头像，进入照片墙</div>
         </div>
 
         <div class="bottom-bar">
@@ -646,30 +640,30 @@
     <script>
         const bgm = document.getElementById('bgm');
         const musicToggle = document.getElementById('musicToggle');
-        let hasStartedByPageTap = false;
+        let hasStartedByDoubleTap = false;
 
         function updateMusicButton() {
             musicToggle.style.opacity = bgm.paused ? '0.68' : '1';
         }
 
         async function startMusicOnce() {
-            if (hasStartedByPageTap) return;
-            hasStartedByPageTap = true;
+            if (hasStartedByDoubleTap) return;
+            hasStartedByDoubleTap = true;
             try {
                 await bgm.play();
             } catch (e) {
-                hasStartedByPageTap = false;
+                hasStartedByDoubleTap = false;
             }
             updateMusicButton();
         }
 
-        document.body.addEventListener('click', function () {
+        document.body.addEventListener('dblclick', function () {
             startMusicOnce();
-        }, { once: true });
+        });
 
         musicToggle.addEventListener('click', function (event) {
             event.stopPropagation();
-            hasStartedByPageTap = true;
+            hasStartedByDoubleTap = true;
             if (bgm.paused) bgm.play(); else bgm.pause();
             updateMusicButton();
         });
