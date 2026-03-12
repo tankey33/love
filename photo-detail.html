@@ -7,397 +7,303 @@
   <link rel="icon" href="/love/love.png" />
   <link rel="shortcut icon" href="/love/love.png" />
   <style>
-    :root {
-      --bg: #f5f5f7;
-      --panel: rgba(255,255,255,.82);
-      --panel-soft: rgba(255,255,255,.62);
-      --text: #111;
-      --soft: #6e6e73;
-      --line: rgba(17,17,17,.08);
-      --shadow: 0 18px 54px rgba(0,0,0,.08);
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "PingFang SC", "Helvetica Neue", sans-serif;
-      color: var(--text);
-      background: radial-gradient(circle at top, rgba(255,255,255,.98) 0%, rgba(255,255,255,.5) 24%, rgba(245,245,247,1) 58%), linear-gradient(180deg, #fafafd 0%, #f5f5f7 100%);
-      -webkit-font-smoothing: antialiased;
-    }
-    a { color: inherit; text-decoration: none; }
-    img { display: block; max-width: 100%; }
-    .topbar {
-      position: sticky; top: 0; z-index: 50;
-      backdrop-filter: saturate(180%) blur(20px);
-      -webkit-backdrop-filter: saturate(180%) blur(20px);
-      background: rgba(245,245,247,.78);
-      border-bottom: 1px solid rgba(17,17,17,.04);
-    }
-    .topbar-inner {
-      max-width: 1380px; margin: 0 auto; padding: 14px 24px;
-      display: flex; align-items: center; justify-content: space-between; gap: 16px;
-    }
-    .brand { font-size: 14px; letter-spacing: .08em; white-space: nowrap; }
-    .nav { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
-    .nav a { font-size: 13px; color: var(--soft); padding: 10px 14px; border-radius: 999px; }
-    .nav a:hover, .nav a.active { background: rgba(17,17,17,.05); color: var(--text); }
+:root{
+--bg:#f5f5f7;
+--panel:rgba(255,255,255,.85);
+--text:#111;
+--soft:#6e6e73;
+--line:rgba(0,0,0,.08);
+--shadow:0 18px 54px rgba(0,0,0,.08);
+--radius:24px;
+}
 
-    .shell {
-      max-width: 1380px;
-      margin: 0 auto;
-      padding: 22px 24px 48px;
-      display: grid;
-      grid-template-columns: minmax(0, 1.15fr) 420px;
-      gap: 18px;
-    }
-    .stage, .info {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 28px;
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(22px) saturate(160%);
-      -webkit-backdrop-filter: blur(22px) saturate(160%);
-    }
-    .stage {
-      position: relative;
-      min-height: 78vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-    .stage img { width: 100%; height: 100%; object-fit: contain; padding: 30px; }
-    .top-actions {
-      position: absolute; top: 16px; left: 16px; right: 16px;
-      display: flex; justify-content: space-between; gap: 12px; z-index: 2;
-    }
-    .chip, .counter, .nav-btn {
-      background: rgba(255,255,255,.66);
-      border: 1px solid var(--line);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-    }
-    .chip, .counter { padding: 11px 14px; border-radius: 999px; font-size: 12px; color: #222; }
-    .nav-btn {
-      position: absolute; top: 50%; transform: translateY(-50%);
-      width: 46px; height: 46px; border-radius: 999px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 22px; color: #222; z-index: 2;
-    }
-    .nav-prev { left: 16px; }
-    .nav-next { right: 16px; }
+*{box-sizing:border-box}
+body{
+margin:0;
+font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","PingFang SC","Helvetica Neue",sans-serif;
+background:var(--bg);
+color:var(--text);
+}
 
-    .info {
-      padding: 22px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      overflow: auto;
-      max-height: calc(100vh - 44px);
-    }
-    .kicker { font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--soft); }
-    .title { margin: 4px 0 0; font-size: clamp(30px,4vw,48px); line-height: 1.02; letter-spacing: -.05em; }
-    .desc { margin: 12px 0 0; font-size: 15px; line-height: 1.85; color: var(--soft); }
-    .group {
-      padding: 16px 18px;
-      border-radius: 20px;
-      background: var(--panel-soft);
-      border: 1px solid var(--line);
-    }
-    .group-title {
-      margin: 0 0 12px;
-      font-size: 18px;
-      font-weight: 600;
-      letter-spacing: -.02em;
-    }
-    .meta-list { display: grid; gap: 10px; }
-    .meta-row {
-      display: grid;
-      grid-template-columns: 112px minmax(0,1fr);
-      gap: 10px;
-      align-items: start;
-      font-size: 14px;
-      line-height: 1.6;
-    }
-    .meta-label { color: var(--soft); }
-    .meta-value { color: var(--text); word-break: break-word; }
-    .map-box, .histogram-box {
-      border-radius: 18px;
-      background: rgba(17,17,17,.04);
-      border: 1px solid var(--line);
-      min-height: 160px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--soft);
-      font-size: 14px;
-      overflow: hidden;
-    }
-    .map-box iframe { width: 100%; height: 220px; border: 0; }
-    .hidden { display: none !important; }
-    @media (max-width: 960px) {
-      .shell { grid-template-columns: 1fr; }
-      .stage { min-height: 56vh; }
-      .info { max-height: none; }
-    }
-    @media (max-width: 520px) {
-      .topbar-inner, .shell { padding-left: 16px; padding-right: 16px; }
-      .shell { gap: 12px; }
-      .stage, .info { border-radius: 22px; }
-      .stage img { padding: 18px; }
-      .nav-btn { width: 40px; height: 40px; font-size: 20px; }
-      .title { font-size: 32px; }
-      .meta-row { grid-template-columns: 88px minmax(0,1fr); font-size: 13px; }
-    }
-  </style>
+.topbar{
+position:sticky;
+top:0;
+background:rgba(255,255,255,.7);
+backdrop-filter:blur(16px);
+border-bottom:1px solid var(--line);
+}
+
+.topbar-inner{
+max-width:1200px;
+margin:auto;
+padding:14px 24px;
+display:flex;
+justify-content:space-between;
+}
+
+.shell{
+max-width:1200px;
+margin:auto;
+padding:24px;
+display:grid;
+grid-template-columns:1fr 420px;
+gap:20px;
+}
+
+.stage{
+background:var(--panel);
+border-radius:var(--radius);
+border:1px solid var(--line);
+box-shadow:var(--shadow);
+display:flex;
+align-items:center;
+justify-content:center;
+min-height:60vh;
+overflow:hidden;
+}
+
+.stage img{
+max-width:100%;
+max-height:100%;
+padding:30px;
+object-fit:contain;
+}
+
+.info{
+background:var(--panel);
+border-radius:var(--radius);
+border:1px solid var(--line);
+box-shadow:var(--shadow);
+padding:20px;
+display:flex;
+flex-direction:column;
+gap:16px;
+}
+
+.group{
+border-radius:16px;
+border:1px solid var(--line);
+padding:14px 16px;
+}
+
+.group-title{
+font-size:16px;
+font-weight:600;
+margin-bottom:10px;
+}
+
+.meta-row{
+display:grid;
+grid-template-columns:120px 1fr;
+font-size:14px;
+padding:4px 0;
+}
+
+.meta-label{
+color:var(--soft);
+}
+
+.histogram-box{
+height:140px;
+background:#fafafa;
+border-radius:12px;
+border:1px solid var(--line);
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.map-box iframe{
+width:100%;
+height:200px;
+border:0;
+border-radius:12px;
+}
+
+.hidden{
+display:none;
+}
+
+@media(max-width:900px){
+.shell{
+grid-template-columns:1fr;
+}
+}
+</style>
 </head>
+
 <body>
-  <header class="topbar">
-    <div class="topbar-inner">
-      <a class="brand" href="index.html">Tankey ❤️ Monody</a>
-      <nav class="nav">
-        <a href="index.html">首页</a>
-        <a href="photo.html" class="active">照片</a>
-        <a href="notes.html">碎碎念</a>
-      </nav>
-    </div>
-  </header>
 
-  <main class="shell">
-    <section class="stage">
-      <div class="top-actions">
-        <a class="chip" href="photo.html">返回照片墙</a>
-        <div class="counter" id="counter">1 / 12</div>
-      </div>
-      <a class="nav-btn nav-prev" id="prev-link" href="#" aria-label="上一张">‹</a>
-      <img id="detail-image" src="images/fulls/01.jpg" alt="Photo" />
-      <a class="nav-btn nav-next" id="next-link" href="#" aria-label="下一张">›</a>
-    </section>
+<header class="topbar">
+<div class="topbar-inner">
+<div>Tankey ❤️ Monody</div>
+<div>Photo Detail</div>
+</div>
+</header>
 
-    <aside class="info">
-      <div>
-        <div class="kicker">Photo detail</div>
-        <h1 class="title" id="title">Photo</h1>
-        <p class="desc" id="desc"></p>
-      </div>
+<main class="shell">
 
-      <section id="map-group" class="group hidden">
-        <h2 class="group-title">地图</h2>
-        <div class="map-box" id="map-box"></div>
-      </section>
+<section class="stage">
+<img id="photo" src="sample.jpg" alt="photo">
+</section>
 
-      <section id="basic-group" class="group hidden">
-        <h2 class="group-title">基本信息</h2>
-        <div class="meta-list" id="basic-list"></div>
-      </section>
+<aside class="info">
 
-      <section id="shoot-group" class="group hidden">
-        <h2 class="group-title">拍摄参数</h2>
-        <div class="meta-list" id="shoot-list"></div>
-      </section>
+<section id="basic-group" class="group hidden">
+<div class="group-title">基本信息</div>
+<div id="basic-list"></div>
+</section>
 
-      <section id="hist-group" class="group hidden">
-        <h2 class="group-title">直方图</h2>
-        <div class="histogram-box">当前图片未生成直方图</div>
-      </section>
+<section id="shoot-group" class="group hidden">
+<div class="group-title">拍摄参数</div>
+<div id="shoot-list"></div>
+</section>
 
-      <section id="device-group" class="group hidden">
-        <h2 class="group-title">设备信息</h2>
-        <div class="meta-list" id="device-list"></div>
-      </section>
+<section id="device-group" class="group hidden">
+<div class="group-title">设备信息</div>
+<div id="device-list"></div>
+</section>
 
-      <section id="mode-group" class="group hidden">
-        <h2 class="group-title">拍摄模式</h2>
-        <div class="meta-list" id="mode-list"></div>
-      </section>
+<section id="mode-group" class="group hidden">
+<div class="group-title">拍摄模式</div>
+<div id="mode-list"></div>
+</section>
 
-      <section id="tech-group" class="group hidden">
-        <h2 class="group-title">技术参数</h2>
-        <div class="meta-list" id="tech-list"></div>
-      </section>
-    </aside>
-  </main>
+<section id="tech-group" class="group hidden">
+<div class="group-title">技术参数</div>
+<div id="tech-list"></div>
+</section>
 
-  <script src="assets/js/photo-data.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/exifr/dist/lite.umd.js"></script>
-  <script>
-    const photos = (window.PHOTO_DATA || []).map(p => ({ ...p, exif: p.exif || {} }));
-    const q = new URLSearchParams(location.search).get('photo') || '01';
-    const index = Math.max(0, photos.findIndex(p => p.id === q));
-    const photo = photos[index];
+<section id="hist-group" class="group hidden">
+<div class="group-title">直方图</div>
+<div class="histogram-box" id="histogram"></div>
+</section>
 
-    const prettySize = bytes => {
-      const u = ['B','KB','MB','GB']; let n = bytes, i = 0;
-      while (n >= 1024 && i < u.length - 1) { n /= 1024; i++; }
-      return `${n.toFixed(i ? 1 : 0)} ${u[i]}`;
-    };
-    const mp = `${(photo.width * photo.height / 1000000).toFixed(2)} MP`;
+<section id="map-group" class="group hidden">
+<div class="group-title">地图</div>
+<div class="map-box" id="map"></div>
+</section>
 
-    function row(label, value) {
-      return `<div class="meta-row"><div class="meta-label">${label}</div><div class="meta-value">${value}</div></div>`;
-    }
+</aside>
 
-    function resetGroups() {
-      document.querySelectorAll('.group').forEach(el => el.classList.add('hidden'));
-      document.querySelectorAll('.meta-list').forEach(el => el.innerHTML = '');
-      document.getElementById('map-box').innerHTML = '';
-      document.querySelector('#hist-group .histogram-box').innerHTML = '当前图片未生成直方图';
-    }
+</main>
 
-    function renderGroup(groupId, listId, entries) {
-      const valid = entries.filter(([, value]) => value !== null && value !== undefined && value !== '');
-      if (!valid.length) return;
-      document.getElementById(groupId).classList.remove('hidden');
-      document.getElementById(listId).innerHTML = valid.map(([k, v]) => row(k, v)).join('');
-    }
+<script src="https://cdn.jsdelivr.net/npm/exifr/dist/lite.umd.js"></script>
 
-    function mapExif(raw = {}) {
-      const gps = raw.latitude && raw.longitude ? { latitude: raw.latitude, longitude: raw.longitude } : {};
-      const shutter = raw.ExposureTime ? `${raw.ExposureTime}s` : null;
-      const aperture = raw.FNumber ? `f/${raw.FNumber}` : null;
-      const focal = raw.FocalLength ? `${raw.FocalLength} mm` : null;
-      const focal35 = raw.FocalLengthIn35mmFormat ? `${raw.FocalLengthIn35mmFormat} mm` : null;
-      return {
-        ...gps,
-        dateTime: raw.DateTimeOriginal || raw.CreateDate || null,
-        colorSpace: raw.ColorSpace || null,
-        software: raw.Software || null,
-        camera: raw.Model || null,
-        model: raw.Model || null,
-        lens: raw.LensModel || raw.Lens || null,
-        focalLength: focal,
-        focalLength35mm: focal35,
-        aperture,
-        shutter,
-        exposureTime: shutter,
-        iso: raw.ISO || null,
-        whiteBalance: raw.WhiteBalance || null,
-        exposureProgram: raw.ExposureProgram || null,
-        exposureMode: raw.ExposureMode || null,
-        meteringMode: raw.MeteringMode || null,
-        flash: raw.Flash || null,
-        sceneCaptureType: raw.SceneCaptureType || null,
-        brightnessValue: raw.BrightnessValue || null,
-        sensingMethod: raw.SensingMethod || null
-      };
-    }
+<script>
 
-    function renderHistogram(imageUrl) {
-      const img = new Image();
-      img.crossOrigin = 'anonymous';
-      img.onload = () => {
-        const canvas = document.createElement('canvas');
-        const ctx = canvas.getContext('2d', { willReadFrequently: true });
-        const w = 256, h = 120;
-        canvas.width = w; canvas.height = h;
-        const sample = document.createElement('canvas');
-        const sctx = sample.getContext('2d', { willReadFrequently: true });
-        const sw = 256, sh = Math.max(1, Math.round(img.height * (256 / img.width)));
-        sample.width = sw; sample.height = sh;
-        sctx.drawImage(img, 0, 0, sw, sh);
-        const data = sctx.getImageData(0, 0, sw, sh).data;
-        const bins = new Array(256).fill(0);
-        for (let i = 0; i < data.length; i += 4) {
-          const lum = Math.round(0.2126 * data[i] + 0.7152 * data[i+1] + 0.0722 * data[i+2]);
-          bins[lum]++;
-        }
-        const max = Math.max(...bins, 1);
-        ctx.clearRect(0, 0, w, h);
-        ctx.fillStyle = '#ffffff';
-        ctx.fillRect(0, 0, w, h);
-        ctx.strokeStyle = 'rgba(17,17,17,0.12)';
-        ctx.strokeRect(0.5, 0.5, w-1, h-1);
-        ctx.beginPath();
-        ctx.moveTo(0, h);
-        bins.forEach((v, i) => {
-          const y = h - (v / max) * (h - 8);
-          ctx.lineTo(i, y);
-        });
-        ctx.lineTo(w, h);
-        ctx.closePath();
-        ctx.fillStyle = 'rgba(17,17,17,0.78)';
-        ctx.fill();
-        document.getElementById('hist-group').classList.remove('hidden');
-        const box = document.querySelector('#hist-group .histogram-box');
-        box.innerHTML = '';
-        box.appendChild(canvas);
-      };
-      img.src = imageUrl;
-    }
+const img = document.getElementById("photo")
 
-    function renderPhoto(exif) {
-      resetGroups();
-      const hasLocation = exif.latitude && exif.longitude;
-      renderGroup('basic-group', 'basic-list', [
-        ['文件名', photo.file],
-        ['文件大小', prettySize(photo.size)],
-        ['分辨率', `${photo.width} × ${photo.height}`],
-        ['像素', mp],
-        ['拍摄时间', exif.dateTime || null],
-        ['色彩空间', exif.colorSpace || null],
-        ['软件', exif.software || null],
-        ['时区', exif.timezone || null],
-        ['国家', exif.country || null],
-        ['城市', exif.city || null],
-        ['坐标', hasLocation ? `${exif.latitude}, ${exif.longitude}` : null]
-      ]);
-      renderGroup('shoot-group', 'shoot-list', [
-        ['焦距', exif.focalLength || null],
-        ['光圈', exif.aperture || null],
-        ['曝光时间', exif.shutter || exif.exposureTime || null],
-        ['ISO', exif.iso || null]
-      ]);
-      renderGroup('device-group', 'device-list', [
-        ['相机', exif.camera || exif.model || null],
-        ['镜头', exif.lens || null],
-        ['焦距', exif.focalLength || null],
-        ['35mm 等效', exif.focalLength35mm || null]
-      ]);
-      renderGroup('mode-group', 'mode-list', [
-        ['白平衡', exif.whiteBalance || null],
-        ['曝光程序', exif.exposureProgram || null],
-        ['曝光模式', exif.exposureMode || null],
-        ['测光模式', exif.meteringMode || null],
-        ['闪光灯', exif.flash || null],
-        ['场景捕捉类型', exif.sceneCaptureType || null]
-      ]);
-      renderGroup('tech-group', 'tech-list', [
-        ['亮度', exif.brightnessValue || null],
-        ['感光方式', exif.sensingMethod || null]
-      ]);
-      if (hasLocation) {
-        document.getElementById('map-group').classList.remove('hidden');
-        document.getElementById('map-box').innerHTML = `<iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.openstreetmap.org/export/embed.html?marker=${encodeURIComponent(exif.latitude)},${encodeURIComponent(exif.longitude)}&layer=mapnik"></iframe>`;
-      }
-      renderHistogram(photo.full);
-    }
+function row(label,value){
+return `<div class="meta-row">
+<div class="meta-label">${label}</div>
+<div>${value}</div>
+</div>`
+}
 
-    document.title = `${photo.title} · Tankey ❤️ Monody`;
-    document.getElementById('detail-image').src = photo.full;
-    document.getElementById('detail-image').alt = photo.title;
-    document.getElementById('title').textContent = photo.title;
-    document.getElementById('desc').textContent = photo.description || '';
-    document.getElementById('counter').textContent = `${index + 1} / ${photos.length}`;
+function renderGroup(id,list,data){
+const valid=data.filter(x=>x[1])
+if(!valid.length) return
+document.getElementById(id).classList.remove("hidden")
+document.getElementById(list).innerHTML=valid.map(x=>row(x[0],x[1])).join("")
+}
 
-    const prev = photos[(index - 1 + photos.length) % photos.length];
-    const next = photos[(index + 1) % photos.length];
-    document.getElementById('prev-link').href = `photo-detail.html?photo=${prev.id}`;
-    document.getElementById('next-link').href = `photo-detail.html?photo=${next.id}`;
-    document.addEventListener('keydown', e => {
-      if (e.key === 'ArrowLeft') location.href = `photo-detail.html?photo=${prev.id}`;
-      if (e.key === 'ArrowRight') location.href = `photo-detail.html?photo=${next.id}`;
-    });
+function renderHistogram(image){
 
-    (async () => {
-      let exif = photo.exif || {};
-      try {
-        if (window.exifr) {
-          const raw = await window.exifr.parse(photo.full, { gps: true, translateKeys: false, tiff: true, exif: true });
-          if (raw) exif = { ...exif, ...mapExif(raw) };
-        }
-      } catch (e) {}
-      renderPhoto(exif);
-    })();
-  </script>
+const canvas=document.createElement("canvas")
+canvas.width=256
+canvas.height=120
+
+const ctx=canvas.getContext("2d")
+
+const temp=document.createElement("canvas")
+const tctx=temp.getContext("2d")
+
+temp.width=256
+temp.height=Math.round(image.height*(256/image.width))
+
+tctx.drawImage(image,0,0,temp.width,temp.height)
+
+const data=tctx.getImageData(0,0,temp.width,temp.height).data
+
+const bins=new Array(256).fill(0)
+
+for(let i=0;i<data.length;i+=4){
+const lum=Math.round(0.2126*data[i]+0.7152*data[i+1]+0.0722*data[i+2])
+bins[lum]++
+}
+
+const max=Math.max(...bins)
+
+ctx.beginPath()
+ctx.moveTo(0,120)
+
+bins.forEach((v,i)=>{
+const y=120-(v/max)*110
+ctx.lineTo(i,y)
+})
+
+ctx.lineTo(256,120)
+ctx.fillStyle="#333"
+ctx.fill()
+
+document.getElementById("histogram").appendChild(canvas)
+document.getElementById("hist-group").classList.remove("hidden")
+
+}
+
+async function loadExif(){
+
+let raw=null
+
+try{
+raw=await exifr.parse(img.src,{gps:true})
+}catch(e){}
+
+if(!raw) return
+
+renderGroup("basic-group","basic-list",[
+["拍摄时间",raw.DateTimeOriginal],
+["分辨率",img.naturalWidth+" × "+img.naturalHeight],
+["像素",(img.naturalWidth*img.naturalHeight/1000000).toFixed(2)+" MP"]
+])
+
+renderGroup("shoot-group","shoot-list",[
+["焦距",raw.FocalLength?raw.FocalLength+" mm":null],
+["光圈",raw.FNumber?"f/"+raw.FNumber:null],
+["曝光时间",raw.ExposureTime?raw.ExposureTime+" s":null],
+["ISO",raw.ISO]
+])
+
+renderGroup("device-group","device-list",[
+["相机",raw.Model],
+["镜头",raw.LensModel]
+])
+
+renderGroup("mode-group","mode-list",[
+["白平衡",raw.WhiteBalance],
+["测光模式",raw.MeteringMode]
+])
+
+renderGroup("tech-group","tech-list",[
+["亮度",raw.BrightnessValue]
+])
+
+if(raw.latitude && raw.longitude){
+
+document.getElementById("map-group").classList.remove("hidden")
+
+document.getElementById("map").innerHTML=
+`<iframe src="https://www.openstreetmap.org/export/embed.html?marker=${raw.latitude},${raw.longitude}"></iframe>`
+}
+
+renderHistogram(img)
+
+}
+
+img.onload=()=>loadExif()
+
+</script>
+
 </body>
 </html>
