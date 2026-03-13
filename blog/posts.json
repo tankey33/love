@@ -1,11 +1,33 @@
 [
   {
+    "slug": "site-update-note",
+    "title": "这次更新之后，小站终于开始像作品了",
+    "date": "2026-03-03",
+    "summary": "从首页、照片页到碎碎念，风格开始真正统一，这让整个站点第一次有了完整的内容感。",
+    "path": "blog/posts/site-update-note.md",
+    "renderedPath": "blog/rendered/site-update-note.html",
+    "pinned": true,
+    "cover": "images/fulls/03.jpg"
+  },
+  {
+    "slug": "evening-light",
+    "title": "傍晚的光开始变慢",
+    "date": "2026-03-13",
+    "summary": "有时候一天真正安静下来的时刻，不是夜里，而是傍晚光线刚开始往回收的时候。",
+    "path": "blog/posts/evening-light.md",
+    "renderedPath": "blog/rendered/evening-light.html",
+    "pinned": false,
+    "cover": "images/fulls/04.jpg"
+  },
+  {
     "slug": "newsroom-love-story",
     "title": "Tankey ❤️ Monody 发布全新照片与碎碎念页面",
     "date": "2026-03-13",
     "summary": "以更克制的排版、更完整的影像展示和更稳定的文章阅读体验，这个小站完成了一次更接近 Apple Newsroom 气质的更新。",
     "path": "blog/posts/newsroom-love-story.md",
-    "renderedPath": "blog/rendered/newsroom-love-story.html"
+    "renderedPath": "blog/rendered/newsroom-love-story.html",
+    "pinned": false,
+    "cover": ""
   },
   {
     "slug": "dev-note",
@@ -13,7 +35,9 @@
     "date": "2026-03-12",
     "summary": "这篇文章用来展示碎碎念页面对代码高亮、复制、公式、表格、引用和图片等内容的支持。",
     "path": "blog/posts/dev-note.md",
-    "renderedPath": "blog/rendered/dev-note.html"
+    "renderedPath": "blog/rendered/dev-note.html",
+    "pinned": false,
+    "cover": ""
   },
   {
     "slug": "hello",
@@ -21,6 +45,98 @@
     "date": "2026-03-12",
     "summary": "这是一个示例 markdown。以后你只要把新的 md 文件放进 blog/posts，就能自动出现在碎碎念页面。",
     "path": "blog/posts/hello.md",
-    "renderedPath": "blog/rendered/hello.html"
+    "renderedPath": "blog/rendered/hello.html",
+    "pinned": false,
+    "cover": ""
+  },
+  {
+    "slug": "ordinary-day",
+    "title": "普通的一天，也值得被郑重留下",
+    "date": "2026-03-11",
+    "summary": "不是每一天都要发生大事，很多后来会反复回看的照片，其实都来自很普通的一天。",
+    "path": "blog/posts/ordinary-day.md",
+    "renderedPath": "blog/rendered/ordinary-day.html",
+    "pinned": false,
+    "cover": "images/fulls/05.jpg"
+  },
+  {
+    "slug": "city-breeze",
+    "title": "风从城市边缘吹过来的时候",
+    "date": "2026-03-10",
+    "summary": "城市的风景不一定总是热闹的，有时候最动人的，是那些看起来快要安静下来的瞬间。",
+    "path": "blog/posts/city-breeze.md",
+    "renderedPath": "blog/rendered/city-breeze.html",
+    "pinned": false,
+    "cover": "images/fulls/06.jpg"
+  },
+  {
+    "slug": "one-frame",
+    "title": "一帧很轻，但足够留下记忆",
+    "date": "2026-03-09",
+    "summary": "真正好的照片不一定复杂，它可能只是把某一个平常瞬间，恰好留在了最合适的位置。",
+    "path": "blog/posts/one-frame.md",
+    "renderedPath": "blog/rendered/one-frame.html",
+    "pinned": false,
+    "cover": "images/fulls/07.jpg"
+  },
+  {
+    "slug": "in-the-frame",
+    "title": "你站进画面里之后，一切就变得具体了",
+    "date": "2026-03-08",
+    "summary": "很多照片之所以成立，不是因为光线或者构图，而是因为某个人刚好站进了镜头里。",
+    "path": "blog/posts/in-the-frame.md",
+    "renderedPath": "blog/rendered/in-the-frame.html",
+    "pinned": false,
+    "cover": "images/fulls/08.jpg"
+  },
+  {
+    "slug": "favored-moment",
+    "title": "某个被偏爱的瞬间，总会自己发光",
+    "date": "2026-03-07",
+    "summary": "有些照片看起来并不热闹，但会在整套相册里很自然地被一眼看见。",
+    "path": "blog/posts/favored-moment.md",
+    "renderedPath": "blog/rendered/favored-moment.html",
+    "pinned": false,
+    "cover": "images/fulls/09.jpg"
+  },
+  {
+    "slug": "like-a-film",
+    "title": "像一部很短的电影，刚好停在这一帧",
+    "date": "2026-03-06",
+    "summary": "有时候一张图像最动人的地方，不是它记录了什么，而是它让人感觉后面似乎还有故事。",
+    "path": "blog/posts/like-a-film.md",
+    "renderedPath": "blog/rendered/like-a-film.html",
+    "pinned": false,
+    "cover": "images/fulls/10.jpg"
+  },
+  {
+    "slug": "miss-you-again",
+    "title": "翻到这里的时候，又会重新想起你",
+    "date": "2026-03-05",
+    "summary": "真正会反复回看的照片，通常都带着一点延迟发生的情绪。",
+    "path": "blog/posts/miss-you-again.md",
+    "renderedPath": "blog/rendered/miss-you-again.html",
+    "pinned": false,
+    "cover": "images/fulls/11.jpg"
+  },
+  {
+    "slug": "story-kept-here",
+    "title": "故事先放在这里，等以后慢慢再看",
+    "date": "2026-03-04",
+    "summary": "不一定每一次记录都要立刻解释，很多时候把它留下，本身就已经足够了。",
+    "path": "blog/posts/story-kept-here.md",
+    "renderedPath": "blog/rendered/story-kept-here.html",
+    "pinned": false,
+    "cover": "images/fulls/12.jpg"
+  },
+  {
+    "slug": "morning-update",
+    "title": "早上的光，总会让内容看起来更干净一些",
+    "date": "2026-03-02",
+    "summary": "有些更新不需要特别大的动静，它只要在正确的时间被看见，就已经足够成立。",
+    "path": "blog/posts/morning-update.md",
+    "renderedPath": "blog/rendered/morning-update.html",
+    "pinned": false,
+    "cover": "images/fulls/06.jpg"
   }
 ]

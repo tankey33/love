@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from pathlib import Path
 import json, re, html
+from datetime import datetime
 
 ROOT = Path(__file__).resolve().parents[1]
 POSTS_DIR = ROOT / 'blog' / 'posts'
@@ -180,6 +181,13 @@ def md_to_html(md: str) -> str:
     return '\n'.join(out)
 
 
+def parse_date(v: str):
+    try:
+        return datetime.strptime(v, '%Y-%m-%d')
+    except Exception:
+        return datetime.min
+
+
 posts = []
 RENDER_DIR.mkdir(parents=True, exist_ok=True)
 for path in sorted(POSTS_DIR.glob('*.md')):
@@ -193,16 +201,20 @@ for path in sorted(POSTS_DIR.glob('*.md')):
     rendered_name = f'{path.stem}.html'
     rendered_path = RENDER_DIR / rendered_name
     rendered_path.write_text(md_to_html(body) + '\n', encoding='utf-8')
+    pinned = str(meta.get('pinned', '')).lower() in ('true', '1', 'yes', 'on')
+    cover = meta.get('cover', '').strip()
     posts.append({
         'slug': path.stem,
         'title': title,
         'date': date,
         'summary': summary,
         'path': f'blog/posts/{path.name}',
-        'renderedPath': f'blog/rendered/{rendered_name}'
+        'renderedPath': f'blog/rendered/{rendered_name}',
+        'pinned': pinned,
+        'cover': cover
     })
 
-posts.sort(key=lambda x: x.get('date', ''), reverse=True)
+posts.sort(key=lambda x: (not x.get('pinned', False), -parse_date(x.get('date', '')).timestamp()))
 OUT.parent.mkdir(parents=True, exist_ok=True)
 OUT.write_text(json.dumps(posts, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
 print(f'generated {OUT} with {len(posts)} posts')
