@@ -2,12 +2,12 @@
 title: 婴幼儿出生产品购买指南：哪些值得买，哪些可以慢一点
 date: 2026-03-12
 summary: 真正需要准备的东西没有想象中那么多，重要的是先把高频、刚需和安全相关的买对。
-cover: https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=1600&q=80
+cover: https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=1600&q=80
 ---
 
 # 婴幼儿出生产品购买指南：哪些值得买，哪些可以慢一点
 
-![婴幼儿用品示意](https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=1600&q=80)
+![婴幼儿用品示意](https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=1600&q=80)
 
 真正需要准备的东西没有想象中那么多，重要的是先把高频、刚需和安全相关的买对，而不是被清单越拉越长。
 
@@ -28,3 +28,13 @@ cover: https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&
 - 很多“看起来会用到”的安抚物
 
 有些东西先保留预算，等宝宝出生后再按真实情况补，反而更省。
+
+## 比品牌更重要的是顺序
+
+很多新手父母会先研究品牌，但真正先决定体验的，是顺序：
+
+- 哪些是第一周必需
+- 哪些是满月后再补
+- 哪些可以先借用或暂缓购买
+
+只要节奏理顺，焦虑会少很多。

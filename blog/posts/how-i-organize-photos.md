@@ -2,11 +2,20 @@
 title: 我是怎么整理照片的：文件夹、顺序和长期保存
 date: 2026-03-08
 summary: 真正让照片变得容易回看的，不是滤镜，而是整理方式本身。
-cover: https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1600&q=80
+cover: https://images.unsplash.com/photo-1470229538611-16ba8c7ffbd7?auto=format&fit=crop&w=1600&q=80
 ---
 
 # 我是怎么整理照片的：文件夹、顺序和长期保存
 
-![照片整理示意](https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1600&q=80)
+![照片整理示意](https://images.unsplash.com/photo-1470229538611-16ba8c7ffbd7?auto=format&fit=crop&w=1600&q=80)
 
 真正让照片变得容易回看的，不是滤镜，而是整理方式本身。只要规则足够简单，你以后才会愿意持续做下去。
+
+我的习惯一般是：
+
+- 文件夹尽量简单
+- 命名规则不要太复杂
+- 原图和展示图分层
+- 定期做备份
+
+照片的价值往往不在拍下来的那一天，而在很多年后你还能不能很快找到它。
