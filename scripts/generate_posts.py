@@ -279,6 +279,7 @@ def pretty_title(stem: str):
 def generate_posts():
     posts = []
     RENDER_DIR.mkdir(parents=True, exist_ok=True)
+    expected_rendered = set()
     for path in sorted(POSTS_DIR.glob('*.md')):
         if path.name == 'README.md' or path.name.startswith('_') or path.name.startswith('draft-'):
             continue
@@ -288,6 +289,7 @@ def generate_posts():
         date = meta.get('date', '')
         summary = meta.get('summary') or re.sub(r'\s+', ' ', body.strip()).split('\n')[0][:120]
         rendered_name = f'{path.stem}.html'
+        expected_rendered.add(rendered_name)
         rendered_path = RENDER_DIR / rendered_name
         rendered_path.write_text(md_to_html(body) + '\n', encoding='utf-8')
         pinned = str(meta.get('pinned', '')).lower() in ('true', '1', 'yes', 'on')
@@ -302,6 +304,9 @@ def generate_posts():
             'pinned': pinned,
             'cover': cover
         })
+    for old in RENDER_DIR.glob('*.html'):
+        if old.name not in expected_rendered:
+            old.unlink()
     posts.sort(key=lambda x: (not x.get('pinned', False), -parse_date(x.get('date', '')).toordinal()))
     POSTS_OUT.parent.mkdir(parents=True, exist_ok=True)
     POSTS_OUT.write_text(json.dumps(posts, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
