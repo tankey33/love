@@ -74,65 +74,95 @@ a{color:inherit;text-decoration:none;}
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
 <script>
-(function(){
-  const params=new URLSearchParams(window.location.search);
-  const slug=params.get("slug");
-  if(!slug){document.getElementById("post-title").textContent="未指定文章";return;}
-  
-  function init(){
-    fetch("blog/posts.json?t="+Date.now())
-      .then(r=>r.json())
-      .then(function(posts){
-        var post=posts.find(function(p){return p.slug===slug;});
-        if(!post){document.getElementById("post-title").textContent="文章不存在";return;}
-        
-        document.title=post.title+" · Tankey ❤️ Monody";
-        document.getElementById("post-title").textContent=post.title;
-        document.getElementById("post-date").textContent=post.date;
-        document.getElementById("post-summary").textContent=post.summary||"";
-        
-        return fetch(post.path+"?t="+Date.now()).then(function(r){return r.text();});
-      })
-      .then(function(md){
-        var content=md.replace(/^---[\s\S]*?---\n/,"").trim();
-        var container=document.getElementById("post-content");
-        var html=marked.parse(content);
-        container.innerHTML=html;
-        
-        container.querySelectorAll("pre").forEach(function(pre){
-          var wrap=document.createElement("div");
-          wrap.className="code-wrap";
-          var btn=document.createElement("button");
-          btn.className="copy-btn";
-          btn.textContent="复制";
-          btn.onclick=function(){
-            navigator.clipboard.writeText(pre.innerText).then(function(){
-              btn.textContent="已复制";
-              setTimeout(function(){btn.textContent="复制";},1500);
-            }).catch(function(){btn.textContent="复制失败";});
-          };
-          pre.parentNode.insertBefore(wrap,pre);
-          wrap.appendChild(btn);
-          wrap.appendChild(pre);
+(function() {
+  const params = new URLSearchParams(window.location.search);
+  const slug = params.get("slug");
+  const container = document.getElementById("post-content");
+
+  if (!slug) {
+    document.getElementById("post-title").textContent = "未指定文章";
+    return;
+  }
+
+  async function loadPost() {
+    try {
+      // 1. 获取文章列表
+      const r = await fetch("blog/posts.json?t=" + Date.now());
+      const posts = await r.json();
+      const post = posts.find(p => p.slug === slug);
+
+      if (!post) {
+        document.getElementById("post-title").textContent = "文章不存在";
+        return;
+      }
+
+      // 更新基础信息
+      document.title = post.title + " · Tankey ❤️ Monody";
+      document.getElementById("post-title").textContent = post.title;
+      document.getElementById("post-date").textContent = post.date;
+      document.getElementById("post-summary").textContent = post.summary || "";
+
+      // 2. 获取 Markdown 源码内容
+      const mdRes = await fetch(post.path + "?t=" + Date.now());
+      const md = await mdRes.text();
+      
+      // 调试用：查看是否成功读取到文件
+      console.log("Markdown raw content length:", md.length);
+
+      // 3. 去除 Front Matter 并渲染
+      const content = md.replace(/^---[\s\S]+?---\s*/, "").trim();
+      container.innerHTML = marked.parse(content);
+
+      // 4. 处理代码块和数学公式
+      renderExtras();
+
+    } catch (e) {
+      console.error("加载失败:", e);
+      container.innerHTML = "<p>内容加载出错，请检查控制台或网络连接。</p>";
+    }
+  }
+
+  function renderExtras() {
+    // 处理代码复制
+    container.querySelectorAll("pre").forEach(pre => {
+      const wrap = document.createElement("div");
+      wrap.className = "code-wrap";
+      const btn = document.createElement("button");
+      btn.className = "copy-btn";
+      btn.textContent = "复制";
+      
+      btn.onclick = () => {
+        navigator.clipboard.writeText(pre.innerText).then(() => {
+          btn.textContent = "已复制";
+          setTimeout(() => btn.textContent = "复制", 1500);
         });
-        
-        if(window.renderMathInElement){
-          renderMathInElement(container,{
-            delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}],
-            throwOnError:false
-          });
-        }
-      })
-      .catch(function(e){
-        document.getElementById("post-content").innerHTML="<p>加载失败："+e.message+"</p>";
+      };
+
+      // 修正插入逻辑：在 pre 之前插入 wrap，再把 pre 移进去
+      pre.parentNode.insertBefore(wrap, pre);
+      wrap.appendChild(btn);
+      wrap.appendChild(pre);
+    });
+
+    // 处理公式 (KaTeX)
+    if (window.renderMathInElement) {
+      renderMathInElement(container, {
+        delimiters: [
+          {left: "$$", right: "$$", display: true},
+          {left: "$", right: "$", display: false}
+        ],
+        throwOnError: false
       });
+    }
+    
+    // 处理高亮 (Highlight.js)
+    container.querySelectorAll('pre code').forEach((el) => {
+      hljs.highlightElement(el);
+    });
   }
-  
-  if(typeof marked==="undefined"){
-    setTimeout(init,500);
-  }else{
-    init();
-  }
+
+  // 确保资源加载完成后执行
+  window.addEventListener('load', loadPost);
 })();
 </script>
 </body>
