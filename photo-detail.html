@@ -25,7 +25,7 @@ body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Pin
 .group-title{font-size:15px;font-weight:600;margin-bottom:10px;color:var(--soft);letter-spacing:.08em;text-transform:uppercase}
 .meta-row{display:grid;grid-template-columns:100px 1fr;font-size:13px;padding:5px 0;line-height:1.5}
 .meta-label{color:var(--soft)}
-.histogram-box{height:140px;background:#fafafa;border-radius:12px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.histogram-box{height:156px;background:linear-gradient(180deg,#151518 0%,#1b1b20 100%);border-radius:14px;border:1px solid rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:inset 0 1px 0 rgba(255,255,255,.04)}
 .map-box iframe{width:100%;height:200px;border:0;border-radius:12px}
 .hidden{display:none}
 @media(max-width:900px){.shell{grid-template-columns:1fr}.info{max-height:none}}
@@ -87,20 +87,78 @@ return{...gps,dateTime:raw.DateTimeOriginal||raw.CreateDate||null,colorSpace:raw
 }
 
 function renderHistogram(image){
-const canvas=document.createElement("canvas");canvas.width=256;canvas.height=140;
-const ctx=canvas.getContext("2d");
-const temp=document.createElement("canvas");const tctx=temp.getContext("2d");
-temp.width=256;temp.height=Math.round(image.height*(256/image.width));
-tctx.drawImage(image,0,0,temp.width,temp.height);
-const data=tctx.getImageData(0,0,temp.width,temp.height).data;
-const rBins=new Array(256).fill(0),gBins=new Array(256).fill(0),bBins=new Array(256).fill(0);
-for(let i=0;i<data.length;i+=4){rBins[data[i]]++;gBins[data[i+1]]++;bBins[data[i+2]]++;}
-const rMax=Math.max(...rBins,1),gMax=Math.max(...gBins,1),bMax=Math.max(...bBins,1);
-ctx.clearRect(0,0,256,140);ctx.fillStyle='#ffffff';ctx.fillRect(0,0,256,140);
-ctx.strokeStyle='rgba(0,0,0,0.08)';ctx.strokeRect(0.5,0.5,255,139);
-const drawCh=(bins,max,color)=>{ctx.beginPath();ctx.moveTo(0,140);bins.forEach((v,i)=>{const y=140-(v/max)*128;ctx.lineTo(i,y);});ctx.lineTo(256,140);ctx.closePath();ctx.fillStyle=color;ctx.fill();};
-drawCh(bBins,bMax,'rgba(60,120,255,0.5)');drawCh(gBins,gMax,'rgba(60,200,80,0.5)');drawCh(rBins,rMax,'rgba(255,80,80,0.5)');
-document.getElementById("histogram").innerHTML='';document.getElementById("histogram").appendChild(canvas);document.getElementById("hist-group").classList.remove("hidden");
+const width=320,height=156,padX=10,padY=12;
+const canvas=document.createElement('canvas');
+canvas.width=width;canvas.height=height;canvas.style.width='100%';canvas.style.height='100%';
+const ctx=canvas.getContext('2d',{alpha:true,willReadFrequently:true});
+const temp=document.createElement('canvas');
+const tctx=temp.getContext('2d',{willReadFrequently:true});
+const sampleW=512;
+const sampleH=Math.max(1,Math.round(image.height*(sampleW/image.width)));
+temp.width=sampleW;temp.height=sampleH;
+tctx.drawImage(image,0,0,sampleW,sampleH);
+const data=tctx.getImageData(0,0,sampleW,sampleH).data;
+const rBins=new Array(256).fill(0),gBins=new Array(256).fill(0),bBins=new Array(256).fill(0),lBins=new Array(256).fill(0);
+for(let i=0;i<data.length;i+=4){
+  const r=data[i],g=data[i+1],b=data[i+2];
+  rBins[r]++;gBins[g]++;bBins[b]++;
+  const l=Math.max(0,Math.min(255,Math.round(0.2126*r+0.7152*g+0.0722*b)));
+  lBins[l]++;
+}
+const smooth=(bins)=>bins.map((_,i)=>{
+  const a=bins[Math.max(0,i-2)]||0,b=bins[Math.max(0,i-1)]||0,c=bins[i]||0,d=bins[Math.min(255,i+1)]||0,e=bins[Math.min(255,i+2)]||0;
+  return (a+2*b+3*c+2*d+e)/9;
+});
+const rs=smooth(rBins),gs=smooth(gBins),bs=smooth(bBins),ls=smooth(lBins);
+const max=Math.max(...rs,...gs,...bs,...ls,1);
+ctx.clearRect(0,0,width,height);
+const bg=ctx.createLinearGradient(0,0,0,height);
+bg.addColorStop(0,'#19191d');
+bg.addColorStop(1,'#111114');
+ctx.fillStyle=bg;ctx.fillRect(0,0,width,height);
+for(let i=1;i<=4;i++){
+  const y=padY+((height-padY*2)/4)*i;
+  ctx.strokeStyle='rgba(255,255,255,0.06)';
+  ctx.beginPath();ctx.moveTo(padX,y);ctx.lineTo(width-padX,y);ctx.stroke();
+}
+for(let i=1;i<=4;i++){
+  const x=padX+((width-padX*2)/4)*i;
+  ctx.strokeStyle='rgba(255,255,255,0.04)';
+  ctx.beginPath();ctx.moveTo(x,padY);ctx.lineTo(x,height-padY);ctx.stroke();
+}
+const drawArea=(bins,fillColor,strokeColor)=>{
+  ctx.beginPath();
+  for(let i=0;i<256;i++){
+    const x=padX+(i/255)*(width-padX*2);
+    const y=(height-padY)-((bins[i]/max)*(height-padY*2));
+    if(i===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
+  }
+  ctx.lineTo(width-padX,height-padY);ctx.lineTo(padX,height-padY);ctx.closePath();
+  ctx.fillStyle=fillColor;ctx.fill();
+  ctx.beginPath();
+  for(let i=0;i<256;i++){
+    const x=padX+(i/255)*(width-padX*2);
+    const y=(height-padY)-((bins[i]/max)*(height-padY*2));
+    if(i===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
+  }
+  ctx.strokeStyle=strokeColor;ctx.lineWidth=1.2;ctx.stroke();
+};
+const drawLuma=(bins)=>{
+  ctx.beginPath();
+  for(let i=0;i<256;i++){
+    const x=padX+(i/255)*(width-padX*2);
+    const y=(height-padY)-((bins[i]/max)*(height-padY*2));
+    if(i===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
+  }
+  ctx.strokeStyle='rgba(255,255,255,0.75)';ctx.lineWidth=1;ctx.stroke();
+};
+drawArea(bs,'rgba(74,144,255,0.22)','rgba(102,168,255,0.95)');
+drawArea(gs,'rgba(74,214,112,0.20)','rgba(98,236,132,0.95)');
+drawArea(rs,'rgba(255,95,95,0.22)','rgba(255,120,120,0.95)');
+drawLuma(ls);
+ctx.strokeStyle='rgba(255,255,255,0.08)';ctx.lineWidth=1;ctx.strokeRect(0.5,0.5,width-1,height-1);
+const box=document.getElementById('histogram');
+box.innerHTML='';box.appendChild(canvas);document.getElementById('hist-group').classList.remove('hidden');
 }
 
 async function loadExif(){
