@@ -10,6 +10,16 @@
     "cover": "photo/03.jpg"
   },
   {
+    "slug": "github-pages-guide",
+    "title": "如何把这个网站部署到 GitHub Pages",
+    "date": "2026-03-14",
+    "summary": "从仓库创建、Pages 设置、Actions 自动发布到自定义域名接入，这篇文章专门讲 GitHub Pages 这一条路。",
+    "path": "blog/posts/github-pages-guide.md",
+    "renderedPath": "blog/rendered/github-pages-guide.html",
+    "pinned": false,
+    "cover": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1600&q=80"
+  },
+  {
     "slug": "evening-light",
     "title": "傍晚的光开始变慢",
     "date": "2026-03-13",
@@ -28,6 +38,26 @@
     "renderedPath": "blog/rendered/newsroom-love-story.html",
     "pinned": false,
     "cover": ""
+  },
+  {
+    "slug": "vps-nginx-guide",
+    "title": "如何把这个网站部署到 VPS 与 Nginx",
+    "date": "2026-03-13",
+    "summary": "如果你想完全掌控环境，这篇文章会从 VPS 选择、Nginx 配置、域名解析到 HTTPS 一步步讲清楚。",
+    "path": "blog/posts/vps-nginx-guide.md",
+    "renderedPath": "blog/rendered/vps-nginx-guide.html",
+    "pinned": false,
+    "cover": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80"
+  },
+  {
+    "slug": "automation-guide",
+    "title": "如何做一个自动更新的照片墙和博客系统",
+    "date": "2026-03-12",
+    "summary": "这篇文章专门讲自动化本身：照片目录、Markdown、生成脚本、自动索引、自动渲染、自动部署是怎么串起来的。",
+    "path": "blog/posts/automation-guide.md",
+    "renderedPath": "blog/rendered/automation-guide.html",
+    "pinned": false,
+    "cover": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80"
   },
   {
     "slug": "dev-note",

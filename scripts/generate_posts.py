@@ -36,7 +36,12 @@ def inline_md(text: str) -> str:
     text = re.sub(r'`([^`]+)`', r'<code>\1</code>', text)
     text = re.sub(r'\*\*([^*]+)\*\*', r'<strong>\1</strong>', text)
     text = re.sub(r'\*([^*]+)\*', r'<em>\1</em>', text)
-    text = re.sub(r'\[([^\]]+)\]\(([^)]+)\)', r'<a href="\2">\1</a>', text)
+    def repl_link(m):
+        label, href = m.group(1), m.group(2)
+        if href.startswith('http://') or href.startswith('https://'):
+            return f'<a href="{href}" target="_blank" rel="noopener noreferrer">{label}</a>'
+        return f'<a href="{href}">{label}</a>'
+    text = re.sub(r'\[([^\]]+)\]\(([^)]+)\)', repl_link, text)
     return text
 
 
