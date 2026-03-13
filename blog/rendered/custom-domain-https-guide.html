@@ -1,0 +1,26 @@
+<h1>如何给这个站接自定义域名与 HTTPS</h1>
+<p><img src="https://images.unsplash.com/photo-1484417894907-623942c8ee29?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" alt="域名与 HTTPS 配置示意"></p>
+<p>一个网站从“能打开”到“像真的在运行”，域名和 HTTPS 几乎是必须补上的两步。</p>
+<h2>如果你用 GitHub Pages</h2>
+<ol>
+<li>在仓库根目录放 <code>CNAME</code></li>
+<li>在域名服务商后台把 DNS 指向 GitHub Pages</li>
+<li>到仓库 Pages 设置页确认域名生效</li>
+</ol>
+<p>官方文档：<a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site" target="_blank" rel="noopener noreferrer">https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site</a></p>
+<h2>如果你用 VPS + Nginx</h2>
+<ol>
+<li>把域名 A 记录解析到 VPS IP</li>
+<li>在 Nginx 里配置 <code>server_name</code></li>
+<li>申请证书并开启 HTTPS</li>
+</ol>
+<p>Let's Encrypt：<a href="https://letsencrypt.org/" target="_blank" rel="noopener noreferrer">https://letsencrypt.org/</a></p>
+<p>Certbot：<a href="https://certbot.eff.org/" target="_blank" rel="noopener noreferrer">https://certbot.eff.org/</a></p>
+<p>最常见的命令：</p>
+<pre><code class="language-bash">sudo certbot --nginx -d your-domain.com</code></pre>
+<h2>最后检查</h2>
+<ul>
+<li><code>http://</code> 是否自动跳转到 <code>https://</code></li>
+<li>证书是否正常</li>
+<li>图片、脚本、字体资源是否还有混合内容错误</li>
+</ul>

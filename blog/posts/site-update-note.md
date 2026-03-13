@@ -189,7 +189,7 @@ love/
 - 不需要手动改照片墙 HTML
 - 不需要手动改详情页链接
 
-![自动化照片目录示意](https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80)
+![自动化照片目录示意](https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=1600&q=80)
 
 ---
 
@@ -409,13 +409,12 @@ server {
 
 ### GitHub Pages 路线
 
-官方文档：<https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site>
+- [如何给这个站接自定义域名与 HTTPS](note.html?slug=custom-domain-https-guide)
 
-### HTTPS
+### HTTPS 常用工具
 
-Let's Encrypt：<https://letsencrypt.org/>
-
-Certbot：<https://certbot.eff.org/>
+- Let's Encrypt：<https://letsencrypt.org/>
+- Certbot：<https://certbot.eff.org/>
 
 如果是 Nginx 环境，最常见命令是：
 
@@ -453,7 +452,10 @@ VPS 上 git pull
 Nginx 继续提供静态站
 ```
 
-这就是现在这类网站最实用的两条路径。
+如果你打算往自动部署继续走，可以看：
+
+- [如何让 VPS 自动 pull 并自动部署](note.html?slug=vps-auto-deploy-guide)
+- [如何继续把它做成完整内容系统](note.html?slug=content-system-guide)
 
 ---
 
@@ -521,8 +523,20 @@ git push origin main
 
 ![部署完成后的内容站示意](https://images.unsplash.com/photo-1505238680356-667803448bb6?auto=format&fit=crop&w=1600&q=80)
 
-如果你愿意，我下一篇还可以继续往下写成真正的后续教程：
+## 关联网站
 
-- **如何给这个站接自定义域名与 HTTPS**
-- **如何让 VPS 自动 pull 并自动部署**
-- **如何继续把它做成完整内容系统**
+- GitHub：<https://github.com/>
+- GitHub Pages：<https://pages.github.com/>
+- GitHub Actions：<https://github.com/features/actions>
+- Python：<https://www.python.org/>
+- Git：<https://git-scm.com/>
+- VS Code：<https://code.visualstudio.com/>
+- Nginx：<https://nginx.org/>
+- Let's Encrypt：<https://letsencrypt.org/>
+- Certbot：<https://certbot.eff.org/>
+
+## 补充栏目
+
+- [如何给这个站接自定义域名与 HTTPS](note.html?slug=custom-domain-https-guide)
+- [如何让 VPS 自动 pull 并自动部署](note.html?slug=vps-auto-deploy-guide)
+- [如何继续把它做成完整内容系统](note.html?slug=content-system-guide)

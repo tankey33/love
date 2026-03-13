@@ -137,7 +137,7 @@ cd love</code></pre>
 <li>不需要手动改照片墙 HTML</li>
 <li>不需要手动改详情页链接</li>
 </ul>
-<p><img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" alt="自动化照片目录示意"></p>
+<p><img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" alt="自动化照片目录示意"></p>
 <hr>
 <h2>五、文章系统是怎么自动工作的</h2>
 <p>文章系统现在的逻辑是：</p>
@@ -272,10 +272,14 @@ python3 scripts/generate_posts.py</code></pre>
 <hr>
 <h2>十、如何接域名和 HTTPS</h2>
 <h3>GitHub Pages 路线</h3>
-<p>官方文档：<a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site" target="_blank" rel="noopener noreferrer">https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site</a></p>
-<h3>HTTPS</h3>
-<p>Let's Encrypt：<a href="https://letsencrypt.org/" target="_blank" rel="noopener noreferrer">https://letsencrypt.org/</a></p>
-<p>Certbot：<a href="https://certbot.eff.org/" target="_blank" rel="noopener noreferrer">https://certbot.eff.org/</a></p>
+<ul>
+<li><a href="note.html?slug=custom-domain-https-guide">如何给这个站接自定义域名与 HTTPS</a></li>
+</ul>
+<h3>HTTPS 常用工具</h3>
+<ul>
+<li>Let's Encrypt：<a href="https://letsencrypt.org/" target="_blank" rel="noopener noreferrer">https://letsencrypt.org/</a></li>
+<li>Certbot：<a href="https://certbot.eff.org/" target="_blank" rel="noopener noreferrer">https://certbot.eff.org/</a></li>
+</ul>
 <p>如果是 Nginx 环境，最常见命令是：</p>
 <pre><code class="language-bash">sudo certbot --nginx -d your-domain.com</code></pre>
 <hr>
@@ -298,7 +302,11 @@ git push 到 GitHub
 VPS 上 git pull
    ↓
 Nginx 继续提供静态站</code></pre>
-<p>这就是现在这类网站最实用的两条路径。</p>
+<p>如果你打算往自动部署继续走，可以看：</p>
+<ul>
+<li><a href="note.html?slug=vps-auto-deploy-guide">如何让 VPS 自动 pull 并自动部署</a></li>
+<li><a href="note.html?slug=content-system-guide">如何继续把它做成完整内容系统</a></li>
+</ul>
 <hr>
 <h2>十二、以后你真正要做的事</h2>
 <p>其实很少：</p>
@@ -346,9 +354,21 @@ git push origin main</code></pre>
 </ul>
 <p>只要这四件事搭对了，你后面维护网站会轻松很多。</p>
 <p><img src="https://images.unsplash.com/photo-1505238680356-667803448bb6?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" alt="部署完成后的内容站示意"></p>
-<p>如果你愿意，我下一篇还可以继续往下写成真正的后续教程：</p>
+<h2>关联网站</h2>
 <ul>
-<li><strong>如何给这个站接自定义域名与 HTTPS</strong></li>
-<li><strong>如何让 VPS 自动 pull 并自动部署</strong></li>
-<li><strong>如何继续把它做成完整内容系统</strong></li>
+<li>GitHub：<a href="https://github.com/" target="_blank" rel="noopener noreferrer">https://github.com/</a></li>
+<li>GitHub Pages：<a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">https://pages.github.com/</a></li>
+<li>GitHub Actions：<a href="https://github.com/features/actions" target="_blank" rel="noopener noreferrer">https://github.com/features/actions</a></li>
+<li>Python：<a href="https://www.python.org/" target="_blank" rel="noopener noreferrer">https://www.python.org/</a></li>
+<li>Git：<a href="https://git-scm.com/" target="_blank" rel="noopener noreferrer">https://git-scm.com/</a></li>
+<li>VS Code：<a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer">https://code.visualstudio.com/</a></li>
+<li>Nginx：<a href="https://nginx.org/" target="_blank" rel="noopener noreferrer">https://nginx.org/</a></li>
+<li>Let's Encrypt：<a href="https://letsencrypt.org/" target="_blank" rel="noopener noreferrer">https://letsencrypt.org/</a></li>
+<li>Certbot：<a href="https://certbot.eff.org/" target="_blank" rel="noopener noreferrer">https://certbot.eff.org/</a></li>
+</ul>
+<h2>补充栏目</h2>
+<ul>
+<li><a href="note.html?slug=custom-domain-https-guide">如何给这个站接自定义域名与 HTTPS</a></li>
+<li><a href="note.html?slug=vps-auto-deploy-guide">如何让 VPS 自动 pull 并自动部署</a></li>
+<li><a href="note.html?slug=content-system-guide">如何继续把它做成完整内容系统</a></li>
 </ul>

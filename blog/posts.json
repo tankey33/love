@@ -10,6 +10,36 @@
     "cover": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80"
   },
   {
+    "slug": "content-system-guide",
+    "title": "如何继续把它做成完整内容系统",
+    "date": "2026-03-16",
+    "summary": "从相册、文章、置顶、搜索到分类、专题和自动部署，这篇文章讲如何把一个静态站继续养成长期可维护的内容系统。",
+    "path": "blog/posts/content-system-guide.md",
+    "renderedPath": "blog/rendered/content-system-guide.html",
+    "pinned": false,
+    "cover": "https://images.unsplash.com/photo-1497366412874-3415097a27e7?auto=format&fit=crop&w=1600&q=80"
+  },
+  {
+    "slug": "custom-domain-https-guide",
+    "title": "如何给这个站接自定义域名与 HTTPS",
+    "date": "2026-03-16",
+    "summary": "从域名解析、CNAME、Nginx 到 Let's Encrypt，这篇文章把静态站最常见的域名与 HTTPS 接入流程整理清楚。",
+    "path": "blog/posts/custom-domain-https-guide.md",
+    "renderedPath": "blog/rendered/custom-domain-https-guide.html",
+    "pinned": false,
+    "cover": "https://images.unsplash.com/photo-1484417894907-623942c8ee29?auto=format&fit=crop&w=1600&q=80"
+  },
+  {
+    "slug": "vps-auto-deploy-guide",
+    "title": "如何让 VPS 自动 pull 并自动部署",
+    "date": "2026-03-16",
+    "summary": "如果你已经有 VPS，这篇文章讲如何把 GitHub、Webhook、脚本和 Nginx 串起来，让更新真正自动化。",
+    "path": "blog/posts/vps-auto-deploy-guide.md",
+    "renderedPath": "blog/rendered/vps-auto-deploy-guide.html",
+    "pinned": false,
+    "cover": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1600&q=80"
+  },
+  {
     "slug": "fuji-x-half",
     "title": "富士 X-Half：是玩具，但她喜欢",
     "date": "2026-03-15",
