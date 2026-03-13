@@ -1,5 +1,16 @@
 window.PHOTO_DATA = [
   {
+    "id": "fuji-x-half-note",
+    "file": "fuji-x-half-note.jpg",
+    "full": "photo/fuji-x-half-note.jpg",
+    "width": 1280,
+    "height": 961,
+    "size": 68621,
+    "title": "fuji x half note",
+    "description": "",
+    "mtime": 1773380043
+  },
+  {
     "id": "12",
     "file": "12.jpg",
     "full": "photo/12.jpg",

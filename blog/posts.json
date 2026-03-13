@@ -10,6 +10,16 @@
     "cover": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80"
   },
   {
+    "slug": "fuji-x-half",
+    "title": "富士 X-Half：是玩具，但她喜欢",
+    "date": "2026-03-15",
+    "summary": "家里不是没有相机，但她想要的从来不是参数更强的那台，而是一台真正属于她、能揣进口袋、拿起来就愿意拍的相机。",
+    "path": "blog/posts/fuji-x-half.md",
+    "renderedPath": "blog/rendered/fuji-x-half.html",
+    "pinned": false,
+    "cover": "photo/fuji-x-half-note.jpg"
+  },
+  {
     "slug": "openclaw-setup",
     "title": "如何从零搭建 OpenClaw 并接入 Telegram",
     "date": "2026-03-14",
