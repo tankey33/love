@@ -3,6 +3,18 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [ main ]
+    paths:
+      - 'blog/posts/**'
+      - 'scripts/generate_posts.py'
+      - 'note.html'
+      - 'notes.html'
+      - 'photo.html'
+      - 'photo-detail.html'
+      - 'assets/**'
+      - 'images/**'
+      - '.github/workflows/deploy-pages.yml'
+      - 'index.html'
+      - 'CNAME'
   workflow_dispatch:
 
 permissions:
@@ -11,13 +23,15 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
-  cancel-in-progress: false
+  group: pages
+  cancel-in-progress: true
 
 jobs:
-  # 生成 posts.json
-  generate-index:
+  build-and-deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -27,31 +41,8 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Generate posts.json
+      - name: Generate blog artifacts
         run: python3 scripts/generate_posts.py
-
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: generated-files
-          path: blog/posts.json
-
-  # 部署到 GitHub Pages
-  deploy:
-    needs: generate-index
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Download generated files
-        uses: actions/download-artifact@v4
-        with:
-          name: generated-files
-          path: blog/
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

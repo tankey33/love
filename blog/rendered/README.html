@@ -1,0 +1,33 @@
+<h1>Blog Posts</h1>
+<p>把新的 <code>.md</code> 文件直接放进这个目录，然后 push 到 GitHub 即可自动上线。</p>
+<h2>最简格式</h2>
+<pre><code class="language-md">---
+title: 文章标题
+date: 2026-03-13
+summary: 一句话摘要
+---
+
+# 正文标题
+
+这里写正文。</code></pre>
+<h2>已自动完成的事</h2>
+<p>当你 push 到 <code>main</code> 后，GitHub Actions 会自动：</p>
+<ol>
+<li>生成 <code>blog/posts.json</code></li>
+<li>预渲染文章为 <code>blog/rendered/*.html</code></li>
+<li>部署到 GitHub Pages</li>
+</ol>
+<h2>支持内容</h2>
+<ul>
+<li>标题</li>
+<li>段落</li>
+<li>列表</li>
+<li>引用</li>
+<li>代码块</li>
+<li>表格</li>
+<li>图片</li>
+<li>行内代码</li>
+<li>粗体 / 斜体</li>
+</ul>
+<h2>图片写法</h2>
+<pre><code class="language-md">![说明文字](images/fulls/03.jpg)</code></pre>
