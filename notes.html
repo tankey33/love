@@ -24,7 +24,7 @@
   <main class="page">
     <div class="eyebrow">碎碎念</div>
     <h1 class="page-title">最近写下来的片段与想法</h1>
-    <p class="page-desc">不是新闻页，也不是模板博客。这里更像一个认真整理过的个人文字角落：有些是记录，有些是更新，有些只是当时想留下来。</p>
+    <p class="page-desc" id="page-quote">我们把世界看错了，反说它欺骗我们。—— 泰戈尔</p>
     <div class="search-wrap">
       <label class="search-box">
         <span class="search-icon">⌕</span>
@@ -36,6 +36,19 @@
     <section class="grid" id="grid"></section>
   </main>
   <script>
+    const quotes = [
+      '我们把世界看错了，反说它欺骗我们。—— 泰戈尔',
+      '月色与雪色之间，你是第三种绝色。—— 余光中',
+      '凌晨四点钟，看到海棠花未眠。—— 川端康成',
+      '我明白你会来，所以我等。—— 沈从文',
+      '岁月不饶人，我亦未曾饶过岁月。—— 木心',
+      '有些事只适合收藏，不能说，也不能想，却又不能忘。—— 史铁生',
+      '我曾踏月而来，只因你在山中。—— 席慕蓉',
+      '凡是过去，皆为序章。—— 莎士比亚'
+    ];
+    const quoteEl = document.getElementById('page-quote');
+    if (quoteEl) quoteEl.textContent = quotes[Math.floor(Math.random() * quotes.length)];
+
     function pickImage(post, index){
       if(post.cover) return post.cover;
       if(post.slug === 'newsroom-love-story') return 'photo/03.jpg';
