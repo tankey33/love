@@ -25,7 +25,8 @@ body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Pin
 .group-title{font-size:15px;font-weight:600;margin-bottom:10px;color:var(--soft);letter-spacing:.08em;text-transform:uppercase}
 .meta-row{display:grid;grid-template-columns:100px 1fr;font-size:13px;padding:5px 0;line-height:1.5}
 .meta-label{color:var(--soft)}
-.histogram-box{height:156px;background:linear-gradient(180deg,#151518 0%,#1b1b20 100%);border-radius:14px;border:1px solid rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:inset 0 1px 0 rgba(255,255,255,.04)}
+.histogram-box{height:156px;background:linear-gradient(180deg,#131316 0%,#17171b 100%);border-radius:14px;border:1px solid rgba(255,255,255,.05);display:flex;align-items:stretch;justify-content:stretch;overflow:hidden;box-shadow:inset 0 1px 0 rgba(255,255,255,.03)}
+.histogram-box canvas{display:block;width:100%;height:100%}
 .map-box iframe{width:100%;height:200px;border:0;border-radius:12px}
 .hidden{display:none}
 @media(max-width:900px){.shell{grid-template-columns:1fr}.info{max-height:none}}
@@ -87,13 +88,13 @@ return{...gps,dateTime:raw.DateTimeOriginal||raw.CreateDate||null,colorSpace:raw
 }
 
 function renderHistogram(image){
-const width=320,height=156,padX=10,padY=12;
+const width=360,height=156;
 const canvas=document.createElement('canvas');
-canvas.width=width;canvas.height=height;canvas.style.width='100%';canvas.style.height='100%';
+canvas.width=width;canvas.height=height;
 const ctx=canvas.getContext('2d',{alpha:true,willReadFrequently:true});
 const temp=document.createElement('canvas');
 const tctx=temp.getContext('2d',{willReadFrequently:true});
-const sampleW=512;
+const sampleW=768;
 const sampleH=Math.max(1,Math.round(image.height*(sampleW/image.width)));
 temp.width=sampleW;temp.height=sampleH;
 tctx.drawImage(image,0,0,sampleW,sampleH);
@@ -102,61 +103,66 @@ const rBins=new Array(256).fill(0),gBins=new Array(256).fill(0),bBins=new Array(
 for(let i=0;i<data.length;i+=4){
   const r=data[i],g=data[i+1],b=data[i+2];
   rBins[r]++;gBins[g]++;bBins[b]++;
-  const l=Math.max(0,Math.min(255,Math.round(0.2126*r+0.7152*g+0.0722*b)));
-  lBins[l]++;
+  lBins[Math.max(0,Math.min(255,Math.round(0.2126*r+0.7152*g+0.0722*b)))]++;
 }
 const smooth=(bins)=>bins.map((_,i)=>{
-  const a=bins[Math.max(0,i-2)]||0,b=bins[Math.max(0,i-1)]||0,c=bins[i]||0,d=bins[Math.min(255,i+1)]||0,e=bins[Math.min(255,i+2)]||0;
-  return (a+2*b+3*c+2*d+e)/9;
+  const p3=bins[Math.max(0,i-3)]||0,p2=bins[Math.max(0,i-2)]||0,p1=bins[Math.max(0,i-1)]||0,c=bins[i]||0,n1=bins[Math.min(255,i+1)]||0,n2=bins[Math.min(255,i+2)]||0,n3=bins[Math.min(255,i+3)]||0;
+  return (p3+2*p2+3*p1+4*c+3*n1+2*n2+n3)/16;
 });
 const rs=smooth(rBins),gs=smooth(gBins),bs=smooth(bBins),ls=smooth(lBins);
 const max=Math.max(...rs,...gs,...bs,...ls,1);
+const xAt=i=>(i/255)*width;
+const yAt=v=>height-(v/max)*(height-2);
 ctx.clearRect(0,0,width,height);
 const bg=ctx.createLinearGradient(0,0,0,height);
-bg.addColorStop(0,'#19191d');
-bg.addColorStop(1,'#111114');
+bg.addColorStop(0,'#18181c');
+bg.addColorStop(1,'#101013');
 ctx.fillStyle=bg;ctx.fillRect(0,0,width,height);
-for(let i=1;i<=4;i++){
-  const y=padY+((height-padY*2)/4)*i;
-  ctx.strokeStyle='rgba(255,255,255,0.06)';
-  ctx.beginPath();ctx.moveTo(padX,y);ctx.lineTo(width-padX,y);ctx.stroke();
+for(let i=1;i<=3;i++){
+  const y=(height/4)*i;
+  ctx.strokeStyle='rgba(255,255,255,0.055)';
+  ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(width,y);ctx.stroke();
 }
-for(let i=1;i<=4;i++){
-  const x=padX+((width-padX*2)/4)*i;
-  ctx.strokeStyle='rgba(255,255,255,0.04)';
-  ctx.beginPath();ctx.moveTo(x,padY);ctx.lineTo(x,height-padY);ctx.stroke();
-}
-const drawArea=(bins,fillColor,strokeColor)=>{
+const drawSmoothArea=(bins,fillColor,strokeColor)=>{
   ctx.beginPath();
+  ctx.moveTo(0,height);
   for(let i=0;i<256;i++){
-    const x=padX+(i/255)*(width-padX*2);
-    const y=(height-padY)-((bins[i]/max)*(height-padY*2));
-    if(i===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
+    const x=xAt(i),y=yAt(bins[i]);
+    if(i===0){ctx.lineTo(x,y);continue;}
+    const px=xAt(i-1),py=yAt(bins[i-1]);
+    const cx=(px+x)/2;
+    ctx.quadraticCurveTo(px,py,cx,(py+y)/2);
   }
-  ctx.lineTo(width-padX,height-padY);ctx.lineTo(padX,height-padY);ctx.closePath();
+  ctx.lineTo(width,yAt(bins[255]));
+  ctx.lineTo(width,height);
+  ctx.closePath();
   ctx.fillStyle=fillColor;ctx.fill();
   ctx.beginPath();
   for(let i=0;i<256;i++){
-    const x=padX+(i/255)*(width-padX*2);
-    const y=(height-padY)-((bins[i]/max)*(height-padY*2));
-    if(i===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
+    const x=xAt(i),y=yAt(bins[i]);
+    if(i===0){ctx.moveTo(x,y);continue;}
+    const px=xAt(i-1),py=yAt(bins[i-1]);
+    const cx=(px+x)/2;
+    ctx.quadraticCurveTo(px,py,cx,(py+y)/2);
   }
-  ctx.strokeStyle=strokeColor;ctx.lineWidth=1.2;ctx.stroke();
+  ctx.strokeStyle=strokeColor;ctx.lineWidth=1.05;ctx.stroke();
 };
-const drawLuma=(bins)=>{
+const drawSmoothLine=(bins,color)=>{
   ctx.beginPath();
   for(let i=0;i<256;i++){
-    const x=padX+(i/255)*(width-padX*2);
-    const y=(height-padY)-((bins[i]/max)*(height-padY*2));
-    if(i===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
+    const x=xAt(i),y=yAt(bins[i]);
+    if(i===0){ctx.moveTo(x,y);continue;}
+    const px=xAt(i-1),py=yAt(bins[i-1]);
+    const cx=(px+x)/2;
+    ctx.quadraticCurveTo(px,py,cx,(py+y)/2);
   }
-  ctx.strokeStyle='rgba(255,255,255,0.75)';ctx.lineWidth=1;ctx.stroke();
+  ctx.strokeStyle=color;ctx.lineWidth=.9;ctx.stroke();
 };
-drawArea(bs,'rgba(74,144,255,0.22)','rgba(102,168,255,0.95)');
-drawArea(gs,'rgba(74,214,112,0.20)','rgba(98,236,132,0.95)');
-drawArea(rs,'rgba(255,95,95,0.22)','rgba(255,120,120,0.95)');
-drawLuma(ls);
-ctx.strokeStyle='rgba(255,255,255,0.08)';ctx.lineWidth=1;ctx.strokeRect(0.5,0.5,width-1,height-1);
+drawSmoothArea(bs,'rgba(84,142,255,0.22)','rgba(120,173,255,0.92)');
+drawSmoothArea(gs,'rgba(88,224,128,0.18)','rgba(122,245,157,0.88)');
+drawSmoothArea(rs,'rgba(255,96,96,0.22)','rgba(255,134,134,0.92)');
+drawSmoothLine(ls,'rgba(255,255,255,0.72)');
+ctx.strokeStyle='rgba(255,255,255,0.06)';ctx.lineWidth=1;ctx.strokeRect(.5,.5,width-1,height-1);
 const box=document.getElementById('histogram');
 box.innerHTML='';box.appendChild(canvas);document.getElementById('hist-group').classList.remove('hidden');
 }
