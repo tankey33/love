@@ -38,7 +38,9 @@
     const html=await fetch((post.renderedPath||post.path)+'?t='+Date.now()).then(r=>r.text());
     const container=document.getElementById('post-content');
     container.innerHTML=html;
-    container.querySelectorAll('pre code').forEach(el=>hljs.highlightElement(el));
+    if(window.hljs && typeof window.hljs.highlightElement === 'function'){
+      container.querySelectorAll('pre code').forEach(el=>window.hljs.highlightElement(el));
+    }
     container.querySelectorAll('pre').forEach(pre=>{
       const wrap=document.createElement('div');wrap.className='code-wrap';
       const btn=document.createElement('button');btn.className='copy-btn';btn.textContent='复制';
