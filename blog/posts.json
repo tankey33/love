@@ -7,7 +7,7 @@
     "path": "blog/posts/site-update-note.md",
     "renderedPath": "blog/rendered/site-update-note.html",
     "pinned": true,
-    "cover": "images/fulls/03.jpg"
+    "cover": "photo/03.jpg"
   },
   {
     "slug": "evening-light",
@@ -17,7 +17,7 @@
     "path": "blog/posts/evening-light.md",
     "renderedPath": "blog/rendered/evening-light.html",
     "pinned": false,
-    "cover": "images/fulls/04.jpg"
+    "cover": "photo/04.jpg"
   },
   {
     "slug": "newsroom-love-story",
@@ -57,7 +57,7 @@
     "path": "blog/posts/ordinary-day.md",
     "renderedPath": "blog/rendered/ordinary-day.html",
     "pinned": false,
-    "cover": "images/fulls/05.jpg"
+    "cover": "photo/05.jpg"
   },
   {
     "slug": "city-breeze",
@@ -67,7 +67,7 @@
     "path": "blog/posts/city-breeze.md",
     "renderedPath": "blog/rendered/city-breeze.html",
     "pinned": false,
-    "cover": "images/fulls/06.jpg"
+    "cover": "photo/06.jpg"
   },
   {
     "slug": "one-frame",
@@ -77,7 +77,7 @@
     "path": "blog/posts/one-frame.md",
     "renderedPath": "blog/rendered/one-frame.html",
     "pinned": false,
-    "cover": "images/fulls/07.jpg"
+    "cover": "photo/07.jpg"
   },
   {
     "slug": "in-the-frame",
@@ -87,7 +87,7 @@
     "path": "blog/posts/in-the-frame.md",
     "renderedPath": "blog/rendered/in-the-frame.html",
     "pinned": false,
-    "cover": "images/fulls/08.jpg"
+    "cover": "photo/08.jpg"
   },
   {
     "slug": "favored-moment",
@@ -97,7 +97,7 @@
     "path": "blog/posts/favored-moment.md",
     "renderedPath": "blog/rendered/favored-moment.html",
     "pinned": false,
-    "cover": "images/fulls/09.jpg"
+    "cover": "photo/09.jpg"
   },
   {
     "slug": "like-a-film",
@@ -107,7 +107,7 @@
     "path": "blog/posts/like-a-film.md",
     "renderedPath": "blog/rendered/like-a-film.html",
     "pinned": false,
-    "cover": "images/fulls/10.jpg"
+    "cover": "photo/10.jpg"
   },
   {
     "slug": "miss-you-again",
@@ -117,7 +117,7 @@
     "path": "blog/posts/miss-you-again.md",
     "renderedPath": "blog/rendered/miss-you-again.html",
     "pinned": false,
-    "cover": "images/fulls/11.jpg"
+    "cover": "photo/11.jpg"
   },
   {
     "slug": "story-kept-here",
@@ -127,7 +127,7 @@
     "path": "blog/posts/story-kept-here.md",
     "renderedPath": "blog/rendered/story-kept-here.html",
     "pinned": false,
-    "cover": "images/fulls/12.jpg"
+    "cover": "photo/12.jpg"
   },
   {
     "slug": "morning-update",
@@ -137,6 +137,6 @@
     "path": "blog/posts/morning-update.md",
     "renderedPath": "blog/rendered/morning-update.html",
     "pinned": false,
-    "cover": "images/fulls/06.jpg"
+    "cover": "photo/06.jpg"
   }
 ]

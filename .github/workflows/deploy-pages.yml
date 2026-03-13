@@ -11,7 +11,7 @@ on:
       - 'photo.html'
       - 'photo-detail.html'
       - 'assets/**'
-      - 'images/**'
+      - 'photo/**'
       - '.github/workflows/deploy-pages.yml'
       - 'index.html'
       - 'CNAME'

@@ -38,10 +38,10 @@
   <script>
     function pickImage(post, index){
       if(post.cover) return post.cover;
-      if(post.slug === 'newsroom-love-story') return 'images/fulls/03.jpg';
-      if(post.slug === 'dev-note') return 'images/fulls/02.jpg';
-      if(post.slug === 'hello') return 'images/fulls/01.jpg';
-      const fallback = ['images/fulls/06.jpg','images/fulls/08.jpg','images/fulls/11.jpg','images/fulls/04.jpg','images/fulls/05.jpg'];
+      if(post.slug === 'newsroom-love-story') return 'photo/03.jpg';
+      if(post.slug === 'dev-note') return 'photo/02.jpg';
+      if(post.slug === 'hello') return 'photo/01.jpg';
+      const fallback = ['photo/06.jpg','photo/08.jpg','photo/11.jpg','photo/04.jpg','photo/05.jpg'];
       return fallback[index % fallback.length];
     }
     function render(posts){

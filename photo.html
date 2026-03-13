@@ -28,7 +28,7 @@
   <script>
     const photos = window.PHOTO_DATA || [];
     const grid = document.getElementById('gallery-grid');
-    grid.innerHTML = photos.map((photo, index) => `<a class="photo-card" href="photo-detail.html?photo=${photo.id}"><img src="${photo.full}" alt="${photo.title}" loading="lazy" decoding="async" fetchpriority="${index < 2 ? 'high' : 'auto'}" width="${photo.width}" height="${photo.height}" /></a>`).join('');
+    grid.innerHTML = photos.map((photo, index) => `<a class="photo-card" href="photo-detail.html?photo=${encodeURIComponent(photo.id)}"><img src="${photo.full}" alt="${photo.title || photo.file}" loading="lazy" decoding="async" fetchpriority="${index < 2 ? 'high' : 'auto'}" width="${photo.width || ''}" height="${photo.height || ''}" /></a>`).join('');
   </script>
 </body>
 </html>

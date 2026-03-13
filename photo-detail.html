@@ -56,9 +56,9 @@ body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Pin
 <script src="https://cdn.jsdelivr.net/npm/exifr/dist/lite.umd.js"></script>
 <script>
 const photos=(window.PHOTO_DATA||[]).map(p=>({...p,exif:p.exif||{}}));
-const q=new URLSearchParams(location.search).get('photo')||'01';
+const q=new URLSearchParams(location.search).get('photo')||'';
 const index=Math.max(0,photos.findIndex(p=>p.id===q));
-const photo=photos[index];
+const photo=photos[index] || photos[0];
 const img=document.getElementById("photo");
 
 const prettySize=b=>{const u=['B','KB','MB','GB'];let n=b,i=0;while(n>=1024&&i<u.length-1){n/=1024;i++;}return`${n.toFixed(i?1:0)} ${u[i]}`};

@@ -39,5 +39,5 @@ summary: 一句话摘要
 ## 图片写法
 
 ```md
-![说明文字](images/fulls/03.jpg)
+![说明文字](photo/03.jpg)
 ```

@@ -1,12 +1,15 @@
 #!/usr/bin/env python3
 from pathlib import Path
-import json, re, html
+import json, re, html, struct
 from datetime import datetime
 
 ROOT = Path(__file__).resolve().parents[1]
 POSTS_DIR = ROOT / 'blog' / 'posts'
-OUT = ROOT / 'blog' / 'posts.json'
+POSTS_OUT = ROOT / 'blog' / 'posts.json'
 RENDER_DIR = ROOT / 'blog' / 'rendered'
+PHOTO_DIR = ROOT / 'photo'
+PHOTO_OUT = ROOT / 'assets' / 'js' / 'photo-data.js'
+IMAGE_EXTS = {'.jpg', '.jpeg', '.png', '.webp', '.gif'}
 
 
 def parse_frontmatter(text: str):
@@ -188,33 +191,142 @@ def parse_date(v: str):
         return datetime.min
 
 
-posts = []
-RENDER_DIR.mkdir(parents=True, exist_ok=True)
-for path in sorted(POSTS_DIR.glob('*.md')):
-    if path.name == 'README.md' or path.name.startswith('_') or path.name.startswith('draft-'):
-        continue
-    text = path.read_text(encoding='utf-8')
-    meta, body = parse_frontmatter(text)
-    title = meta.get('title') or path.stem
-    date = meta.get('date', '')
-    summary = meta.get('summary') or re.sub(r'\s+', ' ', body.strip()).split('\n')[0][:120]
-    rendered_name = f'{path.stem}.html'
-    rendered_path = RENDER_DIR / rendered_name
-    rendered_path.write_text(md_to_html(body) + '\n', encoding='utf-8')
-    pinned = str(meta.get('pinned', '')).lower() in ('true', '1', 'yes', 'on')
-    cover = meta.get('cover', '').strip()
-    posts.append({
-        'slug': path.stem,
-        'title': title,
-        'date': date,
-        'summary': summary,
-        'path': f'blog/posts/{path.name}',
-        'renderedPath': f'blog/rendered/{rendered_name}',
-        'pinned': pinned,
-        'cover': cover
-    })
+def jpg_size(path: Path):
+    with path.open('rb') as f:
+        data = f.read(24)
+        if data[:2] != b'\xff\xd8':
+            return None
+        f.seek(2)
+        while True:
+            byte = f.read(1)
+            if not byte:
+                return None
+            while byte == b'\xff':
+                byte = f.read(1)
+            marker = byte[0]
+            if marker in (0xC0, 0xC1, 0xC2, 0xC3, 0xC5, 0xC6, 0xC7, 0xC9, 0xCA, 0xCB, 0xCD, 0xCE, 0xCF):
+                f.read(3)
+                h, w = struct.unpack('>HH', f.read(4))
+                return w, h
+            else:
+                size = struct.unpack('>H', f.read(2))[0]
+                f.seek(size - 2, 1)
 
-posts.sort(key=lambda x: (not x.get('pinned', False), -parse_date(x.get('date', '')).timestamp()))
-OUT.parent.mkdir(parents=True, exist_ok=True)
-OUT.write_text(json.dumps(posts, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-print(f'generated {OUT} with {len(posts)} posts')
+
+def png_size(path: Path):
+    with path.open('rb') as f:
+        header = f.read(24)
+        if header[:8] != b'\x89PNG\r\n\x1a\n':
+            return None
+        return struct.unpack('>II', header[16:24])
+
+
+def gif_size(path: Path):
+    with path.open('rb') as f:
+        header = f.read(10)
+        if header[:3] != b'GIF':
+            return None
+        return struct.unpack('<HH', header[6:10])
+
+
+def webp_size(path: Path):
+    with path.open('rb') as f:
+        header = f.read(40)
+        if header[:4] != b'RIFF' or header[8:12] != b'WEBP':
+            return None
+        chunk = header[12:16]
+        if chunk == b'VP8 ':
+            return struct.unpack('<HH', header[26:30])
+        if chunk == b'VP8L':
+            b0, b1, b2, b3 = header[21:25]
+            width = 1 + (((b1 & 0x3F) << 8) | b0)
+            height = 1 + (((b3 & 0x0F) << 10) | (b2 << 2) | ((b1 & 0xC0) >> 6))
+            return width, height
+        if chunk == b'VP8X':
+            width = 1 + int.from_bytes(header[24:27], 'little')
+            height = 1 + int.from_bytes(header[27:30], 'little')
+            return width, height
+        return None
+
+
+def image_size(path: Path):
+    ext = path.suffix.lower()
+    try:
+        if ext in {'.jpg', '.jpeg'}:
+            return jpg_size(path)
+        if ext == '.png':
+            return png_size(path)
+        if ext == '.gif':
+            return gif_size(path)
+        if ext == '.webp':
+            return webp_size(path)
+    except Exception:
+        return None
+    return None
+
+
+def pretty_title(stem: str):
+    s = re.sub(r'[-_]+', ' ', stem).strip()
+    return s if s else stem
+
+
+def generate_posts():
+    posts = []
+    RENDER_DIR.mkdir(parents=True, exist_ok=True)
+    for path in sorted(POSTS_DIR.glob('*.md')):
+        if path.name == 'README.md' or path.name.startswith('_') or path.name.startswith('draft-'):
+            continue
+        text = path.read_text(encoding='utf-8')
+        meta, body = parse_frontmatter(text)
+        title = meta.get('title') or path.stem
+        date = meta.get('date', '')
+        summary = meta.get('summary') or re.sub(r'\s+', ' ', body.strip()).split('\n')[0][:120]
+        rendered_name = f'{path.stem}.html'
+        rendered_path = RENDER_DIR / rendered_name
+        rendered_path.write_text(md_to_html(body) + '\n', encoding='utf-8')
+        pinned = str(meta.get('pinned', '')).lower() in ('true', '1', 'yes', 'on')
+        cover = meta.get('cover', '').strip()
+        posts.append({
+            'slug': path.stem,
+            'title': title,
+            'date': date,
+            'summary': summary,
+            'path': f'blog/posts/{path.name}',
+            'renderedPath': f'blog/rendered/{rendered_name}',
+            'pinned': pinned,
+            'cover': cover
+        })
+    posts.sort(key=lambda x: (not x.get('pinned', False), -parse_date(x.get('date', '')).timestamp()))
+    POSTS_OUT.parent.mkdir(parents=True, exist_ok=True)
+    POSTS_OUT.write_text(json.dumps(posts, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+    print(f'generated {POSTS_OUT} with {len(posts)} posts')
+
+
+def generate_photos():
+    PHOTO_DIR.mkdir(parents=True, exist_ok=True)
+    photos = []
+    files = [p for p in PHOTO_DIR.iterdir() if p.is_file() and p.suffix.lower() in IMAGE_EXTS]
+    files.sort(key=lambda p: p.stat().st_mtime, reverse=True)
+    for i, path in enumerate(files, start=1):
+        size = image_size(path) or (0, 0)
+        st = path.stat()
+        photos.append({
+            'id': path.stem,
+            'file': path.name,
+            'full': f'photo/{path.name}',
+            'width': size[0],
+            'height': size[1],
+            'size': st.st_size,
+            'title': pretty_title(path.stem),
+            'description': '',
+            'mtime': int(st.st_mtime)
+        })
+    content = 'window.PHOTO_DATA = ' + json.dumps(photos, ensure_ascii=False, indent=2) + ';\n'
+    PHOTO_OUT.parent.mkdir(parents=True, exist_ok=True)
+    PHOTO_OUT.write_text(content, encoding='utf-8')
+    print(f'generated {PHOTO_OUT} with {len(photos)} photos')
+
+
+if __name__ == '__main__':
+    generate_posts()
+    generate_photos()
