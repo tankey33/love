@@ -183,6 +183,8 @@ def md_to_html(md: str) -> str:
 posts = []
 RENDER_DIR.mkdir(parents=True, exist_ok=True)
 for path in sorted(POSTS_DIR.glob('*.md')):
+    if path.name == 'README.md' or path.name.startswith('_') or path.name.startswith('draft-'):
+        continue
     text = path.read_text(encoding='utf-8')
     meta, body = parse_frontmatter(text)
     title = meta.get('title') or path.stem

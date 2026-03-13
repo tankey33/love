@@ -7,33 +7,123 @@
   <link rel="icon" href="./love.png" />
   <link rel="shortcut icon" href="./love.png" />
   <style>
-    :root{--bg:#fff;--text:#1d1d1f;--text-soft:#6e6e73;--line:rgba(0,0,0,.08);--content:1200px;--hero:1080px;--feed:1040px}
-    *{box-sizing:border-box} body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","PingFang SC","Helvetica Neue",sans-serif;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility} a{color:inherit;text-decoration:none}
+    :root{
+      --bg:#fff;
+      --text:#1d1d1f;
+      --soft:#6e6e73;
+      --line:rgba(0,0,0,.08);
+      --content:1240px;
+      --hero:1120px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","PingFang SC","Helvetica Neue",sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}
     .topbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.82);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(0,0,0,.06)}
-    .topbar-inner{max-width:var(--content);margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{font-size:14px;letter-spacing:.02em;white-space:nowrap}.nav{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end}.nav a{font-size:13px;color:var(--text-soft);padding:10px 14px;border-radius:999px}.nav a:hover,.nav a.active{background:rgba(17,17,17,.05);color:var(--text)}
-    .hero{max-width:var(--hero);margin:0 auto;padding:58px 24px 24px;text-align:center}.hero-kicker{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--text-soft)}.hero-title{margin:14px auto 0;max-width:12em;font-size:clamp(42px,8vw,86px);line-height:1.02;letter-spacing:-.055em;font-weight:600}.hero-desc{margin:20px auto 0;max-width:760px;font-size:clamp(17px,2.2vw,24px);line-height:1.7;color:var(--text-soft)}
-    .feed{max-width:var(--feed);margin:0 auto;padding:8px 24px 60px;display:grid;gap:18px}.post{display:block;padding:28px 0;border-bottom:1px solid var(--line)}.post-date{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-soft)}.post-title{margin:10px 0 0;max-width:14em;font-size:clamp(30px,5vw,58px);line-height:1.04;letter-spacing:-.045em;font-weight:600}.post-summary{margin:16px 0 0;max-width:760px;font-size:16px;line-height:1.85;color:var(--text-soft)}.post:hover .post-title{opacity:.84}
-    .empty{padding:22px 0;font-size:15px;line-height:1.8;color:var(--text-soft)}
-    @media (max-width:640px){.topbar-inner,.hero,.feed{padding-left:16px;padding-right:16px}.hero{padding-top:36px}.hero-title{font-size:clamp(32px,12vw,52px);max-width:100%}.hero-desc{font-size:15px;max-width:22em}.post{padding:22px 0}.post-title{font-size:clamp(26px,9vw,38px);max-width:100%}.post-summary{font-size:15px;line-height:1.75}}
+    .topbar-inner{max-width:var(--content);margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{font-size:14px;letter-spacing:.02em;white-space:nowrap}
+    .nav{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+    .nav a{font-size:13px;color:var(--soft);padding:10px 14px;border-radius:999px}
+    .nav a:hover,.nav a.active{background:rgba(17,17,17,.05);color:var(--text)}
+
+    .hero{max-width:var(--hero);margin:0 auto;padding:56px 24px 28px}
+    .hero-kicker{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--soft)}
+    .hero-title{margin:12px 0 0;font-size:clamp(44px,8vw,96px);line-height:1;letter-spacing:-.065em;font-weight:600;max-width:10em}
+    .hero-desc{margin:22px 0 0;max-width:760px;font-size:clamp(18px,2.3vw,28px);line-height:1.6;color:var(--soft)}
+
+    .shell{max-width:var(--content);margin:0 auto;padding:0 24px 72px}
+
+    .featured{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(320px,.85fr);gap:28px;align-items:center;padding:24px 0 44px;border-bottom:1px solid var(--line)}
+    .featured-media{aspect-ratio:16/10;border-radius:28px;overflow:hidden;background:#f5f5f7}
+    .featured-media img{width:100%;height:100%;object-fit:cover}
+    .featured-copy{display:flex;flex-direction:column;gap:14px}
+    .post-date{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--soft)}
+    .featured-title{font-size:clamp(34px,4.8vw,64px);line-height:1.02;letter-spacing:-.05em;font-weight:600;margin:0}
+    .featured-summary{font-size:18px;line-height:1.8;color:var(--soft);margin:0;max-width:36em}
+
+    .section-label{margin:34px 0 12px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--soft)}
+    .news-list{display:grid}
+    .news-item{display:grid;grid-template-columns:160px minmax(0,1fr);gap:22px;padding:26px 0;border-bottom:1px solid var(--line);align-items:start}
+    .news-item-date{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);padding-top:6px}
+    .news-item-title{margin:0;font-size:clamp(28px,3.4vw,48px);line-height:1.04;letter-spacing:-.045em;font-weight:600;max-width:16em}
+    .news-item-summary{margin:14px 0 0;max-width:760px;font-size:16px;line-height:1.85;color:var(--soft)}
+    .empty{padding:32px 0;color:var(--soft);font-size:15px}
+
+    @media (max-width:900px){
+      .featured{grid-template-columns:1fr;gap:18px}
+      .featured-media{aspect-ratio:16/11}
+      .news-item{grid-template-columns:1fr;gap:10px}
+      .news-item-date{padding-top:0}
+    }
+    @media (max-width:640px){
+      .topbar-inner,.hero,.shell{padding-left:16px;padding-right:16px}
+      .hero{padding-top:34px;padding-bottom:20px}
+      .hero-title{font-size:clamp(34px,12vw,54px);max-width:100%}
+      .hero-desc{margin-top:16px;font-size:15px;max-width:24em}
+      .featured{padding-top:12px;padding-bottom:30px}
+      .featured-title{font-size:clamp(28px,9vw,40px)}
+      .featured-summary{font-size:15px;line-height:1.75}
+      .news-item{padding:22px 0}
+      .news-item-title{font-size:clamp(24px,8vw,34px);max-width:100%}
+      .news-item-summary{font-size:15px;line-height:1.75}
+    }
   </style>
 </head>
 <body>
   <header class="topbar"><div class="topbar-inner"><a class="brand" href="index.html">Tankey ❤️ Monody</a><nav class="nav"><a href="index.html">首页</a><a href="photo.html">照片</a><a href="notes.html" class="active">碎碎念</a></nav></div></header>
-  <section class="hero"><div class="hero-kicker">Newsroom</div><h1 class="hero-title">把零散的想法，写成值得认真阅读的内容。</h1><p class="hero-desc">这里不只是备忘录，也不是模板化博客。它更像一个小型新闻页：安静、完整、克制，把图片和文字都放在正确的位置上。</p></section>
-  <main class="feed" id="post-list"></main>
+
+  <section class="hero">
+    <div class="hero-kicker">Newsroom</div>
+    <h1 class="hero-title">Stories, updates, and small things worth keeping.</h1>
+    <p class="hero-desc">像新闻页一样组织内容，把图片、标题、摘要和时间放到更克制也更清楚的位置。不是卡片堆砌，而是像一页真正的编辑内容。</p>
+  </section>
+
+  <main class="shell">
+    <section id="featured"></section>
+    <div class="section-label">Latest Stories</div>
+    <section class="news-list" id="post-list"></section>
+  </main>
+
   <script>
+    const fallbackImages = ['images/fulls/03.jpg','images/fulls/06.jpg','images/fulls/08.jpg','images/fulls/11.jpg'];
+    function pickImage(post, index){
+      if(post.slug === 'newsroom-love-story') return 'images/fulls/03.jpg';
+      if(post.slug === 'dev-note') return 'images/fulls/02.jpg';
+      if(post.slug === 'hello') return 'images/fulls/01.jpg';
+      return fallbackImages[index % fallbackImages.length];
+    }
     async function loadPosts() {
+      const featured = document.getElementById('featured');
       const list = document.getElementById('post-list');
       try {
         const res = await fetch('blog/posts.json?_=' + Date.now());
-        const posts = await res.json();
-        const visible = posts.filter(post => post.slug !== 'README');
-        if (!visible.length) {
+        const posts = (await res.json()).filter(post => post.slug !== 'README');
+        if (!posts.length) {
           list.innerHTML = '<div class="empty">这里还没有文章。</div>';
           return;
         }
-        list.innerHTML = visible.map(post => `<a class="post" href="note.html?slug=${encodeURIComponent(post.slug)}"><div class="post-date">${post.date || 'Undated'}</div><h2 class="post-title">${post.title}</h2><p class="post-summary">${post.summary || ''}</p></a>`).join('');
-      } catch (e) { list.innerHTML = '<div class="empty">这里还没有文章。</div>'; }
+        const [first, ...rest] = posts;
+        const heroImage = pickImage(first, 0);
+        featured.innerHTML = `
+          <a class="featured" href="note.html?slug=${encodeURIComponent(first.slug)}">
+            <div class="featured-media"><img src="${heroImage}" alt="${first.title}" loading="eager" decoding="async"></div>
+            <div class="featured-copy">
+              <div class="post-date">${first.date || 'Undated'}</div>
+              <h2 class="featured-title">${first.title}</h2>
+              <p class="featured-summary">${first.summary || ''}</p>
+            </div>
+          </a>`;
+        list.innerHTML = rest.map((post, index) => `
+          <a class="news-item" href="note.html?slug=${encodeURIComponent(post.slug)}">
+            <div class="news-item-date">${post.date || 'Undated'}</div>
+            <div>
+              <h3 class="news-item-title">${post.title}</h3>
+              <p class="news-item-summary">${post.summary || ''}</p>
+            </div>
+          </a>`).join('');
+      } catch (e) {
+        list.innerHTML = '<div class="empty">这里还没有文章。</div>';
+      }
     }
     loadPosts();
   </script>

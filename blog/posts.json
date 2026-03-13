@@ -22,13 +22,5 @@
     "summary": "这是一个示例 markdown。以后你只要把新的 md 文件放进 blog/posts，就能自动出现在碎碎念页面。",
     "path": "blog/posts/hello.md",
     "renderedPath": "blog/rendered/hello.html"
-  },
-  {
-    "slug": "README",
-    "title": "README",
-    "date": "",
-    "summary": "# Blog Posts 把新的 `.md` 文件直接放进这个目录，然后 push 到 GitHub 即可自动上线。 ## 最简格式 ```md --- title: 文章标题 date: 2026-03-13 summary: 一句话摘要",
-    "path": "blog/posts/README.md",
-    "renderedPath": "blog/rendered/README.html"
   }
 ]
