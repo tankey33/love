@@ -3,12 +3,12 @@ title: 手把手教你搭建一个像这样的网站
 date: 2026-03-13
 summary: 从本地建站、整理照片、写 Markdown，到 push 到 GitHub、自动发布、再到 VPS 部署和域名接入，这篇文章把整套流程一步一步写清楚。
 pinned: true
-cover: photo/03.jpg
+cover: https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80
 ---
 
 # 手把手教你搭建一个像这样的网站
 
-![站点示意图](photo/03.jpg)
+![建站工作流示意](https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80)
 
 如果你也想做一个像这样的网站，其实完全可以从一个很简单的静态站开始，不需要一上来就搭数据库、后台管理系统、复杂框架。
 
@@ -52,6 +52,7 @@ cover: photo/03.jpg
 
 - 点开单张图可查看详情
 - 自动读取尺寸、大小、部分 EXIF
+- 显示拍摄参数（有就显示，没有就隐藏）
 - 有直方图展示
 - 可以左右切图
 
@@ -188,36 +189,7 @@ love/
 - 不需要手动改照片墙 HTML
 - 不需要手动改详情页链接
 
-### 你以后加照片的步骤
-
-#### 第一步：把照片放进 `photo/`
-
-例如：
-
-```text
-photo/
-├─ img_001.jpg
-├─ img_002.jpg
-├─ img_003.jpg
-```
-
-#### 第二步：运行生成脚本
-
-```bash
-python3 scripts/generate_posts.py
-```
-
-#### 第三步：提交到 GitHub
-
-```bash
-git add .
-git commit -m "Add new photos"
-git push origin main
-```
-
-完成后，照片墙就会自动更新。
-
-![照片墙演示](photo/08.jpg)
+![自动化照片目录示意](https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80)
 
 ---
 
@@ -249,7 +221,7 @@ blog/posts/my-first-post.md
 title: 我的第一篇文章
 date: 2026-03-13
 summary: 这是一篇示例文章
-cover: photo/03.jpg
+cover: https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80
 pinned: false
 ---
 
@@ -257,7 +229,7 @@ pinned: false
 
 这里是正文。
 
-![插图](photo/08.jpg)
+![插图](https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80)
 ```
 
 ### 这些字段分别是什么
@@ -287,55 +259,9 @@ pinned: true
 
 如果没有任何文章置顶，那么页面默认会把**日期最新**的一篇文章放到首卡位置。
 
-这就是你现在网站上的置顶机制。
-
 ---
 
-## 六、文章支持哪些内容
-
-现在这套文章系统已经支持：
-
-- 标题
-- 段落
-- 列表
-- 引用
-- 代码块
-- 表格
-- 图片
-- 行内代码
-- 粗体 / 斜体
-- 数学公式（页面端渲染）
-
-### 代码块示例
-
-```python
-def hello():
-    print("hello world")
-```
-
-### 表格示例
-
-| 功能 | 说明 |
-| --- | --- |
-| 照片墙 | 自动扫描 `photo/` |
-| 文章系统 | 自动扫描 `blog/posts/` |
-| 发布 | push 后自动上线 |
-
-### 图片示例
-
-```md
-![示意图](photo/06.jpg)
-```
-
-### 链接示例
-
-```md
-[GitHub](https://github.com/)
-```
-
----
-
-## 七、本地怎么预览和生成
+## 六、本地怎么生成内容
 
 如果你已经把文件准备好了，日常维护就很简单。
 
@@ -361,7 +287,6 @@ python3 scripts/generate_posts.py
 - `assets/js/photo-data.js`
 
 #### 3. 本地查看
-如果你用 VS Code，可以装一个简单的本地预览插件；或者开一个本地静态服务器，比如：
 
 ```bash
 python3 -m http.server 8080
@@ -373,11 +298,9 @@ python3 -m http.server 8080
 
 ---
 
-## 八、如何 push 到 GitHub
+## 七、如何 push 到 GitHub
 
 ### 第一步：初始化 Git 仓库
-
-如果你的项目还没初始化：
 
 ```bash
 git init
@@ -386,11 +309,9 @@ git branch -M main
 
 ### 第二步：连接 GitHub 仓库
 
-先去 GitHub 创建一个仓库。
+GitHub 官网：<https://github.com/>
 
-GitHub：<https://github.com/>
-
-创建好之后，把远程仓库连进来：
+创建好仓库之后，把远程仓库连进来：
 
 ```bash
 git remote add origin https://github.com/你的用户名/你的仓库名.git
@@ -404,7 +325,7 @@ git commit -m "Initial site setup"
 git push -u origin main
 ```
 
-之后日常更新就只需要：
+之后日常更新只需要：
 
 ```bash
 git add .
@@ -414,13 +335,11 @@ git push origin main
 
 ---
 
-## 九、如何通过 GitHub 自动发布
+## 八、如何通过 GitHub 自动发布
 
-如果你不想自己折腾服务器，最省心的方式就是 **GitHub Pages**。
+最省心的方式就是 **GitHub Pages**。
 
 GitHub Pages：<https://pages.github.com/>
-
-### 现在这套流程是怎么自动化的
 
 仓库里已经有：
 
@@ -431,93 +350,50 @@ GitHub Pages：<https://pages.github.com/>
 当你 push 到 `main` 后，GitHub Actions 会自动：
 
 1. 检出仓库
-2. 运行：
-
-```bash
-python3 scripts/generate_posts.py
-```
-
-3. 生成照片和文章数据
+2. 运行 `python3 scripts/generate_posts.py`
+3. 生成文章和照片数据
 4. 自动部署到 GitHub Pages
 
-### GitHub Actions 是什么
-
-官网：<https://github.com/features/actions>
-
-它相当于 GitHub 自带的自动化流水线。
-
-所以你以后不需要每次自己手工上传网站文件，只要 push，网站就会自动更新。
+GitHub Actions：<https://github.com/features/actions>
 
 ---
 
-## 十、如果要在 VPS 上搭建，怎么做
+## 九、如何在 VPS 上搭建
 
-如果你已经有 VPS，也完全可以放在自己的服务器上。
+如果你想完全掌控环境，也可以放到 VPS 上。
+
+### 常见 VPS 服务商
+
+- Vultr：<https://www.vultr.com/>
+- DigitalOcean：<https://www.digitalocean.com/>
+- Linode：<https://www.linode.com/>
+- Oracle Cloud Free Tier：<https://www.oracle.com/cloud/free/>
 
 ### 最常见的方法：Nginx 托管静态站
 
 Nginx 官网：<https://nginx.org/>
 
-思路是：
+流程很直接：
 
-1. 把代码拉到 VPS
-2. Nginx 指向网站目录
-3. 配置域名
-4. 配置 HTTPS
-
-### 一个最常见的站点目录
+1. 把仓库 clone 到 VPS
+2. 用 Nginx 指向网站目录
+3. 配域名
+4. 配 HTTPS
 
 例如：
 
-```text
-/var/www/love
-```
-
-你可以把仓库内容放到这里。
-
-### 最简单的同步方式
-
-#### 本地 push 到 GitHub
-
 ```bash
-git push origin main
-```
-
-#### VPS 上 pull
-
-```bash
+git clone https://github.com/你的用户名/你的仓库.git /var/www/love
 cd /var/www/love
-git pull origin main
+python3 scripts/generate_posts.py
 ```
 
-如果你不想每次手工 pull，也可以让 VPS 直接从 GitHub Actions 自动触发部署。
-
----
-
-## 十一、如何在 VPS 上配置域名
-
-### 1. 准备域名
-
-你需要在域名服务商那里买一个域名。
-
-### 2. 解析到 VPS
-
-把域名的 A 记录指向你的 VPS IP。
-
-例如：
-
-```text
-love.example.com -> 你的 VPS IP
-```
-
-### 3. Nginx 配置 `server_name`
-
-大概会像这样：
+Nginx 配置大概会像这样：
 
 ```nginx
 server {
     listen 80;
-    server_name love.example.com;
+    server_name your-domain.com;
     root /var/www/love;
     index index.html;
 
@@ -527,129 +403,72 @@ server {
 }
 ```
 
-### 4. 配 HTTPS
+---
 
-最常见的方式是 Let's Encrypt。
+## 十、如何接域名和 HTTPS
+
+### GitHub Pages 路线
+
+官方文档：<https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site>
+
+### HTTPS
 
 Let's Encrypt：<https://letsencrypt.org/>
 
 Certbot：<https://certbot.eff.org/>
 
-你可以用：
+如果是 Nginx 环境，最常见命令是：
 
 ```bash
-sudo certbot --nginx -d love.example.com
+sudo certbot --nginx -d your-domain.com
 ```
 
-这样 HTTPS 基本就能配好。
-
 ---
 
-## 十二、GitHub Pages 和 VPS 怎么选
+## 十一、这些网站和服务之间怎么联动
 
-### GitHub Pages 适合你如果：
-
-- 网站是纯静态的
-- 你想最省事
-- 你不想自己维护服务器
-- 你只是要一个稳定、好看的展示站
-
-### VPS 更适合你如果：
-
-- 你已经有服务器
-- 你想完全掌控环境
-- 你还准备在同一台机器上挂别的服务
-- 你后面可能还想接动态功能
-
-### 最实际的建议
-
-如果你现在主要是：
-
-- 放照片
-- 写文章
-- 做展示
-
-那我更建议先用：
-
-- **GitHub + GitHub Pages**
-
-因为省事，足够稳定，也最容易长期维护。
-
-如果后面你需要更复杂的东西，再迁到 VPS。
-
----
-
-## 十三、几个互相关联的网站和服务
-
-为了更方便，你可以把这几个东西串起来：
-
-### 1. GitHub 仓库
-
-管理代码：
-
-<https://github.com/>
-
-### 2. GitHub Pages
-
-自动发布静态站：
-
-<https://pages.github.com/>
-
-### 3. GitHub Actions
-
-自动构建与部署：
-
-<https://github.com/features/actions>
-
-### 4. VPS（可选）
-
-如果你要自托管，可以选：
-
-- <https://www.vultr.com/>
-- <https://www.digitalocean.com/>
-- <https://www.linode.com/>
-- <https://www.oracle.com/cloud/free/>
-
-### 5. 域名（可选）
-
-如果要自定义域名，可以在你自己的域名商购买后接入。
-
-### 它们之间怎么联动
-
-最常见的联动方式是：
+最常见的一条链路是：
 
 ```text
-本地写内容
+本地修改内容
+   ↓
+python3 scripts/generate_posts.py
    ↓
 git push 到 GitHub
    ↓
-GitHub Actions 自动生成并部署
+GitHub Actions 自动运行
    ↓
-GitHub Pages 自动更新
-   ↓
-域名指向 Pages 或 VPS
+GitHub Pages 自动发布
 ```
 
-这是最顺的一条链路。
+也可以是：
+
+```text
+本地修改内容
+   ↓
+git push 到 GitHub
+   ↓
+VPS 上 git pull
+   ↓
+Nginx 继续提供静态站
+```
+
+这就是现在这类网站最实用的两条路径。
 
 ---
 
-## 十四、以后你日常维护时，真正需要做的事
+## 十二、以后你真正要做的事
 
-其实不会很多。
+其实很少：
 
 ### 加照片时
 
-1. 把图片丢进 `photo/`
-2. 本地运行：
-
 ```bash
+# 1. 把图片丢进 photo/
+# 2. 生成
 python3 scripts/generate_posts.py
-```
+# 3. 提交
 
-3. push：
-
-```bash
 git add .
 git commit -m "Add photos"
 git push origin main
@@ -657,16 +476,12 @@ git push origin main
 
 ### 加文章时
 
-1. 把 `.md` 丢进 `blog/posts/`
-2. 本地运行：
-
 ```bash
+# 1. 把 md 丢进 blog/posts/
+# 2. 生成
 python3 scripts/generate_posts.py
-```
+# 3. 提交
 
-3. push：
-
-```bash
 git add .
 git commit -m "Add post"
 git push origin main
@@ -674,87 +489,40 @@ git push origin main
 
 ### 改页面样式时
 
-1. 改 HTML / CSS / JS
-2. 提交
-3. push
-
-就这么简单。
-
----
-
-## 十五、给你一个真正最简的整套流程
-
-如果你今天要从零开始，最短路径是：
-
-### 第一步
-建项目目录，准备页面文件。
-
-### 第二步
-准备：
-
-- `photo/`
-- `blog/posts/`
-- `scripts/generate_posts.py`
-
-### 第三步
-把网站代码放进去。
-
-### 第四步
-初始化 Git：
-
-```bash
-git init
-git branch -M main
-```
-
-### 第五步
-建 GitHub 仓库并连接：
-
-```bash
-git remote add origin https://github.com/你的用户名/仓库名.git
-```
-
-### 第六步
-推送：
-
 ```bash
 git add .
-git commit -m "Initial site"
-git push -u origin main
+git commit -m "Refine layout"
+git push origin main
 ```
-
-### 第七步
-开启 GitHub Pages。
-
-### 第八步
-以后只维护：
-
-- `photo/`
-- `blog/posts/`
-- 页面文件
-
-这就够了。
 
 ---
 
-## 十六、如果你还想继续往下做
+## 十三、最简总结
 
-后面还可以继续加这些功能：
+如果你今天要从零开始，真正最短路径就是：
 
-- 标签分类
-- 多置顶文章排序
-- 文章封面自动抽取
-- EXIF 更完整展示
-- 图片压缩和 WebP/AVIF 自动生成
-- VPS 自动部署脚本
-- 自定义域名与 HTTPS 完整教程
+1. 本地建项目目录
+2. 准备页面文件
+3. 准备 `photo/`
+4. 准备 `blog/posts/`
+5. 准备自动生成脚本
+6. 用 Git 管理
+7. push 到 GitHub
+8. 用 GitHub Pages 或 VPS 发布
 
-![结尾配图](photo/11.jpg)
+这套方法的核心不在“某个框架”，而在这几点：
 
-如果你愿意，我下一篇还可以继续给你写成真正的系列教程，例如：
+- 内容和页面分开
+- 照片自动化
+- 文章自动化
+- 发布自动化
 
-1. **如何把这个站部署到 GitHub Pages**
-2. **如何把这个站部署到 VPS + Nginx**
-3. **如何从零做一个自动更新的照片墙与博客系统**
+只要这四件事搭对了，你后面维护网站会轻松很多。
 
-这样你后面照着一步步做，会更轻松。
+![部署完成后的内容站示意](https://images.unsplash.com/photo-1505238680356-667803448bb6?auto=format&fit=crop&w=1600&q=80)
+
+如果你愿意，我下一篇还可以继续往下写成真正的后续教程：
+
+- **如何给这个站接自定义域名与 HTTPS**
+- **如何让 VPS 自动 pull 并自动部署**
+- **如何继续把它做成完整内容系统**

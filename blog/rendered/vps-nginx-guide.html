@@ -10,17 +10,17 @@
 </ul>
 <h2>常见 VPS 服务商</h2>
 <ul>
-<li>Vultr：&lt;https://www.vultr.com/&gt;</li>
-<li>DigitalOcean：&lt;https://www.digitalocean.com/&gt;</li>
-<li>Linode：&lt;https://www.linode.com/&gt;</li>
-<li>Oracle Cloud Free Tier：&lt;https://www.oracle.com/cloud/free/&gt;</li>
+<li>Vultr：<a href="https://www.vultr.com/" target="_blank" rel="noopener noreferrer">https://www.vultr.com/</a></li>
+<li>DigitalOcean：<a href="https://www.digitalocean.com/" target="_blank" rel="noopener noreferrer">https://www.digitalocean.com/</a></li>
+<li>Linode：<a href="https://www.linode.com/" target="_blank" rel="noopener noreferrer">https://www.linode.com/</a></li>
+<li>Oracle Cloud Free Tier：<a href="https://www.oracle.com/cloud/free/" target="_blank" rel="noopener noreferrer">https://www.oracle.com/cloud/free/</a></li>
 </ul>
 <h2>第一步：把代码拉到服务器</h2>
 <pre><code class="language-bash">git clone https://github.com/你的用户名/你的仓库.git /var/www/love
 cd /var/www/love
 python3 scripts/generate_posts.py</code></pre>
 <h2>第二步：安装 Nginx</h2>
-<p>Nginx 官网：&lt;https://nginx.org/&gt;</p>
+<p>Nginx 官网：<a href="https://nginx.org/" target="_blank" rel="noopener noreferrer">https://nginx.org/</a></p>
 <p>大多数 Debian / Ubuntu 系系统可以直接：</p>
 <pre><code class="language-bash">sudo apt update
 sudo apt install nginx -y</code></pre>
@@ -41,8 +41,8 @@ sudo systemctl reload nginx</code></pre>
 <h2>第四步：绑定域名</h2>
 <p>把域名的 A 记录解析到你的 VPS IP。</p>
 <h2>第五步：开启 HTTPS</h2>
-<p>Let's Encrypt：&lt;https://letsencrypt.org/&gt;</p>
-<p>Certbot：&lt;https://certbot.eff.org/&gt;</p>
+<p>Let's Encrypt：<a href="https://letsencrypt.org/" target="_blank" rel="noopener noreferrer">https://letsencrypt.org/</a></p>
+<p>Certbot：<a href="https://certbot.eff.org/" target="_blank" rel="noopener noreferrer">https://certbot.eff.org/</a></p>
 <pre><code class="language-bash">sudo certbot --nginx -d your-domain.com</code></pre>
 <h2>日常更新怎么做</h2>
 <p>最简单的方法就是：</p>

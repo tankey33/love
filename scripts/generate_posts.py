@@ -32,6 +32,7 @@ def esc(s: str) -> str:
 
 def inline_md(text: str) -> str:
     text = esc(text)
+    text = re.sub(r'&lt;(https?://[^&]+)&gt;', r'<a href="\1" target="_blank" rel="noopener noreferrer">\1</a>', text)
     text = re.sub(r'!\[([^\]]*)\]\(([^)]+)\)', r'<img src="\2" alt="\1">', text)
     text = re.sub(r'`([^`]+)`', r'<code>\1</code>', text)
     text = re.sub(r'\*\*([^*]+)\*\*', r'<strong>\1</strong>', text)
