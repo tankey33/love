@@ -2,12 +2,12 @@
 title: 富士 X-Half：是玩具，但她喜欢
 date: 2026-03-15
 summary: 家里不是没有相机，但她想要的从来不是参数更强的那台，而是一台真正属于她、能揣进口袋、拿起来就愿意拍的相机。
-cover: photo/fuji-x-half-note.jpg
+cover: blog/images/fuji-x-half-note.jpg
 ---
 
 # 富士 X-Half：是玩具，但她喜欢
 
-![富士 X-Half](photo/fuji-x-half-note.jpg)
+![富士 X-Half](blog/images/fuji-x-half-note.jpg)
 
 #富士 #Xhalf #御成富士 #我的半格日记 #富士相机 #胶片模拟
 
