@@ -83,7 +83,6 @@
         <a class="news-card" href="note.html?slug=${encodeURIComponent(post.slug)}">
           <div class="news-media"><img src="${pickImage(post,index+1)}" alt="${post.title}" loading="lazy" decoding="async"></div>
           <div class="news-copy">
-            <div class="kicker">${post.pinned ? '置顶' : '片段'}</div>
             <h3 class="news-title">${post.title}</h3>
             <p class="news-summary">${post.summary || ''}</p>
             <div class="news-date">${post.date || 'Undated'}</div>
