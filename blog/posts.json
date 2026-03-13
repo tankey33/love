@@ -1,5 +1,13 @@
 [
   {
+    "slug": "newsroom-love-story",
+    "title": "Tankey ❤️ Monody 发布全新照片与碎碎念页面",
+    "date": "2026-03-13",
+    "summary": "以更克制的排版、更完整的影像展示和更稳定的文章阅读体验，这个小站完成了一次更接近 Apple Newsroom 气质的更新。",
+    "path": "blog/posts/newsroom-love-story.md",
+    "renderedPath": "blog/rendered/newsroom-love-story.html"
+  },
+  {
     "slug": "dev-note",
     "title": "一篇完整功能示例：代码、公式与表格",
     "date": "2026-03-12",
