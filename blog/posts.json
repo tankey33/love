@@ -10,163 +10,193 @@
     "cover": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80"
   },
   {
-    "slug": "github-pages-guide",
-    "title": "如何把这个网站部署到 GitHub Pages",
+    "slug": "openclaw-setup",
+    "title": "如何从零搭建 OpenClaw 并接入 Telegram",
     "date": "2026-03-14",
-    "summary": "从仓库创建、Pages 设置、Actions 自动发布到自定义域名接入，这篇文章专门讲 GitHub Pages 这一条路。",
-    "path": "blog/posts/github-pages-guide.md",
-    "renderedPath": "blog/rendered/github-pages-guide.html",
+    "summary": "从安装、配置 Gateway、接入 Telegram，到常见问题排查，这是一篇偏实战的 OpenClaw 入门记录。",
+    "path": "blog/posts/openclaw-setup.md",
+    "renderedPath": "blog/rendered/openclaw-setup.html",
     "pinned": false,
-    "cover": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1600&q=80"
+    "cover": "https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=1600&q=80"
   },
   {
-    "slug": "evening-light",
-    "title": "傍晚的光开始变慢",
+    "slug": "docker-homeassistant-mihome-homekit",
+    "title": "用 Docker 搭建 Home Assistant，并连接米家与 HomeKit",
     "date": "2026-03-13",
-    "summary": "有时候一天真正安静下来的时刻，不是夜里，而是傍晚光线刚开始往回收的时候。",
-    "path": "blog/posts/evening-light.md",
-    "renderedPath": "blog/rendered/evening-light.html",
+    "summary": "如果你想把智能家居做成一套真正好用的系统，Home Assistant 仍然是最值得投入时间的一环。",
+    "path": "blog/posts/docker-homeassistant-mihome-homekit.md",
+    "renderedPath": "blog/rendered/docker-homeassistant-mihome-homekit.html",
     "pinned": false,
-    "cover": "photo/04.jpg"
+    "cover": "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1600&q=80"
   },
   {
-    "slug": "newsroom-love-story",
-    "title": "Tankey ❤️ Monody 发布全新照片与碎碎念页面",
-    "date": "2026-03-13",
-    "summary": "以更克制的排版、更完整的影像展示和更稳定的文章阅读体验，这个小站完成了一次更接近 Apple Newsroom 气质的更新。",
-    "path": "blog/posts/newsroom-love-story.md",
-    "renderedPath": "blog/rendered/newsroom-love-story.html",
-    "pinned": false,
-    "cover": ""
-  },
-  {
-    "slug": "vps-nginx-guide",
-    "title": "如何把这个网站部署到 VPS 与 Nginx",
-    "date": "2026-03-13",
-    "summary": "如果你想完全掌控环境，这篇文章会从 VPS 选择、Nginx 配置、域名解析到 HTTPS 一步步讲清楚。",
-    "path": "blog/posts/vps-nginx-guide.md",
-    "renderedPath": "blog/rendered/vps-nginx-guide.html",
-    "pinned": false,
-    "cover": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80"
-  },
-  {
-    "slug": "automation-guide",
-    "title": "如何做一个自动更新的照片墙和博客系统",
+    "slug": "baby-shopping-guide",
+    "title": "婴幼儿出生产品购买指南：哪些值得买，哪些可以慢一点",
     "date": "2026-03-12",
-    "summary": "这篇文章专门讲自动化本身：照片目录、Markdown、生成脚本、自动索引、自动渲染、自动部署是怎么串起来的。",
-    "path": "blog/posts/automation-guide.md",
-    "renderedPath": "blog/rendered/automation-guide.html",
+    "summary": "真正需要准备的东西没有想象中那么多，重要的是先把高频、刚需和安全相关的买对。",
+    "path": "blog/posts/baby-shopping-guide.md",
+    "renderedPath": "blog/rendered/baby-shopping-guide.html",
     "pinned": false,
-    "cover": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80"
+    "cover": "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=1600&q=80"
   },
   {
-    "slug": "dev-note",
-    "title": "一篇完整功能示例：代码、公式与表格",
-    "date": "2026-03-12",
-    "summary": "这篇文章用来展示碎碎念页面对代码高亮、复制、公式、表格、引用和图片等内容的支持。",
-    "path": "blog/posts/dev-note.md",
-    "renderedPath": "blog/rendered/dev-note.html",
-    "pinned": false,
-    "cover": ""
-  },
-  {
-    "slug": "hello",
-    "title": "第一篇碎碎念",
-    "date": "2026-03-12",
-    "summary": "这是一个示例 markdown。以后你只要把新的 md 文件放进 blog/posts，就能自动出现在碎碎念页面。",
-    "path": "blog/posts/hello.md",
-    "renderedPath": "blog/rendered/hello.html",
-    "pinned": false,
-    "cover": ""
-  },
-  {
-    "slug": "ordinary-day",
-    "title": "普通的一天，也值得被郑重留下",
+    "slug": "late-night-writing",
+    "title": "夜里安静下来以后，句子会慢一点落下来",
     "date": "2026-03-11",
-    "summary": "不是每一天都要发生大事，很多后来会反复回看的照片，其实都来自很普通的一天。",
-    "path": "blog/posts/ordinary-day.md",
-    "renderedPath": "blog/rendered/ordinary-day.html",
+    "summary": "白天写东西像是在赶路，到了夜里，文字才更像是慢慢靠近自己。",
+    "path": "blog/posts/late-night-writing.md",
+    "renderedPath": "blog/rendered/late-night-writing.html",
     "pinned": false,
-    "cover": "photo/05.jpg"
+    "cover": "https://images.unsplash.com/photo-1493612276216-ee3925520721?auto=format&fit=crop&w=1600&q=80"
   },
   {
-    "slug": "city-breeze",
-    "title": "风从城市边缘吹过来的时候",
+    "slug": "about-small-home-server",
+    "title": "家里有一台一直亮着的小服务器，生活会很不一样",
     "date": "2026-03-10",
-    "summary": "城市的风景不一定总是热闹的，有时候最动人的，是那些看起来快要安静下来的瞬间。",
-    "path": "blog/posts/city-breeze.md",
-    "renderedPath": "blog/rendered/city-breeze.html",
+    "summary": "当照片、自动化、备份、智能家居和个人工具都开始往一个小服务器上聚拢，很多事情会突然变顺。",
+    "path": "blog/posts/about-small-home-server.md",
+    "renderedPath": "blog/rendered/about-small-home-server.html",
     "pinned": false,
-    "cover": "photo/06.jpg"
+    "cover": "https://images.unsplash.com/photo-1518773553398-650c184e0bb3?auto=format&fit=crop&w=1600&q=80"
   },
   {
-    "slug": "one-frame",
-    "title": "一帧很轻，但足够留下记忆",
+    "slug": "mac-mini-as-home-node",
+    "title": "把 Mac mini 当成家庭中枢，是一种很舒服的选择",
     "date": "2026-03-09",
-    "summary": "真正好的照片不一定复杂，它可能只是把某一个平常瞬间，恰好留在了最合适的位置。",
-    "path": "blog/posts/one-frame.md",
-    "renderedPath": "blog/rendered/one-frame.html",
+    "summary": "它不需要很吵，也不需要太折腾，就能把很多原本分散的小任务慢慢接起来。",
+    "path": "blog/posts/mac-mini-as-home-node.md",
+    "renderedPath": "blog/rendered/mac-mini-as-home-node.html",
     "pinned": false,
-    "cover": "photo/07.jpg"
+    "cover": "https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?auto=format&fit=crop&w=1600&q=80"
   },
   {
-    "slug": "in-the-frame",
-    "title": "你站进画面里之后，一切就变得具体了",
+    "slug": "how-i-organize-photos",
+    "title": "我是怎么整理照片的：文件夹、顺序和长期保存",
     "date": "2026-03-08",
-    "summary": "很多照片之所以成立，不是因为光线或者构图，而是因为某个人刚好站进了镜头里。",
-    "path": "blog/posts/in-the-frame.md",
-    "renderedPath": "blog/rendered/in-the-frame.html",
+    "summary": "真正让照片变得容易回看的，不是滤镜，而是整理方式本身。",
+    "path": "blog/posts/how-i-organize-photos.md",
+    "renderedPath": "blog/rendered/how-i-organize-photos.html",
     "pinned": false,
-    "cover": "photo/08.jpg"
+    "cover": "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1600&q=80"
   },
   {
-    "slug": "favored-moment",
-    "title": "某个被偏爱的瞬间，总会自己发光",
+    "slug": "why-static-sites-still-matter",
+    "title": "为什么到现在，我还是很喜欢静态网站",
     "date": "2026-03-07",
-    "summary": "有些照片看起来并不热闹，但会在整套相册里很自然地被一眼看见。",
-    "path": "blog/posts/favored-moment.md",
-    "renderedPath": "blog/rendered/favored-moment.html",
+    "summary": "静态网站的吸引力不只是快，而是它让内容和结构重新变得简单、可控、可长期维护。",
+    "path": "blog/posts/why-static-sites-still-matter.md",
+    "renderedPath": "blog/rendered/why-static-sites-still-matter.html",
     "pinned": false,
-    "cover": "photo/09.jpg"
+    "cover": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1600&q=80"
   },
   {
-    "slug": "like-a-film",
-    "title": "像一部很短的电影，刚好停在这一帧",
+    "slug": "the-day-feels-softer",
+    "title": "有些日子会自己变得柔软一点",
     "date": "2026-03-06",
-    "summary": "有时候一张图像最动人的地方，不是它记录了什么，而是它让人感觉后面似乎还有故事。",
-    "path": "blog/posts/like-a-film.md",
-    "renderedPath": "blog/rendered/like-a-film.html",
+    "summary": "不是发生了什么大事，只是光、风和心情都比平时慢了一点。",
+    "path": "blog/posts/the-day-feels-softer.md",
+    "renderedPath": "blog/rendered/the-day-feels-softer.html",
     "pinned": false,
-    "cover": "photo/10.jpg"
+    "cover": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80"
   },
   {
-    "slug": "miss-you-again",
-    "title": "翻到这里的时候，又会重新想起你",
+    "slug": "small-automation-worth-doing",
+    "title": "那些很小但很值的自动化，最后最常用",
     "date": "2026-03-05",
-    "summary": "真正会反复回看的照片，通常都带着一点延迟发生的情绪。",
-    "path": "blog/posts/miss-you-again.md",
-    "renderedPath": "blog/rendered/miss-you-again.html",
+    "summary": "真正长期留在生活里的自动化，往往不是最炫的，而是那些减少重复的小动作。",
+    "path": "blog/posts/small-automation-worth-doing.md",
+    "renderedPath": "blog/rendered/small-automation-worth-doing.html",
     "pinned": false,
-    "cover": "photo/11.jpg"
+    "cover": "https://images.unsplash.com/photo-1516321165247-4aa89a48be28?auto=format&fit=crop&w=1600&q=80"
   },
   {
-    "slug": "story-kept-here",
-    "title": "故事先放在这里，等以后慢慢再看",
+    "slug": "using-docker-at-home",
+    "title": "家庭服务器为什么越来越适合用 Docker",
     "date": "2026-03-04",
-    "summary": "不一定每一次记录都要立刻解释，很多时候把它留下，本身就已经足够了。",
-    "path": "blog/posts/story-kept-here.md",
-    "renderedPath": "blog/rendered/story-kept-here.html",
+    "summary": "当服务一多，Docker 最大的价值不是“潮流”，而是把环境管理这件事一下子变清楚了。",
+    "path": "blog/posts/using-docker-at-home.md",
+    "renderedPath": "blog/rendered/using-docker-at-home.html",
     "pinned": false,
-    "cover": "photo/12.jpg"
+    "cover": "https://images.unsplash.com/photo-1605745341112-85968b19335b?auto=format&fit=crop&w=1600&q=80"
   },
   {
-    "slug": "morning-update",
-    "title": "早上的光，总会让内容看起来更干净一些",
-    "date": "2026-03-02",
-    "summary": "有些更新不需要特别大的动静，它只要在正确的时间被看见，就已经足够成立。",
-    "path": "blog/posts/morning-update.md",
-    "renderedPath": "blog/rendered/morning-update.html",
+    "slug": "newborn-home-prep",
+    "title": "宝宝出生前，家里最应该先准备好的其实不是东西本身",
+    "date": "2026-03-03",
+    "summary": "很多人会先列购物清单，但真正决定是否轻松的，往往是收纳动线和使用顺序。",
+    "path": "blog/posts/newborn-home-prep.md",
+    "renderedPath": "blog/rendered/newborn-home-prep.html",
     "pinned": false,
-    "cover": "photo/06.jpg"
+    "cover": "https://images.unsplash.com/photo-1544126592-807ade215a0b?auto=format&fit=crop&w=1600&q=80"
+  },
+  {
+    "slug": "the-value-of-keeping-notes",
+    "title": "把想法写下来，是我对抗混乱最有效的方法之一",
+    "date": "2026-03-02",
+    "summary": "记笔记不是为了显得自律，而是为了把脑子里那些会不断回来的东西，安静地放到别处。",
+    "path": "blog/posts/the-value-of-keeping-notes.md",
+    "renderedPath": "blog/rendered/the-value-of-keeping-notes.html",
+    "pinned": false,
+    "cover": "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1600&q=80"
+  },
+  {
+    "slug": "gentle-tech",
+    "title": "我喜欢那些看起来不吵，但一直很有用的技术",
+    "date": "2026-03-01",
+    "summary": "技术真正舒服的时候，不是存在感很强，而是它已经 quietly 成为日常的一部分。",
+    "path": "blog/posts/gentle-tech.md",
+    "renderedPath": "blog/rendered/gentle-tech.html",
+    "pinned": false,
+    "cover": "https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=1600&q=80"
+  },
+  {
+    "slug": "quiet-morning-desk",
+    "title": "早晨的桌面，总有一种重新开始的错觉",
+    "date": "2026-02-28",
+    "summary": "杯子里是热的，屏幕刚亮，窗外也还不吵。很多事情都像是还能重新来过。",
+    "path": "blog/posts/quiet-morning-desk.md",
+    "renderedPath": "blog/rendered/quiet-morning-desk.html",
+    "pinned": false,
+    "cover": "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=80"
+  },
+  {
+    "slug": "openclaw-daily-usage",
+    "title": "OpenClaw 真正好用，是在它开始理解你的日常之后",
+    "date": "2026-02-27",
+    "summary": "搭起来只是第一步，真正的价值是在它逐渐接进你的消息、文件、提醒和项目之后慢慢显出来。",
+    "path": "blog/posts/openclaw-daily-usage.md",
+    "renderedPath": "blog/rendered/openclaw-daily-usage.html",
+    "pinned": false,
+    "cover": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80"
+  },
+  {
+    "slug": "what-to-buy-first-for-baby",
+    "title": "给新生儿买东西，先买会高频用到的那一批",
+    "date": "2026-02-26",
+    "summary": "和其一次性买全，不如先把高频且安全相关的东西选对，后面再按实际情况慢慢补。",
+    "path": "blog/posts/what-to-buy-first-for-baby.md",
+    "renderedPath": "blog/rendered/what-to-buy-first-for-baby.html",
+    "pinned": false,
+    "cover": "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=1600&q=80"
+  },
+  {
+    "slug": "websites-that-feel-personal",
+    "title": "真正让人记住的网站，往往都有一点个人气息",
+    "date": "2026-02-25",
+    "summary": "模板可以很整齐，但真正让人想停留的，通常是那些带着一点私人语气和情绪的网站。",
+    "path": "blog/posts/websites-that-feel-personal.md",
+    "renderedPath": "blog/rendered/websites-that-feel-personal.html",
+    "pinned": false,
+    "cover": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1600&q=80"
+  },
+  {
+    "slug": "homekit-mijia-routine",
+    "title": "当米家和 HomeKit 被接进同一套日常里",
+    "date": "2026-02-29",
+    "summary": "真正好用的智能家居不是设备越多越好，而是回家、睡觉、起床这些动作变得更自然。",
+    "path": "blog/posts/homekit-mijia-routine.md",
+    "renderedPath": "blog/rendered/homekit-mijia-routine.html",
+    "pinned": false,
+    "cover": "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1600&q=80"
   }
 ]

@@ -302,7 +302,7 @@ def generate_posts():
             'pinned': pinned,
             'cover': cover
         })
-    posts.sort(key=lambda x: (not x.get('pinned', False), -parse_date(x.get('date', '')).timestamp()))
+    posts.sort(key=lambda x: (not x.get('pinned', False), -parse_date(x.get('date', '')).toordinal()))
     POSTS_OUT.parent.mkdir(parents=True, exist_ok=True)
     POSTS_OUT.write_text(json.dumps(posts, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     print(f'generated {POSTS_OUT} with {len(posts)} posts')
