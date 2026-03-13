@@ -9,166 +9,44 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"/>
 <style>
 :root{--bg:#f6f6f4;--text:#1d1d1f;--muted:#8a8a8f;--line:rgba(0,0,0,.08);--content:720px;}
-*{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","PingFang SC","Helvetica Neue",sans-serif;background:var(--bg);color:var(--text);line-height:1.6;}
-a{color:inherit;text-decoration:none;}
-.topbar{position:sticky;top:0;background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);z-index:100;}
-.topbar-inner{max-width:1100px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;}
-.brand{font-size:14px;font-weight:500;}
-.nav{display:flex;gap:8px;}
-.nav a{font-size:13px;padding:6px 12px;border-radius:999px;}
-.nav a:hover{background:rgba(0,0,0,.06);}
-.page{max-width:var(--content);margin:0 auto;padding:48px 24px;}
-.hero{text-align:center;margin-bottom:40px;}
-.meta{font-size:12px;letter-spacing:.14em;color:var(--muted);text-transform:uppercase;}
-#post-title{font-size:clamp(28px,5vw,48px);line-height:1.2;margin:14px 0 0;font-weight:600;letter-spacing:-.02em;}
-.summary{max-width:600px;margin:16px auto 0;color:#666;font-size:15px;line-height:1.8;}
-.content{font-size:17px;line-height:1.9;}
-.content h1,.content h2,.content h3{margin-top:2em;margin-bottom:.6em;line-height:1.3;font-weight:600;}
-.content h1{font-size:36px;}
-.content h2{font-size:28px;}
-.content h3{font-size:22px;}
-.content p{margin:1.2em 0;}
-.content ul,.content ol{margin:1.2em 0;padding-left:1.6em;}
-.content li{margin:.4em 0;}
-.content a{color:#0066cc;}
-.content pre{background:#f8f8f8;border:1px solid var(--line);border-radius:14px;overflow-x:auto;margin:1.6em 0;}
-.content pre code{display:block;padding:18px;font-size:13px;line-height:1.7;background:transparent;white-space:pre;}
-.code-wrap{position:relative;margin:1.6em 0;}
-.copy-btn{position:absolute;top:10px;right:10px;font-size:11px;padding:5px 10px;border-radius:8px;border:none;background:rgba(0,0,0,.8);color:#fff;cursor:pointer;}
-.content table{width:100%;border-collapse:collapse;margin:1.6em 0;overflow-x:auto;display:block;}
-.content th,.content td{border-bottom:1px solid var(--line);padding:12px;text-align:left;font-size:14px;white-space:nowrap;}
-.content th{font-weight:600;}
-.content img{max-width:100%;height:auto;border-radius:14px;margin:1.2em 0;}
-.content blockquote{margin:1.6em 0;padding:14px 18px;border-left:4px solid #111;background:rgba(0,0,0,.03);border-radius:0 12px 12px 0;color:#555;}
-.content blockquote p{margin:0;}
-.content hr{border:none;border-top:1px solid var(--line);margin:2em 0;}
-.content code:not(pre code){background:rgba(0,0,0,.06);padding:2px 6px;border-radius:6px;font-size:.9em;}
-.katex-display{overflow-x:auto;overflow-y:hidden;padding:8px 0;}
-@media (max-width:520px){.page{padding:24px 16px;}#post-title{font-size:clamp(24px,8vw,36px);}.content{font-size:16px;}}
+*{box-sizing:border-box;margin:0;padding:0} body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","PingFang SC","Helvetica Neue",sans-serif;background:var(--bg);color:var(--text);line-height:1.6} a{color:inherit;text-decoration:none}
+.topbar{position:sticky;top:0;background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);z-index:100}
+.topbar-inner{max-width:1100px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center}.brand{font-size:14px;font-weight:500}.nav{display:flex;gap:8px}.nav a{font-size:13px;padding:6px 12px;border-radius:999px}.nav a:hover{background:rgba(0,0,0,.06)}
+.page{max-width:var(--content);margin:0 auto;padding:48px 24px}.hero{text-align:center;margin-bottom:40px}.meta{font-size:12px;letter-spacing:.14em;color:var(--muted);text-transform:uppercase}#post-title{font-size:clamp(28px,5vw,48px);line-height:1.2;margin:14px 0 0;font-weight:600;letter-spacing:-.02em;word-break:break-word;overflow-wrap:anywhere}.summary{max-width:600px;margin:16px auto 0;color:#666;font-size:15px;line-height:1.8}
+.content{font-size:17px;line-height:1.9;word-break:break-word;overflow-wrap:anywhere}.content h1,.content h2,.content h3{margin-top:2em;margin-bottom:.6em;line-height:1.3;font-weight:600}.content h1{font-size:36px}.content h2{font-size:28px}.content h3{font-size:22px}.content p{margin:1.2em 0}.content ul,.content ol{margin:1.2em 0;padding-left:1.6em}.content li{margin:.4em 0}.content a{color:#0066cc}.content pre{background:#f8f8f8;border:1px solid var(--line);border-radius:14px;overflow-x:auto;margin:1.6em 0}.content pre code{display:block;padding:18px;font-size:13px;line-height:1.7;background:transparent;white-space:pre}.code-wrap{position:relative;margin:1.6em 0}.copy-btn{position:absolute;top:10px;right:10px;font-size:11px;padding:5px 10px;border-radius:8px;border:none;background:rgba(0,0,0,.8);color:#fff;cursor:pointer}.content table{width:100%;border-collapse:collapse;margin:1.6em 0;display:block;overflow-x:auto}.content th,.content td{border-bottom:1px solid var(--line);padding:12px;text-align:left;font-size:14px;white-space:nowrap}.content img{max-width:100%;height:auto;border-radius:14px;margin:1.2em 0}.content blockquote{margin:1.6em 0;padding:14px 18px;border-left:4px solid #111;background:rgba(0,0,0,.03);border-radius:0 12px 12px 0;color:#555}.content blockquote p{margin:0}.content hr{border:none;border-top:1px solid var(--line);margin:2em 0}.content code:not(pre code){background:rgba(0,0,0,.06);padding:2px 6px;border-radius:6px;font-size:.9em}.katex-display{overflow-x:auto;overflow-y:hidden;padding:8px 0}
+@media (max-width:520px){.page{padding:24px 16px}#post-title{font-size:clamp(24px,8vw,36px)}.content{font-size:16px}.content h2{font-size:24px}.content pre code{padding:14px;font-size:12px}}
 </style>
 </head>
 <body>
-<header class="topbar">
-<div class="topbar-inner">
-<a class="brand" href="index.html">Tankey ❤️ Monody</a>
-<nav class="nav">
-<a href="index.html">首页</a>
-<a href="photo.html">照片</a>
-<a href="notes.html">碎碎念</a>
-</nav>
-</div>
-</header>
-<main class="page">
-<article>
-<header class="hero">
-<div class="meta" id="post-date"></div>
-<h1 id="post-title"></h1>
-<div class="summary" id="post-summary"></div>
-</header>
-<section class="content" id="post-content"></section>
-</article>
-</main>
-<script src="https://cdn.jsdelivr.net/npm/marked@9.1.2/marked.min.js"></script>
+<header class="topbar"><div class="topbar-inner"><a class="brand" href="index.html">Tankey ❤️ Monody</a><nav class="nav"><a href="index.html">首页</a><a href="photo.html">照片</a><a href="notes.html">碎碎念</a></nav></div></header>
+<main class="page"><article><header class="hero"><div class="meta" id="post-date"></div><h1 id="post-title"></h1><div class="summary" id="post-summary"></div></header><section class="content" id="post-content"></section></article></main>
 <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.10.0/lib/common.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
 <script>
-(function() {
-  const params = new URLSearchParams(window.location.search);
-  const slug = params.get("slug");
-  const container = document.getElementById("post-content");
-
-  if (!slug) {
-    document.getElementById("post-title").textContent = "未指定文章";
-    return;
-  }
-
-  async function loadPost() {
-    try {
-      // 1. 获取文章列表
-      const r = await fetch("blog/posts.json?t=" + Date.now());
-      const posts = await r.json();
-      const post = posts.find(p => p.slug === slug);
-
-      if (!post) {
-        document.getElementById("post-title").textContent = "文章不存在";
-        return;
-      }
-
-      // 更新基础信息
-      document.title = post.title + " · Tankey ❤️ Monody";
-      document.getElementById("post-title").textContent = post.title;
-      document.getElementById("post-date").textContent = post.date;
-      document.getElementById("post-summary").textContent = post.summary || "";
-
-      // 2. 获取 Markdown 源码内容
-      const mdRes = await fetch(post.path + "?t=" + Date.now());
-      const md = await mdRes.text();
-      
-      // 调试用：查看是否成功读取到文件
-      console.log("Markdown raw content length:", md.length);
-
-      // 3. 去除 Front Matter 并渲染
-      const content = md.replace(/^---[\s\S]+?---\s*/, "").trim();
-      container.innerHTML = marked.parse(content);
-
-      // 4. 处理代码块和数学公式
-      renderExtras();
-
-    } catch (e) {
-      console.error("加载失败:", e);
-      container.innerHTML = "<p>内容加载出错，请检查控制台或网络连接。</p>";
-    }
-  }
-
-  function renderExtras() {
-    // 先处理高亮 (Highlight.js)
-    container.querySelectorAll('pre code').forEach((el) => {
-      hljs.highlightElement(el);
+(async function(){
+  const slug=new URLSearchParams(window.location.search).get('slug');
+  if(!slug){document.getElementById('post-title').textContent='未指定文章';return;}
+  try{
+    const posts=await fetch('blog/posts.json?t='+Date.now()).then(r=>r.json());
+    const post=posts.find(p=>p.slug===slug);
+    if(!post){document.getElementById('post-title').textContent='文章不存在';return;}
+    document.title=post.title+' · Tankey ❤️ Monody';
+    document.getElementById('post-title').textContent=post.title;
+    document.getElementById('post-date').textContent=post.date||'';
+    document.getElementById('post-summary').textContent=post.summary||'';
+    const html=await fetch((post.renderedPath||post.path)+'?t='+Date.now()).then(r=>r.text());
+    const container=document.getElementById('post-content');
+    container.innerHTML=html;
+    container.querySelectorAll('pre code').forEach(el=>hljs.highlightElement(el));
+    container.querySelectorAll('pre').forEach(pre=>{
+      const wrap=document.createElement('div');wrap.className='code-wrap';
+      const btn=document.createElement('button');btn.className='copy-btn';btn.textContent='复制';
+      btn.onclick=async()=>{try{await navigator.clipboard.writeText(pre.innerText);btn.textContent='已复制';setTimeout(()=>btn.textContent='复制',1500);}catch(e){btn.textContent='复制失败';}};
+      pre.parentNode.insertBefore(wrap,pre);wrap.appendChild(btn);wrap.appendChild(pre);
     });
-
-    // 处理代码复制
-    container.querySelectorAll("pre").forEach(pre => {
-      // 避免重复添加
-      if (pre.parentElement && pre.parentElement.classList.contains('code-wrap')) {
-        return;
-      }
-
-      const wrap = document.createElement("div");
-      wrap.className = "code-wrap";
-      const btn = document.createElement("button");
-      btn.className = "copy-btn";
-      btn.textContent = "复制";
-      
-      btn.onclick = () => {
-        const code = pre.querySelector('code') || pre;
-        navigator.clipboard.writeText(code.textContent).then(() => {
-          btn.textContent = "已复制";
-          setTimeout(() => btn.textContent = "复制", 1500);
-        });
-      };
-
-      // 修正插入逻辑：在 pre 之前插入 wrap，再把 pre 移进去
-      pre.parentNode.insertBefore(wrap, pre);
-      wrap.appendChild(btn);
-      wrap.appendChild(pre);
-    });
-
-    // 处理公式 (KaTeX)
-    if (window.renderMathInElement) {
-      renderMathInElement(container, {
-        delimiters: [
-          {left: "$$", right: "$$", display: true},
-          {left: "$", right: "$", display: false}
-        ],
-        throwOnError: false
-      });
-    }
-  }
-
-  // 确保资源加载完成后执行
-  window.addEventListener('load', loadPost);
+    if(window.renderMathInElement){renderMathInElement(container,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});}
+  }catch(e){document.getElementById('post-content').innerHTML='<p>加载失败：'+e.message+'</p>';}
 })();
 </script>
 </body>
