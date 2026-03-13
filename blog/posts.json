@@ -1,16 +1,16 @@
 [
   {
-    "slug": "dev-note",
-    "title": "一篇完整功能示例：代码、公式与表格",
-    "date": "2026-03-12",
-    "summary": "这篇文章用来展示碎碎念页面对代码高亮、复制、公式、表格、引用和图片等内容的支持。",
-    "path": "blog/posts/dev-note.md"
-  },
-  {
     "slug": "hello",
     "title": "第一篇碎碎念",
     "date": "2026-03-12",
     "summary": "这是一个示例 markdown。以后你只要把新的 md 文件放进 blog/posts，就能自动出现在碎碎念页面。",
     "path": "blog/posts/hello.md"
+  },
+  {
+    "slug": "dev-note",
+    "title": "dev-note",
+    "date": "",
+    "summary": "# 一篇完整功能示例 这篇文章专门用来测试博客文章最常见的需求：段落、列表、代码、公式、表格、引用、图片。 ## 一段普通文字 有时候碎碎念并不需要很长，它更像是把当天的灵感认真保存下来。页面应该安静，但功能不能弱。 ## 代码块（Java",
+    "path": "blog/posts/dev-note.md"
   }
 ]
