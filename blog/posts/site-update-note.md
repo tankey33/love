@@ -1,74 +1,116 @@
 ---
-title: 如何从零搭建一个像这样的网站
+title: 手把手教你搭建一个像这样的网站
 date: 2026-03-13
-summary: 从本地整理文件，到 GitHub 自动发布，再到 VPS 部署与绑定域名，这篇文章把整套流程和功能结构一次讲清楚。
+summary: 从本地建站、整理照片、写 Markdown，到 push 到 GitHub、自动发布、再到 VPS 部署和域名接入，这篇文章把整套流程一步一步写清楚。
 pinned: true
 cover: photo/03.jpg
 ---
 
-# 如何从零搭建一个像这样的网站
+# 手把手教你搭建一个像这样的网站
 
 ![站点示意图](photo/03.jpg)
 
-如果你也想做一个像这样的网站，其实不需要很重的技术栈。它本质上是一个**静态网站**，重点不在复杂后端，而在内容组织、页面结构、自动化生成和部署方式。
+如果你也想做一个像这样的网站，其实完全可以从一个很简单的静态站开始，不需要一上来就搭数据库、后台管理系统、复杂框架。
 
-这篇文章把整套流程拆开来说：
+这篇文章我按**手把手**的方式来写，尽量让你可以直接照着做。
 
-- 网站有什么功能
-- 本地怎么搭建
-- 怎么 push 到 GitHub
-- 怎么自动发布
-- 怎么放到 VPS
-- 域名怎么接进去
+这套站点现在的思路是：
 
-## 这个网站现在有哪些功能
+- 首页负责氛围和入口
+- `photo/` 文件夹负责照片墙
+- `blog/posts/` 负责碎碎念 / 博客内容
+- Python 脚本负责自动生成文章和照片数据
+- GitHub 负责托管代码
+- GitHub Pages 或 VPS 负责上线
 
-先说结构。现在这套站点已经不是单页，而是一个比较完整的小型内容站：
+如果你只是想要一个好看、轻量、可长期维护的网站，这种方案很合适。
 
-### 1. 首页
+---
 
-- 时间线和氛围型视觉
-- 音乐控制
-- 响应式布局
-- 手机和桌面都能正常看
+## 一、先理解：这个网站到底是什么结构
 
-### 2. 照片墙
+你现在看到的这个站，本质上是一个**静态网站**。
 
-- 自动从 `photo/` 目录读取图片
+它不是 WordPress，也不是必须依赖服务器动态渲染的博客系统。它更像是一组静态页面，加上一些自动生成的数据文件。
+
+### 现在这套站点主要有这些页面
+
+#### 1. 首页
+
+- 负责整体氛围
+- 可以放时间、标题、音乐、入口
+- 更偏“展示”
+
+#### 2. 照片墙 `photo.html`
+
+- 自动读取 `photo/` 文件夹里的图片
 - 按文件时间新到旧排序
-- 自动读取图片尺寸
-- 自动生成照片数据
-- 点击可以进入详情页
+- 自动根据图片尺寸排版
+- 不需要手动写图片列表
 
-![照片墙演示](photo/08.jpg)
+#### 3. 照片详情页 `photo-detail.html`
 
-### 3. 照片详情页
+- 点开单张图可查看详情
+- 自动读取尺寸、大小、部分 EXIF
+- 有直方图展示
+- 可以左右切图
 
-- 自动读取图片基础信息
-- 自动尝试读取 EXIF
-- 显示拍摄参数（有就显示，没有就隐藏）
-- 左右切图
-- 直方图展示
+#### 4. 碎碎念列表页 `notes.html`
 
-### 4. 碎碎念 / 博客
-
-- 文章写成 `.md`
-- 放进 `blog/posts/`
-- 自动生成文章列表
-- 自动渲染成页面
+- 展示所有文章
 - 支持置顶文章
-- 支持封面图
 - 支持搜索
+- 支持卡片图文展示
 
-### 5. 自动化发布
+#### 5. 单篇文章页 `note.html`
 
-- push 到 GitHub 后自动生成内容
-- 自动部署到 GitHub Pages
-- 不需要每次手工改 HTML
+- 展示渲染后的文章内容
+- 支持图片、代码、公式、表格、引用等
 
-## 本地怎么搭建
+所以你可以把它理解成：
 
-最简单的目录结构大概像这样：
+> 一个小型静态内容网站，里面同时有首页、相册和文章系统。
+
+---
+
+## 二、你需要准备什么
+
+### 最少需要这些
+
+1. 一台自己的电脑
+2. 一个 GitHub 账号
+3. 一个代码仓库
+4. （可选）一个域名
+5. （可选）一台 VPS
+
+### 推荐安装这些工具
+
+#### 1. Git
+官网：<https://git-scm.com/>
+
+#### 2. Python 3
+官网：<https://www.python.org/>
+
+#### 3. VS Code
+官网：<https://code.visualstudio.com/>
+
+#### 4. GitHub
+官网：<https://github.com/>
+
+如果你只是做静态站，以上这些就够了。
+
+---
+
+## 三、本地项目怎么搭起来
+
+先在本地建一个目录，比如：
+
+```bash
+mkdir love
+cd love
+```
+
+推荐目录结构像这样：
 
 ```text
 love/
@@ -78,272 +120,641 @@ love/
 ├─ notes.html
 ├─ note.html
 ├─ photo/
-├─ blog/posts/
-├─ blog/rendered/
-├─ assets/js/
-├─ scripts/generate_posts.py
-└─ .github/workflows/deploy-pages.yml
+├─ blog/
+│  ├─ posts/
+│  ├─ rendered/
+│  └─ posts.json
+├─ assets/
+│  └─ js/
+├─ scripts/
+│  └─ generate_posts.py
+└─ .github/
+   └─ workflows/
+      └─ deploy-pages.yml
 ```
 
-### 本地工作流
+### 每个目录是干什么的
 
-你平时只需要处理三类内容：
+#### `photo/`
+放所有照片。
 
-1. 页面文件
-   - `index.html`
-   - `photo.html`
-   - `photo-detail.html`
-   - `notes.html`
-   - `note.html`
+以后你只要把图片丢进这个目录，脚本就会自动扫描、排序、生成数据。
 
-2. 图片
-   - 直接放进 `photo/`
+#### `blog/posts/`
+放所有 Markdown 文章。
 
-3. 文章
-   - 直接放进 `blog/posts/`
+以后你写文章，就直接在这里新增 `.md` 文件。
 
-也就是说，本地维护的重点其实很简单：
-- 写页面
-- 放图片
-- 写 md
+#### `blog/rendered/`
+自动生成出来的文章 HTML。
 
-## 如何写一篇文章
+你不需要手改这里，它是脚本自动产物。
 
-最简单的文章格式是：
+#### `assets/js/photo-data.js`
+自动生成出来的照片数据文件。
 
-```md
+也不需要手动改。
+
+#### `scripts/generate_posts.py`
+最关键的自动化脚本。
+
+它负责：
+
+- 扫描文章
+- 生成文章索引
+- 预渲染 HTML
+- 扫描照片
+- 生成照片数据
+
 ---
-title: 文章标题
-date: 2026-03-13
-summary: 一句话摘要
-cover: photo/03.jpg
-pinned: true
----
 
-# 正文标题
+## 四、照片墙是怎么自动工作的
 
-这里写正文。
+现在这套逻辑已经改成：
 
-![插图](photo/08.jpg)
+> 你只要把图片丢进 `photo/` 文件夹。
+
+然后脚本会自动：
+
+- 按文件时间排序（新到旧）
+- 读取图片宽高
+- 读取文件大小
+- 生成 `assets/js/photo-data.js`
+
+也就是说，你以后不需要再做这些事：
+
+- 不需要手动给每张图编号
+- 不需要手动写图片数组
+- 不需要手动改照片墙 HTML
+- 不需要手动改详情页链接
+
+### 你以后加照片的步骤
+
+#### 第一步：把照片放进 `photo/`
+
+例如：
+
+```text
+photo/
+├─ img_001.jpg
+├─ img_002.jpg
+├─ img_003.jpg
 ```
 
-这里几个字段的作用分别是：
-
-- `title`：文章标题
-- `date`：日期
-- `summary`：列表摘要
-- `cover`：列表页封面图
-- `pinned`：是否置顶
-
-如果你不想让它置顶，就不要写 `pinned: true`。
-
-## 如何让照片墙自动工作
-
-现在照片墙已经改成自动化逻辑：
-
-- 你只要把图片丢进 `photo/`
-- 生成脚本会自动读取：
-  - 文件名
-  - 文件时间
-  - 尺寸
-  - 文件大小
-- 然后自动生成 `assets/js/photo-data.js`
-
-所以你不需要再一张张手写图片数据。
-
-![照片目录演示](photo/06.jpg)
-
-## 如何在本地生成内容
-
-这个项目现在用一个 Python 脚本来处理内容：
+#### 第二步：运行生成脚本
 
 ```bash
 python3 scripts/generate_posts.py
 ```
 
-它会做两件事：
-
-### 1. 处理文章
-
-- 扫描 `blog/posts/*.md`
-- 生成 `blog/posts.json`
-- 生成 `blog/rendered/*.html`
-
-### 2. 处理照片
-
-- 扫描 `photo/`
-- 读取图片信息
-- 生成 `assets/js/photo-data.js`
-
-所以这一个脚本，已经把“文章自动化”和“照片自动化”都串起来了。
-
-## 如何 push 到 GitHub
-
-如果你已经在本地初始化了仓库，那么平时更新内容的流程很简单：
+#### 第三步：提交到 GitHub
 
 ```bash
 git add .
-git commit -m "Update site content"
+git commit -m "Add new photos"
 git push origin main
 ```
 
-通常你会在这些场景下 push：
+完成后，照片墙就会自动更新。
 
-- 新增文章
-- 新增照片
-- 改页面样式
-- 改自动化脚本
+![照片墙演示](photo/08.jpg)
 
-## 如何通过 GitHub 自动部署
+---
 
-这个站点最省心的方式，就是 GitHub Pages。
+## 五、文章系统是怎么自动工作的
 
-你需要准备：
+文章系统现在的逻辑是：
 
-1. 一个 GitHub 仓库
-2. 开启 GitHub Pages
-3. 配置好 `.github/workflows/deploy-pages.yml`
+> 你只要把 `.md` 文件放进 `blog/posts/`。
 
-现在这套 workflow 已经可以做到：
+脚本就会自动：
 
-- push 到 `main`
-- 自动运行生成脚本
-- 自动部署到 GitHub Pages
+- 读取文章 front matter
+- 生成文章列表 `blog/posts.json`
+- 生成渲染后的 HTML `blog/rendered/*.html`
+- 让 `notes.html` 自动显示它们
 
-也就是说，只要你 push，网站就会自己更新。
+### 最简单的文章写法
 
-## 如何部署到 VPS
+新建一个文件，比如：
 
-如果你不想只用 GitHub Pages，也可以放到 VPS。
+```text
+blog/posts/my-first-post.md
+```
 
-最常见的方式是：
+内容可以这样写：
 
-### 方案 1：Nginx 直接托管静态文件
+```md
+---
+title: 我的第一篇文章
+date: 2026-03-13
+summary: 这是一篇示例文章
+cover: photo/03.jpg
+pinned: false
+---
 
-适合这种站。
+# 我的第一篇文章
 
-流程：
+这里是正文。
 
-1. 把仓库 clone 到 VPS
-2. 用 Nginx 指向网站目录
+![插图](photo/08.jpg)
+```
+
+### 这些字段分别是什么
+
+#### `title`
+文章标题。
+
+#### `date`
+文章日期，用来排序。
+
+#### `summary`
+列表页摘要。
+
+#### `cover`
+卡片封面图。
+
+#### `pinned`
+是否置顶。
+
+如果某篇文章设置：
+
+```md
+pinned: true
+```
+
+那它会优先成为 `notes.html` 的大图首卡。
+
+如果没有任何文章置顶，那么页面默认会把**日期最新**的一篇文章放到首卡位置。
+
+这就是你现在网站上的置顶机制。
+
+---
+
+## 六、文章支持哪些内容
+
+现在这套文章系统已经支持：
+
+- 标题
+- 段落
+- 列表
+- 引用
+- 代码块
+- 表格
+- 图片
+- 行内代码
+- 粗体 / 斜体
+- 数学公式（页面端渲染）
+
+### 代码块示例
+
+```python
+def hello():
+    print("hello world")
+```
+
+### 表格示例
+
+| 功能 | 说明 |
+| --- | --- |
+| 照片墙 | 自动扫描 `photo/` |
+| 文章系统 | 自动扫描 `blog/posts/` |
+| 发布 | push 后自动上线 |
+
+### 图片示例
+
+```md
+![示意图](photo/06.jpg)
+```
+
+### 链接示例
+
+```md
+[GitHub](https://github.com/)
+```
+
+---
+
+## 七、本地怎么预览和生成
+
+如果你已经把文件准备好了，日常维护就很简单。
+
+### 每次更新内容时，建议这样做
+
+#### 1. 改内容
+例如：
+
+- 新增照片到 `photo/`
+- 新增文章到 `blog/posts/`
+- 调整页面 HTML
+
+#### 2. 本地运行生成脚本
+
+```bash
+python3 scripts/generate_posts.py
+```
+
+这个脚本会同时更新：
+
+- `blog/posts.json`
+- `blog/rendered/*.html`
+- `assets/js/photo-data.js`
+
+#### 3. 本地查看
+如果你用 VS Code，可以装一个简单的本地预览插件；或者开一个本地静态服务器，比如：
+
+```bash
+python3 -m http.server 8080
+```
+
+然后打开：
+
+<http://localhost:8080>
+
+---
+
+## 八、如何 push 到 GitHub
+
+### 第一步：初始化 Git 仓库
+
+如果你的项目还没初始化：
+
+```bash
+git init
+git branch -M main
+```
+
+### 第二步：连接 GitHub 仓库
+
+先去 GitHub 创建一个仓库。
+
+GitHub：<https://github.com/>
+
+创建好之后，把远程仓库连进来：
+
+```bash
+git remote add origin https://github.com/你的用户名/你的仓库名.git
+```
+
+### 第三步：提交并推送
+
+```bash
+git add .
+git commit -m "Initial site setup"
+git push -u origin main
+```
+
+之后日常更新就只需要：
+
+```bash
+git add .
+git commit -m "Update content"
+git push origin main
+```
+
+---
+
+## 九、如何通过 GitHub 自动发布
+
+如果你不想自己折腾服务器，最省心的方式就是 **GitHub Pages**。
+
+GitHub Pages：<https://pages.github.com/>
+
+### 现在这套流程是怎么自动化的
+
+仓库里已经有：
+
+```text
+.github/workflows/deploy-pages.yml
+```
+
+当你 push 到 `main` 后，GitHub Actions 会自动：
+
+1. 检出仓库
+2. 运行：
+
+```bash
+python3 scripts/generate_posts.py
+```
+
+3. 生成照片和文章数据
+4. 自动部署到 GitHub Pages
+
+### GitHub Actions 是什么
+
+官网：<https://github.com/features/actions>
+
+它相当于 GitHub 自带的自动化流水线。
+
+所以你以后不需要每次自己手工上传网站文件，只要 push，网站就会自动更新。
+
+---
+
+## 十、如果要在 VPS 上搭建，怎么做
+
+如果你已经有 VPS，也完全可以放在自己的服务器上。
+
+### 最常见的方法：Nginx 托管静态站
+
+Nginx 官网：<https://nginx.org/>
+
+思路是：
+
+1. 把代码拉到 VPS
+2. Nginx 指向网站目录
 3. 配置域名
 4. 配置 HTTPS
 
-例如 Nginx 站点根目录可以直接指向：
+### 一个最常见的站点目录
+
+例如：
 
 ```text
 /var/www/love
 ```
 
-然后把你的仓库内容同步过去。
+你可以把仓库内容放到这里。
 
-### 方案 2：本地 push，VPS pull
+### 最简单的同步方式
 
-最简单的维护方式：
+#### 本地 push 到 GitHub
 
-- 本地改完 push 到 GitHub
-- VPS 上 `git pull`
-- Nginx 直接提供静态资源
+```bash
+git push origin main
+```
 
-### 方案 3：GitHub Actions 自动部署到 VPS
+#### VPS 上 pull
 
-如果你想完全自动化，可以让 GitHub Actions：
+```bash
+cd /var/www/love
+git pull origin main
+```
 
-- 在 push 后自动 ssh 到 VPS
-- 自动 pull 最新代码
-- 自动 reload Nginx
+如果你不想每次手工 pull，也可以让 VPS 直接从 GitHub Actions 自动触发部署。
 
-这个适合后面你网站更稳定时再接。
+---
 
-## GitHub Pages 和 VPS 怎么选
+## 十一、如何在 VPS 上配置域名
 
-### GitHub Pages 更适合：
+### 1. 准备域名
 
-- 纯静态网站
-- 更新频率不算夸张
-- 想省事
-- 不想管服务器
+你需要在域名服务商那里买一个域名。
 
-### VPS 更适合：
+### 2. 解析到 VPS
 
-- 你还想挂别的服务
-- 你要更强的可控性
-- 你有自己的域名和 SSL 策略
-- 你后面可能想接更多动态功能
+把域名的 A 记录指向你的 VPS IP。
 
-## 域名怎么接
+例如：
 
-如果你要用自己的域名：
+```text
+love.example.com -> 你的 VPS IP
+```
 
-### GitHub Pages
+### 3. Nginx 配置 `server_name`
 
-- 仓库里放 `CNAME`
-- DNS 解析到 GitHub Pages
+大概会像这样：
 
-### VPS
+```nginx
+server {
+    listen 80;
+    server_name love.example.com;
+    root /var/www/love;
+    index index.html;
 
-- DNS 解析到你的 VPS IP
-- Nginx 配置 `server_name`
-- 用 Let's Encrypt 配 HTTPS
+    location / {
+        try_files $uri $uri/ =404;
+    }
+}
+```
 
-## 这套方案为什么适合长期维护
+### 4. 配 HTTPS
 
-因为它不是“每加一张图就改一次页面”，也不是“每写一篇文章就手抄一遍 HTML”。
+最常见的方式是 Let's Encrypt。
 
-它的核心是：
+Let's Encrypt：<https://letsencrypt.org/>
 
-- **内容和页面分开**
-- **图片自动化**
-- **文章自动化**
-- **部署自动化**
+Certbot：<https://certbot.eff.org/>
 
-所以以后你维护的难度会很低。
+你可以用：
 
-你只需要记住：
+```bash
+sudo certbot --nginx -d love.example.com
+```
 
-- 图片丢进 `photo/`
-- 文章丢进 `blog/posts/`
-- 改完 push
+这样 HTTPS 基本就能配好。
 
-剩下的都交给生成脚本和发布流程。
+---
 
-## 最后给一个最简操作流
+## 十二、GitHub Pages 和 VPS 怎么选
 
-如果你以后只是日常更新，最简单就是这几步：
+### GitHub Pages 适合你如果：
 
-### 加照片
+- 网站是纯静态的
+- 你想最省事
+- 你不想自己维护服务器
+- 你只是要一个稳定、好看的展示站
 
-- 丢进 `photo/`
+### VPS 更适合你如果：
 
-### 加文章
+- 你已经有服务器
+- 你想完全掌控环境
+- 你还准备在同一台机器上挂别的服务
+- 你后面可能还想接动态功能
 
-- 丢进 `blog/posts/`
+### 最实际的建议
 
-### 本地生成（可选，本地预览时用）
+如果你现在主要是：
+
+- 放照片
+- 写文章
+- 做展示
+
+那我更建议先用：
+
+- **GitHub + GitHub Pages**
+
+因为省事，足够稳定，也最容易长期维护。
+
+如果后面你需要更复杂的东西，再迁到 VPS。
+
+---
+
+## 十三、几个互相关联的网站和服务
+
+为了更方便，你可以把这几个东西串起来：
+
+### 1. GitHub 仓库
+
+管理代码：
+
+<https://github.com/>
+
+### 2. GitHub Pages
+
+自动发布静态站：
+
+<https://pages.github.com/>
+
+### 3. GitHub Actions
+
+自动构建与部署：
+
+<https://github.com/features/actions>
+
+### 4. VPS（可选）
+
+如果你要自托管，可以选：
+
+- <https://www.vultr.com/>
+- <https://www.digitalocean.com/>
+- <https://www.linode.com/>
+- <https://www.oracle.com/cloud/free/>
+
+### 5. 域名（可选）
+
+如果要自定义域名，可以在你自己的域名商购买后接入。
+
+### 它们之间怎么联动
+
+最常见的联动方式是：
+
+```text
+本地写内容
+   ↓
+git push 到 GitHub
+   ↓
+GitHub Actions 自动生成并部署
+   ↓
+GitHub Pages 自动更新
+   ↓
+域名指向 Pages 或 VPS
+```
+
+这是最顺的一条链路。
+
+---
+
+## 十四、以后你日常维护时，真正需要做的事
+
+其实不会很多。
+
+### 加照片时
+
+1. 把图片丢进 `photo/`
+2. 本地运行：
 
 ```bash
 python3 scripts/generate_posts.py
 ```
 
-### 提交并推送
+3. push：
 
 ```bash
 git add .
-git commit -m "Add new photos and post"
+git commit -m "Add photos"
 git push origin main
 ```
 
-### 自动上线
+### 加文章时
 
-- GitHub Actions 自动构建
-- GitHub Pages 自动更新
+1. 把 `.md` 丢进 `blog/posts/`
+2. 本地运行：
 
-这就是现在这套网站最舒服的维护方式。
+```bash
+python3 scripts/generate_posts.py
+```
+
+3. push：
+
+```bash
+git add .
+git commit -m "Add post"
+git push origin main
+```
+
+### 改页面样式时
+
+1. 改 HTML / CSS / JS
+2. 提交
+3. push
+
+就这么简单。
+
+---
+
+## 十五、给你一个真正最简的整套流程
+
+如果你今天要从零开始，最短路径是：
+
+### 第一步
+建项目目录，准备页面文件。
+
+### 第二步
+准备：
+
+- `photo/`
+- `blog/posts/`
+- `scripts/generate_posts.py`
+
+### 第三步
+把网站代码放进去。
+
+### 第四步
+初始化 Git：
+
+```bash
+git init
+git branch -M main
+```
+
+### 第五步
+建 GitHub 仓库并连接：
+
+```bash
+git remote add origin https://github.com/你的用户名/仓库名.git
+```
+
+### 第六步
+推送：
+
+```bash
+git add .
+git commit -m "Initial site"
+git push -u origin main
+```
+
+### 第七步
+开启 GitHub Pages。
+
+### 第八步
+以后只维护：
+
+- `photo/`
+- `blog/posts/`
+- 页面文件
+
+这就够了。
+
+---
+
+## 十六、如果你还想继续往下做
+
+后面还可以继续加这些功能：
+
+- 标签分类
+- 多置顶文章排序
+- 文章封面自动抽取
+- EXIF 更完整展示
+- 图片压缩和 WebP/AVIF 自动生成
+- VPS 自动部署脚本
+- 自定义域名与 HTTPS 完整教程
 
 ![结尾配图](photo/11.jpg)
 
-如果后面你愿意，我还可以继续把下一篇文章也给你补上：
+如果你愿意，我下一篇还可以继续给你写成真正的系列教程，例如：
 
-- **如何给这个站接自定义域名与 HTTPS**
-- **如何在 VPS 上用 Nginx 正式部署**
-- **如何继续把它做成完整内容系统**
+1. **如何把这个站部署到 GitHub Pages**
+2. **如何把这个站部署到 VPS + Nginx**
+3. **如何从零做一个自动更新的照片墙与博客系统**
+
+这样你后面照着一步步做，会更轻松。
