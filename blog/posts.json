@@ -1,9 +1,9 @@
 [
   {
     "slug": "site-update-note",
-    "title": "这次更新之后，小站终于开始像作品了",
-    "date": "2026-03-03",
-    "summary": "从首页、照片页到碎碎念，风格开始真正统一，这让整个站点第一次有了完整的内容感。",
+    "title": "如何从零搭建一个像这样的网站",
+    "date": "2026-03-13",
+    "summary": "从本地整理文件，到 GitHub 自动发布，再到 VPS 部署与绑定域名，这篇文章把整套流程和功能结构一次讲清楚。",
     "path": "blog/posts/site-update-note.md",
     "renderedPath": "blog/rendered/site-update-note.html",
     "pinned": true,
