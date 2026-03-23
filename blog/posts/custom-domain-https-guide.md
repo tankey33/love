@@ -1,17 +1,17 @@
 ---
 title: 如何给这个站接自定义域名与 HTTPS
 date: 2026-03-16
-summary: 从域名解析、CNAME、Nginx 到 Let's Encrypt，这篇文章把静态站最常见的域名与 HTTPS 接入流程整理清楚。
+summary: 从域名解析、CNAME、Nginx 到 Let's Encrypt，把域名与 HTTPS 的接入流程整理清楚。
 cover: https://images.unsplash.com/photo-1484417894907-623942c8ee29?auto=format&fit=crop&w=1600&q=80
 ---
 
 # 如何给这个站接自定义域名与 HTTPS
 
-![域名与 HTTPS 配置示意](https://images.unsplash.com/photo-1484417894907-623942c8ee29?auto=format&fit=crop&w=1600&q=80)
+![域名与 HTTPS 配置](https://images.unsplash.com/photo-1484417894907-623942c8ee29?auto=format&fit=crop&w=1600&q=80)
 
 一个网站从“能打开”到“像真的在运行”，域名和 HTTPS 几乎是必须补上的两步。
 
-## 如果你用 GitHub Pages
+## GitHub Pages
 
 1. 在仓库根目录放 `CNAME`
 2. 在域名服务商后台把 DNS 指向 GitHub Pages
@@ -19,7 +19,7 @@ cover: https://images.unsplash.com/photo-1484417894907-623942c8ee29?auto=format&
 
 官方文档：<https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site>
 
-## 如果你用 VPS + Nginx
+## VPS + Nginx
 
 1. 把域名 A 记录解析到 VPS IP
 2. 在 Nginx 里配置 `server_name`

@@ -7,6 +7,6 @@ cover: https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&
 
 # 早晨的桌面，总有一种重新开始的错觉
 
-![安静桌面示意](https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=80)
+![安静桌面](https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1600&q=80)
 
 杯子里是热的，屏幕刚亮，窗外也还不吵。很多事情都像是还能重新来过。所以很多计划，最适合放在清晨开始。

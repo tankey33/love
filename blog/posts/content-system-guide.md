@@ -1,15 +1,15 @@
 ---
 title: 如何继续把它做成完整内容系统
 date: 2026-03-16
-summary: 从相册、文章、置顶、搜索到分类、专题和自动部署，这篇文章讲如何把一个静态站继续养成长期可维护的内容系统。
+summary: 从相册、文章、置顶、搜索到分类、专题和自动部署，讲如何把一个静态站继续养成更完整的内容系统。
 cover: https://images.unsplash.com/photo-1497366412874-3415097a27e7?auto=format&fit=crop&w=1600&q=80
 ---
 
 # 如何继续把它做成完整内容系统
 
-![内容系统示意](https://images.unsplash.com/photo-1497366412874-3415097a27e7?auto=format&fit=crop&w=1600&q=80)
+![内容系统](https://images.unsplash.com/photo-1497366412874-3415097a27e7?auto=format&fit=crop&w=1600&q=80)
 
-一个网站如果只是能发文章，其实还不够。真正适合长期维护的内容系统，需要逐步补齐“结构”。
+一个网站只发文章还不够，结构也很重要。
 
 ## 可以继续补的模块
 

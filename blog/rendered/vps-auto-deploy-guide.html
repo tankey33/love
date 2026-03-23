@@ -1,5 +1,5 @@
 <h1>如何让 VPS 自动 pull 并自动部署</h1>
-<p><img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" alt="VPS 自动部署示意"></p>
+<p><img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" alt="VPS"></p>
 <p>很多人一开始都是本地 push，登录 VPS，再手动 <code>git pull</code>。这当然能用，但时间一长就会想把最后一步也自动化。</p>
 <h2>最简单的思路</h2>
 <pre><code class="language-text">本地 push
@@ -13,14 +13,12 @@ VPS 拉取最新代码
 Reload Nginx</code></pre>
 <h2>常见实现方式</h2>
 <h3>方案 1：GitHub Actions SSH 到 VPS</h3>
-<p>适合大多数人，链路直观。</p>
 <ul>
 <li>GitHub Actions：<a href="https://github.com/features/actions" target="_blank" rel="noopener noreferrer">https://github.com/features/actions</a></li>
 <li>通过 SSH 执行远程命令</li>
 </ul>
 <h3>方案 2：Webhook + 自己的部署脚本</h3>
-<p>适合更想自己掌控流程的人。</p>
-<h2>VPS 上的最小部署脚本示意</h2>
+<h2>VPS 上的最小部署脚本</h2>
 <pre><code class="language-bash">cd /var/www/love
 git pull origin main
 python3 scripts/generate_posts.py

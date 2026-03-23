@@ -1,20 +1,14 @@
 ---
 title: 手把手教你搭建一个像这样的网站
 date: 2026-03-13
-summary: 从本地建站、整理照片、写 Markdown，到 push 到 GitHub、自动发布、再到 VPS 部署和域名接入，这篇文章把整套流程一步一步写清楚。
+summary: 从本地建站、整理照片、写 Markdown，到 push 到 GitHub、自动发布、再到 VPS 部署和域名接入，把整套流程一步一步写清楚。
 pinned: true
 cover: https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80
 ---
 
 # 手把手教你搭建一个像这样的网站
 
-![建站工作流示意](https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80)
-
-如果你也想做一个像这样的网站，其实完全可以从一个很简单的静态站开始，不需要一上来就搭数据库、后台管理系统、复杂框架。
-
-这篇文章我按**手把手**的方式来写，尽量让你可以直接照着做。
-
-这套站点现在的思路是：
+![建站](https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80)
 
 - 首页负责氛围和入口
 - `photo/` 文件夹负责照片墙
@@ -23,17 +17,13 @@ cover: https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&
 - GitHub 负责托管代码
 - GitHub Pages 或 VPS 负责上线
 
-如果你只是想要一个好看、轻量、可长期维护的网站，这种方案很合适。
-
 ---
 
 ## 一、先理解：这个网站到底是什么结构
 
 你现在看到的这个站，本质上是一个**静态网站**。
 
-它不是 WordPress，也不是必须依赖服务器动态渲染的博客系统。它更像是一组静态页面，加上一些自动生成的数据文件。
-
-### 现在这套站点主要有这些页面
+### 站点页面
 
 #### 1. 首页
 
@@ -68,10 +58,6 @@ cover: https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&
 - 展示渲染后的文章内容
 - 支持图片、代码、公式、表格、引用等
 
-所以你可以把它理解成：
-
-> 一个小型静态内容网站，里面同时有首页、相册和文章系统。
-
 ---
 
 ## 二、你需要准备什么
@@ -98,7 +84,7 @@ cover: https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&
 #### 4. GitHub
 官网：<https://github.com/>
 
-如果你只是做静态站，以上这些就够了。
+做静态站，以上这些就够了。
 
 ---
 
@@ -139,22 +125,22 @@ love/
 #### `photo/`
 放所有照片。
 
-以后你只要把图片丢进这个目录，脚本就会自动扫描、排序、生成数据。
+把图片丢进这个目录后，脚本会自动扫描、排序、生成数据。
 
 #### `blog/posts/`
 放所有 Markdown 文章。
 
-以后你写文章，就直接在这里新增 `.md` 文件。
+文章直接在这里新增 `.md` 文件。
 
 #### `blog/rendered/`
 自动生成出来的文章 HTML。
 
-你不需要手改这里，它是脚本自动产物。
+这里不用手改，它是脚本自动产物。
 
 #### `assets/js/photo-data.js`
 自动生成出来的照片数据文件。
 
-也不需要手动改。
+这里也不用手动改。
 
 #### `scripts/generate_posts.py`
 最关键的自动化脚本。
@@ -173,7 +159,7 @@ love/
 
 现在这套逻辑已经改成：
 
-> 你只要把图片丢进 `photo/` 文件夹。
+> 把图片丢进 `photo/` 文件夹。
 
 然后脚本会自动：
 
@@ -182,14 +168,14 @@ love/
 - 读取文件大小
 - 生成 `assets/js/photo-data.js`
 
-也就是说，你以后不需要再做这些事：
+也就是说，不需要再做这些事：
 
 - 不需要手动给每张图编号
 - 不需要手动写图片数组
 - 不需要手动改照片墙 HTML
 - 不需要手动改详情页链接
 
-![自动化照片目录示意](https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=1600&q=80)
+![照片目录](https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=1600&q=80)
 
 ---
 
@@ -197,7 +183,7 @@ love/
 
 文章系统现在的逻辑是：
 
-> 你只要把 `.md` 文件放进 `blog/posts/`。
+> 把 `.md` 文件放进 `blog/posts/`。
 
 脚本就会自动：
 
@@ -257,15 +243,15 @@ pinned: true
 
 那它会优先成为 `notes.html` 的大图首卡。
 
-如果没有任何文章置顶，那么页面默认会把**日期最新**的一篇文章放到首卡位置。
+如果没有文章置顶，页面默认会把**日期最新**的一篇文章放到首卡位置。
 
 ---
 
 ## 六、本地怎么生成内容
 
-如果你已经把文件准备好了，日常维护就很简单。
+文件准备好以后，日常维护就很简单。
 
-### 每次更新内容时，建议这样做
+### 每次更新内容
 
 #### 1. 改内容
 例如：
@@ -360,7 +346,7 @@ GitHub Actions：<https://github.com/features/actions>
 
 ## 九、如何在 VPS 上搭建
 
-如果你想完全掌控环境，也可以放到 VPS 上。
+想完全掌控环境，也可以放到 VPS 上。
 
 ### 常见 VPS 服务商
 
@@ -452,14 +438,14 @@ VPS 上 git pull
 Nginx 继续提供静态站
 ```
 
-如果你打算往自动部署继续走，可以看：
+想继续往自动部署走，可以看：
 
 - [如何让 VPS 自动 pull 并自动部署](note.html?slug=vps-auto-deploy-guide)
 - [如何继续把它做成完整内容系统](note.html?slug=content-system-guide)
 
 ---
 
-## 十二、以后你真正要做的事
+## 十二、后续维护
 
 其实很少：
 
@@ -501,7 +487,7 @@ git push origin main
 
 ## 十三、最简总结
 
-如果你今天要从零开始，真正最短路径就是：
+从零开始时，路径可以很简单：
 
 1. 本地建项目目录
 2. 准备页面文件
@@ -521,7 +507,7 @@ git push origin main
 
 只要这四件事搭对了，你后面维护网站会轻松很多。
 
-![部署完成后的内容站示意](https://images.unsplash.com/photo-1505238680356-667803448bb6?auto=format&fit=crop&w=1600&q=80)
+![内容站](https://images.unsplash.com/photo-1505238680356-667803448bb6?auto=format&fit=crop&w=1600&q=80)
 
 ## 关联网站
 

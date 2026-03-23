@@ -7,7 +7,7 @@ cover: https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&
 
 # 婴幼儿出生产品购买指南：哪些值得买，哪些可以慢一点
 
-![婴幼儿用品示意](https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=1600&q=80)
+![婴幼儿用品](https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=1600&q=80)
 
 真正需要准备的东西没有想象中那么多，重要的是先把高频、刚需和安全相关的买对，而不是被清单越拉越长。
 

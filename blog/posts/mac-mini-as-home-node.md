@@ -7,7 +7,7 @@ cover: https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&
 
 # 把 Mac mini 当成家庭中枢，是一种很舒服的选择
 
-![Mac mini 工作流示意](https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&w=1600&q=80)
+![Mac mini ](https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&w=1600&q=80)
 
 它不需要很吵，也不需要太折腾，就能把很多原本分散的小任务慢慢接起来。对需要兼顾稳定、轻维护和一点点审美的人来说，Mac mini 其实是个很好的平衡点。
 

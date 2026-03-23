@@ -1,15 +1,15 @@
 ---
 title: 如何从零搭建 OpenClaw 并接入 Telegram
 date: 2026-03-14
-summary: 从安装、配置 Gateway、接入 Telegram，到常见问题排查，这是一篇偏实战的 OpenClaw 入门记录。
+summary: 从安装、配置 Gateway、接入 Telegram，到常见问题排查，是一份偏实战的 OpenClaw 入门记录。
 cover: https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1600&q=80
 ---
 
 # 如何从零搭建 OpenClaw 并接入 Telegram
 
-![OpenClaw 部署示意](https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1600&q=80)
+![OpenClaw](https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1600&q=80)
 
-如果你想把 OpenClaw 跑起来，最重要的不是一上来堆配置，而是先把最短链路跑通：模型、Gateway、消息通道、基础自动化。
+先把最短链路跑通：模型、Gateway、消息通道、基础自动化。
 
 ## 最小可用目标
 
@@ -20,7 +20,7 @@ cover: https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&
 - Telegram 能正常收发消息
 - 记忆和工作区能读写
 
-## 实际顺序建议
+## 实际顺序
 
 1. 先装 Node 和 OpenClaw
 2. 再跑 `openclaw onboard`
@@ -35,13 +35,7 @@ cover: https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&
 
 ### 1. 模型先通，再谈别的
 
-很多人会在刚开始就纠结：
-
-- 要不要多模型
-- 要不要子代理
-- 要不要复杂技能
-
-其实最先确认的是：**模型能不能稳定回消息**。如果模型供应链不稳定，后面所有体验都会一起变差。
+先确认模型能不能稳定回消息。模型供应链不稳定，后面所有体验都会一起变差。
 
 ### 2. Gateway 要能稳定起来
 
@@ -57,6 +51,6 @@ cover: https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&
 
 很多时候不是 OpenClaw 本体坏了，而是 Telegram 轮询链路不稳定。
 
-## 最后的建议
+## 收尾
 
 先把“能稳定回复”做出来，再慢慢加记忆、技能、自动化和后台任务。这样整体体验会舒服很多。

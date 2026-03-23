@@ -1,15 +1,15 @@
 ---
 title: 用 Docker 搭建 Home Assistant，并连接米家与 HomeKit
 date: 2026-03-13
-summary: 如果你想把智能家居做成一套真正好用的系统，Home Assistant 仍然是最值得投入时间的一环。
+summary: Home Assistant 仍然是最值得投入时间的一环。
 cover: https://images.unsplash.com/photo-1491927570842-0261e477d937?auto=format&fit=crop&w=1600&q=80
 ---
 
 # 用 Docker 搭建 Home Assistant，并连接米家与 HomeKit
 
-![Home Assistant 示意](https://images.unsplash.com/photo-1491927570842-0261e477d937?auto=format&fit=crop&w=1600&q=80)
+![Home Assistant ](https://images.unsplash.com/photo-1491927570842-0261e477d937?auto=format&fit=crop&w=1600&q=80)
 
-如果你想把智能家居做成一套真正好用的系统，Home Assistant 仍然是最值得投入时间的一环。它最大的意义不是“可玩”，而是把本来割裂的设备放进一套可控逻辑里。
+Home Assistant 的意义，在于把原本割裂的设备放进一套可控逻辑里。
 
 ## 为什么是 Docker
 
@@ -41,7 +41,7 @@ cover: https://images.unsplash.com/photo-1491927570842-0261e477d937?auto=format&
 
 当这些细节慢慢稳定下来，家里的自动化才会真正像系统而不是玩具。
 
-## 连接时的建议
+## 连接时
 
 - 尽量先接最核心的设备
 - 不要第一天把所有自动化都写满
