@@ -1,0 +1,54 @@
+[
+  {
+    "title": "沙丘2",
+    "english": "Dune: Part Two",
+    "year": "2024",
+    "director": "Denis Villeneuve",
+    "summary": "沙丘宇宙继续扩张",
+    "tags": [
+      "最新",
+      "热门",
+      "科幻"
+    ],
+    "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)"
+  },
+  {
+    "title": "奥本海默",
+    "english": "Oppenheimer",
+    "year": "2023",
+    "director": "Christopher Nolan",
+    "summary": "奖季与口碑仍在持续",
+    "tags": [
+      "最新",
+      "热门",
+      "历史"
+    ],
+    "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)"
+  },
+  {
+    "title": "坠落的审判",
+    "english": "Anatomy of a Fall",
+    "year": "2023",
+    "director": "Justine Triet",
+    "summary": "国际影评热度很高",
+    "tags": [
+      "最新",
+      "热门",
+      "剧情"
+    ],
+    "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)"
+  },
+  {
+    "title": "机器人之梦",
+    "english": "Robot Dreams",
+    "year": "2023",
+    "director": "Pablo Berger",
+    "summary": "动画热度持续走高",
+    "tags": [
+      "最新",
+      "热门",
+      "动画"
+    ],
+    "accent": "linear-gradient(135deg,#35574d 0%,#101917 100%)"
+  }
+]

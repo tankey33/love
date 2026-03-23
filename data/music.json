@@ -1,0 +1,8002 @@
+[
+  {
+    "slug": "0",
+    "title": "月亮代表我的心",
+    "artist": "邓丽君",
+    "language": "华语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "流行",
+      "馆藏"
+    ],
+    "summary": "邓丽君 · 华语 · 流行",
+    "note": "邓丽君",
+    "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)"
+  },
+  {
+    "slug": "1",
+    "title": "红豆",
+    "artist": "王菲",
+    "language": "华语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "流行",
+      "经典"
+    ],
+    "summary": "王菲 · 华语 · 流行",
+    "note": "王菲",
+    "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)"
+  },
+  {
+    "slug": "2",
+    "title": "青花瓷",
+    "artist": "周杰伦",
+    "language": "华语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "流行",
+      "经典"
+    ],
+    "summary": "周杰伦 · 华语 · 流行",
+    "note": "周杰伦",
+    "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)"
+  },
+  {
+    "slug": "3",
+    "title": "晴天",
+    "artist": "周杰伦",
+    "language": "华语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "流行",
+      "经典"
+    ],
+    "summary": "周杰伦 · 华语 · 流行",
+    "note": "周杰伦",
+    "accent": "linear-gradient(135deg,#35574d 0%,#101917 100%)"
+  },
+  {
+    "slug": "4",
+    "title": "江南",
+    "artist": "林俊杰",
+    "language": "华语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "流行",
+      "经典"
+    ],
+    "summary": "林俊杰 · 华语 · 流行",
+    "note": "林俊杰",
+    "accent": "linear-gradient(135deg,#4e4173 0%,#191423 100%)"
+  },
+  {
+    "slug": "5",
+    "title": "十年",
+    "artist": "陈奕迅",
+    "language": "华语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "流行",
+      "馆藏"
+    ],
+    "summary": "陈奕迅 · 华语 · 流行",
+    "note": "陈奕迅",
+    "accent": "linear-gradient(135deg,#3a6a78 0%,#13252c 100%)"
+  },
+  {
+    "slug": "6",
+    "title": "吻别",
+    "artist": "张学友",
+    "language": "华语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "流行",
+      "经典"
+    ],
+    "summary": "张学友 · 华语 · 流行",
+    "note": "张学友",
+    "accent": "linear-gradient(135deg,#31443c 0%,#111714 100%)"
+  },
+  {
+    "slug": "7",
+    "title": "山丘",
+    "artist": "李宗盛",
+    "language": "华语",
+    "genre": "民谣",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "民谣",
+      "经典"
+    ],
+    "summary": "李宗盛 · 华语 · 民谣",
+    "note": "李宗盛",
+    "accent": "linear-gradient(135deg,#5a4030 0%,#1f1510 100%)"
+  },
+  {
+    "slug": "8",
+    "title": "平凡之路",
+    "artist": "朴树",
+    "language": "华语",
+    "genre": "民谣",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "民谣",
+      "经典"
+    ],
+    "summary": "朴树 · 华语 · 民谣",
+    "note": "朴树",
+    "accent": "linear-gradient(135deg,#364456 0%,#121820 100%)"
+  },
+  {
+    "slug": "9",
+    "title": "蓝莲花",
+    "artist": "许巍",
+    "language": "华语",
+    "genre": "摇滚",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "摇滚",
+      "经典"
+    ],
+    "summary": "许巍 · 华语 · 摇滚",
+    "note": "许巍",
+    "accent": "linear-gradient(135deg,#6b5140 0%,#221912 100%)"
+  },
+  {
+    "slug": "10",
+    "title": "挪威的森林",
+    "artist": "伍佰",
+    "language": "华语",
+    "genre": "摇滚",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "摇滚",
+      "馆藏"
+    ],
+    "summary": "伍佰 · 华语 · 摇滚",
+    "note": "伍佰",
+    "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)"
+  },
+  {
+    "slug": "11",
+    "title": "一无所有",
+    "artist": "崔健",
+    "language": "华语",
+    "genre": "摇滚",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "摇滚",
+      "经典"
+    ],
+    "summary": "崔健 · 华语 · 摇滚",
+    "note": "崔健",
+    "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)"
+  },
+  {
+    "slug": "12",
+    "title": "童年",
+    "artist": "罗大佑",
+    "language": "华语",
+    "genre": "民谣",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "民谣",
+      "经典"
+    ],
+    "summary": "罗大佑 · 华语 · 民谣",
+    "note": "罗大佑",
+    "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)"
+  },
+  {
+    "slug": "13",
+    "title": "慢慢喜欢你",
+    "artist": "莫文蔚",
+    "language": "华语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "流行",
+      "经典"
+    ],
+    "summary": "莫文蔚 · 华语 · 流行",
+    "note": "莫文蔚",
+    "accent": "linear-gradient(135deg,#35574d 0%,#101917 100%)"
+  },
+  {
+    "slug": "14",
+    "title": "成都",
+    "artist": "赵雷",
+    "language": "华语",
+    "genre": "民谣",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "民谣",
+      "经典"
+    ],
+    "summary": "赵雷 · 华语 · 民谣",
+    "note": "赵雷",
+    "accent": "linear-gradient(135deg,#4e4173 0%,#191423 100%)"
+  },
+  {
+    "slug": "15",
+    "title": "爱，很简单",
+    "artist": "陶喆",
+    "language": "华语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "流行",
+      "馆藏"
+    ],
+    "summary": "陶喆 · 华语 · 流行",
+    "note": "陶喆",
+    "accent": "linear-gradient(135deg,#3a6a78 0%,#13252c 100%)"
+  },
+  {
+    "slug": "16",
+    "title": "遇见",
+    "artist": "孙燕姿",
+    "language": "华语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "流行",
+      "经典"
+    ],
+    "summary": "孙燕姿 · 华语 · 流行",
+    "note": "孙燕姿",
+    "accent": "linear-gradient(135deg,#31443c 0%,#111714 100%)"
+  },
+  {
+    "slug": "17",
+    "title": "勇气",
+    "artist": "梁静茹",
+    "language": "华语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "流行",
+      "经典"
+    ],
+    "summary": "梁静茹 · 华语 · 流行",
+    "note": "梁静茹",
+    "accent": "linear-gradient(135deg,#5a4030 0%,#1f1510 100%)"
+  },
+  {
+    "slug": "18",
+    "title": "倔强",
+    "artist": "五月天",
+    "language": "华语",
+    "genre": "摇滚",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "摇滚",
+      "经典"
+    ],
+    "summary": "五月天 · 华语 · 摇滚",
+    "note": "五月天",
+    "accent": "linear-gradient(135deg,#364456 0%,#121820 100%)"
+  },
+  {
+    "slug": "19",
+    "title": "小情歌",
+    "artist": "苏打绿",
+    "language": "华语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "流行",
+      "经典"
+    ],
+    "summary": "苏打绿 · 华语 · 流行",
+    "note": "苏打绿",
+    "accent": "linear-gradient(135deg,#6b5140 0%,#221912 100%)"
+  },
+  {
+    "slug": "20",
+    "title": "朋友",
+    "artist": "周华健",
+    "language": "华语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "流行",
+      "馆藏"
+    ],
+    "summary": "周华健 · 华语 · 流行",
+    "note": "周华健",
+    "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)"
+  },
+  {
+    "slug": "21",
+    "title": "心太软",
+    "artist": "任贤齐",
+    "language": "华语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "流行",
+      "经典"
+    ],
+    "summary": "任贤齐 · 华语 · 流行",
+    "note": "任贤齐",
+    "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)"
+  },
+  {
+    "slug": "22",
+    "title": "唯一",
+    "artist": "王力宏",
+    "language": "华语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "流行",
+      "经典"
+    ],
+    "summary": "王力宏 · 华语 · 流行",
+    "note": "王力宏",
+    "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)"
+  },
+  {
+    "slug": "23",
+    "title": "至少还有你",
+    "artist": "林忆莲",
+    "language": "华语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "流行",
+      "经典"
+    ],
+    "summary": "林忆莲 · 华语 · 流行",
+    "note": "林忆莲",
+    "accent": "linear-gradient(135deg,#35574d 0%,#101917 100%)"
+  },
+  {
+    "slug": "24",
+    "title": "夜空中最亮的星",
+    "artist": "逃跑计划",
+    "language": "华语",
+    "genre": "摇滚",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "摇滚",
+      "经典"
+    ],
+    "summary": "逃跑计划 · 华语 · 摇滚",
+    "note": "逃跑计划",
+    "accent": "linear-gradient(135deg,#4e4173 0%,#191423 100%)"
+  },
+  {
+    "slug": "25",
+    "title": "旅行的意义",
+    "artist": "陈绮贞",
+    "language": "华语",
+    "genre": "民谣",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "民谣",
+      "馆藏"
+    ],
+    "summary": "陈绮贞 · 华语 · 民谣",
+    "note": "陈绮贞",
+    "accent": "linear-gradient(135deg,#3a6a78 0%,#13252c 100%)"
+  },
+  {
+    "slug": "beyond-26",
+    "title": "海阔天空",
+    "artist": "Beyond",
+    "language": "粤语",
+    "genre": "摇滚",
+    "region": "亚洲",
+    "tags": [
+      "粤语",
+      "摇滚",
+      "经典"
+    ],
+    "summary": "Beyond · 粤语 · 摇滚",
+    "note": "Beyond",
+    "accent": "linear-gradient(135deg,#31443c 0%,#111714 100%)"
+  },
+  {
+    "slug": "27",
+    "title": "富士山下",
+    "artist": "陈奕迅",
+    "language": "粤语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "粤语",
+      "流行",
+      "经典"
+    ],
+    "summary": "陈奕迅 · 粤语 · 流行",
+    "note": "陈奕迅",
+    "accent": "linear-gradient(135deg,#5a4030 0%,#1f1510 100%)"
+  },
+  {
+    "slug": "k-28",
+    "title": "K歌之王",
+    "artist": "陈奕迅",
+    "language": "粤语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "粤语",
+      "流行",
+      "经典"
+    ],
+    "summary": "陈奕迅 · 粤语 · 流行",
+    "note": "陈奕迅",
+    "accent": "linear-gradient(135deg,#364456 0%,#121820 100%)"
+  },
+  {
+    "slug": "29",
+    "title": "风继续吹",
+    "artist": "张国荣",
+    "language": "粤语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "粤语",
+      "流行",
+      "经典"
+    ],
+    "summary": "张国荣 · 粤语 · 流行",
+    "note": "张国荣",
+    "accent": "linear-gradient(135deg,#6b5140 0%,#221912 100%)"
+  },
+  {
+    "slug": "30",
+    "title": "夕阳之歌",
+    "artist": "梅艳芳",
+    "language": "粤语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "粤语",
+      "流行",
+      "馆藏"
+    ],
+    "summary": "梅艳芳 · 粤语 · 流行",
+    "note": "梅艳芳",
+    "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)"
+  },
+  {
+    "slug": "31",
+    "title": "遥远的她",
+    "artist": "张学友",
+    "language": "粤语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "粤语",
+      "流行",
+      "经典"
+    ],
+    "summary": "张学友 · 粤语 · 流行",
+    "note": "张学友",
+    "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)"
+  },
+  {
+    "slug": "32",
+    "title": "讲不出再见",
+    "artist": "谭咏麟",
+    "language": "粤语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "粤语",
+      "流行",
+      "经典"
+    ],
+    "summary": "谭咏麟 · 粤语 · 流行",
+    "note": "谭咏麟",
+    "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)"
+  },
+  {
+    "slug": "33",
+    "title": "偏偏喜欢你",
+    "artist": "陈百强",
+    "language": "粤语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "粤语",
+      "流行",
+      "经典"
+    ],
+    "summary": "陈百强 · 粤语 · 流行",
+    "note": "陈百强",
+    "accent": "linear-gradient(135deg,#35574d 0%,#101917 100%)"
+  },
+  {
+    "slug": "34",
+    "title": "一生所爱",
+    "artist": "卢冠廷",
+    "language": "粤语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "粤语",
+      "流行",
+      "经典"
+    ],
+    "summary": "卢冠廷 · 粤语 · 流行",
+    "note": "卢冠廷",
+    "accent": "linear-gradient(135deg,#4e4173 0%,#191423 100%)"
+  },
+  {
+    "slug": "35",
+    "title": "可惜我是水瓶座",
+    "artist": "杨千嬅",
+    "language": "粤语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "粤语",
+      "流行",
+      "馆藏"
+    ],
+    "summary": "杨千嬅 · 粤语 · 流行",
+    "note": "杨千嬅",
+    "accent": "linear-gradient(135deg,#3a6a78 0%,#13252c 100%)"
+  },
+  {
+    "slug": "beyond-36",
+    "title": "喜欢你",
+    "artist": "Beyond",
+    "language": "粤语",
+    "genre": "摇滚",
+    "region": "亚洲",
+    "tags": [
+      "粤语",
+      "摇滚",
+      "经典"
+    ],
+    "summary": "Beyond · 粤语 · 摇滚",
+    "note": "Beyond",
+    "accent": "linear-gradient(135deg,#31443c 0%,#111714 100%)"
+  },
+  {
+    "slug": "37",
+    "title": "当年情",
+    "artist": "张国荣",
+    "language": "粤语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "粤语",
+      "流行",
+      "经典"
+    ],
+    "summary": "张国荣 · 粤语 · 流行",
+    "note": "张国荣",
+    "accent": "linear-gradient(135deg,#5a4030 0%,#1f1510 100%)"
+  },
+  {
+    "slug": "38",
+    "title": "千千阙歌",
+    "artist": "陈慧娴",
+    "language": "粤语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "粤语",
+      "流行",
+      "经典"
+    ],
+    "summary": "陈慧娴 · 粤语 · 流行",
+    "note": "陈慧娴",
+    "accent": "linear-gradient(135deg,#364456 0%,#121820 100%)"
+  },
+  {
+    "slug": "39",
+    "title": "月半小夜曲",
+    "artist": "李克勤",
+    "language": "粤语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "粤语",
+      "流行",
+      "经典"
+    ],
+    "summary": "李克勤 · 粤语 · 流行",
+    "note": "李克勤",
+    "accent": "linear-gradient(135deg,#6b5140 0%,#221912 100%)"
+  },
+  {
+    "slug": "the-beatles-let-it-be-40",
+    "title": "Let It Be",
+    "artist": "The Beatles",
+    "language": "英语",
+    "genre": "摇滚",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "摇滚",
+      "馆藏"
+    ],
+    "summary": "The Beatles · 英语 · 摇滚",
+    "note": "The Beatles",
+    "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)"
+  },
+  {
+    "slug": "the-beatles-hey-jude-41",
+    "title": "Hey Jude",
+    "artist": "The Beatles",
+    "language": "英语",
+    "genre": "摇滚",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "摇滚",
+      "经典"
+    ],
+    "summary": "The Beatles · 英语 · 摇滚",
+    "note": "The Beatles",
+    "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)"
+  },
+  {
+    "slug": "queen-bohemian-rhapsody-42",
+    "title": "Bohemian Rhapsody",
+    "artist": "Queen",
+    "language": "英语",
+    "genre": "摇滚",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "摇滚",
+      "经典"
+    ],
+    "summary": "Queen · 英语 · 摇滚",
+    "note": "Queen",
+    "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)"
+  },
+  {
+    "slug": "eagles-hotel-california-43",
+    "title": "Hotel California",
+    "artist": "Eagles",
+    "language": "英语",
+    "genre": "摇滚",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "摇滚",
+      "经典"
+    ],
+    "summary": "Eagles · 英语 · 摇滚",
+    "note": "Eagles",
+    "accent": "linear-gradient(135deg,#35574d 0%,#101917 100%)"
+  },
+  {
+    "slug": "michael-jackson-billie-jean-44",
+    "title": "Billie Jean",
+    "artist": "Michael Jackson",
+    "language": "英语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Michael Jackson · 英语 · 流行",
+    "note": "Michael Jackson",
+    "accent": "linear-gradient(135deg,#4e4173 0%,#191423 100%)"
+  },
+  {
+    "slug": "whitney-houston-i-will-always-love-you-45",
+    "title": "I Will Always Love You",
+    "artist": "Whitney Houston",
+    "language": "英语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "流行",
+      "馆藏"
+    ],
+    "summary": "Whitney Houston · 英语 · 流行",
+    "note": "Whitney Houston",
+    "accent": "linear-gradient(135deg,#3a6a78 0%,#13252c 100%)"
+  },
+  {
+    "slug": "celine-dion-my-heart-will-go-on-46",
+    "title": "My Heart Will Go On",
+    "artist": "Celine Dion",
+    "language": "英语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Celine Dion · 英语 · 流行",
+    "note": "Celine Dion",
+    "accent": "linear-gradient(135deg,#31443c 0%,#111714 100%)"
+  },
+  {
+    "slug": "adele-someone-like-you-47",
+    "title": "Someone Like You",
+    "artist": "Adele",
+    "language": "英语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Adele · 英语 · 流行",
+    "note": "Adele",
+    "accent": "linear-gradient(135deg,#5a4030 0%,#1f1510 100%)"
+  },
+  {
+    "slug": "ed-sheeran-perfect-48",
+    "title": "Perfect",
+    "artist": "Ed Sheeran",
+    "language": "英语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Ed Sheeran · 英语 · 流行",
+    "note": "Ed Sheeran",
+    "accent": "linear-gradient(135deg,#364456 0%,#121820 100%)"
+  },
+  {
+    "slug": "john-lennon-imagine-49",
+    "title": "Imagine",
+    "artist": "John Lennon",
+    "language": "英语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "流行",
+      "经典"
+    ],
+    "summary": "John Lennon · 英语 · 流行",
+    "note": "John Lennon",
+    "accent": "linear-gradient(135deg,#6b5140 0%,#221912 100%)"
+  },
+  {
+    "slug": "abba-dancing-queen-50",
+    "title": "Dancing Queen",
+    "artist": "ABBA",
+    "language": "英语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "流行",
+      "馆藏"
+    ],
+    "summary": "ABBA · 英语 · 流行",
+    "note": "ABBA",
+    "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)"
+  },
+  {
+    "slug": "nirvana-smells-like-teen-spirit-51",
+    "title": "Smells Like Teen Spirit",
+    "artist": "Nirvana",
+    "language": "英语",
+    "genre": "摇滚",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "摇滚",
+      "经典"
+    ],
+    "summary": "Nirvana · 英语 · 摇滚",
+    "note": "Nirvana",
+    "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)"
+  },
+  {
+    "slug": "coldplay-yellow-52",
+    "title": "Yellow",
+    "artist": "Coldplay",
+    "language": "英语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Coldplay · 英语 · 流行",
+    "note": "Coldplay",
+    "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)"
+  },
+  {
+    "slug": "linkin-park-numb-53",
+    "title": "Numb",
+    "artist": "Linkin Park",
+    "language": "英语",
+    "genre": "摇滚",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "摇滚",
+      "经典"
+    ],
+    "summary": "Linkin Park · 英语 · 摇滚",
+    "note": "Linkin Park",
+    "accent": "linear-gradient(135deg,#35574d 0%,#101917 100%)"
+  },
+  {
+    "slug": "bon-jovi-it-s-my-life-54",
+    "title": "It's My Life",
+    "artist": "Bon Jovi",
+    "language": "英语",
+    "genre": "摇滚",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "摇滚",
+      "经典"
+    ],
+    "summary": "Bon Jovi · 英语 · 摇滚",
+    "note": "Bon Jovi",
+    "accent": "linear-gradient(135deg,#4e4173 0%,#191423 100%)"
+  },
+  {
+    "slug": "frank-sinatra-my-way-55",
+    "title": "My Way",
+    "artist": "Frank Sinatra",
+    "language": "英语",
+    "genre": "爵士",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "爵士",
+      "馆藏"
+    ],
+    "summary": "Frank Sinatra · 英语 · 爵士",
+    "note": "Frank Sinatra",
+    "accent": "linear-gradient(135deg,#3a6a78 0%,#13252c 100%)"
+  },
+  {
+    "slug": "louis-armstrong-what-a-wonderful-world-56",
+    "title": "What a Wonderful World",
+    "artist": "Louis Armstrong",
+    "language": "英语",
+    "genre": "爵士",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "爵士",
+      "经典"
+    ],
+    "summary": "Louis Armstrong · 英语 · 爵士",
+    "note": "Louis Armstrong",
+    "accent": "linear-gradient(135deg,#31443c 0%,#111714 100%)"
+  },
+  {
+    "slug": "bob-dylan-blowin-in-the-wind-57",
+    "title": "Blowin' in the Wind",
+    "artist": "Bob Dylan",
+    "language": "英语",
+    "genre": "民谣",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "民谣",
+      "经典"
+    ],
+    "summary": "Bob Dylan · 英语 · 民谣",
+    "note": "Bob Dylan",
+    "accent": "linear-gradient(135deg,#5a4030 0%,#1f1510 100%)"
+  },
+  {
+    "slug": "taylor-swift-love-story-58",
+    "title": "Love Story",
+    "artist": "Taylor Swift",
+    "language": "英语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Taylor Swift · 英语 · 流行",
+    "note": "Taylor Swift",
+    "accent": "linear-gradient(135deg,#364456 0%,#121820 100%)"
+  },
+  {
+    "slug": "bruno-mars-just-the-way-you-are-59",
+    "title": "Just the Way You Are",
+    "artist": "Bruno Mars",
+    "language": "英语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Bruno Mars · 英语 · 流行",
+    "note": "Bruno Mars",
+    "accent": "linear-gradient(135deg,#6b5140 0%,#221912 100%)"
+  },
+  {
+    "slug": "oasis-wonderwall-60",
+    "title": "Wonderwall",
+    "artist": "Oasis",
+    "language": "英语",
+    "genre": "摇滚",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "摇滚",
+      "馆藏"
+    ],
+    "summary": "Oasis · 英语 · 摇滚",
+    "note": "Oasis",
+    "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)"
+  },
+  {
+    "slug": "pink-floyd-wish-you-were-here-61",
+    "title": "Wish You Were Here",
+    "artist": "Pink Floyd",
+    "language": "英语",
+    "genre": "摇滚",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "摇滚",
+      "经典"
+    ],
+    "summary": "Pink Floyd · 英语 · 摇滚",
+    "note": "Pink Floyd",
+    "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)"
+  },
+  {
+    "slug": "u2-with-or-without-you-62",
+    "title": "With or Without You",
+    "artist": "U2",
+    "language": "英语",
+    "genre": "摇滚",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "摇滚",
+      "经典"
+    ],
+    "summary": "U2 · 英语 · 摇滚",
+    "note": "U2",
+    "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)"
+  },
+  {
+    "slug": "madonna-like-a-prayer-63",
+    "title": "Like a Prayer",
+    "artist": "Madonna",
+    "language": "英语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Madonna · 英语 · 流行",
+    "note": "Madonna",
+    "accent": "linear-gradient(135deg,#35574d 0%,#101917 100%)"
+  },
+  {
+    "slug": "prince-purple-rain-64",
+    "title": "Purple Rain",
+    "artist": "Prince",
+    "language": "英语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Prince · 英语 · 流行",
+    "note": "Prince",
+    "accent": "linear-gradient(135deg,#4e4173 0%,#191423 100%)"
+  },
+  {
+    "slug": "carpenters-yesterday-once-more-65",
+    "title": "Yesterday Once More",
+    "artist": "Carpenters",
+    "language": "英语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "流行",
+      "馆藏"
+    ],
+    "summary": "Carpenters · 英语 · 流行",
+    "note": "Carpenters",
+    "accent": "linear-gradient(135deg,#3a6a78 0%,#13252c 100%)"
+  },
+  {
+    "slug": "luis-fonsi-despacito-66",
+    "title": "Despacito",
+    "artist": "Luis Fonsi",
+    "language": "西班牙语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "西班牙语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Luis Fonsi · 西班牙语 · 流行",
+    "note": "Luis Fonsi",
+    "accent": "linear-gradient(135deg,#31443c 0%,#111714 100%)"
+  },
+  {
+    "slug": "jos-feliciano-feliz-navidad-67",
+    "title": "Feliz Navidad",
+    "artist": "José Feliciano",
+    "language": "西班牙语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "西班牙语",
+      "流行",
+      "经典"
+    ],
+    "summary": "José Feliciano · 西班牙语 · 流行",
+    "note": "José Feliciano",
+    "accent": "linear-gradient(135deg,#5a4030 0%,#1f1510 100%)"
+  },
+  {
+    "slug": "enrique-iglesias-bailando-68",
+    "title": "Bailando",
+    "artist": "Enrique Iglesias",
+    "language": "西班牙语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "西班牙语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Enrique Iglesias · 西班牙语 · 流行",
+    "note": "Enrique Iglesias",
+    "accent": "linear-gradient(135deg,#364456 0%,#121820 100%)"
+  },
+  {
+    "slug": "shakira-hips-don-t-lie-69",
+    "title": "Hips Don't Lie",
+    "artist": "Shakira",
+    "language": "西班牙语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "西班牙语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Shakira · 西班牙语 · 流行",
+    "note": "Shakira",
+    "accent": "linear-gradient(135deg,#6b5140 0%,#221912 100%)"
+  },
+  {
+    "slug": "rosal-a-despech-70",
+    "title": "Despechá",
+    "artist": "Rosalía",
+    "language": "西班牙语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "西班牙语",
+      "流行",
+      "馆藏"
+    ],
+    "summary": "Rosalía · 西班牙语 · 流行",
+    "note": "Rosalía",
+    "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)"
+  },
+  {
+    "slug": "man-rayando-el-sol-71",
+    "title": "Rayando el Sol",
+    "artist": "Maná",
+    "language": "西班牙语",
+    "genre": "摇滚",
+    "region": "全球",
+    "tags": [
+      "西班牙语",
+      "摇滚",
+      "经典"
+    ],
+    "summary": "Maná · 西班牙语 · 摇滚",
+    "note": "Maná",
+    "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)"
+  },
+  {
+    "slug": "juanes-a-dios-le-pido-72",
+    "title": "A Dios le Pido",
+    "artist": "Juanes",
+    "language": "西班牙语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "西班牙语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Juanes · 西班牙语 · 流行",
+    "note": "Juanes",
+    "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)"
+  },
+  {
+    "slug": "buena-vista-social-club-chan-chan-73",
+    "title": "Chan Chan",
+    "artist": "Buena Vista Social Club",
+    "language": "西班牙语",
+    "genre": "拉丁",
+    "region": "全球",
+    "tags": [
+      "西班牙语",
+      "拉丁",
+      "经典"
+    ],
+    "summary": "Buena Vista Social Club · 西班牙语 · 拉丁",
+    "note": "Buena Vista Social Club",
+    "accent": "linear-gradient(135deg,#35574d 0%,#101917 100%)"
+  },
+  {
+    "slug": "shakira-waka-waka-74",
+    "title": "Waka Waka",
+    "artist": "Shakira",
+    "language": "西班牙语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "西班牙语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Shakira · 西班牙语 · 流行",
+    "note": "Shakira",
+    "accent": "linear-gradient(135deg,#4e4173 0%,#191423 100%)"
+  },
+  {
+    "slug": "ricky-martin-la-copa-de-la-vida-75",
+    "title": "La Copa de la Vida",
+    "artist": "Ricky Martin",
+    "language": "西班牙语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "西班牙语",
+      "流行",
+      "馆藏"
+    ],
+    "summary": "Ricky Martin · 西班牙语 · 流行",
+    "note": "Ricky Martin",
+    "accent": "linear-gradient(135deg,#3a6a78 0%,#13252c 100%)"
+  },
+  {
+    "slug": "carlos-gardel-por-una-cabeza-76",
+    "title": "Por una Cabeza",
+    "artist": "Carlos Gardel",
+    "language": "西班牙语",
+    "genre": "探戈",
+    "region": "全球",
+    "tags": [
+      "西班牙语",
+      "探戈",
+      "经典"
+    ],
+    "summary": "Carlos Gardel · 西班牙语 · 探戈",
+    "note": "Carlos Gardel",
+    "accent": "linear-gradient(135deg,#31443c 0%,#111714 100%)"
+  },
+  {
+    "slug": "bts-spring-day-77",
+    "title": "Spring Day",
+    "artist": "BTS",
+    "language": "韩语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "韩语",
+      "流行",
+      "经典"
+    ],
+    "summary": "BTS · 韩语 · 流行",
+    "note": "BTS",
+    "accent": "linear-gradient(135deg,#5a4030 0%,#1f1510 100%)"
+  },
+  {
+    "slug": "bts-dynamite-78",
+    "title": "Dynamite",
+    "artist": "BTS",
+    "language": "韩语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "韩语",
+      "流行",
+      "经典"
+    ],
+    "summary": "BTS · 韩语 · 流行",
+    "note": "BTS",
+    "accent": "linear-gradient(135deg,#364456 0%,#121820 100%)"
+  },
+  {
+    "slug": "blackpink-ddu-du-ddu-du-79",
+    "title": "DDU-DU DDU-DU",
+    "artist": "BLACKPINK",
+    "language": "韩语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "韩语",
+      "流行",
+      "经典"
+    ],
+    "summary": "BLACKPINK · 韩语 · 流行",
+    "note": "BLACKPINK",
+    "accent": "linear-gradient(135deg,#6b5140 0%,#221912 100%)"
+  },
+  {
+    "slug": "iu-80",
+    "title": "밤편지",
+    "artist": "IU",
+    "language": "韩语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "韩语",
+      "流行",
+      "馆藏"
+    ],
+    "summary": "IU · 韩语 · 流行",
+    "note": "IU",
+    "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)"
+  },
+  {
+    "slug": "bigbang-81",
+    "title": "하루하루",
+    "artist": "BIGBANG",
+    "language": "韩语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "韩语",
+      "流行",
+      "经典"
+    ],
+    "summary": "BIGBANG · 韩语 · 流行",
+    "note": "BIGBANG",
+    "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)"
+  },
+  {
+    "slug": "gee-82",
+    "title": "Gee",
+    "artist": "少女时代",
+    "language": "韩语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "韩语",
+      "流行",
+      "经典"
+    ],
+    "summary": "少女时代 · 韩语 · 流行",
+    "note": "少女时代",
+    "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)"
+  },
+  {
+    "slug": "newjeans-ditto-83",
+    "title": "Ditto",
+    "artist": "NewJeans",
+    "language": "韩语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "韩语",
+      "流行",
+      "经典"
+    ],
+    "summary": "NewJeans · 韩语 · 流行",
+    "note": "NewJeans",
+    "accent": "linear-gradient(135deg,#35574d 0%,#101917 100%)"
+  },
+  {
+    "slug": "exo-84",
+    "title": "으르렁",
+    "artist": "EXO",
+    "language": "韩语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "韩语",
+      "流行",
+      "经典"
+    ],
+    "summary": "EXO · 韩语 · 流行",
+    "note": "EXO",
+    "accent": "linear-gradient(135deg,#4e4173 0%,#191423 100%)"
+  },
+  {
+    "slug": "bigbang-bang-bang-bang-85",
+    "title": "BANG BANG BANG",
+    "artist": "BIGBANG",
+    "language": "韩语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "韩语",
+      "流行",
+      "馆藏"
+    ],
+    "summary": "BIGBANG · 韩语 · 流行",
+    "note": "BIGBANG",
+    "accent": "linear-gradient(135deg,#3a6a78 0%,#13252c 100%)"
+  },
+  {
+    "slug": "twice-cheer-up-86",
+    "title": "Cheer Up",
+    "artist": "TWICE",
+    "language": "韩语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "韩语",
+      "流行",
+      "经典"
+    ],
+    "summary": "TWICE · 韩语 · 流行",
+    "note": "TWICE",
+    "accent": "linear-gradient(135deg,#31443c 0%,#111714 100%)"
+  },
+  {
+    "slug": "aespa-next-level-87",
+    "title": "Next Level",
+    "artist": "aespa",
+    "language": "韩语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "韩语",
+      "流行",
+      "经典"
+    ],
+    "summary": "aespa · 韩语 · 流行",
+    "note": "aespa",
+    "accent": "linear-gradient(135deg,#5a4030 0%,#1f1510 100%)"
+  },
+  {
+    "slug": "ive-love-dive-88",
+    "title": "LOVE DIVE",
+    "artist": "IVE",
+    "language": "韩语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "韩语",
+      "流行",
+      "经典"
+    ],
+    "summary": "IVE · 韩语 · 流行",
+    "note": "IVE",
+    "accent": "linear-gradient(135deg,#364456 0%,#121820 100%)"
+  },
+  {
+    "slug": "first-love-89",
+    "title": "First Love",
+    "artist": "宇多田光",
+    "language": "日语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "日语",
+      "流行",
+      "经典"
+    ],
+    "summary": "宇多田光 · 日语 · 流行",
+    "note": "宇多田光",
+    "accent": "linear-gradient(135deg,#6b5140 0%,#221912 100%)"
+  },
+  {
+    "slug": "90",
+    "title": "糸",
+    "artist": "中岛美雪",
+    "language": "日语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "日语",
+      "流行",
+      "馆藏"
+    ],
+    "summary": "中岛美雪 · 日语 · 流行",
+    "note": "中岛美雪",
+    "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)"
+  },
+  {
+    "slug": "91",
+    "title": "上を向いて歩こう",
+    "artist": "坂本九",
+    "language": "日语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "日语",
+      "流行",
+      "经典"
+    ],
+    "summary": "坂本九 · 日语 · 流行",
+    "note": "坂本九",
+    "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)"
+  },
+  {
+    "slug": "summer-92",
+    "title": "Summer",
+    "artist": "久石让",
+    "language": "日语",
+    "genre": "纯音乐",
+    "region": "亚洲",
+    "tags": [
+      "日语",
+      "纯音乐",
+      "经典"
+    ],
+    "summary": "久石让 · 日语 · 纯音乐",
+    "note": "久石让",
+    "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)"
+  },
+  {
+    "slug": "radwimps-93",
+    "title": "なんでもないや",
+    "artist": "RADWIMPS",
+    "language": "日语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "日语",
+      "流行",
+      "经典"
+    ],
+    "summary": "RADWIMPS · 日语 · 流行",
+    "note": "RADWIMPS",
+    "accent": "linear-gradient(135deg,#35574d 0%,#101917 100%)"
+  },
+  {
+    "slug": "lemon-94",
+    "title": "Lemon",
+    "artist": "米津玄师",
+    "language": "日语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "日语",
+      "流行",
+      "经典"
+    ],
+    "summary": "米津玄师 · 日语 · 流行",
+    "note": "米津玄师",
+    "accent": "linear-gradient(135deg,#4e4173 0%,#191423 100%)"
+  },
+  {
+    "slug": "yoasobi-95",
+    "title": "夜に駆ける",
+    "artist": "YOASOBI",
+    "language": "日语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "日语",
+      "流行",
+      "馆藏"
+    ],
+    "summary": "YOASOBI · 日语 · 流行",
+    "note": "YOASOBI",
+    "accent": "linear-gradient(135deg,#3a6a78 0%,#13252c 100%)"
+  },
+  {
+    "slug": "96",
+    "title": "瞳をとじて",
+    "artist": "平井坚",
+    "language": "日语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "日语",
+      "流行",
+      "经典"
+    ],
+    "summary": "平井坚 · 日语 · 流行",
+    "note": "平井坚",
+    "accent": "linear-gradient(135deg,#31443c 0%,#111714 100%)"
+  },
+  {
+    "slug": "radwimps-97",
+    "title": "前前前世",
+    "artist": "RADWIMPS",
+    "language": "日语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "日语",
+      "流行",
+      "经典"
+    ],
+    "summary": "RADWIMPS · 日语 · 流行",
+    "note": "RADWIMPS",
+    "accent": "linear-gradient(135deg,#5a4030 0%,#1f1510 100%)"
+  },
+  {
+    "slug": "aimer-98",
+    "title": "カタオモイ",
+    "artist": "Aimer",
+    "language": "日语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "日语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Aimer · 日语 · 流行",
+    "note": "Aimer",
+    "accent": "linear-gradient(135deg,#364456 0%,#121820 100%)"
+  },
+  {
+    "slug": "bump-of-chicken-99",
+    "title": "天体観測",
+    "artist": "BUMP OF CHICKEN",
+    "language": "日语",
+    "genre": "摇滚",
+    "region": "亚洲",
+    "tags": [
+      "日语",
+      "摇滚",
+      "经典"
+    ],
+    "summary": "BUMP OF CHICKEN · 日语 · 摇滚",
+    "note": "BUMP OF CHICKEN",
+    "accent": "linear-gradient(135deg,#6b5140 0%,#221912 100%)"
+  },
+  {
+    "slug": "dith-piaf-la-vie-en-rose-100",
+    "title": "La Vie en rose",
+    "artist": "Édith Piaf",
+    "language": "法语",
+    "genre": "香颂",
+    "region": "全球",
+    "tags": [
+      "法语",
+      "香颂",
+      "馆藏"
+    ],
+    "summary": "Édith Piaf · 法语 · 香颂",
+    "note": "Édith Piaf",
+    "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)"
+  },
+  {
+    "slug": "charles-aznavour-la-boh-me-101",
+    "title": "La Bohème",
+    "artist": "Charles Aznavour",
+    "language": "法语",
+    "genre": "香颂",
+    "region": "全球",
+    "tags": [
+      "法语",
+      "香颂",
+      "经典"
+    ],
+    "summary": "Charles Aznavour · 法语 · 香颂",
+    "note": "Charles Aznavour",
+    "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)"
+  },
+  {
+    "slug": "lara-fabian-je-t-aime-102",
+    "title": "Je t'aime",
+    "artist": "Lara Fabian",
+    "language": "法语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "法语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Lara Fabian · 法语 · 流行",
+    "note": "Lara Fabian",
+    "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)"
+  },
+  {
+    "slug": "stromae-alors-on-danse-103",
+    "title": "Alors on danse",
+    "artist": "Stromae",
+    "language": "法语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "法语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Stromae · 法语 · 流行",
+    "note": "Stromae",
+    "accent": "linear-gradient(135deg,#35574d 0%,#101917 100%)"
+  },
+  {
+    "slug": "indila-derni-re-danse-104",
+    "title": "Dernière danse",
+    "artist": "Indila",
+    "language": "法语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "法语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Indila · 法语 · 流行",
+    "note": "Indila",
+    "accent": "linear-gradient(135deg,#4e4173 0%,#191423 100%)"
+  },
+  {
+    "slug": "zaz-je-veux-105",
+    "title": "Je veux",
+    "artist": "Zaz",
+    "language": "法语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "法语",
+      "流行",
+      "馆藏"
+    ],
+    "summary": "Zaz · 法语 · 流行",
+    "note": "Zaz",
+    "accent": "linear-gradient(135deg,#3a6a78 0%,#13252c 100%)"
+  },
+  {
+    "slug": "dith-piaf-non-je-ne-regrette-rien-106",
+    "title": "Non, je ne regrette rien",
+    "artist": "Édith Piaf",
+    "language": "法语",
+    "genre": "香颂",
+    "region": "全球",
+    "tags": [
+      "法语",
+      "香颂",
+      "经典"
+    ],
+    "summary": "Édith Piaf · 法语 · 香颂",
+    "note": "Édith Piaf",
+    "accent": "linear-gradient(135deg,#31443c 0%,#111714 100%)"
+  },
+  {
+    "slug": "jacques-brel-ne-me-quitte-pas-107",
+    "title": "Ne me quitte pas",
+    "artist": "Jacques Brel",
+    "language": "法语",
+    "genre": "香颂",
+    "region": "全球",
+    "tags": [
+      "法语",
+      "香颂",
+      "经典"
+    ],
+    "summary": "Jacques Brel · 法语 · 香颂",
+    "note": "Jacques Brel",
+    "accent": "linear-gradient(135deg,#5a4030 0%,#1f1510 100%)"
+  },
+  {
+    "slug": "ludovico-einaudi-nuvole-bianche-108",
+    "title": "Nuvole Bianche",
+    "artist": "Ludovico Einaudi",
+    "language": "纯音乐",
+    "genre": "纯音乐",
+    "region": "全球",
+    "tags": [
+      "纯音乐",
+      "纯音乐",
+      "经典"
+    ],
+    "summary": "Ludovico Einaudi · 纯音乐 · 纯音乐",
+    "note": "Ludovico Einaudi",
+    "accent": "linear-gradient(135deg,#364456 0%,#121820 100%)"
+  },
+  {
+    "slug": "yiruma-river-flows-in-you-109",
+    "title": "River Flows in You",
+    "artist": "Yiruma",
+    "language": "纯音乐",
+    "genre": "纯音乐",
+    "region": "全球",
+    "tags": [
+      "纯音乐",
+      "纯音乐",
+      "经典"
+    ],
+    "summary": "Yiruma · 纯音乐 · 纯音乐",
+    "note": "Yiruma",
+    "accent": "linear-gradient(135deg,#6b5140 0%,#221912 100%)"
+  },
+  {
+    "slug": "richard-clayderman-ballade-pour-adeline-110",
+    "title": "Ballade pour Adeline",
+    "artist": "Richard Clayderman",
+    "language": "纯音乐",
+    "genre": "纯音乐",
+    "region": "全球",
+    "tags": [
+      "纯音乐",
+      "纯音乐",
+      "馆藏"
+    ],
+    "summary": "Richard Clayderman · 纯音乐 · 纯音乐",
+    "note": "Richard Clayderman",
+    "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)"
+  },
+  {
+    "slug": "merry-christmas-mr-lawrence-111",
+    "title": "Merry Christmas Mr. Lawrence",
+    "artist": "坂本龙一",
+    "language": "纯音乐",
+    "genre": "纯音乐",
+    "region": "全球",
+    "tags": [
+      "纯音乐",
+      "纯音乐",
+      "经典"
+    ],
+    "summary": "坂本龙一 · 纯音乐 · 纯音乐",
+    "note": "坂本龙一",
+    "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)"
+  },
+  {
+    "slug": "vangelis-chariots-of-fire-112",
+    "title": "Chariots of Fire",
+    "artist": "Vangelis",
+    "language": "纯音乐",
+    "genre": "电影原声",
+    "region": "全球",
+    "tags": [
+      "纯音乐",
+      "电影原声",
+      "经典"
+    ],
+    "summary": "Vangelis · 纯音乐 · 电影原声",
+    "note": "Vangelis",
+    "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)"
+  },
+  {
+    "slug": "hans-zimmer-time-113",
+    "title": "Time",
+    "artist": "Hans Zimmer",
+    "language": "纯音乐",
+    "genre": "电影原声",
+    "region": "全球",
+    "tags": [
+      "纯音乐",
+      "电影原声",
+      "经典"
+    ],
+    "summary": "Hans Zimmer · 纯音乐 · 电影原声",
+    "note": "Hans Zimmer",
+    "accent": "linear-gradient(135deg,#35574d 0%,#101917 100%)"
+  },
+  {
+    "slug": "john-williams-hedwig-s-theme-114",
+    "title": "Hedwig's Theme",
+    "artist": "John Williams",
+    "language": "纯音乐",
+    "genre": "电影原声",
+    "region": "全球",
+    "tags": [
+      "纯音乐",
+      "电影原声",
+      "经典"
+    ],
+    "summary": "John Williams · 纯音乐 · 电影原声",
+    "note": "John Williams",
+    "accent": "linear-gradient(135deg,#4e4173 0%,#191423 100%)"
+  },
+  {
+    "slug": "ennio-morricone-gabriel-s-oboe-115",
+    "title": "Gabriel's Oboe",
+    "artist": "Ennio Morricone",
+    "language": "纯音乐",
+    "genre": "电影原声",
+    "region": "全球",
+    "tags": [
+      "纯音乐",
+      "电影原声",
+      "馆藏"
+    ],
+    "summary": "Ennio Morricone · 纯音乐 · 电影原声",
+    "note": "Ennio Morricone",
+    "accent": "linear-gradient(135deg,#3a6a78 0%,#13252c 100%)"
+  },
+  {
+    "slug": "beethoven-symphony-no-5-116",
+    "title": "Symphony No.5",
+    "artist": "Beethoven",
+    "language": "古典",
+    "genre": "古典",
+    "region": "全球",
+    "tags": [
+      "古典",
+      "古典",
+      "经典"
+    ],
+    "summary": "Beethoven · 古典 · 古典",
+    "note": "Beethoven",
+    "accent": "linear-gradient(135deg,#31443c 0%,#111714 100%)"
+  },
+  {
+    "slug": "beethoven-moonlight-sonata-117",
+    "title": "Moonlight Sonata",
+    "artist": "Beethoven",
+    "language": "古典",
+    "genre": "古典",
+    "region": "全球",
+    "tags": [
+      "古典",
+      "古典",
+      "经典"
+    ],
+    "summary": "Beethoven · 古典 · 古典",
+    "note": "Beethoven",
+    "accent": "linear-gradient(135deg,#5a4030 0%,#1f1510 100%)"
+  },
+  {
+    "slug": "mozart-eine-kleine-nachtmusik-118",
+    "title": "Eine kleine Nachtmusik",
+    "artist": "Mozart",
+    "language": "古典",
+    "genre": "古典",
+    "region": "全球",
+    "tags": [
+      "古典",
+      "古典",
+      "经典"
+    ],
+    "summary": "Mozart · 古典 · 古典",
+    "note": "Mozart",
+    "accent": "linear-gradient(135deg,#364456 0%,#121820 100%)"
+  },
+  {
+    "slug": "bach-cello-suite-no-1-119",
+    "title": "Cello Suite No.1",
+    "artist": "Bach",
+    "language": "古典",
+    "genre": "古典",
+    "region": "全球",
+    "tags": [
+      "古典",
+      "古典",
+      "经典"
+    ],
+    "summary": "Bach · 古典 · 古典",
+    "note": "Bach",
+    "accent": "linear-gradient(135deg,#6b5140 0%,#221912 100%)"
+  },
+  {
+    "slug": "chopin-nocturne-op-9-no-2-120",
+    "title": "Nocturne Op.9 No.2",
+    "artist": "Chopin",
+    "language": "古典",
+    "genre": "古典",
+    "region": "全球",
+    "tags": [
+      "古典",
+      "古典",
+      "馆藏"
+    ],
+    "summary": "Chopin · 古典 · 古典",
+    "note": "Chopin",
+    "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)"
+  },
+  {
+    "slug": "tchaikovsky-swan-lake-121",
+    "title": "Swan Lake",
+    "artist": "Tchaikovsky",
+    "language": "古典",
+    "genre": "古典",
+    "region": "全球",
+    "tags": [
+      "古典",
+      "古典",
+      "经典"
+    ],
+    "summary": "Tchaikovsky · 古典 · 古典",
+    "note": "Tchaikovsky",
+    "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)"
+  },
+  {
+    "slug": "debussy-clair-de-lune-122",
+    "title": "Clair de Lune",
+    "artist": "Debussy",
+    "language": "古典",
+    "genre": "古典",
+    "region": "全球",
+    "tags": [
+      "古典",
+      "古典",
+      "经典"
+    ],
+    "summary": "Debussy · 古典 · 古典",
+    "note": "Debussy",
+    "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)"
+  },
+  {
+    "slug": "ravel-bol-ro-123",
+    "title": "Boléro",
+    "artist": "Ravel",
+    "language": "古典",
+    "genre": "古典",
+    "region": "全球",
+    "tags": [
+      "古典",
+      "古典",
+      "经典"
+    ],
+    "summary": "Ravel · 古典 · 古典",
+    "note": "Ravel",
+    "accent": "linear-gradient(135deg,#35574d 0%,#101917 100%)"
+  },
+  {
+    "slug": "pachelbel-canon-in-d-124",
+    "title": "Canon in D",
+    "artist": "Pachelbel",
+    "language": "古典",
+    "genre": "古典",
+    "region": "全球",
+    "tags": [
+      "古典",
+      "古典",
+      "经典"
+    ],
+    "summary": "Pachelbel · 古典 · 古典",
+    "note": "Pachelbel",
+    "accent": "linear-gradient(135deg,#4e4173 0%,#191423 100%)"
+  },
+  {
+    "slug": "vivaldi-four-seasons-spring-125",
+    "title": "Four Seasons: Spring",
+    "artist": "Vivaldi",
+    "language": "古典",
+    "genre": "古典",
+    "region": "全球",
+    "tags": [
+      "古典",
+      "古典",
+      "馆藏"
+    ],
+    "summary": "Vivaldi · 古典 · 古典",
+    "note": "Vivaldi",
+    "accent": "linear-gradient(135deg,#3a6a78 0%,#13252c 100%)"
+  },
+  {
+    "slug": "126",
+    "title": "月亮代表我的心 · 馆藏2",
+    "artist": "邓丽君",
+    "language": "华语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "流行",
+      "经典"
+    ],
+    "summary": "邓丽君 · 华语 · 流行",
+    "note": "邓丽君",
+    "accent": "linear-gradient(135deg,#31443c 0%,#111714 100%)"
+  },
+  {
+    "slug": "127",
+    "title": "红豆 · 馆藏2",
+    "artist": "王菲",
+    "language": "华语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "流行",
+      "经典"
+    ],
+    "summary": "王菲 · 华语 · 流行",
+    "note": "王菲",
+    "accent": "linear-gradient(135deg,#5a4030 0%,#1f1510 100%)"
+  },
+  {
+    "slug": "128",
+    "title": "青花瓷 · 馆藏2",
+    "artist": "周杰伦",
+    "language": "华语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "流行",
+      "经典"
+    ],
+    "summary": "周杰伦 · 华语 · 流行",
+    "note": "周杰伦",
+    "accent": "linear-gradient(135deg,#364456 0%,#121820 100%)"
+  },
+  {
+    "slug": "129",
+    "title": "晴天 · 馆藏2",
+    "artist": "周杰伦",
+    "language": "华语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "流行",
+      "经典"
+    ],
+    "summary": "周杰伦 · 华语 · 流行",
+    "note": "周杰伦",
+    "accent": "linear-gradient(135deg,#6b5140 0%,#221912 100%)"
+  },
+  {
+    "slug": "130",
+    "title": "江南 · 馆藏2",
+    "artist": "林俊杰",
+    "language": "华语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "流行",
+      "馆藏"
+    ],
+    "summary": "林俊杰 · 华语 · 流行",
+    "note": "林俊杰",
+    "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)"
+  },
+  {
+    "slug": "131",
+    "title": "十年 · 馆藏2",
+    "artist": "陈奕迅",
+    "language": "华语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "流行",
+      "经典"
+    ],
+    "summary": "陈奕迅 · 华语 · 流行",
+    "note": "陈奕迅",
+    "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)"
+  },
+  {
+    "slug": "132",
+    "title": "吻别 · 馆藏2",
+    "artist": "张学友",
+    "language": "华语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "流行",
+      "经典"
+    ],
+    "summary": "张学友 · 华语 · 流行",
+    "note": "张学友",
+    "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)"
+  },
+  {
+    "slug": "133",
+    "title": "山丘 · 馆藏2",
+    "artist": "李宗盛",
+    "language": "华语",
+    "genre": "民谣",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "民谣",
+      "经典"
+    ],
+    "summary": "李宗盛 · 华语 · 民谣",
+    "note": "李宗盛",
+    "accent": "linear-gradient(135deg,#35574d 0%,#101917 100%)"
+  },
+  {
+    "slug": "134",
+    "title": "平凡之路 · 馆藏2",
+    "artist": "朴树",
+    "language": "华语",
+    "genre": "民谣",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "民谣",
+      "经典"
+    ],
+    "summary": "朴树 · 华语 · 民谣",
+    "note": "朴树",
+    "accent": "linear-gradient(135deg,#4e4173 0%,#191423 100%)"
+  },
+  {
+    "slug": "135",
+    "title": "蓝莲花 · 馆藏2",
+    "artist": "许巍",
+    "language": "华语",
+    "genre": "摇滚",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "摇滚",
+      "馆藏"
+    ],
+    "summary": "许巍 · 华语 · 摇滚",
+    "note": "许巍",
+    "accent": "linear-gradient(135deg,#3a6a78 0%,#13252c 100%)"
+  },
+  {
+    "slug": "136",
+    "title": "挪威的森林 · 馆藏2",
+    "artist": "伍佰",
+    "language": "华语",
+    "genre": "摇滚",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "摇滚",
+      "经典"
+    ],
+    "summary": "伍佰 · 华语 · 摇滚",
+    "note": "伍佰",
+    "accent": "linear-gradient(135deg,#31443c 0%,#111714 100%)"
+  },
+  {
+    "slug": "137",
+    "title": "一无所有 · 馆藏2",
+    "artist": "崔健",
+    "language": "华语",
+    "genre": "摇滚",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "摇滚",
+      "经典"
+    ],
+    "summary": "崔健 · 华语 · 摇滚",
+    "note": "崔健",
+    "accent": "linear-gradient(135deg,#5a4030 0%,#1f1510 100%)"
+  },
+  {
+    "slug": "138",
+    "title": "童年 · 馆藏2",
+    "artist": "罗大佑",
+    "language": "华语",
+    "genre": "民谣",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "民谣",
+      "经典"
+    ],
+    "summary": "罗大佑 · 华语 · 民谣",
+    "note": "罗大佑",
+    "accent": "linear-gradient(135deg,#364456 0%,#121820 100%)"
+  },
+  {
+    "slug": "139",
+    "title": "慢慢喜欢你 · 馆藏2",
+    "artist": "莫文蔚",
+    "language": "华语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "流行",
+      "经典"
+    ],
+    "summary": "莫文蔚 · 华语 · 流行",
+    "note": "莫文蔚",
+    "accent": "linear-gradient(135deg,#6b5140 0%,#221912 100%)"
+  },
+  {
+    "slug": "140",
+    "title": "成都 · 馆藏2",
+    "artist": "赵雷",
+    "language": "华语",
+    "genre": "民谣",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "民谣",
+      "馆藏"
+    ],
+    "summary": "赵雷 · 华语 · 民谣",
+    "note": "赵雷",
+    "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)"
+  },
+  {
+    "slug": "141",
+    "title": "爱，很简单 · 馆藏2",
+    "artist": "陶喆",
+    "language": "华语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "流行",
+      "经典"
+    ],
+    "summary": "陶喆 · 华语 · 流行",
+    "note": "陶喆",
+    "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)"
+  },
+  {
+    "slug": "142",
+    "title": "遇见 · 馆藏2",
+    "artist": "孙燕姿",
+    "language": "华语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "流行",
+      "经典"
+    ],
+    "summary": "孙燕姿 · 华语 · 流行",
+    "note": "孙燕姿",
+    "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)"
+  },
+  {
+    "slug": "143",
+    "title": "勇气 · 馆藏2",
+    "artist": "梁静茹",
+    "language": "华语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "流行",
+      "经典"
+    ],
+    "summary": "梁静茹 · 华语 · 流行",
+    "note": "梁静茹",
+    "accent": "linear-gradient(135deg,#35574d 0%,#101917 100%)"
+  },
+  {
+    "slug": "144",
+    "title": "倔强 · 馆藏2",
+    "artist": "五月天",
+    "language": "华语",
+    "genre": "摇滚",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "摇滚",
+      "经典"
+    ],
+    "summary": "五月天 · 华语 · 摇滚",
+    "note": "五月天",
+    "accent": "linear-gradient(135deg,#4e4173 0%,#191423 100%)"
+  },
+  {
+    "slug": "145",
+    "title": "小情歌 · 馆藏2",
+    "artist": "苏打绿",
+    "language": "华语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "流行",
+      "馆藏"
+    ],
+    "summary": "苏打绿 · 华语 · 流行",
+    "note": "苏打绿",
+    "accent": "linear-gradient(135deg,#3a6a78 0%,#13252c 100%)"
+  },
+  {
+    "slug": "146",
+    "title": "朋友 · 馆藏2",
+    "artist": "周华健",
+    "language": "华语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "流行",
+      "经典"
+    ],
+    "summary": "周华健 · 华语 · 流行",
+    "note": "周华健",
+    "accent": "linear-gradient(135deg,#31443c 0%,#111714 100%)"
+  },
+  {
+    "slug": "147",
+    "title": "心太软 · 馆藏2",
+    "artist": "任贤齐",
+    "language": "华语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "流行",
+      "经典"
+    ],
+    "summary": "任贤齐 · 华语 · 流行",
+    "note": "任贤齐",
+    "accent": "linear-gradient(135deg,#5a4030 0%,#1f1510 100%)"
+  },
+  {
+    "slug": "148",
+    "title": "唯一 · 馆藏2",
+    "artist": "王力宏",
+    "language": "华语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "流行",
+      "经典"
+    ],
+    "summary": "王力宏 · 华语 · 流行",
+    "note": "王力宏",
+    "accent": "linear-gradient(135deg,#364456 0%,#121820 100%)"
+  },
+  {
+    "slug": "149",
+    "title": "至少还有你 · 馆藏2",
+    "artist": "林忆莲",
+    "language": "华语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "流行",
+      "经典"
+    ],
+    "summary": "林忆莲 · 华语 · 流行",
+    "note": "林忆莲",
+    "accent": "linear-gradient(135deg,#6b5140 0%,#221912 100%)"
+  },
+  {
+    "slug": "150",
+    "title": "夜空中最亮的星 · 馆藏2",
+    "artist": "逃跑计划",
+    "language": "华语",
+    "genre": "摇滚",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "摇滚",
+      "馆藏"
+    ],
+    "summary": "逃跑计划 · 华语 · 摇滚",
+    "note": "逃跑计划",
+    "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)"
+  },
+  {
+    "slug": "151",
+    "title": "旅行的意义 · 馆藏2",
+    "artist": "陈绮贞",
+    "language": "华语",
+    "genre": "民谣",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "民谣",
+      "经典"
+    ],
+    "summary": "陈绮贞 · 华语 · 民谣",
+    "note": "陈绮贞",
+    "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)"
+  },
+  {
+    "slug": "beyond-152",
+    "title": "海阔天空 · 馆藏2",
+    "artist": "Beyond",
+    "language": "粤语",
+    "genre": "摇滚",
+    "region": "亚洲",
+    "tags": [
+      "粤语",
+      "摇滚",
+      "经典"
+    ],
+    "summary": "Beyond · 粤语 · 摇滚",
+    "note": "Beyond",
+    "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)"
+  },
+  {
+    "slug": "153",
+    "title": "富士山下 · 馆藏2",
+    "artist": "陈奕迅",
+    "language": "粤语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "粤语",
+      "流行",
+      "经典"
+    ],
+    "summary": "陈奕迅 · 粤语 · 流行",
+    "note": "陈奕迅",
+    "accent": "linear-gradient(135deg,#35574d 0%,#101917 100%)"
+  },
+  {
+    "slug": "k-154",
+    "title": "K歌之王 · 馆藏2",
+    "artist": "陈奕迅",
+    "language": "粤语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "粤语",
+      "流行",
+      "经典"
+    ],
+    "summary": "陈奕迅 · 粤语 · 流行",
+    "note": "陈奕迅",
+    "accent": "linear-gradient(135deg,#4e4173 0%,#191423 100%)"
+  },
+  {
+    "slug": "155",
+    "title": "风继续吹 · 馆藏2",
+    "artist": "张国荣",
+    "language": "粤语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "粤语",
+      "流行",
+      "馆藏"
+    ],
+    "summary": "张国荣 · 粤语 · 流行",
+    "note": "张国荣",
+    "accent": "linear-gradient(135deg,#3a6a78 0%,#13252c 100%)"
+  },
+  {
+    "slug": "156",
+    "title": "夕阳之歌 · 馆藏2",
+    "artist": "梅艳芳",
+    "language": "粤语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "粤语",
+      "流行",
+      "经典"
+    ],
+    "summary": "梅艳芳 · 粤语 · 流行",
+    "note": "梅艳芳",
+    "accent": "linear-gradient(135deg,#31443c 0%,#111714 100%)"
+  },
+  {
+    "slug": "157",
+    "title": "遥远的她 · 馆藏2",
+    "artist": "张学友",
+    "language": "粤语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "粤语",
+      "流行",
+      "经典"
+    ],
+    "summary": "张学友 · 粤语 · 流行",
+    "note": "张学友",
+    "accent": "linear-gradient(135deg,#5a4030 0%,#1f1510 100%)"
+  },
+  {
+    "slug": "158",
+    "title": "讲不出再见 · 馆藏2",
+    "artist": "谭咏麟",
+    "language": "粤语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "粤语",
+      "流行",
+      "经典"
+    ],
+    "summary": "谭咏麟 · 粤语 · 流行",
+    "note": "谭咏麟",
+    "accent": "linear-gradient(135deg,#364456 0%,#121820 100%)"
+  },
+  {
+    "slug": "159",
+    "title": "偏偏喜欢你 · 馆藏2",
+    "artist": "陈百强",
+    "language": "粤语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "粤语",
+      "流行",
+      "经典"
+    ],
+    "summary": "陈百强 · 粤语 · 流行",
+    "note": "陈百强",
+    "accent": "linear-gradient(135deg,#6b5140 0%,#221912 100%)"
+  },
+  {
+    "slug": "160",
+    "title": "一生所爱 · 馆藏2",
+    "artist": "卢冠廷",
+    "language": "粤语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "粤语",
+      "流行",
+      "馆藏"
+    ],
+    "summary": "卢冠廷 · 粤语 · 流行",
+    "note": "卢冠廷",
+    "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)"
+  },
+  {
+    "slug": "161",
+    "title": "可惜我是水瓶座 · 馆藏2",
+    "artist": "杨千嬅",
+    "language": "粤语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "粤语",
+      "流行",
+      "经典"
+    ],
+    "summary": "杨千嬅 · 粤语 · 流行",
+    "note": "杨千嬅",
+    "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)"
+  },
+  {
+    "slug": "beyond-162",
+    "title": "喜欢你 · 馆藏2",
+    "artist": "Beyond",
+    "language": "粤语",
+    "genre": "摇滚",
+    "region": "亚洲",
+    "tags": [
+      "粤语",
+      "摇滚",
+      "经典"
+    ],
+    "summary": "Beyond · 粤语 · 摇滚",
+    "note": "Beyond",
+    "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)"
+  },
+  {
+    "slug": "163",
+    "title": "当年情 · 馆藏2",
+    "artist": "张国荣",
+    "language": "粤语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "粤语",
+      "流行",
+      "经典"
+    ],
+    "summary": "张国荣 · 粤语 · 流行",
+    "note": "张国荣",
+    "accent": "linear-gradient(135deg,#35574d 0%,#101917 100%)"
+  },
+  {
+    "slug": "164",
+    "title": "千千阙歌 · 馆藏2",
+    "artist": "陈慧娴",
+    "language": "粤语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "粤语",
+      "流行",
+      "经典"
+    ],
+    "summary": "陈慧娴 · 粤语 · 流行",
+    "note": "陈慧娴",
+    "accent": "linear-gradient(135deg,#4e4173 0%,#191423 100%)"
+  },
+  {
+    "slug": "165",
+    "title": "月半小夜曲 · 馆藏2",
+    "artist": "李克勤",
+    "language": "粤语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "粤语",
+      "流行",
+      "馆藏"
+    ],
+    "summary": "李克勤 · 粤语 · 流行",
+    "note": "李克勤",
+    "accent": "linear-gradient(135deg,#3a6a78 0%,#13252c 100%)"
+  },
+  {
+    "slug": "the-beatles-let-it-be-166",
+    "title": "Let It Be · 馆藏2",
+    "artist": "The Beatles",
+    "language": "英语",
+    "genre": "摇滚",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "摇滚",
+      "经典"
+    ],
+    "summary": "The Beatles · 英语 · 摇滚",
+    "note": "The Beatles",
+    "accent": "linear-gradient(135deg,#31443c 0%,#111714 100%)"
+  },
+  {
+    "slug": "the-beatles-hey-jude-167",
+    "title": "Hey Jude · 馆藏2",
+    "artist": "The Beatles",
+    "language": "英语",
+    "genre": "摇滚",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "摇滚",
+      "经典"
+    ],
+    "summary": "The Beatles · 英语 · 摇滚",
+    "note": "The Beatles",
+    "accent": "linear-gradient(135deg,#5a4030 0%,#1f1510 100%)"
+  },
+  {
+    "slug": "queen-bohemian-rhapsody-168",
+    "title": "Bohemian Rhapsody · 馆藏2",
+    "artist": "Queen",
+    "language": "英语",
+    "genre": "摇滚",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "摇滚",
+      "经典"
+    ],
+    "summary": "Queen · 英语 · 摇滚",
+    "note": "Queen",
+    "accent": "linear-gradient(135deg,#364456 0%,#121820 100%)"
+  },
+  {
+    "slug": "eagles-hotel-california-169",
+    "title": "Hotel California · 馆藏2",
+    "artist": "Eagles",
+    "language": "英语",
+    "genre": "摇滚",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "摇滚",
+      "经典"
+    ],
+    "summary": "Eagles · 英语 · 摇滚",
+    "note": "Eagles",
+    "accent": "linear-gradient(135deg,#6b5140 0%,#221912 100%)"
+  },
+  {
+    "slug": "michael-jackson-billie-jean-170",
+    "title": "Billie Jean · 馆藏2",
+    "artist": "Michael Jackson",
+    "language": "英语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "流行",
+      "馆藏"
+    ],
+    "summary": "Michael Jackson · 英语 · 流行",
+    "note": "Michael Jackson",
+    "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)"
+  },
+  {
+    "slug": "whitney-houston-i-will-always-love-you-171",
+    "title": "I Will Always Love You · 馆藏2",
+    "artist": "Whitney Houston",
+    "language": "英语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Whitney Houston · 英语 · 流行",
+    "note": "Whitney Houston",
+    "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)"
+  },
+  {
+    "slug": "celine-dion-my-heart-will-go-on-172",
+    "title": "My Heart Will Go On · 馆藏2",
+    "artist": "Celine Dion",
+    "language": "英语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Celine Dion · 英语 · 流行",
+    "note": "Celine Dion",
+    "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)"
+  },
+  {
+    "slug": "adele-someone-like-you-173",
+    "title": "Someone Like You · 馆藏2",
+    "artist": "Adele",
+    "language": "英语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Adele · 英语 · 流行",
+    "note": "Adele",
+    "accent": "linear-gradient(135deg,#35574d 0%,#101917 100%)"
+  },
+  {
+    "slug": "ed-sheeran-perfect-174",
+    "title": "Perfect · 馆藏2",
+    "artist": "Ed Sheeran",
+    "language": "英语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Ed Sheeran · 英语 · 流行",
+    "note": "Ed Sheeran",
+    "accent": "linear-gradient(135deg,#4e4173 0%,#191423 100%)"
+  },
+  {
+    "slug": "john-lennon-imagine-175",
+    "title": "Imagine · 馆藏2",
+    "artist": "John Lennon",
+    "language": "英语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "流行",
+      "馆藏"
+    ],
+    "summary": "John Lennon · 英语 · 流行",
+    "note": "John Lennon",
+    "accent": "linear-gradient(135deg,#3a6a78 0%,#13252c 100%)"
+  },
+  {
+    "slug": "abba-dancing-queen-176",
+    "title": "Dancing Queen · 馆藏2",
+    "artist": "ABBA",
+    "language": "英语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "流行",
+      "经典"
+    ],
+    "summary": "ABBA · 英语 · 流行",
+    "note": "ABBA",
+    "accent": "linear-gradient(135deg,#31443c 0%,#111714 100%)"
+  },
+  {
+    "slug": "nirvana-smells-like-teen-spirit-177",
+    "title": "Smells Like Teen Spirit · 馆藏2",
+    "artist": "Nirvana",
+    "language": "英语",
+    "genre": "摇滚",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "摇滚",
+      "经典"
+    ],
+    "summary": "Nirvana · 英语 · 摇滚",
+    "note": "Nirvana",
+    "accent": "linear-gradient(135deg,#5a4030 0%,#1f1510 100%)"
+  },
+  {
+    "slug": "coldplay-yellow-178",
+    "title": "Yellow · 馆藏2",
+    "artist": "Coldplay",
+    "language": "英语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Coldplay · 英语 · 流行",
+    "note": "Coldplay",
+    "accent": "linear-gradient(135deg,#364456 0%,#121820 100%)"
+  },
+  {
+    "slug": "linkin-park-numb-179",
+    "title": "Numb · 馆藏2",
+    "artist": "Linkin Park",
+    "language": "英语",
+    "genre": "摇滚",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "摇滚",
+      "经典"
+    ],
+    "summary": "Linkin Park · 英语 · 摇滚",
+    "note": "Linkin Park",
+    "accent": "linear-gradient(135deg,#6b5140 0%,#221912 100%)"
+  },
+  {
+    "slug": "bon-jovi-it-s-my-life-180",
+    "title": "It's My Life · 馆藏2",
+    "artist": "Bon Jovi",
+    "language": "英语",
+    "genre": "摇滚",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "摇滚",
+      "馆藏"
+    ],
+    "summary": "Bon Jovi · 英语 · 摇滚",
+    "note": "Bon Jovi",
+    "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)"
+  },
+  {
+    "slug": "frank-sinatra-my-way-181",
+    "title": "My Way · 馆藏2",
+    "artist": "Frank Sinatra",
+    "language": "英语",
+    "genre": "爵士",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "爵士",
+      "经典"
+    ],
+    "summary": "Frank Sinatra · 英语 · 爵士",
+    "note": "Frank Sinatra",
+    "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)"
+  },
+  {
+    "slug": "louis-armstrong-what-a-wonderful-world-182",
+    "title": "What a Wonderful World · 馆藏2",
+    "artist": "Louis Armstrong",
+    "language": "英语",
+    "genre": "爵士",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "爵士",
+      "经典"
+    ],
+    "summary": "Louis Armstrong · 英语 · 爵士",
+    "note": "Louis Armstrong",
+    "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)"
+  },
+  {
+    "slug": "bob-dylan-blowin-in-the-wind-183",
+    "title": "Blowin' in the Wind · 馆藏2",
+    "artist": "Bob Dylan",
+    "language": "英语",
+    "genre": "民谣",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "民谣",
+      "经典"
+    ],
+    "summary": "Bob Dylan · 英语 · 民谣",
+    "note": "Bob Dylan",
+    "accent": "linear-gradient(135deg,#35574d 0%,#101917 100%)"
+  },
+  {
+    "slug": "taylor-swift-love-story-184",
+    "title": "Love Story · 馆藏2",
+    "artist": "Taylor Swift",
+    "language": "英语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Taylor Swift · 英语 · 流行",
+    "note": "Taylor Swift",
+    "accent": "linear-gradient(135deg,#4e4173 0%,#191423 100%)"
+  },
+  {
+    "slug": "bruno-mars-just-the-way-you-are-185",
+    "title": "Just the Way You Are · 馆藏2",
+    "artist": "Bruno Mars",
+    "language": "英语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "流行",
+      "馆藏"
+    ],
+    "summary": "Bruno Mars · 英语 · 流行",
+    "note": "Bruno Mars",
+    "accent": "linear-gradient(135deg,#3a6a78 0%,#13252c 100%)"
+  },
+  {
+    "slug": "oasis-wonderwall-186",
+    "title": "Wonderwall · 馆藏2",
+    "artist": "Oasis",
+    "language": "英语",
+    "genre": "摇滚",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "摇滚",
+      "经典"
+    ],
+    "summary": "Oasis · 英语 · 摇滚",
+    "note": "Oasis",
+    "accent": "linear-gradient(135deg,#31443c 0%,#111714 100%)"
+  },
+  {
+    "slug": "pink-floyd-wish-you-were-here-187",
+    "title": "Wish You Were Here · 馆藏2",
+    "artist": "Pink Floyd",
+    "language": "英语",
+    "genre": "摇滚",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "摇滚",
+      "经典"
+    ],
+    "summary": "Pink Floyd · 英语 · 摇滚",
+    "note": "Pink Floyd",
+    "accent": "linear-gradient(135deg,#5a4030 0%,#1f1510 100%)"
+  },
+  {
+    "slug": "u2-with-or-without-you-188",
+    "title": "With or Without You · 馆藏2",
+    "artist": "U2",
+    "language": "英语",
+    "genre": "摇滚",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "摇滚",
+      "经典"
+    ],
+    "summary": "U2 · 英语 · 摇滚",
+    "note": "U2",
+    "accent": "linear-gradient(135deg,#364456 0%,#121820 100%)"
+  },
+  {
+    "slug": "madonna-like-a-prayer-189",
+    "title": "Like a Prayer · 馆藏2",
+    "artist": "Madonna",
+    "language": "英语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Madonna · 英语 · 流行",
+    "note": "Madonna",
+    "accent": "linear-gradient(135deg,#6b5140 0%,#221912 100%)"
+  },
+  {
+    "slug": "prince-purple-rain-190",
+    "title": "Purple Rain · 馆藏2",
+    "artist": "Prince",
+    "language": "英语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "流行",
+      "馆藏"
+    ],
+    "summary": "Prince · 英语 · 流行",
+    "note": "Prince",
+    "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)"
+  },
+  {
+    "slug": "carpenters-yesterday-once-more-191",
+    "title": "Yesterday Once More · 馆藏2",
+    "artist": "Carpenters",
+    "language": "英语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Carpenters · 英语 · 流行",
+    "note": "Carpenters",
+    "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)"
+  },
+  {
+    "slug": "luis-fonsi-despacito-192",
+    "title": "Despacito · 馆藏2",
+    "artist": "Luis Fonsi",
+    "language": "西班牙语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "西班牙语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Luis Fonsi · 西班牙语 · 流行",
+    "note": "Luis Fonsi",
+    "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)"
+  },
+  {
+    "slug": "jos-feliciano-feliz-navidad-193",
+    "title": "Feliz Navidad · 馆藏2",
+    "artist": "José Feliciano",
+    "language": "西班牙语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "西班牙语",
+      "流行",
+      "经典"
+    ],
+    "summary": "José Feliciano · 西班牙语 · 流行",
+    "note": "José Feliciano",
+    "accent": "linear-gradient(135deg,#35574d 0%,#101917 100%)"
+  },
+  {
+    "slug": "enrique-iglesias-bailando-194",
+    "title": "Bailando · 馆藏2",
+    "artist": "Enrique Iglesias",
+    "language": "西班牙语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "西班牙语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Enrique Iglesias · 西班牙语 · 流行",
+    "note": "Enrique Iglesias",
+    "accent": "linear-gradient(135deg,#4e4173 0%,#191423 100%)"
+  },
+  {
+    "slug": "shakira-hips-don-t-lie-195",
+    "title": "Hips Don't Lie · 馆藏2",
+    "artist": "Shakira",
+    "language": "西班牙语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "西班牙语",
+      "流行",
+      "馆藏"
+    ],
+    "summary": "Shakira · 西班牙语 · 流行",
+    "note": "Shakira",
+    "accent": "linear-gradient(135deg,#3a6a78 0%,#13252c 100%)"
+  },
+  {
+    "slug": "rosal-a-despech-196",
+    "title": "Despechá · 馆藏2",
+    "artist": "Rosalía",
+    "language": "西班牙语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "西班牙语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Rosalía · 西班牙语 · 流行",
+    "note": "Rosalía",
+    "accent": "linear-gradient(135deg,#31443c 0%,#111714 100%)"
+  },
+  {
+    "slug": "man-rayando-el-sol-197",
+    "title": "Rayando el Sol · 馆藏2",
+    "artist": "Maná",
+    "language": "西班牙语",
+    "genre": "摇滚",
+    "region": "全球",
+    "tags": [
+      "西班牙语",
+      "摇滚",
+      "经典"
+    ],
+    "summary": "Maná · 西班牙语 · 摇滚",
+    "note": "Maná",
+    "accent": "linear-gradient(135deg,#5a4030 0%,#1f1510 100%)"
+  },
+  {
+    "slug": "juanes-a-dios-le-pido-198",
+    "title": "A Dios le Pido · 馆藏2",
+    "artist": "Juanes",
+    "language": "西班牙语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "西班牙语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Juanes · 西班牙语 · 流行",
+    "note": "Juanes",
+    "accent": "linear-gradient(135deg,#364456 0%,#121820 100%)"
+  },
+  {
+    "slug": "buena-vista-social-club-chan-chan-199",
+    "title": "Chan Chan · 馆藏2",
+    "artist": "Buena Vista Social Club",
+    "language": "西班牙语",
+    "genre": "拉丁",
+    "region": "全球",
+    "tags": [
+      "西班牙语",
+      "拉丁",
+      "经典"
+    ],
+    "summary": "Buena Vista Social Club · 西班牙语 · 拉丁",
+    "note": "Buena Vista Social Club",
+    "accent": "linear-gradient(135deg,#6b5140 0%,#221912 100%)"
+  },
+  {
+    "slug": "shakira-waka-waka-200",
+    "title": "Waka Waka · 馆藏2",
+    "artist": "Shakira",
+    "language": "西班牙语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "西班牙语",
+      "流行",
+      "馆藏"
+    ],
+    "summary": "Shakira · 西班牙语 · 流行",
+    "note": "Shakira",
+    "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)"
+  },
+  {
+    "slug": "ricky-martin-la-copa-de-la-vida-201",
+    "title": "La Copa de la Vida · 馆藏2",
+    "artist": "Ricky Martin",
+    "language": "西班牙语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "西班牙语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Ricky Martin · 西班牙语 · 流行",
+    "note": "Ricky Martin",
+    "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)"
+  },
+  {
+    "slug": "carlos-gardel-por-una-cabeza-202",
+    "title": "Por una Cabeza · 馆藏2",
+    "artist": "Carlos Gardel",
+    "language": "西班牙语",
+    "genre": "探戈",
+    "region": "全球",
+    "tags": [
+      "西班牙语",
+      "探戈",
+      "经典"
+    ],
+    "summary": "Carlos Gardel · 西班牙语 · 探戈",
+    "note": "Carlos Gardel",
+    "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)"
+  },
+  {
+    "slug": "bts-spring-day-203",
+    "title": "Spring Day · 馆藏2",
+    "artist": "BTS",
+    "language": "韩语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "韩语",
+      "流行",
+      "经典"
+    ],
+    "summary": "BTS · 韩语 · 流行",
+    "note": "BTS",
+    "accent": "linear-gradient(135deg,#35574d 0%,#101917 100%)"
+  },
+  {
+    "slug": "bts-dynamite-204",
+    "title": "Dynamite · 馆藏2",
+    "artist": "BTS",
+    "language": "韩语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "韩语",
+      "流行",
+      "经典"
+    ],
+    "summary": "BTS · 韩语 · 流行",
+    "note": "BTS",
+    "accent": "linear-gradient(135deg,#4e4173 0%,#191423 100%)"
+  },
+  {
+    "slug": "blackpink-ddu-du-ddu-du-205",
+    "title": "DDU-DU DDU-DU · 馆藏2",
+    "artist": "BLACKPINK",
+    "language": "韩语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "韩语",
+      "流行",
+      "馆藏"
+    ],
+    "summary": "BLACKPINK · 韩语 · 流行",
+    "note": "BLACKPINK",
+    "accent": "linear-gradient(135deg,#3a6a78 0%,#13252c 100%)"
+  },
+  {
+    "slug": "iu-206",
+    "title": "밤편지 · 馆藏2",
+    "artist": "IU",
+    "language": "韩语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "韩语",
+      "流行",
+      "经典"
+    ],
+    "summary": "IU · 韩语 · 流行",
+    "note": "IU",
+    "accent": "linear-gradient(135deg,#31443c 0%,#111714 100%)"
+  },
+  {
+    "slug": "bigbang-207",
+    "title": "하루하루 · 馆藏2",
+    "artist": "BIGBANG",
+    "language": "韩语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "韩语",
+      "流行",
+      "经典"
+    ],
+    "summary": "BIGBANG · 韩语 · 流行",
+    "note": "BIGBANG",
+    "accent": "linear-gradient(135deg,#5a4030 0%,#1f1510 100%)"
+  },
+  {
+    "slug": "gee-208",
+    "title": "Gee · 馆藏2",
+    "artist": "少女时代",
+    "language": "韩语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "韩语",
+      "流行",
+      "经典"
+    ],
+    "summary": "少女时代 · 韩语 · 流行",
+    "note": "少女时代",
+    "accent": "linear-gradient(135deg,#364456 0%,#121820 100%)"
+  },
+  {
+    "slug": "newjeans-ditto-209",
+    "title": "Ditto · 馆藏2",
+    "artist": "NewJeans",
+    "language": "韩语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "韩语",
+      "流行",
+      "经典"
+    ],
+    "summary": "NewJeans · 韩语 · 流行",
+    "note": "NewJeans",
+    "accent": "linear-gradient(135deg,#6b5140 0%,#221912 100%)"
+  },
+  {
+    "slug": "exo-210",
+    "title": "으르렁 · 馆藏2",
+    "artist": "EXO",
+    "language": "韩语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "韩语",
+      "流行",
+      "馆藏"
+    ],
+    "summary": "EXO · 韩语 · 流行",
+    "note": "EXO",
+    "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)"
+  },
+  {
+    "slug": "bigbang-bang-bang-bang-211",
+    "title": "BANG BANG BANG · 馆藏2",
+    "artist": "BIGBANG",
+    "language": "韩语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "韩语",
+      "流行",
+      "经典"
+    ],
+    "summary": "BIGBANG · 韩语 · 流行",
+    "note": "BIGBANG",
+    "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)"
+  },
+  {
+    "slug": "twice-cheer-up-212",
+    "title": "Cheer Up · 馆藏2",
+    "artist": "TWICE",
+    "language": "韩语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "韩语",
+      "流行",
+      "经典"
+    ],
+    "summary": "TWICE · 韩语 · 流行",
+    "note": "TWICE",
+    "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)"
+  },
+  {
+    "slug": "aespa-next-level-213",
+    "title": "Next Level · 馆藏2",
+    "artist": "aespa",
+    "language": "韩语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "韩语",
+      "流行",
+      "经典"
+    ],
+    "summary": "aespa · 韩语 · 流行",
+    "note": "aespa",
+    "accent": "linear-gradient(135deg,#35574d 0%,#101917 100%)"
+  },
+  {
+    "slug": "ive-love-dive-214",
+    "title": "LOVE DIVE · 馆藏2",
+    "artist": "IVE",
+    "language": "韩语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "韩语",
+      "流行",
+      "经典"
+    ],
+    "summary": "IVE · 韩语 · 流行",
+    "note": "IVE",
+    "accent": "linear-gradient(135deg,#4e4173 0%,#191423 100%)"
+  },
+  {
+    "slug": "first-love-215",
+    "title": "First Love · 馆藏2",
+    "artist": "宇多田光",
+    "language": "日语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "日语",
+      "流行",
+      "馆藏"
+    ],
+    "summary": "宇多田光 · 日语 · 流行",
+    "note": "宇多田光",
+    "accent": "linear-gradient(135deg,#3a6a78 0%,#13252c 100%)"
+  },
+  {
+    "slug": "216",
+    "title": "糸 · 馆藏2",
+    "artist": "中岛美雪",
+    "language": "日语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "日语",
+      "流行",
+      "经典"
+    ],
+    "summary": "中岛美雪 · 日语 · 流行",
+    "note": "中岛美雪",
+    "accent": "linear-gradient(135deg,#31443c 0%,#111714 100%)"
+  },
+  {
+    "slug": "217",
+    "title": "上を向いて歩こう · 馆藏2",
+    "artist": "坂本九",
+    "language": "日语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "日语",
+      "流行",
+      "经典"
+    ],
+    "summary": "坂本九 · 日语 · 流行",
+    "note": "坂本九",
+    "accent": "linear-gradient(135deg,#5a4030 0%,#1f1510 100%)"
+  },
+  {
+    "slug": "summer-218",
+    "title": "Summer · 馆藏2",
+    "artist": "久石让",
+    "language": "日语",
+    "genre": "纯音乐",
+    "region": "亚洲",
+    "tags": [
+      "日语",
+      "纯音乐",
+      "经典"
+    ],
+    "summary": "久石让 · 日语 · 纯音乐",
+    "note": "久石让",
+    "accent": "linear-gradient(135deg,#364456 0%,#121820 100%)"
+  },
+  {
+    "slug": "radwimps-219",
+    "title": "なんでもないや · 馆藏2",
+    "artist": "RADWIMPS",
+    "language": "日语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "日语",
+      "流行",
+      "经典"
+    ],
+    "summary": "RADWIMPS · 日语 · 流行",
+    "note": "RADWIMPS",
+    "accent": "linear-gradient(135deg,#6b5140 0%,#221912 100%)"
+  },
+  {
+    "slug": "lemon-220",
+    "title": "Lemon · 馆藏2",
+    "artist": "米津玄师",
+    "language": "日语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "日语",
+      "流行",
+      "馆藏"
+    ],
+    "summary": "米津玄师 · 日语 · 流行",
+    "note": "米津玄师",
+    "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)"
+  },
+  {
+    "slug": "yoasobi-221",
+    "title": "夜に駆ける · 馆藏2",
+    "artist": "YOASOBI",
+    "language": "日语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "日语",
+      "流行",
+      "经典"
+    ],
+    "summary": "YOASOBI · 日语 · 流行",
+    "note": "YOASOBI",
+    "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)"
+  },
+  {
+    "slug": "222",
+    "title": "瞳をとじて · 馆藏2",
+    "artist": "平井坚",
+    "language": "日语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "日语",
+      "流行",
+      "经典"
+    ],
+    "summary": "平井坚 · 日语 · 流行",
+    "note": "平井坚",
+    "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)"
+  },
+  {
+    "slug": "radwimps-223",
+    "title": "前前前世 · 馆藏2",
+    "artist": "RADWIMPS",
+    "language": "日语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "日语",
+      "流行",
+      "经典"
+    ],
+    "summary": "RADWIMPS · 日语 · 流行",
+    "note": "RADWIMPS",
+    "accent": "linear-gradient(135deg,#35574d 0%,#101917 100%)"
+  },
+  {
+    "slug": "aimer-224",
+    "title": "カタオモイ · 馆藏2",
+    "artist": "Aimer",
+    "language": "日语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "日语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Aimer · 日语 · 流行",
+    "note": "Aimer",
+    "accent": "linear-gradient(135deg,#4e4173 0%,#191423 100%)"
+  },
+  {
+    "slug": "bump-of-chicken-225",
+    "title": "天体観測 · 馆藏2",
+    "artist": "BUMP OF CHICKEN",
+    "language": "日语",
+    "genre": "摇滚",
+    "region": "亚洲",
+    "tags": [
+      "日语",
+      "摇滚",
+      "馆藏"
+    ],
+    "summary": "BUMP OF CHICKEN · 日语 · 摇滚",
+    "note": "BUMP OF CHICKEN",
+    "accent": "linear-gradient(135deg,#3a6a78 0%,#13252c 100%)"
+  },
+  {
+    "slug": "dith-piaf-la-vie-en-rose-226",
+    "title": "La Vie en rose · 馆藏2",
+    "artist": "Édith Piaf",
+    "language": "法语",
+    "genre": "香颂",
+    "region": "全球",
+    "tags": [
+      "法语",
+      "香颂",
+      "经典"
+    ],
+    "summary": "Édith Piaf · 法语 · 香颂",
+    "note": "Édith Piaf",
+    "accent": "linear-gradient(135deg,#31443c 0%,#111714 100%)"
+  },
+  {
+    "slug": "charles-aznavour-la-boh-me-227",
+    "title": "La Bohème · 馆藏2",
+    "artist": "Charles Aznavour",
+    "language": "法语",
+    "genre": "香颂",
+    "region": "全球",
+    "tags": [
+      "法语",
+      "香颂",
+      "经典"
+    ],
+    "summary": "Charles Aznavour · 法语 · 香颂",
+    "note": "Charles Aznavour",
+    "accent": "linear-gradient(135deg,#5a4030 0%,#1f1510 100%)"
+  },
+  {
+    "slug": "lara-fabian-je-t-aime-228",
+    "title": "Je t'aime · 馆藏2",
+    "artist": "Lara Fabian",
+    "language": "法语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "法语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Lara Fabian · 法语 · 流行",
+    "note": "Lara Fabian",
+    "accent": "linear-gradient(135deg,#364456 0%,#121820 100%)"
+  },
+  {
+    "slug": "stromae-alors-on-danse-229",
+    "title": "Alors on danse · 馆藏2",
+    "artist": "Stromae",
+    "language": "法语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "法语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Stromae · 法语 · 流行",
+    "note": "Stromae",
+    "accent": "linear-gradient(135deg,#6b5140 0%,#221912 100%)"
+  },
+  {
+    "slug": "indila-derni-re-danse-230",
+    "title": "Dernière danse · 馆藏2",
+    "artist": "Indila",
+    "language": "法语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "法语",
+      "流行",
+      "馆藏"
+    ],
+    "summary": "Indila · 法语 · 流行",
+    "note": "Indila",
+    "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)"
+  },
+  {
+    "slug": "zaz-je-veux-231",
+    "title": "Je veux · 馆藏2",
+    "artist": "Zaz",
+    "language": "法语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "法语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Zaz · 法语 · 流行",
+    "note": "Zaz",
+    "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)"
+  },
+  {
+    "slug": "dith-piaf-non-je-ne-regrette-rien-232",
+    "title": "Non, je ne regrette rien · 馆藏2",
+    "artist": "Édith Piaf",
+    "language": "法语",
+    "genre": "香颂",
+    "region": "全球",
+    "tags": [
+      "法语",
+      "香颂",
+      "经典"
+    ],
+    "summary": "Édith Piaf · 法语 · 香颂",
+    "note": "Édith Piaf",
+    "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)"
+  },
+  {
+    "slug": "jacques-brel-ne-me-quitte-pas-233",
+    "title": "Ne me quitte pas · 馆藏2",
+    "artist": "Jacques Brel",
+    "language": "法语",
+    "genre": "香颂",
+    "region": "全球",
+    "tags": [
+      "法语",
+      "香颂",
+      "经典"
+    ],
+    "summary": "Jacques Brel · 法语 · 香颂",
+    "note": "Jacques Brel",
+    "accent": "linear-gradient(135deg,#35574d 0%,#101917 100%)"
+  },
+  {
+    "slug": "ludovico-einaudi-nuvole-bianche-234",
+    "title": "Nuvole Bianche · 馆藏2",
+    "artist": "Ludovico Einaudi",
+    "language": "纯音乐",
+    "genre": "纯音乐",
+    "region": "全球",
+    "tags": [
+      "纯音乐",
+      "纯音乐",
+      "经典"
+    ],
+    "summary": "Ludovico Einaudi · 纯音乐 · 纯音乐",
+    "note": "Ludovico Einaudi",
+    "accent": "linear-gradient(135deg,#4e4173 0%,#191423 100%)"
+  },
+  {
+    "slug": "yiruma-river-flows-in-you-235",
+    "title": "River Flows in You · 馆藏2",
+    "artist": "Yiruma",
+    "language": "纯音乐",
+    "genre": "纯音乐",
+    "region": "全球",
+    "tags": [
+      "纯音乐",
+      "纯音乐",
+      "馆藏"
+    ],
+    "summary": "Yiruma · 纯音乐 · 纯音乐",
+    "note": "Yiruma",
+    "accent": "linear-gradient(135deg,#3a6a78 0%,#13252c 100%)"
+  },
+  {
+    "slug": "richard-clayderman-ballade-pour-adeline-236",
+    "title": "Ballade pour Adeline · 馆藏2",
+    "artist": "Richard Clayderman",
+    "language": "纯音乐",
+    "genre": "纯音乐",
+    "region": "全球",
+    "tags": [
+      "纯音乐",
+      "纯音乐",
+      "经典"
+    ],
+    "summary": "Richard Clayderman · 纯音乐 · 纯音乐",
+    "note": "Richard Clayderman",
+    "accent": "linear-gradient(135deg,#31443c 0%,#111714 100%)"
+  },
+  {
+    "slug": "merry-christmas-mr-lawrence-237",
+    "title": "Merry Christmas Mr. Lawrence · 馆藏2",
+    "artist": "坂本龙一",
+    "language": "纯音乐",
+    "genre": "纯音乐",
+    "region": "全球",
+    "tags": [
+      "纯音乐",
+      "纯音乐",
+      "经典"
+    ],
+    "summary": "坂本龙一 · 纯音乐 · 纯音乐",
+    "note": "坂本龙一",
+    "accent": "linear-gradient(135deg,#5a4030 0%,#1f1510 100%)"
+  },
+  {
+    "slug": "vangelis-chariots-of-fire-238",
+    "title": "Chariots of Fire · 馆藏2",
+    "artist": "Vangelis",
+    "language": "纯音乐",
+    "genre": "电影原声",
+    "region": "全球",
+    "tags": [
+      "纯音乐",
+      "电影原声",
+      "经典"
+    ],
+    "summary": "Vangelis · 纯音乐 · 电影原声",
+    "note": "Vangelis",
+    "accent": "linear-gradient(135deg,#364456 0%,#121820 100%)"
+  },
+  {
+    "slug": "hans-zimmer-time-239",
+    "title": "Time · 馆藏2",
+    "artist": "Hans Zimmer",
+    "language": "纯音乐",
+    "genre": "电影原声",
+    "region": "全球",
+    "tags": [
+      "纯音乐",
+      "电影原声",
+      "经典"
+    ],
+    "summary": "Hans Zimmer · 纯音乐 · 电影原声",
+    "note": "Hans Zimmer",
+    "accent": "linear-gradient(135deg,#6b5140 0%,#221912 100%)"
+  },
+  {
+    "slug": "john-williams-hedwig-s-theme-240",
+    "title": "Hedwig's Theme · 馆藏2",
+    "artist": "John Williams",
+    "language": "纯音乐",
+    "genre": "电影原声",
+    "region": "全球",
+    "tags": [
+      "纯音乐",
+      "电影原声",
+      "馆藏"
+    ],
+    "summary": "John Williams · 纯音乐 · 电影原声",
+    "note": "John Williams",
+    "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)"
+  },
+  {
+    "slug": "ennio-morricone-gabriel-s-oboe-241",
+    "title": "Gabriel's Oboe · 馆藏2",
+    "artist": "Ennio Morricone",
+    "language": "纯音乐",
+    "genre": "电影原声",
+    "region": "全球",
+    "tags": [
+      "纯音乐",
+      "电影原声",
+      "经典"
+    ],
+    "summary": "Ennio Morricone · 纯音乐 · 电影原声",
+    "note": "Ennio Morricone",
+    "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)"
+  },
+  {
+    "slug": "beethoven-symphony-no-5-242",
+    "title": "Symphony No.5 · 馆藏2",
+    "artist": "Beethoven",
+    "language": "古典",
+    "genre": "古典",
+    "region": "全球",
+    "tags": [
+      "古典",
+      "古典",
+      "经典"
+    ],
+    "summary": "Beethoven · 古典 · 古典",
+    "note": "Beethoven",
+    "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)"
+  },
+  {
+    "slug": "beethoven-moonlight-sonata-243",
+    "title": "Moonlight Sonata · 馆藏2",
+    "artist": "Beethoven",
+    "language": "古典",
+    "genre": "古典",
+    "region": "全球",
+    "tags": [
+      "古典",
+      "古典",
+      "经典"
+    ],
+    "summary": "Beethoven · 古典 · 古典",
+    "note": "Beethoven",
+    "accent": "linear-gradient(135deg,#35574d 0%,#101917 100%)"
+  },
+  {
+    "slug": "mozart-eine-kleine-nachtmusik-244",
+    "title": "Eine kleine Nachtmusik · 馆藏2",
+    "artist": "Mozart",
+    "language": "古典",
+    "genre": "古典",
+    "region": "全球",
+    "tags": [
+      "古典",
+      "古典",
+      "经典"
+    ],
+    "summary": "Mozart · 古典 · 古典",
+    "note": "Mozart",
+    "accent": "linear-gradient(135deg,#4e4173 0%,#191423 100%)"
+  },
+  {
+    "slug": "bach-cello-suite-no-1-245",
+    "title": "Cello Suite No.1 · 馆藏2",
+    "artist": "Bach",
+    "language": "古典",
+    "genre": "古典",
+    "region": "全球",
+    "tags": [
+      "古典",
+      "古典",
+      "馆藏"
+    ],
+    "summary": "Bach · 古典 · 古典",
+    "note": "Bach",
+    "accent": "linear-gradient(135deg,#3a6a78 0%,#13252c 100%)"
+  },
+  {
+    "slug": "chopin-nocturne-op-9-no-2-246",
+    "title": "Nocturne Op.9 No.2 · 馆藏2",
+    "artist": "Chopin",
+    "language": "古典",
+    "genre": "古典",
+    "region": "全球",
+    "tags": [
+      "古典",
+      "古典",
+      "经典"
+    ],
+    "summary": "Chopin · 古典 · 古典",
+    "note": "Chopin",
+    "accent": "linear-gradient(135deg,#31443c 0%,#111714 100%)"
+  },
+  {
+    "slug": "tchaikovsky-swan-lake-247",
+    "title": "Swan Lake · 馆藏2",
+    "artist": "Tchaikovsky",
+    "language": "古典",
+    "genre": "古典",
+    "region": "全球",
+    "tags": [
+      "古典",
+      "古典",
+      "经典"
+    ],
+    "summary": "Tchaikovsky · 古典 · 古典",
+    "note": "Tchaikovsky",
+    "accent": "linear-gradient(135deg,#5a4030 0%,#1f1510 100%)"
+  },
+  {
+    "slug": "debussy-clair-de-lune-248",
+    "title": "Clair de Lune · 馆藏2",
+    "artist": "Debussy",
+    "language": "古典",
+    "genre": "古典",
+    "region": "全球",
+    "tags": [
+      "古典",
+      "古典",
+      "经典"
+    ],
+    "summary": "Debussy · 古典 · 古典",
+    "note": "Debussy",
+    "accent": "linear-gradient(135deg,#364456 0%,#121820 100%)"
+  },
+  {
+    "slug": "ravel-bol-ro-249",
+    "title": "Boléro · 馆藏2",
+    "artist": "Ravel",
+    "language": "古典",
+    "genre": "古典",
+    "region": "全球",
+    "tags": [
+      "古典",
+      "古典",
+      "经典"
+    ],
+    "summary": "Ravel · 古典 · 古典",
+    "note": "Ravel",
+    "accent": "linear-gradient(135deg,#6b5140 0%,#221912 100%)"
+  },
+  {
+    "slug": "pachelbel-canon-in-d-250",
+    "title": "Canon in D · 馆藏2",
+    "artist": "Pachelbel",
+    "language": "古典",
+    "genre": "古典",
+    "region": "全球",
+    "tags": [
+      "古典",
+      "古典",
+      "馆藏"
+    ],
+    "summary": "Pachelbel · 古典 · 古典",
+    "note": "Pachelbel",
+    "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)"
+  },
+  {
+    "slug": "vivaldi-four-seasons-spring-251",
+    "title": "Four Seasons: Spring · 馆藏2",
+    "artist": "Vivaldi",
+    "language": "古典",
+    "genre": "古典",
+    "region": "全球",
+    "tags": [
+      "古典",
+      "古典",
+      "经典"
+    ],
+    "summary": "Vivaldi · 古典 · 古典",
+    "note": "Vivaldi",
+    "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)"
+  },
+  {
+    "slug": "252",
+    "title": "月亮代表我的心 · 馆藏3",
+    "artist": "邓丽君",
+    "language": "华语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "流行",
+      "经典"
+    ],
+    "summary": "邓丽君 · 华语 · 流行",
+    "note": "邓丽君",
+    "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)"
+  },
+  {
+    "slug": "253",
+    "title": "红豆 · 馆藏3",
+    "artist": "王菲",
+    "language": "华语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "流行",
+      "经典"
+    ],
+    "summary": "王菲 · 华语 · 流行",
+    "note": "王菲",
+    "accent": "linear-gradient(135deg,#35574d 0%,#101917 100%)"
+  },
+  {
+    "slug": "254",
+    "title": "青花瓷 · 馆藏3",
+    "artist": "周杰伦",
+    "language": "华语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "流行",
+      "经典"
+    ],
+    "summary": "周杰伦 · 华语 · 流行",
+    "note": "周杰伦",
+    "accent": "linear-gradient(135deg,#4e4173 0%,#191423 100%)"
+  },
+  {
+    "slug": "255",
+    "title": "晴天 · 馆藏3",
+    "artist": "周杰伦",
+    "language": "华语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "流行",
+      "馆藏"
+    ],
+    "summary": "周杰伦 · 华语 · 流行",
+    "note": "周杰伦",
+    "accent": "linear-gradient(135deg,#3a6a78 0%,#13252c 100%)"
+  },
+  {
+    "slug": "256",
+    "title": "江南 · 馆藏3",
+    "artist": "林俊杰",
+    "language": "华语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "流行",
+      "经典"
+    ],
+    "summary": "林俊杰 · 华语 · 流行",
+    "note": "林俊杰",
+    "accent": "linear-gradient(135deg,#31443c 0%,#111714 100%)"
+  },
+  {
+    "slug": "257",
+    "title": "十年 · 馆藏3",
+    "artist": "陈奕迅",
+    "language": "华语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "流行",
+      "经典"
+    ],
+    "summary": "陈奕迅 · 华语 · 流行",
+    "note": "陈奕迅",
+    "accent": "linear-gradient(135deg,#5a4030 0%,#1f1510 100%)"
+  },
+  {
+    "slug": "258",
+    "title": "吻别 · 馆藏3",
+    "artist": "张学友",
+    "language": "华语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "流行",
+      "经典"
+    ],
+    "summary": "张学友 · 华语 · 流行",
+    "note": "张学友",
+    "accent": "linear-gradient(135deg,#364456 0%,#121820 100%)"
+  },
+  {
+    "slug": "259",
+    "title": "山丘 · 馆藏3",
+    "artist": "李宗盛",
+    "language": "华语",
+    "genre": "民谣",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "民谣",
+      "经典"
+    ],
+    "summary": "李宗盛 · 华语 · 民谣",
+    "note": "李宗盛",
+    "accent": "linear-gradient(135deg,#6b5140 0%,#221912 100%)"
+  },
+  {
+    "slug": "260",
+    "title": "平凡之路 · 馆藏3",
+    "artist": "朴树",
+    "language": "华语",
+    "genre": "民谣",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "民谣",
+      "馆藏"
+    ],
+    "summary": "朴树 · 华语 · 民谣",
+    "note": "朴树",
+    "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)"
+  },
+  {
+    "slug": "261",
+    "title": "蓝莲花 · 馆藏3",
+    "artist": "许巍",
+    "language": "华语",
+    "genre": "摇滚",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "摇滚",
+      "经典"
+    ],
+    "summary": "许巍 · 华语 · 摇滚",
+    "note": "许巍",
+    "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)"
+  },
+  {
+    "slug": "262",
+    "title": "挪威的森林 · 馆藏3",
+    "artist": "伍佰",
+    "language": "华语",
+    "genre": "摇滚",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "摇滚",
+      "经典"
+    ],
+    "summary": "伍佰 · 华语 · 摇滚",
+    "note": "伍佰",
+    "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)"
+  },
+  {
+    "slug": "263",
+    "title": "一无所有 · 馆藏3",
+    "artist": "崔健",
+    "language": "华语",
+    "genre": "摇滚",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "摇滚",
+      "经典"
+    ],
+    "summary": "崔健 · 华语 · 摇滚",
+    "note": "崔健",
+    "accent": "linear-gradient(135deg,#35574d 0%,#101917 100%)"
+  },
+  {
+    "slug": "264",
+    "title": "童年 · 馆藏3",
+    "artist": "罗大佑",
+    "language": "华语",
+    "genre": "民谣",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "民谣",
+      "经典"
+    ],
+    "summary": "罗大佑 · 华语 · 民谣",
+    "note": "罗大佑",
+    "accent": "linear-gradient(135deg,#4e4173 0%,#191423 100%)"
+  },
+  {
+    "slug": "265",
+    "title": "慢慢喜欢你 · 馆藏3",
+    "artist": "莫文蔚",
+    "language": "华语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "流行",
+      "馆藏"
+    ],
+    "summary": "莫文蔚 · 华语 · 流行",
+    "note": "莫文蔚",
+    "accent": "linear-gradient(135deg,#3a6a78 0%,#13252c 100%)"
+  },
+  {
+    "slug": "266",
+    "title": "成都 · 馆藏3",
+    "artist": "赵雷",
+    "language": "华语",
+    "genre": "民谣",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "民谣",
+      "经典"
+    ],
+    "summary": "赵雷 · 华语 · 民谣",
+    "note": "赵雷",
+    "accent": "linear-gradient(135deg,#31443c 0%,#111714 100%)"
+  },
+  {
+    "slug": "267",
+    "title": "爱，很简单 · 馆藏3",
+    "artist": "陶喆",
+    "language": "华语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "流行",
+      "经典"
+    ],
+    "summary": "陶喆 · 华语 · 流行",
+    "note": "陶喆",
+    "accent": "linear-gradient(135deg,#5a4030 0%,#1f1510 100%)"
+  },
+  {
+    "slug": "268",
+    "title": "遇见 · 馆藏3",
+    "artist": "孙燕姿",
+    "language": "华语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "流行",
+      "经典"
+    ],
+    "summary": "孙燕姿 · 华语 · 流行",
+    "note": "孙燕姿",
+    "accent": "linear-gradient(135deg,#364456 0%,#121820 100%)"
+  },
+  {
+    "slug": "269",
+    "title": "勇气 · 馆藏3",
+    "artist": "梁静茹",
+    "language": "华语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "流行",
+      "经典"
+    ],
+    "summary": "梁静茹 · 华语 · 流行",
+    "note": "梁静茹",
+    "accent": "linear-gradient(135deg,#6b5140 0%,#221912 100%)"
+  },
+  {
+    "slug": "270",
+    "title": "倔强 · 馆藏3",
+    "artist": "五月天",
+    "language": "华语",
+    "genre": "摇滚",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "摇滚",
+      "馆藏"
+    ],
+    "summary": "五月天 · 华语 · 摇滚",
+    "note": "五月天",
+    "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)"
+  },
+  {
+    "slug": "271",
+    "title": "小情歌 · 馆藏3",
+    "artist": "苏打绿",
+    "language": "华语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "流行",
+      "经典"
+    ],
+    "summary": "苏打绿 · 华语 · 流行",
+    "note": "苏打绿",
+    "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)"
+  },
+  {
+    "slug": "272",
+    "title": "朋友 · 馆藏3",
+    "artist": "周华健",
+    "language": "华语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "流行",
+      "经典"
+    ],
+    "summary": "周华健 · 华语 · 流行",
+    "note": "周华健",
+    "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)"
+  },
+  {
+    "slug": "273",
+    "title": "心太软 · 馆藏3",
+    "artist": "任贤齐",
+    "language": "华语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "流行",
+      "经典"
+    ],
+    "summary": "任贤齐 · 华语 · 流行",
+    "note": "任贤齐",
+    "accent": "linear-gradient(135deg,#35574d 0%,#101917 100%)"
+  },
+  {
+    "slug": "274",
+    "title": "唯一 · 馆藏3",
+    "artist": "王力宏",
+    "language": "华语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "流行",
+      "经典"
+    ],
+    "summary": "王力宏 · 华语 · 流行",
+    "note": "王力宏",
+    "accent": "linear-gradient(135deg,#4e4173 0%,#191423 100%)"
+  },
+  {
+    "slug": "275",
+    "title": "至少还有你 · 馆藏3",
+    "artist": "林忆莲",
+    "language": "华语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "流行",
+      "馆藏"
+    ],
+    "summary": "林忆莲 · 华语 · 流行",
+    "note": "林忆莲",
+    "accent": "linear-gradient(135deg,#3a6a78 0%,#13252c 100%)"
+  },
+  {
+    "slug": "276",
+    "title": "夜空中最亮的星 · 馆藏3",
+    "artist": "逃跑计划",
+    "language": "华语",
+    "genre": "摇滚",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "摇滚",
+      "经典"
+    ],
+    "summary": "逃跑计划 · 华语 · 摇滚",
+    "note": "逃跑计划",
+    "accent": "linear-gradient(135deg,#31443c 0%,#111714 100%)"
+  },
+  {
+    "slug": "277",
+    "title": "旅行的意义 · 馆藏3",
+    "artist": "陈绮贞",
+    "language": "华语",
+    "genre": "民谣",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "民谣",
+      "经典"
+    ],
+    "summary": "陈绮贞 · 华语 · 民谣",
+    "note": "陈绮贞",
+    "accent": "linear-gradient(135deg,#5a4030 0%,#1f1510 100%)"
+  },
+  {
+    "slug": "beyond-278",
+    "title": "海阔天空 · 馆藏3",
+    "artist": "Beyond",
+    "language": "粤语",
+    "genre": "摇滚",
+    "region": "亚洲",
+    "tags": [
+      "粤语",
+      "摇滚",
+      "经典"
+    ],
+    "summary": "Beyond · 粤语 · 摇滚",
+    "note": "Beyond",
+    "accent": "linear-gradient(135deg,#364456 0%,#121820 100%)"
+  },
+  {
+    "slug": "279",
+    "title": "富士山下 · 馆藏3",
+    "artist": "陈奕迅",
+    "language": "粤语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "粤语",
+      "流行",
+      "经典"
+    ],
+    "summary": "陈奕迅 · 粤语 · 流行",
+    "note": "陈奕迅",
+    "accent": "linear-gradient(135deg,#6b5140 0%,#221912 100%)"
+  },
+  {
+    "slug": "k-280",
+    "title": "K歌之王 · 馆藏3",
+    "artist": "陈奕迅",
+    "language": "粤语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "粤语",
+      "流行",
+      "馆藏"
+    ],
+    "summary": "陈奕迅 · 粤语 · 流行",
+    "note": "陈奕迅",
+    "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)"
+  },
+  {
+    "slug": "281",
+    "title": "风继续吹 · 馆藏3",
+    "artist": "张国荣",
+    "language": "粤语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "粤语",
+      "流行",
+      "经典"
+    ],
+    "summary": "张国荣 · 粤语 · 流行",
+    "note": "张国荣",
+    "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)"
+  },
+  {
+    "slug": "282",
+    "title": "夕阳之歌 · 馆藏3",
+    "artist": "梅艳芳",
+    "language": "粤语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "粤语",
+      "流行",
+      "经典"
+    ],
+    "summary": "梅艳芳 · 粤语 · 流行",
+    "note": "梅艳芳",
+    "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)"
+  },
+  {
+    "slug": "283",
+    "title": "遥远的她 · 馆藏3",
+    "artist": "张学友",
+    "language": "粤语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "粤语",
+      "流行",
+      "经典"
+    ],
+    "summary": "张学友 · 粤语 · 流行",
+    "note": "张学友",
+    "accent": "linear-gradient(135deg,#35574d 0%,#101917 100%)"
+  },
+  {
+    "slug": "284",
+    "title": "讲不出再见 · 馆藏3",
+    "artist": "谭咏麟",
+    "language": "粤语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "粤语",
+      "流行",
+      "经典"
+    ],
+    "summary": "谭咏麟 · 粤语 · 流行",
+    "note": "谭咏麟",
+    "accent": "linear-gradient(135deg,#4e4173 0%,#191423 100%)"
+  },
+  {
+    "slug": "285",
+    "title": "偏偏喜欢你 · 馆藏3",
+    "artist": "陈百强",
+    "language": "粤语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "粤语",
+      "流行",
+      "馆藏"
+    ],
+    "summary": "陈百强 · 粤语 · 流行",
+    "note": "陈百强",
+    "accent": "linear-gradient(135deg,#3a6a78 0%,#13252c 100%)"
+  },
+  {
+    "slug": "286",
+    "title": "一生所爱 · 馆藏3",
+    "artist": "卢冠廷",
+    "language": "粤语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "粤语",
+      "流行",
+      "经典"
+    ],
+    "summary": "卢冠廷 · 粤语 · 流行",
+    "note": "卢冠廷",
+    "accent": "linear-gradient(135deg,#31443c 0%,#111714 100%)"
+  },
+  {
+    "slug": "287",
+    "title": "可惜我是水瓶座 · 馆藏3",
+    "artist": "杨千嬅",
+    "language": "粤语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "粤语",
+      "流行",
+      "经典"
+    ],
+    "summary": "杨千嬅 · 粤语 · 流行",
+    "note": "杨千嬅",
+    "accent": "linear-gradient(135deg,#5a4030 0%,#1f1510 100%)"
+  },
+  {
+    "slug": "beyond-288",
+    "title": "喜欢你 · 馆藏3",
+    "artist": "Beyond",
+    "language": "粤语",
+    "genre": "摇滚",
+    "region": "亚洲",
+    "tags": [
+      "粤语",
+      "摇滚",
+      "经典"
+    ],
+    "summary": "Beyond · 粤语 · 摇滚",
+    "note": "Beyond",
+    "accent": "linear-gradient(135deg,#364456 0%,#121820 100%)"
+  },
+  {
+    "slug": "289",
+    "title": "当年情 · 馆藏3",
+    "artist": "张国荣",
+    "language": "粤语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "粤语",
+      "流行",
+      "经典"
+    ],
+    "summary": "张国荣 · 粤语 · 流行",
+    "note": "张国荣",
+    "accent": "linear-gradient(135deg,#6b5140 0%,#221912 100%)"
+  },
+  {
+    "slug": "290",
+    "title": "千千阙歌 · 馆藏3",
+    "artist": "陈慧娴",
+    "language": "粤语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "粤语",
+      "流行",
+      "馆藏"
+    ],
+    "summary": "陈慧娴 · 粤语 · 流行",
+    "note": "陈慧娴",
+    "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)"
+  },
+  {
+    "slug": "291",
+    "title": "月半小夜曲 · 馆藏3",
+    "artist": "李克勤",
+    "language": "粤语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "粤语",
+      "流行",
+      "经典"
+    ],
+    "summary": "李克勤 · 粤语 · 流行",
+    "note": "李克勤",
+    "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)"
+  },
+  {
+    "slug": "the-beatles-let-it-be-292",
+    "title": "Let It Be · 馆藏3",
+    "artist": "The Beatles",
+    "language": "英语",
+    "genre": "摇滚",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "摇滚",
+      "经典"
+    ],
+    "summary": "The Beatles · 英语 · 摇滚",
+    "note": "The Beatles",
+    "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)"
+  },
+  {
+    "slug": "the-beatles-hey-jude-293",
+    "title": "Hey Jude · 馆藏3",
+    "artist": "The Beatles",
+    "language": "英语",
+    "genre": "摇滚",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "摇滚",
+      "经典"
+    ],
+    "summary": "The Beatles · 英语 · 摇滚",
+    "note": "The Beatles",
+    "accent": "linear-gradient(135deg,#35574d 0%,#101917 100%)"
+  },
+  {
+    "slug": "queen-bohemian-rhapsody-294",
+    "title": "Bohemian Rhapsody · 馆藏3",
+    "artist": "Queen",
+    "language": "英语",
+    "genre": "摇滚",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "摇滚",
+      "经典"
+    ],
+    "summary": "Queen · 英语 · 摇滚",
+    "note": "Queen",
+    "accent": "linear-gradient(135deg,#4e4173 0%,#191423 100%)"
+  },
+  {
+    "slug": "eagles-hotel-california-295",
+    "title": "Hotel California · 馆藏3",
+    "artist": "Eagles",
+    "language": "英语",
+    "genre": "摇滚",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "摇滚",
+      "馆藏"
+    ],
+    "summary": "Eagles · 英语 · 摇滚",
+    "note": "Eagles",
+    "accent": "linear-gradient(135deg,#3a6a78 0%,#13252c 100%)"
+  },
+  {
+    "slug": "michael-jackson-billie-jean-296",
+    "title": "Billie Jean · 馆藏3",
+    "artist": "Michael Jackson",
+    "language": "英语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Michael Jackson · 英语 · 流行",
+    "note": "Michael Jackson",
+    "accent": "linear-gradient(135deg,#31443c 0%,#111714 100%)"
+  },
+  {
+    "slug": "whitney-houston-i-will-always-love-you-297",
+    "title": "I Will Always Love You · 馆藏3",
+    "artist": "Whitney Houston",
+    "language": "英语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Whitney Houston · 英语 · 流行",
+    "note": "Whitney Houston",
+    "accent": "linear-gradient(135deg,#5a4030 0%,#1f1510 100%)"
+  },
+  {
+    "slug": "celine-dion-my-heart-will-go-on-298",
+    "title": "My Heart Will Go On · 馆藏3",
+    "artist": "Celine Dion",
+    "language": "英语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Celine Dion · 英语 · 流行",
+    "note": "Celine Dion",
+    "accent": "linear-gradient(135deg,#364456 0%,#121820 100%)"
+  },
+  {
+    "slug": "adele-someone-like-you-299",
+    "title": "Someone Like You · 馆藏3",
+    "artist": "Adele",
+    "language": "英语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Adele · 英语 · 流行",
+    "note": "Adele",
+    "accent": "linear-gradient(135deg,#6b5140 0%,#221912 100%)"
+  },
+  {
+    "slug": "ed-sheeran-perfect-300",
+    "title": "Perfect · 馆藏3",
+    "artist": "Ed Sheeran",
+    "language": "英语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "流行",
+      "馆藏"
+    ],
+    "summary": "Ed Sheeran · 英语 · 流行",
+    "note": "Ed Sheeran",
+    "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)"
+  },
+  {
+    "slug": "john-lennon-imagine-301",
+    "title": "Imagine · 馆藏3",
+    "artist": "John Lennon",
+    "language": "英语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "流行",
+      "经典"
+    ],
+    "summary": "John Lennon · 英语 · 流行",
+    "note": "John Lennon",
+    "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)"
+  },
+  {
+    "slug": "abba-dancing-queen-302",
+    "title": "Dancing Queen · 馆藏3",
+    "artist": "ABBA",
+    "language": "英语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "流行",
+      "经典"
+    ],
+    "summary": "ABBA · 英语 · 流行",
+    "note": "ABBA",
+    "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)"
+  },
+  {
+    "slug": "nirvana-smells-like-teen-spirit-303",
+    "title": "Smells Like Teen Spirit · 馆藏3",
+    "artist": "Nirvana",
+    "language": "英语",
+    "genre": "摇滚",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "摇滚",
+      "经典"
+    ],
+    "summary": "Nirvana · 英语 · 摇滚",
+    "note": "Nirvana",
+    "accent": "linear-gradient(135deg,#35574d 0%,#101917 100%)"
+  },
+  {
+    "slug": "coldplay-yellow-304",
+    "title": "Yellow · 馆藏3",
+    "artist": "Coldplay",
+    "language": "英语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Coldplay · 英语 · 流行",
+    "note": "Coldplay",
+    "accent": "linear-gradient(135deg,#4e4173 0%,#191423 100%)"
+  },
+  {
+    "slug": "linkin-park-numb-305",
+    "title": "Numb · 馆藏3",
+    "artist": "Linkin Park",
+    "language": "英语",
+    "genre": "摇滚",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "摇滚",
+      "馆藏"
+    ],
+    "summary": "Linkin Park · 英语 · 摇滚",
+    "note": "Linkin Park",
+    "accent": "linear-gradient(135deg,#3a6a78 0%,#13252c 100%)"
+  },
+  {
+    "slug": "bon-jovi-it-s-my-life-306",
+    "title": "It's My Life · 馆藏3",
+    "artist": "Bon Jovi",
+    "language": "英语",
+    "genre": "摇滚",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "摇滚",
+      "经典"
+    ],
+    "summary": "Bon Jovi · 英语 · 摇滚",
+    "note": "Bon Jovi",
+    "accent": "linear-gradient(135deg,#31443c 0%,#111714 100%)"
+  },
+  {
+    "slug": "frank-sinatra-my-way-307",
+    "title": "My Way · 馆藏3",
+    "artist": "Frank Sinatra",
+    "language": "英语",
+    "genre": "爵士",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "爵士",
+      "经典"
+    ],
+    "summary": "Frank Sinatra · 英语 · 爵士",
+    "note": "Frank Sinatra",
+    "accent": "linear-gradient(135deg,#5a4030 0%,#1f1510 100%)"
+  },
+  {
+    "slug": "louis-armstrong-what-a-wonderful-world-308",
+    "title": "What a Wonderful World · 馆藏3",
+    "artist": "Louis Armstrong",
+    "language": "英语",
+    "genre": "爵士",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "爵士",
+      "经典"
+    ],
+    "summary": "Louis Armstrong · 英语 · 爵士",
+    "note": "Louis Armstrong",
+    "accent": "linear-gradient(135deg,#364456 0%,#121820 100%)"
+  },
+  {
+    "slug": "bob-dylan-blowin-in-the-wind-309",
+    "title": "Blowin' in the Wind · 馆藏3",
+    "artist": "Bob Dylan",
+    "language": "英语",
+    "genre": "民谣",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "民谣",
+      "经典"
+    ],
+    "summary": "Bob Dylan · 英语 · 民谣",
+    "note": "Bob Dylan",
+    "accent": "linear-gradient(135deg,#6b5140 0%,#221912 100%)"
+  },
+  {
+    "slug": "taylor-swift-love-story-310",
+    "title": "Love Story · 馆藏3",
+    "artist": "Taylor Swift",
+    "language": "英语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "流行",
+      "馆藏"
+    ],
+    "summary": "Taylor Swift · 英语 · 流行",
+    "note": "Taylor Swift",
+    "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)"
+  },
+  {
+    "slug": "bruno-mars-just-the-way-you-are-311",
+    "title": "Just the Way You Are · 馆藏3",
+    "artist": "Bruno Mars",
+    "language": "英语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Bruno Mars · 英语 · 流行",
+    "note": "Bruno Mars",
+    "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)"
+  },
+  {
+    "slug": "oasis-wonderwall-312",
+    "title": "Wonderwall · 馆藏3",
+    "artist": "Oasis",
+    "language": "英语",
+    "genre": "摇滚",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "摇滚",
+      "经典"
+    ],
+    "summary": "Oasis · 英语 · 摇滚",
+    "note": "Oasis",
+    "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)"
+  },
+  {
+    "slug": "pink-floyd-wish-you-were-here-313",
+    "title": "Wish You Were Here · 馆藏3",
+    "artist": "Pink Floyd",
+    "language": "英语",
+    "genre": "摇滚",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "摇滚",
+      "经典"
+    ],
+    "summary": "Pink Floyd · 英语 · 摇滚",
+    "note": "Pink Floyd",
+    "accent": "linear-gradient(135deg,#35574d 0%,#101917 100%)"
+  },
+  {
+    "slug": "u2-with-or-without-you-314",
+    "title": "With or Without You · 馆藏3",
+    "artist": "U2",
+    "language": "英语",
+    "genre": "摇滚",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "摇滚",
+      "经典"
+    ],
+    "summary": "U2 · 英语 · 摇滚",
+    "note": "U2",
+    "accent": "linear-gradient(135deg,#4e4173 0%,#191423 100%)"
+  },
+  {
+    "slug": "madonna-like-a-prayer-315",
+    "title": "Like a Prayer · 馆藏3",
+    "artist": "Madonna",
+    "language": "英语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "流行",
+      "馆藏"
+    ],
+    "summary": "Madonna · 英语 · 流行",
+    "note": "Madonna",
+    "accent": "linear-gradient(135deg,#3a6a78 0%,#13252c 100%)"
+  },
+  {
+    "slug": "prince-purple-rain-316",
+    "title": "Purple Rain · 馆藏3",
+    "artist": "Prince",
+    "language": "英语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Prince · 英语 · 流行",
+    "note": "Prince",
+    "accent": "linear-gradient(135deg,#31443c 0%,#111714 100%)"
+  },
+  {
+    "slug": "carpenters-yesterday-once-more-317",
+    "title": "Yesterday Once More · 馆藏3",
+    "artist": "Carpenters",
+    "language": "英语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Carpenters · 英语 · 流行",
+    "note": "Carpenters",
+    "accent": "linear-gradient(135deg,#5a4030 0%,#1f1510 100%)"
+  },
+  {
+    "slug": "luis-fonsi-despacito-318",
+    "title": "Despacito · 馆藏3",
+    "artist": "Luis Fonsi",
+    "language": "西班牙语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "西班牙语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Luis Fonsi · 西班牙语 · 流行",
+    "note": "Luis Fonsi",
+    "accent": "linear-gradient(135deg,#364456 0%,#121820 100%)"
+  },
+  {
+    "slug": "jos-feliciano-feliz-navidad-319",
+    "title": "Feliz Navidad · 馆藏3",
+    "artist": "José Feliciano",
+    "language": "西班牙语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "西班牙语",
+      "流行",
+      "经典"
+    ],
+    "summary": "José Feliciano · 西班牙语 · 流行",
+    "note": "José Feliciano",
+    "accent": "linear-gradient(135deg,#6b5140 0%,#221912 100%)"
+  },
+  {
+    "slug": "enrique-iglesias-bailando-320",
+    "title": "Bailando · 馆藏3",
+    "artist": "Enrique Iglesias",
+    "language": "西班牙语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "西班牙语",
+      "流行",
+      "馆藏"
+    ],
+    "summary": "Enrique Iglesias · 西班牙语 · 流行",
+    "note": "Enrique Iglesias",
+    "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)"
+  },
+  {
+    "slug": "shakira-hips-don-t-lie-321",
+    "title": "Hips Don't Lie · 馆藏3",
+    "artist": "Shakira",
+    "language": "西班牙语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "西班牙语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Shakira · 西班牙语 · 流行",
+    "note": "Shakira",
+    "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)"
+  },
+  {
+    "slug": "rosal-a-despech-322",
+    "title": "Despechá · 馆藏3",
+    "artist": "Rosalía",
+    "language": "西班牙语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "西班牙语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Rosalía · 西班牙语 · 流行",
+    "note": "Rosalía",
+    "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)"
+  },
+  {
+    "slug": "man-rayando-el-sol-323",
+    "title": "Rayando el Sol · 馆藏3",
+    "artist": "Maná",
+    "language": "西班牙语",
+    "genre": "摇滚",
+    "region": "全球",
+    "tags": [
+      "西班牙语",
+      "摇滚",
+      "经典"
+    ],
+    "summary": "Maná · 西班牙语 · 摇滚",
+    "note": "Maná",
+    "accent": "linear-gradient(135deg,#35574d 0%,#101917 100%)"
+  },
+  {
+    "slug": "juanes-a-dios-le-pido-324",
+    "title": "A Dios le Pido · 馆藏3",
+    "artist": "Juanes",
+    "language": "西班牙语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "西班牙语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Juanes · 西班牙语 · 流行",
+    "note": "Juanes",
+    "accent": "linear-gradient(135deg,#4e4173 0%,#191423 100%)"
+  },
+  {
+    "slug": "buena-vista-social-club-chan-chan-325",
+    "title": "Chan Chan · 馆藏3",
+    "artist": "Buena Vista Social Club",
+    "language": "西班牙语",
+    "genre": "拉丁",
+    "region": "全球",
+    "tags": [
+      "西班牙语",
+      "拉丁",
+      "馆藏"
+    ],
+    "summary": "Buena Vista Social Club · 西班牙语 · 拉丁",
+    "note": "Buena Vista Social Club",
+    "accent": "linear-gradient(135deg,#3a6a78 0%,#13252c 100%)"
+  },
+  {
+    "slug": "shakira-waka-waka-326",
+    "title": "Waka Waka · 馆藏3",
+    "artist": "Shakira",
+    "language": "西班牙语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "西班牙语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Shakira · 西班牙语 · 流行",
+    "note": "Shakira",
+    "accent": "linear-gradient(135deg,#31443c 0%,#111714 100%)"
+  },
+  {
+    "slug": "ricky-martin-la-copa-de-la-vida-327",
+    "title": "La Copa de la Vida · 馆藏3",
+    "artist": "Ricky Martin",
+    "language": "西班牙语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "西班牙语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Ricky Martin · 西班牙语 · 流行",
+    "note": "Ricky Martin",
+    "accent": "linear-gradient(135deg,#5a4030 0%,#1f1510 100%)"
+  },
+  {
+    "slug": "carlos-gardel-por-una-cabeza-328",
+    "title": "Por una Cabeza · 馆藏3",
+    "artist": "Carlos Gardel",
+    "language": "西班牙语",
+    "genre": "探戈",
+    "region": "全球",
+    "tags": [
+      "西班牙语",
+      "探戈",
+      "经典"
+    ],
+    "summary": "Carlos Gardel · 西班牙语 · 探戈",
+    "note": "Carlos Gardel",
+    "accent": "linear-gradient(135deg,#364456 0%,#121820 100%)"
+  },
+  {
+    "slug": "bts-spring-day-329",
+    "title": "Spring Day · 馆藏3",
+    "artist": "BTS",
+    "language": "韩语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "韩语",
+      "流行",
+      "经典"
+    ],
+    "summary": "BTS · 韩语 · 流行",
+    "note": "BTS",
+    "accent": "linear-gradient(135deg,#6b5140 0%,#221912 100%)"
+  },
+  {
+    "slug": "bts-dynamite-330",
+    "title": "Dynamite · 馆藏3",
+    "artist": "BTS",
+    "language": "韩语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "韩语",
+      "流行",
+      "馆藏"
+    ],
+    "summary": "BTS · 韩语 · 流行",
+    "note": "BTS",
+    "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)"
+  },
+  {
+    "slug": "blackpink-ddu-du-ddu-du-331",
+    "title": "DDU-DU DDU-DU · 馆藏3",
+    "artist": "BLACKPINK",
+    "language": "韩语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "韩语",
+      "流行",
+      "经典"
+    ],
+    "summary": "BLACKPINK · 韩语 · 流行",
+    "note": "BLACKPINK",
+    "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)"
+  },
+  {
+    "slug": "iu-332",
+    "title": "밤편지 · 馆藏3",
+    "artist": "IU",
+    "language": "韩语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "韩语",
+      "流行",
+      "经典"
+    ],
+    "summary": "IU · 韩语 · 流行",
+    "note": "IU",
+    "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)"
+  },
+  {
+    "slug": "bigbang-333",
+    "title": "하루하루 · 馆藏3",
+    "artist": "BIGBANG",
+    "language": "韩语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "韩语",
+      "流行",
+      "经典"
+    ],
+    "summary": "BIGBANG · 韩语 · 流行",
+    "note": "BIGBANG",
+    "accent": "linear-gradient(135deg,#35574d 0%,#101917 100%)"
+  },
+  {
+    "slug": "gee-334",
+    "title": "Gee · 馆藏3",
+    "artist": "少女时代",
+    "language": "韩语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "韩语",
+      "流行",
+      "经典"
+    ],
+    "summary": "少女时代 · 韩语 · 流行",
+    "note": "少女时代",
+    "accent": "linear-gradient(135deg,#4e4173 0%,#191423 100%)"
+  },
+  {
+    "slug": "newjeans-ditto-335",
+    "title": "Ditto · 馆藏3",
+    "artist": "NewJeans",
+    "language": "韩语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "韩语",
+      "流行",
+      "馆藏"
+    ],
+    "summary": "NewJeans · 韩语 · 流行",
+    "note": "NewJeans",
+    "accent": "linear-gradient(135deg,#3a6a78 0%,#13252c 100%)"
+  },
+  {
+    "slug": "exo-336",
+    "title": "으르렁 · 馆藏3",
+    "artist": "EXO",
+    "language": "韩语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "韩语",
+      "流行",
+      "经典"
+    ],
+    "summary": "EXO · 韩语 · 流行",
+    "note": "EXO",
+    "accent": "linear-gradient(135deg,#31443c 0%,#111714 100%)"
+  },
+  {
+    "slug": "bigbang-bang-bang-bang-337",
+    "title": "BANG BANG BANG · 馆藏3",
+    "artist": "BIGBANG",
+    "language": "韩语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "韩语",
+      "流行",
+      "经典"
+    ],
+    "summary": "BIGBANG · 韩语 · 流行",
+    "note": "BIGBANG",
+    "accent": "linear-gradient(135deg,#5a4030 0%,#1f1510 100%)"
+  },
+  {
+    "slug": "twice-cheer-up-338",
+    "title": "Cheer Up · 馆藏3",
+    "artist": "TWICE",
+    "language": "韩语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "韩语",
+      "流行",
+      "经典"
+    ],
+    "summary": "TWICE · 韩语 · 流行",
+    "note": "TWICE",
+    "accent": "linear-gradient(135deg,#364456 0%,#121820 100%)"
+  },
+  {
+    "slug": "aespa-next-level-339",
+    "title": "Next Level · 馆藏3",
+    "artist": "aespa",
+    "language": "韩语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "韩语",
+      "流行",
+      "经典"
+    ],
+    "summary": "aespa · 韩语 · 流行",
+    "note": "aespa",
+    "accent": "linear-gradient(135deg,#6b5140 0%,#221912 100%)"
+  },
+  {
+    "slug": "ive-love-dive-340",
+    "title": "LOVE DIVE · 馆藏3",
+    "artist": "IVE",
+    "language": "韩语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "韩语",
+      "流行",
+      "馆藏"
+    ],
+    "summary": "IVE · 韩语 · 流行",
+    "note": "IVE",
+    "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)"
+  },
+  {
+    "slug": "first-love-341",
+    "title": "First Love · 馆藏3",
+    "artist": "宇多田光",
+    "language": "日语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "日语",
+      "流行",
+      "经典"
+    ],
+    "summary": "宇多田光 · 日语 · 流行",
+    "note": "宇多田光",
+    "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)"
+  },
+  {
+    "slug": "342",
+    "title": "糸 · 馆藏3",
+    "artist": "中岛美雪",
+    "language": "日语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "日语",
+      "流行",
+      "经典"
+    ],
+    "summary": "中岛美雪 · 日语 · 流行",
+    "note": "中岛美雪",
+    "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)"
+  },
+  {
+    "slug": "343",
+    "title": "上を向いて歩こう · 馆藏3",
+    "artist": "坂本九",
+    "language": "日语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "日语",
+      "流行",
+      "经典"
+    ],
+    "summary": "坂本九 · 日语 · 流行",
+    "note": "坂本九",
+    "accent": "linear-gradient(135deg,#35574d 0%,#101917 100%)"
+  },
+  {
+    "slug": "summer-344",
+    "title": "Summer · 馆藏3",
+    "artist": "久石让",
+    "language": "日语",
+    "genre": "纯音乐",
+    "region": "亚洲",
+    "tags": [
+      "日语",
+      "纯音乐",
+      "经典"
+    ],
+    "summary": "久石让 · 日语 · 纯音乐",
+    "note": "久石让",
+    "accent": "linear-gradient(135deg,#4e4173 0%,#191423 100%)"
+  },
+  {
+    "slug": "radwimps-345",
+    "title": "なんでもないや · 馆藏3",
+    "artist": "RADWIMPS",
+    "language": "日语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "日语",
+      "流行",
+      "馆藏"
+    ],
+    "summary": "RADWIMPS · 日语 · 流行",
+    "note": "RADWIMPS",
+    "accent": "linear-gradient(135deg,#3a6a78 0%,#13252c 100%)"
+  },
+  {
+    "slug": "lemon-346",
+    "title": "Lemon · 馆藏3",
+    "artist": "米津玄师",
+    "language": "日语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "日语",
+      "流行",
+      "经典"
+    ],
+    "summary": "米津玄师 · 日语 · 流行",
+    "note": "米津玄师",
+    "accent": "linear-gradient(135deg,#31443c 0%,#111714 100%)"
+  },
+  {
+    "slug": "yoasobi-347",
+    "title": "夜に駆ける · 馆藏3",
+    "artist": "YOASOBI",
+    "language": "日语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "日语",
+      "流行",
+      "经典"
+    ],
+    "summary": "YOASOBI · 日语 · 流行",
+    "note": "YOASOBI",
+    "accent": "linear-gradient(135deg,#5a4030 0%,#1f1510 100%)"
+  },
+  {
+    "slug": "348",
+    "title": "瞳をとじて · 馆藏3",
+    "artist": "平井坚",
+    "language": "日语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "日语",
+      "流行",
+      "经典"
+    ],
+    "summary": "平井坚 · 日语 · 流行",
+    "note": "平井坚",
+    "accent": "linear-gradient(135deg,#364456 0%,#121820 100%)"
+  },
+  {
+    "slug": "radwimps-349",
+    "title": "前前前世 · 馆藏3",
+    "artist": "RADWIMPS",
+    "language": "日语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "日语",
+      "流行",
+      "经典"
+    ],
+    "summary": "RADWIMPS · 日语 · 流行",
+    "note": "RADWIMPS",
+    "accent": "linear-gradient(135deg,#6b5140 0%,#221912 100%)"
+  },
+  {
+    "slug": "aimer-350",
+    "title": "カタオモイ · 馆藏3",
+    "artist": "Aimer",
+    "language": "日语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "日语",
+      "流行",
+      "馆藏"
+    ],
+    "summary": "Aimer · 日语 · 流行",
+    "note": "Aimer",
+    "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)"
+  },
+  {
+    "slug": "bump-of-chicken-351",
+    "title": "天体観測 · 馆藏3",
+    "artist": "BUMP OF CHICKEN",
+    "language": "日语",
+    "genre": "摇滚",
+    "region": "亚洲",
+    "tags": [
+      "日语",
+      "摇滚",
+      "经典"
+    ],
+    "summary": "BUMP OF CHICKEN · 日语 · 摇滚",
+    "note": "BUMP OF CHICKEN",
+    "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)"
+  },
+  {
+    "slug": "dith-piaf-la-vie-en-rose-352",
+    "title": "La Vie en rose · 馆藏3",
+    "artist": "Édith Piaf",
+    "language": "法语",
+    "genre": "香颂",
+    "region": "全球",
+    "tags": [
+      "法语",
+      "香颂",
+      "经典"
+    ],
+    "summary": "Édith Piaf · 法语 · 香颂",
+    "note": "Édith Piaf",
+    "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)"
+  },
+  {
+    "slug": "charles-aznavour-la-boh-me-353",
+    "title": "La Bohème · 馆藏3",
+    "artist": "Charles Aznavour",
+    "language": "法语",
+    "genre": "香颂",
+    "region": "全球",
+    "tags": [
+      "法语",
+      "香颂",
+      "经典"
+    ],
+    "summary": "Charles Aznavour · 法语 · 香颂",
+    "note": "Charles Aznavour",
+    "accent": "linear-gradient(135deg,#35574d 0%,#101917 100%)"
+  },
+  {
+    "slug": "lara-fabian-je-t-aime-354",
+    "title": "Je t'aime · 馆藏3",
+    "artist": "Lara Fabian",
+    "language": "法语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "法语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Lara Fabian · 法语 · 流行",
+    "note": "Lara Fabian",
+    "accent": "linear-gradient(135deg,#4e4173 0%,#191423 100%)"
+  },
+  {
+    "slug": "stromae-alors-on-danse-355",
+    "title": "Alors on danse · 馆藏3",
+    "artist": "Stromae",
+    "language": "法语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "法语",
+      "流行",
+      "馆藏"
+    ],
+    "summary": "Stromae · 法语 · 流行",
+    "note": "Stromae",
+    "accent": "linear-gradient(135deg,#3a6a78 0%,#13252c 100%)"
+  },
+  {
+    "slug": "indila-derni-re-danse-356",
+    "title": "Dernière danse · 馆藏3",
+    "artist": "Indila",
+    "language": "法语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "法语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Indila · 法语 · 流行",
+    "note": "Indila",
+    "accent": "linear-gradient(135deg,#31443c 0%,#111714 100%)"
+  },
+  {
+    "slug": "zaz-je-veux-357",
+    "title": "Je veux · 馆藏3",
+    "artist": "Zaz",
+    "language": "法语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "法语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Zaz · 法语 · 流行",
+    "note": "Zaz",
+    "accent": "linear-gradient(135deg,#5a4030 0%,#1f1510 100%)"
+  },
+  {
+    "slug": "dith-piaf-non-je-ne-regrette-rien-358",
+    "title": "Non, je ne regrette rien · 馆藏3",
+    "artist": "Édith Piaf",
+    "language": "法语",
+    "genre": "香颂",
+    "region": "全球",
+    "tags": [
+      "法语",
+      "香颂",
+      "经典"
+    ],
+    "summary": "Édith Piaf · 法语 · 香颂",
+    "note": "Édith Piaf",
+    "accent": "linear-gradient(135deg,#364456 0%,#121820 100%)"
+  },
+  {
+    "slug": "jacques-brel-ne-me-quitte-pas-359",
+    "title": "Ne me quitte pas · 馆藏3",
+    "artist": "Jacques Brel",
+    "language": "法语",
+    "genre": "香颂",
+    "region": "全球",
+    "tags": [
+      "法语",
+      "香颂",
+      "经典"
+    ],
+    "summary": "Jacques Brel · 法语 · 香颂",
+    "note": "Jacques Brel",
+    "accent": "linear-gradient(135deg,#6b5140 0%,#221912 100%)"
+  },
+  {
+    "slug": "ludovico-einaudi-nuvole-bianche-360",
+    "title": "Nuvole Bianche · 馆藏3",
+    "artist": "Ludovico Einaudi",
+    "language": "纯音乐",
+    "genre": "纯音乐",
+    "region": "全球",
+    "tags": [
+      "纯音乐",
+      "纯音乐",
+      "馆藏"
+    ],
+    "summary": "Ludovico Einaudi · 纯音乐 · 纯音乐",
+    "note": "Ludovico Einaudi",
+    "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)"
+  },
+  {
+    "slug": "yiruma-river-flows-in-you-361",
+    "title": "River Flows in You · 馆藏3",
+    "artist": "Yiruma",
+    "language": "纯音乐",
+    "genre": "纯音乐",
+    "region": "全球",
+    "tags": [
+      "纯音乐",
+      "纯音乐",
+      "经典"
+    ],
+    "summary": "Yiruma · 纯音乐 · 纯音乐",
+    "note": "Yiruma",
+    "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)"
+  },
+  {
+    "slug": "richard-clayderman-ballade-pour-adeline-362",
+    "title": "Ballade pour Adeline · 馆藏3",
+    "artist": "Richard Clayderman",
+    "language": "纯音乐",
+    "genre": "纯音乐",
+    "region": "全球",
+    "tags": [
+      "纯音乐",
+      "纯音乐",
+      "经典"
+    ],
+    "summary": "Richard Clayderman · 纯音乐 · 纯音乐",
+    "note": "Richard Clayderman",
+    "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)"
+  },
+  {
+    "slug": "merry-christmas-mr-lawrence-363",
+    "title": "Merry Christmas Mr. Lawrence · 馆藏3",
+    "artist": "坂本龙一",
+    "language": "纯音乐",
+    "genre": "纯音乐",
+    "region": "全球",
+    "tags": [
+      "纯音乐",
+      "纯音乐",
+      "经典"
+    ],
+    "summary": "坂本龙一 · 纯音乐 · 纯音乐",
+    "note": "坂本龙一",
+    "accent": "linear-gradient(135deg,#35574d 0%,#101917 100%)"
+  },
+  {
+    "slug": "vangelis-chariots-of-fire-364",
+    "title": "Chariots of Fire · 馆藏3",
+    "artist": "Vangelis",
+    "language": "纯音乐",
+    "genre": "电影原声",
+    "region": "全球",
+    "tags": [
+      "纯音乐",
+      "电影原声",
+      "经典"
+    ],
+    "summary": "Vangelis · 纯音乐 · 电影原声",
+    "note": "Vangelis",
+    "accent": "linear-gradient(135deg,#4e4173 0%,#191423 100%)"
+  },
+  {
+    "slug": "hans-zimmer-time-365",
+    "title": "Time · 馆藏3",
+    "artist": "Hans Zimmer",
+    "language": "纯音乐",
+    "genre": "电影原声",
+    "region": "全球",
+    "tags": [
+      "纯音乐",
+      "电影原声",
+      "馆藏"
+    ],
+    "summary": "Hans Zimmer · 纯音乐 · 电影原声",
+    "note": "Hans Zimmer",
+    "accent": "linear-gradient(135deg,#3a6a78 0%,#13252c 100%)"
+  },
+  {
+    "slug": "john-williams-hedwig-s-theme-366",
+    "title": "Hedwig's Theme · 馆藏3",
+    "artist": "John Williams",
+    "language": "纯音乐",
+    "genre": "电影原声",
+    "region": "全球",
+    "tags": [
+      "纯音乐",
+      "电影原声",
+      "经典"
+    ],
+    "summary": "John Williams · 纯音乐 · 电影原声",
+    "note": "John Williams",
+    "accent": "linear-gradient(135deg,#31443c 0%,#111714 100%)"
+  },
+  {
+    "slug": "ennio-morricone-gabriel-s-oboe-367",
+    "title": "Gabriel's Oboe · 馆藏3",
+    "artist": "Ennio Morricone",
+    "language": "纯音乐",
+    "genre": "电影原声",
+    "region": "全球",
+    "tags": [
+      "纯音乐",
+      "电影原声",
+      "经典"
+    ],
+    "summary": "Ennio Morricone · 纯音乐 · 电影原声",
+    "note": "Ennio Morricone",
+    "accent": "linear-gradient(135deg,#5a4030 0%,#1f1510 100%)"
+  },
+  {
+    "slug": "beethoven-symphony-no-5-368",
+    "title": "Symphony No.5 · 馆藏3",
+    "artist": "Beethoven",
+    "language": "古典",
+    "genre": "古典",
+    "region": "全球",
+    "tags": [
+      "古典",
+      "古典",
+      "经典"
+    ],
+    "summary": "Beethoven · 古典 · 古典",
+    "note": "Beethoven",
+    "accent": "linear-gradient(135deg,#364456 0%,#121820 100%)"
+  },
+  {
+    "slug": "beethoven-moonlight-sonata-369",
+    "title": "Moonlight Sonata · 馆藏3",
+    "artist": "Beethoven",
+    "language": "古典",
+    "genre": "古典",
+    "region": "全球",
+    "tags": [
+      "古典",
+      "古典",
+      "经典"
+    ],
+    "summary": "Beethoven · 古典 · 古典",
+    "note": "Beethoven",
+    "accent": "linear-gradient(135deg,#6b5140 0%,#221912 100%)"
+  },
+  {
+    "slug": "mozart-eine-kleine-nachtmusik-370",
+    "title": "Eine kleine Nachtmusik · 馆藏3",
+    "artist": "Mozart",
+    "language": "古典",
+    "genre": "古典",
+    "region": "全球",
+    "tags": [
+      "古典",
+      "古典",
+      "馆藏"
+    ],
+    "summary": "Mozart · 古典 · 古典",
+    "note": "Mozart",
+    "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)"
+  },
+  {
+    "slug": "bach-cello-suite-no-1-371",
+    "title": "Cello Suite No.1 · 馆藏3",
+    "artist": "Bach",
+    "language": "古典",
+    "genre": "古典",
+    "region": "全球",
+    "tags": [
+      "古典",
+      "古典",
+      "经典"
+    ],
+    "summary": "Bach · 古典 · 古典",
+    "note": "Bach",
+    "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)"
+  },
+  {
+    "slug": "chopin-nocturne-op-9-no-2-372",
+    "title": "Nocturne Op.9 No.2 · 馆藏3",
+    "artist": "Chopin",
+    "language": "古典",
+    "genre": "古典",
+    "region": "全球",
+    "tags": [
+      "古典",
+      "古典",
+      "经典"
+    ],
+    "summary": "Chopin · 古典 · 古典",
+    "note": "Chopin",
+    "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)"
+  },
+  {
+    "slug": "tchaikovsky-swan-lake-373",
+    "title": "Swan Lake · 馆藏3",
+    "artist": "Tchaikovsky",
+    "language": "古典",
+    "genre": "古典",
+    "region": "全球",
+    "tags": [
+      "古典",
+      "古典",
+      "经典"
+    ],
+    "summary": "Tchaikovsky · 古典 · 古典",
+    "note": "Tchaikovsky",
+    "accent": "linear-gradient(135deg,#35574d 0%,#101917 100%)"
+  },
+  {
+    "slug": "debussy-clair-de-lune-374",
+    "title": "Clair de Lune · 馆藏3",
+    "artist": "Debussy",
+    "language": "古典",
+    "genre": "古典",
+    "region": "全球",
+    "tags": [
+      "古典",
+      "古典",
+      "经典"
+    ],
+    "summary": "Debussy · 古典 · 古典",
+    "note": "Debussy",
+    "accent": "linear-gradient(135deg,#4e4173 0%,#191423 100%)"
+  },
+  {
+    "slug": "ravel-bol-ro-375",
+    "title": "Boléro · 馆藏3",
+    "artist": "Ravel",
+    "language": "古典",
+    "genre": "古典",
+    "region": "全球",
+    "tags": [
+      "古典",
+      "古典",
+      "馆藏"
+    ],
+    "summary": "Ravel · 古典 · 古典",
+    "note": "Ravel",
+    "accent": "linear-gradient(135deg,#3a6a78 0%,#13252c 100%)"
+  },
+  {
+    "slug": "pachelbel-canon-in-d-376",
+    "title": "Canon in D · 馆藏3",
+    "artist": "Pachelbel",
+    "language": "古典",
+    "genre": "古典",
+    "region": "全球",
+    "tags": [
+      "古典",
+      "古典",
+      "经典"
+    ],
+    "summary": "Pachelbel · 古典 · 古典",
+    "note": "Pachelbel",
+    "accent": "linear-gradient(135deg,#31443c 0%,#111714 100%)"
+  },
+  {
+    "slug": "vivaldi-four-seasons-spring-377",
+    "title": "Four Seasons: Spring · 馆藏3",
+    "artist": "Vivaldi",
+    "language": "古典",
+    "genre": "古典",
+    "region": "全球",
+    "tags": [
+      "古典",
+      "古典",
+      "经典"
+    ],
+    "summary": "Vivaldi · 古典 · 古典",
+    "note": "Vivaldi",
+    "accent": "linear-gradient(135deg,#5a4030 0%,#1f1510 100%)"
+  },
+  {
+    "slug": "378",
+    "title": "月亮代表我的心 · 馆藏4",
+    "artist": "邓丽君",
+    "language": "华语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "流行",
+      "经典"
+    ],
+    "summary": "邓丽君 · 华语 · 流行",
+    "note": "邓丽君",
+    "accent": "linear-gradient(135deg,#364456 0%,#121820 100%)"
+  },
+  {
+    "slug": "379",
+    "title": "红豆 · 馆藏4",
+    "artist": "王菲",
+    "language": "华语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "流行",
+      "经典"
+    ],
+    "summary": "王菲 · 华语 · 流行",
+    "note": "王菲",
+    "accent": "linear-gradient(135deg,#6b5140 0%,#221912 100%)"
+  },
+  {
+    "slug": "380",
+    "title": "青花瓷 · 馆藏4",
+    "artist": "周杰伦",
+    "language": "华语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "流行",
+      "馆藏"
+    ],
+    "summary": "周杰伦 · 华语 · 流行",
+    "note": "周杰伦",
+    "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)"
+  },
+  {
+    "slug": "381",
+    "title": "晴天 · 馆藏4",
+    "artist": "周杰伦",
+    "language": "华语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "流行",
+      "经典"
+    ],
+    "summary": "周杰伦 · 华语 · 流行",
+    "note": "周杰伦",
+    "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)"
+  },
+  {
+    "slug": "382",
+    "title": "江南 · 馆藏4",
+    "artist": "林俊杰",
+    "language": "华语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "流行",
+      "经典"
+    ],
+    "summary": "林俊杰 · 华语 · 流行",
+    "note": "林俊杰",
+    "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)"
+  },
+  {
+    "slug": "383",
+    "title": "十年 · 馆藏4",
+    "artist": "陈奕迅",
+    "language": "华语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "流行",
+      "经典"
+    ],
+    "summary": "陈奕迅 · 华语 · 流行",
+    "note": "陈奕迅",
+    "accent": "linear-gradient(135deg,#35574d 0%,#101917 100%)"
+  },
+  {
+    "slug": "384",
+    "title": "吻别 · 馆藏4",
+    "artist": "张学友",
+    "language": "华语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "流行",
+      "经典"
+    ],
+    "summary": "张学友 · 华语 · 流行",
+    "note": "张学友",
+    "accent": "linear-gradient(135deg,#4e4173 0%,#191423 100%)"
+  },
+  {
+    "slug": "385",
+    "title": "山丘 · 馆藏4",
+    "artist": "李宗盛",
+    "language": "华语",
+    "genre": "民谣",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "民谣",
+      "馆藏"
+    ],
+    "summary": "李宗盛 · 华语 · 民谣",
+    "note": "李宗盛",
+    "accent": "linear-gradient(135deg,#3a6a78 0%,#13252c 100%)"
+  },
+  {
+    "slug": "386",
+    "title": "平凡之路 · 馆藏4",
+    "artist": "朴树",
+    "language": "华语",
+    "genre": "民谣",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "民谣",
+      "经典"
+    ],
+    "summary": "朴树 · 华语 · 民谣",
+    "note": "朴树",
+    "accent": "linear-gradient(135deg,#31443c 0%,#111714 100%)"
+  },
+  {
+    "slug": "387",
+    "title": "蓝莲花 · 馆藏4",
+    "artist": "许巍",
+    "language": "华语",
+    "genre": "摇滚",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "摇滚",
+      "经典"
+    ],
+    "summary": "许巍 · 华语 · 摇滚",
+    "note": "许巍",
+    "accent": "linear-gradient(135deg,#5a4030 0%,#1f1510 100%)"
+  },
+  {
+    "slug": "388",
+    "title": "挪威的森林 · 馆藏4",
+    "artist": "伍佰",
+    "language": "华语",
+    "genre": "摇滚",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "摇滚",
+      "经典"
+    ],
+    "summary": "伍佰 · 华语 · 摇滚",
+    "note": "伍佰",
+    "accent": "linear-gradient(135deg,#364456 0%,#121820 100%)"
+  },
+  {
+    "slug": "389",
+    "title": "一无所有 · 馆藏4",
+    "artist": "崔健",
+    "language": "华语",
+    "genre": "摇滚",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "摇滚",
+      "经典"
+    ],
+    "summary": "崔健 · 华语 · 摇滚",
+    "note": "崔健",
+    "accent": "linear-gradient(135deg,#6b5140 0%,#221912 100%)"
+  },
+  {
+    "slug": "390",
+    "title": "童年 · 馆藏4",
+    "artist": "罗大佑",
+    "language": "华语",
+    "genre": "民谣",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "民谣",
+      "馆藏"
+    ],
+    "summary": "罗大佑 · 华语 · 民谣",
+    "note": "罗大佑",
+    "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)"
+  },
+  {
+    "slug": "391",
+    "title": "慢慢喜欢你 · 馆藏4",
+    "artist": "莫文蔚",
+    "language": "华语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "流行",
+      "经典"
+    ],
+    "summary": "莫文蔚 · 华语 · 流行",
+    "note": "莫文蔚",
+    "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)"
+  },
+  {
+    "slug": "392",
+    "title": "成都 · 馆藏4",
+    "artist": "赵雷",
+    "language": "华语",
+    "genre": "民谣",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "民谣",
+      "经典"
+    ],
+    "summary": "赵雷 · 华语 · 民谣",
+    "note": "赵雷",
+    "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)"
+  },
+  {
+    "slug": "393",
+    "title": "爱，很简单 · 馆藏4",
+    "artist": "陶喆",
+    "language": "华语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "流行",
+      "经典"
+    ],
+    "summary": "陶喆 · 华语 · 流行",
+    "note": "陶喆",
+    "accent": "linear-gradient(135deg,#35574d 0%,#101917 100%)"
+  },
+  {
+    "slug": "394",
+    "title": "遇见 · 馆藏4",
+    "artist": "孙燕姿",
+    "language": "华语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "流行",
+      "经典"
+    ],
+    "summary": "孙燕姿 · 华语 · 流行",
+    "note": "孙燕姿",
+    "accent": "linear-gradient(135deg,#4e4173 0%,#191423 100%)"
+  },
+  {
+    "slug": "395",
+    "title": "勇气 · 馆藏4",
+    "artist": "梁静茹",
+    "language": "华语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "流行",
+      "馆藏"
+    ],
+    "summary": "梁静茹 · 华语 · 流行",
+    "note": "梁静茹",
+    "accent": "linear-gradient(135deg,#3a6a78 0%,#13252c 100%)"
+  },
+  {
+    "slug": "396",
+    "title": "倔强 · 馆藏4",
+    "artist": "五月天",
+    "language": "华语",
+    "genre": "摇滚",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "摇滚",
+      "经典"
+    ],
+    "summary": "五月天 · 华语 · 摇滚",
+    "note": "五月天",
+    "accent": "linear-gradient(135deg,#31443c 0%,#111714 100%)"
+  },
+  {
+    "slug": "397",
+    "title": "小情歌 · 馆藏4",
+    "artist": "苏打绿",
+    "language": "华语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "流行",
+      "经典"
+    ],
+    "summary": "苏打绿 · 华语 · 流行",
+    "note": "苏打绿",
+    "accent": "linear-gradient(135deg,#5a4030 0%,#1f1510 100%)"
+  },
+  {
+    "slug": "398",
+    "title": "朋友 · 馆藏4",
+    "artist": "周华健",
+    "language": "华语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "流行",
+      "经典"
+    ],
+    "summary": "周华健 · 华语 · 流行",
+    "note": "周华健",
+    "accent": "linear-gradient(135deg,#364456 0%,#121820 100%)"
+  },
+  {
+    "slug": "399",
+    "title": "心太软 · 馆藏4",
+    "artist": "任贤齐",
+    "language": "华语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "流行",
+      "经典"
+    ],
+    "summary": "任贤齐 · 华语 · 流行",
+    "note": "任贤齐",
+    "accent": "linear-gradient(135deg,#6b5140 0%,#221912 100%)"
+  },
+  {
+    "slug": "400",
+    "title": "唯一 · 馆藏4",
+    "artist": "王力宏",
+    "language": "华语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "流行",
+      "馆藏"
+    ],
+    "summary": "王力宏 · 华语 · 流行",
+    "note": "王力宏",
+    "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)"
+  },
+  {
+    "slug": "401",
+    "title": "至少还有你 · 馆藏4",
+    "artist": "林忆莲",
+    "language": "华语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "流行",
+      "经典"
+    ],
+    "summary": "林忆莲 · 华语 · 流行",
+    "note": "林忆莲",
+    "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)"
+  },
+  {
+    "slug": "402",
+    "title": "夜空中最亮的星 · 馆藏4",
+    "artist": "逃跑计划",
+    "language": "华语",
+    "genre": "摇滚",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "摇滚",
+      "经典"
+    ],
+    "summary": "逃跑计划 · 华语 · 摇滚",
+    "note": "逃跑计划",
+    "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)"
+  },
+  {
+    "slug": "403",
+    "title": "旅行的意义 · 馆藏4",
+    "artist": "陈绮贞",
+    "language": "华语",
+    "genre": "民谣",
+    "region": "亚洲",
+    "tags": [
+      "华语",
+      "民谣",
+      "经典"
+    ],
+    "summary": "陈绮贞 · 华语 · 民谣",
+    "note": "陈绮贞",
+    "accent": "linear-gradient(135deg,#35574d 0%,#101917 100%)"
+  },
+  {
+    "slug": "beyond-404",
+    "title": "海阔天空 · 馆藏4",
+    "artist": "Beyond",
+    "language": "粤语",
+    "genre": "摇滚",
+    "region": "亚洲",
+    "tags": [
+      "粤语",
+      "摇滚",
+      "经典"
+    ],
+    "summary": "Beyond · 粤语 · 摇滚",
+    "note": "Beyond",
+    "accent": "linear-gradient(135deg,#4e4173 0%,#191423 100%)"
+  },
+  {
+    "slug": "405",
+    "title": "富士山下 · 馆藏4",
+    "artist": "陈奕迅",
+    "language": "粤语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "粤语",
+      "流行",
+      "馆藏"
+    ],
+    "summary": "陈奕迅 · 粤语 · 流行",
+    "note": "陈奕迅",
+    "accent": "linear-gradient(135deg,#3a6a78 0%,#13252c 100%)"
+  },
+  {
+    "slug": "k-406",
+    "title": "K歌之王 · 馆藏4",
+    "artist": "陈奕迅",
+    "language": "粤语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "粤语",
+      "流行",
+      "经典"
+    ],
+    "summary": "陈奕迅 · 粤语 · 流行",
+    "note": "陈奕迅",
+    "accent": "linear-gradient(135deg,#31443c 0%,#111714 100%)"
+  },
+  {
+    "slug": "407",
+    "title": "风继续吹 · 馆藏4",
+    "artist": "张国荣",
+    "language": "粤语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "粤语",
+      "流行",
+      "经典"
+    ],
+    "summary": "张国荣 · 粤语 · 流行",
+    "note": "张国荣",
+    "accent": "linear-gradient(135deg,#5a4030 0%,#1f1510 100%)"
+  },
+  {
+    "slug": "408",
+    "title": "夕阳之歌 · 馆藏4",
+    "artist": "梅艳芳",
+    "language": "粤语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "粤语",
+      "流行",
+      "经典"
+    ],
+    "summary": "梅艳芳 · 粤语 · 流行",
+    "note": "梅艳芳",
+    "accent": "linear-gradient(135deg,#364456 0%,#121820 100%)"
+  },
+  {
+    "slug": "409",
+    "title": "遥远的她 · 馆藏4",
+    "artist": "张学友",
+    "language": "粤语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "粤语",
+      "流行",
+      "经典"
+    ],
+    "summary": "张学友 · 粤语 · 流行",
+    "note": "张学友",
+    "accent": "linear-gradient(135deg,#6b5140 0%,#221912 100%)"
+  },
+  {
+    "slug": "410",
+    "title": "讲不出再见 · 馆藏4",
+    "artist": "谭咏麟",
+    "language": "粤语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "粤语",
+      "流行",
+      "馆藏"
+    ],
+    "summary": "谭咏麟 · 粤语 · 流行",
+    "note": "谭咏麟",
+    "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)"
+  },
+  {
+    "slug": "411",
+    "title": "偏偏喜欢你 · 馆藏4",
+    "artist": "陈百强",
+    "language": "粤语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "粤语",
+      "流行",
+      "经典"
+    ],
+    "summary": "陈百强 · 粤语 · 流行",
+    "note": "陈百强",
+    "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)"
+  },
+  {
+    "slug": "412",
+    "title": "一生所爱 · 馆藏4",
+    "artist": "卢冠廷",
+    "language": "粤语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "粤语",
+      "流行",
+      "经典"
+    ],
+    "summary": "卢冠廷 · 粤语 · 流行",
+    "note": "卢冠廷",
+    "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)"
+  },
+  {
+    "slug": "413",
+    "title": "可惜我是水瓶座 · 馆藏4",
+    "artist": "杨千嬅",
+    "language": "粤语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "粤语",
+      "流行",
+      "经典"
+    ],
+    "summary": "杨千嬅 · 粤语 · 流行",
+    "note": "杨千嬅",
+    "accent": "linear-gradient(135deg,#35574d 0%,#101917 100%)"
+  },
+  {
+    "slug": "beyond-414",
+    "title": "喜欢你 · 馆藏4",
+    "artist": "Beyond",
+    "language": "粤语",
+    "genre": "摇滚",
+    "region": "亚洲",
+    "tags": [
+      "粤语",
+      "摇滚",
+      "经典"
+    ],
+    "summary": "Beyond · 粤语 · 摇滚",
+    "note": "Beyond",
+    "accent": "linear-gradient(135deg,#4e4173 0%,#191423 100%)"
+  },
+  {
+    "slug": "415",
+    "title": "当年情 · 馆藏4",
+    "artist": "张国荣",
+    "language": "粤语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "粤语",
+      "流行",
+      "馆藏"
+    ],
+    "summary": "张国荣 · 粤语 · 流行",
+    "note": "张国荣",
+    "accent": "linear-gradient(135deg,#3a6a78 0%,#13252c 100%)"
+  },
+  {
+    "slug": "416",
+    "title": "千千阙歌 · 馆藏4",
+    "artist": "陈慧娴",
+    "language": "粤语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "粤语",
+      "流行",
+      "经典"
+    ],
+    "summary": "陈慧娴 · 粤语 · 流行",
+    "note": "陈慧娴",
+    "accent": "linear-gradient(135deg,#31443c 0%,#111714 100%)"
+  },
+  {
+    "slug": "417",
+    "title": "月半小夜曲 · 馆藏4",
+    "artist": "李克勤",
+    "language": "粤语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "粤语",
+      "流行",
+      "经典"
+    ],
+    "summary": "李克勤 · 粤语 · 流行",
+    "note": "李克勤",
+    "accent": "linear-gradient(135deg,#5a4030 0%,#1f1510 100%)"
+  },
+  {
+    "slug": "the-beatles-let-it-be-418",
+    "title": "Let It Be · 馆藏4",
+    "artist": "The Beatles",
+    "language": "英语",
+    "genre": "摇滚",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "摇滚",
+      "经典"
+    ],
+    "summary": "The Beatles · 英语 · 摇滚",
+    "note": "The Beatles",
+    "accent": "linear-gradient(135deg,#364456 0%,#121820 100%)"
+  },
+  {
+    "slug": "the-beatles-hey-jude-419",
+    "title": "Hey Jude · 馆藏4",
+    "artist": "The Beatles",
+    "language": "英语",
+    "genre": "摇滚",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "摇滚",
+      "经典"
+    ],
+    "summary": "The Beatles · 英语 · 摇滚",
+    "note": "The Beatles",
+    "accent": "linear-gradient(135deg,#6b5140 0%,#221912 100%)"
+  },
+  {
+    "slug": "queen-bohemian-rhapsody-420",
+    "title": "Bohemian Rhapsody · 馆藏4",
+    "artist": "Queen",
+    "language": "英语",
+    "genre": "摇滚",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "摇滚",
+      "馆藏"
+    ],
+    "summary": "Queen · 英语 · 摇滚",
+    "note": "Queen",
+    "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)"
+  },
+  {
+    "slug": "eagles-hotel-california-421",
+    "title": "Hotel California · 馆藏4",
+    "artist": "Eagles",
+    "language": "英语",
+    "genre": "摇滚",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "摇滚",
+      "经典"
+    ],
+    "summary": "Eagles · 英语 · 摇滚",
+    "note": "Eagles",
+    "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)"
+  },
+  {
+    "slug": "michael-jackson-billie-jean-422",
+    "title": "Billie Jean · 馆藏4",
+    "artist": "Michael Jackson",
+    "language": "英语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Michael Jackson · 英语 · 流行",
+    "note": "Michael Jackson",
+    "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)"
+  },
+  {
+    "slug": "whitney-houston-i-will-always-love-you-423",
+    "title": "I Will Always Love You · 馆藏4",
+    "artist": "Whitney Houston",
+    "language": "英语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Whitney Houston · 英语 · 流行",
+    "note": "Whitney Houston",
+    "accent": "linear-gradient(135deg,#35574d 0%,#101917 100%)"
+  },
+  {
+    "slug": "celine-dion-my-heart-will-go-on-424",
+    "title": "My Heart Will Go On · 馆藏4",
+    "artist": "Celine Dion",
+    "language": "英语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Celine Dion · 英语 · 流行",
+    "note": "Celine Dion",
+    "accent": "linear-gradient(135deg,#4e4173 0%,#191423 100%)"
+  },
+  {
+    "slug": "adele-someone-like-you-425",
+    "title": "Someone Like You · 馆藏4",
+    "artist": "Adele",
+    "language": "英语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "流行",
+      "馆藏"
+    ],
+    "summary": "Adele · 英语 · 流行",
+    "note": "Adele",
+    "accent": "linear-gradient(135deg,#3a6a78 0%,#13252c 100%)"
+  },
+  {
+    "slug": "ed-sheeran-perfect-426",
+    "title": "Perfect · 馆藏4",
+    "artist": "Ed Sheeran",
+    "language": "英语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Ed Sheeran · 英语 · 流行",
+    "note": "Ed Sheeran",
+    "accent": "linear-gradient(135deg,#31443c 0%,#111714 100%)"
+  },
+  {
+    "slug": "john-lennon-imagine-427",
+    "title": "Imagine · 馆藏4",
+    "artist": "John Lennon",
+    "language": "英语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "流行",
+      "经典"
+    ],
+    "summary": "John Lennon · 英语 · 流行",
+    "note": "John Lennon",
+    "accent": "linear-gradient(135deg,#5a4030 0%,#1f1510 100%)"
+  },
+  {
+    "slug": "abba-dancing-queen-428",
+    "title": "Dancing Queen · 馆藏4",
+    "artist": "ABBA",
+    "language": "英语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "流行",
+      "经典"
+    ],
+    "summary": "ABBA · 英语 · 流行",
+    "note": "ABBA",
+    "accent": "linear-gradient(135deg,#364456 0%,#121820 100%)"
+  },
+  {
+    "slug": "nirvana-smells-like-teen-spirit-429",
+    "title": "Smells Like Teen Spirit · 馆藏4",
+    "artist": "Nirvana",
+    "language": "英语",
+    "genre": "摇滚",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "摇滚",
+      "经典"
+    ],
+    "summary": "Nirvana · 英语 · 摇滚",
+    "note": "Nirvana",
+    "accent": "linear-gradient(135deg,#6b5140 0%,#221912 100%)"
+  },
+  {
+    "slug": "coldplay-yellow-430",
+    "title": "Yellow · 馆藏4",
+    "artist": "Coldplay",
+    "language": "英语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "流行",
+      "馆藏"
+    ],
+    "summary": "Coldplay · 英语 · 流行",
+    "note": "Coldplay",
+    "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)"
+  },
+  {
+    "slug": "linkin-park-numb-431",
+    "title": "Numb · 馆藏4",
+    "artist": "Linkin Park",
+    "language": "英语",
+    "genre": "摇滚",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "摇滚",
+      "经典"
+    ],
+    "summary": "Linkin Park · 英语 · 摇滚",
+    "note": "Linkin Park",
+    "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)"
+  },
+  {
+    "slug": "bon-jovi-it-s-my-life-432",
+    "title": "It's My Life · 馆藏4",
+    "artist": "Bon Jovi",
+    "language": "英语",
+    "genre": "摇滚",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "摇滚",
+      "经典"
+    ],
+    "summary": "Bon Jovi · 英语 · 摇滚",
+    "note": "Bon Jovi",
+    "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)"
+  },
+  {
+    "slug": "frank-sinatra-my-way-433",
+    "title": "My Way · 馆藏4",
+    "artist": "Frank Sinatra",
+    "language": "英语",
+    "genre": "爵士",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "爵士",
+      "经典"
+    ],
+    "summary": "Frank Sinatra · 英语 · 爵士",
+    "note": "Frank Sinatra",
+    "accent": "linear-gradient(135deg,#35574d 0%,#101917 100%)"
+  },
+  {
+    "slug": "louis-armstrong-what-a-wonderful-world-434",
+    "title": "What a Wonderful World · 馆藏4",
+    "artist": "Louis Armstrong",
+    "language": "英语",
+    "genre": "爵士",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "爵士",
+      "经典"
+    ],
+    "summary": "Louis Armstrong · 英语 · 爵士",
+    "note": "Louis Armstrong",
+    "accent": "linear-gradient(135deg,#4e4173 0%,#191423 100%)"
+  },
+  {
+    "slug": "bob-dylan-blowin-in-the-wind-435",
+    "title": "Blowin' in the Wind · 馆藏4",
+    "artist": "Bob Dylan",
+    "language": "英语",
+    "genre": "民谣",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "民谣",
+      "馆藏"
+    ],
+    "summary": "Bob Dylan · 英语 · 民谣",
+    "note": "Bob Dylan",
+    "accent": "linear-gradient(135deg,#3a6a78 0%,#13252c 100%)"
+  },
+  {
+    "slug": "taylor-swift-love-story-436",
+    "title": "Love Story · 馆藏4",
+    "artist": "Taylor Swift",
+    "language": "英语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Taylor Swift · 英语 · 流行",
+    "note": "Taylor Swift",
+    "accent": "linear-gradient(135deg,#31443c 0%,#111714 100%)"
+  },
+  {
+    "slug": "bruno-mars-just-the-way-you-are-437",
+    "title": "Just the Way You Are · 馆藏4",
+    "artist": "Bruno Mars",
+    "language": "英语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Bruno Mars · 英语 · 流行",
+    "note": "Bruno Mars",
+    "accent": "linear-gradient(135deg,#5a4030 0%,#1f1510 100%)"
+  },
+  {
+    "slug": "oasis-wonderwall-438",
+    "title": "Wonderwall · 馆藏4",
+    "artist": "Oasis",
+    "language": "英语",
+    "genre": "摇滚",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "摇滚",
+      "经典"
+    ],
+    "summary": "Oasis · 英语 · 摇滚",
+    "note": "Oasis",
+    "accent": "linear-gradient(135deg,#364456 0%,#121820 100%)"
+  },
+  {
+    "slug": "pink-floyd-wish-you-were-here-439",
+    "title": "Wish You Were Here · 馆藏4",
+    "artist": "Pink Floyd",
+    "language": "英语",
+    "genre": "摇滚",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "摇滚",
+      "经典"
+    ],
+    "summary": "Pink Floyd · 英语 · 摇滚",
+    "note": "Pink Floyd",
+    "accent": "linear-gradient(135deg,#6b5140 0%,#221912 100%)"
+  },
+  {
+    "slug": "u2-with-or-without-you-440",
+    "title": "With or Without You · 馆藏4",
+    "artist": "U2",
+    "language": "英语",
+    "genre": "摇滚",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "摇滚",
+      "馆藏"
+    ],
+    "summary": "U2 · 英语 · 摇滚",
+    "note": "U2",
+    "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)"
+  },
+  {
+    "slug": "madonna-like-a-prayer-441",
+    "title": "Like a Prayer · 馆藏4",
+    "artist": "Madonna",
+    "language": "英语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Madonna · 英语 · 流行",
+    "note": "Madonna",
+    "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)"
+  },
+  {
+    "slug": "prince-purple-rain-442",
+    "title": "Purple Rain · 馆藏4",
+    "artist": "Prince",
+    "language": "英语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Prince · 英语 · 流行",
+    "note": "Prince",
+    "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)"
+  },
+  {
+    "slug": "carpenters-yesterday-once-more-443",
+    "title": "Yesterday Once More · 馆藏4",
+    "artist": "Carpenters",
+    "language": "英语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "英语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Carpenters · 英语 · 流行",
+    "note": "Carpenters",
+    "accent": "linear-gradient(135deg,#35574d 0%,#101917 100%)"
+  },
+  {
+    "slug": "luis-fonsi-despacito-444",
+    "title": "Despacito · 馆藏4",
+    "artist": "Luis Fonsi",
+    "language": "西班牙语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "西班牙语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Luis Fonsi · 西班牙语 · 流行",
+    "note": "Luis Fonsi",
+    "accent": "linear-gradient(135deg,#4e4173 0%,#191423 100%)"
+  },
+  {
+    "slug": "jos-feliciano-feliz-navidad-445",
+    "title": "Feliz Navidad · 馆藏4",
+    "artist": "José Feliciano",
+    "language": "西班牙语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "西班牙语",
+      "流行",
+      "馆藏"
+    ],
+    "summary": "José Feliciano · 西班牙语 · 流行",
+    "note": "José Feliciano",
+    "accent": "linear-gradient(135deg,#3a6a78 0%,#13252c 100%)"
+  },
+  {
+    "slug": "enrique-iglesias-bailando-446",
+    "title": "Bailando · 馆藏4",
+    "artist": "Enrique Iglesias",
+    "language": "西班牙语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "西班牙语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Enrique Iglesias · 西班牙语 · 流行",
+    "note": "Enrique Iglesias",
+    "accent": "linear-gradient(135deg,#31443c 0%,#111714 100%)"
+  },
+  {
+    "slug": "shakira-hips-don-t-lie-447",
+    "title": "Hips Don't Lie · 馆藏4",
+    "artist": "Shakira",
+    "language": "西班牙语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "西班牙语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Shakira · 西班牙语 · 流行",
+    "note": "Shakira",
+    "accent": "linear-gradient(135deg,#5a4030 0%,#1f1510 100%)"
+  },
+  {
+    "slug": "rosal-a-despech-448",
+    "title": "Despechá · 馆藏4",
+    "artist": "Rosalía",
+    "language": "西班牙语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "西班牙语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Rosalía · 西班牙语 · 流行",
+    "note": "Rosalía",
+    "accent": "linear-gradient(135deg,#364456 0%,#121820 100%)"
+  },
+  {
+    "slug": "man-rayando-el-sol-449",
+    "title": "Rayando el Sol · 馆藏4",
+    "artist": "Maná",
+    "language": "西班牙语",
+    "genre": "摇滚",
+    "region": "全球",
+    "tags": [
+      "西班牙语",
+      "摇滚",
+      "经典"
+    ],
+    "summary": "Maná · 西班牙语 · 摇滚",
+    "note": "Maná",
+    "accent": "linear-gradient(135deg,#6b5140 0%,#221912 100%)"
+  },
+  {
+    "slug": "juanes-a-dios-le-pido-450",
+    "title": "A Dios le Pido · 馆藏4",
+    "artist": "Juanes",
+    "language": "西班牙语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "西班牙语",
+      "流行",
+      "馆藏"
+    ],
+    "summary": "Juanes · 西班牙语 · 流行",
+    "note": "Juanes",
+    "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)"
+  },
+  {
+    "slug": "buena-vista-social-club-chan-chan-451",
+    "title": "Chan Chan · 馆藏4",
+    "artist": "Buena Vista Social Club",
+    "language": "西班牙语",
+    "genre": "拉丁",
+    "region": "全球",
+    "tags": [
+      "西班牙语",
+      "拉丁",
+      "经典"
+    ],
+    "summary": "Buena Vista Social Club · 西班牙语 · 拉丁",
+    "note": "Buena Vista Social Club",
+    "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)"
+  },
+  {
+    "slug": "shakira-waka-waka-452",
+    "title": "Waka Waka · 馆藏4",
+    "artist": "Shakira",
+    "language": "西班牙语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "西班牙语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Shakira · 西班牙语 · 流行",
+    "note": "Shakira",
+    "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)"
+  },
+  {
+    "slug": "ricky-martin-la-copa-de-la-vida-453",
+    "title": "La Copa de la Vida · 馆藏4",
+    "artist": "Ricky Martin",
+    "language": "西班牙语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "西班牙语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Ricky Martin · 西班牙语 · 流行",
+    "note": "Ricky Martin",
+    "accent": "linear-gradient(135deg,#35574d 0%,#101917 100%)"
+  },
+  {
+    "slug": "carlos-gardel-por-una-cabeza-454",
+    "title": "Por una Cabeza · 馆藏4",
+    "artist": "Carlos Gardel",
+    "language": "西班牙语",
+    "genre": "探戈",
+    "region": "全球",
+    "tags": [
+      "西班牙语",
+      "探戈",
+      "经典"
+    ],
+    "summary": "Carlos Gardel · 西班牙语 · 探戈",
+    "note": "Carlos Gardel",
+    "accent": "linear-gradient(135deg,#4e4173 0%,#191423 100%)"
+  },
+  {
+    "slug": "bts-spring-day-455",
+    "title": "Spring Day · 馆藏4",
+    "artist": "BTS",
+    "language": "韩语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "韩语",
+      "流行",
+      "馆藏"
+    ],
+    "summary": "BTS · 韩语 · 流行",
+    "note": "BTS",
+    "accent": "linear-gradient(135deg,#3a6a78 0%,#13252c 100%)"
+  },
+  {
+    "slug": "bts-dynamite-456",
+    "title": "Dynamite · 馆藏4",
+    "artist": "BTS",
+    "language": "韩语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "韩语",
+      "流行",
+      "经典"
+    ],
+    "summary": "BTS · 韩语 · 流行",
+    "note": "BTS",
+    "accent": "linear-gradient(135deg,#31443c 0%,#111714 100%)"
+  },
+  {
+    "slug": "blackpink-ddu-du-ddu-du-457",
+    "title": "DDU-DU DDU-DU · 馆藏4",
+    "artist": "BLACKPINK",
+    "language": "韩语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "韩语",
+      "流行",
+      "经典"
+    ],
+    "summary": "BLACKPINK · 韩语 · 流行",
+    "note": "BLACKPINK",
+    "accent": "linear-gradient(135deg,#5a4030 0%,#1f1510 100%)"
+  },
+  {
+    "slug": "iu-458",
+    "title": "밤편지 · 馆藏4",
+    "artist": "IU",
+    "language": "韩语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "韩语",
+      "流行",
+      "经典"
+    ],
+    "summary": "IU · 韩语 · 流行",
+    "note": "IU",
+    "accent": "linear-gradient(135deg,#364456 0%,#121820 100%)"
+  },
+  {
+    "slug": "bigbang-459",
+    "title": "하루하루 · 馆藏4",
+    "artist": "BIGBANG",
+    "language": "韩语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "韩语",
+      "流行",
+      "经典"
+    ],
+    "summary": "BIGBANG · 韩语 · 流行",
+    "note": "BIGBANG",
+    "accent": "linear-gradient(135deg,#6b5140 0%,#221912 100%)"
+  },
+  {
+    "slug": "gee-460",
+    "title": "Gee · 馆藏4",
+    "artist": "少女时代",
+    "language": "韩语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "韩语",
+      "流行",
+      "馆藏"
+    ],
+    "summary": "少女时代 · 韩语 · 流行",
+    "note": "少女时代",
+    "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)"
+  },
+  {
+    "slug": "newjeans-ditto-461",
+    "title": "Ditto · 馆藏4",
+    "artist": "NewJeans",
+    "language": "韩语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "韩语",
+      "流行",
+      "经典"
+    ],
+    "summary": "NewJeans · 韩语 · 流行",
+    "note": "NewJeans",
+    "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)"
+  },
+  {
+    "slug": "exo-462",
+    "title": "으르렁 · 馆藏4",
+    "artist": "EXO",
+    "language": "韩语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "韩语",
+      "流行",
+      "经典"
+    ],
+    "summary": "EXO · 韩语 · 流行",
+    "note": "EXO",
+    "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)"
+  },
+  {
+    "slug": "bigbang-bang-bang-bang-463",
+    "title": "BANG BANG BANG · 馆藏4",
+    "artist": "BIGBANG",
+    "language": "韩语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "韩语",
+      "流行",
+      "经典"
+    ],
+    "summary": "BIGBANG · 韩语 · 流行",
+    "note": "BIGBANG",
+    "accent": "linear-gradient(135deg,#35574d 0%,#101917 100%)"
+  },
+  {
+    "slug": "twice-cheer-up-464",
+    "title": "Cheer Up · 馆藏4",
+    "artist": "TWICE",
+    "language": "韩语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "韩语",
+      "流行",
+      "经典"
+    ],
+    "summary": "TWICE · 韩语 · 流行",
+    "note": "TWICE",
+    "accent": "linear-gradient(135deg,#4e4173 0%,#191423 100%)"
+  },
+  {
+    "slug": "aespa-next-level-465",
+    "title": "Next Level · 馆藏4",
+    "artist": "aespa",
+    "language": "韩语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "韩语",
+      "流行",
+      "馆藏"
+    ],
+    "summary": "aespa · 韩语 · 流行",
+    "note": "aespa",
+    "accent": "linear-gradient(135deg,#3a6a78 0%,#13252c 100%)"
+  },
+  {
+    "slug": "ive-love-dive-466",
+    "title": "LOVE DIVE · 馆藏4",
+    "artist": "IVE",
+    "language": "韩语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "韩语",
+      "流行",
+      "经典"
+    ],
+    "summary": "IVE · 韩语 · 流行",
+    "note": "IVE",
+    "accent": "linear-gradient(135deg,#31443c 0%,#111714 100%)"
+  },
+  {
+    "slug": "first-love-467",
+    "title": "First Love · 馆藏4",
+    "artist": "宇多田光",
+    "language": "日语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "日语",
+      "流行",
+      "经典"
+    ],
+    "summary": "宇多田光 · 日语 · 流行",
+    "note": "宇多田光",
+    "accent": "linear-gradient(135deg,#5a4030 0%,#1f1510 100%)"
+  },
+  {
+    "slug": "468",
+    "title": "糸 · 馆藏4",
+    "artist": "中岛美雪",
+    "language": "日语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "日语",
+      "流行",
+      "经典"
+    ],
+    "summary": "中岛美雪 · 日语 · 流行",
+    "note": "中岛美雪",
+    "accent": "linear-gradient(135deg,#364456 0%,#121820 100%)"
+  },
+  {
+    "slug": "469",
+    "title": "上を向いて歩こう · 馆藏4",
+    "artist": "坂本九",
+    "language": "日语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "日语",
+      "流行",
+      "经典"
+    ],
+    "summary": "坂本九 · 日语 · 流行",
+    "note": "坂本九",
+    "accent": "linear-gradient(135deg,#6b5140 0%,#221912 100%)"
+  },
+  {
+    "slug": "summer-470",
+    "title": "Summer · 馆藏4",
+    "artist": "久石让",
+    "language": "日语",
+    "genre": "纯音乐",
+    "region": "亚洲",
+    "tags": [
+      "日语",
+      "纯音乐",
+      "馆藏"
+    ],
+    "summary": "久石让 · 日语 · 纯音乐",
+    "note": "久石让",
+    "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)"
+  },
+  {
+    "slug": "radwimps-471",
+    "title": "なんでもないや · 馆藏4",
+    "artist": "RADWIMPS",
+    "language": "日语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "日语",
+      "流行",
+      "经典"
+    ],
+    "summary": "RADWIMPS · 日语 · 流行",
+    "note": "RADWIMPS",
+    "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)"
+  },
+  {
+    "slug": "lemon-472",
+    "title": "Lemon · 馆藏4",
+    "artist": "米津玄师",
+    "language": "日语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "日语",
+      "流行",
+      "经典"
+    ],
+    "summary": "米津玄师 · 日语 · 流行",
+    "note": "米津玄师",
+    "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)"
+  },
+  {
+    "slug": "yoasobi-473",
+    "title": "夜に駆ける · 馆藏4",
+    "artist": "YOASOBI",
+    "language": "日语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "日语",
+      "流行",
+      "经典"
+    ],
+    "summary": "YOASOBI · 日语 · 流行",
+    "note": "YOASOBI",
+    "accent": "linear-gradient(135deg,#35574d 0%,#101917 100%)"
+  },
+  {
+    "slug": "474",
+    "title": "瞳をとじて · 馆藏4",
+    "artist": "平井坚",
+    "language": "日语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "日语",
+      "流行",
+      "经典"
+    ],
+    "summary": "平井坚 · 日语 · 流行",
+    "note": "平井坚",
+    "accent": "linear-gradient(135deg,#4e4173 0%,#191423 100%)"
+  },
+  {
+    "slug": "radwimps-475",
+    "title": "前前前世 · 馆藏4",
+    "artist": "RADWIMPS",
+    "language": "日语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "日语",
+      "流行",
+      "馆藏"
+    ],
+    "summary": "RADWIMPS · 日语 · 流行",
+    "note": "RADWIMPS",
+    "accent": "linear-gradient(135deg,#3a6a78 0%,#13252c 100%)"
+  },
+  {
+    "slug": "aimer-476",
+    "title": "カタオモイ · 馆藏4",
+    "artist": "Aimer",
+    "language": "日语",
+    "genre": "流行",
+    "region": "亚洲",
+    "tags": [
+      "日语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Aimer · 日语 · 流行",
+    "note": "Aimer",
+    "accent": "linear-gradient(135deg,#31443c 0%,#111714 100%)"
+  },
+  {
+    "slug": "bump-of-chicken-477",
+    "title": "天体観測 · 馆藏4",
+    "artist": "BUMP OF CHICKEN",
+    "language": "日语",
+    "genre": "摇滚",
+    "region": "亚洲",
+    "tags": [
+      "日语",
+      "摇滚",
+      "经典"
+    ],
+    "summary": "BUMP OF CHICKEN · 日语 · 摇滚",
+    "note": "BUMP OF CHICKEN",
+    "accent": "linear-gradient(135deg,#5a4030 0%,#1f1510 100%)"
+  },
+  {
+    "slug": "dith-piaf-la-vie-en-rose-478",
+    "title": "La Vie en rose · 馆藏4",
+    "artist": "Édith Piaf",
+    "language": "法语",
+    "genre": "香颂",
+    "region": "全球",
+    "tags": [
+      "法语",
+      "香颂",
+      "经典"
+    ],
+    "summary": "Édith Piaf · 法语 · 香颂",
+    "note": "Édith Piaf",
+    "accent": "linear-gradient(135deg,#364456 0%,#121820 100%)"
+  },
+  {
+    "slug": "charles-aznavour-la-boh-me-479",
+    "title": "La Bohème · 馆藏4",
+    "artist": "Charles Aznavour",
+    "language": "法语",
+    "genre": "香颂",
+    "region": "全球",
+    "tags": [
+      "法语",
+      "香颂",
+      "经典"
+    ],
+    "summary": "Charles Aznavour · 法语 · 香颂",
+    "note": "Charles Aznavour",
+    "accent": "linear-gradient(135deg,#6b5140 0%,#221912 100%)"
+  },
+  {
+    "slug": "lara-fabian-je-t-aime-480",
+    "title": "Je t'aime · 馆藏4",
+    "artist": "Lara Fabian",
+    "language": "法语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "法语",
+      "流行",
+      "馆藏"
+    ],
+    "summary": "Lara Fabian · 法语 · 流行",
+    "note": "Lara Fabian",
+    "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)"
+  },
+  {
+    "slug": "stromae-alors-on-danse-481",
+    "title": "Alors on danse · 馆藏4",
+    "artist": "Stromae",
+    "language": "法语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "法语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Stromae · 法语 · 流行",
+    "note": "Stromae",
+    "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)"
+  },
+  {
+    "slug": "indila-derni-re-danse-482",
+    "title": "Dernière danse · 馆藏4",
+    "artist": "Indila",
+    "language": "法语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "法语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Indila · 法语 · 流行",
+    "note": "Indila",
+    "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)"
+  },
+  {
+    "slug": "zaz-je-veux-483",
+    "title": "Je veux · 馆藏4",
+    "artist": "Zaz",
+    "language": "法语",
+    "genre": "流行",
+    "region": "全球",
+    "tags": [
+      "法语",
+      "流行",
+      "经典"
+    ],
+    "summary": "Zaz · 法语 · 流行",
+    "note": "Zaz",
+    "accent": "linear-gradient(135deg,#35574d 0%,#101917 100%)"
+  },
+  {
+    "slug": "dith-piaf-non-je-ne-regrette-rien-484",
+    "title": "Non, je ne regrette rien · 馆藏4",
+    "artist": "Édith Piaf",
+    "language": "法语",
+    "genre": "香颂",
+    "region": "全球",
+    "tags": [
+      "法语",
+      "香颂",
+      "经典"
+    ],
+    "summary": "Édith Piaf · 法语 · 香颂",
+    "note": "Édith Piaf",
+    "accent": "linear-gradient(135deg,#4e4173 0%,#191423 100%)"
+  },
+  {
+    "slug": "jacques-brel-ne-me-quitte-pas-485",
+    "title": "Ne me quitte pas · 馆藏4",
+    "artist": "Jacques Brel",
+    "language": "法语",
+    "genre": "香颂",
+    "region": "全球",
+    "tags": [
+      "法语",
+      "香颂",
+      "馆藏"
+    ],
+    "summary": "Jacques Brel · 法语 · 香颂",
+    "note": "Jacques Brel",
+    "accent": "linear-gradient(135deg,#3a6a78 0%,#13252c 100%)"
+  },
+  {
+    "slug": "ludovico-einaudi-nuvole-bianche-486",
+    "title": "Nuvole Bianche · 馆藏4",
+    "artist": "Ludovico Einaudi",
+    "language": "纯音乐",
+    "genre": "纯音乐",
+    "region": "全球",
+    "tags": [
+      "纯音乐",
+      "纯音乐",
+      "经典"
+    ],
+    "summary": "Ludovico Einaudi · 纯音乐 · 纯音乐",
+    "note": "Ludovico Einaudi",
+    "accent": "linear-gradient(135deg,#31443c 0%,#111714 100%)"
+  },
+  {
+    "slug": "yiruma-river-flows-in-you-487",
+    "title": "River Flows in You · 馆藏4",
+    "artist": "Yiruma",
+    "language": "纯音乐",
+    "genre": "纯音乐",
+    "region": "全球",
+    "tags": [
+      "纯音乐",
+      "纯音乐",
+      "经典"
+    ],
+    "summary": "Yiruma · 纯音乐 · 纯音乐",
+    "note": "Yiruma",
+    "accent": "linear-gradient(135deg,#5a4030 0%,#1f1510 100%)"
+  },
+  {
+    "slug": "richard-clayderman-ballade-pour-adeline-488",
+    "title": "Ballade pour Adeline · 馆藏4",
+    "artist": "Richard Clayderman",
+    "language": "纯音乐",
+    "genre": "纯音乐",
+    "region": "全球",
+    "tags": [
+      "纯音乐",
+      "纯音乐",
+      "经典"
+    ],
+    "summary": "Richard Clayderman · 纯音乐 · 纯音乐",
+    "note": "Richard Clayderman",
+    "accent": "linear-gradient(135deg,#364456 0%,#121820 100%)"
+  },
+  {
+    "slug": "merry-christmas-mr-lawrence-489",
+    "title": "Merry Christmas Mr. Lawrence · 馆藏4",
+    "artist": "坂本龙一",
+    "language": "纯音乐",
+    "genre": "纯音乐",
+    "region": "全球",
+    "tags": [
+      "纯音乐",
+      "纯音乐",
+      "经典"
+    ],
+    "summary": "坂本龙一 · 纯音乐 · 纯音乐",
+    "note": "坂本龙一",
+    "accent": "linear-gradient(135deg,#6b5140 0%,#221912 100%)"
+  },
+  {
+    "slug": "vangelis-chariots-of-fire-490",
+    "title": "Chariots of Fire · 馆藏4",
+    "artist": "Vangelis",
+    "language": "纯音乐",
+    "genre": "电影原声",
+    "region": "全球",
+    "tags": [
+      "纯音乐",
+      "电影原声",
+      "馆藏"
+    ],
+    "summary": "Vangelis · 纯音乐 · 电影原声",
+    "note": "Vangelis",
+    "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)"
+  },
+  {
+    "slug": "hans-zimmer-time-491",
+    "title": "Time · 馆藏4",
+    "artist": "Hans Zimmer",
+    "language": "纯音乐",
+    "genre": "电影原声",
+    "region": "全球",
+    "tags": [
+      "纯音乐",
+      "电影原声",
+      "经典"
+    ],
+    "summary": "Hans Zimmer · 纯音乐 · 电影原声",
+    "note": "Hans Zimmer",
+    "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)"
+  },
+  {
+    "slug": "john-williams-hedwig-s-theme-492",
+    "title": "Hedwig's Theme · 馆藏4",
+    "artist": "John Williams",
+    "language": "纯音乐",
+    "genre": "电影原声",
+    "region": "全球",
+    "tags": [
+      "纯音乐",
+      "电影原声",
+      "经典"
+    ],
+    "summary": "John Williams · 纯音乐 · 电影原声",
+    "note": "John Williams",
+    "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)"
+  },
+  {
+    "slug": "ennio-morricone-gabriel-s-oboe-493",
+    "title": "Gabriel's Oboe · 馆藏4",
+    "artist": "Ennio Morricone",
+    "language": "纯音乐",
+    "genre": "电影原声",
+    "region": "全球",
+    "tags": [
+      "纯音乐",
+      "电影原声",
+      "经典"
+    ],
+    "summary": "Ennio Morricone · 纯音乐 · 电影原声",
+    "note": "Ennio Morricone",
+    "accent": "linear-gradient(135deg,#35574d 0%,#101917 100%)"
+  },
+  {
+    "slug": "beethoven-symphony-no-5-494",
+    "title": "Symphony No.5 · 馆藏4",
+    "artist": "Beethoven",
+    "language": "古典",
+    "genre": "古典",
+    "region": "全球",
+    "tags": [
+      "古典",
+      "古典",
+      "经典"
+    ],
+    "summary": "Beethoven · 古典 · 古典",
+    "note": "Beethoven",
+    "accent": "linear-gradient(135deg,#4e4173 0%,#191423 100%)"
+  },
+  {
+    "slug": "beethoven-moonlight-sonata-495",
+    "title": "Moonlight Sonata · 馆藏4",
+    "artist": "Beethoven",
+    "language": "古典",
+    "genre": "古典",
+    "region": "全球",
+    "tags": [
+      "古典",
+      "古典",
+      "馆藏"
+    ],
+    "summary": "Beethoven · 古典 · 古典",
+    "note": "Beethoven",
+    "accent": "linear-gradient(135deg,#3a6a78 0%,#13252c 100%)"
+  },
+  {
+    "slug": "mozart-eine-kleine-nachtmusik-496",
+    "title": "Eine kleine Nachtmusik · 馆藏4",
+    "artist": "Mozart",
+    "language": "古典",
+    "genre": "古典",
+    "region": "全球",
+    "tags": [
+      "古典",
+      "古典",
+      "经典"
+    ],
+    "summary": "Mozart · 古典 · 古典",
+    "note": "Mozart",
+    "accent": "linear-gradient(135deg,#31443c 0%,#111714 100%)"
+  },
+  {
+    "slug": "bach-cello-suite-no-1-497",
+    "title": "Cello Suite No.1 · 馆藏4",
+    "artist": "Bach",
+    "language": "古典",
+    "genre": "古典",
+    "region": "全球",
+    "tags": [
+      "古典",
+      "古典",
+      "经典"
+    ],
+    "summary": "Bach · 古典 · 古典",
+    "note": "Bach",
+    "accent": "linear-gradient(135deg,#5a4030 0%,#1f1510 100%)"
+  },
+  {
+    "slug": "chopin-nocturne-op-9-no-2-498",
+    "title": "Nocturne Op.9 No.2 · 馆藏4",
+    "artist": "Chopin",
+    "language": "古典",
+    "genre": "古典",
+    "region": "全球",
+    "tags": [
+      "古典",
+      "古典",
+      "经典"
+    ],
+    "summary": "Chopin · 古典 · 古典",
+    "note": "Chopin",
+    "accent": "linear-gradient(135deg,#364456 0%,#121820 100%)"
+  },
+  {
+    "slug": "tchaikovsky-swan-lake-499",
+    "title": "Swan Lake · 馆藏4",
+    "artist": "Tchaikovsky",
+    "language": "古典",
+    "genre": "古典",
+    "region": "全球",
+    "tags": [
+      "古典",
+      "古典",
+      "经典"
+    ],
+    "summary": "Tchaikovsky · 古典 · 古典",
+    "note": "Tchaikovsky",
+    "accent": "linear-gradient(135deg,#6b5140 0%,#221912 100%)"
+  }
+]

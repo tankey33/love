@@ -1,0 +1,1097 @@
+[
+  {
+    "slug": "in-the-mood-for-love",
+    "title": "花样年华",
+    "english": "In the Mood for Love",
+    "year": "2000",
+    "director": "王家卫",
+    "rating": "9.1",
+    "tags": [
+      "世界百大电影",
+      "金马奖电影",
+      "爱情",
+      "文艺",
+      "华语"
+    ],
+    "summary": "花样年华 · 世界百大电影 / 金马奖电影 / 爱情",
+    "note": "王家卫 · 2000",
+    "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)",
+    "era": "经典"
+  },
+  {
+    "slug": "a-brighter-summer-day",
+    "title": "牯岭街少年杀人事件",
+    "english": "A Brighter Summer Day",
+    "year": "1991",
+    "director": "杨德昌",
+    "rating": "9.0",
+    "tags": [
+      "世界百大电影",
+      "金马奖电影",
+      "剧情",
+      "青春",
+      "华语"
+    ],
+    "summary": "牯岭街少年杀人事件 · 世界百大电影 / 金马奖电影 / 剧情",
+    "note": "杨德昌 · 1991",
+    "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)",
+    "era": "经典"
+  },
+  {
+    "slug": "yi-yi",
+    "title": "一一",
+    "english": "Yi Yi",
+    "year": "2000",
+    "director": "杨德昌",
+    "rating": "9.1",
+    "tags": [
+      "世界百大电影",
+      "金马奖电影",
+      "剧情",
+      "家庭",
+      "华语"
+    ],
+    "summary": "一一 · 世界百大电影 / 金马奖电影 / 剧情",
+    "note": "杨德昌 · 2000",
+    "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)",
+    "era": "经典"
+  },
+  {
+    "slug": "crouching-tiger-hidden-dragon",
+    "title": "卧虎藏龙",
+    "english": "Crouching Tiger, Hidden Dragon",
+    "year": "2000",
+    "director": "李安",
+    "rating": "8.7",
+    "tags": [
+      "奥斯卡电影",
+      "武侠",
+      "爱情",
+      "华语",
+      "动作"
+    ],
+    "summary": "卧虎藏龙 · 奥斯卡电影 / 武侠 / 爱情",
+    "note": "李安 · 2000",
+    "accent": "linear-gradient(135deg,#35574d 0%,#101917 100%)",
+    "era": "经典"
+  },
+  {
+    "slug": "hero",
+    "title": "英雄",
+    "english": "Hero",
+    "year": "2002",
+    "director": "张艺谋",
+    "rating": "8.2",
+    "tags": [
+      "奥斯卡电影",
+      "武侠",
+      "动作",
+      "华语"
+    ],
+    "summary": "英雄 · 奥斯卡电影 / 武侠 / 动作",
+    "note": "张艺谋 · 2002",
+    "accent": "linear-gradient(135deg,#4e4173 0%,#191423 100%)",
+    "era": "经典"
+  },
+  {
+    "slug": "eat-drink-man-woman",
+    "title": "饮食男女",
+    "english": "Eat Drink Man Woman",
+    "year": "1994",
+    "director": "李安",
+    "rating": "9.2",
+    "tags": [
+      "金马奖电影",
+      "喜剧",
+      "家庭",
+      "华语"
+    ],
+    "summary": "饮食男女 · 金马奖电影 / 喜剧 / 家庭",
+    "note": "李安 · 1994",
+    "accent": "linear-gradient(135deg,#3a6a78 0%,#13252c 100%)",
+    "era": "经典"
+  },
+  {
+    "slug": "infernal-affairs",
+    "title": "无间道",
+    "english": "Infernal Affairs",
+    "year": "2002",
+    "director": "刘伟强 / 麦兆辉",
+    "rating": "8.9",
+    "tags": [
+      "金马奖电影",
+      "犯罪",
+      "动作",
+      "华语"
+    ],
+    "summary": "无间道 · 金马奖电影 / 犯罪 / 动作",
+    "note": "刘伟强 / 麦兆辉 · 2002",
+    "accent": "linear-gradient(135deg,#31443c 0%,#111714 100%)",
+    "era": "经典"
+  },
+  {
+    "slug": "let-the-bullets-fly",
+    "title": "让子弹飞",
+    "english": "Let the Bullets Fly",
+    "year": "2010",
+    "director": "姜文",
+    "rating": "9.0",
+    "tags": [
+      "喜剧",
+      "动作",
+      "华语"
+    ],
+    "summary": "让子弹飞 · 喜剧 / 动作 / 华语",
+    "note": "姜文 · 2010",
+    "accent": "linear-gradient(135deg,#5a4030 0%,#1f1510 100%)",
+    "era": "经典"
+  },
+  {
+    "slug": "the-great-buddha",
+    "title": "大佛普拉斯",
+    "english": "The Great Buddha+",
+    "year": "2017",
+    "director": "黄信尧",
+    "rating": "8.7",
+    "tags": [
+      "金马奖电影",
+      "喜剧",
+      "剧情",
+      "华语"
+    ],
+    "summary": "大佛普拉斯 · 金马奖电影 / 喜剧 / 剧情",
+    "note": "黄信尧 · 2017",
+    "accent": "linear-gradient(135deg,#364456 0%,#121820 100%)",
+    "era": "经典"
+  },
+  {
+    "slug": "a-sun",
+    "title": "阳光普照",
+    "english": "A Sun",
+    "year": "2019",
+    "director": "钟孟宏",
+    "rating": "8.6",
+    "tags": [
+      "金马奖电影",
+      "剧情",
+      "家庭",
+      "华语"
+    ],
+    "summary": "阳光普照 · 金马奖电影 / 剧情 / 家庭",
+    "note": "钟孟宏 · 2019",
+    "accent": "linear-gradient(135deg,#6b5140 0%,#221912 100%)",
+    "era": "经典"
+  },
+  {
+    "slug": "chungking-express",
+    "title": "重庆森林",
+    "english": "Chungking Express",
+    "year": "1994",
+    "director": "王家卫",
+    "rating": "8.8",
+    "tags": [
+      "世界百大电影",
+      "爱情",
+      "文艺",
+      "华语"
+    ],
+    "summary": "重庆森林 · 世界百大电影 / 爱情 / 文艺",
+    "note": "王家卫 · 1994",
+    "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)",
+    "era": "经典"
+  },
+  {
+    "slug": "happy-together",
+    "title": "春光乍泄",
+    "english": "Happy Together",
+    "year": "1997",
+    "director": "王家卫",
+    "rating": "9.0",
+    "tags": [
+      "世界百大电影",
+      "爱情",
+      "文艺",
+      "华语"
+    ],
+    "summary": "春光乍泄 · 世界百大电影 / 爱情 / 文艺",
+    "note": "王家卫 · 1997",
+    "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)",
+    "era": "经典"
+  },
+  {
+    "slug": "farewell-my-concubine",
+    "title": "霸王别姬",
+    "english": "Farewell My Concubine",
+    "year": "1993",
+    "director": "陈凯歌",
+    "rating": "9.6",
+    "tags": [
+      "世界百大电影",
+      "剧情",
+      "历史",
+      "华语"
+    ],
+    "summary": "霸王别姬 · 世界百大电影 / 剧情 / 历史",
+    "note": "陈凯歌 · 1993",
+    "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)",
+    "era": "经典"
+  },
+  {
+    "slug": "to-live",
+    "title": "活着",
+    "english": "To Live",
+    "year": "1994",
+    "director": "张艺谋",
+    "rating": "9.3",
+    "tags": [
+      "世界百大电影",
+      "剧情",
+      "历史",
+      "华语"
+    ],
+    "summary": "活着 · 世界百大电影 / 剧情 / 历史",
+    "note": "张艺谋 · 1994",
+    "accent": "linear-gradient(135deg,#35574d 0%,#101917 100%)",
+    "era": "经典"
+  },
+  {
+    "slug": "devils-on-the-doorstep",
+    "title": "鬼子来了",
+    "english": "Devils on the Doorstep",
+    "year": "2000",
+    "director": "姜文",
+    "rating": "9.3",
+    "tags": [
+      "世界百大电影",
+      "喜剧",
+      "战争",
+      "华语"
+    ],
+    "summary": "鬼子来了 · 世界百大电影 / 喜剧 / 战争",
+    "note": "姜文 · 2000",
+    "accent": "linear-gradient(135deg,#4e4173 0%,#191423 100%)",
+    "era": "经典"
+  },
+  {
+    "slug": "kung-fu-hustle",
+    "title": "功夫",
+    "english": "Kung Fu Hustle",
+    "year": "2004",
+    "director": "周星驰",
+    "rating": "8.9",
+    "tags": [
+      "喜剧",
+      "动作",
+      "武侠",
+      "华语"
+    ],
+    "summary": "功夫 · 喜剧 / 动作 / 武侠",
+    "note": "周星驰 · 2004",
+    "accent": "linear-gradient(135deg,#3a6a78 0%,#13252c 100%)",
+    "era": "经典"
+  },
+  {
+    "slug": "a-chinese-odyssey-part-two",
+    "title": "大话西游之大圣娶亲",
+    "english": "A Chinese Odyssey Part Two",
+    "year": "1995",
+    "director": "刘镇伟",
+    "rating": "9.2",
+    "tags": [
+      "喜剧",
+      "爱情",
+      "奇幻",
+      "华语"
+    ],
+    "summary": "大话西游之大圣娶亲 · 喜剧 / 爱情 / 奇幻",
+    "note": "刘镇伟 · 1995",
+    "accent": "linear-gradient(135deg,#31443c 0%,#111714 100%)",
+    "era": "经典"
+  },
+  {
+    "slug": "interstellar",
+    "title": "星际穿越",
+    "english": "Interstellar",
+    "year": "2014",
+    "director": "Christopher Nolan",
+    "rating": "9.4",
+    "tags": [
+      "奥斯卡电影",
+      "科幻",
+      "冒险",
+      "亲情"
+    ],
+    "summary": "星际穿越 · 奥斯卡电影 / 科幻 / 冒险",
+    "note": "Christopher Nolan · 2014",
+    "accent": "linear-gradient(135deg,#5a4030 0%,#1f1510 100%)",
+    "era": "经典"
+  },
+  {
+    "slug": "arrival",
+    "title": "降临",
+    "english": "Arrival",
+    "year": "2016",
+    "director": "Denis Villeneuve",
+    "rating": "8.8",
+    "tags": [
+      "奥斯卡电影",
+      "科幻",
+      "剧情"
+    ],
+    "summary": "降临 · 奥斯卡电影 / 科幻 / 剧情",
+    "note": "Denis Villeneuve · 2016",
+    "accent": "linear-gradient(135deg,#364456 0%,#121820 100%)",
+    "era": "经典"
+  },
+  {
+    "slug": "parasite",
+    "title": "寄生虫",
+    "english": "Parasite",
+    "year": "2019",
+    "director": "奉俊昊",
+    "rating": "8.8",
+    "tags": [
+      "奥斯卡电影",
+      "喜剧",
+      "惊悚",
+      "剧情"
+    ],
+    "summary": "寄生虫 · 奥斯卡电影 / 喜剧 / 惊悚",
+    "note": "奉俊昊 · 2019",
+    "accent": "linear-gradient(135deg,#6b5140 0%,#221912 100%)",
+    "era": "经典"
+  },
+  {
+    "slug": "la-la-land",
+    "title": "爱乐之城",
+    "english": "La La Land",
+    "year": "2016",
+    "director": "Damien Chazelle",
+    "rating": "8.4",
+    "tags": [
+      "奥斯卡电影",
+      "爱情",
+      "歌舞",
+      "喜剧"
+    ],
+    "summary": "爱乐之城 · 奥斯卡电影 / 爱情 / 歌舞",
+    "note": "Damien Chazelle · 2016",
+    "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)",
+    "era": "经典"
+  },
+  {
+    "slug": "green-book",
+    "title": "绿皮书",
+    "english": "Green Book",
+    "year": "2018",
+    "director": "Peter Farrelly",
+    "rating": "8.9",
+    "tags": [
+      "奥斯卡电影",
+      "喜剧",
+      "剧情",
+      "公路"
+    ],
+    "summary": "绿皮书 · 奥斯卡电影 / 喜剧 / 剧情",
+    "note": "Peter Farrelly · 2018",
+    "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)",
+    "era": "经典"
+  },
+  {
+    "slug": "forrest-gump",
+    "title": "阿甘正传",
+    "english": "Forrest Gump",
+    "year": "1994",
+    "director": "Robert Zemeckis",
+    "rating": "9.5",
+    "tags": [
+      "奥斯卡电影",
+      "剧情",
+      "爱情",
+      "喜剧"
+    ],
+    "summary": "阿甘正传 · 奥斯卡电影 / 剧情 / 爱情",
+    "note": "Robert Zemeckis · 1994",
+    "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)",
+    "era": "经典"
+  },
+  {
+    "slug": "titanic",
+    "title": "泰坦尼克号",
+    "english": "Titanic",
+    "year": "1997",
+    "director": "James Cameron",
+    "rating": "9.5",
+    "tags": [
+      "奥斯卡电影",
+      "爱情",
+      "灾难"
+    ],
+    "summary": "泰坦尼克号 · 奥斯卡电影 / 爱情 / 灾难",
+    "note": "James Cameron · 1997",
+    "accent": "linear-gradient(135deg,#35574d 0%,#101917 100%)",
+    "era": "经典"
+  },
+  {
+    "slug": "gladiator",
+    "title": "角斗士",
+    "english": "Gladiator",
+    "year": "2000",
+    "director": "Ridley Scott",
+    "rating": "8.6",
+    "tags": [
+      "奥斯卡电影",
+      "动作",
+      "历史",
+      "战争"
+    ],
+    "summary": "角斗士 · 奥斯卡电影 / 动作 / 历史",
+    "note": "Ridley Scott · 2000",
+    "accent": "linear-gradient(135deg,#4e4173 0%,#191423 100%)",
+    "era": "经典"
+  },
+  {
+    "slug": "a-beautiful-mind",
+    "title": "美丽心灵",
+    "english": "A Beautiful Mind",
+    "year": "2001",
+    "director": "Ron Howard",
+    "rating": "9.1",
+    "tags": [
+      "奥斯卡电影",
+      "剧情",
+      "传记"
+    ],
+    "summary": "美丽心灵 · 奥斯卡电影 / 剧情 / 传记",
+    "note": "Ron Howard · 2001",
+    "accent": "linear-gradient(135deg,#3a6a78 0%,#13252c 100%)",
+    "era": "经典"
+  },
+  {
+    "slug": "the-lord-of-the-rings-the-return-of-the-king",
+    "title": "指环王3：王者无敌",
+    "english": "The Lord of the Rings: The Return of the King",
+    "year": "2003",
+    "director": "Peter Jackson",
+    "rating": "9.3",
+    "tags": [
+      "奥斯卡电影",
+      "奇幻",
+      "冒险"
+    ],
+    "summary": "指环王3：王者无敌 · 奥斯卡电影 / 奇幻 / 冒险",
+    "note": "Peter Jackson · 2003",
+    "accent": "linear-gradient(135deg,#31443c 0%,#111714 100%)",
+    "era": "经典"
+  },
+  {
+    "slug": "the-dark-knight",
+    "title": "黑暗骑士",
+    "english": "The Dark Knight",
+    "year": "2008",
+    "director": "Christopher Nolan",
+    "rating": "9.2",
+    "tags": [
+      "世界百大电影",
+      "动作",
+      "犯罪"
+    ],
+    "summary": "黑暗骑士 · 世界百大电影 / 动作 / 犯罪",
+    "note": "Christopher Nolan · 2008",
+    "accent": "linear-gradient(135deg,#5a4030 0%,#1f1510 100%)",
+    "era": "经典"
+  },
+  {
+    "slug": "inception",
+    "title": "盗梦空间",
+    "english": "Inception",
+    "year": "2010",
+    "director": "Christopher Nolan",
+    "rating": "9.4",
+    "tags": [
+      "世界百大电影",
+      "科幻",
+      "动作"
+    ],
+    "summary": "盗梦空间 · 世界百大电影 / 科幻 / 动作",
+    "note": "Christopher Nolan · 2010",
+    "accent": "linear-gradient(135deg,#364456 0%,#121820 100%)",
+    "era": "经典"
+  },
+  {
+    "slug": "the-godfather",
+    "title": "教父",
+    "english": "The Godfather",
+    "year": "1972",
+    "director": "Francis Ford Coppola",
+    "rating": "9.3",
+    "tags": [
+      "世界百大电影",
+      "犯罪",
+      "剧情"
+    ],
+    "summary": "教父 · 世界百大电影 / 犯罪 / 剧情",
+    "note": "Francis Ford Coppola · 1972",
+    "accent": "linear-gradient(135deg,#6b5140 0%,#221912 100%)",
+    "era": "经典"
+  },
+  {
+    "slug": "the-godfather-part-ii",
+    "title": "教父2",
+    "english": "The Godfather Part II",
+    "year": "1974",
+    "director": "Francis Ford Coppola",
+    "rating": "9.2",
+    "tags": [
+      "世界百大电影",
+      "犯罪",
+      "剧情"
+    ],
+    "summary": "教父2 · 世界百大电影 / 犯罪 / 剧情",
+    "note": "Francis Ford Coppola · 1974",
+    "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)",
+    "era": "经典"
+  },
+  {
+    "slug": "seven-samurai",
+    "title": "七武士",
+    "english": "Seven Samurai",
+    "year": "1954",
+    "director": "黑泽明",
+    "rating": "9.3",
+    "tags": [
+      "世界百大电影",
+      "动作",
+      "武侠",
+      "历史"
+    ],
+    "summary": "七武士 · 世界百大电影 / 动作 / 武侠",
+    "note": "黑泽明 · 1954",
+    "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)",
+    "era": "经典"
+  },
+  {
+    "slug": "tokyo-story",
+    "title": "东京物语",
+    "english": "Tokyo Story",
+    "year": "1953",
+    "director": "小津安二郎",
+    "rating": "9.2",
+    "tags": [
+      "世界百大电影",
+      "剧情",
+      "家庭"
+    ],
+    "summary": "东京物语 · 世界百大电影 / 剧情 / 家庭",
+    "note": "小津安二郎 · 1953",
+    "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)",
+    "era": "经典"
+  },
+  {
+    "slug": "pulp-fiction",
+    "title": "低俗小说",
+    "english": "Pulp Fiction",
+    "year": "1994",
+    "director": "Quentin Tarantino",
+    "rating": "8.9",
+    "tags": [
+      "世界百大电影",
+      "犯罪",
+      "喜剧"
+    ],
+    "summary": "低俗小说 · 世界百大电影 / 犯罪 / 喜剧",
+    "note": "Quentin Tarantino · 1994",
+    "accent": "linear-gradient(135deg,#35574d 0%,#101917 100%)",
+    "era": "经典"
+  },
+  {
+    "slug": "rear-window",
+    "title": "后窗",
+    "english": "Rear Window",
+    "year": "1954",
+    "director": "Alfred Hitchcock",
+    "rating": "8.7",
+    "tags": [
+      "世界百大电影",
+      "悬疑",
+      "惊悚"
+    ],
+    "summary": "后窗 · 世界百大电影 / 悬疑 / 惊悚",
+    "note": "Alfred Hitchcock · 1954",
+    "accent": "linear-gradient(135deg,#4e4173 0%,#191423 100%)",
+    "era": "经典"
+  },
+  {
+    "slug": "life-is-beautiful",
+    "title": "美丽人生",
+    "english": "Life Is Beautiful",
+    "year": "1997",
+    "director": "Roberto Benigni",
+    "rating": "9.5",
+    "tags": [
+      "世界百大电影",
+      "喜剧",
+      "战争",
+      "爱情"
+    ],
+    "summary": "美丽人生 · 世界百大电影 / 喜剧 / 战争",
+    "note": "Roberto Benigni · 1997",
+    "accent": "linear-gradient(135deg,#3a6a78 0%,#13252c 100%)",
+    "era": "经典"
+  },
+  {
+    "slug": "cinema-paradiso",
+    "title": "天堂电影院",
+    "english": "Cinema Paradiso",
+    "year": "1988",
+    "director": "Giuseppe Tornatore",
+    "rating": "9.2",
+    "tags": [
+      "世界百大电影",
+      "爱情",
+      "剧情"
+    ],
+    "summary": "天堂电影院 · 世界百大电影 / 爱情 / 剧情",
+    "note": "Giuseppe Tornatore · 1988",
+    "accent": "linear-gradient(135deg,#31443c 0%,#111714 100%)",
+    "era": "经典"
+  },
+  {
+    "slug": "the-legend-of-1900",
+    "title": "海上钢琴师",
+    "english": "The Legend of 1900",
+    "year": "1998",
+    "director": "Giuseppe Tornatore",
+    "rating": "9.3",
+    "tags": [
+      "世界百大电影",
+      "剧情",
+      "音乐"
+    ],
+    "summary": "海上钢琴师 · 世界百大电影 / 剧情 / 音乐",
+    "note": "Giuseppe Tornatore · 1998",
+    "accent": "linear-gradient(135deg,#5a4030 0%,#1f1510 100%)",
+    "era": "经典"
+  },
+  {
+    "slug": "the-shawshank-redemption",
+    "title": "肖申克的救赎",
+    "english": "The Shawshank Redemption",
+    "year": "1994",
+    "director": "Frank Darabont",
+    "rating": "9.7",
+    "tags": [
+      "世界百大电影",
+      "剧情"
+    ],
+    "summary": "肖申克的救赎 · 世界百大电影 / 剧情",
+    "note": "Frank Darabont · 1994",
+    "accent": "linear-gradient(135deg,#364456 0%,#121820 100%)",
+    "era": "经典"
+  },
+  {
+    "slug": "schindler-s-list",
+    "title": "辛德勒的名单",
+    "english": "Schindler's List",
+    "year": "1993",
+    "director": "Steven Spielberg",
+    "rating": "9.6",
+    "tags": [
+      "世界百大电影",
+      "战争",
+      "历史"
+    ],
+    "summary": "辛德勒的名单 · 世界百大电影 / 战争 / 历史",
+    "note": "Steven Spielberg · 1993",
+    "accent": "linear-gradient(135deg,#6b5140 0%,#221912 100%)",
+    "era": "经典"
+  },
+  {
+    "slug": "the-truman-show",
+    "title": "楚门的世界",
+    "english": "The Truman Show",
+    "year": "1998",
+    "director": "Peter Weir",
+    "rating": "9.4",
+    "tags": [
+      "世界百大电影",
+      "剧情",
+      "科幻",
+      "喜剧"
+    ],
+    "summary": "楚门的世界 · 世界百大电影 / 剧情 / 科幻",
+    "note": "Peter Weir · 1998",
+    "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)",
+    "era": "经典"
+  },
+  {
+    "slug": "wall-e",
+    "title": "机器人总动员",
+    "english": "WALL·E",
+    "year": "2008",
+    "director": "Andrew Stanton",
+    "rating": "9.3",
+    "tags": [
+      "奥斯卡电影",
+      "动画",
+      "科幻",
+      "爱情"
+    ],
+    "summary": "机器人总动员 · 奥斯卡电影 / 动画 / 科幻",
+    "note": "Andrew Stanton · 2008",
+    "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)",
+    "era": "经典"
+  },
+  {
+    "slug": "coco",
+    "title": "寻梦环游记",
+    "english": "Coco",
+    "year": "2017",
+    "director": "Lee Unkrich",
+    "rating": "9.1",
+    "tags": [
+      "奥斯卡电影",
+      "动画",
+      "家庭",
+      "奇幻"
+    ],
+    "summary": "寻梦环游记 · 奥斯卡电影 / 动画 / 家庭",
+    "note": "Lee Unkrich · 2017",
+    "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)",
+    "era": "经典"
+  },
+  {
+    "slug": "spirited-away",
+    "title": "千与千寻",
+    "english": "Spirited Away",
+    "year": "2001",
+    "director": "宫崎骏",
+    "rating": "9.4",
+    "tags": [
+      "世界百大电影",
+      "动画",
+      "奇幻"
+    ],
+    "summary": "千与千寻 · 世界百大电影 / 动画 / 奇幻",
+    "note": "宫崎骏 · 2001",
+    "accent": "linear-gradient(135deg,#35574d 0%,#101917 100%)",
+    "era": "经典"
+  },
+  {
+    "slug": "my-neighbor-totoro",
+    "title": "龙猫",
+    "english": "My Neighbor Totoro",
+    "year": "1988",
+    "director": "宫崎骏",
+    "rating": "9.2",
+    "tags": [
+      "动画",
+      "家庭",
+      "奇幻"
+    ],
+    "summary": "龙猫 · 动画 / 家庭 / 奇幻",
+    "note": "宫崎骏 · 1988",
+    "accent": "linear-gradient(135deg,#4e4173 0%,#191423 100%)",
+    "era": "经典"
+  },
+  {
+    "slug": "howl-s-moving-castle",
+    "title": "哈尔的移动城堡",
+    "english": "Howl's Moving Castle",
+    "year": "2004",
+    "director": "宫崎骏",
+    "rating": "9.1",
+    "tags": [
+      "动画",
+      "爱情",
+      "奇幻"
+    ],
+    "summary": "哈尔的移动城堡 · 动画 / 爱情 / 奇幻",
+    "note": "宫崎骏 · 2004",
+    "accent": "linear-gradient(135deg,#3a6a78 0%,#13252c 100%)",
+    "era": "经典"
+  },
+  {
+    "slug": "your-name",
+    "title": "你的名字。",
+    "english": "Your Name.",
+    "year": "2016",
+    "director": "新海诚",
+    "rating": "8.5",
+    "tags": [
+      "动画",
+      "爱情",
+      "奇幻"
+    ],
+    "summary": "你的名字。 · 动画 / 爱情 / 奇幻",
+    "note": "新海诚 · 2016",
+    "accent": "linear-gradient(135deg,#31443c 0%,#111714 100%)",
+    "era": "经典"
+  },
+  {
+    "slug": "the-matrix",
+    "title": "黑客帝国",
+    "english": "The Matrix",
+    "year": "1999",
+    "director": "Lana Wachowski / Lilly Wachowski",
+    "rating": "9.1",
+    "tags": [
+      "世界百大电影",
+      "科幻",
+      "动作"
+    ],
+    "summary": "黑客帝国 · 世界百大电影 / 科幻 / 动作",
+    "note": "Lana Wachowski / Lilly Wachowski · 1999",
+    "accent": "linear-gradient(135deg,#5a4030 0%,#1f1510 100%)",
+    "era": "经典"
+  },
+  {
+    "slug": "terminator-2-judgment-day",
+    "title": "终结者2",
+    "english": "Terminator 2: Judgment Day",
+    "year": "1991",
+    "director": "James Cameron",
+    "rating": "8.8",
+    "tags": [
+      "科幻",
+      "动作"
+    ],
+    "summary": "终结者2 · 科幻 / 动作",
+    "note": "James Cameron · 1991",
+    "accent": "linear-gradient(135deg,#364456 0%,#121820 100%)",
+    "era": "经典"
+  },
+  {
+    "slug": "se7en",
+    "title": "七宗罪",
+    "english": "Se7en",
+    "year": "1995",
+    "director": "David Fincher",
+    "rating": "8.8",
+    "tags": [
+      "犯罪",
+      "惊悚"
+    ],
+    "summary": "七宗罪 · 犯罪 / 惊悚",
+    "note": "David Fincher · 1995",
+    "accent": "linear-gradient(135deg,#6b5140 0%,#221912 100%)",
+    "era": "经典"
+  },
+  {
+    "slug": "fight-club",
+    "title": "搏击俱乐部",
+    "english": "Fight Club",
+    "year": "1999",
+    "director": "David Fincher",
+    "rating": "9.0",
+    "tags": [
+      "世界百大电影",
+      "剧情",
+      "犯罪"
+    ],
+    "summary": "搏击俱乐部 · 世界百大电影 / 剧情 / 犯罪",
+    "note": "David Fincher · 1999",
+    "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)",
+    "era": "经典"
+  },
+  {
+    "slug": "gone-girl",
+    "title": "消失的爱人",
+    "english": "Gone Girl",
+    "year": "2014",
+    "director": "David Fincher",
+    "rating": "8.7",
+    "tags": [
+      "悬疑",
+      "惊悚"
+    ],
+    "summary": "消失的爱人 · 悬疑 / 惊悚",
+    "note": "David Fincher · 2014",
+    "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)",
+    "era": "经典"
+  },
+  {
+    "slug": "inglourious-basterds",
+    "title": "无耻混蛋",
+    "english": "Inglourious Basterds",
+    "year": "2009",
+    "director": "Quentin Tarantino",
+    "rating": "8.7",
+    "tags": [
+      "战争",
+      "犯罪",
+      "喜剧"
+    ],
+    "summary": "无耻混蛋 · 战争 / 犯罪 / 喜剧",
+    "note": "Quentin Tarantino · 2009",
+    "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)",
+    "era": "经典"
+  },
+  {
+    "slug": "before-sunrise",
+    "title": "爱在黎明破晓前",
+    "english": "Before Sunrise",
+    "year": "1995",
+    "director": "Richard Linklater",
+    "rating": "8.8",
+    "tags": [
+      "爱情",
+      "文艺"
+    ],
+    "summary": "爱在黎明破晓前 · 爱情 / 文艺",
+    "note": "Richard Linklater · 1995",
+    "accent": "linear-gradient(135deg,#35574d 0%,#101917 100%)",
+    "era": "经典"
+  },
+  {
+    "slug": "before-sunset",
+    "title": "爱在日落黄昏时",
+    "english": "Before Sunset",
+    "year": "2004",
+    "director": "Richard Linklater",
+    "rating": "8.9",
+    "tags": [
+      "爱情",
+      "文艺"
+    ],
+    "summary": "爱在日落黄昏时 · 爱情 / 文艺",
+    "note": "Richard Linklater · 2004",
+    "accent": "linear-gradient(135deg,#4e4173 0%,#191423 100%)",
+    "era": "经典"
+  },
+  {
+    "slug": "before-midnight",
+    "title": "爱在午夜降临前",
+    "english": "Before Midnight",
+    "year": "2013",
+    "director": "Richard Linklater",
+    "rating": "8.9",
+    "tags": [
+      "爱情",
+      "文艺"
+    ],
+    "summary": "爱在午夜降临前 · 爱情 / 文艺",
+    "note": "Richard Linklater · 2013",
+    "accent": "linear-gradient(135deg,#3a6a78 0%,#13252c 100%)",
+    "era": "经典"
+  },
+  {
+    "slug": "her",
+    "title": "她",
+    "english": "Her",
+    "year": "2013",
+    "director": "Spike Jonze",
+    "rating": "8.4",
+    "tags": [
+      "爱情",
+      "科幻",
+      "文艺"
+    ],
+    "summary": "她 · 爱情 / 科幻 / 文艺",
+    "note": "Spike Jonze · 2013",
+    "accent": "linear-gradient(135deg,#31443c 0%,#111714 100%)",
+    "era": "经典"
+  },
+  {
+    "slug": "the-secret-life-of-walter-mitty",
+    "title": "白日梦想家",
+    "english": "The Secret Life of Walter Mitty",
+    "year": "2013",
+    "director": "Ben Stiller",
+    "rating": "8.5",
+    "tags": [
+      "喜剧",
+      "冒险",
+      "治愈"
+    ],
+    "summary": "白日梦想家 · 喜剧 / 冒险 / 治愈",
+    "note": "Ben Stiller · 2013",
+    "accent": "linear-gradient(135deg,#5a4030 0%,#1f1510 100%)",
+    "era": "经典"
+  },
+  {
+    "slug": "the-intouchables",
+    "title": "触不可及",
+    "english": "The Intouchables",
+    "year": "2011",
+    "director": "Olivier Nakache / Éric Toledano",
+    "rating": "9.3",
+    "tags": [
+      "喜剧",
+      "剧情"
+    ],
+    "summary": "触不可及 · 喜剧 / 剧情",
+    "note": "Olivier Nakache / Éric Toledano · 2011",
+    "accent": "linear-gradient(135deg,#364456 0%,#121820 100%)",
+    "era": "经典"
+  },
+  {
+    "slug": "the-grand-budapest-hotel",
+    "title": "布达佩斯大饭店",
+    "english": "The Grand Budapest Hotel",
+    "year": "2014",
+    "director": "Wes Anderson",
+    "rating": "8.9",
+    "tags": [
+      "喜剧",
+      "犯罪",
+      "文艺"
+    ],
+    "summary": "布达佩斯大饭店 · 喜剧 / 犯罪 / 文艺",
+    "note": "Wes Anderson · 2014",
+    "accent": "linear-gradient(135deg,#6b5140 0%,#221912 100%)",
+    "era": "经典"
+  },
+  {
+    "slug": "drunken-master",
+    "title": "醉拳",
+    "english": "Drunken Master",
+    "year": "1978",
+    "director": "袁和平",
+    "rating": "8.0",
+    "tags": [
+      "武侠",
+      "动作",
+      "喜剧",
+      "华语"
+    ],
+    "summary": "醉拳 · 武侠 / 动作 / 喜剧",
+    "note": "袁和平 · 1978",
+    "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)",
+    "era": "经典"
+  },
+  {
+    "slug": "new-dragon-gate-inn",
+    "title": "新龙门客栈",
+    "english": "New Dragon Gate Inn",
+    "year": "1992",
+    "director": "李惠民",
+    "rating": "8.7",
+    "tags": [
+      "武侠",
+      "动作",
+      "华语"
+    ],
+    "summary": "新龙门客栈 · 武侠 / 动作 / 华语",
+    "note": "李惠民 · 1992",
+    "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)",
+    "era": "经典"
+  },
+  {
+    "slug": "swordsman-ii",
+    "title": "笑傲江湖之东方不败",
+    "english": "Swordsman II",
+    "year": "1992",
+    "director": "程小东",
+    "rating": "8.5",
+    "tags": [
+      "武侠",
+      "动作",
+      "华语"
+    ],
+    "summary": "笑傲江湖之东方不败 · 武侠 / 动作 / 华语",
+    "note": "程小东 · 1992",
+    "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)",
+    "era": "经典"
+  }
+]

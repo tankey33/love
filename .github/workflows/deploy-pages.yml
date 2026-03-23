@@ -11,6 +11,8 @@ on:
       - 'photo.html'
       - 'photo-detail.html'
       - 'movie.html'
+      - 'music.html'
+      - 'data/**'
       - 'assets/**'
       - 'photo/**'
       - '.github/workflows/deploy-pages.yml'
