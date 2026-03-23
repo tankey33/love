@@ -26,13 +26,14 @@
     .brand{font-size:14px;letter-spacing:.02em;white-space:nowrap}
     .nav{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end}.nav a{font-size:13px;color:var(--soft);padding:10px 14px;border-radius:999px;transition:background .25s ease,color .25s ease}.nav a:hover,.nav a.active{background:rgba(17,17,17,.05);color:var(--text)}
     .page{max-width:var(--content);margin:0 auto;padding:26px 20px 56px}
-    .hero{display:grid;grid-template-columns:1.08fr .92fr;gap:18px;align-items:end;margin-bottom:20px}
-    .eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--soft);font-weight:600;margin-bottom:10px}
-    .hero-title{margin:0;font-size:clamp(28px,4.2vw,54px);line-height:1.04;letter-spacing:-.05em;font-weight:600;text-wrap:balance}
-    .hero-panel{background:linear-gradient(180deg, rgba(255,255,255,.98) 0%, rgba(250,250,252,.94) 100%);border:1px solid var(--line);border-radius:28px;box-shadow:var(--shadow);padding:22px 22px 18px;min-height:220px;display:flex;flex-direction:column;justify-content:space-between}
-    .panel-label{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);font-weight:600}
-    .panel-quote{margin:14px 0 0;font-size:22px;line-height:1.25;letter-spacing:-.03em;font-weight:600;max-width:11em}
-    .panel-note{margin-top:12px;font-size:13px;line-height:1.7;color:var(--soft);max-width:24em}
+    .hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(420px,520px);gap:28px;align-items:center;margin-bottom:20px}
+    .hero-copy{display:flex;flex-direction:column;justify-content:center;align-self:stretch;min-height:220px;padding-right:8px}
+    .eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--soft);font-weight:600;margin:0 0 12px}
+    .hero-title{margin:0;font-size:clamp(30px,4.4vw,56px);line-height:1.04;letter-spacing:-.055em;font-weight:600;text-wrap:balance;max-width:10em}
+    .hero-panel{background:linear-gradient(180deg, rgba(255,255,255,.98) 0%, rgba(250,250,252,.94) 100%);border:1px solid var(--line);border-radius:28px;box-shadow:var(--shadow);padding:22px 24px 20px;min-height:220px;display:flex;flex-direction:column;justify-content:center;align-self:stretch}
+    .panel-label{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);font-weight:600;margin:0 0 14px}
+    .panel-quote{margin:0;font-size:clamp(20px,2.1vw,28px);line-height:1.22;letter-spacing:-.03em;font-weight:600;max-width:12ch;text-wrap:balance}
+    .panel-source{margin-top:12px;font-size:13px;line-height:1.6;color:var(--soft)}
     .toolbar{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:14px}
     .section-title{font-size:22px;line-height:1.15;letter-spacing:-.04em;font-weight:600;margin:0}
     .search-box{position:relative;flex:0 0 280px;max-width:280px;width:100%}
@@ -63,9 +64,9 @@
     .movie-meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
     .empty{padding:30px 0;color:var(--soft)}
     @media (max-width:1400px){.grid{grid-template-columns:repeat(5,minmax(0,1fr))}}
-    @media (max-width:1180px){.hero,.featured{grid-template-columns:1fr}.grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+    @media (max-width:1180px){.hero,.featured{grid-template-columns:1fr}.grid{grid-template-columns:repeat(4,minmax(0,1fr))}.hero-copy{min-height:auto;padding-right:0}.hero-panel{min-height:auto}}
     @media (max-width:920px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
-    @media (max-width:720px){.page{padding:22px 16px 44px}.topbar-inner{padding:12px 16px}.hero{gap:16px;margin-bottom:18px}.hero-desc{font-size:14px;line-height:1.72}.hero-panel{padding:18px 18px 16px;min-height:auto}.panel-quote{font-size:20px}.toolbar{justify-content:center}.section-title{width:100%;font-size:20px;text-align:center}.search-box{flex:0 0 260px;max-width:260px}.filters{justify-content:center}.featured{border-radius:22px;min-height:auto}.featured-media{padding:18px;min-height:220px}.featured-copy{padding:18px 16px 16px}.featured-name{font-size:clamp(26px,9vw,34px)}.meta-grid{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.movie-card{border-radius:18px}.movie-body{padding:10px 10px 10px}.movie-title{font-size:13px}}
+    @media (max-width:720px){.page{padding:22px 16px 44px}.topbar-inner{padding:12px 16px}.hero{gap:14px;margin-bottom:18px;align-items:stretch}.hero-copy{min-height:auto;justify-content:center}.eyebrow{margin-bottom:8px}.hero-title{font-size:clamp(28px,9vw,40px);max-width:12em}.hero-panel{padding:18px 18px 16px;min-height:160px;justify-content:center}.panel-label{margin-bottom:10px}.panel-quote{font-size:20px;max-width:100%}.panel-source{font-size:12px}.toolbar{justify-content:center}.section-title{width:100%;font-size:20px;text-align:center}.search-box{flex:0 0 260px;max-width:260px}.filters{justify-content:center}.featured{border-radius:22px;min-height:auto}.featured-media{padding:18px;min-height:220px}.featured-copy{padding:18px 16px 16px}.featured-name{font-size:clamp(26px,9vw,34px)}.meta-grid{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.movie-card{border-radius:18px}.movie-body{padding:10px 10px 10px}.movie-title{font-size:13px}}
     @media (max-width:520px){.grid{grid-template-columns:1fr}.movie-summary{-webkit-line-clamp:4}}
   </style>
 </head>
@@ -84,14 +85,15 @@
 
   <main class="page">
     <section class="hero">
-      <div>
+      <div class="hero-copy">
         <div class="eyebrow">Movies</div>
         <h1 class="hero-title">把喜欢的电影，放在一起。</h1>
       </div>
       <div class="hero-panel">
         <div>
           <div class="panel-label">A quiet archive</div>
-          <div class="panel-quote">电影越来越多，归类越要清楚，才能一直好找、好翻、好重看。</div>
+          <div class="panel-quote" id="archive-quote">电影不仅拍下世界，也拍下我们看世界的方式。</div>
+          <div class="panel-source" id="archive-source">安德烈·巴赞 · 电影评论家</div>
         </div>
       </div>
     </section>
@@ -114,6 +116,20 @@
   <script>
     const palette = [
       'linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)','linear-gradient(135deg,#202632 0%,#090c12 100%)','linear-gradient(135deg,#3d4b56 0%,#181d23 100%)','linear-gradient(135deg,#35574d 0%,#101917 100%)','linear-gradient(135deg,#4e4173 0%,#191423 100%)','linear-gradient(135deg,#3a6a78 0%,#13252c 100%)','linear-gradient(135deg,#31443c 0%,#111714 100%)','linear-gradient(135deg,#5a4030 0%,#1f1510 100%)','linear-gradient(135deg,#364456 0%,#121820 100%)','linear-gradient(135deg,#6b5140 0%,#221912 100%)'
+    ];
+
+    const archiveQuotes = [
+      { quote: '电影不仅拍下世界，也拍下我们看世界的方式。', source: '安德烈·巴赞 · 电影评论家' },
+      { quote: '电影是每秒二十四格的真相。', source: '让-吕克·戈达尔 · 导演' },
+      { quote: '一个人永远不会只有一种人生。', source: '《花样年华》' },
+      { quote: 'After all, tomorrow is another day.', source: '《乱世佳人》' },
+      { quote: 'All we have to decide is what to do with the time that is given us.', source: '《指环王：护戒使者》' },
+      { quote: '电影是把时间雕刻出来。', source: '安德烈·塔可夫斯基 · 导演' },
+      { quote: 'We accept the reality of the world with which we are presented.', source: '《楚门的世界》' },
+      { quote: 'Cinema is a matter of what’s in the frame and what’s out.', source: '马丁·斯科塞斯 · 导演' },
+      { quote: 'Louis, I think this is the beginning of a beautiful friendship.', source: '《卡萨布兰卡》' },
+      { quote: 'To me, the cinema is not a slice of life, but a piece of cake.', source: '阿尔弗雷德·希区柯克 · 导演' },
+      { quote: 'No hay banda! There is no band.', source: '《穆赫兰道》' }
     ];
 
     const rawMovies = [
@@ -325,7 +341,17 @@
       renderGrid(list);
     }
 
+    function rotateArchiveQuote() {
+      const quoteEl = document.getElementById('archive-quote');
+      const sourceEl = document.getElementById('archive-source');
+      if (!quoteEl || !sourceEl || !archiveQuotes.length) return;
+      const item = archiveQuotes[Math.floor(Math.random() * archiveQuotes.length)];
+      quoteEl.textContent = item.quote;
+      sourceEl.textContent = item.source;
+    }
+
     document.getElementById('search-input').addEventListener('input', applyFilters);
+    rotateArchiveQuote();
     renderStats();
     applyFilters();
   </script>
