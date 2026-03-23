@@ -19,67 +19,28 @@
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","PingFang SC","Helvetica Neue",sans-serif;
-      color:var(--text);
-      background:
-        radial-gradient(circle at top, rgba(255,255,255,.95) 0%, rgba(255,255,255,.45) 26%, transparent 56%),
-        linear-gradient(180deg,#fafafd 0%, var(--bg) 100%);
-      -webkit-font-smoothing:antialiased;
-      text-rendering:optimizeLegibility;
-    }
+    body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","PingFang SC","Helvetica Neue",sans-serif;color:var(--text);background:radial-gradient(circle at top, rgba(255,255,255,.95) 0%, rgba(255,255,255,.45) 26%, transparent 56%),linear-gradient(180deg,#fafafd 0%, var(--bg) 100%);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
     a{color:inherit;text-decoration:none}
-    .topbar{
-      position:sticky;top:0;z-index:50;
-      background:rgba(245,245,247,.82);
-      backdrop-filter:saturate(180%) blur(20px);
-      -webkit-backdrop-filter:saturate(180%) blur(20px);
-      border-bottom:1px solid rgba(0,0,0,.05);
-    }
-    .topbar-inner{
-      max-width:var(--content);margin:0 auto;padding:14px 24px;
-      display:flex;align-items:center;justify-content:space-between;gap:16px;
-    }
+    .topbar{position:sticky;top:0;z-index:50;background:rgba(245,245,247,.82);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(0,0,0,.05)}
+    .topbar-inner{max-width:var(--content);margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
     .brand{font-size:14px;letter-spacing:.02em;white-space:nowrap}
-    .nav{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end}
-    .nav a{font-size:13px;color:var(--soft);padding:10px 14px;border-radius:999px;transition:background .25s ease,color .25s ease}
-    .nav a:hover,.nav a.active{background:rgba(17,17,17,.05);color:var(--text)}
-
+    .nav{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end}.nav a{font-size:13px;color:var(--soft);padding:10px 14px;border-radius:999px;transition:background .25s ease,color .25s ease}.nav a:hover,.nav a.active{background:rgba(17,17,17,.05);color:var(--text)}
     .page{max-width:var(--content);margin:0 auto;padding:34px 24px 72px}
     .hero{display:grid;grid-template-columns:1.08fr .92fr;gap:24px;align-items:end;margin-bottom:28px}
     .eyebrow{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--soft);font-weight:600;margin-bottom:14px}
     .hero-title{margin:0;font-size:clamp(38px,6vw,76px);line-height:1.02;letter-spacing:-.055em;font-weight:600;text-wrap:balance}
     .hero-desc{margin:18px 0 0;max-width:35em;font-size:18px;line-height:1.8;color:var(--soft)}
-    .hero-panel{
-      background:linear-gradient(180deg, rgba(255,255,255,.98) 0%, rgba(250,250,252,.94) 100%);
-      border:1px solid var(--line);border-radius:34px;box-shadow:var(--shadow);
-      padding:28px 28px 24px;min-height:280px;display:flex;flex-direction:column;justify-content:space-between;
-    }
+    .hero-panel{background:linear-gradient(180deg, rgba(255,255,255,.98) 0%, rgba(250,250,252,.94) 100%);border:1px solid var(--line);border-radius:34px;box-shadow:var(--shadow);padding:28px 28px 24px;min-height:280px;display:flex;flex-direction:column;justify-content:space-between}
     .panel-label{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);font-weight:600}
-    .panel-quote{margin:18px 0 0;font-size:28px;line-height:1.25;letter-spacing:-.035em;font-weight:600;max-width:9em}
+    .panel-quote{margin:18px 0 0;font-size:28px;line-height:1.25;letter-spacing:-.035em;font-weight:600;max-width:10em}
     .panel-note{margin-top:16px;font-size:14px;line-height:1.8;color:var(--soft);max-width:24em}
-
     .toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:18px}
     .section-title{font-size:28px;line-height:1.15;letter-spacing:-.04em;font-weight:600;margin:0}
     .search-box{position:relative;flex:0 0 320px;max-width:320px;width:100%}
     .search-box input{width:100%;height:48px;padding:0 16px 0 44px;border:none;border-radius:999px;background:rgba(255,255,255,.88);box-shadow:var(--shadow);color:var(--text);outline:none}
-    .search-box input::placeholder{color:#9b9ba1}
-    .search-icon{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:var(--soft);font-size:14px}
-
-    .filters{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 24px}
-    .filter-chip{
-      border:none;cursor:pointer;padding:10px 14px;border-radius:999px;
-      background:rgba(17,17,17,.04);color:var(--text);font-size:12px;letter-spacing:.06em;
-      transition:all .22s ease;
-    }
-    .filter-chip:hover{transform:translateY(-1px);background:rgba(17,17,17,.07)}
-    .filter-chip.active{background:#111;color:#fff}
-
-    .featured{
-      display:grid;grid-template-columns:1.08fr .92fr;gap:0;background:var(--panel);
-      border-radius:34px;overflow:hidden;box-shadow:var(--shadow);margin-bottom:26px;min-height:420px;
-    }
+    .search-box input::placeholder{color:#9b9ba1}.search-icon{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:var(--soft);font-size:14px}
+    .filters{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 24px}.filter-chip{border:none;cursor:pointer;padding:10px 14px;border-radius:999px;background:rgba(17,17,17,.04);color:var(--text);font-size:12px;letter-spacing:.06em;transition:all .22s ease}.filter-chip:hover{transform:translateY(-1px);background:rgba(17,17,17,.07)}.filter-chip.active{background:#111;color:#fff}
+    .featured{display:grid;grid-template-columns:1.08fr .92fr;gap:0;background:var(--panel);border-radius:34px;overflow:hidden;box-shadow:var(--shadow);margin-bottom:26px;min-height:420px}
     .featured-media{position:relative;color:#fff;padding:36px;display:flex;flex-direction:column;justify-content:flex-end;min-height:420px}
     .featured-kicker{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.72);font-weight:600}
     .featured-name{margin:12px 0 0;font-size:clamp(38px,4vw,60px);line-height:1.02;letter-spacing:-.05em;font-weight:600;max-width:9em}
@@ -92,45 +53,18 @@
     .tag-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
     .tag{padding:8px 12px;border-radius:999px;background:rgba(17,17,17,.05);font-size:12px;letter-spacing:.05em;color:var(--text)}
     .tag.tag-soft{background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.14)}
-
+    .stats{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}.stat-pill{padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.76);box-shadow:var(--shadow);font-size:13px;color:var(--soft)}
     .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
-    .movie-card{display:flex;flex-direction:column;background:var(--panel);border-radius:28px;overflow:hidden;box-shadow:var(--shadow);transition:transform .28s ease, box-shadow .28s ease}
-    .movie-card:hover{transform:translateY(-4px);box-shadow:0 18px 42px rgba(0,0,0,.08)}
-    .movie-poster{aspect-ratio:4/5;color:#fff;padding:24px;display:flex;align-items:flex-end}
-    .poster-title{font-size:clamp(24px,2vw,34px);line-height:1.05;letter-spacing:-.04em;font-weight:600;max-width:8em}
+    .movie-card{display:flex;flex-direction:column;background:var(--panel);border-radius:28px;overflow:hidden;box-shadow:var(--shadow);transition:transform .28s ease, box-shadow .28s ease}.movie-card:hover{transform:translateY(-4px);box-shadow:0 18px 42px rgba(0,0,0,.08)}
+    .movie-poster{aspect-ratio:4/5;color:#fff;padding:24px;display:flex;align-items:flex-end}.poster-title{font-size:clamp(24px,2vw,34px);line-height:1.05;letter-spacing:-.04em;font-weight:600;max-width:8em}
     .movie-body{padding:22px 22px 20px;display:flex;flex-direction:column;gap:14px;flex:1}
     .movie-kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);font-weight:600}
     .movie-title{margin:0;font-size:31px;line-height:1.08;letter-spacing:-.042em;font-weight:600}
     .movie-summary{margin:0;font-size:15px;line-height:1.82;color:var(--soft);flex:1}
     .movie-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}
-
     .empty{padding:30px 0;color:var(--soft)}
-
-    @media (max-width:1080px){
-      .hero,.featured{grid-template-columns:1fr}
-      .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-    }
-    @media (max-width:720px){
-      .page{padding:22px 16px 44px}
-      .topbar-inner{padding:12px 16px}
-      .hero{gap:18px;margin-bottom:20px}
-      .hero-desc{font-size:15px;line-height:1.75}
-      .hero-panel{padding:22px 20px 18px;min-height:auto}
-      .panel-quote{font-size:24px}
-      .toolbar{justify-content:center}
-      .section-title{width:100%;font-size:24px;text-align:center}
-      .search-box{flex:0 0 260px;max-width:260px}
-      .filters{justify-content:center}
-      .featured{border-radius:26px;min-height:auto}
-      .featured-media{padding:24px;min-height:310px}
-      .featured-copy{padding:22px 20px 20px}
-      .featured-name{font-size:clamp(32px,9vw,42px)}
-      .meta-grid{grid-template-columns:1fr}
-      .grid{grid-template-columns:1fr;gap:18px}
-      .movie-card{border-radius:24px}
-      .movie-body{padding:18px 18px 16px}
-      .movie-title{font-size:26px}
-    }
+    @media (max-width:1080px){.hero,.featured{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media (max-width:720px){.page{padding:22px 16px 44px}.topbar-inner{padding:12px 16px}.hero{gap:18px;margin-bottom:20px}.hero-desc{font-size:15px;line-height:1.75}.hero-panel{padding:22px 20px 18px;min-height:auto}.panel-quote{font-size:24px}.toolbar{justify-content:center}.section-title{width:100%;font-size:24px;text-align:center}.search-box{flex:0 0 260px;max-width:260px}.filters{justify-content:center}.featured{border-radius:26px;min-height:auto}.featured-media{padding:24px;min-height:310px}.featured-copy{padding:22px 20px 20px}.featured-name{font-size:clamp(32px,9vw,42px)}.meta-grid{grid-template-columns:1fr}.grid{grid-template-columns:1fr;gap:18px}.movie-card{border-radius:24px}.movie-body{padding:18px 18px 16px}.movie-title{font-size:26px}}
   </style>
 </head>
 <body>
@@ -150,17 +84,19 @@
     <section class="hero">
       <div>
         <div class="eyebrow">Movies</div>
-        <h1 class="hero-title">把喜欢的电影，慢慢分门别类地收藏起来。</h1>
-        <p class="hero-desc">可以按世界百大、奥斯卡、金马奖，也可以按喜剧、武侠、爱情、科幻这些类型来找。以后加电影时，只要补标签，页面就能自己归类和搜索。</p>
+        <h1 class="hero-title">把喜欢的电影，慢慢整理成一份一百部左右的电影清单。</h1>
+        <p class="hero-desc">现在已经补成接近 100 部的电影库。可以按世界百大、奥斯卡、金马奖，也可以按喜剧、武侠、爱情、科幻、剧情这些标签来筛选和搜索。</p>
       </div>
       <div class="hero-panel">
         <div>
           <div class="panel-label">A quiet archive</div>
-          <div class="panel-quote">电影会过去，留下来的通常是情绪、类型和某一次被击中的时刻。</div>
+          <div class="panel-quote">电影越来越多，归类越要清楚，才能一直好找、好翻、好重看。</div>
         </div>
-        <div class="panel-note">榜单、奖项、类型都做成了标签，以后不管电影越来越多，筛选和搜索都不会乱。</div>
+        <div class="panel-note">榜单、奖项、地区和类型都做成了标签。以后你想继续加片子，只要补到数据里就行。</div>
       </div>
     </section>
+
+    <div class="stats" id="stats"></div>
 
     <div class="toolbar">
       <h2 class="section-title">电影归档</h2>
@@ -176,119 +112,157 @@
   </main>
 
   <script>
-    const movieData = [
-      {
-        slug: 'in-the-mood-for-love',
-        title: '花样年华',
-        english: 'In the Mood for Love',
-        year: '2000',
-        director: '王家卫',
-        rating: '9.1',
-        summary: '不是所有喜欢都一定要说破。有些情绪像潮湿的走廊、收音机里的旋律、和一句说到一半就停住的话。',
-        note: '有些电影不是因为情节记住，而是因为某种气氛一直留着。',
-        tags: ['世界百大电影', '金马奖电影', '爱情', '文艺', '华语'],
-        accent: 'linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)'
-      },
-      {
-        slug: 'interstellar',
-        title: '星际穿越',
-        english: 'Interstellar',
-        year: '2014',
-        director: 'Christopher Nolan',
-        rating: '9.4',
-        summary: '它看起来在讲宇宙，其实更像在讲时间、离别和那种没说出口但一直存在的牵引。',
-        note: '每次重看，感受到的都不完全一样。',
-        tags: ['奥斯卡电影', '科幻', '冒险', '亲情'],
-        accent: 'linear-gradient(135deg,#202632 0%,#090c12 100%)'
-      },
-      {
-        slug: 'arrival',
-        title: '降临',
-        english: 'Arrival',
-        year: '2016',
-        director: 'Denis Villeneuve',
-        rating: '8.8',
-        summary: '语言、时间和选择被拧到一起以后，整部电影会有一种很安静但很后劲的重量。',
-        note: '语言、时间和情绪都压得很低，但后劲很长。',
-        tags: ['奥斯卡电影', '科幻', '剧情'],
-        accent: 'linear-gradient(135deg,#3d4b56 0%,#181d23 100%)'
-      },
-      {
-        slug: 'hero',
-        title: '英雄',
-        english: 'Hero',
-        year: '2002',
-        director: '张艺谋',
-        rating: '8.2',
-        summary: '它把色彩、叙事和武侠意境压成一种很纯粹的视觉表达，很多镜头到现在都还记得。',
-        note: '武侠不一定要喧闹，也可以很克制。',
-        tags: ['奥斯卡电影', '武侠', '动作', '华语'],
-        accent: 'linear-gradient(135deg,#3e2a2a 0%,#130d0d 100%)'
-      },
-      {
-        slug: 'a-brighter-summer-day',
-        title: '牯岭街少年杀人事件',
-        english: 'A Brighter Summer Day',
-        year: '1991',
-        director: '杨德昌',
-        rating: '9.0',
-        summary: '少年、时代、街道、家庭，全都在缓慢的叙事里一点点压上来，最后留下的是很长的回声。',
-        note: '越安静，越沉。',
-        tags: ['世界百大电影', '金马奖电影', '剧情', '青春', '华语'],
-        accent: 'linear-gradient(135deg,#364456 0%,#121820 100%)'
-      },
-      {
-        slug: 'parasite',
-        title: '寄生虫',
-        english: 'Parasite',
-        year: '2019',
-        director: '奉俊昊',
-        rating: '8.8',
-        summary: '它有黑色幽默，也有阶层压力，看到后面会发现整部电影像一根越绷越紧的线。',
-        note: '好笑和窒息可以同时存在。',
-        tags: ['奥斯卡电影', '喜剧', '惊悚', '剧情'],
-        accent: 'linear-gradient(135deg,#31443c 0%,#111714 100%)'
-      },
-      {
-        slug: 'crouching-tiger-hidden-dragon',
-        title: '卧虎藏龙',
-        english: 'Crouching Tiger, Hidden Dragon',
-        year: '2000',
-        director: '李安',
-        rating: '8.7',
-        summary: '江湖、克制、欲望和遗憾都悬在空中，它让武侠第一次显得既轻盈又沉重。',
-        note: '有些飞起来的镜头，落地以后反而更难忘。',
-        tags: ['奥斯卡电影', '武侠', '爱情', '华语'],
-        accent: 'linear-gradient(135deg,#35574d 0%,#101917 100%)'
-      },
-      {
-        slug: 'lala-land',
-        title: '爱乐之城',
-        english: 'La La Land',
-        year: '2016',
-        director: 'Damien Chazelle',
-        rating: '8.4',
-        summary: '它最难受的地方不在于错过，而在于你会明白：有些人真的就是一起走过那一段。',
-        note: '最难忘的不是错过，而是你知道那一段真的存在过。',
-        tags: ['奥斯卡电影', '爱情', '歌舞', '喜剧'],
-        accent: 'linear-gradient(135deg,#4e4173 0%,#191423 100%)'
-      }
+    const palette = [
+      'linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)','linear-gradient(135deg,#202632 0%,#090c12 100%)','linear-gradient(135deg,#3d4b56 0%,#181d23 100%)','linear-gradient(135deg,#35574d 0%,#101917 100%)','linear-gradient(135deg,#4e4173 0%,#191423 100%)','linear-gradient(135deg,#3a6a78 0%,#13252c 100%)','linear-gradient(135deg,#31443c 0%,#111714 100%)','linear-gradient(135deg,#5a4030 0%,#1f1510 100%)','linear-gradient(135deg,#364456 0%,#121820 100%)','linear-gradient(135deg,#6b5140 0%,#221912 100%)'
     ];
 
-    const filterOptions = ['全部', '世界百大电影', '奥斯卡电影', '金马奖电影', '喜剧', '武侠', '爱情', '科幻', '剧情', '动作', '冒险', '文艺', '华语'];
+    const rawMovies = [
+      ['花样年华','In the Mood for Love',2000,'王家卫','9.1',['世界百大电影','金马奖电影','爱情','文艺','华语']],
+      ['牯岭街少年杀人事件','A Brighter Summer Day',1991,'杨德昌','9.0',['世界百大电影','金马奖电影','剧情','青春','华语']],
+      ['悲情城市','A City of Sadness',1989,'侯孝贤','8.9',['世界百大电影','金马奖电影','剧情','历史','华语']],
+      ['一一','Yi Yi',2000,'杨德昌','9.1',['世界百大电影','金马奖电影','剧情','家庭','华语']],
+      ['卧虎藏龙','Crouching Tiger, Hidden Dragon',2000,'李安','8.7',['奥斯卡电影','武侠','爱情','华语','动作']],
+      ['英雄','Hero',2002,'张艺谋','8.2',['奥斯卡电影','武侠','动作','华语']],
+      ['饮食男女','Eat Drink Man Woman',1994,'李安','9.2',['金马奖电影','喜剧','家庭','华语']],
+      ['无间道','Infernal Affairs',2002,'刘伟强 / 麦兆辉','8.9',['金马奖电影','犯罪','动作','华语']],
+      ['让子弹飞','Let the Bullets Fly',2010,'姜文','9.0',['喜剧','动作','华语']],
+      ['大佛普拉斯','The Great Buddha+',2017,'黄信尧','8.7',['金马奖电影','喜剧','剧情','华语']],
+      ['赛德克·巴莱','Seediq Bale',2011,'魏德圣','8.8',['金马奖电影','历史','战争','华语']],
+      ['阳光普照','A Sun',2019,'钟孟宏','8.6',['金马奖电影','剧情','家庭','华语']],
+      ['瀑布','The Falls',2021,'钟孟宏','7.7',['金马奖电影','剧情','家庭','华语']],
+      ['不能说的秘密','Secret',2007,'周杰伦','8.2',['爱情','奇幻','华语']],
+      ['重庆森林','Chungking Express',1994,'王家卫','8.8',['世界百大电影','爱情','文艺','华语']],
+      ['春光乍泄','Happy Together',1997,'王家卫','9.0',['世界百大电影','爱情','文艺','华语']],
+      ['东邪西毒','Ashes of Time',1994,'王家卫','8.6',['武侠','文艺','华语']],
+      ['霸王别姬','Farewell My Concubine',1993,'陈凯歌','9.6',['世界百大电影','剧情','历史','华语']],
+      ['活着','To Live',1994,'张艺谋','9.3',['世界百大电影','剧情','历史','华语']],
+      ['鬼子来了','Devils on the Doorstep',2000,'姜文','9.3',['世界百大电影','喜剧','战争','华语']],
+      ['蓝色大门','Blue Gate Crossing',2002,'易智言','8.5',['爱情','青春','华语']],
+      ['那些年，我们一起追的女孩','You Are the Apple of My Eye',2011,'九把刀','8.1',['爱情','青春','喜剧','华语']],
+      ['艋舺','Monga',2010,'钮承泽','7.7',['犯罪','动作','华语']],
+      ['功夫','Kung Fu Hustle',2004,'周星驰','8.9',['喜剧','动作','武侠','华语']],
+      ['大话西游之大圣娶亲','A Chinese Odyssey Part Two',1995,'刘镇伟','9.2',['喜剧','爱情','奇幻','华语']],
+      ['少林足球','Shaolin Soccer',2001,'周星驰','8.3',['喜剧','运动','动作','华语']],
+      ['功夫熊猫','Kung Fu Panda',2008,'马克·奥斯本 / 约翰·斯蒂文森','8.2',['喜剧','动画','武侠']],
+      ['星际穿越','Interstellar',2014,'Christopher Nolan','9.4',['奥斯卡电影','科幻','冒险','亲情']],
+      ['降临','Arrival',2016,'Denis Villeneuve','8.8',['奥斯卡电影','科幻','剧情']],
+      ['寄生虫','Parasite',2019,'奉俊昊','8.8',['奥斯卡电影','喜剧','惊悚','剧情']],
+      ['爱乐之城','La La Land',2016,'Damien Chazelle','8.4',['奥斯卡电影','爱情','歌舞','喜剧']],
+      ['绿皮书','Green Book',2018,'Peter Farrelly','8.9',['奥斯卡电影','喜剧','剧情','公路']],
+      ['月光男孩','Moonlight',2016,'Barry Jenkins','7.4',['奥斯卡电影','剧情']],
+      ['国王的演讲','The King\'s Speech',2010,'Tom Hooper','8.4',['奥斯卡电影','剧情','历史']],
+      ['阿甘正传','Forrest Gump',1994,'Robert Zemeckis','9.5',['奥斯卡电影','剧情','爱情','喜剧']],
+      ['泰坦尼克号','Titanic',1997,'James Cameron','9.5',['奥斯卡电影','爱情','灾难']],
+      ['角斗士','Gladiator',2000,'Ridley Scott','8.6',['奥斯卡电影','动作','历史','战争']],
+      ['美丽心灵','A Beautiful Mind',2001,'Ron Howard','9.1',['奥斯卡电影','剧情','传记']],
+      ['老无所依','No Country for Old Men',2007,'Joel Coen / Ethan Coen','8.3',['奥斯卡电影','犯罪','惊悚']],
+      ['为奴十二年','12 Years a Slave',2013,'Steve McQueen','8.8',['奥斯卡电影','剧情','历史']],
+      ['拆弹部队','The Hurt Locker',2008,'Kathryn Bigelow','7.8',['奥斯卡电影','战争','剧情']],
+      ['鸟人','Birdman',2014,'Alejandro G. Iñárritu','8.3',['奥斯卡电影','喜剧','剧情']],
+      ['水形物语','The Shape of Water',2017,'Guillermo del Toro','7.3',['奥斯卡电影','爱情','奇幻']],
+      ['指环王3：王者无敌','The Lord of the Rings: The Return of the King',2003,'Peter Jackson','9.3',['奥斯卡电影','奇幻','冒险']],
+      ['指环王1：护戒使者','The Lord of the Rings: The Fellowship of the Ring',2001,'Peter Jackson','9.1',['世界百大电影','奇幻','冒险']],
+      ['黑暗骑士','The Dark Knight',2008,'Christopher Nolan','9.2',['世界百大电影','动作','犯罪']],
+      ['盗梦空间','Inception',2010,'Christopher Nolan','9.4',['世界百大电影','科幻','动作']],
+      ['2001太空漫游','2001: A Space Odyssey',1968,'Stanley Kubrick','8.9',['世界百大电影','科幻','文艺']],
+      ['教父','The Godfather',1972,'Francis Ford Coppola','9.3',['世界百大电影','犯罪','剧情']],
+      ['教父2','The Godfather Part II',1974,'Francis Ford Coppola','9.2',['世界百大电影','犯罪','剧情']],
+      ['公民凯恩','Citizen Kane',1941,'Orson Welles','8.8',['世界百大电影','剧情']],
+      ['七武士','Seven Samurai',1954,'黑泽明','9.3',['世界百大电影','动作','武侠','历史']],
+      ['罗生门','Rashomon',1950,'黑泽明','8.8',['世界百大电影','剧情','悬疑']],
+      ['东京物语','Tokyo Story',1953,'小津安二郎','9.2',['世界百大电影','剧情','家庭']],
+      ['小偷家族','Shoplifters',2018,'是枝裕和','8.7',['世界百大电影','剧情','家庭']],
+      ['乱','Ran',1985,'黑泽明','8.7',['世界百大电影','动作','历史','战争']],
+      ['穆赫兰道','Mulholland Drive',2001,'David Lynch','8.4',['世界百大电影','悬疑','惊悚','文艺']],
+      ['低俗小说','Pulp Fiction',1994,'Quentin Tarantino','8.9',['世界百大电影','犯罪','喜剧']],
+      ['出租车司机','Taxi Driver',1976,'Martin Scorsese','8.5',['世界百大电影','犯罪','剧情']],
+      ['现代启示录','Apocalypse Now',1979,'Francis Ford Coppola','8.5',['世界百大电影','战争','剧情']],
+      ['后窗','Rear Window',1954,'Alfred Hitchcock','8.7',['世界百大电影','悬疑','惊悚']],
+      ['惊魂记','Psycho',1960,'Alfred Hitchcock','9.0',['世界百大电影','惊悚','悬疑']],
+      ['迷魂记','Vertigo',1958,'Alfred Hitchcock','8.8',['世界百大电影','悬疑','爱情']],
+      ['美丽人生','Life Is Beautiful',1997,'Roberto Benigni','9.5',['世界百大电影','喜剧','战争','爱情']],
+      ['天堂电影院','Cinema Paradiso',1988,'Giuseppe Tornatore','9.2',['世界百大电影','爱情','剧情']],
+      ['海上钢琴师','The Legend of 1900',1998,'Giuseppe Tornatore','9.3',['世界百大电影','剧情','音乐']],
+      ['肖申克的救赎','The Shawshank Redemption',1994,'Frank Darabont','9.7',['世界百大电影','剧情']],
+      ['辛德勒的名单','Schindler\'s List',1993,'Steven Spielberg','9.6',['世界百大电影','战争','历史']],
+      ['拯救大兵瑞恩','Saving Private Ryan',1998,'Steven Spielberg','9.1',['奥斯卡电影','战争','动作']],
+      ['楚门的世界','The Truman Show',1998,'Peter Weir','9.4',['世界百大电影','剧情','科幻','喜剧']],
+      ['机器人总动员','WALL·E',2008,'Andrew Stanton','9.3',['奥斯卡电影','动画','科幻','爱情']],
+      ['寻梦环游记','Coco',2017,'Lee Unkrich','9.1',['奥斯卡电影','动画','家庭','奇幻']],
+      ['千与千寻','Spirited Away',2001,'宫崎骏','9.4',['世界百大电影','动画','奇幻']],
+      ['龙猫','My Neighbor Totoro',1988,'宫崎骏','9.2',['动画','家庭','奇幻']],
+      ['哈尔的移动城堡','Howl\'s Moving Castle',2004,'宫崎骏','9.1',['动画','爱情','奇幻']],
+      ['幽灵公主','Princess Mononoke',1997,'宫崎骏','8.9',['动画','冒险','奇幻']],
+      ['天空之城','Castle in the Sky',1986,'宫崎骏','9.2',['动画','冒险','奇幻']],
+      ['你的名字。','Your Name.',2016,'新海诚','8.5',['动画','爱情','奇幻']],
+      ['天气之子','Weathering with You',2019,'新海诚','7.0',['动画','爱情','奇幻']],
+      ['银翼杀手2049','Blade Runner 2049',2017,'Denis Villeneuve','8.3',['科幻','剧情','文艺']],
+      ['银翼杀手','Blade Runner',1982,'Ridley Scott','8.6',['世界百大电影','科幻','黑色电影']],
+      ['黑客帝国','The Matrix',1999,'Lana Wachowski / Lilly Wachowski','9.1',['世界百大电影','科幻','动作']],
+      ['异形','Alien',1979,'Ridley Scott','8.3',['科幻','惊悚']],
+      ['异形2','Aliens',1986,'James Cameron','8.1',['科幻','动作']],
+      ['终结者2','Terminator 2: Judgment Day',1991,'James Cameron','8.8',['科幻','动作']],
+      ['疯狂的麦克斯4：狂暴之路','Mad Max: Fury Road',2015,'George Miller','8.7',['动作','科幻','冒险']],
+      ['七宗罪','Se7en',1995,'David Fincher','8.8',['犯罪','惊悚']],
+      ['搏击俱乐部','Fight Club',1999,'David Fincher','9.0',['世界百大电影','剧情','犯罪']],
+      ['社交网络','The Social Network',2010,'David Fincher','8.2',['剧情','传记']],
+      ['消失的爱人','Gone Girl',2014,'David Fincher','8.7',['悬疑','惊悚']],
+      ['无耻混蛋','Inglourious Basterds',2009,'Quentin Tarantino','8.7',['战争','犯罪','喜剧']],
+      ['被解救的姜戈','Django Unchained',2012,'Quentin Tarantino','8.8',['西部','犯罪','动作']],
+      ['好家伙','Goodfellas',1990,'Martin Scorsese','8.6',['世界百大电影','犯罪','剧情']],
+      ['华尔街之狼','The Wolf of Wall Street',2013,'Martin Scorsese','8.1',['喜剧','犯罪','传记']],
+      ['爱在黎明破晓前','Before Sunrise',1995,'Richard Linklater','8.8',['爱情','文艺']],
+      ['爱在日落黄昏时','Before Sunset',2004,'Richard Linklater','8.9',['爱情','文艺']],
+      ['爱在午夜降临前','Before Midnight',2013,'Richard Linklater','8.9',['爱情','文艺']],
+      ['她','Her',2013,'Spike Jonze','8.4',['爱情','科幻','文艺']],
+      ['白日梦想家','The Secret Life of Walter Mitty',2013,'Ben Stiller','8.5',['喜剧','冒险','治愈']],
+      ['触不可及','The Intouchables',2011,'Olivier Nakache / Éric Toledano','9.3',['喜剧','剧情']],
+      ['布达佩斯大饭店','The Grand Budapest Hotel',2014,'Wes Anderson','8.9',['喜剧','犯罪','文艺']],
+      ['犬之岛','Isle of Dogs',2018,'Wes Anderson','8.2',['动画','喜剧']],
+      ['醉拳','Drunken Master',1978,'袁和平','8.0',['武侠','动作','喜剧','华语']],
+      ['新龙门客栈','New Dragon Gate Inn',1992,'李惠民','8.7',['武侠','动作','华语']],
+      ['笑傲江湖之东方不败','Swordsman II',1992,'程小东','8.5',['武侠','动作','华语']],
+      ['刺客聂隐娘','The Assassin',2015,'侯孝贤','7.4',['武侠','文艺','华语']],
+      ['十面埋伏','House of Flying Daggers',2004,'张艺谋','8.0',['武侠','爱情','华语']],
+      ['卧虎藏龙：青冥宝剑','Crouching Tiger, Hidden Dragon: Sword of Destiny',2016,'袁和平','6.0',['武侠','动作','华语']]
+    ];
+
+    const movieData = rawMovies.map((item, index) => {
+      const [title, english, year, director, rating, tags] = item;
+      const slug = english.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || `movie-${index+1}`;
+      return {
+        slug,
+        title,
+        english,
+        year: String(year),
+        director,
+        rating,
+        tags,
+        summary: `${title} · ${tags.slice(0,3).join(' / ')}`,
+        note: `${director} · ${year}`,
+        accent: palette[index % palette.length]
+      };
+    });
+
+    const filterOptions = ['全部','世界百大电影','奥斯卡电影','金马奖电影','喜剧','武侠','爱情','科幻','剧情','动作','动画','犯罪','家庭','奇幻','战争','文艺','华语'];
     let activeFilter = '全部';
+
+    function renderStats(){
+      const total = movieData.length;
+      const oscar = movieData.filter(m => m.tags.includes('奥斯卡电影')).length;
+      const top100 = movieData.filter(m => m.tags.includes('世界百大电影')).length;
+      const goldenHorse = movieData.filter(m => m.tags.includes('金马奖电影')).length;
+      document.getElementById('stats').innerHTML = `
+        <span class="stat-pill">共 ${total} 部</span>
+        <span class="stat-pill">世界百大 ${top100} 部</span>
+        <span class="stat-pill">奥斯卡 ${oscar} 部</span>
+        <span class="stat-pill">金马奖 ${goldenHorse} 部</span>`;
+    }
 
     function renderFilters() {
       const box = document.getElementById('filters');
-      box.innerHTML = filterOptions.map(tag => `
-        <button class="filter-chip ${tag === activeFilter ? 'active' : ''}" data-tag="${tag}">${tag}</button>
-      `).join('');
-      box.querySelectorAll('.filter-chip').forEach(btn => {
-        btn.addEventListener('click', () => {
-          activeFilter = btn.dataset.tag;
-          applyFilters();
-        });
-      });
+      box.innerHTML = filterOptions.map(tag => `<button class="filter-chip ${tag === activeFilter ? 'active' : ''}" data-tag="${tag}">${tag}</button>`).join('');
+      box.querySelectorAll('.filter-chip').forEach(btn => btn.addEventListener('click', () => { activeFilter = btn.dataset.tag; applyFilters(); }));
     }
 
     function renderFeatured(movie) {
@@ -308,7 +282,7 @@
                 <div class="meta-item"><small>导演</small><span>${movie.director}</span></div>
                 <div class="meta-item"><small>评分</small><span>${movie.rating}</span></div>
                 <div class="meta-item"><small>标签</small><span>${movie.tags.join(' · ')}</span></div>
-                <div class="meta-item"><small>一句印象</small><span>${movie.note}</span></div>
+                <div class="meta-item"><small>索引</small><span>${movie.note}</span></div>
               </div>
             </div>
           </div>
@@ -352,6 +326,7 @@
     }
 
     document.getElementById('search-input').addEventListener('input', applyFilters);
+    renderStats();
     applyFilters();
   </script>
 </body>
