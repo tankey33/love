@@ -10,6 +10,7 @@ on:
       - 'notes.html'
       - 'photo.html'
       - 'photo-detail.html'
+      - 'movie.html'
       - 'assets/**'
       - 'photo/**'
       - '.github/workflows/deploy-pages.yml'

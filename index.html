@@ -142,6 +142,39 @@
             box-shadow: var(--shadow);
         }
 
+        .quick-links {
+            pointer-events: auto;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .quick-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 88px;
+            padding: 10px 16px;
+            border-radius: 999px;
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.18);
+            backdrop-filter: blur(18px) saturate(140%);
+            -webkit-backdrop-filter: blur(18px) saturate(140%);
+            box-shadow: var(--shadow);
+            font-size: 12px;
+            letter-spacing: 0.10em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.92);
+            transition: transform 0.25s ease, background 0.25s ease;
+        }
+
+        .quick-link:hover {
+            transform: translateY(-1px);
+            background: rgba(255,255,255,0.18);
+        }
+
         .title-block {
             pointer-events: none;
         }
@@ -284,6 +317,11 @@
             <div class="title-block">
                 <h1 class="hero-title">We fell in love.</h1>
                 <p class="hero-desc">把喜欢过的时间、看过的风景，和那些舍不得忘的瞬间，留在一个可以慢慢重看的地方。</p>
+            </div>
+            <div class="quick-links">
+                <a class="quick-link" href="photo.html">Photo</a>
+                <a class="quick-link" href="notes.html">Notes</a>
+                <a class="quick-link" href="movie.html">Movie</a>
             </div>
         </div>
 

@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Tankey ❤️ Monody · Movies</title>
+  <link rel="icon" href="./love.png" />
+  <link rel="shortcut icon" href="./love.png" />
+  <style>
+    :root{
+      --bg:#f5f5f7;
+      --panel:#fbfbfd;
+      --text:#1d1d1f;
+      --soft:#6e6e73;
+      --line:rgba(0,0,0,.06);
+      --shadow:0 12px 36px rgba(0,0,0,.04);
+      --radius:30px;
+      --content:1220px;
+      --accent:#111;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","PingFang SC","Helvetica Neue",sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top, rgba(255,255,255,.95) 0%, rgba(255,255,255,.45) 26%, transparent 56%),
+        linear-gradient(180deg,#fafafd 0%, var(--bg) 100%);
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}
+    .topbar{
+      position:sticky;top:0;z-index:50;
+      background:rgba(245,245,247,.82);
+      backdrop-filter:saturate(180%) blur(20px);
+      -webkit-backdrop-filter:saturate(180%) blur(20px);
+      border-bottom:1px solid rgba(0,0,0,.05);
+    }
+    .topbar-inner{
+      max-width:var(--content);
+      margin:0 auto;
+      padding:14px 24px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+    }
+    .brand{font-size:14px;letter-spacing:.02em;white-space:nowrap}
+    .nav{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+    .nav a{
+      font-size:13px;color:var(--soft);padding:10px 14px;border-radius:999px;
+      transition:background .25s ease,color .25s ease;
+    }
+    .nav a:hover,.nav a.active{background:rgba(17,17,17,.05);color:var(--text)}
+
+    .page{max-width:var(--content);margin:0 auto;padding:34px 24px 72px}
+    .hero{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:24px;
+      align-items:end;
+      margin-bottom:28px;
+    }
+    .hero-copy{padding:14px 0}
+    .eyebrow{
+      font-size:13px;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:var(--soft);
+      font-weight:600;
+      margin-bottom:14px;
+    }
+    .hero-title{
+      margin:0;
+      font-size:clamp(38px,6vw,76px);
+      line-height:1.02;
+      letter-spacing:-.055em;
+      font-weight:600;
+      text-wrap:balance;
+    }
+    .hero-desc{
+      margin:18px 0 0;
+      max-width:34em;
+      font-size:18px;
+      line-height:1.8;
+      color:var(--soft);
+    }
+    .hero-panel{
+      background:linear-gradient(180deg, rgba(255,255,255,.98) 0%, rgba(250,250,252,.94) 100%);
+      border:1px solid var(--line);
+      border-radius:34px;
+      box-shadow:var(--shadow);
+      padding:28px 28px 24px;
+      min-height:280px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      overflow:hidden;
+      position:relative;
+    }
+    .hero-panel::after{
+      content:'';
+      position:absolute;
+      inset:auto -8% -36% auto;
+      width:220px;height:220px;border-radius:50%;
+      background:radial-gradient(circle, rgba(0,0,0,.06) 0%, rgba(0,0,0,.02) 34%, transparent 70%);
+      pointer-events:none;
+    }
+    .panel-label{
+      font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);font-weight:600;
+    }
+    .panel-quote{
+      margin:18px 0 0;
+      font-size:28px;line-height:1.25;letter-spacing:-.035em;font-weight:600;max-width:9em;
+    }
+    .panel-note{
+      margin-top:16px;font-size:14px;line-height:1.8;color:var(--soft);max-width:20em;
+    }
+
+    .toolbar{
+      display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+      margin-bottom:22px;
+    }
+    .section-title{
+      font-size:28px;line-height:1.15;letter-spacing:-.04em;font-weight:600;margin:0;
+    }
+    .search-box{position:relative;flex:0 0 320px;max-width:320px;width:100%}
+    .search-box input{
+      width:100%;height:48px;padding:0 16px 0 44px;border:none;border-radius:999px;
+      background:rgba(255,255,255,.88);box-shadow:var(--shadow);color:var(--text);outline:none;
+    }
+    .search-box input::placeholder{color:#9b9ba1}
+    .search-icon{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:var(--soft);font-size:14px}
+
+    .featured{
+      display:grid;
+      grid-template-columns:1.12fr .88fr;
+      gap:0;
+      background:var(--panel);
+      border-radius:34px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      margin-bottom:26px;
+      min-height:400px;
+    }
+    .featured-media{
+      position:relative;
+      background:
+        linear-gradient(135deg, rgba(12,12,14,.88), rgba(34,34,38,.66)),
+        radial-gradient(circle at top right, rgba(255,255,255,.16), transparent 42%),
+        linear-gradient(180deg, #2a2a31 0%, #111216 100%);
+      color:#fff;
+      padding:36px;
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-end;
+      min-height:400px;
+    }
+    .featured-tag{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.72);font-weight:600}
+    .featured-name{margin:12px 0 0;font-size:clamp(38px,4vw,60px);line-height:1.02;letter-spacing:-.05em;font-weight:600;max-width:9em}
+    .featured-sub{margin:14px 0 0;font-size:16px;line-height:1.8;color:rgba(255,255,255,.78);max-width:28em}
+    .featured-copy{
+      padding:34px 34px 30px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      background:var(--panel);
+    }
+    .meta-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:16px 20px;
+      margin-top:18px;
+    }
+    .meta-item small{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--soft);margin-bottom:6px}
+    .meta-item span{display:block;font-size:17px;line-height:1.55}
+    .featured-text{margin:0;font-size:17px;line-height:1.86;color:var(--soft)}
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:24px;
+    }
+    .movie-card{
+      display:flex;
+      flex-direction:column;
+      min-height:100%;
+      background:var(--panel);
+      border-radius:28px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      transition:transform .28s ease, box-shadow .28s ease;
+    }
+    .movie-card:hover{transform:translateY(-4px);box-shadow:0 18px 42px rgba(0,0,0,.08)}
+    .movie-poster{
+      aspect-ratio:4/5;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,.03), rgba(0,0,0,.18)),
+        radial-gradient(circle at top, rgba(255,255,255,.16), transparent 45%),
+        linear-gradient(135deg,#2a2b31 0%,#17181d 100%);
+      color:#fff;
+      padding:24px;
+      display:flex;
+      align-items:flex-end;
+    }
+    .movie-poster .poster-title{
+      font-size:clamp(24px,2vw,34px);
+      line-height:1.05;
+      letter-spacing:-.04em;
+      font-weight:600;
+      max-width:8em;
+    }
+    .movie-body{padding:22px 22px 20px;display:flex;flex-direction:column;gap:14px;flex:1}
+    .movie-kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);font-weight:600}
+    .movie-title{margin:0;font-size:31px;line-height:1.08;letter-spacing:-.042em;font-weight:600}
+    .movie-summary{margin:0;font-size:15px;line-height:1.82;color:var(--soft);flex:1}
+    .movie-meta{display:flex;flex-wrap:wrap;gap:10px 12px;font-size:13px;color:var(--soft)}
+    .chip{padding:8px 12px;border-radius:999px;background:rgba(17,17,17,.04);color:var(--text);font-size:12px;letter-spacing:.06em}
+    .empty{padding:30px 0;color:var(--soft)}
+
+    @media (max-width:1080px){
+      .hero,.featured{grid-template-columns:1fr}
+      .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+    }
+    @media (max-width:720px){
+      .page{padding:22px 16px 44px}
+      .topbar-inner{padding:12px 16px}
+      .hero{gap:18px;margin-bottom:20px}
+      .hero-desc{font-size:15px;line-height:1.75}
+      .hero-panel{padding:22px 20px 18px;min-height:auto}
+      .panel-quote{font-size:24px}
+      .toolbar{justify-content:center}
+      .section-title{width:100%;font-size:24px;text-align:center}
+      .search-box{flex:0 0 260px;max-width:260px}
+      .featured{border-radius:26px;min-height:auto}
+      .featured-media{padding:24px;min-height:300px}
+      .featured-copy{padding:22px 20px 20px}
+      .featured-name{font-size:clamp(32px,9vw,42px)}
+      .meta-grid{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr;gap:18px}
+      .movie-card{border-radius:24px}
+      .movie-body{padding:18px 18px 16px}
+      .movie-title{font-size:26px}
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html">Tankey ❤️ Monody</a>
+      <nav class="nav">
+        <a href="index.html">首页</a>
+        <a href="photo.html">照片</a>
+        <a href="notes.html">碎碎念</a>
+        <a href="movie.html" class="active">Movie</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">Movies</div>
+        <h1 class="hero-title">把喜欢的电影，留在一页安静的地方。</h1>
+        <p class="hero-desc">不是在做影评库，更像是在收集那些某个阶段陪过我们的电影：看完后记得一句台词、一个镜头、一次情绪，或者只是记得那晚和谁一起看过。</p>
+      </div>
+      <div class="hero-panel">
+        <div>
+          <div class="panel-label">A quiet archive</div>
+          <div class="panel-quote">电影会过去，留下来的通常是情绪。</div>
+        </div>
+        <div class="panel-note">这个页面沿用你现在站点的留白、圆角、浅色卡片和 Apple 式的大标题结构，整体会比碎碎念更克制一点，也更像一个长期维护的专题页。</div>
+      </div>
+    </section>
+
+    <div class="toolbar">
+      <h2 class="section-title">最近想反复重看的</h2>
+      <label class="search-box">
+        <span class="search-icon">⌕</span>
+        <input id="search-input" type="search" placeholder="搜索片名、导演、类型或一句印象" autocomplete="off" />
+      </label>
+    </div>
+
+    <section id="featured"></section>
+    <section class="grid" id="movie-grid"></section>
+  </main>
+
+  <script>
+    const movieData = [
+      {
+        slug: 'in-the-mood-for-love',
+        title: '花样年华',
+        english: 'In the Mood for Love',
+        year: '2000',
+        director: '王家卫',
+        genre: ['爱情', '文艺'],
+        rating: '9.1',
+        summary: '不是所有喜欢都一定要说破。有些情绪像潮湿的走廊、收音机里的旋律、和一句说到一半就停住的话。',
+        note: '适合放在 Movie 页首卡，它本身就有一种克制、留白、和时间慢慢流过去的气质。',
+        accent: 'linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)'
+      },
+      {
+        slug: 'interstellar',
+        title: '星际穿越',
+        english: 'Interstellar',
+        year: '2014',
+        director: 'Christopher Nolan',
+        genre: ['科幻', '亲情'],
+        rating: '9.4',
+        summary: '它看起来在讲宇宙，其实更像在讲时间、离别和那种没说出口但一直存在的牵引。',
+        note: '每次重看，感受到的都不完全一样。',
+        accent: 'linear-gradient(135deg,#202632 0%,#090c12 100%)'
+      },
+      {
+        slug: 'arrival',
+        title: '降临',
+        english: 'Arrival',
+        year: '2016',
+        director: 'Denis Villeneuve',
+        genre: ['科幻', '剧情'],
+        rating: '8.8',
+        summary: '语言、时间和选择被拧到一起以后，整部电影会有一种很安静但很后劲的重量。',
+        note: '适合喜欢缓慢情绪推进的人。',
+        accent: 'linear-gradient(135deg,#3d4b56 0%,#181d23 100%)'
+      },
+      {
+        slug: 'her',
+        title: 'Her',
+        english: 'Her',
+        year: '2013',
+        director: 'Spike Jonze',
+        genre: ['爱情', '科幻'],
+        rating: '8.4',
+        summary: '它关于技术，也关于孤独。最打动人的不是设定，而是那些很轻、很近、却没法真正留住的连接。',
+        note: '颜色和情绪都很温柔。',
+        accent: 'linear-gradient(135deg,#a2564f 0%,#3c1715 100%)'
+      },
+      {
+        slug: 'the-secret-life-of-walter-mitty',
+        title: '白日梦想家',
+        english: 'Walter Mitty',
+        year: '2013',
+        director: 'Ben Stiller',
+        genre: ['冒险', '治愈'],
+        rating: '8.5',
+        summary: '不是鸡血型励志，更像一个人在漫长的犹豫之后终于往前走了一步。',
+        note: '适合状态发闷的时候看。',
+        accent: 'linear-gradient(135deg,#3a6a78 0%,#13252c 100%)'
+      },
+      {
+        slug: 'lalaland',
+        title: '爱乐之城',
+        english: 'La La Land',
+        year: '2016',
+        director: 'Damien Chazelle',
+        genre: ['爱情', '歌舞'],
+        rating: '8.4',
+        summary: '它最难受的地方不在于错过，而在于你会明白：有些人真的就是一起走过那一段。',
+        note: '非常适合做成有情绪的卡片。',
+        accent: 'linear-gradient(135deg,#4e4173 0%,#191423 100%)'
+      }
+    ];
+
+    function renderFeatured(movie) {
+      return `
+        <a class="featured" href="#${movie.slug}">
+          <div class="featured-media" style="background:${movie.accent}">
+            <div class="featured-tag">Featured movie</div>
+            <h2 class="featured-name">${movie.title}</h2>
+            <p class="featured-sub">${movie.english} · ${movie.year}</p>
+          </div>
+          <div class="featured-copy">
+            <div>
+              <p class="featured-text">${movie.summary}</p>
+              <div class="meta-grid">
+                <div class="meta-item"><small>导演</small><span>${movie.director}</span></div>
+                <div class="meta-item"><small>类型</small><span>${movie.genre.join(' · ')}</span></div>
+                <div class="meta-item"><small>个人印象</small><span>${movie.note}</span></div>
+                <div class="meta-item"><small>评分</small><span>${movie.rating}</span></div>
+              </div>
+            </div>
+          </div>
+        </a>`;
+    }
+
+    function renderGrid(list) {
+      const grid = document.getElementById('movie-grid');
+      if (!list.length) {
+        grid.innerHTML = '<div class="empty">没有找到匹配的电影。</div>';
+        return;
+      }
+      grid.innerHTML = list.map(movie => `
+        <article class="movie-card" id="${movie.slug}">
+          <div class="movie-poster" style="background:${movie.accent}">
+            <div class="poster-title">${movie.title}</div>
+          </div>
+          <div class="movie-body">
+            <div class="movie-kicker">${movie.english} · ${movie.year}</div>
+            <h3 class="movie-title">${movie.title}</h3>
+            <p class="movie-summary">${movie.summary}</p>
+            <div class="movie-meta">
+              <span class="chip">导演 · ${movie.director}</span>
+              <span class="chip">${movie.genre.join(' / ')}</span>
+              <span class="chip">评分 · ${movie.rating}</span>
+            </div>
+          </div>
+        </article>`).join('');
+    }
+
+    const featured = movieData[0];
+    document.getElementById('featured').innerHTML = renderFeatured(featured);
+    renderGrid(movieData);
+
+    const input = document.getElementById('search-input');
+    input.addEventListener('input', () => {
+      const q = input.value.trim().toLowerCase();
+      if (!q) {
+        document.getElementById('featured').innerHTML = renderFeatured(featured);
+        renderGrid(movieData);
+        return;
+      }
+      const filtered = movieData.filter(movie =>
+        [movie.title, movie.english, movie.year, movie.director, movie.genre.join(' '), movie.summary, movie.note]
+          .join(' ')
+          .toLowerCase()
+          .includes(q)
+      );
+      document.getElementById('featured').innerHTML = filtered.length ? renderFeatured(filtered[0]) : '';
+      renderGrid(filtered);
+    });
+  </script>
+</body>
+</html>
