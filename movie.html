@@ -16,7 +16,6 @@
       --shadow:0 12px 36px rgba(0,0,0,.04);
       --radius:30px;
       --content:1220px;
-      --accent:#111;
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
@@ -31,7 +30,6 @@
       text-rendering:optimizeLegibility;
     }
     a{color:inherit;text-decoration:none}
-    img{display:block;max-width:100%}
     .topbar{
       position:sticky;top:0;z-index:50;
       background:rgba(245,245,247,.82);
@@ -40,185 +38,72 @@
       border-bottom:1px solid rgba(0,0,0,.05);
     }
     .topbar-inner{
-      max-width:var(--content);
-      margin:0 auto;
-      padding:14px 24px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:16px;
+      max-width:var(--content);margin:0 auto;padding:14px 24px;
+      display:flex;align-items:center;justify-content:space-between;gap:16px;
     }
     .brand{font-size:14px;letter-spacing:.02em;white-space:nowrap}
     .nav{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end}
-    .nav a{
-      font-size:13px;color:var(--soft);padding:10px 14px;border-radius:999px;
-      transition:background .25s ease,color .25s ease;
-    }
+    .nav a{font-size:13px;color:var(--soft);padding:10px 14px;border-radius:999px;transition:background .25s ease,color .25s ease}
     .nav a:hover,.nav a.active{background:rgba(17,17,17,.05);color:var(--text)}
 
     .page{max-width:var(--content);margin:0 auto;padding:34px 24px 72px}
-    .hero{
-      display:grid;
-      grid-template-columns:1.1fr .9fr;
-      gap:24px;
-      align-items:end;
-      margin-bottom:28px;
-    }
-    .hero-copy{padding:14px 0}
-    .eyebrow{
-      font-size:13px;
-      letter-spacing:.16em;
-      text-transform:uppercase;
-      color:var(--soft);
-      font-weight:600;
-      margin-bottom:14px;
-    }
-    .hero-title{
-      margin:0;
-      font-size:clamp(38px,6vw,76px);
-      line-height:1.02;
-      letter-spacing:-.055em;
-      font-weight:600;
-      text-wrap:balance;
-    }
-    .hero-desc{
-      margin:18px 0 0;
-      max-width:34em;
-      font-size:18px;
-      line-height:1.8;
-      color:var(--soft);
-    }
+    .hero{display:grid;grid-template-columns:1.08fr .92fr;gap:24px;align-items:end;margin-bottom:28px}
+    .eyebrow{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--soft);font-weight:600;margin-bottom:14px}
+    .hero-title{margin:0;font-size:clamp(38px,6vw,76px);line-height:1.02;letter-spacing:-.055em;font-weight:600;text-wrap:balance}
+    .hero-desc{margin:18px 0 0;max-width:35em;font-size:18px;line-height:1.8;color:var(--soft)}
     .hero-panel{
       background:linear-gradient(180deg, rgba(255,255,255,.98) 0%, rgba(250,250,252,.94) 100%);
-      border:1px solid var(--line);
-      border-radius:34px;
-      box-shadow:var(--shadow);
-      padding:28px 28px 24px;
-      min-height:280px;
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-      overflow:hidden;
-      position:relative;
+      border:1px solid var(--line);border-radius:34px;box-shadow:var(--shadow);
+      padding:28px 28px 24px;min-height:280px;display:flex;flex-direction:column;justify-content:space-between;
     }
-    .hero-panel::after{
-      content:'';
-      position:absolute;
-      inset:auto -8% -36% auto;
-      width:220px;height:220px;border-radius:50%;
-      background:radial-gradient(circle, rgba(0,0,0,.06) 0%, rgba(0,0,0,.02) 34%, transparent 70%);
-      pointer-events:none;
-    }
-    .panel-label{
-      font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);font-weight:600;
-    }
-    .panel-quote{
-      margin:18px 0 0;
-      font-size:28px;line-height:1.25;letter-spacing:-.035em;font-weight:600;max-width:9em;
-    }
-    .panel-note{
-      margin-top:16px;font-size:14px;line-height:1.8;color:var(--soft);max-width:20em;
-    }
+    .panel-label{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);font-weight:600}
+    .panel-quote{margin:18px 0 0;font-size:28px;line-height:1.25;letter-spacing:-.035em;font-weight:600;max-width:9em}
+    .panel-note{margin-top:16px;font-size:14px;line-height:1.8;color:var(--soft);max-width:24em}
 
-    .toolbar{
-      display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
-      margin-bottom:22px;
-    }
-    .section-title{
-      font-size:28px;line-height:1.15;letter-spacing:-.04em;font-weight:600;margin:0;
-    }
+    .toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+    .section-title{font-size:28px;line-height:1.15;letter-spacing:-.04em;font-weight:600;margin:0}
     .search-box{position:relative;flex:0 0 320px;max-width:320px;width:100%}
-    .search-box input{
-      width:100%;height:48px;padding:0 16px 0 44px;border:none;border-radius:999px;
-      background:rgba(255,255,255,.88);box-shadow:var(--shadow);color:var(--text);outline:none;
-    }
+    .search-box input{width:100%;height:48px;padding:0 16px 0 44px;border:none;border-radius:999px;background:rgba(255,255,255,.88);box-shadow:var(--shadow);color:var(--text);outline:none}
     .search-box input::placeholder{color:#9b9ba1}
     .search-icon{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:var(--soft);font-size:14px}
 
+    .filters{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 24px}
+    .filter-chip{
+      border:none;cursor:pointer;padding:10px 14px;border-radius:999px;
+      background:rgba(17,17,17,.04);color:var(--text);font-size:12px;letter-spacing:.06em;
+      transition:all .22s ease;
+    }
+    .filter-chip:hover{transform:translateY(-1px);background:rgba(17,17,17,.07)}
+    .filter-chip.active{background:#111;color:#fff}
+
     .featured{
-      display:grid;
-      grid-template-columns:1.12fr .88fr;
-      gap:0;
-      background:var(--panel);
-      border-radius:34px;
-      overflow:hidden;
-      box-shadow:var(--shadow);
-      margin-bottom:26px;
-      min-height:400px;
+      display:grid;grid-template-columns:1.08fr .92fr;gap:0;background:var(--panel);
+      border-radius:34px;overflow:hidden;box-shadow:var(--shadow);margin-bottom:26px;min-height:420px;
     }
-    .featured-media{
-      position:relative;
-      background:
-        linear-gradient(135deg, rgba(12,12,14,.88), rgba(34,34,38,.66)),
-        radial-gradient(circle at top right, rgba(255,255,255,.16), transparent 42%),
-        linear-gradient(180deg, #2a2a31 0%, #111216 100%);
-      color:#fff;
-      padding:36px;
-      display:flex;
-      flex-direction:column;
-      justify-content:flex-end;
-      min-height:400px;
-    }
-    .featured-tag{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.72);font-weight:600}
+    .featured-media{position:relative;color:#fff;padding:36px;display:flex;flex-direction:column;justify-content:flex-end;min-height:420px}
+    .featured-kicker{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.72);font-weight:600}
     .featured-name{margin:12px 0 0;font-size:clamp(38px,4vw,60px);line-height:1.02;letter-spacing:-.05em;font-weight:600;max-width:9em}
-    .featured-sub{margin:14px 0 0;font-size:16px;line-height:1.8;color:rgba(255,255,255,.78);max-width:28em}
-    .featured-copy{
-      padding:34px 34px 30px;
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-      background:var(--panel);
-    }
-    .meta-grid{
-      display:grid;
-      grid-template-columns:repeat(2,minmax(0,1fr));
-      gap:16px 20px;
-      margin-top:18px;
-    }
+    .featured-sub{margin:14px 0 0;font-size:16px;line-height:1.8;color:rgba(255,255,255,.8)}
+    .featured-copy{padding:34px 34px 30px;display:flex;flex-direction:column;justify-content:space-between;background:var(--panel)}
+    .featured-text{margin:0;font-size:17px;line-height:1.86;color:var(--soft)}
+    .meta-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 20px;margin-top:18px}
     .meta-item small{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--soft);margin-bottom:6px}
     .meta-item span{display:block;font-size:17px;line-height:1.55}
-    .featured-text{margin:0;font-size:17px;line-height:1.86;color:var(--soft)}
+    .tag-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+    .tag{padding:8px 12px;border-radius:999px;background:rgba(17,17,17,.05);font-size:12px;letter-spacing:.05em;color:var(--text)}
+    .tag.tag-soft{background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.14)}
 
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(3,minmax(0,1fr));
-      gap:24px;
-    }
-    .movie-card{
-      display:flex;
-      flex-direction:column;
-      min-height:100%;
-      background:var(--panel);
-      border-radius:28px;
-      overflow:hidden;
-      box-shadow:var(--shadow);
-      transition:transform .28s ease, box-shadow .28s ease;
-    }
+    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+    .movie-card{display:flex;flex-direction:column;background:var(--panel);border-radius:28px;overflow:hidden;box-shadow:var(--shadow);transition:transform .28s ease, box-shadow .28s ease}
     .movie-card:hover{transform:translateY(-4px);box-shadow:0 18px 42px rgba(0,0,0,.08)}
-    .movie-poster{
-      aspect-ratio:4/5;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.03), rgba(0,0,0,.18)),
-        radial-gradient(circle at top, rgba(255,255,255,.16), transparent 45%),
-        linear-gradient(135deg,#2a2b31 0%,#17181d 100%);
-      color:#fff;
-      padding:24px;
-      display:flex;
-      align-items:flex-end;
-    }
-    .movie-poster .poster-title{
-      font-size:clamp(24px,2vw,34px);
-      line-height:1.05;
-      letter-spacing:-.04em;
-      font-weight:600;
-      max-width:8em;
-    }
+    .movie-poster{aspect-ratio:4/5;color:#fff;padding:24px;display:flex;align-items:flex-end}
+    .poster-title{font-size:clamp(24px,2vw,34px);line-height:1.05;letter-spacing:-.04em;font-weight:600;max-width:8em}
     .movie-body{padding:22px 22px 20px;display:flex;flex-direction:column;gap:14px;flex:1}
     .movie-kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);font-weight:600}
     .movie-title{margin:0;font-size:31px;line-height:1.08;letter-spacing:-.042em;font-weight:600}
     .movie-summary{margin:0;font-size:15px;line-height:1.82;color:var(--soft);flex:1}
-    .movie-meta{display:flex;flex-wrap:wrap;gap:10px 12px;font-size:13px;color:var(--soft)}
-    .chip{padding:8px 12px;border-radius:999px;background:rgba(17,17,17,.04);color:var(--text);font-size:12px;letter-spacing:.06em}
+    .movie-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}
+
     .empty{padding:30px 0;color:var(--soft)}
 
     @media (max-width:1080px){
@@ -235,8 +120,9 @@
       .toolbar{justify-content:center}
       .section-title{width:100%;font-size:24px;text-align:center}
       .search-box{flex:0 0 260px;max-width:260px}
+      .filters{justify-content:center}
       .featured{border-radius:26px;min-height:auto}
-      .featured-media{padding:24px;min-height:300px}
+      .featured-media{padding:24px;min-height:310px}
       .featured-copy{padding:22px 20px 20px}
       .featured-name{font-size:clamp(32px,9vw,42px)}
       .meta-grid{grid-template-columns:1fr}
@@ -262,28 +148,29 @@
 
   <main class="page">
     <section class="hero">
-      <div class="hero-copy">
+      <div>
         <div class="eyebrow">Movies</div>
-        <h1 class="hero-title">把喜欢的电影，留在一页安静的地方。</h1>
-        <p class="hero-desc">不是在做影评库，更像是在收集那些某个阶段陪过我们的电影：看完后记得一句台词、一个镜头、一次情绪，或者只是记得那晚和谁一起看过。</p>
+        <h1 class="hero-title">把喜欢的电影，慢慢分门别类地收藏起来。</h1>
+        <p class="hero-desc">可以按世界百大、奥斯卡、金马奖，也可以按喜剧、武侠、爱情、科幻这些类型来找。以后加电影时，只要补标签，页面就能自己归类和搜索。</p>
       </div>
       <div class="hero-panel">
         <div>
           <div class="panel-label">A quiet archive</div>
-          <div class="panel-quote">电影会过去，留下来的通常是情绪。</div>
+          <div class="panel-quote">电影会过去，留下来的通常是情绪、类型和某一次被击中的时刻。</div>
         </div>
-        <div class="panel-note">留一些反复想起的电影，也留一些当时没有说出口的心情。</div>
+        <div class="panel-note">榜单、奖项、类型都做成了标签，以后不管电影越来越多，筛选和搜索都不会乱。</div>
       </div>
     </section>
 
     <div class="toolbar">
-      <h2 class="section-title">最近想反复重看的</h2>
+      <h2 class="section-title">电影归档</h2>
       <label class="search-box">
         <span class="search-icon">⌕</span>
-        <input id="search-input" type="search" placeholder="搜索片名、导演、类型或一句印象" autocomplete="off" />
+        <input id="search-input" type="search" placeholder="搜索片名、导演、奖项、榜单或类型" autocomplete="off" />
       </label>
     </div>
 
+    <section class="filters" id="filters"></section>
     <section id="featured"></section>
     <section class="grid" id="movie-grid"></section>
   </main>
@@ -296,10 +183,10 @@
         english: 'In the Mood for Love',
         year: '2000',
         director: '王家卫',
-        genre: ['爱情', '文艺'],
         rating: '9.1',
         summary: '不是所有喜欢都一定要说破。有些情绪像潮湿的走廊、收音机里的旋律、和一句说到一半就停住的话。',
         note: '有些电影不是因为情节记住，而是因为某种气氛一直留着。',
+        tags: ['世界百大电影', '金马奖电影', '爱情', '文艺', '华语'],
         accent: 'linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)'
       },
       {
@@ -308,10 +195,10 @@
         english: 'Interstellar',
         year: '2014',
         director: 'Christopher Nolan',
-        genre: ['科幻', '亲情'],
         rating: '9.4',
         summary: '它看起来在讲宇宙，其实更像在讲时间、离别和那种没说出口但一直存在的牵引。',
         note: '每次重看，感受到的都不完全一样。',
+        tags: ['奥斯卡电影', '科幻', '冒险', '亲情'],
         accent: 'linear-gradient(135deg,#202632 0%,#090c12 100%)'
       },
       {
@@ -320,66 +207,108 @@
         english: 'Arrival',
         year: '2016',
         director: 'Denis Villeneuve',
-        genre: ['科幻', '剧情'],
         rating: '8.8',
         summary: '语言、时间和选择被拧到一起以后，整部电影会有一种很安静但很后劲的重量。',
         note: '语言、时间和情绪都压得很低，但后劲很长。',
+        tags: ['奥斯卡电影', '科幻', '剧情'],
         accent: 'linear-gradient(135deg,#3d4b56 0%,#181d23 100%)'
       },
       {
-        slug: 'her',
-        title: 'Her',
-        english: 'Her',
-        year: '2013',
-        director: 'Spike Jonze',
-        genre: ['爱情', '科幻'],
-        rating: '8.4',
-        summary: '它关于技术，也关于孤独。最打动人的不是设定，而是那些很轻、很近、却没法真正留住的连接。',
-        note: '颜色和情绪都很温柔。',
-        accent: 'linear-gradient(135deg,#a2564f 0%,#3c1715 100%)'
+        slug: 'hero',
+        title: '英雄',
+        english: 'Hero',
+        year: '2002',
+        director: '张艺谋',
+        rating: '8.2',
+        summary: '它把色彩、叙事和武侠意境压成一种很纯粹的视觉表达，很多镜头到现在都还记得。',
+        note: '武侠不一定要喧闹，也可以很克制。',
+        tags: ['奥斯卡电影', '武侠', '动作', '华语'],
+        accent: 'linear-gradient(135deg,#3e2a2a 0%,#130d0d 100%)'
       },
       {
-        slug: 'the-secret-life-of-walter-mitty',
-        title: '白日梦想家',
-        english: 'Walter Mitty',
-        year: '2013',
-        director: 'Ben Stiller',
-        genre: ['冒险', '治愈'],
-        rating: '8.5',
-        summary: '不是鸡血型励志，更像一个人在漫长的犹豫之后终于往前走了一步。',
-        note: '在犹豫很久之后往前走一步，往往比热血更动人。',
-        accent: 'linear-gradient(135deg,#3a6a78 0%,#13252c 100%)'
+        slug: 'a-brighter-summer-day',
+        title: '牯岭街少年杀人事件',
+        english: 'A Brighter Summer Day',
+        year: '1991',
+        director: '杨德昌',
+        rating: '9.0',
+        summary: '少年、时代、街道、家庭，全都在缓慢的叙事里一点点压上来，最后留下的是很长的回声。',
+        note: '越安静，越沉。',
+        tags: ['世界百大电影', '金马奖电影', '剧情', '青春', '华语'],
+        accent: 'linear-gradient(135deg,#364456 0%,#121820 100%)'
       },
       {
-        slug: 'lalaland',
+        slug: 'parasite',
+        title: '寄生虫',
+        english: 'Parasite',
+        year: '2019',
+        director: '奉俊昊',
+        rating: '8.8',
+        summary: '它有黑色幽默，也有阶层压力，看到后面会发现整部电影像一根越绷越紧的线。',
+        note: '好笑和窒息可以同时存在。',
+        tags: ['奥斯卡电影', '喜剧', '惊悚', '剧情'],
+        accent: 'linear-gradient(135deg,#31443c 0%,#111714 100%)'
+      },
+      {
+        slug: 'crouching-tiger-hidden-dragon',
+        title: '卧虎藏龙',
+        english: 'Crouching Tiger, Hidden Dragon',
+        year: '2000',
+        director: '李安',
+        rating: '8.7',
+        summary: '江湖、克制、欲望和遗憾都悬在空中，它让武侠第一次显得既轻盈又沉重。',
+        note: '有些飞起来的镜头，落地以后反而更难忘。',
+        tags: ['奥斯卡电影', '武侠', '爱情', '华语'],
+        accent: 'linear-gradient(135deg,#35574d 0%,#101917 100%)'
+      },
+      {
+        slug: 'lala-land',
         title: '爱乐之城',
         english: 'La La Land',
         year: '2016',
         director: 'Damien Chazelle',
-        genre: ['爱情', '歌舞'],
         rating: '8.4',
         summary: '它最难受的地方不在于错过，而在于你会明白：有些人真的就是一起走过那一段。',
         note: '最难忘的不是错过，而是你知道那一段真的存在过。',
+        tags: ['奥斯卡电影', '爱情', '歌舞', '喜剧'],
         accent: 'linear-gradient(135deg,#4e4173 0%,#191423 100%)'
       }
     ];
 
+    const filterOptions = ['全部', '世界百大电影', '奥斯卡电影', '金马奖电影', '喜剧', '武侠', '爱情', '科幻', '剧情', '动作', '冒险', '文艺', '华语'];
+    let activeFilter = '全部';
+
+    function renderFilters() {
+      const box = document.getElementById('filters');
+      box.innerHTML = filterOptions.map(tag => `
+        <button class="filter-chip ${tag === activeFilter ? 'active' : ''}" data-tag="${tag}">${tag}</button>
+      `).join('');
+      box.querySelectorAll('.filter-chip').forEach(btn => {
+        btn.addEventListener('click', () => {
+          activeFilter = btn.dataset.tag;
+          applyFilters();
+        });
+      });
+    }
+
     function renderFeatured(movie) {
+      if (!movie) return '';
       return `
         <a class="featured" href="#${movie.slug}">
           <div class="featured-media" style="background:${movie.accent}">
-            <div class="featured-tag">Featured movie</div>
+            <div class="featured-kicker">Featured movie</div>
             <h2 class="featured-name">${movie.title}</h2>
             <p class="featured-sub">${movie.english} · ${movie.year}</p>
+            <div class="tag-row">${movie.tags.slice(0,4).map(tag => `<span class="tag tag-soft">${tag}</span>`).join('')}</div>
           </div>
           <div class="featured-copy">
             <div>
               <p class="featured-text">${movie.summary}</p>
               <div class="meta-grid">
                 <div class="meta-item"><small>导演</small><span>${movie.director}</span></div>
-                <div class="meta-item"><small>类型</small><span>${movie.genre.join(' · ')}</span></div>
-                <div class="meta-item"><small>个人印象</small><span>${movie.note}</span></div>
                 <div class="meta-item"><small>评分</small><span>${movie.rating}</span></div>
+                <div class="meta-item"><small>标签</small><span>${movie.tags.join(' · ')}</span></div>
+                <div class="meta-item"><small>一句印象</small><span>${movie.note}</span></div>
               </div>
             </div>
           </div>
@@ -402,35 +331,28 @@
             <h3 class="movie-title">${movie.title}</h3>
             <p class="movie-summary">${movie.summary}</p>
             <div class="movie-meta">
-              <span class="chip">导演 · ${movie.director}</span>
-              <span class="chip">${movie.genre.join(' / ')}</span>
-              <span class="chip">评分 · ${movie.rating}</span>
+              <span class="tag">导演 · ${movie.director}</span>
+              <span class="tag">评分 · ${movie.rating}</span>
+              ${movie.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
             </div>
           </div>
         </article>`).join('');
     }
 
-    const featured = movieData[0];
-    document.getElementById('featured').innerHTML = renderFeatured(featured);
-    renderGrid(movieData);
+    function applyFilters() {
+      const q = document.getElementById('search-input').value.trim().toLowerCase();
+      const list = movieData.filter(movie => {
+        const hitFilter = activeFilter === '全部' || movie.tags.includes(activeFilter);
+        const hitSearch = !q || [movie.title, movie.english, movie.year, movie.director, movie.summary, movie.note, movie.tags.join(' ')].join(' ').toLowerCase().includes(q);
+        return hitFilter && hitSearch;
+      });
+      renderFilters();
+      document.getElementById('featured').innerHTML = renderFeatured(list[0]);
+      renderGrid(list);
+    }
 
-    const input = document.getElementById('search-input');
-    input.addEventListener('input', () => {
-      const q = input.value.trim().toLowerCase();
-      if (!q) {
-        document.getElementById('featured').innerHTML = renderFeatured(featured);
-        renderGrid(movieData);
-        return;
-      }
-      const filtered = movieData.filter(movie =>
-        [movie.title, movie.english, movie.year, movie.director, movie.genre.join(' '), movie.summary, movie.note]
-          .join(' ')
-          .toLowerCase()
-          .includes(q)
-      );
-      document.getElementById('featured').innerHTML = filtered.length ? renderFeatured(filtered[0]) : '';
-      renderGrid(filtered);
-    });
+    document.getElementById('search-input').addEventListener('input', applyFilters);
+    applyFilters();
   </script>
 </body>
 </html>
