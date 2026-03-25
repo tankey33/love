@@ -12,6 +12,7 @@ on:
       - 'photo-detail.html'
       - 'movie.html'
       - 'music.html'
+      - 'demo/**'
       - 'data/**'
       - 'assets/**'
       - 'photo/**'

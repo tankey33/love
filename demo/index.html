@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>demo · 志愿推荐演示</title>
+  <link rel="icon" href="../love.png" />
+  <style>
+    :root {
+      --bg: #f5f5f7;
+      --panel: #ffffff;
+      --text: #1d1d1f;
+      --soft: #6e6e73;
+      --line: rgba(0,0,0,.08);
+      --shadow: 0 16px 40px rgba(0,0,0,.05);
+      --accent: #111;
+      --content: 1280px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "PingFang SC", sans-serif;
+      background: linear-gradient(180deg, #fafafd 0%, var(--bg) 100%);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: inherit; text-decoration: none; }
+    .topbar {
+      position: sticky; top: 0; z-index: 20;
+      background: rgba(245,245,247,.84);
+      backdrop-filter: blur(18px) saturate(160%);
+      border-bottom: 1px solid rgba(0,0,0,.05);
+    }
+    .topbar-inner {
+      max-width: var(--content);
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex; justify-content: space-between; align-items: center; gap: 12px;
+    }
+    .brand { font-size: 14px; letter-spacing: .02em; }
+    .nav { display: flex; gap: 8px; flex-wrap: wrap; }
+    .nav a {
+      font-size: 13px; color: var(--soft); padding: 10px 14px; border-radius: 999px;
+      transition: .2s ease;
+    }
+    .nav a:hover, .nav a.active { background: rgba(17,17,17,.05); color: var(--text); }
+    .page { max-width: var(--content); margin: 0 auto; padding: 28px 20px 56px; }
+    .hero {
+      display: grid; grid-template-columns: 1.1fr .9fr; gap: 20px; align-items: stretch;
+      margin-bottom: 20px;
+    }
+    .hero-left, .hero-right {
+      background: linear-gradient(180deg, rgba(255,255,255,.98), rgba(250,250,252,.94));
+      border: 1px solid var(--line); border-radius: 30px; box-shadow: var(--shadow);
+      padding: 26px 24px;
+    }
+    .eyebrow { font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--soft); font-weight: 600; margin-bottom: 10px; }
+    .hero-title { margin: 0; font-size: clamp(34px, 5.2vw, 64px); line-height: 1.02; letter-spacing: -.05em; font-weight: 650; }
+    .hero-desc { margin: 14px 0 0; font-size: 16px; line-height: 1.8; color: var(--soft); max-width: 34em; }
+    .mini-title { margin: 0 0 10px; font-size: 20px; letter-spacing: -.03em; }
+    .mini-list { margin: 0; padding-left: 18px; color: var(--soft); line-height: 1.9; font-size: 14px; }
+    .grid { display: grid; grid-template-columns: 360px 1fr; gap: 20px; }
+    .panel {
+      background: var(--panel); border: 1px solid var(--line); border-radius: 28px; box-shadow: var(--shadow);
+      padding: 22px;
+    }
+    .panel-title { margin: 0 0 16px; font-size: 22px; letter-spacing: -.03em; }
+    .form-grid { display: grid; gap: 14px; }
+    .field { display: grid; gap: 8px; }
+    .field label { font-size: 13px; color: var(--soft); }
+    .field input, .field select {
+      width: 100%; height: 46px; border: 1px solid rgba(0,0,0,.08); border-radius: 14px;
+      background: #fff; padding: 0 14px; font-size: 14px; outline: none;
+    }
+    .button-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 4px; }
+    button {
+      border: none; border-radius: 999px; padding: 12px 18px; cursor: pointer; font-size: 13px;
+      background: #111; color: #fff;
+    }
+    button.secondary { background: rgba(17,17,17,.06); color: var(--text); }
+    .stats { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px; }
+    .stat {
+      padding: 10px 14px; border-radius: 999px; background: rgba(17,17,17,.04); color: var(--soft); font-size: 13px;
+    }
+    .result-group { margin-bottom: 20px; }
+    .group-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+    .group-title { margin: 0; font-size: 20px; letter-spacing: -.03em; }
+    .group-note { font-size: 13px; color: var(--soft); }
+    .cards { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 14px; }
+    .card {
+      border: 1px solid var(--line); border-radius: 22px; padding: 18px; background: linear-gradient(180deg,#fff,#fcfcfe);
+    }
+    .card-kicker { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--soft); margin-bottom: 8px; }
+    .card-title { margin: 0; font-size: 24px; line-height: 1.08; letter-spacing: -.04em; }
+    .card-sub { margin: 8px 0 0; font-size: 14px; color: var(--soft); line-height: 1.7; }
+    .tag-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+    .tag { padding: 7px 10px; border-radius: 999px; background: rgba(17,17,17,.05); font-size: 12px; }
+    .meta { margin-top: 14px; display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; }
+    .meta-item { background: rgba(17,17,17,.03); border-radius: 16px; padding: 12px; }
+    .meta-item small { display: block; color: var(--soft); margin-bottom: 6px; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; }
+    .meta-item span { font-size: 14px; line-height: 1.6; }
+    .empty {
+      border: 1px dashed rgba(0,0,0,.12); border-radius: 20px; padding: 26px; color: var(--soft); line-height: 1.8;
+    }
+    .tip { margin-top: 16px; color: var(--soft); font-size: 13px; line-height: 1.8; }
+    @media (max-width: 980px) {
+      .hero, .grid { grid-template-columns: 1fr; }
+      .cards { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 720px) {
+      .page { padding: 20px 16px 40px; }
+      .topbar-inner { padding: 12px 16px; }
+      .hero-left, .hero-right, .panel { padding: 18px; border-radius: 22px; }
+      .hero-title { font-size: clamp(30px, 10vw, 42px); }
+      .hero-desc { font-size: 14px; }
+      .card-title { font-size: 22px; }
+      .meta { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="../index.html">Tankey ❤️ Monody</a>
+      <nav class="nav">
+        <a href="../index.html">首页</a>
+        <a href="../photo.html">照片</a>
+        <a href="../notes.html">碎碎念</a>
+        <a href="../movie.html">Movie</a>
+        <a href="../music.html">Music</a>
+        <a href="./index.html" class="active">demo</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="hero">
+      <div class="hero-left">
+        <div class="eyebrow">demo</div>
+        <h1 class="hero-title">志愿推荐演示站。</h1>
+        <p class="hero-desc">先做一个能跑通完整流程的 demo：输入地区、分数、目标城市、专业偏好和就业倾向，自动给出近三年可报学校与专业的冲稳保建议。</p>
+      </div>
+      <div class="hero-right">
+        <h2 class="mini-title">这版先解决的事</h2>
+        <ul class="mini-list">
+          <li>根据分数筛出可报学校和专业</li>
+          <li>按目标地区与专业偏好过滤</li>
+          <li>按就业稳定 / 高薪潜力 / 城市资源给出推荐</li>
+          <li>输出冲刺 / 稳妥 / 保底三个梯度</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="grid">
+      <aside class="panel">
+        <h2 class="panel-title">输入条件</h2>
+        <div class="form-grid">
+          <div class="field">
+            <label for="homeProvince">所在地区</label>
+            <select id="homeProvince">
+              <option value="江苏">江苏</option>
+              <option value="安徽">安徽</option>
+              <option value="山东">山东</option>
+              <option value="河南">河南</option>
+              <option value="广东">广东</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="subjectType">科类 / 选科</label>
+            <select id="subjectType">
+              <option value="物理类">物理类</option>
+              <option value="历史类">历史类</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="score">目标分数</label>
+            <input id="score" type="number" value="590" min="300" max="750" />
+          </div>
+          <div class="field">
+            <label for="targetProvince">想去的地区</label>
+            <select id="targetProvince">
+              <option value="不限">不限</option>
+              <option value="江苏">江苏</option>
+              <option value="浙江">浙江</option>
+              <option value="上海">上海</option>
+              <option value="广东">广东</option>
+              <option value="北京">北京</option>
+              <option value="陕西">陕西</option>
+              <option value="重庆">重庆</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="majorPreference">专业偏好</label>
+            <select id="majorPreference">
+              <option value="不限">不限</option>
+              <option value="计算机">计算机 / AI / 数据</option>
+              <option value="电子信息">电子信息 / 通信</option>
+              <option value="医学">医学 / 护理</option>
+              <option value="财经">财经 / 金融 / 审计</option>
+              <option value="教育">教育 / 师范</option>
+              <option value="工科">传统工科</option>
+              <option value="文科">文科 / 汉语言</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="careerGoal">就业偏好</label>
+            <select id="careerGoal">
+              <option value="均衡">均衡</option>
+              <option value="高薪潜力">高薪潜力</option>
+              <option value="稳定">稳定</option>
+              <option value="考公友好">考公友好</option>
+              <option value="城市优势">城市资源</option>
+            </select>
+          </div>
+          <div class="button-row">
+            <button id="runBtn">生成推荐</button>
+            <button class="secondary" id="resetBtn">重置</button>
+          </div>
+        </div>
+        <div class="tip">这版是演示站，当前数据是内置样本，用来先把产品形态、结果层级和推荐逻辑跑通。后续接真实招录数据库后，可以替换成正式版。</div>
+      </aside>
+
+      <section class="panel">
+        <div class="stats" id="stats"></div>
+        <div id="results"></div>
+      </section>
+    </section>
+  </main>
+
+  <script>
+    const state = {
+      data: [],
+      homeProvince: '江苏',
+      subjectType: '物理类',
+      score: 590,
+      targetProvince: '不限',
+      majorPreference: '不限',
+      careerGoal: '均衡'
+    };
+
+    const majorMap = {
+      '计算机': ['计算机', '人工智能', '软件', '数据', '网络'],
+      '电子信息': ['电子信息', '通信', '信息安全', '电子'],
+      '医学': ['医学', '护理', '临床'],
+      '财经': ['财经', '金融', '会计', '审计'],
+      '教育': ['教育', '师范'],
+      '工科': ['工科', '机械', '制造', '交通'],
+      '文科': ['文科', '汉语言']
+    };
+
+    async function loadData() {
+      const res = await fetch('./data/schools.json');
+      state.data = await res.json();
+      render();
+    }
+
+    function scoreBand(item) {
+      const gap = state.score - item.minScore2024;
+      if (gap >= 18) return '保底';
+      if (gap >= 5) return '稳妥';
+      if (gap >= -8) return '冲刺';
+      return '超线外';
+    }
+
+    function careerBoost(item) {
+      if (state.careerGoal === '均衡') return 0;
+      const text = [item.salary, item.stability, ...(item.tags || []), item.recommendation || '', item.career || ''].join(' ');
+      if (state.careerGoal === '高薪潜力' && /高薪|中高|AI|计算机|数据|人工智能/.test(text)) return 8;
+      if (state.careerGoal === '稳定' && /稳定|高|医学|护理|师范/.test(text)) return 8;
+      if (state.careerGoal === '考公友好' && /考公友好|审计|会计|师范|文科|稳定/.test(text)) return 8;
+      if (state.careerGoal === '城市优势' && /上海|北京|深圳|长三角|杭州/.test(text)) return 8;
+      return 0;
+    }
+
+    function majorMatch(item) {
+      if (state.majorPreference === '不限') return true;
+      const rules = majorMap[state.majorPreference] || [];
+      const text = [item.major, ...(item.tags || [])].join(' ');
+      return rules.some(rule => text.includes(rule));
+    }
+
+    function filterData() {
+      return state.data
+        .filter(item => item.subject === state.subjectType)
+        .filter(item => state.targetProvince === '不限' || item.province === state.targetProvince)
+        .filter(item => majorMatch(item))
+        .map(item => {
+          const band = scoreBand(item);
+          const gap = state.score - item.minScore2024;
+          const rankValue = band === '超线外' ? -999 : 0;
+          const fit = gap + careerBoost(item) + rankValue;
+          return { ...item, band, gap, fit };
+        })
+        .filter(item => item.band !== '超线外')
+        .sort((a, b) => b.fit - a.fit);
+    }
+
+    function groupByBand(list) {
+      return {
+        '冲刺': list.filter(i => i.band === '冲刺').slice(0, 4),
+        '稳妥': list.filter(i => i.band === '稳妥').slice(0, 4),
+        '保底': list.filter(i => i.band === '保底').slice(0, 4)
+      };
+    }
+
+    function card(item) {
+      return `
+        <article class="card">
+          <div class="card-kicker">${item.province} · ${item.city} · ${item.tier}</div>
+          <h3 class="card-title">${item.school}</h3>
+          <p class="card-sub">${item.major}</p>
+          <div class="tag-row">
+            ${(item.tags || []).map(tag => `<span class="tag">${tag}</span>`).join('')}
+          </div>
+          <div class="meta">
+            <div class="meta-item"><small>2024 最低分</small><span>${item.minScore2024}</span></div>
+            <div class="meta-item"><small>与你分差</small><span>${item.gap >= 0 ? '+' : ''}${item.gap}</span></div>
+            <div class="meta-item"><small>就业方向</small><span>${item.career}</span></div>
+            <div class="meta-item"><small>推荐理由</small><span>${item.recommendation}</span></div>
+          </div>
+        </article>`;
+    }
+
+    function render() {
+      const list = filterData();
+      const grouped = groupByBand(list);
+      const stats = document.getElementById('stats');
+      const results = document.getElementById('results');
+
+      stats.innerHTML = `
+        <span class="stat">所在地区：${state.homeProvince}</span>
+        <span class="stat">分数：${state.score}</span>
+        <span class="stat">科类：${state.subjectType}</span>
+        <span class="stat">目标地区：${state.targetProvince}</span>
+      `;
+
+      const total = Object.values(grouped).reduce((sum, arr) => sum + arr.length, 0);
+      if (!total) {
+        results.innerHTML = `<div class="empty">按当前条件暂时没有命中的样本学校。你可以放宽目标地区、切换专业偏好，或者调低“目标院校预期”。</div>`;
+        return;
+      }
+
+      results.innerHTML = Object.entries(grouped).map(([band, items]) => {
+        if (!items.length) return '';
+        const note = band === '冲刺' ? '分差较小，适合少量布局。' : band === '稳妥' ? '匹配度较高，适合重点考虑。' : '更安全，适合作为兜底层。';
+        return `
+          <section class="result-group">
+            <div class="group-head">
+              <h3 class="group-title">${band}</h3>
+              <div class="group-note">${note}</div>
+            </div>
+            <div class="cards">${items.map(card).join('')}</div>
+          </section>`;
+      }).join('');
+    }
+
+    function bind() {
+      const homeProvince = document.getElementById('homeProvince');
+      const subjectType = document.getElementById('subjectType');
+      const score = document.getElementById('score');
+      const targetProvince = document.getElementById('targetProvince');
+      const majorPreference = document.getElementById('majorPreference');
+      const careerGoal = document.getElementById('careerGoal');
+      const runBtn = document.getElementById('runBtn');
+      const resetBtn = document.getElementById('resetBtn');
+
+      runBtn.addEventListener('click', () => {
+        state.homeProvince = homeProvince.value;
+        state.subjectType = subjectType.value;
+        state.score = Number(score.value || 0);
+        state.targetProvince = targetProvince.value;
+        state.majorPreference = majorPreference.value;
+        state.careerGoal = careerGoal.value;
+        render();
+      });
+
+      resetBtn.addEventListener('click', () => {
+        homeProvince.value = '江苏';
+        subjectType.value = '物理类';
+        score.value = 590;
+        targetProvince.value = '不限';
+        majorPreference.value = '不限';
+        careerGoal.value = '均衡';
+        state.homeProvince = '江苏';
+        state.subjectType = '物理类';
+        state.score = 590;
+        state.targetProvince = '不限';
+        state.majorPreference = '不限';
+        state.careerGoal = '均衡';
+        render();
+      });
+    }
+
+    bind();
+    loadData();
+  </script>
+</body>
+</html>
