@@ -1,6 +1,6 @@
 :root{
-  --jp-mist:#eaf0ed;--jp-paper:#f5f7f3;--jp-ink:#27322f;--jp-soft:#6f7c77;
-  --jp-aqua:#a9ccc4;--jp-deep:#5f877f;--jp-pale:#dcebe6;--jp-line:rgba(39,50,47,.14);
+  --jp-mist:#e6eff1;--jp-paper:#f3f7f6;--jp-ink:#253638;--jp-soft:#687c7f;
+  --jp-aqua:#a8d3d4;--jp-deep:#527f86;--jp-pale:#d8eaec;--jp-line:rgba(37,54,56,.14);
   --jp-serif:"Yu Mincho","游明朝","Hiragino Mincho ProN","ヒラギノ明朝 ProN","Songti SC","STSong","Noto Serif CJK JP",serif;
   --jp-latin:"Adobe Garamond Pro","Cormorant Garamond",Garamond,Georgia,serif;
   --jp-sans:"Yu Gothic","游ゴシック","Hiragino Kaku Gothic ProN","PingFang SC",sans-serif
@@ -9,7 +9,7 @@ html{background:var(--jp-mist)}
 body.site-page{background:var(--jp-mist)!important;color:var(--jp-ink)!important;font-family:var(--jp-serif)!important;letter-spacing:.018em}
 body.site-page::selection{background:var(--jp-aqua);color:#fff}
 body.site-page a{color:inherit}
-body.site-page .topbar{background:rgba(234,240,237,.91)!important;border-bottom:1px solid var(--jp-line)!important;box-shadow:none!important}
+body.site-page .topbar{background:rgba(230,239,241,.92)!important;border-bottom:1px solid var(--jp-line)!important;box-shadow:none!important}
 body.site-page .topbar-inner{max-width:1600px!important;padding-left:clamp(18px,4vw,58px)!important;padding-right:clamp(18px,4vw,58px)!important}
 body.site-page .brand{font-family:var(--jp-latin),var(--jp-serif)!important;font-size:17px!important;font-weight:400!important;letter-spacing:.045em!important}
 body.site-page .nav{gap:clamp(10px,1.6vw,26px)!important}
@@ -35,3 +35,30 @@ body.page-note .content blockquote{border-left-color:var(--jp-deep)!important;ba
  body.site-page .nav a{font-size:11px!important;padding:18px 0!important}
  body.site-page .nav a:nth-child(4),body.site-page .nav a:nth-child(5){display:none}
 }
+
+/* responsive rhythm and Hamada-inspired aqua-blue palette */
+body.site-page .topbar-inner{min-height:72px!important;padding-top:8px!important;padding-bottom:8px!important}
+body.site-page .brand{display:inline-flex!important;align-items:center;min-height:44px;padding:4px 0!important;line-height:1.35!important;white-space:nowrap}
+body.site-page h1,body.site-page .hero-title,body.site-page .page-title{
+  max-width:100%!important;white-space:normal!important;overflow-wrap:anywhere!important;word-break:keep-all!important;
+  text-wrap:balance!important;line-height:1.08!important;font-size:clamp(2.15rem,7vw,6.6rem)!important
+}
+body.site-page h2{max-width:100%;overflow-wrap:anywhere;word-break:keep-all;line-height:1.2}
+body.page-home,body.page-home.body--ready{background:linear-gradient(145deg,#dcecef 0%,#b8d8dc 44%,#7daeb6 100%)!important}
+body.page-home .canvas{opacity:.72!important;filter:none!important}
+body.page-home::after{background:rgba(37,69,74,.25)!important}
+body.page-home .hero-title,body.page-home .hero-desc,body.page-home .love-time .value{color:#17383e!important}
+body.page-home .top-pill,body.page-home .love-time .label{color:rgba(23,56,62,.72)!important}
+body.page-movie .grid{grid-template-columns:repeat(6,minmax(0,1fr))!important}
+body.page-movie .cover{aspect-ratio:2/3!important;background:#d8eaec!important}
+body.page-movie .cover img{filter:none!important}
+body.page-movie .copy{padding-top:10px!important}
+body.page-movie .copy h3{font-size:14px!important}
+@media(max-width:1180px){body.page-movie .grid{grid-template-columns:repeat(5,minmax(0,1fr))!important}}
+@media(max-width:900px){body.page-movie .grid{grid-template-columns:repeat(4,minmax(0,1fr))!important}}
+@media(max-width:720px){
+ body.site-page .topbar-inner{min-height:64px!important;padding-top:7px!important;padding-bottom:7px!important}
+ body.site-page h1,body.site-page .hero-title,body.site-page .page-title{font-size:clamp(2rem,11vw,4rem)!important;line-height:1.12!important}
+ body.page-movie .grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+}
+@media(max-width:480px){body.page-movie .grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
