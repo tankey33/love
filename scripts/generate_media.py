@@ -110,6 +110,20 @@ def chart(kind):
         print("chart fallback:",kind,type(exc).__name__)
 
 
+def douban_intro(sid):
+    """Fetch the public Douban synopsis used by the movie detail page."""
+    if not sid:return ""
+    url="https://m.douban.com/rexxar/api/v2/movie/"+urllib.parse.quote(sid)
+    headers={**UA,"Referer":"https://m.douban.com/movie/subject/"+sid+"/"}
+    try:
+        req=urllib.request.Request(url,headers=headers)
+        with urllib.request.urlopen(req,timeout=15) as r:
+            data=json.load(r)
+        return (data.get("intro") or data.get("summary") or "").strip()
+    except Exception as exc:
+        print("douban intro fallback:",sid,type(exc).__name__)
+        return ""
+
 def douban_trending():
     """Build a truthful Douban-current list with local poster files and direct links."""
     url="https://m.douban.com/rexxar/api/v2/subject_collection/movie_showing/items?start=0&count=20"
@@ -138,6 +152,7 @@ def douban_trending():
                 except Exception as exc:
                     print("douban poster fallback:",sid,type(exc).__name__)
             rating=x.get("rating") or {}
+            intro=douban_intro(sid)
             normalized.append({
                 "title":title,"doubanId":sid,
                 "doubanUrl":"https://movie.douban.com/subject/"+sid+"/",
@@ -145,7 +160,7 @@ def douban_trending():
                 "rating":rating.get("value") if isinstance(rating,dict) else rating,
                 "year":str(x.get("year") or ""),
                 "director":" / ".join(x.get("directors") or []),
-                "summary":"豆瓣当前热门","tags":["豆瓣热门"],
+                "summary":intro or x.get("card_subtitle") or "暂无简介","tags":["豆瓣热门"],
                 "syncedAt":stamp
             })
         if normalized:
