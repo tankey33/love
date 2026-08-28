@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Tankey ❤️ Monody</title>
+<title>Tankey × Monody</title>
 <link rel="icon" href="./love.png"/>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.10.0/styles/github.min.css"/>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css"/>
@@ -17,7 +17,7 @@
 <link rel="stylesheet" href="assets/css/japanese-theme.css">
 </head>
 <body class="site-page page-note">
-<header class="topbar"><div class="topbar-inner"><a class="brand" href="index.html">Tankey ❤️ Monody</a><nav class="nav"><a href="index.html">首页</a><a href="photo.html">照片</a><a href="notes.html">碎碎念</a><a href="movie.html">Movie</a><a href="music.html">Music</a></nav></div></header>
+<header class="topbar"><div class="topbar-inner"><a class="brand" href="index.html">Tankey × Monody</a><nav class="nav"><a href="index.html">首页</a><a href="photo.html">写真</a><a href="notes.html">手记</a><a href="movie.html">电影</a><a href="music.html">音乐</a></nav></div></header>
 <main class="page"><article><header class="hero"><div class="eyebrow">Newsroom</div><h1 id="post-title"></h1><div class="summary" id="post-summary"></div></header><div class="article-shell"><section class="content" id="post-content"></section><div class="post-footer-meta" id="post-date"></div></div></article></main>
 <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.10.0/lib/common.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
@@ -30,7 +30,7 @@
     const posts=await fetch('blog/posts.json?t='+Date.now()).then(r=>r.json());
     const post=posts.find(p=>p.slug===slug);
     if(!post){document.getElementById('post-title').textContent='文章不存在';return;}
-    document.title=post.title+' · Tankey ❤️ Monody';
+    document.title=post.title+' · Tankey × Monody';
     document.getElementById('post-title').textContent=post.title;
     document.getElementById('post-date').textContent=post.date||'';
     document.getElementById('post-summary').textContent=post.summary||'';
