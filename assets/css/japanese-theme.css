@@ -1,0 +1,37 @@
+:root{
+  --jp-mist:#eaf0ed;--jp-paper:#f5f7f3;--jp-ink:#27322f;--jp-soft:#6f7c77;
+  --jp-aqua:#a9ccc4;--jp-deep:#5f877f;--jp-pale:#dcebe6;--jp-line:rgba(39,50,47,.14);
+  --jp-serif:"Yu Mincho","游明朝","Hiragino Mincho ProN","ヒラギノ明朝 ProN","Songti SC","STSong","Noto Serif CJK JP",serif;
+  --jp-latin:"Adobe Garamond Pro","Cormorant Garamond",Garamond,Georgia,serif;
+  --jp-sans:"Yu Gothic","游ゴシック","Hiragino Kaku Gothic ProN","PingFang SC",sans-serif
+}
+html{background:var(--jp-mist)}
+body.site-page{background:var(--jp-mist)!important;color:var(--jp-ink)!important;font-family:var(--jp-serif)!important;letter-spacing:.018em}
+body.site-page::selection{background:var(--jp-aqua);color:#fff}
+body.site-page a{color:inherit}
+body.site-page .topbar{background:rgba(234,240,237,.91)!important;border-bottom:1px solid var(--jp-line)!important;box-shadow:none!important}
+body.site-page .topbar-inner{max-width:1600px!important;padding-left:clamp(18px,4vw,58px)!important;padding-right:clamp(18px,4vw,58px)!important}
+body.site-page .brand{font-family:var(--jp-latin),var(--jp-serif)!important;font-size:17px!important;font-weight:400!important;letter-spacing:.045em!important}
+body.site-page .nav{gap:clamp(10px,1.6vw,26px)!important}
+body.site-page .nav a{font-family:var(--jp-serif)!important;font-size:12px!important;color:var(--jp-soft)!important;padding:20px 0!important;border-radius:0!important;background:none!important;letter-spacing:.12em}
+body.site-page .nav a:hover,body.site-page .nav a.active{color:var(--jp-ink)!important;border-bottom:1px solid var(--jp-deep)!important}
+body.site-page .eyebrow,body.site-page .kicker,body.site-page .panel-label{font-family:var(--jp-latin),var(--jp-serif)!important;color:var(--jp-deep)!important;letter-spacing:.2em!important;font-weight:400!important}
+body.site-page .hero-title,body.site-page .page-title,body.site-page h1,body.site-page h2,body.site-page h3{font-family:var(--jp-latin),var(--jp-serif)!important;font-weight:400!important}
+body.site-page .hero-desc,body.site-page .page-desc,body.site-page .summary,body.site-page p{line-height:1.95}
+body.site-page .card,body.site-page .news-card,body.site-page .lead-card,body.site-page .group,body.site-page .stage,body.site-page .info{border-radius:0!important;box-shadow:none!important;border-color:var(--jp-line)!important;background:rgba(245,247,243,.72)!important}
+body.site-page .filter-chip,body.site-page .stat-pill,body.site-page .tag,body.site-page .chip{border-radius:0!important;background:transparent!important;border:1px solid var(--jp-line)!important;color:var(--jp-soft)!important;font-family:var(--jp-serif)!important}
+body.site-page .filter-chip.active,body.site-page .chip.active{background:var(--jp-deep)!important;border-color:var(--jp-deep)!important;color:#fff!important}
+body.site-page input,body.site-page select{border-radius:0!important;background:rgba(255,255,255,.42)!important;border:0!important;border-bottom:1px solid var(--jp-line)!important;box-shadow:none!important;font-family:var(--jp-serif)!important}
+body.page-photo{--paper:var(--jp-mist)!important;--card:var(--jp-paper)!important;--ink:var(--jp-ink)!important;--muted:var(--jp-soft)!important;--line:var(--jp-line)!important;--red:var(--jp-deep)!important;--green:#789e96!important}
+body.page-photo .photo-frame img{filter:saturate(.72) brightness(1.04) contrast(.94)!important}
+body.page-photo .photo-card:hover img{filter:saturate(.9) brightness(1.03)!important}
+body.page-notes .page,body.page-note .page{max-width:1120px!important}
+body.page-note .content{font-family:var(--jp-serif)!important;color:var(--jp-ink);font-size:18px!important;line-height:2.1!important}
+body.page-note .content blockquote{border-left-color:var(--jp-deep)!important;background:rgba(169,204,196,.12)!important}
+@media(max-width:720px){
+ body.site-page .topbar-inner{padding-left:16px!important;padding-right:16px!important}
+ body.site-page .brand{font-size:14px!important}
+ body.site-page .nav{gap:12px!important}
+ body.site-page .nav a{font-size:11px!important;padding:18px 0!important}
+ body.site-page .nav a:nth-child(4),body.site-page .nav a:nth-child(5){display:none}
+}
