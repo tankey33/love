@@ -1,15 +1,15 @@
 :root{
-  --jp-mist:#e6eff1;--jp-paper:#f3f7f6;--jp-ink:#253638;--jp-soft:#687c7f;
-  --jp-aqua:#a8d3d4;--jp-deep:#527f86;--jp-pale:#d8eaec;--jp-line:rgba(37,54,56,.14);
-  --jp-serif:"Yu Mincho","游明朝","Hiragino Mincho ProN","ヒラギノ明朝 ProN","Songti SC","STSong","Noto Serif CJK JP",serif;
-  --jp-latin:"Adobe Garamond Pro","Cormorant Garamond",Garamond,Georgia,serif;
-  --jp-sans:"Yu Gothic","游ゴシック","Hiragino Kaku Gothic ProN","PingFang SC",sans-serif
+  --jp-mist:#edf3f4;--jp-paper:#f8faf9;--jp-ink:#1d1d1f;--jp-soft:#6e7476;
+  --jp-aqua:#c2dfe1;--jp-deep:#6f969b;--jp-pale:#e3eff0;--jp-line:rgba(29,29,31,.11);
+  --jp-serif:-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display","PingFang SC","Helvetica Neue",Arial,sans-serif;
+  --jp-latin:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",Arial,sans-serif;
+  --jp-sans:-apple-system,BlinkMacSystemFont,"SF Pro Text","PingFang SC","Helvetica Neue",Arial,sans-serif
 }
 html{background:var(--jp-mist)}
 body.site-page{background:var(--jp-mist)!important;color:var(--jp-ink)!important;font-family:var(--jp-serif)!important;letter-spacing:.018em}
 body.site-page::selection{background:var(--jp-aqua);color:#fff}
 body.site-page a{color:inherit}
-body.site-page .topbar{background:rgba(230,239,241,.92)!important;border-bottom:1px solid var(--jp-line)!important;box-shadow:none!important}
+body.site-page .topbar{background:rgba(237,243,244,.9)!important;border-bottom:1px solid var(--jp-line)!important;box-shadow:none!important}
 body.site-page .topbar-inner{max-width:1600px!important;padding-left:clamp(18px,4vw,58px)!important;padding-right:clamp(18px,4vw,58px)!important}
 body.site-page .brand{font-family:var(--jp-latin),var(--jp-serif)!important;font-size:17px!important;font-weight:400!important;letter-spacing:.045em!important}
 body.site-page .nav{gap:clamp(10px,1.6vw,26px)!important}
@@ -44,8 +44,8 @@ body.site-page h1,body.site-page .hero-title,body.site-page .page-title{
   text-wrap:balance!important;line-height:1.08!important;font-size:clamp(2.15rem,7vw,6.6rem)!important
 }
 body.site-page h2{max-width:100%;overflow-wrap:anywhere;word-break:keep-all;line-height:1.2}
-body.page-home,body.page-home.body--ready{background:linear-gradient(145deg,#dcecef 0%,#b8d8dc 44%,#7daeb6 100%)!important}
-body.page-home .canvas{opacity:.72!important;filter:none!important}
+body.page-home,body.page-home.body--ready{background:linear-gradient(145deg,#eef6f7 0%,#dcebed 48%,#bfd8dc 100%)!important}
+body.page-home .canvas{opacity:.52!important;filter:none!important}
 body.page-home::after{background:rgba(37,69,74,.25)!important}
 body.page-home .hero-title,body.page-home .hero-desc,body.page-home .love-time .value{color:#17383e!important}
 body.page-home .top-pill,body.page-home .love-time .label{color:rgba(23,56,62,.72)!important}
@@ -62,3 +62,21 @@ body.page-movie .copy h3{font-size:14px!important}
  body.page-movie .grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}
 }
 @media(max-width:480px){body.page-movie .grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+
+/* Apple Newsroom-inspired editorial system */
+body.page-notes,body.page-note{background:#f5f5f7!important;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","PingFang SC","Helvetica Neue",Arial,sans-serif!important}
+body.page-notes .page{width:min(1180px,100%);margin:0 auto!important;padding:64px clamp(18px,4vw,42px) 90px!important}
+body.page-notes .page-title{font-weight:700!important;letter-spacing:-.045em!important;text-align:center}
+body.page-notes .page-desc{margin-left:auto!important;margin-right:auto!important;text-align:center;max-width:650px!important}
+body.page-notes .search-wrap{max-width:760px;margin-left:auto!important;margin-right:auto!important}
+body.page-notes .lead-card,body.page-notes .news-card{background:#fff!important;border:0!important;border-radius:28px!important;overflow:hidden;box-shadow:none!important}
+body.page-notes .grid{gap:24px!important}
+body.page-notes .lead-title,body.page-notes .news-title{font-weight:700!important;letter-spacing:-.035em!important}
+body.page-note .page{width:min(1120px,100%);margin:0 auto!important;padding:70px clamp(20px,5vw,70px) 100px!important}
+body.page-note .hero{max-width:920px!important;margin-left:auto!important;margin-right:auto!important;text-align:center!important}
+body.page-note .hero h1{font-weight:700!important;letter-spacing:-.045em!important}
+body.page-note .article-shell{width:min(760px,100%)!important;margin-left:auto!important;margin-right:auto!important}
+body.page-note .content{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","PingFang SC","Helvetica Neue",Arial,sans-serif!important;font-size:18px!important;line-height:1.85!important}
+body.page-note .content h1,body.page-note .content h2,body.page-note .content h3{font-weight:700!important;letter-spacing:-.025em!important}
+body.page-note .content img{width:min(100%,980px);margin:42px auto!important;border-radius:24px!important}
+@media(max-width:720px){body.page-notes .page,body.page-note .page{padding-top:42px!important;padding-bottom:64px!important}body.page-notes .lead-card,body.page-notes .news-card{border-radius:22px!important}}
