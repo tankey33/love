@@ -29,6 +29,14 @@
     @media(max-width:640px){.topbar-inner{min-height:56px;padding:0 15px}.nav{gap:13px}.nav a{padding:19px 0}.nav a:nth-child(4),.nav a:nth-child(5){display:none}.controls-wrap{top:56px;padding:0 12px 12px}.controls{overflow-x:auto;scrollbar-width:none}.actions .sort{display:none}.intro{padding:44px 18px 34px;gap:30px}.intro h1{font-size:clamp(42px,15vw,66px)}.intro-side{padding-left:16px}.stats{gap:22px}.gallery{padding:6px 10px 72px}.grid,.grid.compact{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.photo-meta{padding:10px 2px 18px}.photo-title{font-size:12px}.photo-shape{display:none}.photo-date{font-size:9px}.photo-index{left:8px;top:8px;width:25px;height:25px}.footer{padding:22px 16px 30px;flex-direction:column}.zoom-hint{display:none}}
     @media(max-width:390px){.brand{font-size:12px}.nav{gap:10px;font-size:11px}.intro h1{font-size:43px}.chip{padding:0 12px}}
     @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}.photo-frame img,.viewer,.stage img{transition:none!important}}
+  
+    .profile{max-width:1500px;margin:auto;padding:clamp(48px,8vw,104px) clamp(18px,5vw,76px) clamp(34px,5vw,64px);display:grid;grid-template-columns:clamp(112px,15vw,190px) minmax(0,1fr) auto;gap:clamp(24px,4vw,62px);align-items:center}
+    .profile-avatar{width:100%;aspect-ratio:1;object-fit:cover;border-radius:50%;filter:saturate(.7) brightness(1.05);box-shadow:0 0 0 10px rgba(255,255,255,.3)}
+    .profile-copy h1{margin:0;font-family:var(--jp-latin),var(--jp-serif);font-size:clamp(40px,6.5vw,92px)!important;line-height:1!important;letter-spacing:-.045em;word-break:normal!important}
+    .profile-meta{margin:18px 0 0;color:var(--jp-soft);font-size:12px;letter-spacing:.09em}
+    .profile-slogan{margin:16px 0 0;color:var(--jp-soft);font-family:var(--jp-serif);font-size:13px;line-height:1.9}
+    .profile-seal{padding:12px 10px;border:1px solid var(--jp-deep);color:var(--jp-deep);font-family:var(--jp-serif);font-size:12px;line-height:1.5;text-align:center}
+    @media(max-width:640px){.profile{grid-template-columns:88px 1fr;gap:18px;padding:38px 18px 30px}.profile-copy h1{font-size:clamp(30px,9vw,46px)!important}.profile-seal{display:none}.profile-meta{margin-top:10px;font-size:10px}.profile-slogan{font-size:11px;margin-top:9px}.profile-avatar{box-shadow:0 0 0 6px rgba(255,255,255,.3)}}
   </style>
 <link rel="stylesheet" href="assets/css/japanese-theme.css">
 </head>
@@ -38,11 +46,16 @@
     <nav class="nav" aria-label="主导航"><a href="index.html">首页</a><a class="active" href="photo.html">写真</a><a href="notes.html">手记</a><a href="movie.html">影像</a><a href="music.html">音乐</a></nav>
   </div></header>
 
-  <section class="intro">
-    <div><p class="eyebrow">Our photographic diary · since 2017</p><h1>一些关于<br><em>我们</em> 的瞬间。</h1></div>
-    <div class="intro-side"><p>照片替我们记得光线、气味，和当时没有说出口的话。慢慢翻，时间会重新经过这里。</p><div class="stats"><div class="stat"><strong id="photoCount">0</strong><span>Frames</span></div><div class="stat"><strong id="yearCount">—</strong><span>Years</span></div></div></div>
+  <section class="profile">
+    <img class="profile-avatar" src="baby.png" alt="Tankey 与 Monody">
+    <div class="profile-copy">
+      <p class="eyebrow">OUR MEMS · SINCE 2017</p>
+      <h1>Tankey &amp; Monody</h1>
+      <p class="profile-meta">2017年12月29日 — 今天 · 共 <span id="photoCount">0</span> 张照片</p>
+      <p class="profile-slogan">Mems rest within the lens.<br>光留在镜头里，我们留在彼此的时间里。</p>
+    </div>
+    <div class="profile-seal">恋<br>日<br>录</div>
   </section>
-
   <div class="controls-wrap"><div class="controls">
     <div class="filters" role="group" aria-label="照片筛选"><button class="chip active" data-filter="all">全部</button><button class="chip" data-filter="landscape">横幅</button><button class="chip" data-filter="portrait">竖幅</button><button class="chip" data-filter="square">方形</button></div>
     <div class="actions"><select id="sort" class="sort" aria-label="照片排序"><option value="newest">最新优先</option><option value="oldest">最早优先</option><option value="title">按名称</option></select><button id="layoutToggle" class="icon-btn" aria-label="切换布局" title="切换布局">▦</button></div>
