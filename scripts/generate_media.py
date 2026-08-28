@@ -29,17 +29,34 @@ def artwork(url):
 
 def search(item,kind):
     title=item.get("title","")
-    extra=item.get("director" if kind=="movie" else "artist","")
-    term=" ".join(x for x in (title,extra) if x)
-    params=urllib.parse.urlencode({"term":term,"country":"US" if kind=="movie" else "CN","media":kind,"limit":1})
-    try:
-        data=get_json("https://itunes.apple.com/search?"+params)
-        hit=(data.get("results") or [None])[0]
-        if hit:
-            item["posterUrl"]=artwork(hit.get("artworkUrl100"))
-            item["storeUrl"]=hit.get("trackViewUrl") or hit.get("collectionViewUrl")
-    except Exception as exc:
-        print("artwork miss:",title,type(exc).__name__)
+    artist=item.get("artist","")
+    if kind=="movie":
+        # English catalogue titles match the US storefront much more reliably.
+        terms=[item.get("english",""),title]
+        countries=["US","CN"]
+    else:
+        terms=[" ".join(x for x in (title,artist) if x),title]
+        countries=["CN","US"]
+    for term in [x for x in terms if x]:
+        for country in countries:
+            params=urllib.parse.urlencode({
+                "term":term,"country":country,"media":kind,
+                "entity":"movie" if kind=="movie" else "song","limit":5
+            })
+            try:
+                data=get_json("https://itunes.apple.com/search?"+params)
+                hits=data.get("results") or []
+                if hits:
+                    year=str(item.get("year",""))
+                    hit=next((x for x in hits if not year or str(x.get("releaseDate","")).startswith(year)),hits[0])
+                    image=artwork(hit.get("artworkUrl100"))
+                    if image:
+                        item["posterUrl"]=image
+                        item["storeUrl"]=hit.get("trackViewUrl") or hit.get("collectionViewUrl")
+                        return item
+            except Exception as exc:
+                print("artwork retry:",title,country,type(exc).__name__)
+    print("artwork miss:",title)
     return item
 
 def enrich(name,kind,limit):
