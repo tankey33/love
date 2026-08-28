@@ -27,12 +27,32 @@ def artwork(url):
         url=url.replace(old,"600x600bb")
     return url
 
+def wikipedia_image(term):
+    params=urllib.parse.urlencode({
+        "action":"query","generator":"search","gsrsearch":term+" film",
+        "gsrlimit":3,"prop":"pageimages","piprop":"thumbnail",
+        "pithumbsize":700,"format":"json","formatversion":2
+    })
+    try:
+        pages=get_json("https://en.wikipedia.org/w/api.php?"+params).get("query",{}).get("pages",[])
+        hit=next((p for p in pages if p.get("thumbnail",{}).get("source")),None)
+        return hit.get("thumbnail",{}).get("source") if hit else ""
+    except Exception as exc:
+        print("wikipedia retry:",term,type(exc).__name__)
+        return ""
+
 def search(item,kind):
     title=item.get("title","")
     artist=item.get("artist","")
     if kind=="movie":
-        # English catalogue titles match the US storefront much more reliably.
+        # Wikipedia supplies stable, keyless lead images; iTunes remains fallback.
         terms=[item.get("english",""),title]
+        for term in [x for x in terms if x]:
+            image=wikipedia_image(term)
+            if image:
+                item["posterUrl"]=image
+                item["storeUrl"]="https://en.wikipedia.org/wiki/"+urllib.parse.quote(term.replace(" ","_"))
+                return item
         countries=["US","CN"]
     else:
         terms=[" ".join(x for x in (title,artist) if x),title]
@@ -62,7 +82,7 @@ def search(item,kind):
 def enrich(name,kind,limit):
     items=read(name)
     targets=[x for x in items[:limit] if not x.get("posterUrl")]
-    with ThreadPoolExecutor(max_workers=6) as pool:
+    with ThreadPoolExecutor(max_workers=3 if kind=="movie" else 6) as pool:
         jobs={pool.submit(search,x,kind):x for x in targets}
         for job in as_completed(jobs):job.result()
     write(name,items)
