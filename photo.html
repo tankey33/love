@@ -86,7 +86,7 @@
     const safe = v => String(v??'').replace(/[&<>"']/g,s=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s]));
     const years = new Set(source.map(p=>dateOf(p).getFullYear()));
     document.getElementById('photoCount').textContent = source.length;
-    document.getElementById('yearCount').textContent = years.size || '—';
+    const yearCountEl=document.getElementById('yearCount'); if(yearCountEl) yearCountEl.textContent = years.size || '—';
 
     function render(){
       const order = document.getElementById('sort').value;
