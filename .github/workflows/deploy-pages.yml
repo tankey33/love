@@ -5,20 +5,16 @@ on:
     branches: [ main ]
     paths:
       - 'blog/posts/**'
-      - 'scripts/generate_posts.py'
-      - 'note.html'
-      - 'notes.html'
-      - 'photo.html'
-      - 'photo-detail.html'
-      - 'movie.html'
-      - 'music.html'
+      - 'scripts/**'
+      - '*.html'
       - 'demo/**'
       - 'data/**'
       - 'assets/**'
       - 'photo/**'
       - '.github/workflows/deploy-pages.yml'
-      - 'index.html'
       - 'CNAME'
+  schedule:
+    - cron: '17 */6 * * *'
   workflow_dispatch:
 
 permissions:
@@ -39,23 +35,21 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.x'
-
       - name: Generate blog artifacts
         run: python3 scripts/generate_posts.py
-
+      - name: Refresh media charts and artwork
+        continue-on-error: true
+        run: python3 scripts/generate_media.py
       - name: Setup Pages
         uses: actions/configure-pages@v5
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: '.'
-
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
