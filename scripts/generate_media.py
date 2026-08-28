@@ -109,8 +109,53 @@ def chart(kind):
     except Exception as exc:
         print("chart fallback:",kind,type(exc).__name__)
 
+
+def douban_trending():
+    """Build a truthful Douban-current list with local poster files and direct links."""
+    url="https://m.douban.com/rexxar/api/v2/subject_collection/movie_showing/items?start=0&count=20"
+    headers={**UA,"Referer":"https://m.douban.com/subject_collection/movie_showing/"}
+    try:
+        req=urllib.request.Request(url,headers=headers)
+        with urllib.request.urlopen(req,timeout=22) as r:
+            payload=json.load(r)
+        items=payload.get("subject_collection_items") or []
+        poster_dir=ROOT/"assets"/"posters"/"trending"
+        poster_dir.mkdir(parents=True,exist_ok=True)
+        normalized=[]
+        stamp=time.strftime("%Y-%m-%d %H:%M UTC",time.gmtime())
+        for x in items:
+            sid=str(x.get("id") or "")
+            title=x.get("title") or x.get("name")
+            cover=(x.get("cover") or {}).get("url") or x.get("cover_url")
+            local=""
+            if sid and cover:
+                target=poster_dir/(sid+".jpg")
+                try:
+                    image_req=urllib.request.Request(cover,headers={**UA,"Referer":"https://movie.douban.com/"})
+                    with urllib.request.urlopen(image_req,timeout=18) as src,target.open("wb") as dst:
+                        dst.write(src.read())
+                    local="assets/posters/trending/"+sid+".jpg"
+                except Exception as exc:
+                    print("douban poster fallback:",sid,type(exc).__name__)
+            rating=x.get("rating") or {}
+            normalized.append({
+                "title":title,"doubanId":sid,
+                "doubanUrl":"https://movie.douban.com/subject/"+sid+"/",
+                "posterUrl":local or cover or "",
+                "rating":rating.get("value") if isinstance(rating,dict) else rating,
+                "year":str(x.get("year") or ""),
+                "director":" / ".join(x.get("directors") or []),
+                "summary":"豆瓣当前热门","tags":["豆瓣热门"],
+                "syncedAt":stamp
+            })
+        if normalized:
+            write("movie-trending.json",normalized)
+            print("douban trending:",len(normalized),stamp)
+    except Exception as exc:
+        print("douban trending fallback:",type(exc).__name__,str(exc))
+
 if __name__=="__main__":
     DATA.mkdir(exist_ok=True)
-    chart("movie");chart("music")
+    douban_trending();chart("music")
     enrich("movies.json","movie",100)
     enrich("music.json","music",160)
