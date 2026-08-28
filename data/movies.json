@@ -16,7 +16,10 @@
     "summary": "花样年华 · 世界百大电影 / 金马奖电影 / 爱情",
     "note": "王家卫 · 2000",
     "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)",
-    "era": "经典"
+    "era": "经典",
+    "doubanId": "1291557",
+    "doubanUrl": "https://movie.douban.com/subject/1291557/",
+    "posterUrl": "https://cdn.jsdelivr.net/gh/somkanel/sol-douban-images/posters/1291557.jpg"
   },
   {
     "slug": "a-brighter-summer-day",
@@ -35,7 +38,10 @@
     "summary": "牯岭街少年杀人事件 · 世界百大电影 / 金马奖电影 / 剧情",
     "note": "杨德昌 · 1991",
     "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)",
-    "era": "经典"
+    "era": "经典",
+    "doubanId": "1292329",
+    "doubanUrl": "https://movie.douban.com/subject/1292329/",
+    "posterUrl": "https://cdn.jsdelivr.net/gh/somkanel/sol-douban-images/posters/1292329.jpg"
   },
   {
     "slug": "yi-yi",
@@ -54,7 +60,10 @@
     "summary": "一一 · 世界百大电影 / 金马奖电影 / 剧情",
     "note": "杨德昌 · 2000",
     "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)",
-    "era": "经典"
+    "era": "经典",
+    "doubanId": "1292434",
+    "doubanUrl": "https://movie.douban.com/subject/1292434/",
+    "posterUrl": "https://cdn.jsdelivr.net/gh/somkanel/sol-douban-images/posters/1292434.jpg"
   },
   {
     "slug": "crouching-tiger-hidden-dragon",
@@ -73,7 +82,10 @@
     "summary": "卧虎藏龙 · 奥斯卡电影 / 武侠 / 爱情",
     "note": "李安 · 2000",
     "accent": "linear-gradient(135deg,#35574d 0%,#101917 100%)",
-    "era": "经典"
+    "era": "经典",
+    "doubanId": "1301168",
+    "doubanUrl": "https://movie.douban.com/subject/1301168/",
+    "posterUrl": "https://cdn.jsdelivr.net/gh/somkanel/sol-douban-images/posters/1301168.jpg"
   },
   {
     "slug": "hero",
@@ -91,7 +103,10 @@
     "summary": "英雄 · 奥斯卡电影 / 武侠 / 动作",
     "note": "张艺谋 · 2002",
     "accent": "linear-gradient(135deg,#4e4173 0%,#191423 100%)",
-    "era": "经典"
+    "era": "经典",
+    "doubanId": "1306123",
+    "doubanUrl": "https://movie.douban.com/subject/1306123/",
+    "posterUrl": "https://cdn.jsdelivr.net/gh/somkanel/sol-douban-images/posters/1306123.jpg"
   },
   {
     "slug": "eat-drink-man-woman",
@@ -109,7 +124,10 @@
     "summary": "饮食男女 · 金马奖电影 / 喜剧 / 家庭",
     "note": "李安 · 1994",
     "accent": "linear-gradient(135deg,#3a6a78 0%,#13252c 100%)",
-    "era": "经典"
+    "era": "经典",
+    "doubanId": "1291818",
+    "doubanUrl": "https://movie.douban.com/subject/1291818/",
+    "posterUrl": "https://cdn.jsdelivr.net/gh/somkanel/sol-douban-images/posters/1291818.jpg"
   },
   {
     "slug": "infernal-affairs",
@@ -127,7 +145,10 @@
     "summary": "无间道 · 金马奖电影 / 犯罪 / 动作",
     "note": "刘伟强 / 麦兆辉 · 2002",
     "accent": "linear-gradient(135deg,#31443c 0%,#111714 100%)",
-    "era": "经典"
+    "era": "经典",
+    "doubanId": "1307914",
+    "doubanUrl": "https://movie.douban.com/subject/1307914/",
+    "posterUrl": "https://cdn.jsdelivr.net/gh/somkanel/sol-douban-images/posters/1307914.jpg"
   },
   {
     "slug": "let-the-bullets-fly",
@@ -144,7 +165,10 @@
     "summary": "让子弹飞 · 喜剧 / 动作 / 华语",
     "note": "姜文 · 2010",
     "accent": "linear-gradient(135deg,#5a4030 0%,#1f1510 100%)",
-    "era": "经典"
+    "era": "经典",
+    "doubanId": "3742360",
+    "doubanUrl": "https://movie.douban.com/subject/3742360/",
+    "posterUrl": "https://cdn.jsdelivr.net/gh/somkanel/sol-douban-images/posters/3742360.jpg"
   },
   {
     "slug": "the-great-buddha",
@@ -162,7 +186,10 @@
     "summary": "大佛普拉斯 · 金马奖电影 / 喜剧 / 剧情",
     "note": "黄信尧 · 2017",
     "accent": "linear-gradient(135deg,#364456 0%,#121820 100%)",
-    "era": "经典"
+    "era": "经典",
+    "doubanId": "27059130",
+    "doubanUrl": "https://movie.douban.com/subject/27059130/",
+    "posterUrl": "https://cdn.jsdelivr.net/gh/somkanel/sol-douban-images/posters/27059130.jpg"
   },
   {
     "slug": "a-sun",
@@ -180,7 +207,10 @@
     "summary": "阳光普照 · 金马奖电影 / 剧情 / 家庭",
     "note": "钟孟宏 · 2019",
     "accent": "linear-gradient(135deg,#6b5140 0%,#221912 100%)",
-    "era": "经典"
+    "era": "经典",
+    "doubanId": "30292777",
+    "doubanUrl": "https://movie.douban.com/subject/30292777/",
+    "posterUrl": "https://cdn.jsdelivr.net/gh/somkanel/sol-douban-images/posters/30292777.jpg"
   },
   {
     "slug": "chungking-express",
@@ -198,7 +228,10 @@
     "summary": "重庆森林 · 世界百大电影 / 爱情 / 文艺",
     "note": "王家卫 · 1994",
     "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)",
-    "era": "经典"
+    "era": "经典",
+    "doubanId": "1291999",
+    "doubanUrl": "https://movie.douban.com/subject/1291999/",
+    "posterUrl": "https://cdn.jsdelivr.net/gh/somkanel/sol-douban-images/posters/1291999.jpg"
   },
   {
     "slug": "happy-together",
@@ -216,7 +249,10 @@
     "summary": "春光乍泄 · 世界百大电影 / 爱情 / 文艺",
     "note": "王家卫 · 1997",
     "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)",
-    "era": "经典"
+    "era": "经典",
+    "doubanId": "1292679",
+    "doubanUrl": "https://movie.douban.com/subject/1292679/",
+    "posterUrl": "https://cdn.jsdelivr.net/gh/somkanel/sol-douban-images/posters/1292679.jpg"
   },
   {
     "slug": "farewell-my-concubine",
@@ -234,7 +270,10 @@
     "summary": "霸王别姬 · 世界百大电影 / 剧情 / 历史",
     "note": "陈凯歌 · 1993",
     "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)",
-    "era": "经典"
+    "era": "经典",
+    "doubanId": "1291546",
+    "doubanUrl": "https://movie.douban.com/subject/1291546/",
+    "posterUrl": "https://cdn.jsdelivr.net/gh/somkanel/sol-douban-images/posters/1291546.jpg"
   },
   {
     "slug": "to-live",
@@ -252,7 +291,10 @@
     "summary": "活着 · 世界百大电影 / 剧情 / 历史",
     "note": "张艺谋 · 1994",
     "accent": "linear-gradient(135deg,#35574d 0%,#101917 100%)",
-    "era": "经典"
+    "era": "经典",
+    "doubanId": "1292365",
+    "doubanUrl": "https://movie.douban.com/subject/1292365/",
+    "posterUrl": "https://cdn.jsdelivr.net/gh/somkanel/sol-douban-images/posters/1292365.jpg"
   },
   {
     "slug": "devils-on-the-doorstep",
@@ -270,7 +312,10 @@
     "summary": "鬼子来了 · 世界百大电影 / 喜剧 / 战争",
     "note": "姜文 · 2000",
     "accent": "linear-gradient(135deg,#4e4173 0%,#191423 100%)",
-    "era": "经典"
+    "era": "经典",
+    "doubanId": "1291858",
+    "doubanUrl": "https://movie.douban.com/subject/1291858/",
+    "posterUrl": "https://cdn.jsdelivr.net/gh/somkanel/sol-douban-images/posters/1291858.jpg"
   },
   {
     "slug": "kung-fu-hustle",
@@ -288,7 +333,10 @@
     "summary": "功夫 · 喜剧 / 动作 / 武侠",
     "note": "周星驰 · 2004",
     "accent": "linear-gradient(135deg,#3a6a78 0%,#13252c 100%)",
-    "era": "经典"
+    "era": "经典",
+    "doubanId": "1291543",
+    "doubanUrl": "https://movie.douban.com/subject/1291543/",
+    "posterUrl": "https://cdn.jsdelivr.net/gh/somkanel/sol-douban-images/posters/1291543.jpg"
   },
   {
     "slug": "a-chinese-odyssey-part-two",
@@ -306,7 +354,10 @@
     "summary": "大话西游之大圣娶亲 · 喜剧 / 爱情 / 奇幻",
     "note": "刘镇伟 · 1995",
     "accent": "linear-gradient(135deg,#31443c 0%,#111714 100%)",
-    "era": "经典"
+    "era": "经典",
+    "doubanId": "1292213",
+    "doubanUrl": "https://movie.douban.com/subject/1292213/",
+    "posterUrl": "https://cdn.jsdelivr.net/gh/somkanel/sol-douban-images/posters/1292213.jpg"
   },
   {
     "slug": "interstellar",
@@ -324,7 +375,10 @@
     "summary": "星际穿越 · 奥斯卡电影 / 科幻 / 冒险",
     "note": "Christopher Nolan · 2014",
     "accent": "linear-gradient(135deg,#5a4030 0%,#1f1510 100%)",
-    "era": "经典"
+    "era": "经典",
+    "doubanId": "1889243",
+    "doubanUrl": "https://movie.douban.com/subject/1889243/",
+    "posterUrl": "https://cdn.jsdelivr.net/gh/somkanel/sol-douban-images/posters/1889243.jpg"
   },
   {
     "slug": "arrival",
@@ -341,7 +395,10 @@
     "summary": "降临 · 奥斯卡电影 / 科幻 / 剧情",
     "note": "Denis Villeneuve · 2016",
     "accent": "linear-gradient(135deg,#364456 0%,#121820 100%)",
-    "era": "经典"
+    "era": "经典",
+    "doubanId": "21324900",
+    "doubanUrl": "https://movie.douban.com/subject/21324900/",
+    "posterUrl": "https://cdn.jsdelivr.net/gh/somkanel/sol-douban-images/posters/21324900.jpg"
   },
   {
     "slug": "parasite",
@@ -359,7 +416,10 @@
     "summary": "寄生虫 · 奥斯卡电影 / 喜剧 / 惊悚",
     "note": "奉俊昊 · 2019",
     "accent": "linear-gradient(135deg,#6b5140 0%,#221912 100%)",
-    "era": "经典"
+    "era": "经典",
+    "doubanId": "27010768",
+    "doubanUrl": "https://movie.douban.com/subject/27010768/",
+    "posterUrl": "https://cdn.jsdelivr.net/gh/somkanel/sol-douban-images/posters/27010768.jpg"
   },
   {
     "slug": "la-la-land",
@@ -377,7 +437,10 @@
     "summary": "爱乐之城 · 奥斯卡电影 / 爱情 / 歌舞",
     "note": "Damien Chazelle · 2016",
     "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)",
-    "era": "经典"
+    "era": "经典",
+    "doubanId": "25934014",
+    "doubanUrl": "https://movie.douban.com/subject/25934014/",
+    "posterUrl": "https://cdn.jsdelivr.net/gh/somkanel/sol-douban-images/posters/25934014.jpg"
   },
   {
     "slug": "green-book",
@@ -395,7 +458,10 @@
     "summary": "绿皮书 · 奥斯卡电影 / 喜剧 / 剧情",
     "note": "Peter Farrelly · 2018",
     "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)",
-    "era": "经典"
+    "era": "经典",
+    "doubanId": "27060077",
+    "doubanUrl": "https://movie.douban.com/subject/27060077/",
+    "posterUrl": "https://cdn.jsdelivr.net/gh/somkanel/sol-douban-images/posters/27060077.jpg"
   },
   {
     "slug": "forrest-gump",
@@ -413,7 +479,10 @@
     "summary": "阿甘正传 · 奥斯卡电影 / 剧情 / 爱情",
     "note": "Robert Zemeckis · 1994",
     "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)",
-    "era": "经典"
+    "era": "经典",
+    "doubanId": "1292720",
+    "doubanUrl": "https://movie.douban.com/subject/1292720/",
+    "posterUrl": "https://cdn.jsdelivr.net/gh/somkanel/sol-douban-images/posters/1292720.jpg"
   },
   {
     "slug": "titanic",
@@ -430,7 +499,10 @@
     "summary": "泰坦尼克号 · 奥斯卡电影 / 爱情 / 灾难",
     "note": "James Cameron · 1997",
     "accent": "linear-gradient(135deg,#35574d 0%,#101917 100%)",
-    "era": "经典"
+    "era": "经典",
+    "doubanId": "1292722",
+    "doubanUrl": "https://movie.douban.com/subject/1292722/",
+    "posterUrl": "https://cdn.jsdelivr.net/gh/somkanel/sol-douban-images/posters/1292722.jpg"
   },
   {
     "slug": "gladiator",
@@ -448,7 +520,10 @@
     "summary": "角斗士 · 奥斯卡电影 / 动作 / 历史",
     "note": "Ridley Scott · 2000",
     "accent": "linear-gradient(135deg,#4e4173 0%,#191423 100%)",
-    "era": "经典"
+    "era": "经典",
+    "doubanId": "1293530",
+    "doubanUrl": "https://movie.douban.com/subject/1293530/",
+    "posterUrl": "https://cdn.jsdelivr.net/gh/somkanel/sol-douban-images/posters/1293530.jpg"
   },
   {
     "slug": "a-beautiful-mind",
@@ -465,7 +540,10 @@
     "summary": "美丽心灵 · 奥斯卡电影 / 剧情 / 传记",
     "note": "Ron Howard · 2001",
     "accent": "linear-gradient(135deg,#3a6a78 0%,#13252c 100%)",
-    "era": "经典"
+    "era": "经典",
+    "doubanId": "1306029",
+    "doubanUrl": "https://movie.douban.com/subject/1306029/",
+    "posterUrl": "https://cdn.jsdelivr.net/gh/somkanel/sol-douban-images/posters/1306029.jpg"
   },
   {
     "slug": "the-lord-of-the-rings-the-return-of-the-king",
@@ -482,7 +560,10 @@
     "summary": "指环王3：王者无敌 · 奥斯卡电影 / 奇幻 / 冒险",
     "note": "Peter Jackson · 2003",
     "accent": "linear-gradient(135deg,#31443c 0%,#111714 100%)",
-    "era": "经典"
+    "era": "经典",
+    "doubanId": "1291552",
+    "doubanUrl": "https://movie.douban.com/subject/1291552/",
+    "posterUrl": "https://cdn.jsdelivr.net/gh/somkanel/sol-douban-images/posters/1291552.jpg"
   },
   {
     "slug": "the-dark-knight",
@@ -499,7 +580,10 @@
     "summary": "黑暗骑士 · 世界百大电影 / 动作 / 犯罪",
     "note": "Christopher Nolan · 2008",
     "accent": "linear-gradient(135deg,#5a4030 0%,#1f1510 100%)",
-    "era": "经典"
+    "era": "经典",
+    "doubanId": "1851857",
+    "doubanUrl": "https://movie.douban.com/subject/1851857/",
+    "posterUrl": "https://cdn.jsdelivr.net/gh/somkanel/sol-douban-images/posters/1851857.jpg"
   },
   {
     "slug": "inception",
@@ -516,7 +600,10 @@
     "summary": "盗梦空间 · 世界百大电影 / 科幻 / 动作",
     "note": "Christopher Nolan · 2010",
     "accent": "linear-gradient(135deg,#364456 0%,#121820 100%)",
-    "era": "经典"
+    "era": "经典",
+    "doubanId": "3541415",
+    "doubanUrl": "https://movie.douban.com/subject/3541415/",
+    "posterUrl": "https://cdn.jsdelivr.net/gh/somkanel/sol-douban-images/posters/3541415.jpg"
   },
   {
     "slug": "the-godfather",
@@ -533,7 +620,10 @@
     "summary": "教父 · 世界百大电影 / 犯罪 / 剧情",
     "note": "Francis Ford Coppola · 1972",
     "accent": "linear-gradient(135deg,#6b5140 0%,#221912 100%)",
-    "era": "经典"
+    "era": "经典",
+    "doubanId": "1291841",
+    "doubanUrl": "https://movie.douban.com/subject/1291841/",
+    "posterUrl": "https://cdn.jsdelivr.net/gh/somkanel/sol-douban-images/posters/1291841.jpg"
   },
   {
     "slug": "the-godfather-part-ii",
@@ -550,7 +640,10 @@
     "summary": "教父2 · 世界百大电影 / 犯罪 / 剧情",
     "note": "Francis Ford Coppola · 1974",
     "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)",
-    "era": "经典"
+    "era": "经典",
+    "doubanId": "1299131",
+    "doubanUrl": "https://movie.douban.com/subject/1299131/",
+    "posterUrl": "https://cdn.jsdelivr.net/gh/somkanel/sol-douban-images/posters/1299131.jpg"
   },
   {
     "slug": "seven-samurai",
@@ -568,7 +661,10 @@
     "summary": "七武士 · 世界百大电影 / 动作 / 武侠",
     "note": "黑泽明 · 1954",
     "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)",
-    "era": "经典"
+    "era": "经典",
+    "doubanId": "1295399",
+    "doubanUrl": "https://movie.douban.com/subject/1295399/",
+    "posterUrl": "https://cdn.jsdelivr.net/gh/somkanel/sol-douban-images/posters/1295399.jpg"
   },
   {
     "slug": "tokyo-story",
@@ -585,7 +681,10 @@
     "summary": "东京物语 · 世界百大电影 / 剧情 / 家庭",
     "note": "小津安二郎 · 1953",
     "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)",
-    "era": "经典"
+    "era": "经典",
+    "doubanId": "1291568",
+    "doubanUrl": "https://movie.douban.com/subject/1291568/",
+    "posterUrl": "https://cdn.jsdelivr.net/gh/somkanel/sol-douban-images/posters/1291568.jpg"
   },
   {
     "slug": "pulp-fiction",
@@ -602,7 +701,10 @@
     "summary": "低俗小说 · 世界百大电影 / 犯罪 / 喜剧",
     "note": "Quentin Tarantino · 1994",
     "accent": "linear-gradient(135deg,#35574d 0%,#101917 100%)",
-    "era": "经典"
+    "era": "经典",
+    "doubanId": "1291832",
+    "doubanUrl": "https://movie.douban.com/subject/1291832/",
+    "posterUrl": "https://cdn.jsdelivr.net/gh/somkanel/sol-douban-images/posters/1291832.jpg"
   },
   {
     "slug": "rear-window",
@@ -619,7 +721,10 @@
     "summary": "后窗 · 世界百大电影 / 悬疑 / 惊悚",
     "note": "Alfred Hitchcock · 1954",
     "accent": "linear-gradient(135deg,#4e4173 0%,#191423 100%)",
-    "era": "经典"
+    "era": "经典",
+    "doubanId": "1299080",
+    "doubanUrl": "https://movie.douban.com/subject/1299080/",
+    "posterUrl": "https://cdn.jsdelivr.net/gh/somkanel/sol-douban-images/posters/1299080.jpg"
   },
   {
     "slug": "life-is-beautiful",
@@ -637,7 +742,10 @@
     "summary": "美丽人生 · 世界百大电影 / 喜剧 / 战争",
     "note": "Roberto Benigni · 1997",
     "accent": "linear-gradient(135deg,#3a6a78 0%,#13252c 100%)",
-    "era": "经典"
+    "era": "经典",
+    "doubanId": "1292063",
+    "doubanUrl": "https://movie.douban.com/subject/1292063/",
+    "posterUrl": "https://cdn.jsdelivr.net/gh/somkanel/sol-douban-images/posters/1292063.jpg"
   },
   {
     "slug": "cinema-paradiso",
@@ -654,7 +762,10 @@
     "summary": "天堂电影院 · 世界百大电影 / 爱情 / 剧情",
     "note": "Giuseppe Tornatore · 1988",
     "accent": "linear-gradient(135deg,#31443c 0%,#111714 100%)",
-    "era": "经典"
+    "era": "经典",
+    "doubanId": "1291828",
+    "doubanUrl": "https://movie.douban.com/subject/1291828/",
+    "posterUrl": "https://cdn.jsdelivr.net/gh/somkanel/sol-douban-images/posters/1291828.jpg"
   },
   {
     "slug": "the-legend-of-1900",
@@ -671,7 +782,10 @@
     "summary": "海上钢琴师 · 世界百大电影 / 剧情 / 音乐",
     "note": "Giuseppe Tornatore · 1998",
     "accent": "linear-gradient(135deg,#5a4030 0%,#1f1510 100%)",
-    "era": "经典"
+    "era": "经典",
+    "doubanId": "1292001",
+    "doubanUrl": "https://movie.douban.com/subject/1292001/",
+    "posterUrl": "https://cdn.jsdelivr.net/gh/somkanel/sol-douban-images/posters/1292001.jpg"
   },
   {
     "slug": "the-shawshank-redemption",
@@ -687,7 +801,10 @@
     "summary": "肖申克的救赎 · 世界百大电影 / 剧情",
     "note": "Frank Darabont · 1994",
     "accent": "linear-gradient(135deg,#364456 0%,#121820 100%)",
-    "era": "经典"
+    "era": "经典",
+    "doubanId": "1292052",
+    "doubanUrl": "https://movie.douban.com/subject/1292052/",
+    "posterUrl": "https://cdn.jsdelivr.net/gh/somkanel/sol-douban-images/posters/1292052.jpg"
   },
   {
     "slug": "schindler-s-list",
@@ -704,7 +821,10 @@
     "summary": "辛德勒的名单 · 世界百大电影 / 战争 / 历史",
     "note": "Steven Spielberg · 1993",
     "accent": "linear-gradient(135deg,#6b5140 0%,#221912 100%)",
-    "era": "经典"
+    "era": "经典",
+    "doubanId": "1295124",
+    "doubanUrl": "https://movie.douban.com/subject/1295124/",
+    "posterUrl": "https://cdn.jsdelivr.net/gh/somkanel/sol-douban-images/posters/1295124.jpg"
   },
   {
     "slug": "the-truman-show",
@@ -722,7 +842,10 @@
     "summary": "楚门的世界 · 世界百大电影 / 剧情 / 科幻",
     "note": "Peter Weir · 1998",
     "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)",
-    "era": "经典"
+    "era": "经典",
+    "doubanId": "1292064",
+    "doubanUrl": "https://movie.douban.com/subject/1292064/",
+    "posterUrl": "https://cdn.jsdelivr.net/gh/somkanel/sol-douban-images/posters/1292064.jpg"
   },
   {
     "slug": "wall-e",
@@ -740,7 +863,10 @@
     "summary": "机器人总动员 · 奥斯卡电影 / 动画 / 科幻",
     "note": "Andrew Stanton · 2008",
     "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)",
-    "era": "经典"
+    "era": "经典",
+    "doubanId": "2131459",
+    "doubanUrl": "https://movie.douban.com/subject/2131459/",
+    "posterUrl": "https://cdn.jsdelivr.net/gh/somkanel/sol-douban-images/posters/2131459.jpg"
   },
   {
     "slug": "coco",
@@ -758,7 +884,10 @@
     "summary": "寻梦环游记 · 奥斯卡电影 / 动画 / 家庭",
     "note": "Lee Unkrich · 2017",
     "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)",
-    "era": "经典"
+    "era": "经典",
+    "doubanId": "20495023",
+    "doubanUrl": "https://movie.douban.com/subject/20495023/",
+    "posterUrl": "https://cdn.jsdelivr.net/gh/somkanel/sol-douban-images/posters/20495023.jpg"
   },
   {
     "slug": "spirited-away",
@@ -775,7 +904,10 @@
     "summary": "千与千寻 · 世界百大电影 / 动画 / 奇幻",
     "note": "宫崎骏 · 2001",
     "accent": "linear-gradient(135deg,#35574d 0%,#101917 100%)",
-    "era": "经典"
+    "era": "经典",
+    "doubanId": "1291561",
+    "doubanUrl": "https://movie.douban.com/subject/1291561/",
+    "posterUrl": "https://cdn.jsdelivr.net/gh/somkanel/sol-douban-images/posters/1291561.jpg"
   },
   {
     "slug": "my-neighbor-totoro",
@@ -792,7 +924,10 @@
     "summary": "龙猫 · 动画 / 家庭 / 奇幻",
     "note": "宫崎骏 · 1988",
     "accent": "linear-gradient(135deg,#4e4173 0%,#191423 100%)",
-    "era": "经典"
+    "era": "经典",
+    "doubanId": "1291560",
+    "doubanUrl": "https://movie.douban.com/subject/1291560/",
+    "posterUrl": "https://cdn.jsdelivr.net/gh/somkanel/sol-douban-images/posters/1291560.jpg"
   },
   {
     "slug": "howl-s-moving-castle",
@@ -809,7 +944,10 @@
     "summary": "哈尔的移动城堡 · 动画 / 爱情 / 奇幻",
     "note": "宫崎骏 · 2004",
     "accent": "linear-gradient(135deg,#3a6a78 0%,#13252c 100%)",
-    "era": "经典"
+    "era": "经典",
+    "doubanId": "1308807",
+    "doubanUrl": "https://movie.douban.com/subject/1308807/",
+    "posterUrl": "https://cdn.jsdelivr.net/gh/somkanel/sol-douban-images/posters/1308807.jpg"
   },
   {
     "slug": "your-name",
@@ -826,7 +964,10 @@
     "summary": "你的名字。 · 动画 / 爱情 / 奇幻",
     "note": "新海诚 · 2016",
     "accent": "linear-gradient(135deg,#31443c 0%,#111714 100%)",
-    "era": "经典"
+    "era": "经典",
+    "doubanId": "26683290",
+    "doubanUrl": "https://movie.douban.com/subject/26683290/",
+    "posterUrl": "https://cdn.jsdelivr.net/gh/somkanel/sol-douban-images/posters/26683290.jpg"
   },
   {
     "slug": "the-matrix",
@@ -843,7 +984,10 @@
     "summary": "黑客帝国 · 世界百大电影 / 科幻 / 动作",
     "note": "Lana Wachowski / Lilly Wachowski · 1999",
     "accent": "linear-gradient(135deg,#5a4030 0%,#1f1510 100%)",
-    "era": "经典"
+    "era": "经典",
+    "doubanId": "1291843",
+    "doubanUrl": "https://movie.douban.com/subject/1291843/",
+    "posterUrl": "https://cdn.jsdelivr.net/gh/somkanel/sol-douban-images/posters/1291843.jpg"
   },
   {
     "slug": "terminator-2-judgment-day",
@@ -859,7 +1003,10 @@
     "summary": "终结者2 · 科幻 / 动作",
     "note": "James Cameron · 1991",
     "accent": "linear-gradient(135deg,#364456 0%,#121820 100%)",
-    "era": "经典"
+    "era": "经典",
+    "doubanId": "1291844",
+    "doubanUrl": "https://movie.douban.com/subject/1291844/",
+    "posterUrl": "https://cdn.jsdelivr.net/gh/somkanel/sol-douban-images/posters/1291844.jpg"
   },
   {
     "slug": "se7en",
@@ -875,7 +1022,10 @@
     "summary": "七宗罪 · 犯罪 / 惊悚",
     "note": "David Fincher · 1995",
     "accent": "linear-gradient(135deg,#6b5140 0%,#221912 100%)",
-    "era": "经典"
+    "era": "经典",
+    "doubanId": "1292223",
+    "doubanUrl": "https://movie.douban.com/subject/1292223/",
+    "posterUrl": "https://cdn.jsdelivr.net/gh/somkanel/sol-douban-images/posters/1292223.jpg"
   },
   {
     "slug": "fight-club",
@@ -892,7 +1042,10 @@
     "summary": "搏击俱乐部 · 世界百大电影 / 剧情 / 犯罪",
     "note": "David Fincher · 1999",
     "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)",
-    "era": "经典"
+    "era": "经典",
+    "doubanId": "1292000",
+    "doubanUrl": "https://movie.douban.com/subject/1292000/",
+    "posterUrl": "https://cdn.jsdelivr.net/gh/somkanel/sol-douban-images/posters/1292000.jpg"
   },
   {
     "slug": "gone-girl",
@@ -908,7 +1061,10 @@
     "summary": "消失的爱人 · 悬疑 / 惊悚",
     "note": "David Fincher · 2014",
     "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)",
-    "era": "经典"
+    "era": "经典",
+    "doubanId": "21318488",
+    "doubanUrl": "https://movie.douban.com/subject/21318488/",
+    "posterUrl": "https://cdn.jsdelivr.net/gh/somkanel/sol-douban-images/posters/21318488.jpg"
   },
   {
     "slug": "inglourious-basterds",
@@ -925,7 +1081,10 @@
     "summary": "无耻混蛋 · 战争 / 犯罪 / 喜剧",
     "note": "Quentin Tarantino · 2009",
     "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)",
-    "era": "经典"
+    "era": "经典",
+    "doubanId": "1438652",
+    "doubanUrl": "https://movie.douban.com/subject/1438652/",
+    "posterUrl": "https://cdn.jsdelivr.net/gh/somkanel/sol-douban-images/posters/1438652.jpg"
   },
   {
     "slug": "before-sunrise",
@@ -941,7 +1100,10 @@
     "summary": "爱在黎明破晓前 · 爱情 / 文艺",
     "note": "Richard Linklater · 1995",
     "accent": "linear-gradient(135deg,#35574d 0%,#101917 100%)",
-    "era": "经典"
+    "era": "经典",
+    "doubanId": "1296339",
+    "doubanUrl": "https://movie.douban.com/subject/1296339/",
+    "posterUrl": "https://cdn.jsdelivr.net/gh/somkanel/sol-douban-images/posters/1296339.jpg"
   },
   {
     "slug": "before-sunset",
@@ -957,7 +1119,10 @@
     "summary": "爱在日落黄昏时 · 爱情 / 文艺",
     "note": "Richard Linklater · 2004",
     "accent": "linear-gradient(135deg,#4e4173 0%,#191423 100%)",
-    "era": "经典"
+    "era": "经典",
+    "doubanId": "1291990",
+    "doubanUrl": "https://movie.douban.com/subject/1291990/",
+    "posterUrl": "https://cdn.jsdelivr.net/gh/somkanel/sol-douban-images/posters/1291990.jpg"
   },
   {
     "slug": "before-midnight",
@@ -973,7 +1138,10 @@
     "summary": "爱在午夜降临前 · 爱情 / 文艺",
     "note": "Richard Linklater · 2013",
     "accent": "linear-gradient(135deg,#3a6a78 0%,#13252c 100%)",
-    "era": "经典"
+    "era": "经典",
+    "doubanId": "10535568",
+    "doubanUrl": "https://movie.douban.com/subject/10535568/",
+    "posterUrl": "https://cdn.jsdelivr.net/gh/somkanel/sol-douban-images/posters/10535568.jpg"
   },
   {
     "slug": "her",
@@ -990,7 +1158,10 @@
     "summary": "她 · 爱情 / 科幻 / 文艺",
     "note": "Spike Jonze · 2013",
     "accent": "linear-gradient(135deg,#31443c 0%,#111714 100%)",
-    "era": "经典"
+    "era": "经典",
+    "doubanId": "6722879",
+    "doubanUrl": "https://movie.douban.com/subject/6722879/",
+    "posterUrl": "https://cdn.jsdelivr.net/gh/somkanel/sol-douban-images/posters/6722879.jpg"
   },
   {
     "slug": "the-secret-life-of-walter-mitty",
@@ -1007,7 +1178,10 @@
     "summary": "白日梦想家 · 喜剧 / 冒险 / 治愈",
     "note": "Ben Stiller · 2013",
     "accent": "linear-gradient(135deg,#5a4030 0%,#1f1510 100%)",
-    "era": "经典"
+    "era": "经典",
+    "doubanId": "2133323",
+    "doubanUrl": "https://movie.douban.com/subject/2133323/",
+    "posterUrl": "https://cdn.jsdelivr.net/gh/somkanel/sol-douban-images/posters/2133323.jpg"
   },
   {
     "slug": "the-intouchables",
@@ -1023,7 +1197,10 @@
     "summary": "触不可及 · 喜剧 / 剧情",
     "note": "Olivier Nakache / Éric Toledano · 2011",
     "accent": "linear-gradient(135deg,#364456 0%,#121820 100%)",
-    "era": "经典"
+    "era": "经典",
+    "doubanId": "6786002",
+    "doubanUrl": "https://movie.douban.com/subject/6786002/",
+    "posterUrl": "https://cdn.jsdelivr.net/gh/somkanel/sol-douban-images/posters/6786002.jpg"
   },
   {
     "slug": "the-grand-budapest-hotel",
@@ -1040,7 +1217,10 @@
     "summary": "布达佩斯大饭店 · 喜剧 / 犯罪 / 文艺",
     "note": "Wes Anderson · 2014",
     "accent": "linear-gradient(135deg,#6b5140 0%,#221912 100%)",
-    "era": "经典"
+    "era": "经典",
+    "doubanId": "11525673",
+    "doubanUrl": "https://movie.douban.com/subject/11525673/",
+    "posterUrl": "https://cdn.jsdelivr.net/gh/somkanel/sol-douban-images/posters/11525673.jpg"
   },
   {
     "slug": "drunken-master",
@@ -1058,7 +1238,10 @@
     "summary": "醉拳 · 武侠 / 动作 / 喜剧",
     "note": "袁和平 · 1978",
     "accent": "linear-gradient(135deg,#4f2c2c 0%,#1d1111 100%)",
-    "era": "经典"
+    "era": "经典",
+    "doubanId": "1300092",
+    "doubanUrl": "https://movie.douban.com/subject/1300092/",
+    "posterUrl": "https://cdn.jsdelivr.net/gh/somkanel/sol-douban-images/posters/1300092.jpg"
   },
   {
     "slug": "new-dragon-gate-inn",
@@ -1075,7 +1258,10 @@
     "summary": "新龙门客栈 · 武侠 / 动作 / 华语",
     "note": "李惠民 · 1992",
     "accent": "linear-gradient(135deg,#202632 0%,#090c12 100%)",
-    "era": "经典"
+    "era": "经典",
+    "doubanId": "1292287",
+    "doubanUrl": "https://movie.douban.com/subject/1292287/",
+    "posterUrl": "https://cdn.jsdelivr.net/gh/somkanel/sol-douban-images/posters/1292287.jpg"
   },
   {
     "slug": "swordsman-ii",
@@ -1092,6 +1278,9 @@
     "summary": "笑傲江湖之东方不败 · 武侠 / 动作 / 华语",
     "note": "程小东 · 1992",
     "accent": "linear-gradient(135deg,#3d4b56 0%,#181d23 100%)",
-    "era": "经典"
+    "era": "经典",
+    "doubanId": "1294417",
+    "doubanUrl": "https://movie.douban.com/subject/1294417/",
+    "posterUrl": "https://cdn.jsdelivr.net/gh/somkanel/sol-douban-images/posters/1294417.jpg"
   }
 ]
