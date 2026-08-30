@@ -233,6 +233,20 @@
             color: rgba(255,255,255,0.96);
         }
 
+        .anniversary {
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid rgba(255,255,255,0.18);
+        }
+
+        .anniversary .label {
+            margin-bottom: 4px;
+        }
+
+        .anniversary .value {
+            font-size: clamp(12px, 1.5vw, 15px);
+        }
+
         .music-btn {
             justify-self: end;
             pointer-events: auto;
@@ -495,6 +509,14 @@
             font-variant-numeric: tabular-nums;
         }
 
+        .anniversary {
+            border-top-color: var(--hairline);
+        }
+
+        .anniversary .value {
+            color: var(--sumi-soft);
+        }
+
         .music-btn {
             width: 42px;
             height: 42px;
@@ -622,6 +644,10 @@
                 <div class="love-time">
                     <div class="label">Time together</div>
                     <div class="value" id="span_dt_dt"></div>
+                    <div class="anniversary" aria-live="polite">
+                        <div class="label" id="anniversaryLabel">Next anniversary</div>
+                        <div class="value" id="anniversaryCountdown"></div>
+                    </div>
                 </div>
             </div>
             <button id="musicToggle" class="music-btn" aria-label="切换音乐">♫</button>
@@ -642,9 +668,25 @@
     </script>
 
     <script>
+        const anniversaryStart = new Date(2017, 11, 29, 18, 20, 0);
+
+        function getNextAnniversary(today) {
+            let years = today.getFullYear() - anniversaryStart.getFullYear();
+            let date = new Date(today.getFullYear(), anniversaryStart.getMonth(), anniversaryStart.getDate(), 18, 20, 0);
+            const isAnniversary = today.getMonth() === anniversaryStart.getMonth() &&
+                today.getDate() === anniversaryStart.getDate();
+
+            if (today > date && !isAnniversary) {
+                years += 1;
+                date.setFullYear(date.getFullYear() + 1);
+            }
+
+            return { date, years, isAnniversary };
+        }
+
         function show_date_time() {
             window.setTimeout(show_date_time, 1000);
-            const BirthDay = new Date("12/29/2017 18:20:00");
+            const BirthDay = anniversaryStart;
             const today = new Date();
             const timeold = today.getTime() - BirthDay.getTime();
             const sectimeold = timeold / 1000;
@@ -658,6 +700,17 @@
             const minsold = Math.floor((e_hrsold - hrsold) * 60);
             const seconds = Math.floor((e_minsold - minsold) * 60);
             document.getElementById('span_dt_dt').innerHTML = `${daysold}天 ${hrsold}小时 ${minsold}分 ${seconds}秒`;
+
+            const next = getNextAnniversary(today);
+            const remaining = Math.max(0, next.date.getTime() - today.getTime());
+            const anniversaryDays = Math.floor(remaining / msPerDay);
+            const anniversaryHours = Math.floor((remaining % msPerDay) / (60 * 60 * 1000));
+            document.getElementById('anniversaryLabel').textContent = next.isAnniversary
+                ? `Happy ${next.years}th anniversary`
+                : `Until our ${next.years}th anniversary`;
+            document.getElementById('anniversaryCountdown').textContent = next.isAnniversary
+                ? `今天是我们的第 ${next.years} 个纪念日 ❤`
+                : `还有 ${anniversaryDays} 天 ${anniversaryHours} 小时 · ${next.date.getFullYear()}年12月29日`;
         }
         show_date_time();
     </script>
