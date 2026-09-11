@@ -51,7 +51,6 @@
 
     function pickImage(post, index){
       if(post.cover) return post.cover;
-      if(post.slug === 'newsroom-love-story') return 'photo/03.jpg';
       if(post.slug === 'dev-note') return 'photo/02.jpg';
       if(post.slug === 'hello') return 'photo/01.jpg';
       const fallback = ['photo/06.jpg','photo/08.jpg','photo/11.jpg','photo/04.jpg','photo/05.jpg'];
