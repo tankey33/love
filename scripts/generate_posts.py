@@ -276,6 +276,24 @@ def pretty_title(stem: str):
     return s if s else stem
 
 
+def strip_duplicate_leading_title(body: str, title: str) -> str:
+    """Remove a leading Markdown H1 when the page template already renders it."""
+    lines = body.splitlines()
+    first = next((i for i, line in enumerate(lines) if line.strip()), None)
+    if first is None:
+        return body
+    match = re.match(r'^\s*#\s+(.+?)\s*#*\s*$', lines[first])
+    if not match:
+        return body
+    heading = re.sub(r'[*_`~]+', '', match.group(1)).strip()
+    if heading != title.strip():
+        return body
+    del lines[first]
+    while first < len(lines) and not lines[first].strip():
+        del lines[first]
+    return '\n'.join(lines)
+
+
 def generate_posts():
     posts = []
     RENDER_DIR.mkdir(parents=True, exist_ok=True)
@@ -286,6 +304,7 @@ def generate_posts():
         text = path.read_text(encoding='utf-8')
         meta, body = parse_frontmatter(text)
         title = meta.get('title') or path.stem
+        body = strip_duplicate_leading_title(body, title)
         date = meta.get('date', '')
         summary = meta.get('summary') or re.sub(r'\s+', ' ', body.strip()).split('\n')[0][:120]
         rendered_name = f'{path.stem}.html'

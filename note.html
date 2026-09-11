@@ -37,6 +37,8 @@
     const html=await fetch((post.renderedPath||post.path)+'?t='+Date.now()).then(r=>r.text());
     const container=document.getElementById('post-content');
     container.innerHTML=html;
+    const firstHeading=container.firstElementChild;
+    if(firstHeading?.tagName==='H1' && firstHeading.textContent.trim()===post.title.trim()) firstHeading.remove();
     if(window.hljs && typeof window.hljs.highlightElement === 'function'){
       container.querySelectorAll('pre code').forEach(el=>window.hljs.highlightElement(el));
     }
