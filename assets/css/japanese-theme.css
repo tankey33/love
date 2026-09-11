@@ -99,6 +99,11 @@ body.page-movie .card:hover,body.page-music .card:hover,body.page-notes .lead-ca
 body.page-movie .cover,body.page-music .cover{border-radius:8px!important;box-shadow:0 1px 0 rgba(255,255,255,.8) inset,0 12px 30px rgba(37,67,70,.09)!important}
 body.page-movie .more,body.page-music .more{border-radius:999px!important;padding:13px 30px!important;background:rgba(255,255,255,.48)!important;backdrop-filter:blur(18px);box-shadow:0 10px 26px rgba(34,67,71,.08)!important;transition:transform .25s ease,background .25s ease!important}
 body.page-movie .more:hover,body.page-music .more:hover{transform:translateY(-2px);background:#fff!important}
+body.page-notes .search-wrap{width:min(680px,100%)!important;margin:30px auto 42px!important}
+body.page-notes .search-box{display:block!important;width:100%!important;max-width:none!important;flex:1 1 auto!important}
+body.page-notes .search-box input{height:56px!important;padding:0 54px 0 52px!important;border:1px solid rgba(255,255,255,.72)!important;border-radius:999px!important;background:rgba(255,255,255,.7)!important;box-shadow:0 16px 44px rgba(36,70,74,.09),inset 0 1px 0 rgba(255,255,255,.9)!important}
+body.page-notes .search-box input:focus{background:rgba(255,255,255,.92)!important;border-color:rgba(111,150,155,.42)!important;box-shadow:0 20px 54px rgba(36,70,74,.14),0 0 0 4px rgba(111,150,155,.1)!important}
+@media(max-width:640px){body.page-notes .search-wrap{width:100%!important;margin:22px 0 30px!important}body.page-notes .search-box input{height:50px!important;padding-left:48px!important}}
 
 /* Apple Music Classical-inspired adaptive photo mosaic */
 body.page-photo .gallery{max-width:1600px!important;padding-left:clamp(8px,1.2vw,18px)!important;padding-right:clamp(8px,1.2vw,18px)!important}
