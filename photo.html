@@ -38,7 +38,7 @@
     .profile-seal{padding:12px 10px;border:1px solid var(--jp-deep);color:var(--jp-deep);font-family:var(--jp-serif);font-size:12px;line-height:1.5;text-align:center}
     @media(max-width:640px){.profile{grid-template-columns:88px 1fr;gap:18px;padding:38px 18px 30px}.profile-copy h1{font-size:clamp(30px,9vw,46px)!important}.profile-seal{display:none}.profile-meta{margin-top:10px;font-size:10px}.profile-slogan{font-size:11px;margin-top:9px}.profile-avatar{box-shadow:0 0 0 6px rgba(255,255,255,.3)}}
   </style>
-<link rel="stylesheet" href="assets/css/japanese-theme.css?v=20260911b">
+<link rel="stylesheet" href="assets/css/japanese-theme.css?v=20260911c">
 </head>
 <body class="site-page page-photo">
   <header class="topbar"><div class="topbar-inner">
@@ -46,22 +46,7 @@
     <nav class="nav" aria-label="主导航"><a href="index.html">首页</a><a class="active" href="photo.html">写真</a><a href="notes.html">手记</a><a href="movie.html">影像</a><a href="music.html">音乐</a></nav>
   </div></header>
 
-  <section class="profile">
-    <img class="profile-avatar" src="baby.png" alt="Tankey 与 Monody">
-    <div class="profile-copy">
-      <p class="eyebrow">OUR MEMS · SINCE 2017</p>
-      <h1>Tankey &amp; Monody</h1>
-      <p class="profile-meta">2017年12月29日 — 今天 · 共 <span id="photoCount">0</span> 张照片</p>
-      <p class="profile-slogan">Mems rest within the lens.<br>光留在镜头里，我们留在彼此的时间里。</p>
-    </div>
-    <div class="profile-seal">恋<br>日<br>录</div>
-  </section>
-  <div class="controls-wrap"><div class="controls">
-    <div class="filters" role="group" aria-label="照片筛选"><button class="chip active" data-filter="all">全部</button><button class="chip" data-filter="landscape">横幅</button><button class="chip" data-filter="portrait">竖幅</button><button class="chip" data-filter="square">方形</button></div>
-    <div class="actions"><select id="sort" class="sort" aria-label="照片排序"><option value="newest">最新优先</option><option value="oldest">最早优先</option><option value="title">按名称</option></select><button id="layoutToggle" class="icon-btn" aria-label="切换拼贴密度" title="切换拼贴密度"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="11" rx="2"/><rect x="14" y="3" width="7" height="6" rx="2"/><rect x="14" y="13" width="7" height="8" rx="2"/><rect x="3" y="18" width="7" height="3" rx="1.5"/></svg></button></div>
-  </div></div>
-
-  <main class="gallery"><div id="grid" class="grid"></div><div id="empty" class="empty">这一组暂时没有照片。</div></main>
+  <main class="gallery"><div id="grid" class="grid" aria-label="照片墙"></div><div id="empty" class="empty">照片墙还是空的。</div></main>
   <footer class="footer"><span>© Tankey & Monody</span><span>光落下来，记忆就有了形状。</span></footer>
 
   <div id="viewer" class="viewer" role="dialog" aria-modal="true" aria-label="照片查看器">
@@ -78,40 +63,33 @@
     const source = Array.isArray(window.PHOTO_DATA) ? window.PHOTO_DATA : [];
     const grid = document.getElementById('grid'), empty = document.getElementById('empty');
     const viewer = document.getElementById('viewer'), stage = document.getElementById('stage'), viewerImage = document.getElementById('viewerImage');
-    let filter = 'all', items = [], current = 0, scale = 1, touchX = 0;
+    let items = [], current = 0, scale = 1, touchX = 0, lastGridWidth = 0, resizeFrame = 0;
 
     const shape = p => { const r=(p.width||1)/(p.height||1); return r>1.12?'landscape':r<.88?'portrait':'square' };
     const dateOf = p => new Date((p.date || p.takenAt || p.mtime*1000) || Date.now());
     const dateText = p => new Intl.DateTimeFormat('zh-CN',{year:'numeric',month:'2-digit',day:'2-digit'}).format(dateOf(p)).replaceAll('/','.');
     const safe = v => String(v??'').replace(/[&<>"']/g,s=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s]));
-    const years = new Set(source.map(p=>dateOf(p).getFullYear()));
-    document.getElementById('photoCount').textContent = source.length;
-    const yearCountEl=document.getElementById('yearCount'); if(yearCountEl) yearCountEl.textContent = years.size || '—';
-
-    function layoutMosaic(){
-      const styles=getComputedStyle(grid), row=parseFloat(styles.gridAutoRows)||14, gap=parseFloat(styles.rowGap)||6;
-      grid.querySelectorAll('.photo-card').forEach(card=>{
-        const frame=card.querySelector('.photo-frame'), img=frame.querySelector('img');
-        const ratio=(img.naturalWidth&&img.naturalHeight)?img.naturalWidth/img.naturalHeight:parseFloat(frame.style.getPropertyValue('--ratio'))||1;
-        const target=Math.max(150,frame.clientWidth/ratio);
-        card.style.gridRowEnd='span '+Math.max(8,Math.ceil((target+gap)/(row+gap)));
-      });
-    }
-
     function render(){
-      const order = document.getElementById('sort').value;
-      items = source.filter(p => filter==='all' || shape(p)===filter).slice().sort((a,b)=>{
-        if(order==='title') return String(a.title||a.file).localeCompare(String(b.title||b.file),'zh-CN',{numeric:true});
-        return (dateOf(a)-dateOf(b))*(order==='oldest'?1:-1);
-      });
-      grid.innerHTML = items.map((p,i)=>{
-        const title=safe(p.title||p.file||('照片 '+(i+1))), ratio=(p.width||4)+' / '+(p.height||3);
-        const kind=shape(p);
-        return '<article class="photo-card tile-'+kind+'" tabindex="0" role="button" aria-label="查看 '+title+'" data-index="'+i+'"><div class="photo-frame" style="--ratio:'+ratio+'"><img src="'+safe(p.thumb||p.full)+'" alt="'+title+'" loading="'+(i<4?'eager':'lazy')+'" decoding="async"><span class="photo-index">'+String(i+1).padStart(2,'0')+'</span><div class="photo-meta"><div><h2 class="photo-title">'+title+'</h2><p class="photo-date">'+dateText(p)+'</p></div><span class="photo-shape">'+kind+'</span></div></div></article>';
-      }).join('');
+      items = source.slice().sort((a,b)=>dateOf(b)-dateOf(a));
       empty.classList.toggle('show',!items.length);
-      grid.querySelectorAll('img').forEach(img=>{if(!img.complete)img.addEventListener('load',layoutMosaic,{once:true})});
-      requestAnimationFrame(layoutMosaic);
+      const width=Math.max(320,grid.clientWidth||innerWidth),gap=4,target=innerWidth<640?138:innerWidth<1000?190:250;
+      const rows=[];let row=[],ratioSum=0;
+      items.forEach((p,i)=>{
+        const ratio=Math.max(.5,Math.min(2.4,(p.width||4)/(p.height||3)));
+        row.push({p,i,ratio});ratioSum+=ratio;
+        if(ratioSum*target+gap*(row.length-1)>=width){rows.push(row);row=[];ratioSum=0}
+      });
+      if(row.length)rows.push(row);
+      grid.innerHTML=rows.map(group=>{
+        const sum=group.reduce((n,x)=>n+x.ratio,0),ideal=(width-gap*(group.length-1))/sum;
+        const height=Math.max(112,Math.min(ideal,target*1.32));
+        const cards=group.map(({p,i,ratio})=>{
+          const title=safe(p.title||p.file||('照片 '+(i+1))),kind=shape(p);
+          return '<article class="photo-card tile-'+kind+'" style="flex:'+ratio+' 1 0" tabindex="0" role="button" aria-label="查看 '+title+'" data-index="'+i+'"><div class="photo-frame"><img src="'+safe(p.thumb||p.full)+'" alt="'+title+'" loading="'+(i<6?'eager':'lazy')+'" decoding="async"><span class="photo-index">'+String(i+1).padStart(2,'0')+'</span><div class="photo-meta"><div><h2 class="photo-title">'+title+'</h2><p class="photo-date">'+dateText(p)+'</p></div></div></div></article>';
+        }).join('');
+        return '<div class="photo-row" style="height:'+height.toFixed(1)+'px">'+cards+'</div>';
+      }).join('');
+      lastGridWidth=grid.clientWidth;
     }
 
     function openAt(index){
@@ -129,9 +107,6 @@
 
     grid.addEventListener('click',e=>{const card=e.target.closest('.photo-card');if(card)openAt(+card.dataset.index)});
     grid.addEventListener('keydown',e=>{const card=e.target.closest('.photo-card');if(card&&(e.key==='Enter'||e.key===' ')){e.preventDefault();openAt(+card.dataset.index)}});
-    document.querySelectorAll('.chip').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.chip').forEach(x=>x.classList.remove('active'));btn.classList.add('active');filter=btn.dataset.filter;render()}));
-    document.getElementById('sort').addEventListener('change',render);
-    document.getElementById('layoutToggle').addEventListener('click',()=>grid.classList.toggle('compact'));
     document.getElementById('closeViewer').addEventListener('click',close);
     document.getElementById('prevPhoto').addEventListener('click',()=>openAt(current-1));
     document.getElementById('nextPhoto').addEventListener('click',()=>openAt(current+1));
@@ -141,7 +116,7 @@
     stage.addEventListener('touchstart',e=>{touchX=e.changedTouches[0].clientX},{passive:true});
     stage.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-touchX;if(Math.abs(dx)>55&&scale===1)openAt(current+(dx<0?1:-1))},{passive:true});
     document.addEventListener('keydown',e=>{if(!viewer.classList.contains('open'))return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')openAt(current-1);if(e.key==='ArrowRight')openAt(current+1);if(e.key==='+'||e.key==='=')zoom(scale+.3);if(e.key==='-')zoom(scale-.3)});
-    new ResizeObserver(()=>requestAnimationFrame(layoutMosaic)).observe(grid);
+    new ResizeObserver(()=>{cancelAnimationFrame(resizeFrame);resizeFrame=requestAnimationFrame(()=>{if(Math.abs(grid.clientWidth-lastGridWidth)>2)render()})}).observe(grid);
     render();
   })();
   </script>
