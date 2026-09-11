@@ -38,11 +38,11 @@
     .profile-seal{padding:12px 10px;border:1px solid var(--jp-deep);color:var(--jp-deep);font-family:var(--jp-serif);font-size:12px;line-height:1.5;text-align:center}
     @media(max-width:640px){.profile{grid-template-columns:88px 1fr;gap:18px;padding:38px 18px 30px}.profile-copy h1{font-size:clamp(30px,9vw,46px)!important}.profile-seal{display:none}.profile-meta{margin-top:10px;font-size:10px}.profile-slogan{font-size:11px;margin-top:9px}.profile-avatar{box-shadow:0 0 0 6px rgba(255,255,255,.3)}}
   </style>
-<link rel="stylesheet" href="assets/css/japanese-theme.css?v=20260828d">
+<link rel="stylesheet" href="assets/css/japanese-theme.css?v=20260911a">
 </head>
 <body class="site-page page-photo">
   <header class="topbar"><div class="topbar-inner">
-    <a class="brand" href="index.html"><span class="brand-mark"></span>Tankey × Monody</a>
+    <a class="brand" href="index.html">TANKEY <span class="brand-heart">♥</span> MONODY <span class="brand-since">· SINCE 2017</span></a>
     <nav class="nav" aria-label="主导航"><a href="index.html">首页</a><a class="active" href="photo.html">写真</a><a href="notes.html">手记</a><a href="movie.html">影像</a><a href="music.html">音乐</a></nav>
   </div></header>
 
@@ -58,7 +58,7 @@
   </section>
   <div class="controls-wrap"><div class="controls">
     <div class="filters" role="group" aria-label="照片筛选"><button class="chip active" data-filter="all">全部</button><button class="chip" data-filter="landscape">横幅</button><button class="chip" data-filter="portrait">竖幅</button><button class="chip" data-filter="square">方形</button></div>
-    <div class="actions"><select id="sort" class="sort" aria-label="照片排序"><option value="newest">最新优先</option><option value="oldest">最早优先</option><option value="title">按名称</option></select><button id="layoutToggle" class="icon-btn" aria-label="切换布局" title="切换布局">▦</button></div>
+    <div class="actions"><select id="sort" class="sort" aria-label="照片排序"><option value="newest">最新优先</option><option value="oldest">最早优先</option><option value="title">按名称</option></select><button id="layoutToggle" class="icon-btn" aria-label="切换拼贴密度" title="切换拼贴密度"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="11" rx="2"/><rect x="14" y="3" width="7" height="6" rx="2"/><rect x="14" y="13" width="7" height="8" rx="2"/><rect x="3" y="18" width="7" height="3" rx="1.5"/></svg></button></div>
   </div></div>
 
   <main class="gallery"><div id="grid" class="grid"></div><div id="empty" class="empty">这一组暂时没有照片。</div></main>
@@ -66,9 +66,9 @@
 
   <div id="viewer" class="viewer" role="dialog" aria-modal="true" aria-label="照片查看器">
     <div id="stage" class="stage"><img id="viewerImage" alt=""><div class="zoom-hint">滚轮或双击缩放 · ESC 关闭</div></div>
-    <aside class="viewer-panel"><div class="viewer-top"><span id="viewerCount" class="viewer-count"></span><button id="closeViewer" class="viewer-close" aria-label="关闭">×</button></div>
+    <aside class="viewer-panel"><div class="viewer-top"><span id="viewerCount" class="viewer-count"></span><button id="closeViewer" class="viewer-close" aria-label="关闭"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
       <div class="viewer-copy"><h2 id="viewerTitle"></h2><p id="viewerDescription"></p><dl id="exif" class="exif"></dl></div>
-      <div class="viewer-nav"><button id="prevPhoto" aria-label="上一张">←</button><button id="nextPhoto" aria-label="下一张">→</button></div>
+      <div class="viewer-nav"><button id="prevPhoto" aria-label="上一张"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg><span>上一张</span></button><button id="nextPhoto" aria-label="下一张"><span>下一张</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></button></div>
     </aside>
   </div>
 
@@ -88,6 +88,16 @@
     document.getElementById('photoCount').textContent = source.length;
     const yearCountEl=document.getElementById('yearCount'); if(yearCountEl) yearCountEl.textContent = years.size || '—';
 
+    function layoutMosaic(){
+      const styles=getComputedStyle(grid), row=parseFloat(styles.gridAutoRows)||14, gap=parseFloat(styles.rowGap)||6;
+      grid.querySelectorAll('.photo-card').forEach(card=>{
+        const frame=card.querySelector('.photo-frame'), img=frame.querySelector('img');
+        const ratio=(img.naturalWidth&&img.naturalHeight)?img.naturalWidth/img.naturalHeight:parseFloat(frame.style.getPropertyValue('--ratio'))||1;
+        const target=Math.max(150,frame.clientWidth/ratio);
+        card.style.gridRowEnd='span '+Math.max(8,Math.ceil((target+gap)/(row+gap)));
+      });
+    }
+
     function render(){
       const order = document.getElementById('sort').value;
       items = source.filter(p => filter==='all' || shape(p)===filter).slice().sort((a,b)=>{
@@ -96,9 +106,12 @@
       });
       grid.innerHTML = items.map((p,i)=>{
         const title=safe(p.title||p.file||('照片 '+(i+1))), ratio=(p.width||4)+' / '+(p.height||3);
-        return '<article class="photo-card" tabindex="0" role="button" aria-label="查看 '+title+'" data-index="'+i+'"><div class="photo-frame" style="--ratio:'+ratio+'"><img src="'+safe(p.thumb||p.full)+'" alt="'+title+'" loading="'+(i<4?'eager':'lazy')+'" decoding="async"><span class="photo-index">'+String(i+1).padStart(2,'0')+'</span></div><div class="photo-meta"><div><h2 class="photo-title">'+title+'</h2><p class="photo-date">'+dateText(p)+'</p></div><span class="photo-shape">'+shape(p)+'</span></div></article>';
+        const kind=shape(p);
+        return '<article class="photo-card tile-'+kind+'" tabindex="0" role="button" aria-label="查看 '+title+'" data-index="'+i+'"><div class="photo-frame" style="--ratio:'+ratio+'"><img src="'+safe(p.thumb||p.full)+'" alt="'+title+'" loading="'+(i<4?'eager':'lazy')+'" decoding="async"><span class="photo-index">'+String(i+1).padStart(2,'0')+'</span><div class="photo-meta"><div><h2 class="photo-title">'+title+'</h2><p class="photo-date">'+dateText(p)+'</p></div><span class="photo-shape">'+kind+'</span></div></div></article>';
       }).join('');
       empty.classList.toggle('show',!items.length);
+      grid.querySelectorAll('img').forEach(img=>{if(!img.complete)img.addEventListener('load',layoutMosaic,{once:true})});
+      requestAnimationFrame(layoutMosaic);
     }
 
     function openAt(index){
@@ -128,6 +141,7 @@
     stage.addEventListener('touchstart',e=>{touchX=e.changedTouches[0].clientX},{passive:true});
     stage.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-touchX;if(Math.abs(dx)>55&&scale===1)openAt(current+(dx<0?1:-1))},{passive:true});
     document.addEventListener('keydown',e=>{if(!viewer.classList.contains('open'))return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')openAt(current-1);if(e.key==='ArrowRight')openAt(current+1);if(e.key==='+'||e.key==='=')zoom(scale+.3);if(e.key==='-')zoom(scale-.3)});
+    new ResizeObserver(()=>requestAnimationFrame(layoutMosaic)).observe(grid);
     render();
   })();
   </script>
