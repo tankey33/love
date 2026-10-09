@@ -20,7 +20,7 @@
     .controls-wrap{position:sticky;top:64px;z-index:35;background:linear-gradient(var(--paper) 76%,rgba(244,241,234,0));padding:0 clamp(18px,4vw,58px) 18px}.controls{max-width:1500px;margin:auto;padding:14px 0;display:flex;align-items:center;justify-content:space-between;gap:16px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
     .filters,.actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.chip,.icon-btn,.sort{height:38px;border:1px solid var(--line);background:transparent;border-radius:999px;padding:0 15px;cursor:pointer;font-size:11px;letter-spacing:.06em;transition:.2s}.chip:hover,.chip.active{background:var(--ink);color:var(--paper);border-color:var(--ink)}.icon-btn{width:38px;padding:0;display:grid;place-items:center;font-size:15px}.icon-btn:hover{border-color:var(--ink)}.sort{appearance:none;padding-right:32px;background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);background-position:calc(100% - 16px) 16px,calc(100% - 12px) 16px;background-size:4px 4px;background-repeat:no-repeat}
     .gallery{max-width:1500px;margin:auto;padding:12px clamp(18px,4vw,58px) 100px;flex:1 0 auto}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,1.4vw,22px)}.grid.compact{grid-template-columns:repeat(4,minmax(0,1fr))}
-    .photo-card{min-width:0;cursor:zoom-in;contain:layout paint}.photo-frame{position:relative;overflow:hidden;background:#ddd7cd;aspect-ratio:var(--ratio,4/3)}.photo-frame img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s cubic-bezier(.2,.8,.2,1),filter .3s;filter:saturate(.84)}.photo-card:hover img{transform:scale(1.025);filter:saturate(1)}.photo-index{position:absolute;left:12px;top:12px;display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:rgba(250,248,243,.85);backdrop-filter:blur(8px);font-family:Baskerville,serif;font-size:11px}
+    .photo-card{min-width:0;cursor:zoom-in;contain:layout paint}.photo-frame{position:relative;overflow:hidden;background:#ddd7cd;aspect-ratio:var(--ratio,4/3)}.photo-frame img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s cubic-bezier(.2,.8,.2,1),filter .3s,opacity .45s ease;filter:saturate(.84);opacity:0}.photo-frame img.loaded{opacity:1}.photo-card:hover img{transform:scale(1.025);filter:saturate(1)}.photo-index{position:absolute;left:12px;top:12px;display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:rgba(250,248,243,.85);backdrop-filter:blur(8px);font-family:Baskerville,serif;font-size:11px}
     .photo-meta{padding:14px 2px 28px;display:flex;justify-content:space-between;align-items:flex-start;gap:16px;border-bottom:1px solid var(--line)}.photo-title{margin:0;font-family:"Yu Mincho","Songti SC",serif;font-size:15px;font-weight:400;letter-spacing:.05em}.photo-date{margin:5px 0 0;color:var(--muted);font-size:10px;letter-spacing:.08em}.photo-shape{color:var(--muted);font-size:9px;letter-spacing:.13em;text-transform:uppercase;white-space:nowrap}
     .empty{display:none;padding:80px 0;text-align:center;color:var(--muted);font-family:"Yu Mincho","Songti SC",serif}.empty.show{display:block}
     .footer{border-top:1px solid var(--line);padding:28px clamp(18px,4vw,58px) 40px;display:flex;justify-content:space-between;gap:20px;color:var(--muted);font-size:10px;letter-spacing:.1em}
@@ -78,26 +78,35 @@
     function render(){
       items = source.slice().sort((a,b)=>dateOf(b)-dateOf(a));
       empty.classList.toggle('show',!items.length);
-      const width=Math.max(320,grid.clientWidth||innerWidth),gap=4;
-      const target=innerWidth<640?Math.max(150,innerHeight*.24):innerWidth<1000?Math.max(210,innerHeight*.3):Math.max(280,Math.min(420,innerHeight*.4));
-      const rows=[];let row=[],ratioSum=0;
+      const width=Math.max(320,grid.clientWidth||innerWidth),gap=innerWidth<640?3:4;
+      const newestTarget=innerWidth<640?Math.max(190,innerHeight*.29):innerWidth<1000?Math.max(270,innerHeight*.36):Math.max(380,Math.min(520,innerHeight*.5));
+      const oldestTarget=innerWidth<640?Math.max(108,innerHeight*.155):innerWidth<1000?Math.max(155,innerHeight*.2):Math.max(190,Math.min(260,innerHeight*.245));
+      const targetAt=index=>{
+        const progress=items.length<2?0:index/(items.length-1);
+        const eased=1-Math.pow(1-progress,1.55);
+        return newestTarget+(oldestTarget-newestTarget)*eased;
+      };
+      const rows=[];let row=[],ratioSum=0,targetSum=0;
       items.forEach((p,i)=>{
         const ratio=Math.max(.5,Math.min(2.4,(p.width||4)/(p.height||3)));
-        row.push({p,i,ratio});ratioSum+=ratio;
-        if(ratioSum*target+gap*(row.length-1)>=width){rows.push(row);row=[];ratioSum=0}
+        const target=targetAt(i);
+        row.push({p,i,ratio,target});ratioSum+=ratio;targetSum+=target;
+        const rowTarget=targetSum/row.length;
+        if(ratioSum*rowTarget+gap*(row.length-1)>=width){rows.push(row);row=[];ratioSum=0;targetSum=0}
       });
       if(row.length)rows.push(row);
       if(rows.length>1){
         const last=rows[rows.length-1],previous=rows[rows.length-2];
-        const sum=group=>group.reduce((total,item)=>total+item.ratio,0);
-        while(previous.length>1&&sum(last)<sum(previous)*.68)last.unshift(previous.pop());
+        const ratioOf=group=>group.reduce((total,item)=>total+item.ratio,0);
+        const targetOf=group=>group.reduce((total,item)=>total+item.target,0)/group.length;
+        while(previous.length>1&&(width-gap*(last.length-1))/ratioOf(last)>targetOf(last)*1.22)last.unshift(previous.pop());
       }
       grid.innerHTML=rows.map(group=>{
         const sum=group.reduce((n,x)=>n+x.ratio,0),ideal=(width-gap*(group.length-1))/sum;
         const height=ideal;
         const cards=group.map(({p,i,ratio})=>{
           const title=safe(p.title||p.file||('照片 '+(i+1))),kind=shape(p);
-          return '<article class="photo-card tile-'+kind+'" style="flex:'+ratio+' 1 0" tabindex="0" role="button" aria-label="查看 '+title+'" data-index="'+i+'"><div class="photo-frame"><img src="'+safe(p.thumb||p.full)+'" alt="'+title+'" loading="'+(i<6?'eager':'lazy')+'" decoding="async"><span class="photo-index">'+String(i+1).padStart(2,'0')+'</span><div class="photo-meta"><div><h2 class="photo-title">'+title+'</h2><p class="photo-date">'+dateText(p)+'</p></div></div></div></article>';
+          return '<article class="photo-card tile-'+kind+'" style="flex:'+ratio+' 1 0" tabindex="0" role="button" aria-label="查看 '+title+'" data-index="'+i+'"><div class="photo-frame"><img src="'+safe(p.thumb||p.full)+'" alt="'+title+'" loading="'+(i<8?'eager':'lazy')+'" decoding="async" onload="this.classList.add(\'loaded\')"><span class="photo-index">'+String(i+1).padStart(2,'0')+'</span><div class="photo-meta"><div><h2 class="photo-title">'+title+'</h2><p class="photo-date">'+dateText(p)+'</p></div></div></div></article>';
         }).join('');
         return '<div class="photo-row" style="height:'+height.toFixed(1)+'px">'+cards+'</div>';
       }).join('');
