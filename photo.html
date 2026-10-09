@@ -20,7 +20,7 @@
     .controls-wrap{position:sticky;top:64px;z-index:35;background:linear-gradient(var(--paper) 76%,rgba(244,241,234,0));padding:0 clamp(18px,4vw,58px) 18px}.controls{max-width:1500px;margin:auto;padding:14px 0;display:flex;align-items:center;justify-content:space-between;gap:16px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
     .filters,.actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.chip,.icon-btn,.sort{height:38px;border:1px solid var(--line);background:transparent;border-radius:999px;padding:0 15px;cursor:pointer;font-size:11px;letter-spacing:.06em;transition:.2s}.chip:hover,.chip.active{background:var(--ink);color:var(--paper);border-color:var(--ink)}.icon-btn{width:38px;padding:0;display:grid;place-items:center;font-size:15px}.icon-btn:hover{border-color:var(--ink)}.sort{appearance:none;padding-right:32px;background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);background-position:calc(100% - 16px) 16px,calc(100% - 12px) 16px;background-size:4px 4px;background-repeat:no-repeat}
     .gallery{max-width:1500px;margin:auto;padding:12px clamp(18px,4vw,58px) 100px;flex:1 0 auto}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,1.4vw,22px)}.grid.compact{grid-template-columns:repeat(4,minmax(0,1fr))}
-    .photo-card{min-width:0;cursor:zoom-in;contain:layout paint}.photo-frame{position:relative;overflow:hidden;background:#ddd7cd;aspect-ratio:var(--ratio,4/3)}.photo-frame img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s cubic-bezier(.2,.8,.2,1),filter .3s,opacity .45s ease;filter:saturate(.84);opacity:0}.photo-frame img.loaded{opacity:1}.photo-card:hover img{transform:scale(1.025);filter:saturate(1)}.photo-index{position:absolute;left:12px;top:12px;display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:rgba(250,248,243,.85);backdrop-filter:blur(8px);font-family:Baskerville,serif;font-size:11px}
+    .photo-card{min-width:0;cursor:zoom-in;contain:layout paint}.photo-frame{position:relative;overflow:hidden;background:linear-gradient(110deg,#d5e1df 20%,#edf4f2 38%,#d5e1df 56%);background-size:220% 100%;animation:photo-loading 1.35s linear infinite;aspect-ratio:var(--ratio,4/3)}.photo-frame.ready{animation:none;background:#cddddd}.photo-frame.failed::before{content:"照片加载失败 · 点击重试";position:absolute;inset:0;display:grid;place-items:center;color:#647b7e;font-size:11px;letter-spacing:.08em}.photo-frame img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s cubic-bezier(.2,.8,.2,1),filter .3s,opacity .45s ease;filter:saturate(.84);opacity:0}.photo-frame img.loaded{opacity:1}.photo-card:hover img{transform:scale(1.025);filter:saturate(1)}.photo-index{position:absolute;left:12px;top:12px;display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:rgba(250,248,243,.85);backdrop-filter:blur(8px);font-family:Baskerville,serif;font-size:11px}@keyframes photo-loading{to{background-position:-220% 0}}
     .photo-meta{padding:14px 2px 28px;display:flex;justify-content:space-between;align-items:flex-start;gap:16px;border-bottom:1px solid var(--line)}.photo-title{margin:0;font-family:"Yu Mincho","Songti SC",serif;font-size:15px;font-weight:400;letter-spacing:.05em}.photo-date{margin:5px 0 0;color:var(--muted);font-size:10px;letter-spacing:.08em}.photo-shape{color:var(--muted);font-size:9px;letter-spacing:.13em;text-transform:uppercase;white-space:nowrap}
     .empty{display:none;padding:80px 0;text-align:center;color:var(--muted);font-family:"Yu Mincho","Songti SC",serif}.empty.show{display:block}
     .footer{border-top:1px solid var(--line);padding:28px clamp(18px,4vw,58px) 40px;display:flex;justify-content:space-between;gap:20px;color:var(--muted);font-size:10px;letter-spacing:.1em}
@@ -107,7 +107,7 @@
         const height=ideal;
         const cards=group.map(({p,i,ratio})=>{
           const title=safe(p.title||p.file||('照片 '+(i+1))),kind=shape(p);
-          return '<article class="photo-card tile-'+kind+'" style="flex:'+ratio+' 1 0" tabindex="0" role="button" aria-label="查看 '+title+'" data-index="'+i+'"><div class="photo-frame"><img src="'+safe(p.thumb||p.full)+'" alt="'+title+'" loading="'+(i<8?'eager':'lazy')+'" decoding="async" onload="this.classList.add(\'loaded\')"><span class="photo-index">'+String(i+1).padStart(2,'0')+'</span><div class="photo-meta"><div><h2 class="photo-title">'+title+'</h2><p class="photo-date">'+dateText(p)+'</p></div></div></div></article>';
+          return '<article class="photo-card tile-'+kind+'" style="flex:'+ratio+' 1 0" tabindex="0" role="button" aria-label="查看 '+title+'" data-index="'+i+'"><div class="photo-frame"><img src="'+safe(p.thumb||p.full)+'" data-original="'+safe(p.full)+'" alt="'+title+'" loading="'+(i<8?'eager':'lazy')+'" decoding="async" onload="this.classList.add(\'loaded\');this.closest(\'.photo-frame\').classList.add(\'ready\')"><span class="photo-index">'+String(i+1).padStart(2,'0')+'</span><div class="photo-meta"><div><h2 class="photo-title">'+title+'</h2><p class="photo-date">'+dateText(p)+'</p></div></div></div></article>';
         }).join('');
         return '<div class="photo-row" style="height:'+height.toFixed(1)+'px">'+cards+'</div>';
       }).join('');
@@ -129,14 +129,18 @@
     function close(){viewer.classList.remove('open');document.body.classList.remove('viewer-open');viewerImage.src=''}
     function zoom(next){scale=Math.max(1,Math.min(4,next));viewerImage.style.transform='scale('+scale+')'}
 
-    grid.addEventListener('click',e=>{const card=e.target.closest('.photo-card');if(card)openAt(+card.dataset.index)});
+    function retryImage(img,manual=false){
+      const frame=img.closest('.photo-frame'),attempt=manual?0:Number(img.dataset.retry||0);
+      frame.classList.remove('failed','ready');img.classList.remove('loaded');img.dataset.retry=String(attempt+1);
+      const original=img.dataset.original;
+      img.src=attempt===0?original+'?retry='+Date.now():'https://raw.githubusercontent.com/tankey33/love/main/'+original+'?retry='+Date.now();
+    }
+    grid.addEventListener('click',e=>{const card=e.target.closest('.photo-card');if(!card)return;const failed=card.querySelector('.photo-frame.failed img');if(failed){retryImage(failed,true);return}openAt(+card.dataset.index)});
     grid.addEventListener('error',e=>{
       if(e.target.tagName!=='IMG')return;
-      const card=e.target.closest('.photo-card'),index=Number(card?.dataset.index);
-      if(!Number.isInteger(index)||!items[index])return;
-      const failed=items[index].full;
-      source=source.filter(photo=>photo.full!==failed);
-      render();
+      const img=e.target,attempt=Number(img.dataset.retry||0);
+      if(attempt<2){setTimeout(()=>retryImage(img),250*(attempt+1));return}
+      img.closest('.photo-frame')?.classList.add('failed','ready');
     },true);
     grid.addEventListener('keydown',e=>{const card=e.target.closest('.photo-card');if(card&&(e.key==='Enter'||e.key===' ')){e.preventDefault();openAt(+card.dataset.index)}});
     document.getElementById('closeViewer').addEventListener('click',close);
