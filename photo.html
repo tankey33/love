@@ -78,7 +78,8 @@
     function render(){
       items = source.slice().sort((a,b)=>dateOf(b)-dateOf(a));
       empty.classList.toggle('show',!items.length);
-      const width=Math.max(320,grid.clientWidth||innerWidth),gap=4,target=innerWidth<640?138:innerWidth<1000?190:250;
+      const width=Math.max(320,grid.clientWidth||innerWidth),gap=4;
+      const target=innerWidth<640?Math.max(150,innerHeight*.24):innerWidth<1000?Math.max(210,innerHeight*.3):Math.max(280,Math.min(420,innerHeight*.4));
       const rows=[];let row=[],ratioSum=0;
       items.forEach((p,i)=>{
         const ratio=Math.max(.5,Math.min(2.4,(p.width||4)/(p.height||3)));
@@ -86,13 +87,14 @@
         if(ratioSum*target+gap*(row.length-1)>=width){rows.push(row);row=[];ratioSum=0}
       });
       if(row.length)rows.push(row);
+      if(rows.length>1){
+        const last=rows[rows.length-1],previous=rows[rows.length-2];
+        const sum=group=>group.reduce((total,item)=>total+item.ratio,0);
+        while(previous.length>1&&sum(last)<sum(previous)*.68)last.unshift(previous.pop());
+      }
       grid.innerHTML=rows.map(group=>{
         const sum=group.reduce((n,x)=>n+x.ratio,0),ideal=(width-gap*(group.length-1))/sum;
-        const topbar=document.querySelector('.topbar')?.offsetHeight||0;
-        const footer=document.querySelector('.footer')?.offsetHeight||72;
-        const available=Math.max(0,innerHeight-topbar-footer-gap*Math.max(0,rows.length-1)-8);
-        const fillHeight=rows.length?available/rows.length:0;
-        const height=Math.max(112,Math.min(Math.max(ideal,fillHeight),Math.max(target*1.9,fillHeight)));
+        const height=ideal;
         const cards=group.map(({p,i,ratio})=>{
           const title=safe(p.title||p.file||('照片 '+(i+1))),kind=shape(p);
           return '<article class="photo-card tile-'+kind+'" style="flex:'+ratio+' 1 0" tabindex="0" role="button" aria-label="查看 '+title+'" data-index="'+i+'"><div class="photo-frame"><img src="'+safe(p.thumb||p.full)+'" alt="'+title+'" loading="'+(i<6?'eager':'lazy')+'" decoding="async"><span class="photo-index">'+String(i+1).padStart(2,'0')+'</span><div class="photo-meta"><div><h2 class="photo-title">'+title+'</h2><p class="photo-date">'+dateText(p)+'</p></div></div></div></article>';
