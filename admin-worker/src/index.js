@@ -54,6 +54,8 @@ function requireAdmin(request, env) {
 async function uploadPhotos(request, env) {
   const form = await request.formData();
   const files = form.getAll("photos").filter(value => value instanceof File && value.size);
+  let metadata = [];
+  try { metadata = JSON.parse(String(form.get("metadata") || "[]")); } catch { metadata = []; }
   if (!files.length) throw httpError(400, "请选择照片");
   if (files.length > 50) throw httpError(400, "每次最多上传 50 张照片");
   const totalBytes = files.reduce((sum, file) => sum + file.size, 0);
@@ -66,7 +68,7 @@ async function uploadPhotos(request, env) {
   let sequence = Math.max(0, ...numericNames) + 1;
   const numberWidth = Math.max(2, String(sequence + files.length - 1).length);
 
-  for (const file of files) {
+  for (const [index, file] of files.entries()) {
     if (!IMAGE_TYPES.has(file.type)) throw httpError(400, `${file.name} 不是支持的图片格式`);
     if (file.size > MAX_FILE_BYTES) throw httpError(400, `${file.name} 超过 20MB`);
     const extension = extensionFor(file);
@@ -74,6 +76,8 @@ async function uploadPhotos(request, env) {
     while (used.has(path.toLowerCase())) path = `photo/${String(sequence++).padStart(numberWidth, "0")}.${extension}`;
     used.add(path.toLowerCase());
     changes.push({ path, content: arrayBufferToBase64(await file.arrayBuffer()), encoding: "base64" });
+    const meta = metadata[index] && typeof metadata[index] === "object" ? metadata[index] : {};
+    changes.push({ path: path.replace(/\.[^.]+$/, ".json"), content: JSON.stringify({ ...meta, uploadedAt: meta.uploadedAt || new Date().toISOString() }, null, 2) + "\n", encoding: "utf-8" });
   }
 
   const commit = await commitChanges(env, changes, `后台上传 ${files.length} 张照片`);
@@ -109,8 +113,15 @@ async function savePost(request, env) {
 
 async function deletePaths(request, env, prefix) {
   const data = await request.json();
-  const paths = Array.isArray(data.paths) ? data.paths.map(p => safePath(p, prefix)) : [];
+  let paths = Array.isArray(data.paths) ? data.paths.map(p => safePath(p, prefix)) : [];
   if (!paths.length || paths.length > 50) throw httpError(400, "请选择要删除的内容");
+  if (prefix === "photo/") {
+    const ref = await github(env, `/git/ref/heads/${encodeURIComponent(branch(env))}`);
+    const tree = await github(env, `/git/trees/${ref.object.sha}?recursive=1`);
+    const existing = new Set((tree.tree || []).map(item => item.path));
+    const sidecars = paths.map(path => path.replace(/\.[^.]+$/, ".json")).filter(path => existing.has(path));
+    paths = [...paths, ...sidecars];
+  }
   const commit = await commitChanges(env, paths.map(path => ({ path, sha: null })), `后台删除 ${paths.length} 项内容`);
   return { ok: true, count: paths.length, commit: commit.sha };
 }

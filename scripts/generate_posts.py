@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 from pathlib import Path
-import json, re, html, struct
-from datetime import datetime
+import json, re, html, struct, subprocess
+from datetime import datetime, timezone
 
 ROOT = Path(__file__).resolve().parents[1]
 POSTS_DIR = ROOT / 'blog' / 'posts'
@@ -271,6 +271,108 @@ def image_size(path: Path):
     return None
 
 
+def jpeg_exif(path: Path):
+    """Read the small EXIF subset used by the gallery without extra packages."""
+    if path.suffix.lower() not in {'.jpg', '.jpeg'}:
+        return {}
+    try:
+        data = path.read_bytes()
+        if data[:2] != b'\xff\xd8':
+            return {}
+        pos = 2
+        tiff = None
+        while pos + 4 < len(data):
+            if data[pos] != 0xff:
+                pos += 1
+                continue
+            marker = data[pos + 1]
+            if marker in (0xd8, 0xd9):
+                pos += 2
+                continue
+            length = int.from_bytes(data[pos + 2:pos + 4], 'big')
+            if marker == 0xe1 and data[pos + 4:pos + 10] == b'Exif\x00\x00':
+                tiff = data[pos + 10:pos + 2 + length]
+                break
+            pos += 2 + max(length, 2)
+        if not tiff or tiff[:2] not in (b'II', b'MM'):
+            return {}
+        order = 'little' if tiff[:2] == b'II' else 'big'
+        u16 = lambda o: int.from_bytes(tiff[o:o + 2], order)
+        u32 = lambda o: int.from_bytes(tiff[o:o + 4], order)
+        type_sizes = {1: 1, 2: 1, 3: 2, 4: 4, 5: 8, 7: 1, 9: 4, 10: 8}
+
+        def value(entry):
+            typ, count = u16(entry + 2), u32(entry + 4)
+            size = type_sizes.get(typ, 1) * count
+            start = entry + 8 if size <= 4 else u32(entry + 8)
+            raw = tiff[start:start + size]
+            if typ == 2:
+                return raw.split(b'\x00', 1)[0].decode('utf-8', 'ignore').strip()
+            if typ == 3:
+                return int.from_bytes(raw[:2], order)
+            if typ in (4, 9):
+                return int.from_bytes(raw[:4], order, signed=typ == 9)
+            if typ in (5, 10) and len(raw) >= 8:
+                n = int.from_bytes(raw[:4], order, signed=typ == 10)
+                d = int.from_bytes(raw[4:8], order, signed=typ == 10)
+                return n / d if d else None
+            return None
+
+        def directory(offset):
+            if offset < 0 or offset + 2 > len(tiff):
+                return {}
+            count = u16(offset)
+            out = {}
+            for i in range(min(count, 256)):
+                entry = offset + 2 + i * 12
+                if entry + 12 <= len(tiff):
+                    out[u16(entry)] = value(entry)
+            return out
+
+        root = directory(u32(4))
+        exif = directory(root.get(0x8769, 0)) if root.get(0x8769) else {}
+        taken = exif.get(0x9003) or exif.get(0x9004) or root.get(0x0132)
+        result = {
+            'takenAt': taken,
+            'make': root.get(0x010f),
+            'camera': root.get(0x0110),
+            'lens': exif.get(0xa434),
+            'aperture': exif.get(0x829d),
+            'shutterSeconds': exif.get(0x829a),
+            'iso': exif.get(0x8827),
+        }
+        return {k: v for k, v in result.items() if v not in (None, '')}
+    except Exception:
+        return {}
+
+
+def normalize_photo_date(value):
+    if not value:
+        return ''
+    text = str(value).strip()
+    for fmt in ('%Y:%m:%d %H:%M:%S', '%Y-%m-%dT%H:%M:%S', '%Y-%m-%d %H:%M:%S'):
+        try:
+            return datetime.strptime(text[:19], fmt).isoformat()
+        except ValueError:
+            pass
+    return ''
+
+
+def git_upload_date(path: Path, fallback: float):
+    """Use the commit that introduced/last replaced the file as its upload date."""
+    try:
+        relative = path.relative_to(ROOT).as_posix()
+        value = subprocess.check_output(
+            ['git', 'log', '-1', '--format=%aI', '--', relative],
+            cwd=ROOT, text=True, stderr=subprocess.DEVNULL
+        ).strip()
+        if value:
+            return value
+    except Exception:
+        pass
+    return datetime.fromtimestamp(fallback, timezone.utc).isoformat()
+
+
 def pretty_title(stem: str):
     s = re.sub(r'[-_]+', ' ', stem).strip()
     return s if s else stem
@@ -340,6 +442,16 @@ def generate_photos():
     for i, path in enumerate(files, start=1):
         size = image_size(path) or (0, 0)
         st = path.stat()
+        sidecar = path.with_suffix('.json')
+        saved = {}
+        if sidecar.exists():
+            try:
+                saved = json.loads(sidecar.read_text(encoding='utf-8'))
+            except Exception:
+                saved = {}
+        exif = {**jpeg_exif(path), **saved}
+        taken_at = normalize_photo_date(exif.get('takenAt'))
+        uploaded_at = exif.get('uploadedAt') or git_upload_date(path, st.st_mtime)
         photos.append({
             'id': path.stem,
             'file': path.name,
@@ -348,7 +460,16 @@ def generate_photos():
             'height': size[1],
             'size': st.st_size,
             'title': pretty_title(path.stem),
-            'description': '',
+            'description': exif.get('description', ''),
+            'takenAt': taken_at,
+            'uploadedAt': uploaded_at,
+            'dateSource': 'exif' if taken_at else 'upload',
+            'make': exif.get('make', ''),
+            'camera': exif.get('camera', ''),
+            'lens': exif.get('lens', ''),
+            'aperture': ('f/' + ('%.1f' % exif['aperture']).rstrip('0').rstrip('.')) if isinstance(exif.get('aperture'), (int, float)) else exif.get('aperture', ''),
+            'shutter': (('1/%d s' % round(1 / exif['shutterSeconds'])) if exif.get('shutterSeconds', 0) and exif['shutterSeconds'] < 1 else ('%.2f s' % exif['shutterSeconds'])) if isinstance(exif.get('shutterSeconds'), (int, float)) else exif.get('shutter', ''),
+            'iso': exif.get('iso', ''),
             'mtime': int(st.st_mtime)
         })
     content = 'window.PHOTO_DATA = ' + json.dumps(photos, ensure_ascii=False, indent=2) + ';\n'
