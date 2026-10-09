@@ -128,8 +128,8 @@ async function listContent(env, prefix, imagesOnly) {
 
 async function commitChanges(env, changes, message) {
   if (!env.GITHUB_TOKEN) throw httpError(500, "后台尚未配置 GITHUB_TOKEN");
-  const refPath = `/git/ref/heads/${encodeURIComponent(branch(env))}`;
-  const ref = await github(env, refPath);
+  const refName = encodeURIComponent(branch(env));
+  const ref = await github(env, `/git/ref/heads/${refName}`);
   const parent = await github(env, `/git/commits/${ref.object.sha}`);
   const tree = [];
 
@@ -145,7 +145,7 @@ async function commitChanges(env, changes, message) {
 
   const newTree = await github(env, "/git/trees", { method: "POST", body: { base_tree: parent.tree.sha, tree } });
   const commit = await github(env, "/git/commits", { method: "POST", body: { message, tree: newTree.sha, parents: [ref.object.sha] } });
-  await github(env, refPath, { method: "PATCH", body: { sha: commit.sha, force: false } });
+  await github(env, `/git/refs/heads/${refName}`, { method: "PATCH", body: { sha: commit.sha, force: false } });
   return commit;
 }
 
