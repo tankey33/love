@@ -62,15 +62,16 @@ async function uploadPhotos(request, env) {
   const existing = await listContent(env, "photo/", true);
   const used = new Set(existing.map(item => item.path.toLowerCase()));
   const changes = [];
-  let sequence = Date.now();
+  const numericNames = existing.map(item => Number((item.name.match(/^(\d+)\./) || [])[1])).filter(Number.isFinite);
+  let sequence = Math.max(0, ...numericNames) + 1;
+  const numberWidth = Math.max(2, String(sequence + files.length - 1).length);
 
   for (const file of files) {
     if (!IMAGE_TYPES.has(file.type)) throw httpError(400, `${file.name} 不是支持的图片格式`);
     if (file.size > MAX_FILE_BYTES) throw httpError(400, `${file.name} 超过 20MB`);
     const extension = extensionFor(file);
-    const stem = cleanName(file.name.replace(/\.[^.]+$/, "")) || "photo";
-    let path = `photo/${stem}-${sequence++}.${extension}`;
-    while (used.has(path.toLowerCase())) path = `photo/${stem}-${sequence++}.${extension}`;
+    let path = `photo/${String(sequence++).padStart(numberWidth, "0")}.${extension}`;
+    while (used.has(path.toLowerCase())) path = `photo/${String(sequence++).padStart(numberWidth, "0")}.${extension}`;
     used.add(path.toLowerCase());
     changes.push({ path, content: arrayBufferToBase64(await file.arrayBuffer()), encoding: "base64" });
   }
@@ -146,6 +147,11 @@ async function commitChanges(env, changes, message) {
   const newTree = await github(env, "/git/trees", { method: "POST", body: { base_tree: parent.tree.sha, tree } });
   const commit = await github(env, "/git/commits", { method: "POST", body: { message, tree: newTree.sha, parents: [ref.object.sha] } });
   await github(env, `/git/refs/heads/${refName}`, { method: "PATCH", body: { sha: commit.sha, force: false } });
+  try {
+    await github(env, "/dispatches", { method: "POST", body: { event_type: "content-updated", client_payload: { commit: commit.sha } } });
+  } catch (error) {
+    console.error("Unable to trigger deployment", error.message);
+  }
   return commit;
 }
 

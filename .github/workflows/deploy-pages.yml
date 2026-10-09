@@ -13,6 +13,8 @@ on:
       - 'photo/**'
       - '.github/workflows/deploy-pages.yml'
       - 'CNAME'
+  repository_dispatch:
+    types: [ content-updated ]
   schedule:
     - cron: '17 */6 * * *'
   workflow_dispatch:

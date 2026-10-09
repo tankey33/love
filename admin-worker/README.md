@@ -2,10 +2,10 @@
 
 这是 `admin.itestv.com` 的 Cloudflare Worker。它通过 GitHub API 管理现有仓库内容，不改变前台的数据生成方式：
 
-- 批量上传图片到 `photo/`
+- 批量上传图片到 `photo/`，并自动生成连续数字文件名
 - 查看、删除照片
 - 新建、编辑、删除 `blog/posts/*.md`
-- 每次操作创建一个 GitHub 提交，现有 Pages 工作流随后自动更新网站
+- 每次操作创建一个 GitHub 提交，并主动触发 Pages 工作流更新网站
 
 ## 首次部署
 
