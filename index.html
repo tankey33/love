@@ -650,7 +650,7 @@
                     </div>
                 </div>
             </div>
-            <button id="musicToggle" class="music-btn" aria-label="连续点击三次播放，连续点击两次暂停" title="三击播放 · 双击暂停">♫</button>
+            <button id="musicToggle" class="music-btn" aria-label="播放或暂停音乐" title="单击播放 / 暂停">♫</button>
         </div>
     </div>
 
@@ -1033,20 +1033,30 @@
     <script>
         const bgm = document.getElementById('bgm');
         const musicToggle = document.getElementById('musicToggle');
-        let musicClickCount = 0;
-        let musicClickTimer = 0;
+        let pageClickCount = 0;
+        let pageClickTimer = 0;
 
         function updateMusicButton() {
             musicToggle.style.opacity = bgm.paused ? '0.68' : '1';
         }
 
-        musicToggle.addEventListener('click', function (event) {
+        musicToggle.addEventListener('click', async function (event) {
             event.stopPropagation();
-            musicClickCount += 1;
-            clearTimeout(musicClickTimer);
-            musicClickTimer = setTimeout(async function () {
-                const clicks = musicClickCount;
-                musicClickCount = 0;
+            if (bgm.paused) {
+                try { await bgm.play(); } catch (error) { console.error(error); }
+            } else {
+                bgm.pause();
+            }
+            updateMusicButton();
+        });
+
+        document.addEventListener('click', function (event) {
+            if (event.target.closest('#musicToggle')) return;
+            pageClickCount += 1;
+            clearTimeout(pageClickTimer);
+            pageClickTimer = setTimeout(async function () {
+                const clicks = pageClickCount;
+                pageClickCount = 0;
                 if (clicks >= 3) {
                     try { await bgm.play(); } catch (error) { console.error(error); }
                 } else if (clicks === 2) {
