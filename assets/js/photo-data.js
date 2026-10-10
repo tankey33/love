@@ -17,6 +17,14 @@ window.PHOTO_DATA = [
     "aperture": "",
     "shutter": "",
     "iso": "",
+    "focalLength": "",
+    "focalLength35": "",
+    "exposureCompensation": "",
+    "flash": "",
+    "whiteBalance": "",
+    "software": "",
+    "isLivePhoto": false,
+    "liveVideo": "",
     "mtime": 1791556380
   },
   {
@@ -37,6 +45,14 @@ window.PHOTO_DATA = [
     "aperture": "",
     "shutter": "",
     "iso": "",
+    "focalLength": "",
+    "focalLength35": "",
+    "exposureCompensation": "",
+    "flash": "",
+    "whiteBalance": "",
+    "software": "",
+    "isLivePhoto": false,
+    "liveVideo": "",
     "mtime": 1791556380
   },
   {
@@ -57,6 +73,14 @@ window.PHOTO_DATA = [
     "aperture": "",
     "shutter": "",
     "iso": "",
+    "focalLength": "",
+    "focalLength35": "",
+    "exposureCompensation": "",
+    "flash": "",
+    "whiteBalance": "",
+    "software": "",
+    "isLivePhoto": false,
+    "liveVideo": "",
     "mtime": 1791556380
   },
   {
@@ -77,6 +101,14 @@ window.PHOTO_DATA = [
     "aperture": "",
     "shutter": "",
     "iso": "",
+    "focalLength": "",
+    "focalLength35": "",
+    "exposureCompensation": "",
+    "flash": "",
+    "whiteBalance": "",
+    "software": "",
+    "isLivePhoto": false,
+    "liveVideo": "",
     "mtime": 1791556380
   },
   {
@@ -97,6 +129,14 @@ window.PHOTO_DATA = [
     "aperture": "",
     "shutter": "",
     "iso": "",
+    "focalLength": "",
+    "focalLength35": "",
+    "exposureCompensation": "",
+    "flash": "",
+    "whiteBalance": "",
+    "software": "",
+    "isLivePhoto": false,
+    "liveVideo": "",
     "mtime": 1791556380
   },
   {
@@ -117,6 +157,14 @@ window.PHOTO_DATA = [
     "aperture": "",
     "shutter": "",
     "iso": "",
+    "focalLength": "",
+    "focalLength35": "",
+    "exposureCompensation": "",
+    "flash": "",
+    "whiteBalance": "",
+    "software": "",
+    "isLivePhoto": false,
+    "liveVideo": "",
     "mtime": 1791556380
   },
   {
@@ -137,6 +185,14 @@ window.PHOTO_DATA = [
     "aperture": "",
     "shutter": "",
     "iso": "",
+    "focalLength": "",
+    "focalLength35": "",
+    "exposureCompensation": "",
+    "flash": "",
+    "whiteBalance": "",
+    "software": "",
+    "isLivePhoto": false,
+    "liveVideo": "",
     "mtime": 1791556380
   },
   {
@@ -157,6 +213,14 @@ window.PHOTO_DATA = [
     "aperture": "",
     "shutter": "",
     "iso": "",
+    "focalLength": "",
+    "focalLength35": "",
+    "exposureCompensation": "",
+    "flash": "",
+    "whiteBalance": "",
+    "software": "",
+    "isLivePhoto": false,
+    "liveVideo": "",
     "mtime": 1791556380
   },
   {
@@ -177,6 +241,14 @@ window.PHOTO_DATA = [
     "aperture": "",
     "shutter": "",
     "iso": "",
+    "focalLength": "",
+    "focalLength35": "",
+    "exposureCompensation": "",
+    "flash": "",
+    "whiteBalance": "",
+    "software": "",
+    "isLivePhoto": false,
+    "liveVideo": "",
     "mtime": 1791556380
   },
   {
@@ -197,6 +269,14 @@ window.PHOTO_DATA = [
     "aperture": "f/2.8",
     "shutter": "1/125 s",
     "iso": 1600,
+    "focalLength": "36 mm",
+    "focalLength35": "36 mm",
+    "exposureCompensation": "+0.7 EV",
+    "flash": "未闪光",
+    "whiteBalance": "自动",
+    "software": "Adobe Photoshop Lightroom Classic 14.5.1 (Macintosh)",
+    "isLivePhoto": false,
+    "liveVideo": "",
     "mtime": 1791524317
   },
   {
@@ -217,6 +297,14 @@ window.PHOTO_DATA = [
     "aperture": "f/2.8",
     "shutter": "1/125 s",
     "iso": 2000,
+    "focalLength": "42 mm",
+    "focalLength35": "42 mm",
+    "exposureCompensation": "+0.7 EV",
+    "flash": "未闪光",
+    "whiteBalance": "自动",
+    "software": "Adobe Photoshop Lightroom Classic 14.5.1 (Macintosh)",
+    "isLivePhoto": false,
+    "liveVideo": "",
     "mtime": 1791524317
   },
   {
@@ -237,6 +325,14 @@ window.PHOTO_DATA = [
     "aperture": "f/2.8",
     "shutter": "1/125 s",
     "iso": 1250,
+    "focalLength": "64 mm",
+    "focalLength35": "64 mm",
+    "exposureCompensation": "+0.7 EV",
+    "flash": "未闪光",
+    "whiteBalance": "自动",
+    "software": "Adobe Photoshop Lightroom Classic 14.5.1 (Macintosh)",
+    "isLivePhoto": false,
+    "liveVideo": "",
     "mtime": 1791524317
   },
   {
@@ -257,6 +353,14 @@ window.PHOTO_DATA = [
     "aperture": "f/2.8",
     "shutter": "1/125 s",
     "iso": 1600,
+    "focalLength": "70 mm",
+    "focalLength35": "70 mm",
+    "exposureCompensation": "+0.7 EV",
+    "flash": "未闪光",
+    "whiteBalance": "自动",
+    "software": "Adobe Photoshop Lightroom Classic 14.5.1 (Macintosh)",
+    "isLivePhoto": false,
+    "liveVideo": "",
     "mtime": 1791524317
   },
   {
@@ -277,6 +381,14 @@ window.PHOTO_DATA = [
     "aperture": "f/2.8",
     "shutter": "1/125 s",
     "iso": 1600,
+    "focalLength": "57 mm",
+    "focalLength35": "57 mm",
+    "exposureCompensation": "+0.7 EV",
+    "flash": "未闪光",
+    "whiteBalance": "自动",
+    "software": "Adobe Photoshop Lightroom Classic 14.5.1 (Macintosh)",
+    "isLivePhoto": false,
+    "liveVideo": "",
     "mtime": 1791524317
   },
   {
@@ -297,6 +409,14 @@ window.PHOTO_DATA = [
     "aperture": "f/1.8",
     "shutter": "1/1250 s",
     "iso": 100,
+    "focalLength": "55 mm",
+    "focalLength35": "55 mm",
+    "exposureCompensation": "+0.3 EV",
+    "flash": "未闪光",
+    "whiteBalance": "手动",
+    "software": "ILCE-7C v2.00",
+    "isLivePhoto": false,
+    "liveVideo": "",
     "mtime": 1791524317
   }
 ];

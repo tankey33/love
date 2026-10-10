@@ -10,6 +10,7 @@ RENDER_DIR = ROOT / 'blog' / 'rendered'
 PHOTO_DIR = ROOT / 'photo'
 PHOTO_OUT = ROOT / 'assets' / 'js' / 'photo-data.js'
 IMAGE_EXTS = {'.jpg', '.jpeg', '.png', '.webp', '.gif'}
+VIDEO_EXTS = {'.mov', '.mp4', '.m4v'}
 
 
 def parse_frontmatter(text: str):
@@ -340,6 +341,12 @@ def jpeg_exif(path: Path):
             'aperture': exif.get(0x829d),
             'shutterSeconds': exif.get(0x829a),
             'iso': exif.get(0x8827),
+            'focalLength': exif.get(0x920a),
+            'focalLength35': exif.get(0xa405),
+            'exposureCompensation': exif.get(0x9204),
+            'flash': exif.get(0x9209),
+            'whiteBalance': exif.get(0xa403),
+            'software': root.get(0x0131),
         }
         return {k: v for k, v in result.items() if v not in (None, '')}
     except Exception:
@@ -452,6 +459,7 @@ def generate_photos():
         exif = {**jpeg_exif(path), **saved}
         taken_at = normalize_photo_date(exif.get('takenAt'))
         uploaded_at = exif.get('uploadedAt') or git_upload_date(path, st.st_mtime)
+        live_video = next((path.with_suffix(ext) for ext in VIDEO_EXTS if path.with_suffix(ext).exists()), None)
         photos.append({
             'id': path.stem,
             'file': path.name,
@@ -470,6 +478,14 @@ def generate_photos():
             'aperture': ('f/' + ('%.1f' % exif['aperture']).rstrip('0').rstrip('.')) if isinstance(exif.get('aperture'), (int, float)) else exif.get('aperture', ''),
             'shutter': (('1/%d s' % round(1 / exif['shutterSeconds'])) if exif.get('shutterSeconds', 0) and exif['shutterSeconds'] < 1 else ('%.2f s' % exif['shutterSeconds'])) if isinstance(exif.get('shutterSeconds'), (int, float)) else exif.get('shutter', ''),
             'iso': exif.get('iso', ''),
+            'focalLength': (('%.1f mm' % exif['focalLength']).replace('.0 ', ' ')) if isinstance(exif.get('focalLength'), (int, float)) else exif.get('focalLength', ''),
+            'focalLength35': (str(exif['focalLength35']) + ' mm') if isinstance(exif.get('focalLength35'), (int, float)) else exif.get('focalLength35', ''),
+            'exposureCompensation': (('%+.1f EV' % exif['exposureCompensation'])) if isinstance(exif.get('exposureCompensation'), (int, float)) else exif.get('exposureCompensation', ''),
+            'flash': ('闪光' if int(exif['flash']) & 1 else '未闪光') if isinstance(exif.get('flash'), (int, float)) else exif.get('flash', ''),
+            'whiteBalance': ('手动' if int(exif['whiteBalance']) else '自动') if isinstance(exif.get('whiteBalance'), (int, float)) else exif.get('whiteBalance', ''),
+            'software': exif.get('software', ''),
+            'isLivePhoto': bool(live_video),
+            'liveVideo': f'photo/{live_video.name}' if live_video else '',
             'mtime': int(st.st_mtime)
         })
     content = 'window.PHOTO_DATA = ' + json.dumps(photos, ensure_ascii=False, indent=2) + ';\n'

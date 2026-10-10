@@ -1,6 +1,7 @@
 const JSON_HEADERS = { "content-type": "application/json; charset=utf-8" };
 const IMAGE_TYPES = new Set(["image/jpeg", "image/png", "image/webp", "image/gif"]);
-const MAX_FILE_BYTES = 20 * 1024 * 1024;
+const VIDEO_TYPES = new Set(["video/quicktime", "video/mp4", "video/x-m4v"]);
+const MAX_FILE_BYTES = 40 * 1024 * 1024;
 const API_VERSION = "2022-11-28";
 
 export default {
@@ -67,17 +68,21 @@ async function uploadPhotos(request, env) {
   const numericNames = existing.map(item => Number((item.name.match(/^(\d+)\./) || [])[1])).filter(Number.isFinite);
   let sequence = Math.max(0, ...numericNames) + 1;
   const numberWidth = Math.max(2, String(sequence + files.length - 1).length);
+  const groups = new Map();
 
   for (const [index, file] of files.entries()) {
-    if (!IMAGE_TYPES.has(file.type)) throw httpError(400, `${file.name} 不是支持的图片格式`);
-    if (file.size > MAX_FILE_BYTES) throw httpError(400, `${file.name} 超过 20MB`);
+    if (!IMAGE_TYPES.has(file.type) && !VIDEO_TYPES.has(file.type)) throw httpError(400, `${file.name} 不是支持的照片或实况视频格式`);
+    if (file.size > MAX_FILE_BYTES) throw httpError(400, `${file.name} 超过 40MB`);
     const extension = extensionFor(file);
-    let path = `photo/${String(sequence++).padStart(numberWidth, "0")}.${extension}`;
-    while (used.has(path.toLowerCase())) path = `photo/${String(sequence++).padStart(numberWidth, "0")}.${extension}`;
+    const meta = metadata[index] && typeof metadata[index] === "object" ? metadata[index] : {};
+    const originalBase = String(meta.originalName || file.name).replace(/\.[^.]+$/, "").toLowerCase();
+    let stem = groups.get(originalBase);
+    if (!stem) { stem = String(sequence++).padStart(numberWidth, "0"); groups.set(originalBase, stem); }
+    let path = `photo/${stem}.${extension}`;
+    while (used.has(path.toLowerCase())) { stem = String(sequence++).padStart(numberWidth, "0"); groups.set(originalBase, stem); path = `photo/${stem}.${extension}`; }
     used.add(path.toLowerCase());
     changes.push({ path, content: arrayBufferToBase64(await file.arrayBuffer()), encoding: "base64" });
-    const meta = metadata[index] && typeof metadata[index] === "object" ? metadata[index] : {};
-    changes.push({ path: path.replace(/\.[^.]+$/, ".json"), content: JSON.stringify({ ...meta, uploadedAt: meta.uploadedAt || new Date().toISOString() }, null, 2) + "\n", encoding: "utf-8" });
+    if (IMAGE_TYPES.has(file.type)) changes.push({ path: path.replace(/\.[^.]+$/, ".json"), content: JSON.stringify({ ...meta, uploadedAt: meta.uploadedAt || new Date().toISOString() }, null, 2) + "\n", encoding: "utf-8" });
   }
 
   const commit = await commitChanges(env, changes, `后台上传 ${files.length} 张照片`);
@@ -194,7 +199,7 @@ function cleanSlug(value) {
 }
 function cleanName(value) { return String(value || "").trim().replace(/\s+/g, "-").replace(/[^a-zA-Z0-9\u4e00-\u9fff_-]/g, "").slice(0, 80); }
 function cleanText(value, max) { return String(value || "").trim().slice(0, max); }
-function extensionFor(file) { return ({ "image/jpeg": "jpg", "image/png": "png", "image/webp": "webp", "image/gif": "gif" })[file.type]; }
+function extensionFor(file) { return ({ "image/jpeg": "jpg", "image/png": "png", "image/webp": "webp", "image/gif": "gif", "video/quicktime": "mov", "video/mp4": "mp4", "video/x-m4v": "m4v" })[file.type] || file.name.split('.').pop().toLowerCase(); }
 function encodePath(path) { return path.split("/").map(encodeURIComponent).join("/"); }
 function json(data, status = 200) { return new Response(JSON.stringify(data), { status, headers: JSON_HEADERS }); }
 function httpError(status, message) { const error = new Error(message); error.status = status; return error; }

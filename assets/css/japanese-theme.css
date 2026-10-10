@@ -40,6 +40,7 @@ body.page-note .content blockquote{border-left-color:var(--jp-deep)!important;ba
  body.site-page .nav a:nth-child(4),body.site-page .nav a:nth-child(5){display:none}
 }
 @media(max-width:720px){body.site-page .brand{font-size:9px!important;gap:.38em!important;letter-spacing:.14em!important}body.site-page .brand-since{display:none}}
+@media(max-width:720px){body.site-page .nav{min-width:0;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:none;white-space:nowrap}body.site-page .nav::-webkit-scrollbar{display:none}body.site-page .nav a:nth-child(4),body.site-page .nav a:nth-child(5){display:block!important;flex:0 0 auto}}
 
 /* responsive rhythm and Hamada-inspired aqua-blue palette */
 body.site-page .topbar-inner{min-height:72px!important;padding-top:8px!important;padding-bottom:8px!important}
