@@ -41,7 +41,7 @@
     .photo-summary{max-height:0;margin:0;color:rgba(255,255,255,.78);font-size:10px;line-height:1.6;opacity:0;overflow:hidden;transform:translateY(6px);transition:max-height .35s ease,opacity .3s ease,transform .35s ease}.photo-card:hover .photo-summary,.photo-card:focus-visible .photo-summary{max-height:44px;margin-top:7px;opacity:1;transform:none}.live-badge{position:absolute;z-index:3;right:10px;top:10px;display:flex;align-items:center;gap:5px;padding:6px 9px;border:1px solid rgba(255,255,255,.5);border-radius:999px;background:rgba(18,36,38,.46);backdrop-filter:blur(12px);color:white;font-size:9px;letter-spacing:.1em}.tile-video{position:absolute;inset:0;z-index:1;width:100%;height:100%;object-fit:cover;opacity:0;pointer-events:none;transition:opacity .35s ease}.photo-card.live-playing .tile-video{opacity:1}.photo-card.live-playing .photo-frame>img{opacity:0}.stage video{position:absolute;inset:0;margin:auto;width:100%;height:100%;object-fit:contain;opacity:0;pointer-events:none;transition:opacity .35s ease}.stage.live-playing video{opacity:1}.stage.live-playing>img{opacity:0}.viewer-nav button{min-width:0}.viewer-nav span{white-space:nowrap}
     @media(max-width:640px){body.page-photo .viewer-panel{display:block!important;position:relative!important;left:auto!important;right:auto!important;bottom:auto!important;max-height:42dvh!important;overflow-y:auto!important}.viewer-top{position:absolute!important;top:14px!important;right:14px!important;z-index:5}.viewer-copy{padding:4px 54px 0 4px!important}.viewer-kicker{padding-right:8px}.viewer-date{display:block!important;font-size:18px!important}.viewer-description{display:block!important;margin-top:7px!important}.exif{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px!important;margin-top:18px!important;padding-top:15px!important}.exif dd{font-size:11px!important;overflow-wrap:anywhere}.viewer-nav{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;width:100%!important;margin-top:16px!important}.viewer-nav button{width:100%;height:46px!important;padding:0 10px;border-radius:14px!important}.viewer-nav button span{display:inline!important}.viewer-close{width:38px!important;height:38px!important}.photo-summary{display:none}}
   </style>
-<link rel="stylesheet" href="assets/css/japanese-theme.css?v=20260911c">
+<link rel="stylesheet" href="assets/css/japanese-theme.css?v=20261010d">
 </head>
 <body class="site-page page-photo">
   <header class="topbar"><div class="topbar-inner">
@@ -53,7 +53,7 @@
   <footer class="footer"><span>© Tankey & Monody</span><span>光落下来，记忆就有了形状。</span></footer>
 
   <div id="viewer" class="viewer" role="dialog" aria-modal="true" aria-label="照片查看器">
-    <div id="stage" class="stage"><img id="viewerImage" alt=""><video id="viewerVideo" muted loop playsinline preload="metadata"></video><div id="zoomHint" class="zoom-hint">滚轮或双击缩放 · ESC 关闭</div></div>
+    <div id="stage" class="stage"><img id="viewerImage" alt=""><video id="viewerVideo" muted loop playsinline preload="metadata"></video><div class="mobile-viewer-nav" aria-label="照片切换"><button id="mobilePrevPhoto" type="button" aria-label="上一张照片"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button><button id="mobileNextPhoto" type="button" aria-label="下一张照片"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></button></div><div id="zoomHint" class="zoom-hint">滚轮或双击缩放 · ESC 关闭</div></div>
     <aside class="viewer-panel"><div class="viewer-top"><span id="viewerCount" class="viewer-count"></span><button id="closeViewer" class="viewer-close" aria-label="关闭"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
       <div class="viewer-copy"><div id="viewerKicker" class="viewer-kicker">Photo detail</div><h2 id="viewerTitle"></h2><p id="viewerDate" class="viewer-date"></p><p id="viewerDescription" class="viewer-description"></p><dl id="exif" class="exif"></dl></div>
       <div class="viewer-nav"><button id="prevPhoto" aria-label="上一张"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg><span>上一张</span></button><button id="nextPhoto" aria-label="下一张"><span>下一张</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></button></div>
@@ -156,6 +156,8 @@
     document.getElementById('closeViewer').addEventListener('click',close);
     document.getElementById('prevPhoto').addEventListener('click',()=>openAt(current-1));
     document.getElementById('nextPhoto').addEventListener('click',()=>openAt(current+1));
+    document.getElementById('mobilePrevPhoto').addEventListener('click',e=>{e.stopPropagation();openAt(current-1)});
+    document.getElementById('mobileNextPhoto').addEventListener('click',e=>{e.stopPropagation();openAt(current+1)});
     viewer.addEventListener('click',e=>{if(e.target===viewer)close()});
     stage.addEventListener('wheel',e=>{e.preventDefault();zoom(scale+(e.deltaY<0?.3:-.3))},{passive:false});
     stage.addEventListener('dblclick',()=>zoom(scale>1?1:2));
