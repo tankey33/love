@@ -41,7 +41,7 @@
     .photo-summary{max-height:0;margin:0;color:rgba(255,255,255,.78);font-size:10px;line-height:1.6;opacity:0;overflow:hidden;transform:translateY(6px);transition:max-height .35s ease,opacity .3s ease,transform .35s ease}.photo-card:hover .photo-summary,.photo-card:focus-visible .photo-summary{max-height:44px;margin-top:7px;opacity:1;transform:none}.live-badge{position:absolute;z-index:3;right:10px;top:10px;display:flex;align-items:center;gap:5px;padding:6px 9px;border:1px solid rgba(255,255,255,.5);border-radius:999px;background:rgba(18,36,38,.46);backdrop-filter:blur(12px);color:white;font-size:9px;letter-spacing:.1em}.tile-video{position:absolute;inset:0;z-index:1;width:100%;height:100%;object-fit:cover;opacity:0;pointer-events:none;transition:opacity .35s ease}.photo-card.live-playing .tile-video{opacity:1}.photo-card.live-playing .photo-frame>img{opacity:0}.stage video{position:absolute;inset:0;margin:auto;width:100%;height:100%;object-fit:contain;opacity:0;pointer-events:none;transition:opacity .35s ease}.stage.live-playing video{opacity:1}.stage.live-playing>img{opacity:0}.viewer-nav button{min-width:0}.viewer-nav span{white-space:nowrap}
     @media(max-width:640px){body.page-photo .viewer-panel{display:block!important;position:relative!important;left:auto!important;right:auto!important;bottom:auto!important;max-height:42dvh!important;overflow-y:auto!important}.viewer-top{position:absolute!important;top:14px!important;right:14px!important;z-index:5}.viewer-copy{padding:4px 54px 0 4px!important}.viewer-kicker{padding-right:8px}.viewer-date{display:block!important;font-size:18px!important}.viewer-description{display:block!important;margin-top:7px!important}.exif{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px!important;margin-top:18px!important;padding-top:15px!important}.exif dd{font-size:11px!important;overflow-wrap:anywhere}.viewer-nav{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;width:100%!important;margin-top:16px!important}.viewer-nav button{width:100%;height:46px!important;padding:0 10px;border-radius:14px!important}.viewer-nav button span{display:inline!important}.viewer-close{width:38px!important;height:38px!important}.photo-summary{display:none}}
   </style>
-<link rel="stylesheet" href="assets/css/japanese-theme.css?v=20261010e">
+<link rel="stylesheet" href="assets/css/japanese-theme.css?v=20261010f">
 </head>
 <body class="site-page page-photo">
   <header class="topbar"><div class="topbar-inner">
@@ -53,9 +53,9 @@
   <footer class="footer"><span>© Tankey & Monody</span><span>光落下来，记忆就有了形状。</span></footer>
 
   <div id="viewer" class="viewer" role="dialog" aria-modal="true" aria-label="照片查看器">
-    <div id="stage" class="stage"><img id="viewerImage" alt=""><video id="viewerVideo" muted loop playsinline preload="metadata"></video><div class="mobile-viewer-nav" aria-label="照片切换"><button id="mobilePrevPhoto" type="button" aria-label="上一张照片"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button><button id="mobileNextPhoto" type="button" aria-label="下一张照片"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></button></div><div id="zoomHint" class="zoom-hint">滚轮或双击缩放 · ESC 关闭</div></div>
+    <div id="stage" class="stage"><img id="viewerImage" alt=""><video id="viewerVideo" muted loop playsinline preload="metadata"></video><button id="viewerLiveBadge" class="viewer-live-badge" type="button" hidden><span>◉</span> 实况</button><div id="viewerFilmstrip" class="viewer-filmstrip" aria-label="照片缩略图"></div><div class="mobile-viewer-nav" aria-label="照片切换"><button id="mobilePrevPhoto" type="button" aria-label="上一张照片"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button><button id="mobileNextPhoto" type="button" aria-label="下一张照片"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></button></div><div id="zoomHint" class="zoom-hint">滚轮或双击缩放 · ESC 关闭</div></div>
     <aside class="viewer-panel"><div class="viewer-top"><span id="viewerCount" class="viewer-count"></span><button id="closeViewer" class="viewer-close" aria-label="关闭"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
-      <div class="viewer-copy"><div id="viewerKicker" class="viewer-kicker">Photo detail</div><h2 id="viewerTitle"></h2><p id="viewerDate" class="viewer-date"></p><p id="viewerDescription" class="viewer-description"></p><dl id="exif" class="exif"></dl></div>
+      <div class="viewer-copy"><div id="viewerKicker" class="viewer-kicker">Photo detail</div><h2 id="viewerTitle"></h2><p id="viewerDate" class="viewer-date"></p><p id="viewerDescription" class="viewer-description"></p><div id="exif" class="viewer-details"></div><section id="histogramSection" class="viewer-data-section"><h3>直方图</h3><canvas id="viewerHistogram" aria-label="照片 RGB 直方图"></canvas></section><section id="viewerMap" class="viewer-data-section" hidden></section></div>
       <div class="viewer-nav"><button id="prevPhoto" aria-label="上一张"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg><span>上一张</span></button><button id="nextPhoto" aria-label="下一张"><span>下一张</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></button></div>
     </aside>
   </div>
@@ -110,7 +110,7 @@
         const cards=group.map(({p,i,ratio})=>{
           const title=safe(p.title||p.file||('照片 '+(i+1))),kind=shape(p);
           const summary=[p.camera,p.lens,p.aperture,p.shutter,p.iso?('ISO '+p.iso):''].filter(Boolean).join(' · ')||(p.dateSource==='exif'?'保留原始拍摄信息':'原照片未包含 EXIF 信息');
-          const live=p.isLivePhoto&&p.liveVideo?'<video class="tile-video" src="'+safe(p.liveVideo)+'" muted loop playsinline preload="metadata"></video><span class="live-badge">◉ LIVE</span>':'';
+          const live=p.isLivePhoto&&p.liveVideo?'<video class="tile-video" src="'+safe(p.liveVideo)+'" muted loop playsinline preload="metadata"></video><span class="live-badge"><b>◉</b> 实况</span>':'';
           return '<article class="photo-card tile-'+kind+'" style="flex:'+ratio+' 1 0" tabindex="0" role="button" aria-label="查看 '+title+'" data-index="'+i+'"><div class="photo-frame"><img src="'+safe(p.thumb||p.full)+'" data-original="'+safe(p.full)+'" alt="'+title+'" loading="'+(i<8?'eager':'lazy')+'" decoding="async" onload="this.classList.add(\'loaded\');this.closest(\'.photo-frame\').classList.add(\'ready\')">'+live+'<div class="photo-meta"><div><h2 class="photo-title">'+title+'</h2><p class="photo-date">'+dateText(p)+'</p><p class="photo-summary">'+safe(summary)+'</p></div></div></div></article>';
         }).join('');
         return '<div class="photo-row" style="height:'+height.toFixed(1)+'px">'+cards+'</div>';
@@ -118,20 +118,48 @@
       lastGridWidth=grid.clientWidth;
     }
 
+    const hasValue=value=>value!==undefined&&value!==null&&value!=='';
+    function renderDetails(p){
+      const megapixels=p.width&&p.height?((p.width*p.height)/1000000).toFixed(2)+' MP':'';
+      const fileSize=p.size?(p.size>1048576?(p.size/1048576).toFixed(2)+' MB':Math.round(p.size/1024)+' KB'):'';
+      const sections=[
+        ['基本信息',[['文件名',p.file],['文件大小',fileSize],['分辨率',p.width&&p.height?p.width+' × '+p.height:''],['像素',megapixels],['拍摄时间',p.takenAt||''],['日期来源',p.dateSource==='exif'?'照片 EXIF':'上传记录'],['色彩空间',p.colorSpace],['时区',p.timeZone],['作者',p.artist],['版权',p.copyright]]],
+        ['拍摄参数',[['焦距',p.focalLength],['35mm 等效',p.focalLength35],['光圈',p.aperture],['曝光时间',p.shutter],['ISO',p.iso],['曝光补偿',p.exposureCompensation],['亮度',p.brightnessValue],['对焦距离',p.subjectDistance],['数码变焦',p.digitalZoom]]],
+        ['设备信息',[['制造商',p.make],['相机',p.camera],['镜头',p.lens],['软件',p.software],['方向',p.orientation]]],
+        ['拍摄模式',[['白平衡',p.whiteBalance],['曝光程序',p.exposureProgram],['曝光模式',p.exposureMode],['测光模式',p.meteringMode],['闪光灯',p.flash],['场景类型',p.sceneCaptureType],['对比度',p.contrast],['饱和度',p.saturation],['锐度',p.sharpness],['类型',p.isLivePhoto?'实况照片':'静态照片']]]
+      ];
+      document.getElementById('exif').innerHTML=sections.map(([title,rows])=>{const valid=rows.filter(row=>hasValue(row[1]));return valid.length?'<section class="viewer-data-section"><h3>'+title+'</h3>'+valid.map(row=>'<div class="viewer-data-row"><span>'+safe(row[0])+'</span><strong>'+safe(row[1])+'</strong></div>').join('')+'</section>':''}).join('');
+      const map=document.getElementById('viewerMap');
+      if(hasValue(p.latitude)&&hasValue(p.longitude)){const lat=Number(p.latitude),lon=Number(p.longitude);map.hidden=false;map.innerHTML='<h3>拍摄位置</h3><iframe loading="lazy" title="拍摄位置地图" src="https://www.openstreetmap.org/export/embed.html?marker='+encodeURIComponent(lat+','+lon)+'"></iframe><a target="_blank" rel="noopener" href="https://www.openstreetmap.org/?mlat='+encodeURIComponent(lat)+'&mlon='+encodeURIComponent(lon)+'#map=15/'+encodeURIComponent(lat)+'/'+encodeURIComponent(lon)+'">'+safe(lat.toFixed(5)+', '+lon.toFixed(5))+'</a>'}else{map.hidden=true;map.innerHTML=''}
+    }
+    function renderFilmstrip(){
+      const strip=document.getElementById('viewerFilmstrip'),radius=9,start=Math.max(0,current-radius),end=Math.min(items.length,current+radius+1);
+      strip.innerHTML=items.slice(start,end).map((p,offset)=>{const index=start+offset;return '<button type="button" data-film-index="'+index+'" class="'+(index===current?'active':'')+'" aria-label="查看 '+safe(p.title||p.file)+'"><img src="'+safe(p.thumb||p.full)+'" alt="" loading="lazy"></button>'}).join('');
+      requestAnimationFrame(()=>strip.querySelector('.active')?.scrollIntoView({block:'nearest',inline:'center'}));
+    }
+    function renderHistogram(image){
+      const canvas=document.getElementById('viewerHistogram'),box=canvas.getBoundingClientRect();if(!image.naturalWidth||!box.width)return;
+      const ratio=Math.min(2,devicePixelRatio||1),width=Math.max(240,Math.round(box.width*ratio)),height=Math.round(112*ratio);canvas.width=width;canvas.height=height;
+      const sample=document.createElement('canvas'),sampleWidth=320,sampleHeight=Math.max(1,Math.round(image.naturalHeight*sampleWidth/image.naturalWidth));sample.width=sampleWidth;sample.height=sampleHeight;
+      const sampleContext=sample.getContext('2d',{willReadFrequently:true});sampleContext.drawImage(image,0,0,sampleWidth,sampleHeight);
+      const pixels=sampleContext.getImageData(0,0,sampleWidth,sampleHeight).data,bins=[new Array(64).fill(0),new Array(64).fill(0),new Array(64).fill(0)];
+      for(let i=0;i<pixels.length;i+=4){bins[0][pixels[i]>>2]++;bins[1][pixels[i+1]>>2]++;bins[2][pixels[i+2]>>2]++}
+      const context=canvas.getContext('2d'),max=Math.max(1,...bins.flat());context.clearRect(0,0,width,height);context.strokeStyle='rgba(255,255,255,.08)';for(let y=1;y<4;y++){context.beginPath();context.moveTo(0,height*y/4);context.lineTo(width,height*y/4);context.stroke()}
+      ['#ff6b74','#67df91','#6ba7ff'].forEach((color,channel)=>{context.beginPath();bins[channel].forEach((value,index)=>{const x=index/(bins[channel].length-1)*width,y=height-value/max*(height-4);index?context.lineTo(x,y):context.moveTo(x,y)});context.strokeStyle=color;context.globalAlpha=.82;context.lineWidth=1.2*ratio;context.stroke()});context.globalAlpha=1;
+    }
+
     function openAt(index){
       if(!items.length) return; current=(index+items.length)%items.length; const p=items[current]; scale=1;
       viewerImage.style.transform='scale(1)'; viewerImage.src=p.full; viewerImage.alt=p.title||p.file||'照片';
       stage.classList.remove('live-playing');viewerVideo.pause();viewerVideo.removeAttribute('src');viewerVideo.load();
+      const liveBadge=document.getElementById('viewerLiveBadge');liveBadge.hidden=!(p.isLivePhoto&&p.liveVideo);
       if(p.isLivePhoto&&p.liveVideo){viewerVideo.src=p.liveVideo;document.getElementById('zoomHint').textContent=matchMedia('(hover:hover)').matches?'移入照片播放实况 · 双击缩放':'按住照片播放实况 · 双击缩放'}else document.getElementById('zoomHint').textContent='滚轮或双击缩放 · ESC 关闭';
       document.getElementById('viewerTitle').textContent=p.title||p.file||'未命名照片';
       document.getElementById('viewerKicker').textContent=p.dateSource==='exif'?'Captured moment · 拍摄时间':'Archive moment · 上传时间';
       document.getElementById('viewerDate').textContent=dateText(p);
       document.getElementById('viewerDescription').textContent=p.description||p.file||'';
       document.getElementById('viewerCount').textContent=String(current+1).padStart(2,'0')+' / '+String(items.length).padStart(2,'0');
-      const megapixels=p.width&&p.height?((p.width*p.height)/1000000).toFixed(1)+' MP':'';
-      const fileSize=p.size?(p.size>1048576?(p.size/1048576).toFixed(1)+' MB':Math.round(p.size/1024)+' KB'):'';
-      const meta=[['文件',p.file],['日期来源',p.dateSource==='exif'?'照片 EXIF':'上传记录'],['尺寸',(p.width||'—')+' × '+(p.height||'—')],['像素',megapixels],['大小',fileSize],['制造商',p.make],['相机',p.camera],['镜头',p.lens],['焦距',p.focalLength],['等效焦距',p.focalLength35],['光圈',p.aperture],['快门',p.shutter],['ISO',p.iso],['曝光补偿',p.exposureCompensation],['闪光灯',p.flash],['白平衡',p.whiteBalance],['软件',p.software],['地点',p.location],['类型',p.isLivePhoto?'实况照片':'静态照片']];
-      document.getElementById('exif').innerHTML=meta.filter(x=>x[1]).map(x=>'<div><dt>'+safe(x[0])+'</dt><dd>'+safe(x[1])+'</dd></div>').join('');
+      renderDetails(p);renderFilmstrip();
       viewer.classList.add('open'); document.body.classList.add('viewer-open'); document.getElementById('closeViewer').focus();
     }
     function close(){viewer.classList.remove('open');document.body.classList.remove('viewer-open');viewerImage.src='';viewerVideo.pause();viewerVideo.removeAttribute('src');stage.classList.remove('live-playing')}
@@ -158,11 +186,14 @@
     document.getElementById('nextPhoto').addEventListener('click',()=>openAt(current+1));
     document.getElementById('mobilePrevPhoto').addEventListener('click',e=>{e.stopPropagation();openAt(current-1)});
     document.getElementById('mobileNextPhoto').addEventListener('click',e=>{e.stopPropagation();openAt(current+1)});
+    document.getElementById('viewerFilmstrip').addEventListener('click',e=>{const button=e.target.closest('[data-film-index]');if(button)openAt(Number(button.dataset.filmIndex))});
+    viewerImage.addEventListener('load',()=>renderHistogram(viewerImage));
     viewer.addEventListener('click',e=>{if(e.target===viewer)close()});
     stage.addEventListener('wheel',e=>{e.preventDefault();zoom(scale+(e.deltaY<0?.3:-.3))},{passive:false});
     stage.addEventListener('dblclick',()=>zoom(scale>1?1:2));
     async function playLive(){if(!viewerVideo.src)return;stage.classList.add('live-playing');try{viewerVideo.currentTime=0;await viewerVideo.play()}catch(error){stage.classList.remove('live-playing')}}
     function stopLive(){if(!viewerVideo.src)return;viewerVideo.pause();stage.classList.remove('live-playing')}
+    document.getElementById('viewerLiveBadge').addEventListener('click',e=>{e.stopPropagation();stage.classList.contains('live-playing')?stopLive():playLive()});
     stage.addEventListener('mouseenter',playLive);stage.addEventListener('mouseleave',stopLive);
     stage.addEventListener('pointerdown',e=>{if(e.pointerType==='touch')playLive()});stage.addEventListener('pointerup',stopLive);stage.addEventListener('pointercancel',stopLive);
     stage.addEventListener('touchstart',e=>{touchX=e.changedTouches[0].clientX},{passive:true});

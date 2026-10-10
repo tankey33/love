@@ -39,6 +39,28 @@ body.page-note .content blockquote{border-left-color:var(--jp-deep)!important;ba
  body.site-page .nav a{font-size:11px!important;padding:18px 0!important}
  body.site-page .nav a:nth-child(4),body.site-page .nav a:nth-child(5){display:none}
 }
+
+/* immersive photo detail viewer */
+@media(min-width:721px){body.page-photo .topbar-inner{width:100%!important;max-width:none!important;padding-left:max(38px,5vw)!important;padding-right:max(38px,5vw)!important}body.page-photo .brand{justify-self:start}body.page-photo .nav{margin-left:auto}}
+body.page-photo .viewer{grid-template-columns:minmax(0,1fr) minmax(340px,25vw)!important}
+body.page-photo .stage{padding-bottom:92px!important}
+body.page-photo .viewer-panel{padding:20px 22px max(22px,env(safe-area-inset-bottom))!important}
+body.page-photo .viewer-panel .viewer-copy{margin:10px 0 22px!important}
+body.page-photo .viewer-filmstrip{position:absolute;z-index:9;left:12px;right:12px;bottom:10px;height:68px;padding:7px;display:flex;gap:7px;overflow-x:auto;scrollbar-width:none;border:1px solid rgba(255,255,255,.13);border-radius:14px;background:rgba(8,16,18,.58);backdrop-filter:blur(18px) saturate(145%);-webkit-backdrop-filter:blur(18px) saturate(145%)}
+body.page-photo .viewer-filmstrip::-webkit-scrollbar{display:none}
+body.page-photo .viewer-filmstrip button{flex:0 0 52px;width:52px;height:52px;padding:0;border:1px solid transparent;border-radius:8px;background:none;overflow:hidden;opacity:.58;cursor:pointer;transition:.2s}
+body.page-photo .viewer-filmstrip button:hover{opacity:.92;transform:translateY(-2px)}body.page-photo .viewer-filmstrip button.active{opacity:1;border-color:#fff;box-shadow:0 0 0 2px rgba(255,255,255,.25)}
+body.page-photo .viewer-filmstrip img{display:block!important;width:100%!important;height:100%!important;max-width:none!important;max-height:none!important;padding:0!important;border-radius:7px!important;object-fit:cover!important;box-shadow:none!important;transform:none!important}
+body.page-photo .viewer-live-badge{position:absolute;z-index:12;top:18px;left:18px;padding:8px 12px;border:1px solid rgba(255,226,72,.35);border-radius:999px;background:rgba(42,43,27,.7);color:#ffe141;font-size:12px;font-weight:700;letter-spacing:.08em;backdrop-filter:blur(14px);cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,.2)}
+body.page-photo .viewer-live-badge span{display:inline-block;margin-right:5px}body.page-photo .viewer-live-badge[hidden]{display:none!important}
+body.page-photo .viewer-details{display:grid;gap:12px;margin-top:24px}
+body.page-photo .viewer-data-section{padding:14px 0 4px;border-top:1px solid rgba(255,255,255,.12)}
+body.page-photo .viewer-data-section h3{margin:0 0 10px;color:rgba(255,255,255,.78);font-size:11px;font-weight:600;letter-spacing:.1em}
+body.page-photo .viewer-data-row{display:grid;grid-template-columns:minmax(82px,.72fr) minmax(0,1.28fr);gap:10px;padding:4px 0;font-size:10px;line-height:1.45}
+body.page-photo .viewer-data-row span{color:rgba(255,255,255,.42)}body.page-photo .viewer-data-row strong{color:rgba(255,255,255,.9);font-weight:500;text-align:right;overflow-wrap:anywhere}
+body.page-photo #viewerHistogram{display:block;width:100%;height:112px;border:1px solid rgba(255,255,255,.08);border-radius:10px;background:rgba(4,9,10,.45)}
+body.page-photo #viewerMap iframe{display:block;width:100%;height:150px;border:0;border-radius:10px;filter:saturate(.7) brightness(.82)}body.page-photo #viewerMap a{display:block;margin-top:8px;color:#a9c7c5;font-size:9px}
+@media(max-width:640px){body.page-photo .viewer{grid-template-columns:1fr!important}body.page-photo .stage{padding-bottom:8px!important}body.page-photo .viewer-filmstrip{display:none!important}body.page-photo .viewer-live-badge{top:10px;left:10px;padding:7px 10px;font-size:11px}body.page-photo .viewer-details{display:grid!important;margin-top:18px}body.page-photo .viewer-data-section{padding-top:12px}body.page-photo #viewerHistogram{height:92px}body.page-photo #viewerMap iframe{height:132px}}
 @media(max-width:720px){body.site-page .brand{font-size:9px!important;gap:.38em!important;letter-spacing:.14em!important}body.site-page .brand-since{display:none}}
 @media(max-width:720px){body.site-page .nav{min-width:0;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:none;white-space:nowrap}body.site-page .nav::-webkit-scrollbar{display:none}body.site-page .nav a:nth-child(4),body.site-page .nav a:nth-child(5){display:block!important;flex:0 0 auto}}
 

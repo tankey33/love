@@ -64,29 +64,48 @@ async function uploadPhotos(request, env) {
 
   const existing = await listContent(env, "photo/", true);
   const used = new Set(existing.map(item => item.path.toLowerCase()));
+  const existingBySha = new Map(existing.map(item => [item.sha, item]));
   const changes = [];
+  const skipped = [];
   const numericNames = existing.map(item => Number((item.name.match(/^(\d+)\./) || [])[1])).filter(Number.isFinite);
   let sequence = Math.max(0, ...numericNames) + 1;
   const numberWidth = Math.max(2, String(sequence + files.length - 1).length);
-  const groups = new Map();
+  const grouped = new Map();
 
   for (const [index, file] of files.entries()) {
     if (!IMAGE_TYPES.has(file.type) && !VIDEO_TYPES.has(file.type)) throw httpError(400, `${file.name} 不是支持的照片或实况视频格式`);
     if (file.size > MAX_FILE_BYTES) throw httpError(400, `${file.name} 超过 40MB`);
-    const extension = extensionFor(file);
     const meta = metadata[index] && typeof metadata[index] === "object" ? metadata[index] : {};
     const originalBase = String(meta.originalName || file.name).replace(/\.[^.]+$/, "").toLowerCase();
-    let stem = groups.get(originalBase);
-    if (!stem) { stem = String(sequence++).padStart(numberWidth, "0"); groups.set(originalBase, stem); }
-    let path = `photo/${stem}.${extension}`;
-    while (used.has(path.toLowerCase())) { stem = String(sequence++).padStart(numberWidth, "0"); groups.set(originalBase, stem); path = `photo/${stem}.${extension}`; }
-    used.add(path.toLowerCase());
-    changes.push({ path, content: arrayBufferToBase64(await file.arrayBuffer()), encoding: "base64" });
-    if (IMAGE_TYPES.has(file.type)) changes.push({ path: path.replace(/\.[^.]+$/, ".json"), content: JSON.stringify({ ...meta, uploadedAt: meta.uploadedAt || new Date().toISOString() }, null, 2) + "\n", encoding: "utf-8" });
+    if (!grouped.has(originalBase)) grouped.set(originalBase, []);
+    grouped.get(originalBase).push({ file, meta });
   }
 
-  const commit = await commitChanges(env, changes, `后台上传 ${files.length} 张照片`);
-  return { ok: true, count: files.length, commit: commit.sha };
+  for (const group of grouped.values()) {
+    const prepared = [];
+    for (const entry of group) {
+      const bytes = new Uint8Array(await entry.file.arrayBuffer());
+      prepared.push({ ...entry, bytes, sha: await gitBlobSha(bytes) });
+    }
+    if (prepared.some(item => existingBySha.has(item.sha))) {
+      skipped.push(...prepared.map(item => item.file.name));
+      continue;
+    }
+    let stem = String(sequence++).padStart(numberWidth, "0");
+    for (const item of prepared) {
+      const extension = extensionFor(item.file);
+      let path = `photo/${stem}.${extension}`;
+      while (used.has(path.toLowerCase())) { stem = String(sequence++).padStart(numberWidth, "0"); path = `photo/${stem}.${extension}`; }
+      used.add(path.toLowerCase());
+      changes.push({ path, content: arrayBufferToBase64(item.bytes), encoding: "base64" });
+      if (IMAGE_TYPES.has(item.file.type)) changes.push({ path: path.replace(/\.[^.]+$/, ".json"), content: JSON.stringify({ ...item.meta, uploadedAt: item.meta.uploadedAt || new Date().toISOString() }, null, 2) + "\n", encoding: "utf-8" });
+    }
+  }
+
+  if (!changes.length) return { ok: true, count: 0, skipped: skipped.length, duplicates: skipped };
+  const uploadedCount = files.length - skipped.length;
+  const commit = await commitChanges(env, changes, `后台上传 ${uploadedCount} 个文件`);
+  return { ok: true, count: uploadedCount, skipped: skipped.length, duplicates: skipped, commit: commit.sha };
 }
 
 async function savePost(request, env) {
@@ -210,4 +229,11 @@ function arrayBufferToBase64(value) {
   let binary = "";
   for (let offset = 0; offset < bytes.length; offset += 0x8000) binary += String.fromCharCode(...bytes.subarray(offset, offset + 0x8000));
   return btoa(binary);
+}
+async function gitBlobSha(bytes) {
+  const header = new TextEncoder().encode(`blob ${bytes.byteLength}\0`);
+  const payload = new Uint8Array(header.byteLength + bytes.byteLength);
+  payload.set(header); payload.set(bytes, header.byteLength);
+  const digest = new Uint8Array(await crypto.subtle.digest("SHA-1", payload));
+  return [...digest].map(value => value.toString(16).padStart(2, "0")).join("");
 }
