@@ -477,7 +477,11 @@ def generate_photos():
                 saved = json.loads(sidecar.read_text(encoding='utf-8'))
             except Exception:
                 saved = {}
-        exif = {**jpeg_exif(path), **saved}
+        # Prefer the image's own standard EXIF over older sidecars. Early browser
+        # uploads could misread big-endian TIFF offsets; sidecars still supply
+        # fields that are no longer embedded after client-side compression.
+        embedded = jpeg_exif(path)
+        exif = {**saved, **{k: v for k, v in embedded.items() if v not in (None, '')}}
         taken_at = normalize_photo_date(exif.get('takenAt'))
         uploaded_at = exif.get('uploadedAt') or git_upload_date(path, st.st_mtime)
         live_video = next((path.with_suffix(ext) for ext in VIDEO_EXTS if path.with_suffix(ext).exists()), None)
