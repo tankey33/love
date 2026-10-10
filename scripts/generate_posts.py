@@ -386,6 +386,34 @@ def clean_metadata_text(value, device=False):
     return text
 
 
+def clean_device_text(value, field):
+    """Return only device strings that are recognisable enough to be trustworthy."""
+    text = clean_metadata_text(value, True)
+    if not text:
+        return ''
+    ascii_text = ''.join(ch for ch in str(text) if ord(ch) < 128).strip()
+    if not ascii_text or len(ascii_text) / max(1, len(str(text))) < .78:
+        return ''
+    text = re.sub(r'\s+', ' ', ascii_text)
+    upper = text.upper()
+    if field == 'make':
+        brands = [('FUJIFILM', 'FUJIFILM'), ('PANASONIC', 'Panasonic'), ('OLYMPUS', 'OLYMPUS'),
+                  ('RICOH', 'RICOH'), ('NIKON', 'NIKON'), ('CANON', 'Canon'), ('SONY', 'SONY'),
+                  ('APPLE', 'Apple'), ('LEICA', 'LEICA'), ('SAMSUNG', 'Samsung'), ('GOOGLE', 'Google')]
+        return next((label for token, label in brands if token in upper), '')
+    if field == 'camera':
+        patterns = (r'^iPhone\s+\w', r'^ILCE-[A-Z0-9-]+$', r'^(?:NEX|DSC)-[A-Z0-9-]+$',
+                    r'^RICOH\s+GR\b', r'^(?:Canon|NIKON|FUJIFILM|Panasonic|LEICA|OLYMPUS|Samsung|Google)\b')
+        return text if any(re.search(pattern, text, re.I) for pattern in patterns) else ''
+    if field == 'lens':
+        return text if len(text) >= 6 and re.search(r'(?:\b\d+(?:\.\d+)?\s*mm\b|\bcamera\b|\blens\b|\b(?:FE|RF|EF|XF)\s)', text, re.I) else ''
+    if field == 'software':
+        if re.match(r'^\d{4}[:/-]\d{2}', text):
+            return ''
+        return text if re.search(r'(?:Adobe|Lightroom|Photoshop|Capture|Camera|ILCE|iOS|Android)|^\d+(?:\.\d+){1,3}$', text, re.I) else ''
+    return text
+
+
 def git_upload_date(path: Path, fallback: float):
     """Use the commit that introduced/last replaced the file as its upload date."""
     try:
@@ -485,10 +513,13 @@ def generate_photos():
         taken_at = normalize_photo_date(exif.get('takenAt'))
         uploaded_at = exif.get('uploadedAt') or git_upload_date(path, st.st_mtime)
         live_video = next((path.with_suffix(ext) for ext in VIDEO_EXTS if path.with_suffix(ext).exists()), None)
-        make = clean_metadata_text(exif.get('make', ''), True)
-        camera = clean_metadata_text(exif.get('camera', ''), True)
-        if re.match(r'^(?:ILCE|NEX|DSC)(?:-|$)', str(make), re.I) and not camera:
-            camera, make = make, 'SONY'
+        raw_make = clean_metadata_text(exif.get('make', ''), True)
+        make = clean_device_text(raw_make, 'make')
+        camera = clean_device_text(exif.get('camera', ''), 'camera')
+        if not camera and re.match(r'^RICOH\s+GR\b', str(raw_make), re.I):
+            camera = re.sub(r'[^\x20-\x7e]', '', str(raw_make)).strip()
+        if not camera and re.match(r'^(?:ILCE|NEX|DSC)-', str(raw_make), re.I):
+            camera, make = clean_device_text(raw_make, 'camera'), 'SONY'
         photos.append({
             'id': path.stem,
             'file': path.name,
@@ -503,7 +534,7 @@ def generate_photos():
             'dateSource': 'exif' if taken_at else 'upload',
             'make': make,
             'camera': camera,
-            'lens': clean_metadata_text(exif.get('lens', ''), True),
+            'lens': clean_device_text(exif.get('lens', ''), 'lens'),
             'aperture': ('f/' + ('%.1f' % exif['aperture']).rstrip('0').rstrip('.')) if isinstance(exif.get('aperture'), (int, float)) else exif.get('aperture', ''),
             'shutter': (('1/%d s' % round(1 / exif['shutterSeconds'])) if exif.get('shutterSeconds', 0) and exif['shutterSeconds'] < 1 else ('%.2f s' % exif['shutterSeconds'])) if isinstance(exif.get('shutterSeconds'), (int, float)) else exif.get('shutter', ''),
             'iso': exif.get('iso', ''),
@@ -512,7 +543,7 @@ def generate_photos():
             'exposureCompensation': (('%+.1f EV' % exif['exposureCompensation'])) if isinstance(exif.get('exposureCompensation'), (int, float)) else exif.get('exposureCompensation', ''),
             'flash': ('闪光' if int(exif['flash']) & 1 else '未闪光') if isinstance(exif.get('flash'), (int, float)) else exif.get('flash', ''),
             'whiteBalance': ('手动' if int(exif['whiteBalance']) else '自动') if isinstance(exif.get('whiteBalance'), (int, float)) else exif.get('whiteBalance', ''),
-            'software': clean_metadata_text(exif.get('software', ''), True),
+            'software': clean_device_text(exif.get('software', ''), 'software'),
             'colorSpace': exif.get('colorSpace', ''),
             'artist': exif.get('artist', ''),
             'copyright': exif.get('copyright', ''),

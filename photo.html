@@ -131,15 +131,27 @@
       }
       return text;
     }
+    function cleanDeviceValue(value,field){
+      const raw=cleanMetadataValue(value,true);if(!raw)return '';
+      const ascii=[...raw].filter(char=>char.charCodeAt(0)<128).join('').trim();
+      if(!ascii||ascii.length/raw.length<.78)return '';
+      const text=ascii.replace(/\s+/g,' '),upper=text.toUpperCase();
+      if(field==='make'){const brands=[['FUJIFILM','FUJIFILM'],['PANASONIC','Panasonic'],['OLYMPUS','OLYMPUS'],['RICOH','RICOH'],['NIKON','NIKON'],['CANON','Canon'],['SONY','SONY'],['APPLE','Apple'],['LEICA','LEICA'],['SAMSUNG','Samsung'],['GOOGLE','Google']];return brands.find(([token])=>upper.includes(token))?.[1]||''}
+      if(field==='camera')return [/^iPhone\s+\w/i,/^ILCE-[A-Z0-9-]+$/i,/^(?:NEX|DSC)-[A-Z0-9-]+$/i,/^RICOH\s+GR\b/i,/^(?:Canon|NIKON|FUJIFILM|Panasonic|LEICA|OLYMPUS|Samsung|Google)\b/i].some(pattern=>pattern.test(text))?text:'';
+      if(field==='lens')return text.length>=6&&/(?:\b\d+(?:\.\d+)?\s*mm\b|\bcamera\b|\blens\b|\b(?:FE|RF|EF|XF)\s)/i.test(text)?text:'';
+      if(field==='software')return !/^\d{4}[:/-]\d{2}/.test(text)&&/(?:Adobe|Lightroom|Photoshop|Capture|Camera|ILCE|iOS|Android)|^\d+(?:\.\d+){1,3}$/i.test(text)?text:'';
+      return text;
+    }
     function renderDetails(p){
       const megapixels=p.width&&p.height?((p.width*p.height)/1000000).toFixed(2)+' MP':'';
       const fileSize=p.size?(p.size>1048576?(p.size/1048576).toFixed(2)+' MB':Math.round(p.size/1024)+' KB'):'';
-      let make=cleanMetadataValue(p.make,true),camera=cleanMetadataValue(p.camera,true);
-      if(/^(?:ILCE|NEX|DSC)(?:-|$)/i.test(make)&&!camera){camera=make;make='SONY'}
+      const rawMake=cleanMetadataValue(p.make,true);let make=cleanDeviceValue(rawMake,'make'),camera=cleanDeviceValue(p.camera,'camera');
+      if(!camera&&/^RICOH\s+GR\b/i.test(rawMake))camera=[...rawMake].filter(char=>char.charCodeAt(0)<128).join('').trim();
+      if(!camera&&/^(?:ILCE|NEX|DSC)-/i.test(rawMake)){camera=cleanDeviceValue(rawMake,'camera');make='SONY'}
       const sections=[
         ['基本信息',[['文件名',p.file],['文件大小',fileSize],['分辨率',p.width&&p.height?p.width+' × '+p.height:''],['像素',megapixels],['拍摄时间',p.takenAt||''],['日期来源',p.dateSource==='exif'?'照片 EXIF':'上传记录'],['色彩空间',p.colorSpace],['时区',p.timeZone],['作者',p.artist],['版权',p.copyright]]],
         ['拍摄参数',[['焦距',p.focalLength],['35mm 等效',p.focalLength35],['光圈',p.aperture],['曝光时间',p.shutter],['ISO',p.iso],['曝光补偿',p.exposureCompensation],['亮度',p.brightnessValue],['对焦距离',p.subjectDistance],['数码变焦',p.digitalZoom]]],
-        ['设备信息',[['制造商',make],['相机',camera],['镜头',cleanMetadataValue(p.lens,true)],['软件',cleanMetadataValue(p.software,true)],['方向',cleanMetadataValue(p.orientation)]]],
+        ['设备信息',[['制造商',make],['相机',camera],['镜头',cleanDeviceValue(p.lens,'lens')],['软件',cleanDeviceValue(p.software,'software')],['方向',cleanMetadataValue(p.orientation)]]],
         ['拍摄模式',[['白平衡',p.whiteBalance],['曝光程序',p.exposureProgram],['曝光模式',p.exposureMode],['测光模式',p.meteringMode],['闪光灯',p.flash],['场景类型',p.sceneCaptureType],['对比度',p.contrast],['饱和度',p.saturation],['锐度',p.sharpness],['类型',p.isLivePhoto?'实况照片':'静态照片']]]
       ];
       document.getElementById('exif').innerHTML=sections.map(([title,rows])=>{const valid=rows.filter(row=>hasValue(row[1]));return valid.length?'<section class="viewer-data-section"><h3>'+title+'</h3>'+valid.map(row=>'<div class="viewer-data-row"><span>'+safe(row[0])+'</span><strong>'+safe(row[1])+'</strong></div>').join('')+'</section>':''}).join('');
