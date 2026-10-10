@@ -41,7 +41,7 @@
     .photo-summary{max-height:0;margin:0;color:rgba(255,255,255,.78);font-size:10px;line-height:1.6;opacity:0;overflow:hidden;transform:translateY(6px);transition:max-height .35s ease,opacity .3s ease,transform .35s ease}.photo-card:hover .photo-summary,.photo-card:focus-visible .photo-summary{max-height:44px;margin-top:7px;opacity:1;transform:none}.live-badge{position:absolute;z-index:3;right:10px;top:10px;display:flex;align-items:center;gap:5px;padding:6px 9px;border:1px solid rgba(255,255,255,.5);border-radius:999px;background:rgba(18,36,38,.46);backdrop-filter:blur(12px);color:white;font-size:9px;letter-spacing:.1em}.tile-video{position:absolute;inset:0;z-index:1;width:100%;height:100%;object-fit:cover;opacity:0;pointer-events:none;transition:opacity .35s ease}.photo-card.live-playing .tile-video{opacity:1}.photo-card.live-playing .photo-frame>img{opacity:0}.stage video{position:absolute;inset:0;margin:auto;width:100%;height:100%;object-fit:contain;opacity:0;pointer-events:none;transition:opacity .35s ease}.stage.live-playing video{opacity:1}.stage.live-playing>img{opacity:0}.viewer-nav button{min-width:0}.viewer-nav span{white-space:nowrap}
     @media(max-width:640px){body.page-photo .viewer-panel{display:block!important;position:relative!important;left:auto!important;right:auto!important;bottom:auto!important;max-height:42dvh!important;overflow-y:auto!important}.viewer-top{position:absolute!important;top:14px!important;right:14px!important;z-index:5}.viewer-copy{padding:4px 54px 0 4px!important}.viewer-kicker{padding-right:8px}.viewer-date{display:block!important;font-size:18px!important}.viewer-description{display:block!important;margin-top:7px!important}.exif{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px!important;margin-top:18px!important;padding-top:15px!important}.exif dd{font-size:11px!important;overflow-wrap:anywhere}.viewer-nav{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;width:100%!important;margin-top:16px!important}.viewer-nav button{width:100%;height:46px!important;padding:0 10px;border-radius:14px!important}.viewer-nav button span{display:inline!important}.viewer-close{width:38px!important;height:38px!important}.photo-summary{display:none}}
   </style>
-<link rel="stylesheet" href="assets/css/japanese-theme.css?v=20261010f">
+<link rel="stylesheet" href="assets/css/japanese-theme.css?v=20261011a">
 </head>
 <body class="site-page page-photo">
   <header class="topbar"><div class="topbar-inner">
@@ -119,13 +119,27 @@
     }
 
     const hasValue=value=>value!==undefined&&value!==null&&value!=='';
+    function cleanMetadataValue(value,device=false){
+      if(typeof value!=='string')return value;
+      const text=value.normalize('NFKC').replace(/[\u0000-\u001f\u007f\ufffd]/g,'').replace(/\s+/g,' ').trim();
+      if(!text||text.length>180)return '';
+      if(device){
+        const compact=[...text].filter(char=>!/\s/.test(char));
+        const meaningful=compact.filter(char=>/[\p{L}\p{N}]/u.test(char)).length;
+        if(text.length<2||!compact.length||meaningful/compact.length<.58)return '';
+        if(/^\d{4}[:/-]\d{2}[:/-]\d{2}\s+\d{2}:\d{2}/.test(text))return '';
+      }
+      return text;
+    }
     function renderDetails(p){
       const megapixels=p.width&&p.height?((p.width*p.height)/1000000).toFixed(2)+' MP':'';
       const fileSize=p.size?(p.size>1048576?(p.size/1048576).toFixed(2)+' MB':Math.round(p.size/1024)+' KB'):'';
+      let make=cleanMetadataValue(p.make,true),camera=cleanMetadataValue(p.camera,true);
+      if(/^(?:ILCE|NEX|DSC)(?:-|$)/i.test(make)&&!camera){camera=make;make='SONY'}
       const sections=[
         ['基本信息',[['文件名',p.file],['文件大小',fileSize],['分辨率',p.width&&p.height?p.width+' × '+p.height:''],['像素',megapixels],['拍摄时间',p.takenAt||''],['日期来源',p.dateSource==='exif'?'照片 EXIF':'上传记录'],['色彩空间',p.colorSpace],['时区',p.timeZone],['作者',p.artist],['版权',p.copyright]]],
         ['拍摄参数',[['焦距',p.focalLength],['35mm 等效',p.focalLength35],['光圈',p.aperture],['曝光时间',p.shutter],['ISO',p.iso],['曝光补偿',p.exposureCompensation],['亮度',p.brightnessValue],['对焦距离',p.subjectDistance],['数码变焦',p.digitalZoom]]],
-        ['设备信息',[['制造商',p.make],['相机',p.camera],['镜头',p.lens],['软件',p.software],['方向',p.orientation]]],
+        ['设备信息',[['制造商',make],['相机',camera],['镜头',cleanMetadataValue(p.lens,true)],['软件',cleanMetadataValue(p.software,true)],['方向',cleanMetadataValue(p.orientation)]]],
         ['拍摄模式',[['白平衡',p.whiteBalance],['曝光程序',p.exposureProgram],['曝光模式',p.exposureMode],['测光模式',p.meteringMode],['闪光灯',p.flash],['场景类型',p.sceneCaptureType],['对比度',p.contrast],['饱和度',p.saturation],['锐度',p.sharpness],['类型',p.isLivePhoto?'实况照片':'静态照片']]]
       ];
       document.getElementById('exif').innerHTML=sections.map(([title,rows])=>{const valid=rows.filter(row=>hasValue(row[1]));return valid.length?'<section class="viewer-data-section"><h3>'+title+'</h3>'+valid.map(row=>'<div class="viewer-data-row"><span>'+safe(row[0])+'</span><strong>'+safe(row[1])+'</strong></div>').join('')+'</section>':''}).join('');
@@ -160,6 +174,7 @@
       document.getElementById('viewerDescription').textContent=p.description||p.file||'';
       document.getElementById('viewerCount').textContent=String(current+1).padStart(2,'0')+' / '+String(items.length).padStart(2,'0');
       renderDetails(p);renderFilmstrip();
+      viewer.classList.remove('details-hidden');document.querySelector('.viewer-panel').setAttribute('aria-hidden','false');
       viewer.classList.add('open'); document.body.classList.add('viewer-open'); document.getElementById('closeViewer').focus();
     }
     function close(){viewer.classList.remove('open');document.body.classList.remove('viewer-open');viewerImage.src='';viewerVideo.pause();viewerVideo.removeAttribute('src');stage.classList.remove('live-playing')}
@@ -187,6 +202,7 @@
     document.getElementById('mobilePrevPhoto').addEventListener('click',e=>{e.stopPropagation();openAt(current-1)});
     document.getElementById('mobileNextPhoto').addEventListener('click',e=>{e.stopPropagation();openAt(current+1)});
     document.getElementById('viewerFilmstrip').addEventListener('click',e=>{const button=e.target.closest('[data-film-index]');if(button)openAt(Number(button.dataset.filmIndex))});
+    stage.addEventListener('click',e=>{if(!matchMedia('(max-width:640px)').matches||e.target.closest('button')||scale>1)return;const hidden=viewer.classList.toggle('details-hidden');document.querySelector('.viewer-panel').setAttribute('aria-hidden',String(hidden))});
     viewerImage.addEventListener('load',()=>renderHistogram(viewerImage));
     viewer.addEventListener('click',e=>{if(e.target===viewer)close()});
     stage.addEventListener('wheel',e=>{e.preventDefault();zoom(scale+(e.deltaY<0?.3:-.3))},{passive:false});

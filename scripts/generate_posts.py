@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 from pathlib import Path
-import json, re, html, struct, subprocess
+import json, re, html, struct, subprocess, unicodedata
 from datetime import datetime, timezone
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -365,6 +365,27 @@ def normalize_photo_date(value):
     return ''
 
 
+def clean_metadata_text(value, device=False):
+    """Keep useful EXIF text while hiding damaged byte-decoding artifacts."""
+    if value is None:
+        return ''
+    if not isinstance(value, str):
+        return value
+    text = unicodedata.normalize('NFKC', value)
+    text = ''.join(ch for ch in text if unicodedata.category(ch) != 'Cc')
+    text = re.sub(r'\s+', ' ', text).strip()
+    if not text or len(text) > 180 or '\ufffd' in text:
+        return ''
+    if device:
+        compact = [ch for ch in text if not ch.isspace()]
+        meaningful = sum(ch.isalnum() for ch in compact)
+        if len(text) < 2 or not compact or meaningful / len(compact) < .58:
+            return ''
+        if re.match(r'^\d{4}[:/-]\d{2}[:/-]\d{2}\s+\d{2}:\d{2}', text):
+            return ''
+    return text
+
+
 def git_upload_date(path: Path, fallback: float):
     """Use the commit that introduced/last replaced the file as its upload date."""
     try:
@@ -460,6 +481,10 @@ def generate_photos():
         taken_at = normalize_photo_date(exif.get('takenAt'))
         uploaded_at = exif.get('uploadedAt') or git_upload_date(path, st.st_mtime)
         live_video = next((path.with_suffix(ext) for ext in VIDEO_EXTS if path.with_suffix(ext).exists()), None)
+        make = clean_metadata_text(exif.get('make', ''), True)
+        camera = clean_metadata_text(exif.get('camera', ''), True)
+        if re.match(r'^(?:ILCE|NEX|DSC)(?:-|$)', str(make), re.I) and not camera:
+            camera, make = make, 'SONY'
         photos.append({
             'id': path.stem,
             'file': path.name,
@@ -468,13 +493,13 @@ def generate_photos():
             'height': size[1],
             'size': st.st_size,
             'title': pretty_title(path.stem),
-            'description': exif.get('description', ''),
+            'description': clean_metadata_text(exif.get('description', '')),
             'takenAt': taken_at,
             'uploadedAt': uploaded_at,
             'dateSource': 'exif' if taken_at else 'upload',
-            'make': exif.get('make', ''),
-            'camera': exif.get('camera', ''),
-            'lens': exif.get('lens', ''),
+            'make': make,
+            'camera': camera,
+            'lens': clean_metadata_text(exif.get('lens', ''), True),
             'aperture': ('f/' + ('%.1f' % exif['aperture']).rstrip('0').rstrip('.')) if isinstance(exif.get('aperture'), (int, float)) else exif.get('aperture', ''),
             'shutter': (('1/%d s' % round(1 / exif['shutterSeconds'])) if exif.get('shutterSeconds', 0) and exif['shutterSeconds'] < 1 else ('%.2f s' % exif['shutterSeconds'])) if isinstance(exif.get('shutterSeconds'), (int, float)) else exif.get('shutter', ''),
             'iso': exif.get('iso', ''),
@@ -483,7 +508,7 @@ def generate_photos():
             'exposureCompensation': (('%+.1f EV' % exif['exposureCompensation'])) if isinstance(exif.get('exposureCompensation'), (int, float)) else exif.get('exposureCompensation', ''),
             'flash': ('闪光' if int(exif['flash']) & 1 else '未闪光') if isinstance(exif.get('flash'), (int, float)) else exif.get('flash', ''),
             'whiteBalance': ('手动' if int(exif['whiteBalance']) else '自动') if isinstance(exif.get('whiteBalance'), (int, float)) else exif.get('whiteBalance', ''),
-            'software': exif.get('software', ''),
+            'software': clean_metadata_text(exif.get('software', ''), True),
             'colorSpace': exif.get('colorSpace', ''),
             'artist': exif.get('artist', ''),
             'copyright': exif.get('copyright', ''),

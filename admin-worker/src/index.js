@@ -1,6 +1,8 @@
 const JSON_HEADERS = { "content-type": "application/json; charset=utf-8" };
 const IMAGE_TYPES = new Set(["image/jpeg", "image/png", "image/webp", "image/gif"]);
 const VIDEO_TYPES = new Set(["video/quicktime", "video/mp4", "video/x-m4v"]);
+const IMAGE_EXTENSIONS = new Set(["jpg", "jpeg", "png", "webp", "gif"]);
+const VIDEO_EXTENSIONS = new Set(["mov", "mp4", "m4v"]);
 const MAX_FILE_BYTES = 40 * 1024 * 1024;
 const API_VERSION = "2022-11-28";
 
@@ -62,23 +64,25 @@ async function uploadPhotos(request, env) {
   const totalBytes = files.reduce((sum, file) => sum + file.size, 0);
   if (totalBytes > 80 * 1024 * 1024) throw httpError(400, "单次上传总大小不能超过 80MB，请分批上传");
 
-  const existing = await listContent(env, "photo/", true);
+  const existing = await listBlobs(env, "photo/");
+  const media = existing.filter(item => mediaKindFromName(item.name));
   const used = new Set(existing.map(item => item.path.toLowerCase()));
-  const existingBySha = new Map(existing.map(item => [item.sha, item]));
+  const existingBySha = new Map(media.map(item => [item.sha, item]));
   const changes = [];
   const skipped = [];
-  const numericNames = existing.map(item => Number((item.name.match(/^(\d+)\./) || [])[1])).filter(Number.isFinite);
+  const numericNames = media.map(item => Number((item.name.match(/^(\d+)\./) || [])[1])).filter(Number.isFinite);
   let sequence = Math.max(0, ...numericNames) + 1;
   const numberWidth = Math.max(2, String(sequence + files.length - 1).length);
   const grouped = new Map();
 
   for (const [index, file] of files.entries()) {
-    if (!IMAGE_TYPES.has(file.type) && !VIDEO_TYPES.has(file.type)) throw httpError(400, `${file.name} 不是支持的照片或实况视频格式`);
+    const kind = mediaKind(file);
+    if (!kind) throw httpError(400, `${file.name} 不是支持的照片或实况视频格式`);
     if (file.size > MAX_FILE_BYTES) throw httpError(400, `${file.name} 超过 40MB`);
     const meta = metadata[index] && typeof metadata[index] === "object" ? metadata[index] : {};
     const originalBase = String(meta.originalName || file.name).replace(/\.[^.]+$/, "").toLowerCase();
     if (!grouped.has(originalBase)) grouped.set(originalBase, []);
-    grouped.get(originalBase).push({ file, meta });
+    grouped.get(originalBase).push({ file, meta, kind });
   }
 
   for (const group of grouped.values()) {
@@ -87,23 +91,31 @@ async function uploadPhotos(request, env) {
       const bytes = new Uint8Array(await entry.file.arrayBuffer());
       prepared.push({ ...entry, bytes, sha: await gitBlobSha(bytes) });
     }
-    if (prepared.some(item => existingBySha.has(item.sha))) {
-      skipped.push(...prepared.map(item => item.file.name));
-      continue;
-    }
-    let stem = String(sequence++).padStart(numberWidth, "0");
+    const matched = prepared.map(item => existingBySha.get(item.sha)).find(Boolean);
+    let stem = matched ? matched.name.replace(/\.[^.]+$/, "") : String(sequence++).padStart(numberWidth, "0");
     for (const item of prepared) {
+      if (existingBySha.has(item.sha)) {
+        skipped.push(item.file.name);
+        continue;
+      }
       const extension = extensionFor(item.file);
       let path = `photo/${stem}.${extension}`;
-      while (used.has(path.toLowerCase())) { stem = String(sequence++).padStart(numberWidth, "0"); path = `photo/${stem}.${extension}`; }
+      if (used.has(path.toLowerCase())) {
+        if (matched) {
+          skipped.push(item.file.name);
+          continue;
+        }
+        do { stem = String(sequence++).padStart(numberWidth, "0"); path = `photo/${stem}.${extension}`; } while (used.has(path.toLowerCase()));
+      }
       used.add(path.toLowerCase());
+      existingBySha.set(item.sha, { path, name: path.split("/").pop(), sha: item.sha });
       changes.push({ path, content: arrayBufferToBase64(item.bytes), encoding: "base64" });
-      if (IMAGE_TYPES.has(item.file.type)) changes.push({ path: path.replace(/\.[^.]+$/, ".json"), content: JSON.stringify({ ...item.meta, uploadedAt: item.meta.uploadedAt || new Date().toISOString() }, null, 2) + "\n", encoding: "utf-8" });
+      if (item.kind === "image") changes.push({ path: path.replace(/\.[^.]+$/, ".json"), content: JSON.stringify({ ...item.meta, uploadedAt: item.meta.uploadedAt || new Date().toISOString() }, null, 2) + "\n", encoding: "utf-8" });
     }
   }
 
   if (!changes.length) return { ok: true, count: 0, skipped: skipped.length, duplicates: skipped };
-  const uploadedCount = files.length - skipped.length;
+  const uploadedCount = changes.filter(change => mediaKindFromName(change.path)).length;
   const commit = await commitChanges(env, changes, `后台上传 ${uploadedCount} 个文件`);
   return { ok: true, count: uploadedCount, skipped: skipped.length, duplicates: skipped, commit: commit.sha };
 }
@@ -143,23 +155,31 @@ async function deletePaths(request, env, prefix) {
     const ref = await github(env, `/git/ref/heads/${encodeURIComponent(branch(env))}`);
     const tree = await github(env, `/git/trees/${ref.object.sha}?recursive=1`);
     const existing = new Set((tree.tree || []).map(item => item.path));
-    const sidecars = paths.map(path => path.replace(/\.[^.]+$/, ".json")).filter(path => existing.has(path));
-    paths = [...paths, ...sidecars];
+    const companions = paths.flatMap(path => {
+      const stem = path.replace(/\.[^.]+$/, "");
+      return [`${stem}.json`, ...[...VIDEO_EXTENSIONS].map(ext => `${stem}.${ext}`)];
+    }).filter(path => existing.has(path));
+    paths = [...new Set([...paths, ...companions])];
   }
   const commit = await commitChanges(env, paths.map(path => ({ path, sha: null })), `后台删除 ${paths.length} 项内容`);
   return { ok: true, count: paths.length, commit: commit.sha };
 }
 
 async function listContent(env, prefix, imagesOnly) {
-  const ref = await github(env, `/git/ref/heads/${encodeURIComponent(branch(env))}`);
-  const tree = await github(env, `/git/trees/${ref.object.sha}?recursive=1`);
+  const items = await listBlobs(env, prefix);
   const imagePattern = /\.(?:jpe?g|png|webp|gif)$/i;
-  return (tree.tree || [])
-    .filter(item => item.type === "blob" && item.path.startsWith(prefix))
+  return items
     .filter(item => !imagesOnly || imagePattern.test(item.path))
     .filter(item => imagesOnly || (/\.md$/i.test(item.path) && !/\/README\.md$/i.test(item.path)))
-    .map(item => ({ path: item.path, name: item.path.split("/").pop(), size: item.size, sha: item.sha }))
     .sort((a, b) => b.name.localeCompare(a.name, "zh-CN", { numeric: true }));
+}
+
+async function listBlobs(env, prefix) {
+  const ref = await github(env, `/git/ref/heads/${encodeURIComponent(branch(env))}`);
+  const tree = await github(env, `/git/trees/${ref.object.sha}?recursive=1`);
+  return (tree.tree || [])
+    .filter(item => item.type === "blob" && item.path.startsWith(prefix))
+    .map(item => ({ path: item.path, name: item.path.split("/").pop(), size: item.size, sha: item.sha }));
 }
 
 async function commitChanges(env, changes, message) {
@@ -218,6 +238,9 @@ function cleanSlug(value) {
 }
 function cleanName(value) { return String(value || "").trim().replace(/\s+/g, "-").replace(/[^a-zA-Z0-9\u4e00-\u9fff_-]/g, "").slice(0, 80); }
 function cleanText(value, max) { return String(value || "").trim().slice(0, max); }
+function fileExtension(name) { return String(name || "").split(".").pop().toLowerCase(); }
+function mediaKindFromName(name) { const ext = fileExtension(name); return IMAGE_EXTENSIONS.has(ext) ? "image" : VIDEO_EXTENSIONS.has(ext) ? "video" : ""; }
+function mediaKind(file) { return IMAGE_TYPES.has(file.type) || IMAGE_EXTENSIONS.has(fileExtension(file.name)) ? "image" : VIDEO_TYPES.has(file.type) || VIDEO_EXTENSIONS.has(fileExtension(file.name)) ? "video" : ""; }
 function extensionFor(file) { return ({ "image/jpeg": "jpg", "image/png": "png", "image/webp": "webp", "image/gif": "gif", "video/quicktime": "mov", "video/mp4": "mp4", "video/x-m4v": "m4v" })[file.type] || file.name.split('.').pop().toLowerCase(); }
 function encodePath(path) { return path.split("/").map(encodeURIComponent).join("/"); }
 function json(data, status = 200) { return new Response(JSON.stringify(data), { status, headers: JSON_HEADERS }); }
