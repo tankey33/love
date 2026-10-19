@@ -1,0 +1,21 @@
+@font-face{font-family:'Memory Latin';src:url('../fonts/memory-latin.woff2') format('woff2');font-display:swap;font-style:normal;font-weight:400 700}
+@font-face{font-family:'Memory Serif';src:url('../fonts/memory-serif.woff2') format('woff2');font-display:swap;font-style:normal;font-weight:400 700}
+:root{
+  color-scheme:light;
+  --jp-mist:#edf3f4;--jp-paper:#f8faf9;--jp-ink:#213b3e;--jp-soft:#526468;
+  --jp-aqua:#c2dfe1;--jp-deep:#486d70;--jp-pale:#e3eff0;--jp-line:rgba(33,59,62,.18);
+  --shu:#a7473e;--jp-serif:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif;
+  --jp-sans:var(--jp-serif);--jp-latin:'Memory Latin',Georgia,serif;
+  --font-display:'Memory Serif','Noto Serif SC','Songti SC',Georgia,serif;--font-latin:var(--jp-latin);
+  --surface:var(--jp-paper);--text:var(--jp-ink);--muted:var(--jp-soft);--line:var(--jp-line);
+  --paper:var(--jp-mist);--ink:var(--jp-ink);--accent:var(--shu);--deep:var(--jp-deep);
+  --radius-sm:10px;--radius:18px;--space:clamp(16px,4vw,56px);--shadow:0 16px 46px rgba(30,59,62,.08);
+}
+@media(prefers-color-scheme:dark){:root:not([data-theme='light']){
+  color-scheme:dark;--jp-mist:#1d1f1c;--jp-paper:#282c26;--jp-ink:#f0e9dd;--jp-soft:#bdb7ab;
+  --jp-aqua:#34433b;--jp-deep:#b3cbb9;--jp-pale:#303a31;--jp-line:rgba(240,233,221,.2);--shu:#e49a84;--shadow:0 16px 46px rgba(0,0,0,.2)
+}}
+:root[data-theme='dark']{
+  color-scheme:dark;--jp-mist:#1d1f1c;--jp-paper:#282c26;--jp-ink:#f0e9dd;--jp-soft:#bdb7ab;
+  --jp-aqua:#34433b;--jp-deep:#b3cbb9;--jp-pale:#303a31;--jp-line:rgba(240,233,221,.2);--shu:#e49a84;--shadow:0 16px 46px rgba(0,0,0,.2)
+}

@@ -1,16 +1,14 @@
 {
-  "takenAt": "2025:11:16 16:32:50",
+  "lens": "II*",
   "make": "ILCE",
-  "camera": "\u0000\u000f\u0001\u0002\u0000\u0005\u0000",
-  "lens": "II*\u0000",
-  "aperture": 0.6154342477138226,
-  "shutterSeconds": 0,
+  "originalName": "DT_00486.jpeg",
+  "aperture": 0.6154342477164497,
   "iso": 160,
-  "focalLength": 1.3264842973681805,
-  "focalLength35": 0,
+  "focalLength": 1.326484297366615,
   "flash": 16,
   "whiteBalance": 0,
-  "software": "2025:11:16 16:",
-  "uploadedAt": "2026-10-10T14:10:37.259Z",
-  "originalName": "DT_00486.jpeg"
+  "colorSpace": 1,
+  "takenAt": "2025-11-16T16:32:50",
+  "uploadedAt": "2026-10-10T14:10:37.259000+00:00",
+  "originalSha": "62c215b15a6f77db89fefcfb12c7eceedb61b8f2"
 }

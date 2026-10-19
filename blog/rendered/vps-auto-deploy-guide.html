@@ -1,31 +1,47 @@
-<h1>如何让 VPS 自动 pull 并自动部署</h1>
 <p><img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" alt="VPS"></p>
-<p>很多人一开始都是本地 push，登录 VPS，再手动 <code>git pull</code>。这当然能用，但时间一长就会想把最后一步也自动化。</p>
-<h2>最简单的思路</h2>
-<pre><code class="language-text">本地 push
-  ↓
-GitHub Actions / Webhook 触发
-  ↓
-VPS 拉取最新代码
-  ↓
-重新生成内容
-  ↓
-Reload Nginx</code></pre>
-<h2>常见实现方式</h2>
-<h3>方案 1：GitHub Actions SSH 到 VPS</h3>
-<ul>
-<li>GitHub Actions：<a href="https://github.com/features/actions" target="_blank" rel="noopener noreferrer">https://github.com/features/actions</a></li>
-<li>通过 SSH 执行远程命令</li>
-</ul>
-<h3>方案 2：Webhook + 自己的部署脚本</h3>
-<h2>VPS 上的最小部署脚本</h2>
-<pre><code class="language-bash">cd /var/www/love
-git pull origin main
+<p>手动登录 VPS 再执行 <code>git pull</code> 很直观，但它依赖记忆，也很难留下完整记录。自动部署的目的不是少敲一条命令，而是把“什么版本、何时发布、失败在哪里、怎样回退”变得可追踪。</p>
+<h2>推荐链路</h2>
+<pre><code class="language-text">push 到 main
+→ GitHub Actions 运行检查
+→ 通过 SSH 调用 VPS 部署脚本
+→ 在临时目录构建
+→ 原子切换当前版本
+→ 健康检查
+→ 成功后清理旧版本</code></pre>
+<p>简单静态站也可以直接在 GitHub Pages 构建，不必额外维护 VPS。只有需要自定义服务、反向代理或服务器端任务时，才值得增加 VPS 这一层。</p>
+<h2>VPS 端部署脚本</h2>
+<p>不要让 Actions 拼接一长串远程命令。把流程放在 VPS 的固定脚本中，更容易审计和本地测试：</p>
+<pre><code class="language-bash">#!/usr/bin/env bash
+set -Eeuo pipefail
+
+APP_DIR=/var/www/love
+cd &quot;$APP_DIR&quot;
+
+git fetch origin main
+git reset --hard origin/main
 python3 scripts/generate_posts.py
+sudo nginx -t
 sudo systemctl reload nginx</code></pre>
-<p>真正稳定的关键不是脚本有多花，而是：</p>
+<p>如果目录里存在服务器独有文件，<code>reset --hard</code> 会覆盖它们，因此配置和机密应放到仓库外，并在执行前明确工作目录。更完善的做法是每次部署到带提交号的新目录，检查成功后更新 <code>current</code> 软链接。</p>
+<h2>GitHub Actions 端</h2>
+<p>SSH 私钥、主机地址和用户名放进仓库 Secrets，不要提交到代码。服务器上建立专用部署用户，只授予目标目录和必要命令权限。SSH 主机指纹应预先写入 <code>known_hosts</code>，避免关闭主机校验。</p>
+<p>工作流还应设置 concurrency，防止连续 push 触发两个部署互相覆盖。只有 main 分支通过检查后才允许发布。</p>
+<h2>日志、失败与回滚</h2>
+<p>至少保留这几项：</p>
 <ul>
-<li>路径固定</li>
-<li>权限清楚</li>
-<li>失败时能看到日志</li>
+<li>Actions 的构建与连接日志</li>
+<li>VPS 部署脚本的时间、提交 SHA 和退出码</li>
+<li>Nginx 配置检查结果</li>
+<li>发布后的 HTTP 状态检查</li>
+<li>最近几个可回退版本</li>
+</ul>
+<p>部署失败时不要继续 reload，更不要删除当前可用版本。健康检查可以用 <code>curl --fail https://example.com/</code>，确认主要页面能返回后再宣布成功。</p>
+<h2>Webhook 方案何时使用</h2>
+<p>自建 Webhook 接收器响应更快，也不依赖 Actions SSH，但必须验证 GitHub 签名、限制请求体、避免把分支名直接拼进 shell，并处理重复事件。对个人静态站而言，Actions 通常更简单、安全边界也更清楚。</p>
+<p>自动部署真正值得做的，不是让每次发布看起来很酷，而是让错误更难进入线上，让回滚不再靠临时回忆。</p>
+<h2>参考资料</h2>
+<ul>
+<li><a href="https://docs.github.com/actions" target="_blank" rel="noopener noreferrer">GitHub Actions</a></li>
+<li><a href="https://docs.github.com/actions/security-guides/using-secrets-in-github-actions" target="_blank" rel="noopener noreferrer">GitHub Actions 中使用机密</a></li>
+<li><a href="https://docs.github.com/webhooks/using-webhooks/validating-webhook-deliveries" target="_blank" rel="noopener noreferrer">验证 GitHub Webhook</a></li>
 </ul>

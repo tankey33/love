@@ -1,15 +1,12 @@
 {
-  "takenAt": "\bÊ\u0004\nCm\u0003ÿ\u0000\u0001U·\u0005ã*§",
-  "make": "¨óK@\u0013",
-  "camera": "¨óK@\u0013eGJg",
-  "aperture": 1.3716547299820336,
-  "shutterSeconds": 1.4197647580347954,
+  "originalName": "IMG_9287.jpeg",
+  "aperture": 1.37165472998201,
+  "shutterSeconds": 1.419764758035059,
   "iso": 80,
-  "focalLength": 0.013969985806262235,
   "focalLength35": 30,
   "flash": 16,
   "whiteBalance": 0,
-  "software": "óK@\u0013eG",
-  "uploadedAt": "2026-10-10T14:02:04.886Z",
-  "originalName": "IMG_9287.jpeg"
+  "colorSpace": 1,
+  "uploadedAt": "2026-10-10T14:02:04.886000+00:00",
+  "originalSha": "088b20feb05a36cbf596c73b58c5ed83d77e939f"
 }

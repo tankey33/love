@@ -1,0 +1,10 @@
+.venv/
+_site/
+.photo-build.json
+assets/generated/
+__pycache__/
+*.pyc
+node_modules/
+.wrangler/
+.dev.vars
+.env

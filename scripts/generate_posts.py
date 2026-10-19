@@ -2,6 +2,7 @@
 from pathlib import Path
 import json, re, html, struct, subprocess, unicodedata
 from datetime import datetime, timezone
+from prepare_photos import MANIFEST_PATH, safe_metadata_for_photo, sanitize_metadata
 
 ROOT = Path(__file__).resolve().parents[1]
 POSTS_DIR = ROOT / 'blog' / 'posts'
@@ -9,6 +10,7 @@ POSTS_OUT = ROOT / 'blog' / 'posts.json'
 RENDER_DIR = ROOT / 'blog' / 'rendered'
 PHOTO_DIR = ROOT / 'photo'
 PHOTO_OUT = ROOT / 'assets' / 'js' / 'photo-data.js'
+PHOTO_JSON_OUT = ROOT / 'assets' / 'js' / 'photo-data.json'
 IMAGE_EXTS = {'.jpg', '.jpeg', '.png', '.webp', '.gif'}
 VIDEO_EXTS = {'.mov', '.mp4', '.m4v'}
 
@@ -493,26 +495,19 @@ def generate_posts():
 def generate_photos():
     PHOTO_DIR.mkdir(parents=True, exist_ok=True)
     photos = []
+    manifest = json.loads(MANIFEST_PATH.read_text(encoding='utf-8')) if MANIFEST_PATH.exists() else {}
     files = [p for p in PHOTO_DIR.iterdir() if p.is_file() and p.suffix.lower() in IMAGE_EXTS]
-    files.sort(key=lambda p: p.stat().st_mtime, reverse=True)
+    files.sort(key=lambda p: p.name.lower())
     for i, path in enumerate(files, start=1):
-        size = image_size(path) or (0, 0)
+        prepared = manifest.get(path.name, {})
+        size = (prepared.get('width'), prepared.get('height')) if prepared.get('width') else image_size(path) or (0, 0)
         st = path.stat()
-        sidecar = path.with_suffix('.json')
-        saved = {}
-        if sidecar.exists():
-            try:
-                saved = json.loads(sidecar.read_text(encoding='utf-8'))
-            except Exception:
-                saved = {}
-        # Prefer the image's own standard EXIF over older sidecars. Early browser
-        # uploads could misread big-endian TIFF offsets; sidecars still supply
-        # fields that are no longer embedded after client-side compression.
-        embedded = jpeg_exif(path)
-        exif = {**saved, **{k: v for k, v in embedded.items() if v not in (None, '')}}
+        # Metadata is validated before merge, so damaged old fields never replace
+        # valid embedded EXIF. Publication drops GPS unless travel opted in.
+        exif = sanitize_metadata(prepared.get('metadata') or safe_metadata_for_photo(path))
         taken_at = normalize_photo_date(exif.get('takenAt'))
         uploaded_at = exif.get('uploadedAt') or git_upload_date(path, st.st_mtime)
-        live_video = next((path.with_suffix(ext) for ext in VIDEO_EXTS if path.with_suffix(ext).exists()), None)
+        live_video = next((candidate for candidate in PHOTO_DIR.iterdir() if candidate.stem.lower() == path.stem.lower() and candidate.suffix.lower() in VIDEO_EXTS), None)
         raw_make = clean_metadata_text(exif.get('make', ''), True)
         make = clean_device_text(raw_make, 'make')
         camera = clean_device_text(exif.get('camera', ''), 'camera')
@@ -523,10 +518,12 @@ def generate_photos():
         photos.append({
             'id': path.stem,
             'file': path.name,
-            'full': f'photo/{path.name}',
+            'full': prepared.get('full', f'photo/{path.name}'),
+            'thumb': prepared.get('thumb', prepared.get('full', f'photo/{path.name}')),
+            'srcset': prepared.get('srcset', ''),
             'width': size[0],
             'height': size[1],
-            'size': st.st_size,
+            'size': prepared.get('size', st.st_size),
             'title': pretty_title(path.stem),
             'description': clean_metadata_text(exif.get('description', '')),
             'takenAt': taken_at,
@@ -549,6 +546,9 @@ def generate_photos():
             'copyright': exif.get('copyright', ''),
             'latitude': exif.get('latitude', ''),
             'longitude': exif.get('longitude', ''),
+            'locationPrivacy': 'city' if 'latitude' in exif else 'hidden',
+            'city': exif.get('city', ''),
+            'country': exif.get('country', ''),
             'timeZone': exif.get('timeZone', ''),
             'orientation': exif.get('orientation', ''),
             'exposureProgram': exif.get('exposureProgram', ''),
@@ -562,12 +562,17 @@ def generate_photos():
             'subjectDistance': exif.get('subjectDistance', ''),
             'digitalZoom': exif.get('digitalZoom', ''),
             'isLivePhoto': bool(live_video),
-            'liveVideo': f'photo/{live_video.name}' if live_video else '',
-            'mtime': int(st.st_mtime)
+            'liveVideo': manifest.get(live_video.name, {}).get('full', f'photo/{live_video.name}') if live_video else '',
+            'mtime': int(datetime.fromisoformat(uploaded_at.replace('Z', '+00:00')).timestamp())
         })
+    photos.sort(key=lambda photo: (photo.get('takenAt') or photo.get('uploadedAt') or '', photo['id']), reverse=True)
     content = 'window.PHOTO_DATA = ' + json.dumps(photos, ensure_ascii=False, indent=2) + ';\n'
     PHOTO_OUT.parent.mkdir(parents=True, exist_ok=True)
     PHOTO_OUT.write_text(content, encoding='utf-8')
+    # Keep meaningful zero/false values (e.g. zero EV, no flash), but avoid
+    # downloading dozens of empty optional EXIF properties for every image.
+    compact_photos = [{key: value for key, value in photo.items() if value is not None and value != ''} for photo in photos]
+    PHOTO_JSON_OUT.write_text(json.dumps(compact_photos, ensure_ascii=False, separators=(',', ':')) + '\n', encoding='utf-8')
     print(f'generated {PHOTO_OUT} with {len(photos)} photos')
 
 

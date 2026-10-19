@@ -1,111 +1,36 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Tankey × Monody</title>
-  <link rel="icon" href="./love.png" />
-  <link rel="shortcut icon" href="./love.png" />
-  <style>
-    :root{--bg:#f5f5f7;--card:#fbfbfd;--text:#1d1d1f;--soft:#6e6e73;--line:rgba(0,0,0,.06);--content:1180px;--radius:30px;--shadow:0 10px 30px rgba(0,0,0,.03)}
-    *{box-sizing:border-box} body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","PingFang SC","Helvetica Neue",sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility} a{color:inherit;text-decoration:none} img{display:block;max-width:100%} button,input{font:inherit}
-    .topbar{position:sticky;top:0;z-index:50;background:rgba(245,245,247,.82);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(0,0,0,.05)}
-    .topbar-inner{max-width:var(--content);margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{font-size:14px;letter-spacing:.02em;white-space:nowrap}.nav{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end}.nav a{font-size:13px;color:var(--soft);padding:10px 14px;border-radius:999px}.nav a:hover,.nav a.active{background:rgba(17,17,17,.05);color:var(--text)}
-    .page{max-width:var(--content);margin:0 auto;padding:28px 24px 56px}.eyebrow{font-size:15px;font-weight:600;color:var(--text);margin-bottom:10px}.page-title{font-size:clamp(34px,5vw,56px);line-height:1.04;letter-spacing:-.045em;font-weight:600;margin:0 0 14px}.page-desc{max-width:680px;margin:0 0 24px;font-size:17px;line-height:1.8;color:var(--soft)}
-    .search-wrap{width:min(680px,100%);margin:30px auto 42px;display:flex;align-items:center}.search-box{position:relative;display:block;width:100%}.search-box input{width:100%;height:56px;padding:0 54px 0 52px;border:1px solid rgba(255,255,255,.72);border-radius:999px;background:rgba(255,255,255,.7);box-shadow:0 16px 44px rgba(36,70,74,.09),inset 0 1px 0 rgba(255,255,255,.9);color:var(--text);outline:none;transition:border-color .25s,box-shadow .25s,background .25s}.search-box input:focus{background:rgba(255,255,255,.92);border-color:rgba(111,150,155,.42);box-shadow:0 20px 54px rgba(36,70,74,.14),0 0 0 4px rgba(111,150,155,.1)}.search-box input::placeholder{color:#8b9596}.search-icon{position:absolute;z-index:1;left:20px;top:50%;width:19px;height:19px;transform:translateY(-50%);color:#6f969b;pointer-events:none}.search-icon svg{display:block;width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round}
-    .lead-card{display:grid;grid-template-columns:1.15fr .85fr;gap:0;background:var(--card);border-radius:34px;overflow:hidden;box-shadow:var(--shadow);margin-bottom:24px;min-height:360px}.lead-media{background:#fff;min-height:360px}.lead-media img{width:100%;height:100%;object-fit:cover}.lead-copy{padding:34px 34px 30px;display:flex;flex-direction:column;justify-content:space-between;background:var(--card)}
-    .kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);font-weight:600}.lead-title{margin:14px 0 0;font-size:clamp(32px,4.2vw,58px);line-height:1.02;letter-spacing:-.05em;font-weight:600}.lead-summary{margin:16px 0 0;font-size:17px;line-height:1.8;color:var(--soft)}.date-row{margin-top:26px;font-size:14px;color:var(--soft);display:flex;align-items:center;gap:8px}.date-row::before{content:'';width:14px;height:14px;border-radius:50%;border:1.5px solid rgba(0,0,0,.35);display:inline-block;box-sizing:border-box}
-    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}.news-card{display:block;background:var(--card);border-radius:30px;overflow:hidden;box-shadow:var(--shadow)}.news-media{aspect-ratio:16/10;background:#fff}.news-media img{width:100%;height:100%;object-fit:cover}.news-copy{padding:24px 24px 22px}.news-title{margin:12px 0 0;font-size:clamp(26px,3.2vw,42px);line-height:1.06;letter-spacing:-.042em;font-weight:600}.news-summary{margin:14px 0 0;font-size:15px;line-height:1.8;color:var(--soft)}.news-date{margin-top:20px;font-size:14px;color:var(--soft);display:flex;align-items:center;gap:8px}.news-date::before{content:'';width:14px;height:14px;border-radius:50%;border:1.5px solid rgba(0,0,0,.35);display:inline-block;box-sizing:border-box}.empty{padding:30px 0;color:var(--soft)}
-    @media (max-width:900px){.lead-card{grid-template-columns:1fr}.grid{grid-template-columns:1fr}} @media (max-width:640px){.topbar-inner,.page{padding-left:16px;padding-right:16px}.page{padding-top:22px;padding-bottom:40px}.eyebrow{font-size:14px;margin-bottom:8px}.page-title{font-size:clamp(28px,10vw,40px);margin-bottom:10px}.page-desc{font-size:15px;line-height:1.75;margin-bottom:18px}.search-wrap{width:100%;margin:22px 0 30px}.search-box{width:100%;max-width:none}.search-box input{height:50px;padding-left:48px}.search-icon{left:18px;width:18px;height:18px}.lead-card{border-radius:26px;min-height:auto}.lead-media{min-height:auto;aspect-ratio:16/11}.lead-copy{padding:22px 20px 20px}.lead-title{font-size:clamp(28px,9vw,38px)}.lead-summary{font-size:15px;line-height:1.75}.grid{gap:18px}.news-card{border-radius:24px}.news-copy{padding:20px 18px 18px}.news-title{font-size:clamp(24px,8vw,32px)}.news-summary{font-size:14px;line-height:1.75}}
-  </style>
-<link rel="stylesheet" href="assets/css/japanese-theme.css?v=20260911c">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="description" content="Tankey 与 Monody 的手记，记录生活、照片与慢慢积累的想法。">
+  <meta name="theme-color" content="#eaf0ed">
+  <title>Note · 手记 · Tankey × Monody</title>
+  <link rel="icon" href="love.png">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/notes.css">
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/notes.js" defer></script>
 </head>
 <body class="site-page page-notes">
-  <header class="topbar"><div class="topbar-inner"><a class="brand" href="index.html">TANKEY <span class="brand-heart">♥</span> MONODY <span class="brand-since">· SINCE 2017</span></a><nav class="nav" aria-label="主导航"><a href="index.html">首页</a><a href="photo.html">写真</a><a class="active" href="notes.html">手记</a><a href="movie.html">影像</a><a href="music.html">音乐</a></nav></div></header>
-  <main class="page">
+  <a class="skip-link" href="#main">跳至内容</a>
+  <header class="topbar"><div class="topbar-inner">
+    <a class="brand" href="index.html">TANKEY <span class="brand-heart">♥</span> MONODY <span class="brand-since">· SINCE 2017</span></a>
+    <nav class="nav" aria-label="主导航"><a href="index.html">首页</a><a href="photo.html">写真</a><a class="active" aria-current="page" href="notes.html">手记</a><a href="movie.html">影像</a><a href="music.html">音乐</a></nav>
+  </div></header>
+  <main id="main" class="page">
     <div class="eyebrow">Note · 手记</div>
     <h1 class="page-title">最近写下来的片段与想法</h1>
     <p class="page-desc" id="page-quote">我们把世界看错了，反说它欺骗我们。—— 泰戈尔</p>
-    <div class="search-wrap">
-      <label class="search-box">
-        <span class="search-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.4"></circle><path d="m16 16 4.2 4.2"></path></svg></span>
-        <input id="search-input" type="search" placeholder="搜索标题、摘要或日期" autocomplete="off" />
-      </label>
+    <div class="search-wrap" role="search">
+      <label class="search-box"><span class="visually-hidden">搜索文章标题、摘要或日期</span><span class="search-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.4"></circle><path d="m16 16 4.2 4.2"></path></svg></span><input id="search-input" type="search" placeholder="搜索标题、摘要或日期" autocomplete="off" aria-controls="lead grid" aria-describedby="notes-status"></label>
     </div>
-    <section id="lead"></section>
-    <section class="grid" id="grid"></section>
+    <p id="notes-status" class="notes-status" role="status" aria-live="polite">正在打开手记…</p>
+    <section id="lead" aria-label="精选手记"></section>
+    <section class="grid" id="grid" aria-label="全部手记" aria-busy="true"></section>
+    <button id="notes-more" class="more" type="button" hidden>再看一些</button>
+    <noscript><p class="empty">手记需要启用 JavaScript 才能浏览和搜索。</p></noscript>
   </main>
-  <script>
-    const quotes = [
-      '我们把世界看错了，反说它欺骗我们。—— 泰戈尔',
-      '月色与雪色之间，你是第三种绝色。—— 余光中',
-      '凌晨四点钟，看到海棠花未眠。—— 川端康成',
-      '我明白你会来，所以我等。—— 沈从文',
-      '岁月不饶人，我亦未曾饶过岁月。—— 木心',
-      '有些事只适合收藏，不能说，也不能想，却又不能忘。—— 史铁生',
-      '我曾踏月而来，只因你在山中。—— 席慕蓉',
-      '凡是过去，皆为序章。—— 莎士比亚'
-    ];
-    const quoteEl = document.getElementById('page-quote');
-    if (quoteEl) quoteEl.textContent = quotes[Math.floor(Math.random() * quotes.length)];
-
-    function pickImage(post, index){
-      if(post.cover) return post.cover;
-      if(post.slug === 'dev-note') return 'photo/02.jpg';
-      if(post.slug === 'hello') return 'photo/01.jpg';
-      const fallback = ['photo/06.jpg','photo/08.jpg','photo/11.jpg','photo/04.jpg','photo/05.jpg'];
-      return fallback[index % fallback.length];
-    }
-    function render(posts){
-      const lead = document.getElementById('lead');
-      const grid = document.getElementById('grid');
-      if(!posts.length){
-        lead.innerHTML = '';
-        grid.innerHTML = '<div class="empty">没有找到匹配的文章。</div>';
-        return;
-      }
-      const pinned = posts.find(p => p.pinned);
-      const first = pinned || posts[0];
-      const rest = posts.filter(p => p.slug !== first.slug);
-      lead.innerHTML = `
-        <a class="lead-card" href="note.html?slug=${encodeURIComponent(first.slug)}">
-          <div class="lead-media"><img src="${pickImage(first,0)}" alt="${first.title}" loading="eager" decoding="async"></div>
-          <div class="lead-copy">
-            <div>
-              <div class="kicker">${first.pinned ? '置顶' : '最近更新'}</div>
-              <h2 class="lead-title">${first.title}</h2>
-              <p class="lead-summary">${first.summary || ''}</p>
-            </div>
-            <div class="date-row">${first.date || 'Undated'}</div>
-          </div>
-        </a>`;
-      grid.innerHTML = rest.map((post, index) => `
-        <a class="news-card" href="note.html?slug=${encodeURIComponent(post.slug)}">
-          <div class="news-media"><img src="${pickImage(post,index+1)}" alt="${post.title}" loading="lazy" decoding="async"></div>
-          <div class="news-copy">
-            <h3 class="news-title">${post.title}</h3>
-            <p class="news-summary">${post.summary || ''}</p>
-            <div class="news-date">${post.date || 'Undated'}</div>
-          </div>
-        </a>`).join('');
-    }
-    async function loadPosts(){
-      const input = document.getElementById('search-input');
-      try{
-        const allPosts = (await fetch('blog/posts.json?_=' + Date.now()).then(r=>r.json())).filter(post => post.slug !== 'README');
-        const apply = () => {
-          const q = input.value.trim().toLowerCase();
-          if(!q){ render(allPosts); return; }
-          const filtered = allPosts.filter(post => [post.title, post.summary, post.date, post.slug].join(' ').toLowerCase().includes(q));
-          render(filtered);
-        };
-        input.addEventListener('input', apply);
-        render(allPosts);
-      }catch(e){
-        document.getElementById('grid').innerHTML = '<div class="empty">这里还没有文章。</div>';
-      }
-    }
-    loadPosts();
-  </script>
 </body>
 </html>
