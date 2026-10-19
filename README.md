@@ -61,6 +61,8 @@ python3 -m venv .venv
 
 ## 发布与缓存
 
+仓库 Settings → Pages → Build and deployment → Source 必须选择 **GitHub Actions**，不要同时使用旧的分支发布，避免未构建源码覆盖处理后的照片墙。电影音乐榜单定时或手动刷新，不阻塞每次照片上传。
+
 推送 main、后台发布或定时更新触发 `.github/workflows/deploy-pages.yml`。工作流安装 Pillow，准备脱敏图片，生成索引和文章，然后把 `_site/` 发布到 Pages。`.git`、后台源码、构建脚本、未脱敏源目录不进入网站制品。
 
 照片 JSON 使用带内容哈希的文件名，CSS/JS 版本由构建内容决定，不再手工改日期。照片索引使用 HTTP 验证缓存，浏览器无需每次完整下载。PWA 只缓存已访问的页面和最近的图片，缓存有数量上限；不预下载整个相册或音频。
