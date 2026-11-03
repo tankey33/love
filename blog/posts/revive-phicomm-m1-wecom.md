@@ -25,7 +25,7 @@ cover: blog/images/phicomm-m1-revival-cover.jpg
 → 企业微信 Webhook
 ```
 
-![斐讯 M1 从原厂固件到企业微信的完整数据链路](blog/images/phicomm-m1-flow.svg)
+![斐讯 M1 从原厂固件到企业微信的完整数据链路](blog/images/phicomm-m1-flow.png)
 
 > 本文公开的是经过脱敏的可复用代码。真实 Wi-Fi 密码、SSH 密码、服务器地址、设备 MAC 和 Webhook key 都不会进入仓库。
 
@@ -262,10 +262,10 @@ sudo journalctl -u m1-aircat -f
 
 本文涉及的脱敏代码全部放在站点仓库中：
 
-- [完整 Python 服务](blog/code/phicomm-m1-wecom/server.py)
-- [环境变量模板](blog/code/phicomm-m1-wecom/m1-aircat.env.example)
-- [systemd 服务文件](blog/code/phicomm-m1-wecom/m1-aircat.service)
-- [安装与安全说明](blog/code/phicomm-m1-wecom/README.md)
+- [完整 Python 服务](https://github.com/tankey33/love/blob/main/blog/code/phicomm-m1-wecom/server.py)
+- [环境变量模板](https://github.com/tankey33/love/blob/main/blog/code/phicomm-m1-wecom/m1-aircat.env.example)
+- [systemd 服务文件](https://github.com/tankey33/love/blob/main/blog/code/phicomm-m1-wecom/m1-aircat.service)
+- [安装与安全说明](https://github.com/tankey33/love/tree/main/blog/code/phicomm-m1-wecom)
 
 代码刻意没有包含真实设备和服务器凭据。如果 Webhook key 曾出现在截图、聊天记录或 Git 历史中，应当先在企业微信中重新生成，再部署新 key。
 
