@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="720" viewBox="0 0 1440 720" role="img" aria-labelledby="title desc">
+  <title id="title">斐讯 M1 数据链路</title>
+  <desc id="desc">M1 通过家庭 Wi-Fi 和 DNS 映射连接自建服务器，服务器解析空气数据并推送企业微信。</desc>
+  <rect width="1440" height="720" fill="#f3efe7"/>
+  <g fill="none" stroke="#d8d0c3" stroke-width="1">
+    <path d="M0 120H1440M0 240H1440M0 360H1440M0 480H1440M0 600H1440"/>
+    <path d="M120 0V720M240 0V720M360 0V720M480 0V720M600 0V720M720 0V720M840 0V720M960 0V720M1080 0V720M1200 0V720M1320 0V720"/>
+  </g>
+  <text x="96" y="96" fill="#252824" font-size="34" font-family="PingFang SC, sans-serif" font-weight="600">一台停服设备的新数据链路</text>
+  <text x="96" y="138" fill="#66705a" font-size="19" font-family="PingFang SC, sans-serif">原厂固件不变，只替换它寻找云端的方向</text>
+  <g font-family="PingFang SC, sans-serif">
+    <g transform="translate(100 240)">
+      <rect width="230" height="250" rx="32" fill="#fffdf8" stroke="#252824" stroke-width="3"/>
+      <rect x="45" y="44" width="140" height="94" rx="18" fill="#252824"/>
+      <circle cx="82" cy="91" r="10" fill="#8a967a"/>
+      <circle cx="115" cy="91" r="10" fill="#d09b55"/>
+      <circle cx="148" cy="91" r="10" fill="#b5503f"/>
+      <text x="115" y="190" text-anchor="middle" fill="#252824" font-size="25" font-weight="600">斐讯 M1</text>
+      <text x="115" y="220" text-anchor="middle" fill="#66705a" font-size="17">原厂固件</text>
+    </g>
+    <g transform="translate(470 272)">
+      <rect width="220" height="180" rx="28" fill="#e5dfd3" stroke="#66705a" stroke-width="3"/>
+      <path d="M68 74q42-42 84 0M84 92q26-26 52 0M104 112q6-6 12 0" fill="none" stroke="#66705a" stroke-width="9" stroke-linecap="round"/>
+      <text x="110" y="150" text-anchor="middle" fill="#252824" font-size="23" font-weight="600">Wi-Fi / DNS</text>
+    </g>
+    <g transform="translate(830 228)">
+      <rect width="240" height="274" rx="24" fill="#353934"/>
+      <rect x="35" y="38" width="170" height="52" rx="9" fill="#596052"/>
+      <rect x="35" y="108" width="170" height="52" rx="9" fill="#596052"/>
+      <circle cx="177" cy="64" r="7" fill="#cfd9a7"/>
+      <circle cx="177" cy="134" r="7" fill="#cfd9a7"/>
+      <text x="120" y="211" text-anchor="middle" fill="#fffdf8" font-size="23" font-weight="600">自建服务器</text>
+      <text x="120" y="241" text-anchor="middle" fill="#d9dfd0" font-size="16">TCP 9000 + HTTPS 443</text>
+    </g>
+    <g transform="translate(1210 240)">
+      <rect width="140" height="250" rx="28" fill="#fffdf8" stroke="#252824" stroke-width="3"/>
+      <rect x="18" y="35" width="104" height="150" rx="12" fill="#dfe6dc"/>
+      <path d="M42 83h56M42 108h42M42 133h50" stroke="#66705a" stroke-width="7" stroke-linecap="round"/>
+      <circle cx="70" cy="216" r="9" fill="#b5503f"/>
+      <text x="70" y="282" text-anchor="middle" fill="#252824" font-size="23" font-weight="600">企业微信</text>
+    </g>
+    <g fill="none" stroke="#b5503f" stroke-width="5" stroke-linecap="round">
+      <path d="M350 365H445"/>
+      <path d="M710 365H805"/>
+      <path d="M1090 365H1185"/>
+    </g>
+    <g fill="#b5503f">
+      <path d="M445 365l-18-11v22z"/>
+      <path d="M805 365l-18-11v22z"/>
+      <path d="M1185 365l-18-11v22z"/>
+    </g>
+    <text x="397" y="338" text-anchor="middle" fill="#66705a" font-size="16">2.4 GHz</text>
+    <text x="758" y="338" text-anchor="middle" fill="#66705a" font-size="16">域名映射</text>
+    <text x="1138" y="338" text-anchor="middle" fill="#66705a" font-size="16">Webhook</text>
+    <rect x="325" y="570" width="790" height="74" rx="12" fill="#fffdf8" stroke="#d8d0c3"/>
+    <text x="720" y="602" text-anchor="middle" fill="#252824" font-size="19">数据：PM2.5 · 甲醛 · 温度 · 湿度 · 北京时间</text>
+    <text x="720" y="630" text-anchor="middle" fill="#66705a" font-size="16">策略：持续 1 分钟触发 · 恢复 5 分钟 · 30 分钟抑制重复提醒</text>
+  </g>
+</svg>

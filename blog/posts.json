@@ -10,6 +10,36 @@
     "cover": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80"
   },
   {
+    "slug": "revive-phicomm-m1-wecom",
+    "title": "把停服的斐讯 M1 接回自己的服务器",
+    "date": "2026-11-03",
+    "summary": "不刷机，保留原厂固件，用 DNS 映射、Python 假云端和企业微信 Webhook 重新接住 PM2.5、甲醛、温湿度数据。",
+    "path": "blog/posts/revive-phicomm-m1-wecom.md",
+    "renderedPath": "blog/rendered/revive-phicomm-m1-wecom.html",
+    "pinned": false,
+    "cover": "blog/images/phicomm-m1-revival-cover.jpg"
+  },
+  {
+    "slug": "vps-ssh-fail2ban-troubleshooting",
+    "title": "VPS SSH 突然断开？一次 Fail2ban 封禁的排查与恢复实录",
+    "date": "2026-10-23",
+    "summary": "22 端口可达，SSH 却在握手前断开。按控制台恢复、日志取证、来源 IP 核验和密钥加固四步，排查 Fail2ban 封禁，避免盲目重装。",
+    "path": "blog/posts/vps-ssh-fail2ban-troubleshooting.md",
+    "renderedPath": "blog/rendered/vps-ssh-fail2ban-troubleshooting.html",
+    "pinned": false,
+    "cover": "images/ssh-fail2ban/recovery-flow.svg"
+  },
+  {
+    "slug": "ssh-keys-mac-windows-finalshell",
+    "title": "SSH 公钥和私钥入门：Mac、Windows 配置与 FinalShell 连接 VPS 图文教程",
+    "date": "2026-10-22",
+    "summary": "从公钥与私钥的区别开始，在 Mac 和 Windows 生成密钥，把公钥放到 Linux VPS，再用 FinalShell 导入私钥登录，并排查常见连接错误。",
+    "path": "blog/posts/ssh-keys-mac-windows-finalshell.md",
+    "renderedPath": "blog/rendered/ssh-keys-mac-windows-finalshell.html",
+    "pinned": false,
+    "cover": "images/ssh-finalshell/key-flow.svg"
+  },
+  {
     "slug": "content-system-guide",
     "title": "如何继续把它做成完整内容系统",
     "date": "2026-03-16",

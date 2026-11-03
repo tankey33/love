@@ -1,0 +1,24 @@
+[Unit]
+Description=Phicomm M1 receiver and WeCom notifier
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=m1-aircat
+Group=m1-aircat
+WorkingDirectory=/opt/m1-aircat
+EnvironmentFile=/etc/m1-aircat.env
+ExecStart=/usr/bin/python3 /opt/m1-aircat/server.py
+Restart=on-failure
+RestartSec=5
+AmbientCapabilities=CAP_NET_BIND_SERVICE
+CapabilityBoundingSet=CAP_NET_BIND_SERVICE
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+ReadWritePaths=/var/lib/m1-aircat
+
+[Install]
+WantedBy=multi-user.target
