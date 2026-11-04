@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 1390" width="720" height="1390" role="img" aria-labelledby="title desc">
+  <title id="title">船舶纵向下水的三个代表状态</title>
+  <desc id="desc">三张非比例侧视图以艏在左、艉在右为例。受约束滑移时船体仍由滑道支承；尾浮时艉部浮起，艏部仍可能受支承；全浮时船体离开滑道支承。</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M0 1 9 5 0 9" fill="none" stroke="#236083" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <g id="scene">
+      <rect x="27" y="97" width="618" height="217" rx="12" fill="#f3f8fc"/>
+      <path d="M27 226H645v76q0 12-12 12H39q-12 0-12-12Z" fill="#d9eaf5"/>
+      <path d="M28 226H644" stroke="#5c9bb9" stroke-width="2" stroke-dasharray="7 6"/>
+      <path d="M42 169 407 248l-22 31H42Z" fill="#dce6ee"/>
+      <path d="M42 169 407 248" stroke="#55728b" stroke-width="4" stroke-linecap="round"/>
+    </g>
+    <g id="ship">
+      <path d="M203 24V9h18V0h48v9h18v15Z" fill="#5487aa" stroke="#21577b" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M0 4q20 17 47 20h247q22 0 24 14v14q-2 12-27 12H74Q47 62 30 46Z" fill="#27719b" stroke="#16496a" stroke-width="2.5" stroke-linejoin="round"/>
+      <path d="M28 29q12 6 27 6h251" fill="none" stroke="#93cae4" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M229 10h11m8 0h11m8 0h10" fill="none" stroke="#eaf7ff" stroke-width="2.5" stroke-linecap="round"/>
+    </g>
+  </defs>
+  <rect width="720" height="1390" rx="28" fill="#edf4fa"/>
+  <g font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+    <text x="36" y="55" fill="#236083" font-size="24" font-weight="700" letter-spacing="2">船舶工程 · 侧视概念图</text>
+    <text x="34" y="111" fill="#102f48" font-size="44" font-weight="750">纵向下水的三个代表状态</text>
+
+    <g transform="translate(24 145)">
+      <rect width="672" height="368" rx="19" fill="#fff" stroke="#c2d6e6" stroke-width="2"/>
+      <circle cx="51" cy="44" r="24" fill="#21577b"/>
+      <text x="51" y="52" fill="#fff" font-size="23" font-weight="700" text-anchor="middle">1</text>
+      <text x="89" y="55" fill="#102f48" font-size="36" font-weight="730">受约束滑移</text>
+      <use href="#scene"/>
+      <path d="m158 176 32 7-4 17-32-7Zm147 32 32 7-4 17-32-7Z" fill="#527b96"/>
+      <use href="#ship" transform="translate(104 98) rotate(12)"/>
+      <path d="m466 152 126 27" fill="none" stroke="#236083" stroke-width="3" marker-end="url(#arrow)"/>
+      <g fill="#294f6c" font-size="25" font-weight="620">
+        <text x="464" y="139">艉向滑移</text>
+        <text x="55" y="127">艏</text><text x="430" y="216">艉</text>
+        <text x="61" y="231">滑道</text><text x="518" y="270">水面</text>
+      </g>
+      <text x="27" y="347" fill="#355570" font-size="29">船体沿滑道下移，仍由滑道支承。</text>
+    </g>
+
+    <g transform="translate(24 535)">
+      <rect width="672" height="368" rx="19" fill="#fff" stroke="#c2d6e6" stroke-width="2"/>
+      <circle cx="51" cy="44" r="24" fill="#21577b"/>
+      <text x="51" y="52" fill="#fff" font-size="23" font-weight="700" text-anchor="middle">2</text>
+      <text x="89" y="55" fill="#102f48" font-size="36" font-weight="730">尾浮</text>
+      <use href="#scene"/>
+      <path d="m313 217 36 4-2 14-35-8Z" fill="#527b96"/>
+      <use href="#ship" transform="translate(247 147) rotate(6)"/>
+      <path d="M204 247h76l38-24" fill="none" stroke="#55728b" stroke-width="2" stroke-linecap="round"/>
+      <path d="M526 275v-27" fill="none" stroke="#236083" stroke-width="3" marker-end="url(#arrow)"/>
+      <g fill="#294f6c" font-size="25" font-weight="620">
+        <text x="74" y="256">艏部支承</text>
+        <text x="451" y="301">浮力（示意）</text>
+      </g>
+      <text x="27" y="347" fill="#355570" font-size="29">艉部浮起，艏部仍可能受支承。</text>
+    </g>
+
+    <g transform="translate(24 925)">
+      <rect width="672" height="368" rx="19" fill="#fff" stroke="#c2d6e6" stroke-width="2"/>
+      <circle cx="51" cy="44" r="24" fill="#21577b"/>
+      <text x="51" y="52" fill="#fff" font-size="23" font-weight="700" text-anchor="middle">3</text>
+      <text x="89" y="55" fill="#102f48" font-size="36" font-weight="730">全浮</text>
+      <use href="#scene"/>
+      <use href="#ship" transform="translate(313 169)"/>
+      <path d="M221 209h48l82 20" fill="none" stroke="#55728b" stroke-width="2" stroke-linecap="round"/>
+      <g fill="#294f6c" font-size="25" font-weight="620">
+        <text x="65" y="218">离开滑道</text>
+        <text x="514" y="285">水面</text>
+      </g>
+      <text x="27" y="347" fill="#355570" font-size="29">船体由浮力支承，离开滑道支承。</text>
+    </g>
+
+    <path d="M36 1321h648" stroke="#bed2e2" stroke-width="2"/>
+    <text x="36" y="1364" fill="#355570" font-size="25">示意图 · 不按比例 · 不表示实际工况</text>
+  </g>
+</svg>

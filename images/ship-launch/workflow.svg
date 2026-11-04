@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 1200" width="720" height="1200" role="img" aria-labelledby="title desc">
+  <title id="title">纵向下水核算流程</title>
+  <desc id="desc">核算从经批准的输入开始。坐标、单位和数据覆盖范围核对未通过时返回补齐输入，通过后依次进行阶段评估、各项独立检查和输出复核。</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M0 1 9 5 0 9" fill="none" stroke="#236083" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+  <rect width="720" height="1200" rx="28" fill="#edf4fa"/>
+  <g font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif">
+    <text x="38" y="55" fill="#236083" font-size="24" font-weight="700" letter-spacing="2">船舶工程 · 流程示意</text>
+    <text x="36" y="111" fill="#102f48" font-size="44" font-weight="750">纵向下水核算流程</text>
+    <g fill="none" stroke="#236083" stroke-width="3" marker-end="url(#arrow)">
+      <path d="M327 308v35"/>
+      <path d="M327 503v35"/>
+      <path d="M327 698v35"/>
+      <path d="M327 893v35"/>
+      <path d="M617 416h49V224h-48" stroke-dasharray="7 6"/>
+    </g>
+    <g fill="#edf4fa">
+      <rect x="641" y="282" width="49" height="70" rx="10"/>
+    </g>
+    <g fill="#236083" font-size="23" font-weight="650" text-anchor="middle">
+      <text x="666" y="309">补齐</text><text x="666" y="337">输入</text>
+    </g>
+    <g fill="#fff" stroke="#c2d6e6" stroke-width="2">
+      <rect x="38" y="148" width="579" height="160" rx="19"/>
+      <rect x="38" y="343" width="579" height="160" rx="19"/>
+      <rect x="38" y="538" width="579" height="160" rx="19"/>
+      <rect x="38" y="733" width="579" height="160" rx="19"/>
+      <rect x="38" y="928" width="579" height="160" rx="19"/>
+    </g>
+    <g fill="#21577b">
+      <circle cx="83" cy="194" r="25"/><circle cx="83" cy="389" r="25"/>
+      <circle cx="83" cy="584" r="25"/><circle cx="83" cy="779" r="25"/>
+      <circle cx="83" cy="974" r="25"/>
+    </g>
+    <g fill="#fff" font-size="23" font-weight="700" text-anchor="middle">
+      <text x="83" y="202">1</text><text x="83" y="397">2</text><text x="83" y="592">3</text>
+      <text x="83" y="787">4</text><text x="83" y="982">5</text>
+    </g>
+    <g fill="#102f48" font-size="32" font-weight="730">
+      <text x="124" y="204">经批准的输入</text>
+      <text x="124" y="399">输入一致性核对</text>
+      <text x="124" y="594">分阶段评估</text>
+      <text x="124" y="789">独立检查</text>
+      <text x="124" y="984">输出与复核</text>
+    </g>
+    <g fill="#355570" font-size="29" font-weight="480">
+      <text x="124" y="247">重量与重心 · 邦戎表</text>
+      <text x="124" y="282">滑道 · 潮位 · 河床资料</text>
+      <text x="124" y="442">坐标基准 · 单位 · 数据覆盖</text>
+      <text x="124" y="477">未通过则返回补齐，通过后继续</text>
+      <text x="124" y="638">受约束滑移 → 尾浮 → 全浮</text>
+      <text x="124" y="673">按阶段识别支承与浮态</text>
+      <text x="124" y="833">速度 · 压力 · 净空</text>
+      <text x="124" y="868">分别核对，不用单一结果替代</text>
+      <text x="124" y="1028">曲线 · 复核报告 · 异常提示</text>
+      <text x="124" y="1063">保留输入依据与检查记录</text>
+    </g>
+    <path d="M38 1120h644" stroke="#bed2e2" stroke-width="2"/>
+    <text x="38" y="1166" fill="#355570" font-size="25">概念流程 · 不代替工程审批与现场复核</text>
+  </g>
+</svg>
