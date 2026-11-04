@@ -10,7 +10,7 @@
 - `movie.html` / `music.html`：电影、音乐收藏与榜单。
 - `timeline.html`：由真实拍摄日期和手记串起的年表。
 - `assets/css/tokens.css`：日间、夜间主题变量；`base.css`：共享组件；其余 CSS 按页面划分。
-- `assets/js/theme.js`：主题选择、音乐状态与安装离线功能。其余脚本各自管理页面。
+- `assets/js/theme.js`：主题选择与安装离线功能。其余脚本各自管理页面。
 - `photo/`：照片源文件和同名 JSON 资料。公开当前版本也必须脱敏。
 - `blog/posts/`：Markdown 手记；`blog/rendered/` 与 `blog/posts.json` 由构建生成。
 - `scripts/prepare_photos.py`：移除敏感嵌入信息，生成公开图片和三档 WebP 缩略图。
@@ -69,7 +69,7 @@ python3 -m venv .venv
 
 ## 音乐与浏览器限制
 
-背景曲目来自 `music/white.mp3`，界面按文件名显示 White。播放开关、音量和位置保存在本机；跨页尝试从原位置续播。浏览器可能要求再次轻点播放，因此静态多页站无法承诺音频始终无缝。首页空白处连续三次点击播放、连续两次点击暂停，音乐按钮单击切换。
+背景曲目来自 `music/white.mp3`，播放器仅在首页显示。点击按钮播放或暂停；进入首页、刷新或从其他页面返回时均不会自动播放。
 
 ## 备份与存储
 

@@ -269,8 +269,9 @@ function sanitizePhotoMetadata(source) {
   if (!source || typeof source !== "object" || Array.isArray(source)) return {};
   const out = {};
   for (const field of PHOTO_TEXT_FIELDS) {
-    const value = typeof source[field] === "string" ? source[field].normalize("NFKC").trim() : "";
-    if (!value || value.length > 300 || /[\u0000-\u001f\u007f-\u009f\ufffd]/.test(value)) continue;
+    let value = typeof source[field] === "string" ? source[field].normalize("NFKC").trim() : "";
+    if (field === "description") value = Array.from(value.replace(/\s+/g, " ")).slice(0, 180).join("");
+    if (!value || (field !== "description" && value.length > 300) || /[\u0000-\u001f\u007f-\u009f\ufffd]/.test(value)) continue;
     if (["make", "camera", "lens", "software"].includes(field) && (value.length < 2 || /[^\x20-\x7e]/.test(value) || /^\d{4}[:/-]\d{2}/.test(value))) continue;
     out[field] = value;
   }

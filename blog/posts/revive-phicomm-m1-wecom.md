@@ -39,38 +39,41 @@ cover: blog/images/phicomm-m1-revival-cover.jpg
 - 加密方式最好兼容 WPA2/AES，只有 WPA3 时老设备可能无法加入；
 - 配网热点存在时间较短，消失后需要重新长按按键约 3—4 秒。
 
-电脑连上临时热点后，M1 通常位于 `10.0.0.1`，先读取设备信息：
+## Windows 和 macOS：不用 App 给 M1 配网
+
+下文只适用于原厂固件。先在电脑联网时下载 [配网脚本 m1-wifi.py](https://raw.githubusercontent.com/tankey33/love/main/blog/code/phicomm-m1-wecom/m1-wifi.py)，放进「下载」目录。脚本需要 Python 3 和 curl，不刷机，也不会把 Wi-Fi 密码写入文件或命令历史。
+
+先确认路由器启用了 DHCP，并准备一个 2.4 GHz、WPA2/AES 的网络。按住 M1 按键约 3–4 秒后松开，电脑连上它发出的 `EasyLink_XXXXXX`。系统提示没有互联网是正常的；不要切回家庭 Wi-Fi，直到提交配置。
+
+### Windows
+
+从任务栏的 Wi-Fi 列表连上设备热点，打开 PowerShell。如果还没有 Python 3，先在能上网时安装；命令找不到 `py` 时可用 `python` 代替 `py -3`，先用 `python --version` 确认是 Python 3。
+
+```powershell
+curl.exe --http1.0 --noproxy "*" --max-time 5 http://10.0.0.1:8000/config-read
+py -3 "$HOME\Downloads\m1-wifi.py"
+```
+
+这里明确写 `curl.exe`，避免 Windows PowerShell 5.1 把 `curl` 当作 `Invoke-WebRequest`。如果「下载」目录被重定向，请使用脚本的实际路径。
+
+### macOS
+
+从菜单栏 Wi-Fi 连上设备热点，再打开「终端」。先在联网时用 `python3 --version` 确认 Python 3 可用。
 
 ```bash
-curl --http1.0 --noproxy '*' \
-  http://10.0.0.1:8000/config-read
+curl --http1.0 --noproxy '*' --max-time 5 http://10.0.0.1:8000/config-read
+python3 ~/Downloads/m1-wifi.py
 ```
 
-确认设备响应后，把 Wi-Fi 信息写入原厂配网接口。下面只放占位符，不要把真实密码写进脚本仓库：
+两种平台都按提示输入**家庭 2.4 GHz Wi-Fi** 的名称和密码，不是临时热点的名称。脚本先探测 `10.0.0.1:8000`，再向 `/config-write-uap` 提交 UTF-8 JSON，密码输入不回显。建议只在自己设备的热点上执行，因为这个原厂配网接口使用 HTTP。手动探测返回的设备配置也不要直接发到公开论坛。
 
-```python
-import json
-import urllib.request
+### 确认真的连上了
 
-payload = json.dumps({
-    "SSID": "YOUR_2G_WIFI",
-    "PASSWORD": "YOUR_WIFI_PASSWORD",
-    "DHCP": True,
-    "IDENTIFIER": 1,
-}).encode()
+- **读不到配置**：确认电脑仍连接 EasyLink，WLAN 获得了 `10.0.0.x` 地址。热点过期就重新进入配网；如果 VPN 或代理接管了局域网路由，先暂停它再试。
+- **提交后热点消失**：这是设备切回客户端模式的正常表现。电脑重新连回家庭 Wi-Fi，在路由器 DHCP 租约列表中按机身 MAC 找 M1。HTTP 200 只说明配置收到，不代表已经联网；请求中途断开也先查租约再重试。
+- **没有新租约**：核对 SSID、密码、2.4 GHz 和 WPA2 设置；排错时可以临时使用一个单独的纯英文 2.4 GHz SSID。已有租约却还不报数据，再查下面的 DNS、激活和 TCP 9000。
 
-request = urllib.request.Request(
-    "http://10.0.0.1:8000/config-write-uap",
-    data=payload,
-    headers={"Content-Type": "application/json", "Expect": ""},
-)
-
-opener = urllib.request.build_opener(urllib.request.ProxyHandler({}))
-with opener.open(request, timeout=10) as response:
-    print(response.status)
-```
-
-这里有一个判断陷阱：接口返回 HTTP 200，只说明设备收到了配置，不等于已经成功加入家庭网络。热点断开后，还要在路由器 DHCP 列表中确认 M1 获得了地址。
+配网接口和验证流程可对照 [斐讯社区的原厂 M1 配网说明](https://phicomm-io.github.io/guides/m1-no-disassembly.html)；这里只用配网部分，不执行 OTA。
 
 ## 为什么需要“假云端”
 

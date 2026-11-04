@@ -100,3 +100,32 @@
   document.addEventListener('visibilitychange', () => { if (!document.hidden) updateTime(); });
   loadMemory();
 })();
+// Background audio belongs to the home page and starts only on button activation.
+document.addEventListener('DOMContentLoaded', () => {
+  const audio = document.getElementById('bgm');
+  const button = document.querySelector('[data-music-toggle]');
+  const volume = document.querySelector('[data-music-volume]');
+  const status = document.querySelector('[data-music-status]');
+  if (!audio || !button || !volume || !status) return;
+  audio.volume = Number(volume.value);
+  volume.addEventListener('input', () => { audio.volume = Number(volume.value); });
+  const update = () => {
+    const playing = !audio.paused;
+    button.setAttribute('aria-pressed', String(playing));
+    button.setAttribute('aria-label', playing ? '暂停背景音乐' : '播放背景音乐');
+    button.innerHTML = playing
+      ? '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>'
+      : '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m8 5 11 7-11 7z"/></svg>';
+    status.textContent = playing ? '正在播放' : '轻点播放';
+  };
+  button.addEventListener('click', async () => {
+    if (!audio.paused) { audio.pause(); return; }
+    try { await audio.play(); }
+    catch (error) { if (error.name !== 'AbortError') status.textContent = '音乐暂时无法播放'; }
+  });
+  audio.addEventListener('play', update);
+  audio.addEventListener('pause', update);
+  audio.addEventListener('error', () => { status.textContent = '音乐暂时无法播放'; });
+  addEventListener('pagehide', () => audio.pause());
+  update();
+}, {once: true});
