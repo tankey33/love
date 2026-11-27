@@ -2,7 +2,7 @@
 title: 从一张共享 Excel 到内网周计划系统
 date: 2026-11-27
 summary: 从共享表格被覆盖、人员工时难统计，到个人填报、统一目录与周期汇总，记录一套内网周计划系统的制作过程。
-cover: blog/images/workplan-system/flow.svg
+cover: images/workplan-system/flow.svg
 ---
 
 # 从一张共享 Excel 到内网周计划系统
@@ -45,7 +45,7 @@ cover: blog/images/workplan-system/flow.svg
 
 所以管理员先设置统计月及工作天数，再设置填报周的实际起止日期和所属统计月。当前填报周与计划起始周按“年 → 月 → 周”选择。年度下拉只显示已经设置的统计月所属年份，不提前塞入一串没有数据的年份。
 
-![统计月份与填报周期的设置关系](blog/images/workplan-system/calendar.svg)
+![统计月份与填报周期的设置关系](images/workplan-system/calendar.svg)
 
 *添加月度工作天数时，先选择年份和月份，再填写工作天数。*
 
@@ -57,7 +57,7 @@ cover: blog/images/workplan-system/flow.svg
 
 管理员按照基础设置、项目、员工、细分类别、设备图纸、填报周的顺序下载模板和导入资料。模板里的选项来自已保存的后台设置：新增专业或统计月后，先保存，再下载后续模板，避免用旧选项填写新资料。
 
-![从基础设置到填报和统计的流程](blog/images/workplan-system/flow.svg)
+![从基础设置到填报和统计的流程](images/workplan-system/flow.svg)
 
 *先统一基础资料和统计周期，再分人填报，最终按人员、专业和周期汇总。*
 
@@ -83,7 +83,7 @@ cover: blog/images/workplan-system/flow.svg
 
 备份分开保存程序、数据库、配置、档案和日志。完整备份按时间保留最近10份，正在使用的恢复点受到保护。
 
-![程序回滚与业务数据保护](blog/images/workplan-system/backup.svg)
+![程序回滚与业务数据保护](images/workplan-system/backup.svg)
 
 *程序与数据分开备份；程序回滚时，当前业务数据继续保留。*
 
