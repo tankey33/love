@@ -191,3 +191,6 @@ tableEl.addEventListener("paste", (e) => {
 3. **打通 Excel 一进一出**：导入侧按外键依赖分步校验并给出精准缺失提示；填报侧加上 `paste` 事件的 `\t` / `\n` 矩阵解析；导出侧按专业分 Sheet 并冻结前几列。
 4. **加上副本预检回滚脚本**：写一个 PowerShell 升级/回滚脚本，每次动作前先打包 `app/` 与 `data/`，回滚前先拿 `workplan.db` 的副本做一次启动验证。
 5. **明确内网安全边界**：凭工号直接进入的免密方式仅适用于受控局域网；若未来要暴露到公网，务必补齐统一的登录鉴权与 HTTPS 反向代理。
+## 参考与项目仓库
+
+- 项目仓库地址：[tankey33/workplan-system](https://github.com/tankey33/workplan-system)（仓库内包含完整的中英文双语 README 说明、目录结构约定与数据脱敏规范）
